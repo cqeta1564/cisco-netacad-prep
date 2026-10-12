@@ -3067,4 +3067,595 @@ const CERTIFICATES_DATA = {
     }
   ]
 }
+,
+  python: {
+  "id": "python",
+  "title": "Cisco Networking Academy: Python Essentials 1",
+  "subtitle": "Příprava na certifikaci PCEP-30-02 (Certified Entry-Level Python Programmer)",
+  "badge": "Python Essentials 1",
+  "icon": "fab fa-python",
+  "color": "#3776AB",
+  "passScore": 70,
+  "timeLimit": 45,
+  "modules": [
+    {
+      "id": "py_m1",
+      "name": "PE1-M1: Úvod do programování & Základní syntaxe"
+    },
+    {
+      "id": "py_m2",
+      "name": "PE1-M2: Datové typy, Operátory & Vstup/Výstup"
+    },
+    {
+      "id": "py_m3",
+      "name": "PE1-M3: Řízení toku, Cykly & Seznamy (Lists)"
+    },
+    {
+      "id": "py_m4",
+      "name": "PE1-M4: Funkce, N-tice (Tuples), Slovníky & Výjimky"
+    }
+  ],
+  "questions": [
+    {
+      "id": "py_q01",
+      "module": "py_m1",
+      "question": "What is an interpreter in the context of computer programming?",
+      "code": null,
+      "options": [
+        "A program that translates and executes high-level source code line-by-line on the fly without producing a separate machine code file",
+        "A hardware processor component that directly executes Python syntax without translation",
+        "A compiler that translates the entire source code into a standalone binary executable file before execution",
+        "A text editor specialized for writing and formatting Python scripts"
+      ],
+      "correct": 0,
+      "explanation": "Interpret (interpretátor) je program, který načítá zdrojový kód a postupně řádek po řádku jej překládá a rovnou vykonává. Nevytváří samostatný spustitelný soubor se strojovým kódem (jak to dělá kompilátor)."
+    },
+    {
+      "id": "py_q02",
+      "module": "py_m1",
+      "question": "What is CPython?",
+      "code": null,
+      "options": [
+        "A Python program compiled exclusively to C language headers",
+        "The default, reference, and most widely used implementation of the Python programming language, written in C",
+        "A specialized Python compiler designed only for embedded microcontroller circuits",
+        "A superset of Python that enforces static typing for high-performance computing"
+      ],
+      "correct": 1,
+      "explanation": "CPython je výchozí a nejrozšířenější referenční implementace Pythonu, kterou vytvořil Guido van Rossum a která je naprogramována v jazyce C."
+    },
+    {
+      "id": "py_q03",
+      "module": "py_m1",
+      "question": "Which of the following statements about Python's creator and development history is true?",
+      "code": null,
+      "options": [
+        "Python was created by Bjarne Stroustrup in 1985 as an extension to C",
+        "Python was named after the Monty Python comedy troupe and created by Guido van Rossum",
+        "Python was designed by James Gosling at Sun Microsystems in 1995",
+        "Python was created by Dennis Ritchie at Bell Labs"
+      ],
+      "correct": 1,
+      "explanation": "Python vytvořil Guido van Rossum na přelomu 80. a 90. let a pojmenoval jej po slavné britské komediální skupině Monty Python (nikoliv podle hada)."
+    },
+    {
+      "id": "py_q04",
+      "module": "py_m1",
+      "question": "What is the expected output of the following code snippet?",
+      "code": "print(2 ** 3 ** 2)",
+      "options": [
+        "512",
+        "64",
+        "72",
+        "SyntaxError"
+      ],
+      "correct": 0,
+      "explanation": "Operátor umocnění (**) má v Pythonu asociativitu zprava doleva (right-to-left binding). Výraz se tedy vyhodnocuje jako 2 ** (3 ** 2) = 2 ** 9 = 512. Pokud by se vyhodnocoval zleva doprava jako (2 ** 3) ** 2, vyšlo by 64."
+    },
+    {
+      "id": "py_q05",
+      "module": "py_m1",
+      "question": "What is the expected output of the following code snippet?",
+      "code": "print(1 // 2 * 3)",
+      "options": [
+        "0",
+        "1.5",
+        "0.0",
+        "1"
+      ],
+      "correct": 0,
+      "explanation": "Operátory celočíselného dělení (//) a násobení (*) mají stejnou prioritu a vyhodnocují se zleva doprava. Nejprve 1 // 2 dává celočíselně 0 (protože 0.5 se zaokrouhlí dolů na 0). Následně 0 * 3 dává 0."
+    },
+    {
+      "id": "py_q06",
+      "module": "py_m1",
+      "question": "What is the expected output of the following code snippet?",
+      "code": "print(0o10 + 0x10 + 0b10)",
+      "options": [
+        "26",
+        "30",
+        "101010",
+        "ValueError"
+      ],
+      "correct": 0,
+      "explanation": "Python podporuje různé číselné soustavy: 0o10 je osmičkově (8 v desítkové), 0x10 je šestnáctkově (16 v desítkové) a 0b10 je dvojkově (2 v desítkové). Součet je 8 + 16 + 2 = 26."
+    },
+    {
+      "id": "py_q07",
+      "module": "py_m1",
+      "question": "What is the expected result of the following expression in Python 3?",
+      "code": "print(type(1 / 1))",
+      "options": [
+        "<class 'float'>",
+        "<class 'int'>",
+        "<class 'number'>",
+        "1.0"
+      ],
+      "correct": 0,
+      "explanation": "V Pythonu 3 operátor standardního dělení (/) vždy vrací číslo s plovoucí řadovou čárkou (float), a to i v případě, že se dělí beze zbytku (1 / 1 dává 1.0, což je typ float)."
+    },
+    {
+      "id": "py_q08",
+      "module": "py_m1",
+      "question": "What does the following print() invocation display on the console?",
+      "code": "print(\"H\", \"E\", \"X\", sep=\"*\", end=\"!\")",
+      "options": [
+        "H*E*X!",
+        "H E X*!",
+        "H*E*X\\n!",
+        "HEX*!"
+      ],
+      "correct": 0,
+      "explanation": "Argument sep definuje oddělovač mezi jednotlivými hodnotami (zde '*') a argument end definuje zakončení celého výpisu (zde '!' místo výchozího nového řádku '\\n'). Výsledkem je H*E*X!."
+    },
+    {
+      "id": "py_q09",
+      "module": "py_m1",
+      "question": "The \\n digraph in a Python string literal forces the print() function to:",
+      "code": null,
+      "options": [
+        "break the output line and move subsequent printing to a new line",
+        "cancel printing and flush the stream buffer",
+        "print a literal lowercase letter 'n'",
+        "insert a horizontal tabulation space"
+      ],
+      "correct": 0,
+      "explanation": "Znak '\\n' je escape sekvence (newline), která způsobí odřádkování — přechod na nový řádek výstupu."
+    },
+    {
+      "id": "py_q10",
+      "module": "py_m1",
+      "question": "Which of the following numbers is represented using scientific floating-point notation in Python?",
+      "code": null,
+      "options": [
+        "3e8",
+        "3^8",
+        "3**8",
+        "0x38"
+      ],
+      "correct": 0,
+      "explanation": "V Pythonu se vědecký (exponenciální) zápis čísel s plovoucí řadovou čárkou zapisuje pomocí písmene 'e' nebo 'E' (např. 3e8 odpovídá 3 * 10^8 = 300000000.0)."
+    },
+    {
+      "id": "py_q11",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet?",
+      "code": "z = y = x = 1\nprint(x, y, z, sep='*')",
+      "options": [
+        "1*1*1",
+        "1 1 1",
+        "x*y*z",
+        "1*1*1*"
+      ],
+      "correct": 0,
+      "explanation": "Hromadné přiřazení z = y = x = 1 nastaví všechny tři proměnné na hodnotu 1. Funkce print s argumentem sep='*' je vytiskne oddělené hvězdičkou: 1*1*1."
+    },
+    {
+      "id": "py_q12",
+      "module": "py_m2",
+      "question": "What will happen when you execute the following code?",
+      "code": "y = 2 + 3 * 5\nprint(Y)",
+      "options": [
+        "The snippet will cause a NameError runtime exception",
+        "It will print 17",
+        "It will print 25",
+        "It will print None"
+      ],
+      "correct": 0,
+      "explanation": "Python je striktně 'case-sensitive' (rozlišuje velká a malá písmena). Proměnná byla definována malým písmenem 'y', ale funkce print volá velké 'Y', což vyvolá NameError: name 'Y' is not defined."
+    },
+    {
+      "id": "py_q13",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet if the user enters two lines containing 2 and 4 respectively?",
+      "code": "x = int(input())\ny = int(input())\nprint(x + y)",
+      "options": [
+        "6",
+        "24",
+        "2 4",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Funkce input() načítá textový řetězec (str). Funkce int() oba vstupy převede na celá čísla 2 a 4. Operátor + pak provede matematické sčítání: 2 + 4 = 6."
+    },
+    {
+      "id": "py_q14",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet if the user enters two lines containing 2 and 4 respectively?",
+      "code": "x = input()\ny = input()\nprint(x + y)",
+      "options": [
+        "24",
+        "6",
+        "2 4",
+        "ValueError"
+      ],
+      "correct": 0,
+      "explanation": "Funkce input() vrací hodnoty jako řetězce (str: '2' a '4'). Operátor + mezi dvěma řetězci provádí zřetězení (konkatenaci), nikoli aritmetické sčítání. Výsledkem je spojení řetězců na '24'."
+    },
+    {
+      "id": "py_q15",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet?",
+      "code": "x = 1\ny = 2\nx, y, z = x, x, y\nz, y, z = x, y, z\nprint(x, y, z)",
+      "options": [
+        "1 1 2",
+        "1 2 1",
+        "2 1 1",
+        "1 2 2"
+      ],
+      "correct": 0,
+      "explanation": "Po 1. kroku: (x, y, z) = (1, 1, 2), tedy x=1, y=1, z=2. Po 2. kroku: pravá strana je (1, 1, 2); levá strana postupně přiřadí z=1, y=1 a následně z=2 (přepíše předchozí z). Výsledné hodnoty jsou x=1, y=1, z=2."
+    },
+    {
+      "id": "py_q16",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet if the user enters 3 and 2 on consecutive lines?",
+      "code": "x = int(input())\ny = int(input())\nx = x % y\nx = x % y\ny = y % x\nprint(y)",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "ZeroDivisionError"
+      ],
+      "correct": 0,
+      "explanation": "Vstupy jsou x=3, y=2. 1) x = 3 % 2 = 1. 2) x = 1 % 2 = 1. 3) y = 2 % 1 = 0 (2 děleno 1 je 2 se zbytkem 0). Výsledné y je 0."
+    },
+    {
+      "id": "py_q17",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet?",
+      "code": "print(\"3\" * 2 + \"2\" * 3)",
+      "options": [
+        "33222",
+        "12",
+        "323232",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Operátor * mezi řetězcem a celým číslem replikuje text: '3' * 2 je '33' a '2' * 3 je '222'. Operátor + je následně spojí (konkatenace) do '33222'."
+    },
+    {
+      "id": "py_q18",
+      "module": "py_m2",
+      "question": "Which of the following is an ILLEGAL identifier / variable name in Python?",
+      "code": null,
+      "options": [
+        "1st_score",
+        "_score_1",
+        "score_1st",
+        "Score"
+      ],
+      "correct": 0,
+      "explanation": "V Pythonu identifikátory (názvy proměnných, funkcí atd.) nesmí začínat číslicí. Název '1st_score' je proto neplatný a způsobí SyntaxError."
+    },
+    {
+      "id": "py_q19",
+      "module": "py_m2",
+      "question": "What is the expected output of the following bitwise shift operation?",
+      "code": "print(1 << 3)",
+      "options": [
+        "8",
+        "4",
+        "3",
+        "1"
+      ],
+      "correct": 0,
+      "explanation": "Bitový posun doleva (<<) posune bity čísla 1 o 3 pozice doleva (0b0001 -> 0b1000). To odpovídá vynásobení 1 * (2 ** 3) = 8."
+    },
+    {
+      "id": "py_q20",
+      "module": "py_m2",
+      "question": "What is the output of the following snippet involving bitwise XOR?",
+      "code": "a = 1\nb = 0\na = a ^ b\nb = a ^ b\na = a ^ b\nprint(a, b)",
+      "options": [
+        "0 1",
+        "1 0",
+        "1 1",
+        "0 0"
+      ],
+      "correct": 0,
+      "explanation": "Tento kód představuje klasický algoritmus pro prohození hodnot dvou proměnných pomocí bitového XOR (XOR swap): a=1, b=0 -> a=1^0=1 -> b=1^0=1 -> a=1^1=0. Výsledné hodnoty jsou a=0, b=1."
+    },
+    {
+      "id": "py_q21",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "x = 1\nx = x == x\nprint(x)",
+      "options": [
+        "True",
+        "1",
+        "False",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Relační operátor rovnosti (==) má na pravé straně vyšší prioritu než přiřazení (=). Výraz x == x (1 == 1) je pravdivý a vrací booleovskou hodnotu True, která je následně uložena do x."
+    },
+    {
+      "id": "py_q22",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "i = 0\nwhile i < i + 2:\n    i += 1\n    print(\"*\", end=\"\")\n    if i == 2:\n        break\nelse:\n    print(\"*\", end=\"\")",
+      "options": [
+        "**",
+        "***",
+        "*",
+        "An infinite loop"
+      ],
+      "correct": 0,
+      "explanation": "Cyklus provede dvě iterace (vytiskne dvě hvězdičky), a když i dosáhne hodnoty 2, provede se příkaz break. Větev else u cyklu while/for se vykoná POUZE tehdy, pokud cyklus doběhne přirozeně (nikoli přerušením pomocí break). Proto se větev else přeskočí a vytisknou se pouze 2 hvězdičky: **."
+    },
+    {
+      "id": "py_q23",
+      "module": "py_m3",
+      "question": "How many hashes (#) will the following snippet send to the console?",
+      "code": "var = 0\nwhile var < 6:\n    var += 1\n    if var % 2 == 0:\n        continue\n    print(\"#\")",
+      "options": [
+        "3",
+        "6",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "Proměnná var postupně nabývá hodnot 1, 2, 3, 4, 5, 6. Pro sudá čísla (2, 4, 6) podmínka var % 2 == 0 způsobí vykonání continue, což přeskočí zbytek těla cyklu. Příkaz print('#') se tak zavolá pouze pro lichá čísla 1, 3 a 5, tedy celkem 3krát."
+    },
+    {
+      "id": "py_q24",
+      "module": "py_m3",
+      "question": "How many elements does the lst list contain after execution of this snippet?",
+      "code": "lst = [i for i in range(-1, -2)]\nprint(len(lst))",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "SyntaxError"
+      ],
+      "correct": 0,
+      "explanation": "Funkce range(start, stop) má výchozí krok step = +1. Pokud začínáme na -1 a chceme jít do -2 s kladným krokem (+1), podmínka konce je okamžitě splněna a sekvence je prázdná. Seznam má tedy délku 0."
+    },
+    {
+      "id": "py_q25",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "vals = [0, 1, 2]\nvals.insert(0, 1)\ndel vals[1]\nprint(sum(vals))",
+      "options": [
+        "4",
+        "3",
+        "2",
+        "5"
+      ],
+      "correct": 0,
+      "explanation": "Původní seznam: [0, 1, 2]. 1) vals.insert(0, 1) vloží prvek 1 na index 0 -> seznam je [1, 0, 1, 2]. 2) del vals[1] smaže prvek na indexu 1 (kterým je 0) -> seznam je [1, 1, 2]. 3) sum([1, 1, 2]) = 1 + 1 + 2 = 4."
+    },
+    {
+      "id": "py_q26",
+      "module": "py_m3",
+      "question": "What does the second line of the following snippet do to the vals list?",
+      "code": "vals = [0, 1, 2]\nvals[0], vals[2] = vals[2], vals[0]",
+      "options": [
+        "It reverses the list to [2, 1, 0]",
+        "It leaves the list completely unchanged",
+        "It raises an IndexError exception",
+        "It doubles the first element"
+      ],
+      "correct": 0,
+      "explanation": "Přiřazení vals[0], vals[2] = vals[2], vals[0] prohodí prvek na indexu 0 (první prvek) a indexu 2 (třetí prvek). Seznam [0, 1, 2] se tak změní na [2, 1, 0], což jej v tomto případě obrátí (reverzuje)."
+    },
+    {
+      "id": "py_q27",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "my_list = [1, 2]\nfor v in range(2):\n    my_list.insert(-1, my_list[v])\nprint(my_list)",
+      "options": [
+        "[1, 1, 1, 2]",
+        "[1, 2, 1, 2]",
+        "[2, 1, 1, 2]",
+        "[1, 2, 2, 2]"
+      ],
+      "correct": 0,
+      "explanation": "Metoda insert(-1, x) vkládá prvek před poslední prvek seznamu! 1) v=0: vloží my_list[0] (1) před prvek 2 -> [1, 1, 2]. 2) v=1: vloží my_list[1] (1) před prvek 2 -> [1, 1, 1, 2]. Výsledkem je [1, 1, 1, 2]."
+    },
+    {
+      "id": "py_q28",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "nums = [1, 2, 3]\nvals = nums\ndel vals[:]\nprint(nums, vals)",
+      "options": [
+        "[] []",
+        "[1, 2, 3] []",
+        "[] [1, 2, 3]",
+        "[1, 2, 3] [1, 2, 3]"
+      ],
+      "correct": 0,
+      "explanation": "Přiřazení vals = nums nevytváří novou kopii, ale pouze další referenci (odkaz) na tentýž objekt seznamu v paměti. Příkaz del vals[:] smaže všechny prvky v tomto společném objektu. Obě proměnné nums i vals proto ukazují na stejný prázdný seznam []."
+    },
+    {
+      "id": "py_q29",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "my_list = [3, 1, -2]\nprint(my_list[my_list[-1]])",
+      "options": [
+        "1",
+        "3",
+        "-2",
+        "IndexError"
+      ],
+      "correct": 0,
+      "explanation": "Index my_list[-1] vrací poslední prvek seznamu, což je hodnota -2. Následně se vyhodnotí my_list[-2], což je předposlední prvek seznamu, tedy hodnota 1."
+    },
+    {
+      "id": "py_q30",
+      "module": "py_m3",
+      "question": "What is the output of the following snippet?",
+      "code": "t = [[3-i for i in range(3)] for j in range(3)]\ns = 0\nfor i in range(3):\n    s += t[i][i]\nprint(s)",
+      "options": [
+        "6",
+        "9",
+        "3",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "Každý řádek matice t je vytvořen jako [3-0, 3-1, 3-2] = [3, 2, 1]. V cyklu se sčítají prvky na hlavní diagonále: t[0][0] = 3, t[1][1] = 2, t[2][2] = 1. Součet je s = 3 + 2 + 1 = 6."
+    },
+    {
+      "id": "py_q31",
+      "module": "py_m4",
+      "question": "The meaning of a positional argument in a function call is determined by:",
+      "code": null,
+      "options": [
+        "its position within the argument list",
+        "its name assigned in the function definition",
+        "its data type and memory footprint",
+        "the return statement of the function"
+      ],
+      "correct": 0,
+      "explanation": "Význam pozičního argumentu je určen výhradně jeho pozicí (pořadím) v seznamu předávaných argumentů při volání funkce, nikoli jeho názvem."
+    },
+    {
+      "id": "py_q32",
+      "module": "py_m4",
+      "question": "Which of the following function invocations will raise a TypeError for a function defined as: def fun(a, b=2, c=3):",
+      "code": "def fun(a, b=2, c=3):\n    return a + b + c",
+      "options": [
+        "fun(b=1, c=2)",
+        "fun(1)",
+        "fun(1, c=5)",
+        "fun(a=1, b=2, c=3)"
+      ],
+      "correct": 0,
+      "explanation": "Parametr 'a' nemá výchozí hodnotu (default value) a je povinný. Volání fun(b=1, c=2) nepředává povinný parametr 'a', což okamžitě vyvolá TypeError: fun() missing 1 required positional argument: 'a'."
+    },
+    {
+      "id": "py_q33",
+      "module": "py_m4",
+      "question": "What is the expected result of the following code snippet?",
+      "code": "def fun(x):\n    if x % 2 == 0:\n        return 1\n    else:\n        return\n\nprint(fun(fun(2)) + 1)",
+      "options": [
+        "It causes a runtime TypeError exception",
+        "It prints 2",
+        "It prints 1",
+        "It prints None"
+      ],
+      "correct": 0,
+      "explanation": "Volání fun(2) splní podmínku (2 % 2 == 0) a vrátí 1. Následně se volá fun(1). Protože 1 % 2 != 0, provede se větev else s příkazem 'return' bez hodnoty, což vrátí None. Pokus o sečtení None + 1 skončí chybou: TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'."
+    },
+    {
+      "id": "py_q34",
+      "module": "py_m4",
+      "question": "What is the output of the following snippet?",
+      "code": "def any():\n    print(var + 1, end=\"\")\n\nvar = 1\nany()\nprint(var)",
+      "options": [
+        "21",
+        "22",
+        "11",
+        "UnboundLocalError"
+      ],
+      "correct": 0,
+      "explanation": "Uvnitř funkce any() není proměnná var lokálně přiřazena, takže Python bezpečně přečte globální proměnnou var (1). Příkaz vytiskne var + 1 (2). Následně hlavní program vytiskne globální var (1). Výsledný výpis je '21'."
+    },
+    {
+      "id": "py_q35",
+      "module": "py_m4",
+      "question": "What is the output of the following snippet?",
+      "code": "def fun(inp=2, out=3):\n    return inp * out\n\nprint(fun(out=2))",
+      "options": [
+        "4",
+        "6",
+        "9",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Funkce má výchozí parametry inp=2 a out=3. Při volání fun(out=2) je parametru out explicitně předána hodnota 2 a parametr inp použije svou výchozí hodnotu 2. Funkce vrátí 2 * 2 = 4."
+    },
+    {
+      "id": "py_q36",
+      "module": "py_m4",
+      "question": "What is the output of the following snippet?",
+      "code": "tup = (1, 2, 4, 8)\ntup = tup[-2:-1]\ntup = tup[-1]\nprint(tup)",
+      "options": [
+        "4",
+        "(4,)",
+        "8",
+        "(4, 8)"
+      ],
+      "correct": 0,
+      "explanation": "1) tup = (1, 2, 4, 8). 2) tup[-2:-1] vyřízne z n-tice prvek od indexu -2 (4) do indexu -1 (8, neobsahuje se). Vznikne jednoprvková n-tice (4,). 3) tup[-1] vybere poslední prvek této n-tice, čímž získá celé číslo 4. print(tup) tedy vytiskne 4."
+    },
+    {
+      "id": "py_q37",
+      "module": "py_m4",
+      "question": "What will happen when you run the following code?",
+      "code": "my_tuple = (1, 2)\nmy_tuple[1] = my_tuple[1] + my_tuple[0]",
+      "options": [
+        "The code will raise a TypeError exception",
+        "The tuple becomes (1, 3)",
+        "The tuple becomes (3, 2)",
+        "The code will execute without any output"
+      ],
+      "correct": 0,
+      "explanation": "N-tice (tuples) jsou v Pythonu neměnné (immutable). Pokus o změnu nebo přiřazení prvku podle indexu (my_tuple[1] = ...) je nepřípustný a vyvolá TypeError: 'tuple' object does not support item assignment."
+    },
+    {
+      "id": "py_q38",
+      "module": "py_m4",
+      "question": "What is the output of the following snippet?",
+      "code": "dct = {'one': 'two', 'three': 'one', 'two': 'three'}\nv = dct['three']\nfor k in range(len(dct)):\n    v = dct[v]\nprint(v)",
+      "options": [
+        "one",
+        "two",
+        "three",
+        "KeyError"
+      ],
+      "correct": 0,
+      "explanation": "Počáteční v = dct['three'] = 'one'. Délka slovníku je 3 (k = 0, 1, 2). 1. iterace: v = dct['one'] = 'two'. 2. iterace: v = dct['two'] = 'three'. 3. iterace: v = dct['three'] = 'one'. Po skončení cyklu je v rovno 'one'."
+    },
+    {
+      "id": "py_q39",
+      "module": "py_m4",
+      "question": "What is the output of the following snippet?",
+      "code": "d1 = {'Adam Smith': 'A', 'Judy Goode': 'B+'}\nd2 = {'Judy Goode': 'A', 'William Simon': 'C-'}\nd3 = {}\n\nfor item in (d1, d2):\n    d3.update(item)\n\nprint(d3['Judy Goode'])",
+      "options": [
+        "A",
+        "B+",
+        "None",
+        "KeyError"
+      ],
+      "correct": 0,
+      "explanation": "Metoda dict.update() vloží nebo aktualizuje klíče v cílovém slovníku d3. Při procházení slovníku d2 hodnota klíče 'Judy Goode' přepíše původní hodnotu 'B+' z d1 novou hodnotou 'A'. Proto d3['Judy Goode'] vrátí 'A'."
+    },
+    {
+      "id": "py_q40",
+      "module": "py_m4",
+      "question": "What is the output of the following snippet?",
+      "code": "try:\n    print(1/0)\nexcept ArithmeticError:\n    print(\"Arithmetic\")\nexcept ZeroDivisionError:\n    print(\"Zero\")",
+      "options": [
+        "Arithmetic",
+        "Zero",
+        "ZeroDivisionError",
+        "SyntaxError"
+      ],
+      "correct": 0,
+      "explanation": "Třída ZeroDivisionError je přímým potomkem obecnější třídy ArithmeticError v hierarchii výjimek Pythonu. Python testuje bloky except shora dolů. Protože ArithmeticError zachytí i všechny své podtřídy, první blok zachytí dělení nulou a vytiskne 'Arithmetic'. Blok ZeroDivisionError je nedosažitelný."
+    }
+  ]
+}
 };

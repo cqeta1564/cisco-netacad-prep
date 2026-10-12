@@ -1026,6 +1026,59 @@ class NetAcadApp {
             ["COMMIT & ROLLBACK", "COMMIT permanentně uloží změny transakce; ROLLBACK vrátí stav před začátek transakce"]
           ]
         }
+      ],
+
+      python: [
+        {
+          title: "Aritmetické operátory & Priorita",
+          rows: [
+            ["** (Umocnění)", "Asociativita zprava doleva (right-to-left): 2 ** 3 ** 2 = 2 ** 9 = 512"],
+            ["* / // %", "Násobení, standardní dělení (/ vrací float!), celočíselné dělení (//) a zbytek (%)"],
+            ["+ a -", "Sčítání a odčítání; konkatenace řetězců ('a' + 'b') a spojování seznamů"],
+            ["* (řetězec/seznam)", "Replikace řetězce nebo seznamu ('3' * 2 = '33')"],
+            ["print(sep, end)", "sep='oddělovač' (výchozí mezera), end='zakončení' (výchozí '\\n')"]
+          ]
+        },
+        {
+          title: "Bitové operátory & Číselné soustavy",
+          rows: [
+            ["0b..., 0o..., 0x...", "Dvojková (0b10=2), osmičková (0o10=8) a šestnáctková (0x10=16) soustava"],
+            ["& (AND), | (OR)", "Bitový součin a bitový součet po bitech"],
+            ["^ (XOR)", "Bitová neshoda (exkluzivní OR, a ^ b) — využívá se i pro algoritmus XOR swap"],
+            ["~ (NOT)", "Bitová negace (~x = -(x + 1), např. ~4 = -5)"],
+            ["<< a >>", "Bitový posun doleva (násobení 2^n) a doprava (dělení 2^n)"]
+          ]
+        },
+        {
+          title: "Řízení toku & Práce se seznamy (Lists)",
+          rows: [
+            ["while-else / for-else", "Větev else se provede pouze při přirozeném doběhnutí cyklu, NIKDY po break"],
+            ["break vs continue", "break okamžitě ukončí celý cyklus; continue přeskočí zbytek těla do další iterace"],
+            ["list.insert(idx, val)", "Vloží prvek před zadaný index (insert(-1, x) vkládá před poslední prvek)"],
+            ["list[start:stop:step]", "Slicování seznamu (stop je vyjmut); list[::-1] obrátí seznam; list[:] vytvoří kopii"],
+            ["del list[i] / del list[:]", "del list[i] smaže prvek; del list[:] vyprázdní celý seznam in-place bez změny reference"]
+          ]
+        },
+        {
+          title: "N-tice (Tuples) & Slovníky (Dictionaries)",
+          rows: [
+            ["Tuple (x, y)", "Neměnná (immutable) sekvence; položky nelze přiřazovat (t[0]=1 vyvolá TypeError)"],
+            ["Jednoprvkový tuple", "Vyžaduje čárku: (1,) — samotné (1) je pouze celočíselný výraz v závorkách!"],
+            ["dict.keys(), .values()", "Iterace přes klíče (výchozí: for k in dict) nebo přes hodnoty"],
+            ["dict.items()", "Vrací dvojice (klíč, hodnota) pro procházení ve for cyklu"],
+            ["dict.update(d2)", "Sloučí slovníky; existující klíče z d2 přepíší původní hodnoty v d1"]
+          ]
+        },
+        {
+          title: "Funkce, Scopy & Výjimky",
+          rows: [
+            ["Positional vs Keyword", "Poziční argumenty MUSÍ předcházet všem klíčovým argumentům (jinak SyntaxError)"],
+            ["Default parametry", "Parametry s výchozí hodnotou (def f(a, b=2)) musí být až za povinnými parametry"],
+            ["global x", "Umožňuje modifikovat globální proměnnou uvnitř lokálního těla funkce"],
+            ["Hierarchie výjimek", "BaseException -> Exception -> ArithmeticError -> ZeroDivisionError"],
+            ["Pořadí except bloků", "Specifičtější výjimky musí předcházet obecnějším předkům; výchozí except: musí být poslední"]
+          ]
+        }
       ]
     };
   }
@@ -1334,7 +1387,7 @@ class NetAcadApp {
     const pAccuracy = pTotalAnswered > 0 ? Math.round((pTotalCorrect / pTotalAnswered) * 100) : 0;
 
     const pQuestionsMap = pStats.questions || {};
-    const totalBankQuestions = 210;
+    const totalBankQuestions = Object.values(CERTIFICATES_DATA).reduce((sum, c) => sum + (c.questions ? c.questions.length : 0), 0);
     const practicedCount = Object.keys(pQuestionsMap).length;
     const mistakesCount = Object.values(pQuestionsMap).filter(q => q.lastResult === false).length;
 

@@ -1,20 +1,26 @@
-# Cisco Networking Academy - Certification Prep Web App
+# IT Certifications Prep - Cisco NetAcad & Oracle Academy
 
-Interaktivní webová aplikace pro přípravu a trénování na oficiální certifikace z **Cisco Networking Academy** (Skills for All / OpenEDG):
+Interaktivní webová aplikace pro přípravu a trénování na oficiální certifikace z **Cisco Networking Academy** (Skills for All / OpenEDG) a **Oracle Academy**:
 
 1. **Cisco Networking Academy: HTML Essentials** (příprava na certifikaci WDE™)
 2. **Cisco Networking Academy: CSS Essentials** (příprava na certifikaci WDA™)
 3. **Cisco Networking Academy: JavaScript Essentials 1** (příprava na certifikaci JSE-40-01)
+4. **Oracle Academy: Database Design** (návrh databází, ERD, normalizace 1NF–3NF)
+5. **Oracle Academy: Database Programming With SQL** (ANSI SQL, SELECT, JOIN, DDL/DML, transakce)
+6. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
 
 ---
 
 ## 🌟 Funkce aplikace
 
-- **130 autentických otázek**:
+- **250 autentických otázek**:
   - 45 otázek pro HTML Essentials
   - 45 otázek pro CSS Essentials
   - 40 otázek pro JavaScript Essentials 1
-  - Otázky obsahují originální textace, kódové ukázky, správné i klamné odpovědi a detailní vysvětlení v češtině vycházející z materiálů Cisco NetAcad.
+  - 40 otázek pro Oracle Database Design
+  - 40 otázek pro Oracle Database Programming With SQL
+  - 40 otázek pro Cisco Python Essentials 1
+  - Otázky obsahují originální anglickou textaci a kódové ukázky, správné i klamné odpovědi a detailní vysvětlení v češtině.
 - **4 studijní módy**:
   1. 🎓 **Zkouškový simulátor (Exam Simulator)**:
      - Realistické podmínky (40–45 minutový odpočet, 30 náhodně vybraných otázek, hranice úspěšnosti 70 %).
@@ -29,7 +35,11 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
   3. ⚡ **Bleskové kartičky (Flashcards)**:
      - 3D oboustranné kartičky pro rychlé opakování a zapamatování klíčových pojmů a chytáků.
   4. 📋 **Oficiální tahák & pravidla (Cheatsheets)**:
-     - Přehledné tabulky pro každý certifikát (typy v JS, specifika `typeof null`, CSS Box Model, specificita selektorů, HTML kostra a sémantika).
+     - Přehledné tabulky pro každý certifikát (typy v JS, specifika `typeof null`, CSS Box Model, specificita selektorů, HTML kostra a sémantika, Python operátory a výjimky).
+  5. 📊 **Moje statistiky (User Profile & Statistics)**:
+     - Sledování úspěšnosti a postupu na základě cookies a volitelné přezdívky (bez nutnosti registrace a přihlašování).
+     - Přehled pokrytí celé banky otázek (0 / 250), celková přesnost a zápisník chyb k cílenému doprocvičení.
+     - Kompletní historie zkoušek s časy, procenty a přímým filtrem nesložených pokusů.
 - **Moderní UI & Audio efekty**:
   - Tmavý (Dark) i světlý (Light) režim s plynulým přepínáním.
   - Generované audio efekty (Web Audio API – není potřeba stahovat žádné zvukové soubory).
