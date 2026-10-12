@@ -830,6 +830,88 @@ class NetAcadApp {
             ["try ... catch ... finally", "Blok finally se vykoná VŽDY i v případě vyhozené výjimky či returnu"]
           ]
         }
+      ],
+
+      oracle_dd: [
+        {
+          title: "ERD Konvence & Entity / Atributy",
+          rows: [
+            ["# (křížek)", "Unique Identifier (UID) — unikátní primární identifikátor entity"],
+            ["* (hvězdička)", "Mandatory attribute — povinný atribut (nesmí obsahovat NULL)"],
+            ["o (kolečko)", "Optional attribute — volitelný atribut (může obsahovat NULL)"],
+            ["Entity naming", "Název entity je vždy v jednotném čísle (např. EMPLOYEE, nikoliv EMPLOYEES)"],
+            ["Volatile attribute", "Atribut, jehož hodnota se v čase mění (např. Age, Status) vs Nonvolatile (Birth_Date)"]
+          ]
+        },
+        {
+          title: "Pravidla normalizace databáze (1NF, 2NF, 3NF)",
+          rows: [
+            ["1NF (První normální forma)", "Všechny atributy jsou atomické (žádné opakující se skupiny, multi-hodnoty ani složené atributy)"],
+            ["2NF (Druhá normální forma)", "Je v 1NF a žádný neklíčový atribut není částečně závislý na složeném primárním klíči"],
+            ["3NF (Třetí normální forma)", "Je ve 2NF a neexistují žádné tranzitivní závislosti (neklíčový atribut nezávisí na jiném neklíčovém)"],
+            ["Porušení 3NF", "Ukládání odvozených kalkulací (např. Total_Price = Price * Qty) přímo do atributu tabulky"]
+          ]
+        },
+        {
+          title: "Subtypy a Supertypy",
+          rows: [
+            ["Exhaustive rule", "Každá instance supertypu MUSÍ patřit do právě jednoho subtypu (pokrývá všechny možnosti)"],
+            ["Mutually Exclusive", "Instance supertypu smí patřit MAXIMÁLNĚ do jednoho subtypu současně (žádné překryvy)"],
+            ["Dědičnost (Inheritance)", "Subtypy automaticky dědí všechny atributy a vztahy svého rodičovského supertypu"]
+          ]
+        },
+        {
+          title: "Transformace ERD do Relačního modelu",
+          rows: [
+            ["1:M Relationship", "Cizí klíč (Foreign Key) se umisťuje do relační tabulky na straně 'MANY' (M)"],
+            ["M:M Relationship", "Nelze přímo reprezentovat — rozkládá se na 2 vztahy 1:M přes vazební (Intersection) tabulku"],
+            ["ON DELETE CASCADE", "Při smazání řádku v rodičovské tabulce se automaticky smažou navázané řádky v potomkovi"],
+            ["ON DELETE SET NULL", "Při smazání rodičovského řádku se hodnota FK v potomkovské tabulce nastaví na NULL"]
+          ]
+        }
+      ],
+
+      oracle_sql: [
+        {
+          title: "Klíčové SQL Příkazy & Operátory",
+          rows: [
+            ["NVL(expr1, expr2)", "Pokud expr1 je NULL, vrátí expr2, jinak expr1 (obě musí mít kompatibilní datový typ)"],
+            ["NVL2(expr1, expr2, expr3)", "Pokud expr1 NENÍ NULL vrací expr2; pokud expr1 JE NULL vrací expr3"],
+            ["LIKE '%A_'", "% zastupuje libovolný počet znaků (i 0), _ (podtržítko) zastupuje právě jeden znak"],
+            ["IN (v1, v2, ...)", "Vyhodnocuje členství v množině hodnot (ekvivalent série OR podmínek)"],
+            ["BETWEEN a AND b", "Inkluzivní rozsah (hodnoty 'a' i 'b' jsou do filtru zahrnuty)"],
+            ["NULL operátory", "IS NULL a IS NOT NULL (porovnání col = NULL vždy vyhodnotí UNKNOWN/false!)"]
+          ]
+        },
+        {
+          title: "Agregace a seskupování dat (GROUP BY & HAVING)",
+          rows: [
+            ["COUNT(*) vs COUNT(col)", "COUNT(*) započítává všechny řádky včetně NULL; COUNT(col) řádky s NULL ignoruje"],
+            ["Pravidlo GROUP BY", "Všechny sloupce v SELECT klauzuli mimo agregační funkce MUSÍ být v GROUP BY"],
+            ["HAVING vs WHERE", "WHERE filtruje jednotlivé řádky před agregací; HAVING filtruje celé skupiny po agregaci"],
+            ["ROLLUP(a, b)", "Generuje hierarchické mezisoučty (subtotals) a celkový součet (grand total)"],
+            ["DISTINCT", "Odstraňuje duplicitní řádky z výsledné sady"]
+          ]
+        },
+        {
+          title: "ANSI SQL Spojování tabulek (JOINs)",
+          rows: [
+            ["NATURAL JOIN", "Automatické spojení podle všech sloupců se stejným názvem i typem (nesmí mít prefix tabulky!)"],
+            ["JOIN ... USING (col)", "Spojení podle specifikovaného společného sloupce (tento sloupec nesmí mít prefix!)"],
+            ["JOIN ... ON (podmínka)", "Univerzální spojení s libovolnou podmínkou (sloupce mohou mít prefix i aliasy)"],
+            ["LEFT OUTER JOIN", "Vrátí všechny řádky z levé tabulky a shodné z pravé tabulky (neshodné doplní NULL)"],
+            ["FULL OUTER JOIN", "Vrátí všechny řádky z obou tabulek s NULL hodnotami tam, kde chybí protějšek"]
+          ]
+        },
+        {
+          title: "DDL vs DML & Transakční řízení",
+          rows: [
+            ["DML (Data Manipulation)", "INSERT, UPDATE, DELETE — změny jsou dočasné do zavolání COMMIT nebo ROLLBACK"],
+            ["DDL (Data Definition)", "CREATE, ALTER, DROP, TRUNCATE — provádí okamžitý a nevratný implicitní COMMIT!"],
+            ["TRUNCATE vs DELETE", "TRUNCATE je DDL (resetuje high-water mark, maže bleskově celou tabulku, nelze rollbackovat)"],
+            ["COMMIT & ROLLBACK", "COMMIT permanentně uloží změny transakce; ROLLBACK vrátí stav před začátek transakce"]
+          ]
+        }
       ]
     };
   }

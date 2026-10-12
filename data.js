@@ -1886,5 +1886,1185 @@ const CERTIFICATES_DATA = {
         explanation: "typeof data vrací \"object\". Správný a spolehlivý způsob je použít metodu Array.isArray(data), která vrací true."
       }
     ]
-  }
+  },
+
+  oracle_dd: {
+  "id": "oracle_dd",
+  "title": "Oracle Academy: Database Design",
+  "subtitle": "Příprava na certifikační zkoušku Oracle Academy Database Design",
+  "badge": "Oracle Database Design",
+  "icon": "fas fa-project-diagram",
+  "color": "#F80000",
+  "passScore": 70,
+  "timeLimit": 45,
+  "modules": [
+    {
+      "id": "dd_m1",
+      "name": "Sekce 1 & 2: Úvod do databází, podnikové potřeby a analýza"
+    },
+    {
+      "id": "dd_m2",
+      "name": "Sekce 3 & 4: Entity, atributy a vztahy (ERD)"
+    },
+    {
+      "id": "dd_m3",
+      "name": "Sekce 5: Subtypy, supertypy a pokročilé vztahy"
+    },
+    {
+      "id": "dd_m4",
+      "name": "Sekce 6 & 7: Normalizace (1NF, 2NF, 3NF) a integritní pravidla"
+    },
+    {
+      "id": "dd_m5",
+      "name": "Sekce 8 & 9: Fyzický model, mapování na tabulky a integrita dat"
+    }
+  ],
+  "questions": [
+    {
+      "id": "dd_q01",
+      "module": "dd_m1",
+      "question": "Which of the following best defines an Entity in data modeling?",
+      "code": null,
+      "options": [
+        "A piece of software used to manage databases",
+        "A thing of significance about which information needs to be held",
+        "A specific row inside a database table",
+        "A connection between two physical database servers"
+      ],
+      "correct": 1,
+      "explanation": "V datovém modelování je entita 'věc o níž má význam uchovávat informace' (obvykle podstatné jméno v jednotném čísle, např. EMPLOYEE, PRODUCT)."
+    },
+    {
+      "id": "dd_q02",
+      "module": "dd_m2",
+      "question": "In an Entity Relationship Diagram (ERD) using Oracle Academy conventions, how is a mandatory attribute represented?",
+      "code": null,
+      "options": [
+        "With a small circle (o)",
+        "With an asterisk (*)",
+        "With a hash / pound sign (#)",
+        "With an underline"
+      ],
+      "correct": 1,
+      "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný (mandatory) atribut, který musí mít vždy hodnotu."
+    },
+    {
+      "id": "dd_q03",
+      "module": "dd_m2",
+      "question": "In an Entity Relationship Diagram (ERD), how is an optional attribute represented?",
+      "code": null,
+      "options": [
+        "With an asterisk (*)",
+        "With a small circle (o)",
+        "With a hash / pound sign (#)",
+        "With a question mark (?)"
+      ],
+      "correct": 1,
+      "explanation": "Kolečko (o) označuje volitelný (optional) atribut, který může obsahovat hodnotu NULL."
+    },
+    {
+      "id": "dd_q04",
+      "module": "dd_m2",
+      "question": "In an Entity Relationship Diagram (ERD), how is a Primary Unique Identifier (UID) attribute represented?",
+      "code": null,
+      "options": [
+        "With a hash / pound sign (#)",
+        "With an asterisk (*)",
+        "With a small circle (o)",
+        "With a bold font only"
+      ],
+      "correct": 0,
+      "explanation": "Znak mřížky (#) označuje atribut, který je součástí primárního unikátního identifikátoru (Primary UID) entity."
+    },
+    {
+      "id": "dd_q05",
+      "module": "dd_m1",
+      "question": "True or False: Entities are transformed into Tables during the database design process.",
+      "code": null,
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 0,
+      "explanation": "Při přechodu z konceptuálního modelu (ERD) do fyzického návrhu databáze se každá entita mapuje na relační tabulku (Table)."
+    },
+    {
+      "id": "dd_q06",
+      "module": "dd_m1",
+      "question": "True or False: Data Modeling is the last step in the database development process.",
+      "code": null,
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 1,
+      "explanation": "Tvrzení je nepravdivé (False). Datové modelování probíhá v raných fázích (analýza a návrh), nikoliv na konci vývojového cyklu."
+    },
+    {
+      "id": "dd_q07",
+      "module": "dd_m1",
+      "question": "True or False: An Entity Relationship model is independent of the hardware or software used for implementation.",
+      "code": null,
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 0,
+      "explanation": "Konceptuální ER model je zcela nezávislý na použitém databázovém stroji (RDBMS), operačním systému i hardwaru."
+    },
+    {
+      "id": "dd_q08",
+      "module": "dd_m3",
+      "question": "In Oracle Academy subtype modeling, which of the following rules is MANDATORY for subtypes?",
+      "code": null,
+      "options": [
+        "A supertype can have only one subtype",
+        "Subtypes must be mutually exclusive and collectively exhaustive",
+        "Subtypes never inherit attributes from their supertype",
+        "Subtypes must each have their own separate Primary UID"
+      ],
+      "correct": 1,
+      "explanation": "V modelu Oracle Academy musí být subtypy vzájemně výlučné (instance nemůže patřit do více subtypů současně) a vyčerpávající (každá instance supertypu musí patřit do jednoho ze subtypů; musí existovat alespoň 2 subtypy)."
+    },
+    {
+      "id": "dd_q09",
+      "module": "dd_m2",
+      "question": "True or False: An entity can have multiple candidate UIDs, but only one Primary UID.",
+      "code": null,
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 0,
+      "explanation": "Entita může mít více kandidátních identifikátorů (např. rodné číslo, číslo pasu, email), ale právě jeden z nich je vybrán jako primární (Primary UID)."
+    },
+    {
+      "id": "dd_q10",
+      "module": "dd_m2",
+      "question": "If an entity has no natural attribute suitable to be a Primary UID, what can be created?",
+      "code": null,
+      "options": [
+        "An Artificial (Surrogate) UID",
+        "A Foreign Key",
+        "A Secondary Table",
+        "A Volatile Attribute"
+      ],
+      "correct": 0,
+      "explanation": "Pokud entita nemá vhodný přirozený identifikátor, vytvoří se umělý identifikátor (Artificial / Surrogate UID), například generované ID (číslo zaměstnance, ID objednávky)."
+    },
+    {
+      "id": "dd_q11",
+      "module": "dd_m2",
+      "question": "What type of relationship CANNOT be directly implemented in a relational database without an intersection (associative) entity?",
+      "code": null,
+      "options": [
+        "One-to-One (1:1)",
+        "One-to-Many (1:M)",
+        "Many-to-Many (M:M)",
+        "Recursive 1:M"
+      ],
+      "correct": 2,
+      "explanation": "Vztah M:M (Many-to-Many) nelze přímo fyzicky realizovat v relační databázi a musí být rozložen pomocí vazební (intersection) tabulky na dva vztahy 1:M."
+    },
+    {
+      "id": "dd_q12",
+      "module": "dd_m2",
+      "question": "A Many-to-Many (M:M) relationship between STUDENT and COURSE is resolved into:",
+      "code": null,
+      "options": [
+        "One 1:1 relationship with a shared Primary Key",
+        "Two 1:M relationships connected to an intersection entity (e.g. ENROLLMENT)",
+        "A single table containing both student and course columns repeated",
+        "A recursive relationship on STUDENT"
+      ],
+      "correct": 1,
+      "explanation": "Vztah M:M mezi studenty a kurzy se rozpadá na dva 1:M vztahy: jeden student má mnoho zápisů a jeden kurz má mnoho zápisů ve vazební entitě ENROLLMENT."
+    },
+    {
+      "id": "dd_q13",
+      "module": "dd_m2",
+      "question": "What does a barred relationship (relationship line with a crossbar '|') indicate in an ERD?",
+      "code": null,
+      "options": [
+        "The relationship is non-transferable",
+        "The relationship contributes to the Unique Identifier (UID) of the entity at the many end",
+        "The relationship is optional on both sides",
+        "The relationship is an arc"
+      ],
+      "correct": 1,
+      "explanation": "Přeškrtnutí vazby čárkou (|) označuje identifikační vztah (barred relationship). Znamená to, že cizí klíč se stává součástí primárního UID dceřiné entity."
+    },
+    {
+      "id": "dd_q14",
+      "module": "dd_m2",
+      "question": "What symbol is used on a relationship line in an Oracle ERD to represent a NON-TRANSFERABLE relationship?",
+      "code": null,
+      "options": [
+        "A crossbar (|)",
+        "A diamond symbol",
+        "A circle (o)",
+        "A dotted line"
+      ],
+      "correct": 1,
+      "explanation": "Kosočtverec (diamond) na lince vztahu značí nepřenosný (non-transferable) vztah — jakmile je instance provázána, nelze vazbu změnit na jinou instanci."
+    },
+    {
+      "id": "dd_q15",
+      "module": "dd_m2",
+      "question": "Which term describes a relationship where an entity is related to itself (e.g., an EMPLOYEE manages other EMPLOYEEs)?",
+      "code": null,
+      "options": [
+        "Recursive relationship",
+        "Redundant relationship",
+        "Arc relationship",
+        "Intersecting relationship"
+      ],
+      "correct": 0,
+      "explanation": "Rekurzivní vztah (rekurze) nastává tehdy, když má entita vazbu sama na sebe (např. nadřízený a podřízený v téže entitě ZAMĚSTNANEC)."
+    },
+    {
+      "id": "dd_q16",
+      "module": "dd_m4",
+      "question": "Which integrity constraint rule states that no part of a Primary Key can contain a NULL value?",
+      "code": null,
+      "options": [
+        "Referential Integrity",
+        "Entity Integrity",
+        "Domain Integrity",
+        "User-defined Integrity"
+      ],
+      "correct": 1,
+      "explanation": "Integrita entit (Entity Integrity) vyžaduje, aby každá hodnota primárního klíče byla unikátní a žádná jeho složka nebyla NULL."
+    },
+    {
+      "id": "dd_q17",
+      "module": "dd_m4",
+      "question": "Which integrity rule ensures that a Foreign Key value must either match an existing Primary Key in the parent table or be NULL?",
+      "code": null,
+      "options": [
+        "Entity Integrity",
+        "Referential Integrity",
+        "Cardinality Rule",
+        "Normalization Rule"
+      ],
+      "correct": 1,
+      "explanation": "Referenční integrita (Referential Integrity) zajišťuje platnost cizích klíčů a zamezuje existenci 'osiřelých' záznamů v dceřiných tabulkách."
+    },
+    {
+      "id": "dd_q18",
+      "module": "dd_m4",
+      "question": "Which normal form requires that all attributes contain only atomic (indivisible) values and that there are no repeating groups?",
+      "code": null,
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "Boyce-Codd Normal Form (BCNF)"
+      ],
+      "correct": 0,
+      "explanation": "První normální forma (1NF) vyžaduje atomické hodnoty v každé buňce a zákaz opakujících se skupin sloupců."
+    },
+    {
+      "id": "dd_q19",
+      "module": "dd_m4",
+      "question": "Which normal form requires the model to be in 1NF and have all non-UID attributes fully functionally dependent on the ENTIRE Primary UID (eliminating partial dependencies)?",
+      "code": null,
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "Fourth Normal Form (4NF)"
+      ],
+      "correct": 1,
+      "explanation": "Druhá normální forma (2NF) odstraňuje částečné závislosti: každý neklíčový atribut musí záviset na celém složeném primárním klíči, nikoliv pouze na jeho části."
+    },
+    {
+      "id": "dd_q20",
+      "module": "dd_m4",
+      "question": "Which normal form requires 2NF and that no non-UID attribute is dependent on another non-UID attribute (eliminating transitive dependencies)?",
+      "code": null,
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "Denormalized Form"
+      ],
+      "correct": 2,
+      "explanation": "Třetí normální forma (3NF) odstraňuje tranzitivní závislosti: neklíčový atribut nesmí záviset na jiném neklíčovém atributu ('každý atribut závisí na klíči, celém klíči a ničem jiném než klíči')."
+    },
+    {
+      "id": "dd_q21",
+      "module": "dd_m4",
+      "question": "A table has a composite primary key (StudentID, CourseID). The attribute CourseName depends ONLY on CourseID. Which normal form does this violate?",
+      "code": "Table: ENROLLMENT\nPK: (StudentID, CourseID)\nAttributes: Grade, CourseName",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "It violates no normal form"
+      ],
+      "correct": 1,
+      "explanation": "Protože CourseName závisí pouze na části složeného primárního klíče (CourseID), jedná se o částečnou závislost, což porušuje 2NF."
+    },
+    {
+      "id": "dd_q22",
+      "module": "dd_m4",
+      "question": "An EMPLOYEES table with Primary Key EmployeeID contains columns DepartmentID and DepartmentName. DepartmentName depends on DepartmentID. Which normal form does this violate?",
+      "code": "Table: EMPLOYEES\nPK: EmployeeID\nColumns: FirstName, DepartmentID, DepartmentName",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "Fourth Normal Form (4NF)"
+      ],
+      "correct": 2,
+      "explanation": "Zde DepartmentName závisí na DepartmentID, což je neklíčový atribut. Jedná se o tranzitivní závislost, která porušuje 3NF."
+    },
+    {
+      "id": "dd_q23",
+      "module": "dd_m5",
+      "question": "When transforming a conceptual ER model into a physical database design, what does an Entity become?",
+      "code": null,
+      "options": [
+        "A Column",
+        "A Table",
+        "A View",
+        "A Foreign Key"
+      ],
+      "correct": 1,
+      "explanation": "Při fyzickém mapování se konceptuální entita stává databázovou tabulkou (Table)."
+    },
+    {
+      "id": "dd_q24",
+      "module": "dd_m5",
+      "question": "When transforming a conceptual ER model into a physical database design, what does an Attribute become?",
+      "code": null,
+      "options": [
+        "A Column",
+        "A Table",
+        "A Constraint",
+        "A Row"
+      ],
+      "correct": 0,
+      "explanation": "Atribut entity se v relační tabulce stává sloupcem (Column)."
+    },
+    {
+      "id": "dd_q25",
+      "module": "dd_m5",
+      "question": "When transforming a conceptual ER model into a physical database design, what does a Relationship become?",
+      "code": null,
+      "options": [
+        "A Primary Key",
+        "A Foreign Key Constraint",
+        "An Index",
+        "A Sequence"
+      ],
+      "correct": 1,
+      "explanation": "Vztah mezi entitami se mapuje na cizí klíč (Foreign Key constraint) v tabulce na straně 'Many'."
+    },
+    {
+      "id": "dd_q26",
+      "module": "dd_m3",
+      "question": "What is an Arc relationship in an Entity Relationship diagram?",
+      "code": null,
+      "options": [
+        "A relationship that loops back to the same entity",
+        "An exclusive-OR relationship where an instance can be related to only one of several entities at a time",
+        "A relationship connecting more than three entities simultaneously",
+        "A relationship that has been deleted"
+      ],
+      "correct": 1,
+      "explanation": "Obloukový vztah (Arc) modeluje vzájemně se vylučující vztahy (exclusive OR): instance entity může mít vazbu buď na entitu A, NEBO na entitu B, ale nikdy na obě současně."
+    },
+    {
+      "id": "dd_q27",
+      "module": "dd_m2",
+      "question": "Which of the following is considered a 'volatile attribute' that is generally discouraged from being stored directly?",
+      "code": null,
+      "options": [
+        "Birth Date",
+        "Age",
+        "Social Security Number",
+        "Employee ID"
+      ],
+      "correct": 1,
+      "explanation": "Věk (Age) se neustále mění (je nestálý / volatile). V databázi se ukládá datum narození (Birth Date) a věk se dynamicky dopočítává."
+    },
+    {
+      "id": "dd_q28",
+      "module": "dd_m2",
+      "question": "What is a 'derived attribute' in data modeling?",
+      "code": null,
+      "options": [
+        "An attribute imported from an external database",
+        "An attribute whose value can be calculated from other existing attributes",
+        "The primary unique identifier of a subtype",
+        "An attribute that accepts only numeric values"
+      ],
+      "correct": 1,
+      "explanation": "Odvozený atribut (derived attribute) lze vypočítat z jiných uložených dat (např. Celková cena = Cena * Počet kusů) a v konceptuálním modelu se obvykle neukládá."
+    },
+    {
+      "id": "dd_q29",
+      "module": "dd_m4",
+      "question": "What is the primary risk of structural redundancy in an unnormalized database design?",
+      "code": null,
+      "options": [
+        "Queries execute too quickly",
+        "Insertion, update, and deletion anomalies leading to inconsistent data",
+        "The database cannot be backed up",
+        "Foreign keys are disabled automatically"
+      ],
+      "correct": 1,
+      "explanation": "Strukturální redundance vede k anomáliím při vkládání, aktualizaci a mazání dat (Update/Insert/Delete anomalies), což způsobuje nekonzistenci databáze."
+    },
+    {
+      "id": "dd_q30",
+      "module": "dd_m2",
+      "question": "In an ERD, what does 'cardinality' describe?",
+      "code": null,
+      "options": [
+        "Whether a relationship is mandatory or optional",
+        "The quantitative ratio of instances involved in the relationship (one or many)",
+        "The physical size of the table on disk",
+        "The datatype of the foreign key column"
+      ],
+      "correct": 1,
+      "explanation": "Kardinalita určuje kvantitativní poměr instancí v relaci: 1:1 (One-to-One), 1:M (One-to-Many), nebo M:M (Many-to-Many)."
+    },
+    {
+      "id": "dd_q31",
+      "module": "dd_m2",
+      "question": "In an ERD, what does 'optionality' describe?",
+      "code": null,
+      "options": [
+        "Whether each instance MUST or MAY participate in the relationship",
+        "The maximum number of rows a table can store",
+        "Whether the database engine supports transactions",
+        "The collation of text fields"
+      ],
+      "correct": 0,
+      "explanation": "Opionalita popisuje povinnost účasti: zda instance MUSÍ (must / mandatory) nebo MŮŽE (may / optional) v relaci vystupovat."
+    },
+    {
+      "id": "dd_q32",
+      "module": "dd_m1",
+      "question": "Which of the following is NOT a standard stage of the classic System Development Life Cycle (SDLC)?",
+      "code": null,
+      "options": [
+        "Analysis",
+        "Design",
+        "Compilation",
+        "Production"
+      ],
+      "correct": 2,
+      "explanation": "Fáze SDLC v metodice Oracle Academy jsou: Strategy, Analysis, Design, Build, Transition a Production. 'Compilation' je krok překladače, nikoliv fáze SDLC."
+    },
+    {
+      "id": "dd_q33",
+      "module": "dd_m2",
+      "question": "What is a 'Candidate UID'?",
+      "code": null,
+      "options": [
+        "A foreign key in a child table",
+        "One of several attributes or attribute combinations capable of uniquely identifying an instance",
+        "An attribute awaiting approval by the database administrator",
+        "A column that contains duplicate values"
+      ],
+      "correct": 1,
+      "explanation": "Kandidátní UID je jakýkoliv atribut (či skupina atributů), který by mohl jednoznačně identifikovat instanci entity."
+    },
+    {
+      "id": "dd_q34",
+      "module": "dd_m2",
+      "question": "What is a 'Composite Attribute'?",
+      "code": null,
+      "options": [
+        "An attribute composed of multiple sub-components (e.g. Address made of Street, City, ZIP)",
+        "An attribute that is calculated from a formula",
+        "An attribute that stores an array of values",
+        "An attribute that references a foreign key"
+      ],
+      "correct": 0,
+      "explanation": "Složený atribut (Composite Attribute) se skládá z několika menších smysluplných částí (např. Celé jméno = Jméno + Příjmení; Adresa = Ulice + Město + PSČ)."
+    },
+    {
+      "id": "dd_q35",
+      "module": "dd_m1",
+      "question": "In ER modeling, what is an 'Instance'?",
+      "code": null,
+      "options": [
+        "The overall schema definition",
+        "A single specific occurrence of an entity (e.g., employee 'Jan Novák')",
+        "A physical copy of the database software running on a server",
+        "An SQL query execution plan"
+      ],
+      "correct": 1,
+      "explanation": "Instance je konkrétní výskyt entity (např. konkrétní student v entitě STUDENT nebo konkrétní produkt v entitě PRODUCT)."
+    },
+    {
+      "id": "dd_q36",
+      "module": "dd_m5",
+      "question": "When converting a 1:M relationship from an ERD into relational tables, where is the Foreign Key column placed?",
+      "code": null,
+      "options": [
+        "In the table on the 'One' side",
+        "In the table on the 'Many' side",
+        "In both tables equally",
+        "In a newly generated lookup table"
+      ],
+      "correct": 1,
+      "explanation": "Cizí klíč (Foreign Key) se vždy umisťuje do tabulky na straně 'Many' (mnoho), kde odkazuje na primární klíč tabulky na straně 'One' (jedna)."
+    },
+    {
+      "id": "dd_q37",
+      "module": "dd_m3",
+      "question": "In subtype / supertype modeling, which attributes belong to the supertype?",
+      "code": null,
+      "options": [
+        "Attributes that are unique to only one subtype",
+        "Attributes that are common to all subtypes",
+        "Foreign key columns only",
+        "Derived attributes only"
+      ],
+      "correct": 1,
+      "explanation": "Atributy společné pro všechny podtypy se umisťují do nadtypu (supertype), odkud je všechny podtypy dědí."
+    },
+    {
+      "id": "dd_q38",
+      "module": "dd_m3",
+      "question": "In subtype / supertype modeling, which attributes belong to a specific subtype?",
+      "code": null,
+      "options": [
+        "Attributes that apply only to that specific subtype",
+        "Attributes common to all instances",
+        "The Primary UID of the entire entity",
+        "No attributes are allowed in subtypes"
+      ],
+      "correct": 0,
+      "explanation": "Specifické atributy, které dávají smysl pouze pro daný konkrétní podtyp, se umisťují výhradně do tohoto podtypu."
+    },
+    {
+      "id": "dd_q39",
+      "module": "dd_m5",
+      "question": "What is the primary motivation for intentional 'denormalization' in physical database design?",
+      "code": null,
+      "options": [
+        "To save storage space on disk",
+        "To improve query read performance and reduce expensive joins",
+        "To eliminate the need for primary keys",
+        "To ensure compliance with Third Normal Form"
+      ],
+      "correct": 1,
+      "explanation": "Záměrná denormalizace se provádí za účelem zrychlení čtecích dotazů tím, že se omezí nutnost spojování mnoha tabulek (JOIN) za cenu řízené redundance."
+    },
+    {
+      "id": "dd_q40",
+      "module": "dd_m5",
+      "question": "In relational mapping, how is a barred relationship (identifying relationship) represented in the child table?",
+      "code": null,
+      "options": [
+        "The foreign key is ignored",
+        "The foreign key column becomes part of the composite primary key of the child table",
+        "A trigger is created instead of a foreign key",
+        "The child table cannot have any primary key"
+      ],
+      "correct": 1,
+      "explanation": "Při mapování barred relationship se cizí klíč stává součástí složeného primárního klíče (Composite PK) dceřiné tabulky."
+    }
+  ]
+},
+
+  oracle_sql: {
+  "id": "oracle_sql",
+  "title": "Oracle Academy: Database Programming with SQL",
+  "subtitle": "Příprava na certifikační zkoušku Oracle Academy Database Programming with SQL",
+  "badge": "Oracle SQL Programming",
+  "icon": "fas fa-database",
+  "color": "#C74634",
+  "passScore": 70,
+  "timeLimit": 45,
+  "modules": [
+    {
+      "id": "sql_m1",
+      "name": "Sekce 1 & 2: Základní dotazy SELECT, operátory a řazení (WHERE, ORDER BY)"
+    },
+    {
+      "id": "sql_m2",
+      "name": "Sekce 3 & 4: Jednořádkové funkce (Znakové, Číselné, Datové a Konverzní)"
+    },
+    {
+      "id": "sql_m3",
+      "name": "Sekce 5 & 6: Agregační funkce a seskupování (GROUP BY, HAVING)"
+    },
+    {
+      "id": "sql_m4",
+      "name": "Sekce 7 & 8: Spojování tabulek (ANSI JOINs, INNER, OUTER, CROSS)"
+    },
+    {
+      "id": "sql_m5",
+      "name": "Sekce 9 & 10: Poddotazy (Subqueries) a množinové operátory"
+    },
+    {
+      "id": "sql_m6",
+      "name": "Sekce 11 & 12: DDL, DML, řízení transakcí a integritní omezení"
+    }
+  ],
+  "questions": [
+    {
+      "id": "sql_q01",
+      "module": "sql_m1",
+      "question": "Which SQL command is used to retrieve data rows from one or more tables in a database?",
+      "code": null,
+      "options": [
+        "FETCH",
+        "GET",
+        "SELECT",
+        "EXTRACT"
+      ],
+      "correct": 2,
+      "explanation": "Příkaz SELECT je základním dotazovacím příkazem v SQL pro čtení a výběr dat z tabulek."
+    },
+    {
+      "id": "sql_q02",
+      "module": "sql_m1",
+      "question": "Which SQL clause is used to filter rows returned by a query based on specified search criteria?",
+      "code": "SELECT first_name, salary \nFROM employees \n[???] salary > 5000;",
+      "options": [
+        "ORDER BY",
+        "HAVING",
+        "WHERE",
+        "FILTER"
+      ],
+      "correct": 2,
+      "explanation": "Klauzule WHERE filtruje řádky před provedením agregace podle stanovených podmínek."
+    },
+    {
+      "id": "sql_q03",
+      "module": "sql_m1",
+      "question": "Which operator is used to concatenate two or more character strings or columns in Oracle SQL?",
+      "code": "SELECT first_name [???] ' ' [???] last_name AS full_name \nFROM employees;",
+      "options": [
+        "+",
+        "CONCAT_WS",
+        "||",
+        "&"
+      ],
+      "correct": 2,
+      "explanation": "V Oracle SQL slouží ke spojování řetězců operátor dvou svislých čar (||)."
+    },
+    {
+      "id": "sql_q04",
+      "module": "sql_m1",
+      "question": "Which keyword is used in a SELECT statement to suppress and eliminate duplicate rows from the query output?",
+      "code": "SELECT [???] department_id FROM employees;",
+      "options": [
+        "UNIQUE_ROW",
+        "DISTINCT",
+        "DIFFERENT",
+        "SINGLE"
+      ],
+      "correct": 1,
+      "explanation": "Klíčové slovo DISTINCT (nebo synonymum UNIQUE v Oracle) odstraní z výsledku duplicitní řádky."
+    },
+    {
+      "id": "sql_q05",
+      "module": "sql_m1",
+      "question": "True or False: A column alias defined in the SELECT list can be used in an ORDER BY clause.",
+      "code": "SELECT salary * 12 AS annual_sal \nFROM employees \nORDER BY annual_sal DESC;",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 0,
+      "explanation": "Klauzule ORDER BY se vyhodnocuje až po klauzuli SELECT, proto v ní lze použít alias sloupce (annual_sal)."
+    },
+    {
+      "id": "sql_q06",
+      "module": "sql_m1",
+      "question": "True or False: A column alias defined in the SELECT list can be used in a WHERE clause.",
+      "code": "SELECT salary * 12 AS annual_sal \nFROM employees \nWHERE annual_sal > 50000;",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 1,
+      "explanation": "Tvrzení je False! Klauzule WHERE se vyhodnocuje PŘED klauzulí SELECT, takže v okamžiku filtrování alias ještě neexistuje. Výraz v WHERE vyhodí chybu ORA-00904."
+    },
+    {
+      "id": "sql_q07",
+      "module": "sql_m1",
+      "question": "Which operator tests whether a value falls within an inclusive numerical or date range in SQL?",
+      "code": "SELECT * FROM employees WHERE salary [???] 3000 AND 6000;",
+      "options": [
+        "IN",
+        "BETWEEN",
+        "WITHIN",
+        "LIKE"
+      ],
+      "correct": 1,
+      "explanation": "Operátor BETWEEN ... AND ... testuje rozsah včetně mezních hodnot (inclusive)."
+    },
+    {
+      "id": "sql_q08",
+      "module": "sql_m1",
+      "question": "In a SQL LIKE condition, which wildcard character matches zero or more characters?",
+      "code": "SELECT * FROM employees WHERE last_name LIKE 'S[???]';",
+      "options": [
+        "_",
+        "%",
+        "*",
+        "?"
+      ],
+      "correct": 1,
+      "explanation": "Znak procenta (%) v operátoru LIKE odpovídá libovolnému počtu (nula nebo více) znaků."
+    },
+    {
+      "id": "sql_q09",
+      "module": "sql_m1",
+      "question": "In a SQL LIKE condition, which wildcard character matches exactly ONE character?",
+      "code": "SELECT * FROM employees WHERE last_name LIKE '_o[???]';",
+      "options": [
+        "%",
+        "_",
+        "?",
+        "#"
+      ],
+      "correct": 1,
+      "explanation": "Podtržítko (_) v operátoru LIKE odpovídá přesně jednomu znaku na dané pozici."
+    },
+    {
+      "id": "sql_q10",
+      "module": "sql_m1",
+      "question": "Which comparison condition must be used to test for missing (empty) values in a column?",
+      "code": "SELECT * FROM employees WHERE commission_pct [???];",
+      "options": [
+        "= NULL",
+        "IS NULL",
+        "== NULL",
+        "EQUALS NULL"
+      ],
+      "correct": 1,
+      "explanation": "Hodnotu NULL nelze porovnávat pomocí rovná se (= NULL vrátí vždy UNKNOWN). Správný operátor je IS NULL (nebo IS NOT NULL)."
+    },
+    {
+      "id": "sql_q11",
+      "module": "sql_m1",
+      "question": "Without parentheses, what is the default order of evaluation for logical operators in SQL?",
+      "code": null,
+      "options": [
+        "OR, then AND, then NOT",
+        "AND, then OR, then NOT",
+        "NOT, then AND, then OR",
+        "From left to right strictly"
+      ],
+      "correct": 2,
+      "explanation": "Pravidla priority logických operátorů jsou: 1. NOT, 2. AND, 3. OR."
+    },
+    {
+      "id": "sql_q12",
+      "module": "sql_m1",
+      "question": "In Oracle SQL, what is the default sort order for an ORDER BY clause, and where do NULL values appear by default in ascending order?",
+      "code": "SELECT * FROM employees ORDER BY commission_pct;",
+      "options": [
+        "Ascending (ASC); NULLs appear FIRST",
+        "Ascending (ASC); NULLs appear LAST",
+        "Descending (DESC); NULLs appear LAST",
+        "Descending (DESC); NULLs appear FIRST"
+      ],
+      "correct": 1,
+      "explanation": "Výchozí řazení je vzestupné (ASC) a v Oracle SQL se hodnoty NULL ve vzestupném řazení standardně zobrazují na konci (NULLS LAST)."
+    },
+    {
+      "id": "sql_q13",
+      "module": "sql_m2",
+      "question": "Which single-row character function converts the first letter of each word to uppercase and all other letters to lowercase?",
+      "code": "SELECT [???]('oracle academy database') FROM dual;",
+      "options": [
+        "UPPER",
+        "CAPITALIZE",
+        "INITCAP",
+        "PROPER"
+      ],
+      "correct": 2,
+      "explanation": "Funkce INITCAP převede první písmeno každého slova na velké a zbytek na malá písmena ('Oracle Academy Database')."
+    },
+    {
+      "id": "sql_q14",
+      "module": "sql_m2",
+      "question": "What is the return value of ROUND(45.926, 2) in Oracle SQL?",
+      "code": "SELECT ROUND(45.926, 2) FROM dual;",
+      "options": [
+        "45.92",
+        "45.93",
+        "46",
+        "45.926"
+      ],
+      "correct": 1,
+      "explanation": "Funkce ROUND zaokrouhlí číslo na 2 desetinná místa. Číslice 6 zaokrouhlí 2 nahoru na 3, výsledek je 45.93."
+    },
+    {
+      "id": "sql_q15",
+      "module": "sql_m2",
+      "question": "What is the return value of TRUNC(45.926, 2) in Oracle SQL?",
+      "code": "SELECT TRUNC(45.926, 2) FROM dual;",
+      "options": [
+        "45.93",
+        "45.92",
+        "45.9",
+        "46"
+      ],
+      "correct": 1,
+      "explanation": "Funkce TRUNC ořízne (odsekne) desetinná místa bez zaokrouhlování, výsledek je 45.92."
+    },
+    {
+      "id": "sql_q16",
+      "module": "sql_m2",
+      "question": "What is the return value of the modulus function MOD(13, 5)?",
+      "code": "SELECT MOD(13, 5) FROM dual;",
+      "options": [
+        "2",
+        "3",
+        "2.6",
+        "1"
+      ],
+      "correct": 1,
+      "explanation": "Funkce MOD vrací zbytek po celočíselném dělení: 13 / 5 = 2 se zbytkem 3."
+    },
+    {
+      "id": "sql_q17",
+      "module": "sql_m2",
+      "question": "Which SQL function returns the current date and time of the database server?",
+      "code": "SELECT [???] FROM dual;",
+      "options": [
+        "CURRENT_TIME",
+        "TODAY()",
+        "SYSDATE",
+        "NOW()"
+      ],
+      "correct": 2,
+      "explanation": "V Oracle SQL vrací pseudofunkce SYSDATE aktuální datum a čas databázového serveru."
+    },
+    {
+      "id": "sql_q18",
+      "module": "sql_m2",
+      "question": "What does subtracting two dates (date1 - date2) return in Oracle SQL?",
+      "code": "SELECT sysdate - hire_date FROM employees;",
+      "options": [
+        "An interval datatype string",
+        "The number of days (and fractions of a day) between the dates",
+        "The number of months between the dates",
+        "An error (arithmetic on dates is not supported)"
+      ],
+      "correct": 1,
+      "explanation": "Odečtením dvou dat v Oracle SQL získáte počet dní (jako numerickou hodnotu, kde zlomky reprezentují hodiny/minuty)."
+    },
+    {
+      "id": "sql_q19",
+      "module": "sql_m2",
+      "question": "Which function is used to convert a date or number to a formatted character string?",
+      "code": "SELECT [???](hire_date, 'DD-Month-YYYY') FROM employees;",
+      "options": [
+        "TO_DATE",
+        "TO_CHAR",
+        "CONVERT",
+        "CAST_CHAR"
+      ],
+      "correct": 1,
+      "explanation": "Funkce TO_CHAR převádí datum nebo číslo na formátovaný textový řetězec podle zadané formátovací masky."
+    },
+    {
+      "id": "sql_q20",
+      "module": "sql_m2",
+      "question": "Which function replaces a NULL value with a specified substitute expression in Oracle SQL?",
+      "code": "SELECT salary + (salary * [???](commission_pct, 0)) FROM employees;",
+      "options": [
+        "IFNULL",
+        "ISNULL",
+        "NVL",
+        "NULLIF"
+      ],
+      "correct": 2,
+      "explanation": "Funkce NVL(expr1, expr2) nahradí hodnotu NULL v prvním argumentu hodnotou druhého argumentu."
+    },
+    {
+      "id": "sql_q21",
+      "module": "sql_m2",
+      "question": "What does the function NVL2(expr1, expr2, expr3) return when expr1 is NOT NULL?",
+      "code": "SELECT NVL2(commission_pct, 'Commissioned', 'Salary Only') FROM employees;",
+      "options": [
+        "expr1",
+        "expr2",
+        "expr3",
+        "NULL"
+      ],
+      "correct": 1,
+      "explanation": "Funkce NVL2 testuje první argument: pokud NENÍ null, vrátí druhý argument (expr2). Pokud JE null, vrátí třetí argument (expr3)."
+    },
+    {
+      "id": "sql_q22",
+      "module": "sql_m2",
+      "question": "What does NULLIF(expr1, expr2) return if expr1 is equal to expr2?",
+      "code": "SELECT NULLIF(length(first_name), length(last_name)) FROM employees;",
+      "options": [
+        "expr1",
+        "0",
+        "NULL",
+        "true"
+      ],
+      "correct": 2,
+      "explanation": "Funkce NULLIF porovná dva výrazy: pokud se sobě rovnají, vrátí NULL. Pokud se nerovnají, vrátí expr1."
+    },
+    {
+      "id": "sql_q23",
+      "module": "sql_m2",
+      "question": "Which function evaluates a list of expressions and returns the FIRST non-null value among them?",
+      "code": "SELECT [???](commission_pct, salary, 0) FROM employees;",
+      "options": [
+        "NVL",
+        "COALESCE",
+        "FIRST_VALUE",
+        "DECODE"
+      ],
+      "correct": 1,
+      "explanation": "Funkce COALESCE přijímá proměnný počet argumentů a vrací první z nich, který není NULL."
+    },
+    {
+      "id": "sql_q24",
+      "module": "sql_m3",
+      "question": "Which SQL clause is used to filter GROUPS after aggregate functions have been applied?",
+      "code": "SELECT department_id, AVG(salary) \nFROM employees \nGROUP BY department_id \n[???] AVG(salary) > 5000;",
+      "options": [
+        "WHERE",
+        "HAVING",
+        "FILTER",
+        "RESTRICT"
+      ],
+      "correct": 1,
+      "explanation": "Klauzule HAVING slouží k filtrování agregovaných skupin (výsledků skupinových funkcí). Klauzule WHERE filtruje jednotlivé řádky před seskupením."
+    },
+    {
+      "id": "sql_q25",
+      "module": "sql_m3",
+      "question": "True or False: Group functions (such as AVG, SUM, MAX) can be used directly in a WHERE clause.",
+      "code": "SELECT first_name FROM employees WHERE salary > AVG(salary);",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct": 1,
+      "explanation": "Tvrzení je False! Skupinové funkce nelze použít v klauzuli WHERE (vyvolá ORA-00934: group function is not allowed here). Musí se použít poddotaz nebo HAVING."
+    },
+    {
+      "id": "sql_q26",
+      "module": "sql_m3",
+      "question": "How does COUNT(*) differ from COUNT(commission_pct) in SQL?",
+      "code": null,
+      "options": [
+        "COUNT(*) ignores duplicates, while COUNT(column) includes them",
+        "COUNT(*) counts all rows including NULLs, while COUNT(column) ignores NULL values",
+        "COUNT(*) counts only numeric columns",
+        "There is no difference in output"
+      ],
+      "correct": 1,
+      "explanation": "COUNT(*) započítá všechny řádky v tabulce bez ohledu na null hodnoty, zatímco COUNT(sloupec) ignoruje řádky, kde je daný sloupec NULL."
+    },
+    {
+      "id": "sql_q27",
+      "module": "sql_m3",
+      "question": "If a query contains both aggregate functions and individual columns in the SELECT list, what rule MUST be followed?",
+      "code": "SELECT department_id, job_id, AVG(salary) \nFROM employees \n[???];",
+      "options": [
+        "The individual columns must also be listed in the GROUP BY clause",
+        "The individual columns must be enclosed in NVL",
+        "An ORDER BY clause is required",
+        "The query will execute without a GROUP BY clause automatically"
+      ],
+      "correct": 0,
+      "explanation": "Všechny sloupce v SELECT seznamu, které nejsou vnořené do skupinové funkce, MUSÍ být uvedeny v klauzuli GROUP BY (jinak nastane chyba ORA-00937)."
+    },
+    {
+      "id": "sql_q28",
+      "module": "sql_m3",
+      "question": "Which GROUP BY extension creates subtotals from right to left in a hierarchy, along with a final grand total?",
+      "code": "SELECT department_id, job_id, SUM(salary) \nFROM employees \nGROUP BY [???](department_id, job_id);",
+      "options": [
+        "CUBE",
+        "ROLLUP",
+        "GROUPING SETS",
+        "TOTAL"
+      ],
+      "correct": 1,
+      "explanation": "ROLLUP vytváří hierarchické mezisoučty zprava doleva a na závěr celkový součet (grand total)."
+    },
+    {
+      "id": "sql_q29",
+      "module": "sql_m3",
+      "question": "Which GROUP BY extension produces subtotals for ALL possible cross-dimensional combinations of the specified columns?",
+      "code": "SELECT department_id, job_id, SUM(salary) \nFROM employees \nGROUP BY [???](department_id, job_id);",
+      "options": [
+        "ROLLUP",
+        "CUBE",
+        "AGGREGATE ALL",
+        "CROSS_TOTAL"
+      ],
+      "correct": 1,
+      "explanation": "CUBE generuje mezisoučty pro všechny možné kombinace dimenzí (2^n kombinací pro n sloupců)."
+    },
+    {
+      "id": "sql_q30",
+      "module": "sql_m4",
+      "question": "Which type of join returns all rows from the left table even if there are no matching rows in the right table?",
+      "code": "SELECT e.last_name, d.department_name \nFROM employees e \n[???] departments d ON e.department_id = d.department_id;",
+      "options": [
+        "INNER JOIN",
+        "RIGHT OUTER JOIN",
+        "LEFT OUTER JOIN",
+        "CROSS JOIN"
+      ],
+      "correct": 2,
+      "explanation": "LEFT OUTER JOIN vrátí všechny záznamy z levé tabulky; pokud pro ně neexistuje shoda v pravé tabulce, doplní sloupce pravé tabulky hodnotami NULL."
+    },
+    {
+      "id": "sql_q31",
+      "module": "sql_m4",
+      "question": "In an ANSI SQL join using the USING clause, what restriction applies to the join column in the SELECT list?",
+      "code": "SELECT department_id, department_name \nFROM employees JOIN departments USING (department_id);",
+      "options": [
+        "The join column must be prefixed with both table names",
+        "The join column cannot have a table name or table alias qualifier",
+        "The join column must be converted with TO_CHAR",
+        "The column must be sorted with ORDER BY"
+      ],
+      "correct": 1,
+      "explanation": "Při spojení pomocí klauzule USING nesmí mít spojovaný sloupec v SELECTu žádný prefix ani alias tabulky (zápis e.department_id vyvolá ORA-25154)."
+    },
+    {
+      "id": "sql_q32",
+      "module": "sql_m4",
+      "question": "What is a Cartesian product (CROSS JOIN) in SQL?",
+      "code": "SELECT * FROM employees CROSS JOIN departments;",
+      "options": [
+        "A join that matches only identical primary keys",
+        "A join where every row of the first table is paired with every row of the second table",
+        "A join that produces an empty result set",
+        "A join that deletes non-matching rows"
+      ],
+      "correct": 1,
+      "explanation": "Kartézský součin (CROSS JOIN) kombinuje každý řádek první tabulky s každým řádkem druhé tabulky (výsledný počet řádků je N * M)."
+    },
+    {
+      "id": "sql_q33",
+      "module": "sql_m5",
+      "question": "Which operator can be used with a multiple-row subquery to test if a value is equal to ANY value returned by the subquery?",
+      "code": "SELECT * FROM employees \nWHERE department_id [???] (SELECT department_id FROM departments WHERE location_id = 1700);",
+      "options": [
+        "=",
+        "IN",
+        "LIKE",
+        "EXISTS_ALL"
+      ],
+      "correct": 1,
+      "explanation": "Pro víceřádkové poddotazy se používá operátor IN (případně = ANY). Běžný operátor rovná se (=) selže s chybou ORA-01427."
+    },
+    {
+      "id": "sql_q34",
+      "module": "sql_m5",
+      "question": "What happens if a multiple-row subquery evaluated with the NOT IN operator returns a result set containing a NULL value?",
+      "code": "SELECT * FROM employees \nWHERE employee_id NOT IN (SELECT manager_id FROM employees);",
+      "options": [
+        "The NULL values are automatically ignored",
+        "The entire outer query returns ZERO rows",
+        "An exception ORA-01400 is raised",
+        "Only non-matching rows are returned"
+      ],
+      "correct": 1,
+      "explanation": "Záludnost operátoru NOT IN: pokud poddotaz vrátí alespoň jednu hodnotu NULL, výraz 'val != NULL' je UNKNOWN a celý vnější dotaz nevrátí vůbec žádný řádek!"
+    },
+    {
+      "id": "sql_q35",
+      "module": "sql_m6",
+      "question": "What is the crucial difference between DELETE FROM table_name and TRUNCATE TABLE table_name?",
+      "code": null,
+      "options": [
+        "DELETE cannot use a WHERE clause, while TRUNCATE can",
+        "DELETE is DML (can be rolled back, fires triggers); TRUNCATE is DDL (fast, resets storage, cannot be rolled back)",
+        "TRUNCATE deletes the table definition, while DELETE preserves it",
+        "There is no difference in behavior"
+      ],
+      "correct": 1,
+      "explanation": "DELETE je DML operace (lze odvolat pomocí ROLLBACK a aktivuje triggery). TRUNCATE je DDL operace (rychlá, uvolní místo, nespouští triggery a nelze ji vrátit zpět)."
+    },
+    {
+      "id": "sql_q36",
+      "module": "sql_m6",
+      "question": "Which command permanently saves all uncommitted DML changes made in the current database transaction?",
+      "code": null,
+      "options": [
+        "SAVE",
+        "COMMIT",
+        "PERSIST",
+        "STORE"
+      ],
+      "correct": 1,
+      "explanation": "Příkaz COMMIT trvale potvrdí a zapíše všechny změny provedené v aktuální transakci do databáze."
+    },
+    {
+      "id": "sql_q37",
+      "module": "sql_m6",
+      "question": "Which command cancels and undoes all uncommitted changes in the current transaction?",
+      "code": null,
+      "options": [
+        "UNDO",
+        "ROLLBACK",
+        "CANCEL",
+        "REVERT"
+      ],
+      "correct": 1,
+      "explanation": "Příkaz ROLLBACK zruší všechny neuložené změny v transakci od posledního COMMITu nebo k zadanému SAVEPOINTu."
+    },
+    {
+      "id": "sql_q38",
+      "module": "sql_m6",
+      "question": "Which table constraint enforces both uniqueness and a NOT NULL rule on the specified column(s)?",
+      "code": null,
+      "options": [
+        "UNIQUE",
+        "CHECK",
+        "PRIMARY KEY",
+        "FOREIGN KEY"
+      ],
+      "correct": 2,
+      "explanation": "Omezení PRIMARY KEY automaticky vyžaduje unikátnost (UNIQUE) i nepřípustnost prázdné hodnoty (NOT NULL)."
+    },
+    {
+      "id": "sql_q39",
+      "module": "sql_m6",
+      "question": "Which option on a FOREIGN KEY constraint automatically deletes dependent child rows when a referenced parent row is deleted?",
+      "code": "FOREIGN KEY (dept_id) REFERENCES departments(department_id) [???]",
+      "options": [
+        "ON DELETE REMOVE",
+        "ON DELETE CASCADE",
+        "ON DELETE PURGE",
+        "AUTO CASCADE DELETE"
+      ],
+      "correct": 1,
+      "explanation": "Klauzule ON DELETE CASCADE zajistí kaskádové smazání všech podřízených řádků v dceřiné tabulce při smazání rodičovského záznamu."
+    },
+    {
+      "id": "sql_q40",
+      "module": "sql_m6",
+      "question": "Which pseudocolumn is used to generate and return the NEXT sequential integer value from an Oracle sequence object?",
+      "code": "INSERT INTO employees (emp_id, first_name) \nVALUES (emp_seq.[???], 'David');",
+      "options": [
+        "CURRVAL",
+        "NEXTVAL",
+        "INCREMENT",
+        "NEWVAL"
+      ],
+      "correct": 1,
+      "explanation": "Pseudokolona NEXTVAL inkrementuje sekvenci a vrátí nové vygenerované unikátní číslo. CURRVAL vrátí aktuální již vygenerovanou hodnotu."
+    }
+  ]
+}
 };
