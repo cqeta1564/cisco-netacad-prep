@@ -83,6 +83,9 @@ class NetAcadApp {
     // Cheatsheets
     this.initCheatsheets();
 
+    // User Profile & Statistics
+    this.initUser();
+
     // DOM bindings
     this.bindEvents();
     this.applyTheme(localStorage.getItem('app_theme') || 'dark');
@@ -108,6 +111,61 @@ class NetAcadApp {
       this.updateSoundIcon();
       if (this.sound.enabled) this.sound.click();
     });
+
+    // User Profile Pill in Navbar
+    const userPill = document.getElementById('userPillBtn');
+    if (userPill) {
+      userPill.addEventListener('click', () => {
+        this.sound.click();
+        this.switchView('stats');
+      });
+    }
+
+    // Nickname Modal triggers
+    const editNickBtn = document.getElementById('editNicknameBtn');
+    if (editNickBtn) {
+      editNickBtn.addEventListener('click', () => this.openNicknameModal());
+    }
+
+    const closeNickBtn = document.getElementById('closeNicknameModalBtn');
+    if (closeNickBtn) {
+      closeNickBtn.addEventListener('click', () => this.closeNicknameModal());
+    }
+
+    const cancelNickBtn = document.getElementById('cancelNicknameBtn');
+    if (cancelNickBtn) {
+      cancelNickBtn.addEventListener('click', () => this.closeNicknameModal());
+    }
+
+    const saveNickBtn = document.getElementById('saveNicknameBtn');
+    if (saveNickBtn) {
+      saveNickBtn.addEventListener('click', () => this.saveNicknameFromModal());
+    }
+
+    const nickInput = document.getElementById('nicknameInput');
+    if (nickInput) {
+      nickInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          this.saveNicknameFromModal();
+        }
+      });
+    }
+
+    const nickModal = document.getElementById('nicknameModal');
+    if (nickModal) {
+      nickModal.addEventListener('click', (e) => {
+        if (e.target === nickModal) {
+          this.closeNicknameModal();
+        }
+      });
+    }
+
+    // Reset stats button
+    const resetStatsBtn = document.getElementById('resetStatsBtn');
+    if (resetStatsBtn) {
+      resetStatsBtn.addEventListener('click', () => this.resetUserStats());
+    }
 
     // Cert card tabs
     document.querySelectorAll('.cert-card-tab').forEach(tab => {
@@ -263,6 +321,10 @@ class NetAcadApp {
       document.getElementById('cheatsheetView').classList.add('active');
       this.stopTimer();
       this.renderCheatsheet();
+    } else if (mode === 'stats') {
+      document.getElementById('statsView').classList.add('active');
+      this.stopTimer();
+      this.renderStatsView();
     }
   }
 
@@ -384,7 +446,7 @@ class NetAcadApp {
     const subtitle = document.getElementById('resultSubtitle');
     if (passed) {
       title.textContent = 'Gratulujeme! Zkouška složena!';
-      subtitle.textContent = `Úspěšně jste splnili certifikační kritéria Cisco Networking Academy (hranice ${cert.passScore} %).`;
+      subtitle.textContent = `Úspěšně jste splnili certifikační kritéria pro ${cert.title} (hranice ${cert.passScore} %).`;
     } else {
       title.textContent = 'Zkouška nebyla úspěšně složena';
       subtitle.textContent = `K úspěšnému absolvování je nutné dosáhnout alespoň ${cert.passScore} %. Projděte si níže své chyby a zkuste to znovu!`;
@@ -402,6 +464,9 @@ class NetAcadApp {
     const statusVal = document.getElementById('resStatusVal');
     statusVal.textContent = passed ? 'PASSED' : 'FAILED';
     statusVal.style.color = passed ? '#10b981' : '#ef4444';
+
+    // Record into user statistics & cookies
+    this.recordExamResult(scorePct, correctCount, total, elapsedSeconds, passed);
 
     // Populate Detailed Review List
     this.renderReviewList();
@@ -577,11 +642,15 @@ class NetAcadApp {
     this.userAnswers[q.id] = optIdx;
 
     if (this.activeMode === 'practice') {
+      const stats = this.getUserStats();
+      stats.practiceAnswered = (stats.practiceAnswered || 0) + 1;
       if (optIdx === q.correct) {
+        stats.practiceCorrect = (stats.practiceCorrect || 0) + 1;
         this.sound.correct();
       } else {
         this.sound.wrong();
       }
+      this.saveUserStats(stats);
     } else {
       this.sound.click();
     }
@@ -952,6 +1021,324 @@ class NetAcadApp {
 
       container.appendChild(card);
     });
+  }
+
+  /* ----------------------------------------------------
+     USER PROFILE, COOKIES & STATISTICS
+     ---------------------------------------------------- */
+  getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+    return match ? decodeURIComponent(match[3]) : null;
+  }
+
+  setCookie(name, value, days = 365) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+  }
+
+  initUser() {
+    const cookieUser = this.getCookie('user_nickname');
+    const localUser = localStorage.getItem('user_nickname');
+    this.nickname = (cookieUser || localUser || 'Student').trim();
+
+    this.setCookie('user_nickname', this.nickname);
+    localStorage.setItem('user_nickname', this.nickname);
+
+    this.updateUserNavbar();
+  }
+
+  getStatsKey() {
+    return `netacad_stats_${this.nickname.toLowerCase()}`;
+  }
+
+  getUserStats() {
+    const key = this.getStatsKey();
+    const raw = localStorage.getItem(key);
+    if (raw) {
+      try {
+        return JSON.parse(raw);
+      } catch (e) {
+        console.error('Error parsing stats:', e);
+      }
+    }
+    return {
+      nickname: this.nickname,
+      createdAt: new Date().toISOString(),
+      exams: [],
+      practiceAnswered: 0,
+      practiceCorrect: 0
+    };
+  }
+
+  saveUserStats(stats) {
+    const key = this.getStatsKey();
+    localStorage.setItem(key, JSON.stringify(stats));
+    this.updateUserNavbar();
+  }
+
+  setNickname(newNick) {
+    const clean = (newNick || '').trim();
+    if (!clean) return;
+    this.nickname = clean;
+    this.setCookie('user_nickname', clean);
+    localStorage.setItem('user_nickname', clean);
+    this.updateUserNavbar();
+    if (this.activeMode === 'stats') {
+      this.renderStatsView();
+    }
+  }
+
+  openNicknameModal() {
+    this.sound.click();
+    const modal = document.getElementById('nicknameModal');
+    const input = document.getElementById('nicknameInput');
+    if (input) input.value = this.nickname;
+    if (modal) {
+      modal.style.display = 'flex';
+      setTimeout(() => input && input.focus(), 80);
+    }
+  }
+
+  closeNicknameModal() {
+    this.sound.click();
+    const modal = document.getElementById('nicknameModal');
+    if (modal) modal.style.display = 'none';
+  }
+
+  saveNicknameFromModal() {
+    const input = document.getElementById('nicknameInput');
+    const val = (input ? input.value : '').trim();
+    if (!val) {
+      alert('Přezdívka nesmí být prázdná!');
+      return;
+    }
+    this.sound.click();
+    this.setNickname(val);
+    const modal = document.getElementById('nicknameModal');
+    if (modal) modal.style.display = 'none';
+  }
+
+  resetUserStats() {
+    if (confirm(`Opravdu chcete vymazat veškerou historii zkoušek a statistiky pro přezdívku "${this.nickname}"?`)) {
+      const key = this.getStatsKey();
+      localStorage.removeItem(key);
+      this.sound.click();
+      this.updateUserNavbar();
+      if (this.activeMode === 'stats') {
+        this.renderStatsView();
+      }
+    }
+  }
+
+  recordExamResult(scorePct, correctCount, total, elapsedSeconds, passed) {
+    const stats = this.getUserStats();
+    if (!Array.isArray(stats.exams)) {
+      stats.exams = [];
+    }
+    stats.exams.push({
+      id: 'exam_' + Date.now(),
+      date: new Date().toISOString(),
+      certId: this.activeCert,
+      certTitle: CERTIFICATES_DATA[this.activeCert].title,
+      scorePct: scorePct,
+      correctCount: correctCount,
+      totalQuestions: total,
+      timeSeconds: elapsedSeconds,
+      passed: passed
+    });
+    this.saveUserStats(stats);
+
+    const banner = document.getElementById('savedProfileName');
+    if (banner) banner.textContent = this.nickname;
+  }
+
+  updateUserNavbar() {
+    const navEl = document.getElementById('navNickname');
+    if (navEl) navEl.textContent = this.nickname;
+  }
+
+  renderStatsView() {
+    const stats = this.getUserStats();
+
+    // Display Nickname
+    const nameDisp = document.getElementById('statsUserNameDisplay');
+    if (nameDisp) nameDisp.textContent = this.nickname;
+
+    const exams = Array.isArray(stats.exams) ? stats.exams : [];
+    const totalExams = exams.length;
+    const passedExams = exams.filter(e => e.passed).length;
+    const passRate = totalExams > 0 ? Math.round((passedExams / totalExams) * 100) : 0;
+    const avgScore = totalExams > 0 ? Math.round(exams.reduce((acc, e) => acc + e.scorePct, 0) / totalExams) : 0;
+
+    const totalExamQuestions = exams.reduce((acc, e) => acc + (e.totalQuestions || 0), 0);
+    const totalQuestions = totalExamQuestions + (stats.practiceAnswered || 0);
+
+    // KPI Values
+    const kpiExamsEl = document.getElementById('kpiTotalExams');
+    const kpiPassEl = document.getElementById('kpiPassRate');
+    const kpiAvgEl = document.getElementById('kpiAvgScore');
+    const kpiQuestionsEl = document.getElementById('kpiTotalQuestions');
+
+    if (kpiExamsEl) kpiExamsEl.textContent = totalExams;
+    if (kpiPassEl) kpiPassEl.textContent = `${passRate} %`;
+    if (kpiAvgEl) kpiAvgEl.textContent = `${avgScore} %`;
+    if (kpiQuestionsEl) kpiQuestionsEl.textContent = totalQuestions;
+
+    // Per Certificate Performance Grid
+    this.renderCertStatsGrid(exams);
+
+    // History Table
+    this.renderExamHistoryTable(exams);
+  }
+
+  renderCertStatsGrid(exams) {
+    const grid = document.getElementById('certStatsGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    Object.entries(CERTIFICATES_DATA).forEach(([certId, cert]) => {
+      const certExams = exams.filter(e => e.certId === certId);
+      const attempts = certExams.length;
+      const bestScore = attempts > 0 ? Math.max(...certExams.map(e => e.scorePct)) : 0;
+      const hasPassed = certExams.some(e => e.passed);
+
+      let statusHtml = '';
+      if (hasPassed) {
+        statusHtml = `<span class="status-badge passed"><i class="fas fa-check-circle"></i> Splněno</span>`;
+      } else if (attempts > 0) {
+        statusHtml = `<span class="status-badge failed"><i class="fas fa-times-circle"></i> Nesplněno</span>`;
+      } else {
+        statusHtml = `<span class="status-badge empty"><i class="far fa-circle"></i> Nezahájeno</span>`;
+      }
+
+      const card = document.createElement('div');
+      card.className = 'cert-stat-card';
+      card.innerHTML = `
+        <div class="cert-stat-header">
+          <div class="cert-stat-title-wrap">
+            <i class="${cert.icon}" style="color: ${cert.color};"></i>
+            <div>
+              <h4>${this.escapeHtml(cert.title)}</h4>
+              <span>Limit pro složení: ${cert.passScore} %</span>
+            </div>
+          </div>
+          ${statusHtml}
+        </div>
+
+        <div class="cert-stat-metrics">
+          <div>
+            <div class="metric-item-val" style="color: ${bestScore >= cert.passScore ? '#10b981' : (attempts > 0 ? '#ef4444' : 'inherit')}">
+              ${attempts > 0 ? `${bestScore} %` : '--'}
+            </div>
+            <div class="metric-item-lbl">Nejlepší skóre</div>
+          </div>
+          <div>
+            <div class="metric-item-val">${attempts}</div>
+            <div class="metric-item-lbl">Pokusů</div>
+          </div>
+          <div>
+            <div class="metric-item-val">${cert.questions.length}</div>
+            <div class="metric-item-lbl">Otázek</div>
+          </div>
+        </div>
+
+        <div class="cert-stat-progress">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+            <span>Úspěšnost</span>
+            <span>${attempts > 0 ? `${bestScore} % / cíl ${cert.passScore} %` : `cíl ${cert.passScore} %`}</span>
+          </div>
+          <div class="cert-stat-progress-bar">
+            <div class="cert-stat-progress-fill" style="width: ${bestScore}%; background: ${bestScore >= cert.passScore ? '#10b981' : (attempts > 0 ? '#f59e0b' : 'transparent')};"></div>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-sm" style="margin-top: 4px; justify-content: center;" onclick="app.launchCertSimulator('${certId}')">
+          <i class="fas fa-play"></i> ${attempts > 0 ? 'Opakovat test' : 'Spustit test'}
+        </button>
+      `;
+
+      grid.appendChild(card);
+    });
+  }
+
+  launchCertSimulator(certId) {
+    this.sound.click();
+    this.loadCertificate(certId);
+    this.switchView('simulator', true);
+  }
+
+  renderExamHistoryTable(exams) {
+    const wrap = document.getElementById('historyTableWrap');
+    const counter = document.getElementById('examHistoryCount');
+    if (!wrap) return;
+
+    if (counter) {
+      counter.textContent = `${exams.length} ${exams.length === 1 ? 'záznam' : (exams.length >= 2 && exams.length <= 4 ? 'záznamy' : 'záznamů')}`;
+    }
+
+    if (!exams.length) {
+      wrap.innerHTML = `
+        <div class="history-empty-state">
+          <i class="fas fa-clipboard-list"></i>
+          <h4 style="font-size: 1.1rem; margin-bottom: 6px;">Zatím jste neabsolvovali žádný zkouškový test</h4>
+          <p style="margin: 4px 0 16px 0; font-size: 0.88rem; color: var(--text-muted);">
+            Vyberte si certifikát v horní liště a otestujte své znalosti ve zkouškovém simulátoru.
+          </p>
+          <button class="btn btn-primary" onclick="app.switchView('simulator', true)">
+            <i class="fas fa-graduation-cap"></i> Spustit zkouškový simulátor
+          </button>
+        </div>
+      `;
+      return;
+    }
+
+    // Sort descending by date
+    const sorted = [...exams].reverse();
+
+    let rowsHtml = sorted.map(e => {
+      const d = new Date(e.date);
+      const dateStr = d.toLocaleDateString('cs-CZ', { day: '2-digit', month: '2-digit', year: 'numeric' }) + ' ' + d.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
+      const min = Math.floor(e.timeSeconds / 60);
+      const sec = e.timeSeconds % 60;
+      const timeStr = `${min}m ${sec}s`;
+      const cert = CERTIFICATES_DATA[e.certId] || { title: e.certTitle || e.certId, color: '#38bdf8' };
+
+      return `
+        <tr>
+          <td><span style="color: var(--text-muted); font-size: 0.82rem;">${dateStr}</span></td>
+          <td>
+            <strong style="color: ${cert.color || 'inherit'}">${this.escapeHtml(cert.title)}</strong>
+          </td>
+          <td>
+            <span style="font-weight: 700; color: ${e.passed ? '#10b981' : '#ef4444'}">${e.scorePct} %</span>
+            <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 4px;">(${e.correctCount}/${e.totalQuestions})</span>
+          </td>
+          <td>${timeStr}</td>
+          <td>
+            <span class="status-badge ${e.passed ? 'passed' : 'failed'}">
+              ${e.passed ? '<i class="fas fa-check"></i> PASSED' : '<i class="fas fa-times"></i> FAILED'}
+            </span>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    wrap.innerHTML = `
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Datum & Čas</th>
+            <th>Certifikát</th>
+            <th>Výsledek</th>
+            <th>Čas trvání</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml}
+        </tbody>
+      </table>
+    `;
   }
 
   /* ----------------------------------------------------

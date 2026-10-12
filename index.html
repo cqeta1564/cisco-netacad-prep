@@ -31,6 +31,10 @@
     </div>
     
     <div class="nav-actions">
+      <div class="user-pill" id="userPillBtn" title="Uživatelský profil a statistiky (klikněte pro zobrazení nebo změnu přezdívky)">
+        <i class="fas fa-user-circle"></i>
+        <span class="user-nickname" id="navNickname">Student</span>
+      </div>
       <button class="btn-icon" id="soundToggleBtn" title="Zvuky (Ztlumit/Zapnout)">
         <i class="fas fa-volume-up"></i>
       </button>
@@ -113,6 +117,9 @@
       </button>
       <button class="mode-btn" data-mode="cheatsheet">
         <i class="fas fa-list-check"></i> Oficiální tahák & pravidla
+      </button>
+      <button class="mode-btn" data-mode="stats">
+        <i class="fas fa-chart-line"></i> Moje statistiky
       </button>
     </nav>
 
@@ -249,9 +256,17 @@
           </div>
         </div>
 
+        <!-- Result Saved to Profile Notice -->
+        <div class="result-saved-banner" id="resultSavedBanner">
+          <i class="fas fa-check-circle"></i> Výsledek byl automaticky uložen k profilu: <strong id="savedProfileName">Student</strong>
+        </div>
+
         <div class="result-actions">
           <button class="btn btn-primary" onclick="app.restartSimulator()">
             <i class="fas fa-redo"></i> Spustit nový test
+          </button>
+          <button class="btn btn-secondary" onclick="app.switchView('stats')">
+            <i class="fas fa-chart-line"></i> Zobrazit moje statistiky
           </button>
           <button class="btn btn-secondary" id="filterMistakesBtn" onclick="app.reviewMistakesOnly()">
             <i class="fas fa-triangle-exclamation"></i> Procvičit jen chybné otázky
@@ -334,11 +349,131 @@
       </div>
     </section>
 
+    <!-- ==============================================
+         VIEW 5: USER STATISTICS VIEW
+         ============================================== -->
+    <section class="view-panel" id="statsView">
+      <div class="stats-header-bar">
+        <div class="stats-user-hero">
+          <div class="stats-avatar">
+            <i class="fas fa-user-astronaut"></i>
+          </div>
+          <div class="stats-user-details">
+            <div class="stats-user-name-row">
+              <h2 id="statsUserNameDisplay">Student</h2>
+              <button class="btn btn-sm btn-secondary" id="editNicknameBtn" title="Změnit přezdívku">
+                <i class="fas fa-pen"></i> Změnit přezdívku
+              </button>
+            </div>
+            <p class="stats-subtext">
+              <i class="fas fa-cookie-bite"></i> Profil a výsledky jsou uloženy v cookies a paměti prohlížeče (bez nutnosti registrace).
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-quick-actions">
+          <button class="btn btn-sm btn-outline-danger" id="resetStatsBtn" title="Vymazat historii a statistiky aktuálního profilu">
+            <i class="fas fa-trash-alt"></i> Resetovat data
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI SUMMARY GRID -->
+      <div class="stats-kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background: rgba(0, 188, 235, 0.15); color: #00bceb;">
+            <i class="fas fa-file-signature"></i>
+          </div>
+          <div class="kpi-info">
+            <span class="kpi-value" id="kpiTotalExams">0</span>
+            <span class="kpi-label">Vyplněných testů</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="kpi-info">
+            <span class="kpi-value" id="kpiPassRate">0 %</span>
+            <span class="kpi-label">Úspěšnost složení</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div class="kpi-info">
+            <span class="kpi-value" id="kpiAvgScore">0 %</span>
+            <span class="kpi-label">Průměrné skóre</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
+            <i class="fas fa-check-double"></i>
+          </div>
+          <div class="kpi-info">
+            <span class="kpi-value" id="kpiTotalQuestions">0</span>
+            <span class="kpi-label">Zodpovězených otázek</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PER CERTIFICATE BREAKDOWN -->
+      <div class="stats-section-box">
+        <div class="section-title-row">
+          <h3><i class="fas fa-layer-group"></i> Výsledky podle certifikátů</h3>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">5 oficiálních zkoušek</span>
+        </div>
+        <div class="cert-stats-grid" id="certStatsGrid">
+          <!-- Dynamically populated per-certificate cards -->
+        </div>
+      </div>
+
+      <!-- EXAM ATTEMPTS HISTORY -->
+      <div class="stats-section-box">
+        <div class="section-title-row">
+          <h3><i class="fas fa-history"></i> Historie absolvovaných zkoušek</h3>
+          <span style="font-size: 0.85rem; color: var(--text-muted);" id="examHistoryCount">0 záznamů</span>
+        </div>
+        <div class="history-table-wrap" id="historyTableWrap">
+          <!-- Dynamically populated history table or empty message -->
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- NICKNAME MODAL DIALOG -->
+  <div class="modal-backdrop" id="nicknameModal" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3><i class="fas fa-user-circle"></i> Uživatelský profil</h3>
+        <button class="modal-close-btn" id="closeNicknameModalBtn" aria-label="Zavřít">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.5;">
+          Zadejte svou přezdívku. Všechny vaše výsledky, statistiky a historie testů budou přiřazeny k tomuto profilu a uloženy v cookies a paměti prohlížeče bez nutnosti přihlašování.
+        </p>
+        <div class="form-group">
+          <label for="nicknameInput" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-muted);">Přezdívka (max. 20 znaků):</label>
+          <input type="text" id="nicknameInput" class="input-custom" maxlength="20" placeholder="např. Student, Karel_DEV...">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelNicknameBtn">Zrušit</button>
+        <button class="btn btn-primary" id="saveNicknameBtn">
+          <i class="fas fa-save"></i> Uložit přezdívku
+        </button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>
-      Cisco Networking Academy Prep &bull; Vytvořeno pro trénování autentických certifikačních otázek (HTML, CSS a JavaScript Essentials 1).
+      IT Certifications Prep &bull; Autentické certifikační otázky Cisco Networking Academy &amp; Oracle Academy &bull; Offline podpora v prohlížeči.
     </p>
   </footer>
 
