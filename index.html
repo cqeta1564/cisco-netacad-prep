@@ -137,12 +137,19 @@
           <span class="question-number" id="qCounterDisplay">Otázka 1 / 30</span>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <!-- Practice filter (shown only in practice mode) -->
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <!-- Practice filter & Live Score (shown only in practice mode) -->
           <div id="practiceModuleFilterWrap" style="display: none;">
-            <select class="select-custom" id="moduleFilterSelect">
-              <option value="all">Všechny moduly</option>
-            </select>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <select class="select-custom" id="moduleFilterSelect">
+                <option value="all">Všechny otázky</option>
+              </select>
+              <div class="practice-live-stats" id="practiceLiveStats" title="Statistika tréninku v tomto certifikátu">
+                <span class="pls-item pls-correct"><i class="fas fa-check"></i> <strong id="plsCorrectVal">0</strong></span>
+                <span class="pls-item pls-wrong"><i class="fas fa-times"></i> <strong id="plsWrongVal">0</strong></span>
+                <span class="pls-item pls-rate"><i class="fas fa-bullseye"></i> <strong id="plsRateVal">0 %</strong></span>
+              </div>
+            </div>
           </div>
 
           <!-- Timer (shown only in simulator mode) -->
@@ -378,68 +385,162 @@
         </div>
       </div>
 
-      <!-- KPI SUMMARY GRID -->
-      <div class="stats-kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: rgba(0, 188, 235, 0.15); color: #00bceb;">
-            <i class="fas fa-file-signature"></i>
+      <!-- STATS SUB-NAVIGATION TABS -->
+      <div class="stats-tab-bar" id="statsSubTabBar">
+        <button class="stats-tab-btn active" data-subtab="overview">
+          <i class="fas fa-chart-pie"></i> Celkový přehled
+        </button>
+        <button class="stats-tab-btn" data-subtab="practice">
+          <i class="fas fa-book-open"></i> Trénink &amp; Vysvětlení
+        </button>
+        <button class="stats-tab-btn" data-subtab="exams">
+          <i class="fas fa-graduation-cap"></i> Zkouškový simulátor
+        </button>
+      </div>
+
+      <!-- SUBPANEL 1: OVERVIEW -->
+      <div class="stats-subpanel active" id="subtabOverview">
+        <!-- KPI SUMMARY GRID -->
+        <div class="stats-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(0, 188, 235, 0.15); color: #00bceb;">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="kpiTotalExams">0</span>
+              <span class="kpi-label">Vyplněných testů</span>
+            </div>
           </div>
-          <div class="kpi-info">
-            <span class="kpi-value" id="kpiTotalExams">0</span>
-            <span class="kpi-label">Vyplněných testů</span>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="kpiPassRate">0 %</span>
+              <span class="kpi-label">Úspěšnost zkoušek</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="kpiPracticeTotal">0</span>
+              <span class="kpi-label">Procvičeno v tréninku</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="kpiPracticeAccuracy">0 %</span>
+              <span class="kpi-label">Přesnost tréninku</span>
+            </div>
           </div>
         </div>
 
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-            <i class="fas fa-trophy"></i>
+        <!-- PER CERTIFICATE OVERVIEW CARDS -->
+        <div class="stats-section-box">
+          <div class="section-title-row">
+            <h3><i class="fas fa-layer-group"></i> Výsledky podle certifikátů (Zkoušky &amp; Trénink)</h3>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">5 certifikačních zkoušek</span>
           </div>
-          <div class="kpi-info">
-            <span class="kpi-value" id="kpiPassRate">0 %</span>
-            <span class="kpi-label">Úspěšnost složení</span>
-          </div>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <div class="kpi-info">
-            <span class="kpi-value" id="kpiAvgScore">0 %</span>
-            <span class="kpi-label">Průměrné skóre</span>
-          </div>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
-            <i class="fas fa-check-double"></i>
-          </div>
-          <div class="kpi-info">
-            <span class="kpi-value" id="kpiTotalQuestions">0</span>
-            <span class="kpi-label">Zodpovězených otázek</span>
+          <div class="cert-stats-grid" id="certStatsGrid">
+            <!-- Dynamically populated per-certificate cards -->
           </div>
         </div>
       </div>
 
-      <!-- PER CERTIFICATE BREAKDOWN -->
-      <div class="stats-section-box">
-        <div class="section-title-row">
-          <h3><i class="fas fa-layer-group"></i> Výsledky podle certifikátů</h3>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">5 oficiálních zkoušek</span>
+      <!-- SUBPANEL 2: PRACTICE DETAILS & CHYBOVNÍK -->
+      <div class="stats-subpanel" id="subtabPractice" style="display: none;">
+        <!-- PRACTICE KPI GRID -->
+        <div class="stats-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
+              <i class="fas fa-check-to-slot"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="pkpiAnswered">0</span>
+              <span class="kpi-label">Odpovědí v tréninku</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+              <i class="fas fa-percent"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="pkpiAccuracy">0 %</span>
+              <span class="kpi-label">Úspěšnost odpovědí</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(99, 102, 241, 0.15); color: #6366f1;">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="pkpiCoverage">0 / 210</span>
+              <span class="kpi-label">Pokrytí celé banky</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(239, 68, 68, 0.15); color: #ef4444;">
+              <i class="fas fa-triangle-exclamation"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="pkpiMistakes">0</span>
+              <span class="kpi-label">Chyby k doprocvičení</span>
+            </div>
+          </div>
         </div>
-        <div class="cert-stats-grid" id="certStatsGrid">
-          <!-- Dynamically populated per-certificate cards -->
+
+        <!-- PRACTICE PER-CERTIFICATE BREAKDOWN -->
+        <div class="stats-section-box">
+          <div class="section-title-row">
+            <h3><i class="fas fa-dumbbell"></i> Pokrok v tréninku podle certifikátů</h3>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Pokrytí otázek a přesnost</span>
+          </div>
+          <div class="practice-cert-grid" id="practiceCertGrid">
+            <!-- Dynamically populated cards with module details -->
+          </div>
+        </div>
+
+        <!-- PRACTICE MISTAKES LIST -->
+        <div class="stats-section-box">
+          <div class="section-title-row">
+            <div>
+              <h3 style="margin: 0;"><i class="fas fa-spell-check"></i> Tréninkový chybovník (Otázky s chybou)</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+                Otázky, ve kterých jste v tréninku naposledy chybovali. Zde si můžete projít správná řešení a vysvětlení nebo je znovu procvičit.
+              </p>
+            </div>
+            <button class="btn btn-primary btn-sm" id="practiceAllMistakesBtn" onclick="app.practiceActiveCertMistakes()" style="display: none;">
+              <i class="fas fa-play"></i> Procvičit chyby
+            </button>
+          </div>
+          <div id="practiceMistakesList">
+            <!-- Dynamically populated list of mistake questions or all clear state -->
+          </div>
         </div>
       </div>
 
-      <!-- EXAM ATTEMPTS HISTORY -->
-      <div class="stats-section-box">
-        <div class="section-title-row">
-          <h3><i class="fas fa-history"></i> Historie absolvovaných zkoušek</h3>
-          <span style="font-size: 0.85rem; color: var(--text-muted);" id="examHistoryCount">0 záznamů</span>
-        </div>
-        <div class="history-table-wrap" id="historyTableWrap">
-          <!-- Dynamically populated history table or empty message -->
+      <!-- SUBPANEL 3: EXAM SIMULATIONS -->
+      <div class="stats-subpanel" id="subtabExams" style="display: none;">
+        <!-- EXAM ATTEMPTS HISTORY -->
+        <div class="stats-section-box">
+          <div class="section-title-row">
+            <h3><i class="fas fa-history"></i> Historie absolvovaných zkoušek</h3>
+            <span style="font-size: 0.85rem; color: var(--text-muted);" id="examHistoryCount">0 záznamů</span>
+          </div>
+          <div class="history-table-wrap" id="historyTableWrap">
+            <!-- Dynamically populated history table or empty message -->
+          </div>
         </div>
       </div>
     </section>
