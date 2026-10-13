@@ -1218,6 +1218,49 @@ class NetAcadApp {
             ["Statické směrování", "ip route prefix mask next-hop [ad] (plovoucí routa má vyšší AD než dynamický protokol)"]
           ]
         }
+      ],
+
+      ccna_itn: [
+        {
+          title: "Modely OSI & TCP/IP a Základní Cisco IOS",
+          rows: [
+            ["PDU vrstev OSI", "L4 = Segment, L3 = Paket (Packet), L2 = Rámec (Frame), L1 = Bity (Bits)"],
+            ["Režimy Cisco IOS", "User EXEC (>), Privileged EXEC (#, enable), Global Config ((config)#)"],
+            ["Zabezpečení hesel", "enable secret <pwd> (MD5/SHA hash); service password-encryption (Type 7)"],
+            ["Linky Console a VTY", "line con 0 / line vty 0 4 -> password <pwd> -> login (aktivuje výzvu)"],
+            ["Ukládání konfigurace", "copy running-config startup-config (uloží stav z RAM do NVRAM)"]
+          ]
+        },
+        {
+          title: "Fyzická vrstva, Ethernet & Přepínání (L2)",
+          rows: [
+            ["Struktura MAC adresy", "48 bitů (12 hex znaků): prvních 24 bitů = OUI výrobce (IEEE), zbylých 24 bitů = sériové číslo"],
+            ["Velikost Ethernet rámce", "Minimálně 64 B (menší jsou runt frames a zahazují se), max 1518 B (větší jsou giants)"],
+            ["Store-and-Forward vs Cut-Through", "Store-and-Forward kontroluje FCS (bezchybovost); Cut-Through začne přeposílat ihned (nejnižší latence)"],
+            ["Unknown Unicast Flooding", "Neznámou cílovou MAC přepínač zaplaví všemi porty v dané VLAN kromě příchozího"],
+            ["Auto-MDIX", "Automaticky detekuje a prohodí Tx/Rx páry; umožňuje přímý i křížený UTP kabel"]
+          ]
+        },
+        {
+          title: "Síťová vrstva, IPv4 Adresace & Subnetting",
+          rows: [
+            ["Vlastnosti IP protokolu", "Connectionless (nespojovaný), Best-effort (nespolehlivý), Media-independent"],
+            ["IPv4 TTL (Time to Live)", "Směrovač sníží TTL o 1; při TTL=0 paket zahodí a vrátí ICMP Time Exceeded (traceroute)"],
+            ["Privátní rozsahy (RFC 1918)", "10.0.0.0/8, 172.16.0.0/12 (do 172.31.255.255), 192.168.0.0/16; APIPA: 169.254.0.0/16"],
+            ["Výchozí brána (Default GW)", "Směrovač pro odchozí provoz mimo lokální síť; v rámci LAN komunikace funguje i bez brány"],
+            ["ARP (Address Resolution)", "Request je broadcast (FF:FF:FF:FF:FF:FF); Reply je unicast přímo tazateli"]
+          ]
+        },
+        {
+          title: "IPv6, Transportní vrstva (TCP/UDP) & Aplikační služby",
+          rows: [
+            ["Komprese IPv6", "Vynechání úvodních nul ve skupině; '::' nahradí souvislé bloky nul (pouze jednou v adrese)"],
+            ["Prefixy IPv6", "FE80::/10 (Link-Local), 2000::/3 (Global Unicast - GUA), FC00::/7 (Unique Local)"],
+            ["EUI-64 proces", "Vloží FFFE doprostřed 48bit MAC a invertuje 7. bit prvního bajtu (Universal/Local bit)"],
+            ["TCP 3-Way Handshake", "SYN -> SYN-ACK -> ACK; TCP Window Size reguluje řízení toku (flow control)"],
+            ["Klíčové porty", "DNS (53), DHCP (67/68 - DORA proces), HTTP (80), HTTPS (443), SSH (22), Telnet (23)"]
+          ]
+        }
       ]
     };
   }

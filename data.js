@@ -5430,4 +5430,556 @@ const CERTIFICATES_DATA = {
     }
   ]
 }
+,
+
+  ccna_itn: {
+  "id": "ccna_itn",
+  "title": "Cisco Networking Academy: CCNA: Introduction to Networks (ITN)",
+  "subtitle": "Příprava na certifikaci CCNA v7 ITN (Modul 1) / CCNA 200-301",
+  "badge": "CCNA: ITN",
+  "icon": "fas fa-ethernet",
+  "color": "#049FD9",
+  "passScore": 70,
+  "timeLimit": 60,
+  "modules": [
+    {
+      "id": "itn_m1",
+      "name": "ITN-M1: Základy sítí, Modely OSI / TCP-IP & Cisco IOS"
+    },
+    {
+      "id": "itn_m2",
+      "name": "ITN-M2: Fyzická vrstva, Ethernet & Linková vrstva (L2)"
+    },
+    {
+      "id": "itn_m3",
+      "name": "ITN-M3: Síťová vrstva, IPv4 adresace & Subnetting"
+    },
+    {
+      "id": "itn_m4",
+      "name": "ITN-M4: IPv6, Transportní vrstva (TCP/UDP) & Aplikační služby"
+    }
+  ],
+  "questions": [
+    {
+      "id": "itn_q1",
+      "module": "itn_m1",
+      "question": "What is the primary function of the kernel in an operating system?",
+      "options": [
+        "The kernel provisions hardware resources to meet software requirements.",
+        "The kernel provides a graphical user interface for end users to request application tasks.",
+        "The kernel compiles high-level programming language code into assembly language.",
+        "The kernel manages user authentication and remote network firewall policies."
+      ],
+      "correct": 0,
+      "explanation": "Jádro operačního systému (kernel) tvoří přímý most mezi softwarem (aplikacemi / shellem) a fyzickým hardwarem počítače. Zajišťuje alokaci a správu hardwarových prostředků (CPU, operační paměť RAM, I/O řadiče a disky)."
+    },
+    {
+      "id": "itn_q2",
+      "module": "itn_m1",
+      "question": "What is the Protocol Data Unit (PDU) called at the Network layer (Layer 3) of the OSI model?",
+      "options": [
+        "Frame",
+        "Segment",
+        "Packet",
+        "Bits"
+      ],
+      "correct": 2,
+      "explanation": "V OSI modelu se PDU (Protocol Data Unit) nazývá: Vrstva 4 (Transport) = Segment, Vrstva 3 (Network) = Packet (paket), Vrstva 2 (Data Link) = Frame (rámec) a Vrstva 1 (Physical) = Bits (bity)."
+    },
+    {
+      "id": "itn_q3",
+      "module": "itn_m1",
+      "question": "Which command prompt indicates that a network administrator is operating in Privileged EXEC mode on a Cisco switch?",
+      "options": [
+        "Switch>",
+        "Switch#",
+        "Switch(config)#",
+        "Switch(config-if)#"
+      ],
+      "correct": 1,
+      "explanation": "Výzva s mřížkou (Switch#) značí Privileged EXEC mode (povolený příkazem enable). Znak '>' značí omezený User EXEC mode a '(config)#' Global Configuration mode."
+    },
+    {
+      "id": "itn_q4",
+      "module": "itn_m1",
+      "question": "Which command should be used to configure a secure, encrypted password for accessing Privileged EXEC mode on a Cisco router?",
+      "options": [
+        "enable password <password>",
+        "enable secret <password>",
+        "service password-encryption",
+        "line console 0 password <password>"
+      ],
+      "correct": 1,
+      "explanation": "Příkaz 'enable secret <heslo>' nastavuje heslo pro Privileged EXEC mode a automaticky jej zahešuje silným jednosměrným algoritmem (MD5/SHA-256). Starší příkaz 'enable password' ukládal heslo v čitelném textu nebo slabé reverzibilní šifře."
+    },
+    {
+      "id": "itn_q5",
+      "module": "itn_m1",
+      "question": "What is the purpose of entering the 'login' command under 'line vty 0 4' configuration mode on a Cisco switch?",
+      "options": [
+        "It configures the line to prompt for password authentication when a user initiates a remote Telnet or SSH session.",
+        "It creates a new local administrator account in the NVRAM security database.",
+        "It automatically encrypts all passwords stored in the startup-configuration file.",
+        "It activates SSH version 2 and completely disables unencrypted Telnet traffic."
+      ],
+      "correct": 0,
+      "explanation": "Bez příkazu 'login' pod virtuálními linkami VTY Cisco zařízení odmítne vzdálené připojení, neboť není aktivováno ověřování. Příkaz 'login' instruuje zařízení, aby při pokusu o relaci Telnet/SSH vyžadovalo zadání hesla."
+    },
+    {
+      "id": "itn_q6",
+      "module": "itn_m1",
+      "question": "What is the effect of configuring the 'service password-encryption' command on a Cisco router?",
+      "options": [
+        "It encrypts all plain-text passwords in the configuration file using Cisco Type 7 encryption.",
+        "It creates a 2048-bit RSA key pair for secure cryptographic SSH transport.",
+        "It locks the console port after three consecutive failed password attempts.",
+        "It prevents unauthorized users from rebooting the router into ROMMON mode."
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'service password-encryption' v globální konfiguraci zašifruje všechna dosud nezašifrovaná hesla v konfiguračním souboru (např. console a vty hesla) pomocí Type 7 šifrování, čímž zabrání jejich přečtení 'přes rameno'."
+    },
+    {
+      "id": "itn_q7",
+      "module": "itn_m1",
+      "question": "Which command copies the active configuration from RAM to non-volatile memory (NVRAM) so that it persists across device reboots?",
+      "options": [
+        "copy startup-config running-config",
+        "copy running-config startup-config",
+        "write erase",
+        "reload /save"
+      ],
+      "correct": 1,
+      "explanation": "Běžící konfigurace se nachází v paměti RAM ('running-config'). Aby se změny neztratily po vypnutí nebo restartu, musí se zkopírovat do NVRAM ('startup-config') pomocí 'copy running-config startup-config'."
+    },
+    {
+      "id": "itn_q8",
+      "module": "itn_m1",
+      "question": "What happens if a host PC has an incorrectly configured default gateway IP address?",
+      "options": [
+        "The host can communicate with other devices on the local subnet, but cannot communicate with devices on remote networks or the internet.",
+        "The host cannot communicate with any device on the network, including local subnet hosts.",
+        "The host automatically falls back to an APIPA address (169.254.x.x) and disables its NIC.",
+        "The local switch automatically places the host's switchport into an err-disabled state."
+      ],
+      "correct": 0,
+      "explanation": "Výchozí brána (default gateway) je rozhraní směrovače používané výhradně pro komunikaci mimo lokální podsíť. V rámci stejné podsítě PC komunikuje přímo přes MAC adresy a ARP protokol bez potřeby brány."
+    },
+    {
+      "id": "itn_q9",
+      "module": "itn_m1",
+      "question": "What is the primary operational and legal purpose of configuring a 'banner motd' on Cisco network devices?",
+      "options": [
+        "To display a legal warning message stating that unauthorized access is strictly prohibited before a user logs in.",
+        "To greet authorized employees with a friendly welcome message and company contact information.",
+        "To display the current IP routing table and active interface summary to connecting administrators.",
+        "To automatically authenticate console sessions without requiring a password."
+      ],
+      "correct": 0,
+      "explanation": "V souladu s bezpečnostními a právními standardy Cisco NetAcad musí zpráva dne (banner motd) jasně deklarovat, že neoprávněný přístup je zakázán. Vítací texty (jako 'Welcome') mohou právně zkomplikovat stíhání útočníka."
+    },
+    {
+      "id": "itn_q10",
+      "module": "itn_m1",
+      "question": "Which memory component in a Cisco router stores the startup configuration file and retains its contents when power is turned off?",
+      "options": [
+        "RAM (Random Access Memory)",
+        "NVRAM (Non-Volatile RAM)",
+        "Flash memory",
+        "ROM (Read-Only Memory)"
+      ],
+      "correct": 1,
+      "explanation": "NVRAM uchovává konfigurační soubor 'startup-config' i po odpojení napájení. RAM uchovává dočasnou běžící konfiguraci ('running-config') a směrovací tabulku, Flash uchovává Cisco IOS image a ROM obsahuje bootstrap kód."
+    },
+    {
+      "id": "itn_q11",
+      "module": "itn_m2",
+      "question": "Which technique is used by Unshielded Twisted-Pair (UTP) cables to reduce the electromagnetic effects of crosstalk between wire pairs?",
+      "options": [
+        "Wrapping each copper pair in metallic shielding foil and grounding wire",
+        "Twisting opposing wire pairs together with varying twist rates per pair",
+        "Increasing the copper wire diameter to heavy 10 AWG solid conductors",
+        "Encoding the electrical pulses using high-frequency Manchester modulation only"
+      ],
+      "correct": 1,
+      "explanation": "Kroucení vodičů (twisting) využívá efektu vzájemného rušení protichůdných magnetických polí (cancellation). Každý pár v UTP kabelu má navíc odlišnou hustotu zkroucení (twist rate), což dramaticky omezuje přeslechy (crosstalk)."
+    },
+    {
+      "id": "itn_q12",
+      "module": "itn_m2",
+      "question": "What is a primary characteristic of Single-Mode Fiber (SMF) compared to Multimode Fiber (MMF)?",
+      "options": [
+        "SMF uses a smaller glass core and a laser light source to transmit data over significantly longer distances.",
+        "SMF uses inexpensive Light Emitting Diodes (LEDs) and a larger core diameter for short LAN runs.",
+        "SMF suffers from greater modal dispersion than MMF across distances over 500 meters.",
+        "SMF allows multiple different angles of light rays to travel simultaneously through the core."
+      ],
+      "correct": 0,
+      "explanation": "Jednomodové vlákno (SMF) má velmi tenké jádro (cca 9 µm) a laserový zdroj, díky čemuž se světlo šíří v jediném paprsku bez modální disperze. Umožňuje přenos na desítky kilometrů, zatímco MMF (50/62.5 µm) využívá LED na kratší vzdálenosti."
+    },
+    {
+      "id": "itn_q13",
+      "module": "itn_m2",
+      "question": "What is the function of the Auto-MDIX feature when enabled on Cisco switch interfaces?",
+      "options": [
+        "It automatically detects the cable connection type and internally configures the transmit and receive pairs accordingly.",
+        "It dynamically negotiates the highest possible speed and duplex setting with the neighboring device.",
+        "It automatically assigns a valid IPv4 address and subnet mask to the connected host.",
+        "It converts incoming half-duplex CSMA/CD frames into full-duplex Ethernet frames without buffering."
+      ],
+      "correct": 0,
+      "explanation": "Funkce Auto-MDIX (Automatic Medium-Dependent Interface Crossover) automaticky detekuje typ kabelu a interně přizpůsobí vysílací (Tx) a přijímací (Rx) páry. Umožňuje bezproblémové použití přímého (straight-through) i kříženého (crossover) kabelu."
+    },
+    {
+      "id": "itn_q14",
+      "module": "itn_m2",
+      "question": "Which two functions are performed at the MAC sublayer of the OSI Data Link layer? (Choose the statement that best describes MAC responsibilities.)",
+      "options": [
+        "Adding physical source and destination MAC addresses and appending a Frame Check Sequence (FCS) trailer for error detection.",
+        "Communicating directly with upper-layer network protocols and identifying protocol types using EtherType.",
+        "Reordering TCP segments received out of sequence and negotiating receive window sizes.",
+        "Routing packets across multiple logical subnets based on destination IP addresses."
+      ],
+      "correct": 0,
+      "explanation": "Linková vrstva (Layer 2) se dělí na LLC (802.2) a MAC (802.3). MAC podvrstva řídí přístup k fyzickému médiu, přidává zdrojovou a cílovou MAC adresu a na konec rámce vkládá kontrolní součet FCS (CRC) pro detekci chyb."
+    },
+    {
+      "id": "itn_q15",
+      "module": "itn_m2",
+      "question": "An Ethernet MAC address is 48 bits long. What does the first 24 bits (6 hexadecimal digits) represent?",
+      "options": [
+        "The Organizationally Unique Identifier (OUI) assigned to the manufacturer by the IEEE",
+        "The unique vendor-assigned device serial number",
+        "The broadcast and multicast network filter mask",
+        "The logical subnet prefix of the local physical LAN segment"
+      ],
+      "correct": 0,
+      "explanation": "Prvních 24 bitů (3 bajty / 6 hex znaků) MAC adresy tvoří OUI (Organizationally Unique Identifier), které výrobci síťové karty přiděluje organizace IEEE. Zbývajících 24 bitů je unikátní sériové číslo přiřazené samotným výrobcem."
+    },
+    {
+      "id": "itn_q16",
+      "module": "itn_m2",
+      "question": "What is the minimum valid Ethernet frame size (from Destination MAC through the FCS), and what happens when a switch receives a frame smaller than this threshold?",
+      "options": [
+        "64 bytes; frames smaller than 64 bytes are called runts and are automatically dropped by the switch.",
+        "46 bytes; frames smaller than 46 bytes are buffered in RAM until additional data arrives.",
+        "128 bytes; frames smaller than 128 bytes are padded with zeros up to 1518 bytes.",
+        "1518 bytes; frames smaller than 1518 bytes are marked with an error flag and forwarded to the router."
+      ],
+      "correct": 0,
+      "explanation": "Minimální platná velikost Ethernet II rámce je 64 bajtů (pokud má užitečné zatížení méně než 46 bajtů, doplní se padding). Rámce kratší než 64 bajtů se nazývají 'runt frames' (obvykle způsobené kolizí) a přepínače je okamžitě zahazují."
+    },
+    {
+      "id": "itn_q17",
+      "module": "itn_m2",
+      "question": "Which Ethernet switching method provides the lowest forwarding latency by beginning to transmit the frame immediately after reading the destination MAC address?",
+      "options": [
+        "Store-and-forward",
+        "Cut-through (Fast-forward)",
+        "Fragment-free",
+        "Adaptive buffering"
+      ],
+      "correct": 1,
+      "explanation": "Metoda Cut-through (Fast-forward) nabízí nejnižší latenci, protože začne rámec přeposílat okamžitě po přečtení cílové MAC adresy (prvních 6 bajtů po preambuli). Store-and-forward načte celý rámec a zkontroluje FCS, což zvyšuje zpoždění."
+    },
+    {
+      "id": "itn_q18",
+      "module": "itn_m2",
+      "question": "What action does an Ethernet switch take when it receives a unicast frame whose destination MAC address is not currently found in its MAC address table?",
+      "options": [
+        "It floods the frame out of all ports except the incoming port on which the frame was received.",
+        "It drops the frame immediately and sends an ICMP Host Unreachable message to the source.",
+        "It forwards the frame exclusively to the switch's default gateway IP address.",
+        "It holds the frame in a queue until the destination host sends an ARP broadcast."
+      ],
+      "correct": 0,
+      "explanation": "Pokud přepínač nezná cílovou MAC adresu (tzv. unknown unicast), provede zaplavení (unknown unicast flooding) — rozešle rámec všemi aktivními porty v dané VLAN kromě portu, na kterém rámec přijal."
+    },
+    {
+      "id": "itn_q19",
+      "module": "itn_m2",
+      "question": "In a legacy half-duplex Ethernet network, what action is taken by transmitting hosts immediately after a collision is detected by CSMA/CD?",
+      "options": [
+        "The transmitting hosts transmit a jam signal, cease transmission, and wait for a random backoff period before attempting retransmission.",
+        "The hosts immediately negotiate a full-duplex session with the central hub.",
+        "The hosts increase electrical voltage on the copper cable to overpower the conflicting signal.",
+        "The hosts immediately forward the colliding frames to the default gateway router."
+      ],
+      "correct": 0,
+      "explanation": "Při kolizi v síti CSMA/CD vyšlou vysílající uzly rušicí signál (jam signal), aby upozornily všechny stanice na kolizi, okamžitě zastaví vysílání a vyčkají náhodnou dobu (backoff algorithm) před novým pokusem o vysílání."
+    },
+    {
+      "id": "itn_q20",
+      "module": "itn_m2",
+      "question": "What symptom is typically observed when one side of a point-to-point Ethernet link is manually configured for Full-Duplex and the connecting switch port is set to Half-Duplex?",
+      "options": [
+        "Late collisions, CRC errors, and degraded network throughput on the half-duplex port.",
+        "The switch automatically places the port into an err-disabled state and turns off the link LED.",
+        "The half-duplex device automatically clones the MAC address table of the full-duplex peer.",
+        "Continuous broadcast storms are generated across the entire local broadcast domain."
+      ],
+      "correct": 0,
+      "explanation": "Při 'duplex mismatch' full-duplex strana vysílá a přijímá současně bez ohledu na linku. Half-duplex strana však detekuje tento souběžný provoz jako kolize, což generuje pozdní kolize (late collisions), CRC chyby a obrovskou ztrátovost paketů."
+    },
+    {
+      "id": "itn_q21",
+      "module": "itn_m3",
+      "question": "Which two characteristics accurately describe the fundamental design of the Internet Protocol (IP)?",
+      "options": [
+        "Connectionless and Best-effort",
+        "Connection-oriented and Reliable",
+        "Media-dependent and Error-free",
+        "Flow-controlled and Guaranteed delivery"
+      ],
+      "correct": 0,
+      "explanation": "Internet Protocol (IP) je ze své podstaty: 1) Connectionless (nespojovaný – nepředchází žádné navazování relace) a 2) Best-effort (nespolehlivý – sám o sobě nekontroluje doručení ani nezajišťuje retransmise; spolehlivost řeší vyšší vrstva, např. TCP)."
+    },
+    {
+      "id": "itn_q22",
+      "module": "itn_m3",
+      "question": "What happens when a router receives an IPv4 packet with a Time to Live (TTL) value of 1 that is destined for a host multiple hops away?",
+      "options": [
+        "The router decrements the TTL to 0, discards the packet, and sends an ICMP Time Exceeded message back to the source host.",
+        "The router forwards the packet with a TTL of 1 to ensure prompt delivery without delay.",
+        "The router resets the TTL to 64 and forwards the packet out the default gateway interface.",
+        "The router floods the packet out all active interfaces except the incoming interface."
+      ],
+      "correct": 0,
+      "explanation": "Při průchodu směrovačem se hodnota TTL sníží o 1. Pokud hodnota klesne na 0, směrovač paket zahodí (zabraňuje nekonečným smyčkám) a odesílateli pošle zprávu ICMP Time Exceeded (Type 11). Na tomto principu funguje utilita traceroute."
+    },
+    {
+      "id": "itn_q23",
+      "module": "itn_m3",
+      "question": "Which range of IPv4 addresses is defined by RFC 1918 for private networks and is not routable on the public Internet?",
+      "options": [
+        "172.16.0.0 to 172.31.255.255",
+        "172.0.0.0 to 172.15.255.255",
+        "192.169.0.0 to 192.169.255.255",
+        "169.254.0.0 to 169.254.255.255"
+      ],
+      "correct": 0,
+      "explanation": "Privátní IPv4 rozsahy dle RFC 1918: 10.0.0.0/8 (10.0.0.0 – 10.255.255.255), 172.16.0.0/12 (172.16.0.0 – 172.31.255.255) a 192.168.0.0/16 (192.168.0.0 – 192.168.255.255). Rozsah 169.254.0.0/16 je APIPA."
+    },
+    {
+      "id": "itn_q24",
+      "module": "itn_m3",
+      "question": "A Windows client fails to obtain an IP configuration from a local DHCP server and automatically configures itself with the IP address 169.254.10.55. What type of IPv4 address is this?",
+      "options": [
+        "Automatic Private IP Addressing (APIPA) link-local address",
+        "Public globally routable unicast IP address",
+        "RFC 1918 Class B private corporate address",
+        "Class D multicast group address"
+      ],
+      "correct": 0,
+      "explanation": "Adresní rozsah 169.254.0.0/16 je definován jako APIPA (IPv4 Link-Local). Klientské stanice si tuto adresu přiřadí automaticky, když selže komunikace s DHCP serverem, což umožní komunikaci pouze v rámci lokálního segmentu."
+    },
+    {
+      "id": "itn_q25",
+      "module": "itn_m3",
+      "question": "A network administrator needs to create a subnet that supports up to 500 usable host devices. Which subnet mask provides the minimum number of unused host IP addresses?",
+      "options": [
+        "255.255.255.0 (/24)",
+        "255.255.254.0 (/23)",
+        "255.255.252.0 (/22)",
+        "255.255.248.0 (/21)"
+      ],
+      "correct": 1,
+      "explanation": "Maska /24 (255.255.255.0) poskytuje 2^8 - 2 = 254 použitelných hostů (nestačí pro 500). Maska /23 (255.255.254.0) má 9 bitů pro hosty: 2^9 - 2 = 510 použitelných adres, což je nejmenší maska pokrývající 500 hostů."
+    },
+    {
+      "id": "itn_q26",
+      "module": "itn_m3",
+      "question": "Given the IPv4 host address 192.168.10.68/26, what are the network address and directed broadcast address for this subnet?",
+      "options": [
+        "Network: 192.168.10.64, Broadcast: 192.168.10.127",
+        "Network: 192.168.10.0, Broadcast: 192.168.10.255",
+        "Network: 192.168.10.64, Broadcast: 192.168.10.69",
+        "Network: 192.168.10.32, Broadcast: 192.168.10.63"
+      ],
+      "correct": 0,
+      "explanation": "Prefix /26 má masku 255.255.255.192. Krok (velikost bloku) je 256 - 192 = 64. Podsítě jsou .0, .64, .128, .192. Host .68 spadá do podsítě 192.168.10.64. Broadcast je o 1 méně než další síť (.128 - 1 = .127), tedy 192.168.10.127."
+    },
+    {
+      "id": "itn_q27",
+      "module": "itn_m3",
+      "question": "What is the primary role of the Address Resolution Protocol (ARP) in an IPv4 Ethernet network?",
+      "options": [
+        "To map a known destination IPv4 address to its corresponding physical MAC address on the local network",
+        "To resolve a fully qualified domain name (FQDN) into an IPv4 address",
+        "To dynamically assign IP configurations, subnet masks, and default gateways to booting hosts",
+        "To provide secure symmetric encryption for Layer 2 Ethernet payloads"
+      ],
+      "correct": 0,
+      "explanation": "Protokol ARP (Address Resolution Protocol) slouží k převodu (mapování) známé logické IPv4 adresy cíle na jeho fyzickou linkovou MAC adresu v rámci lokální sítě."
+    },
+    {
+      "id": "itn_q28",
+      "module": "itn_m3",
+      "question": "Which statement accurately describes the transmission characteristics of an ARP request and an ARP reply?",
+      "options": [
+        "An ARP request is sent as a Layer 2 broadcast (FF:FF:FF:FF:FF:FF), while an ARP reply is sent as a Layer 2 unicast.",
+        "Both the ARP request and the ARP reply are sent as Layer 2 broadcasts to ensure all hosts update their tables.",
+        "An ARP request is sent as a Layer 2 unicast, while the ARP reply is sent as an IP multicast.",
+        "An ARP request uses TCP port 67, while an ARP reply uses UDP port 68."
+      ],
+      "correct": 0,
+      "explanation": "ARP request je odesílán jako broadcast (cílová MAC FF:FF:FF:FF:FF:FF), aby jej přijaly všechny stanice v broadcast doméně. Stanice, které daná IP patří, odpoví přímo tazateli prostřednictvím unicast rámce (ARP reply)."
+    },
+    {
+      "id": "itn_q29",
+      "module": "itn_m3",
+      "question": "When a PC transmits an IP packet to a remote web server located on the public Internet, what destination MAC address is placed in the Ethernet frame departing the PC?",
+      "options": [
+        "The MAC address of the local router interface acting as the default gateway",
+        "The MAC address of the destination web server on the remote network",
+        "The Layer 2 broadcast address FF:FF:FF:FF:FF:FF",
+        "The MAC address of the DNS server configured on the PC"
+      ],
+      "correct": 0,
+      "explanation": "Cílová IP adresa v paketu zůstává nezměněna (IP web serveru). Cílová MAC adresa v ethernetovém rámci na lokálním segmentu je však MAC adresa výchozí brány (rozhraní směrovače), která paket převezme a přesměruje dál."
+    },
+    {
+      "id": "itn_q30",
+      "module": "itn_m3",
+      "question": "Which two commands can be executed in the Windows Command Prompt to inspect the local computer's IP routing table?",
+      "options": [
+        "'route print' and 'netstat -r'",
+        "'ipconfig /all' and 'ping 127.0.0.1'",
+        "'tracert' and 'nslookup'",
+        "'arp -a' and 'show ip route'"
+      ],
+      "correct": 0,
+      "explanation": "Ve Windows Command Promptu lze lokální směrovací tabulku zobrazit příkazy 'route print' nebo 'netstat -r'. Příkaz 'arp -a' zobrazuje ARP mezipaměť a 'ipconfig /all' nastavení síťových karet."
+    },
+    {
+      "id": "itn_q31",
+      "module": "itn_m4",
+      "question": "What is the most compressed representation of the IPv6 address 2001:0DB8:0000:0000:0000:0000:1428:57AB?",
+      "options": [
+        "2001:db8::1428:57ab",
+        "2001:db8:0:0:0:0:1428:57ab",
+        "2001:db8::0::1428:57ab",
+        "2001:0db8::1428:57ab"
+      ],
+      "correct": 0,
+      "explanation": "Pravidla komprese IPv6: 1) Vynechání úvodních nul ve skupině (0DB8 -> db8), 2) Nahrazení souvislého bloku nul dvojtečkou '::' (může být použita pouze jednou v adrese). Výsledná podoba je 2001:db8::1428:57ab."
+    },
+    {
+      "id": "itn_q32",
+      "module": "itn_m4",
+      "question": "Which prefix is reserved for IPv6 Link-Local Unicast addresses that are automatically configured on all IPv6-enabled interfaces?",
+      "options": [
+        "FE80::/10",
+        "2000::/3",
+        "FC00::/7",
+        "FF00::/8"
+      ],
+      "correct": 0,
+      "explanation": "Adresy FE80::/10 (obvykle fe80::/64) jsou Link-Local unicast adresy, které se automaticky vytvářejí na každém IPv6 rozhraní pro komunikaci na jedné lokální lince (směrovače je nepřeposílají). 2000::/3 jsou GUA, FC00::/7 Unique Local a FF00::/8 Multicast."
+    },
+    {
+      "id": "itn_q33",
+      "module": "itn_m4",
+      "question": "What two modifications does the EUI-64 process make when generating a 64-bit IPv6 interface ID from a 48-bit Ethernet MAC address?",
+      "options": [
+        "It inserts the 16-bit hexadecimal value FFFE in the middle of the MAC address and inverts the 7th bit (Universal/Local bit).",
+        "It appends FFFF to the end of the MAC address and sets the high-order bit to 1.",
+        "It prepends FE80 to the MAC address and computes an MD5 checksum of the payload.",
+        "It replaces the OUI portion with random numbers and compresses all zero bytes."
+      ],
+      "correct": 0,
+      "explanation": "Proces EUI-64 vezme 48bitovou MAC adresu (např. 00:11:22:33:44:55), doprostřed vloží 'FFFE' (0011:22FF:FE33:4455) a invertuje 7. bit prvního bajtu (Universal/Local bit; hodnota 00 se změní na 02)."
+    },
+    {
+      "id": "itn_q34",
+      "module": "itn_m4",
+      "question": "Which global configuration command is required on a Cisco router to enable IPv6 packet routing and allow the router to send ICMPv6 Router Advertisement (RA) messages?",
+      "options": [
+        "ipv6 unicast-routing",
+        "ip routing ipv6",
+        "ipv6 enable",
+        "service ipv6-forwarding"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'ipv6 unicast-routing' v globální konfiguraci aktivuje na směrovači směrování IPv6 paketů a umožní rozesílání zpráv ICMPv6 Router Advertisement (RA), které klienti používají pro autokonfiguraci SLAAC."
+    },
+    {
+      "id": "itn_q35",
+      "module": "itn_m4",
+      "question": "Which statement accurately describes a key operational difference between TCP and UDP at the Transport layer?",
+      "options": [
+        "TCP provides reliable, connection-oriented data delivery with retransmission of lost segments, whereas UDP provides low-overhead, connectionless best-effort delivery.",
+        "UDP performs flow control and dynamic window sizing, whereas TCP sends packets without requiring acknowledgments.",
+        "TCP is primarily designed for real-time video streaming, whereas UDP is mandatory for secure web and file transfer protocols.",
+        "Both TCP and UDP utilize a 3-way handshake, but UDP uses smaller 8-byte sequence numbers."
+      ],
+      "correct": 0,
+      "explanation": "TCP je spolehlivý spojovaný protokol (connection-oriented), který garantuje doručení, řadí segmenty a řídí tok. UDP je nespojovaný (connectionless) protokol s minimální režií (hlavička 8 B vs 20 B), ideální pro DNS, DHCP a real-time aplikace (VoIP/video)."
+    },
+    {
+      "id": "itn_q36",
+      "module": "itn_m4",
+      "question": "What is the correct sequence of TCP control flags exchanged between a client and a server during the 3-way handshake to establish a connection?",
+      "options": [
+        "SYN -> SYN-ACK -> ACK",
+        "ACK -> SYN -> ACK-SYN",
+        "SYN -> ACK -> FIN",
+        "HELLO -> ACK -> ESTABLISHED"
+      ],
+      "correct": 0,
+      "explanation": "Navázání TCP relace probíhá ve třech krocích (3-way handshake): 1. Klient odešle SYN (synchronizace pořadových čísel), 2. Server odpoví SYN-ACK (potvrzení a vlastní synchronizace), 3. Klient potvrdí přijetí pomocí ACK."
+    },
+    {
+      "id": "itn_q37",
+      "module": "itn_m4",
+      "question": "What is the purpose of the Window field in the TCP segment header during data transmission?",
+      "options": [
+        "It regulates flow control by specifying the number of bytes that the destination device can receive before requiring an acknowledgment.",
+        "It specifies the maximum session idle time before the connection is automatically terminated.",
+        "It contains the cryptographic encryption key used to protect payload confidentiality.",
+        "It counts the number of router hops traversed to prevent routing loops."
+      ],
+      "correct": 0,
+      "explanation": "Pole Window (Window Size) v TCP hlavičce zajišťuje řízení toku (flow control). Udává velikost volného bufferu příjemce v bajtech, tj. kolik dat může odesílatel poslat, než musí počkat na potvrzení (ACK)."
+    },
+    {
+      "id": "itn_q38",
+      "module": "itn_m4",
+      "question": "When TCP segments arrive at a destination host out of order due to differing network paths, how does TCP ensure the application receives the data in the correct order?",
+      "options": [
+        "TCP buffers the segments and uses the Sequence Numbers in the header to reassemble them into the original order before delivering them to the application layer.",
+        "TCP discards all out-of-order segments and immediately forces a complete retransmission of the entire stream.",
+        "TCP delivers segments to the application immediately as they arrive and delegates reordering to the user software.",
+        "TCP converts out-of-order segments into UDP datagrams to bypass sequence verification."
+      ],
+      "correct": 0,
+      "explanation": "TCP ukládá doručené segmenty do přijímacího bufferu a podle hodnot v poli Sequence Number (pořadové číslo) je poskládá do správného pořadí. Teprve po zkompletování souvislého proudu dat je předá aplikační vrstvě."
+    },
+    {
+      "id": "itn_q39",
+      "module": "itn_m4",
+      "question": "A transport layer segment arrives at a server with destination port number 53. Which network service is being requested?",
+      "options": [
+        "Domain Name System (DNS)",
+        "Simple Mail Transfer Protocol (SMTP)",
+        "Hypertext Transfer Protocol (HTTP)",
+        "Dynamic Host Configuration Protocol (DHCP)"
+      ],
+      "correct": 0,
+      "explanation": "Port 53 (jak na UDP pro rychlé dotazy, tak na TCP pro zónové přenosy a velké odpovědi) je vyhrazen pro DNS (Domain Name System). SMTP používá port 25, HTTP port 80 a DHCP porty 67/68."
+    },
+    {
+      "id": "itn_q40",
+      "module": "itn_m4",
+      "question": "What is the correct sequence of messages exchanged between an IPv4 client and a DHCP server during the dynamic address allocation process?",
+      "options": [
+        "DHCPDISCOVER -> DHCPOFFER -> DHCPREQUEST -> DHCPACK",
+        "DHCPOFFER -> DHCPDISCOVER -> DHCPACK -> DHCPREQUEST",
+        "DHCPREQUEST -> DHCPACK -> DHCPDISCOVER -> DHCPOFFER",
+        "DHCPQUERY -> DHCPREPLY -> DHCPCONFIRM -> DHCPACK"
+      ],
+      "correct": 0,
+      "explanation": "Proces přidělení IP adresy přes DHCPv4 se označuje mnemotechnickou pomůckou DORA: 1. DHCPDISCOVER (klient hledá server), 2. DHCPOFFER (server nabízí IP), 3. DHCPREQUEST (klient žádá o nabízenou IP), 4. DHCPACK (server potvrzuje přidělení)."
+    }
+  ]
+}
 };
