@@ -34,6 +34,9 @@
       <div class="user-pill" id="userPillBtn" title="Uživatelský profil a statistiky (klikněte pro zobrazení nebo změnu přezdívky)">
         <i class="fas fa-user-circle"></i>
         <span class="user-nickname" id="navNickname">Student</span>
+        <span id="navAdminBadge" class="nav-admin-badge" style="display: none;" title="Ověřený správce webu (cqeta1564)">
+          <i class="fas fa-shield-alt"></i>
+        </span>
       </div>
       <button class="btn-icon" id="soundToggleBtn" title="Zvuky (Ztlumit/Zapnout)">
         <i class="fas fa-volume-up"></i>
@@ -503,6 +506,9 @@
           <div class="stats-user-details">
             <div class="stats-user-name-row">
               <h2 id="statsUserNameDisplay">Student</h2>
+              <span id="statsAdminBadge" class="admin-hero-badge" style="display: none;" title="Přihlášen jako vlastník a správce">
+                <i class="fas fa-shield-alt"></i> Správce (Admin)
+              </span>
               <button class="btn btn-sm btn-secondary" id="editNicknameBtn" title="Změnit přezdívku">
                 <i class="fas fa-pen"></i> Změnit přezdívku
               </button>
@@ -530,6 +536,9 @@
         </button>
         <button class="stats-tab-btn" data-subtab="exams">
           <i class="fas fa-graduation-cap"></i> Zkouškový simulátor
+        </button>
+        <button class="stats-tab-btn admin-only-tab" id="statsTrafficTabBtn" data-subtab="traffic" style="display: none;" title="Statistiky návštěvnosti webu (pouze pro @cqeta1564)">
+          <i class="fas fa-chart-line"></i> Návštěvnost webu <span class="admin-badge-pill">Admin</span>
         </button>
       </div>
 
@@ -677,6 +686,136 @@
             <!-- Dynamically populated history table or empty message -->
           </div>
         </div>
+      </div>
+
+      <!-- SUBPANEL 4: TRAFFIC & VISITOR ANALYTICS (ADMIN ONLY: cqeta1564) -->
+      <div class="stats-subpanel" id="subtabTraffic" style="display: none;">
+        
+        <!-- TRAFFIC HERO STATUS -->
+        <div class="stats-section-box traffic-hero-box">
+          <div class="traffic-header-content">
+            <div class="traffic-title-wrap">
+              <div class="traffic-icon-box">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div>
+                <div class="traffic-live-indicator">
+                  <span class="pulse-dot"></span>
+                  <span class="live-label">Živé globální statistiky • Autorizováno pro @cqeta1564</span>
+                </div>
+                <h3 style="margin: 0; font-size: 1.15rem;">Statistiky návštěvnosti webu</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 4px 0 0 0;">
+                  Reálný provoz, počet unikátních návštěvníků a denní trendy hostované na GitHub Pages.
+                </p>
+              </div>
+            </div>
+            <div class="traffic-header-actions">
+              <button class="btn btn-sm btn-secondary" id="refreshTrafficBtn" title="Aktualizovat data z počítadla">
+                <i class="fas fa-sync-alt" id="refreshTrafficIcon"></i> Obnovit data
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRAFFIC KPI SUMMARY -->
+        <div class="stats-kpi-grid traffic-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="trafficTotalViews">--</span>
+              <span class="kpi-label">Celkem zobrazení stránek</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="trafficUniqueVisitors">--</span>
+              <span class="kpi-label">Unikátních návštěvníků</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+              <i class="fas fa-calendar-day"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="trafficTodayViews">--</span>
+              <span class="kpi-label">Dnešní návštěvy</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-value" id="trafficPagesPerVisitor">--</span>
+              <span class="kpi-label">Zobrazení / návštěvník</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7-DAY TRAFFIC TREND -->
+        <div class="stats-section-box">
+          <div class="section-title-row">
+            <div>
+              <h3 style="margin: 0;"><i class="fas fa-chart-bar"></i> Trend návštěvnosti za posledních 7 dní</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+                Historie denních přístupů z CountAPI přehledně v grafu.
+              </p>
+            </div>
+            <span class="traffic-badge-source"><i class="fas fa-cloud"></i> CountAPI Cloud Sync</span>
+          </div>
+          <div class="traffic-days-chart" id="trafficDaysChart">
+            <!-- Dynamically populated 7-day bar chart -->
+          </div>
+        </div>
+
+        <!-- TECHNICAL & CLIENT SPECS -->
+        <div class="stats-two-col">
+          <div class="stats-section-box">
+            <div class="section-title-row">
+              <h3><i class="fas fa-server"></i> Infrastruktura &amp; Hosting</h3>
+            </div>
+            <div class="tech-spec-list">
+              <div class="tech-spec-item">
+                <span class="tech-spec-label"><i class="fab fa-github"></i> Poskytovatel hostingu</span>
+                <span class="tech-spec-value">GitHub Pages (CDN Fastly)</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label"><i class="fas fa-link"></i> Produkční URL</span>
+                <span class="tech-spec-value"><a href="https://cqeta1564.github.io/cisco-netacad-prep/" target="_blank" rel="noopener">cqeta1564.github.io/...</a></span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label"><i class="fas fa-lock"></i> Šifrování &amp; Protokol</span>
+                <span class="tech-spec-value">HTTPS / TLS 1.3, HTTP/2</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label"><i class="fas fa-database"></i> Databáze &amp; Otázky</span>
+                <span class="tech-spec-value">410 otázek (10 certifikátů, 4 obory)</span>
+              </div>
+              <div class="tech-spec-item">
+                <span class="tech-spec-label"><i class="fas fa-cookie"></i> Ukládání profilu</span>
+                <span class="tech-spec-value">Cookies (SameSite=Lax) + LocalStorage</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-section-box">
+            <div class="section-title-row">
+              <h3><i class="fas fa-laptop-code"></i> Telemetrie aktuálního klienta</h3>
+            </div>
+            <div class="tech-spec-list" id="clientTelemetryList">
+              <!-- Dynamically populated client details -->
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

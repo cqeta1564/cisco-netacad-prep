@@ -57,6 +57,7 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
      - Sledování úspěšnosti a postupu na základě cookies a volitelné přezdívky (bez nutnosti registrace a přihlašování).
      - Přehled pokrytí celé banky otázek (0 / 410), celková přesnost a zápisník chyb k cílenému doprocvičení.
      - Kompletní historie zkoušek s časy, procenty a přímým filtrem nesložených pokusů.
+     - 🛡️ **Statistiky návštěvnosti webu (Admin Dashboard)**: Při zadání administrátorské přezdívky `cqeta1564` se v profilu automaticky odemkne živý přehled návštěvnosti webu (celkový počet zobrazení, unikátní návštěvníci, dnešní aktivita, 7denní trend a telemetrie). Pro běžné uživatele zůstává sekce zcela skrytá.
 - **Moderní UI & Audio efekty**:
   - Tmavý (Dark) i světlý (Light) režim s plynulým přepínáním.
   - Generované audio efekty (Web Audio API – není potřeba stahovat žádné zvukové soubory).

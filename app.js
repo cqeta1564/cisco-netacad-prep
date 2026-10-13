@@ -94,6 +94,9 @@ class NetAcadApp {
 
     // Init with active cert
     this.loadCertificate(this.activeCert);
+
+    // Track page visit in background
+    this.trackPageVisit();
   }
 
   bindEvents() {
@@ -176,6 +179,15 @@ class NetAcadApp {
         this.sound.click();
       });
     });
+
+    // Refresh traffic button
+    const refreshTrafficBtn = document.getElementById('refreshTrafficBtn');
+    if (refreshTrafficBtn) {
+      refreshTrafficBtn.addEventListener('click', () => {
+        this.sound.click();
+        this.loadTrafficData(true);
+      });
+    }
 
     // Category filter pills
     document.querySelectorAll('.cat-pill-btn').forEach(btn => {
@@ -1491,9 +1503,36 @@ class NetAcadApp {
     if (banner) banner.textContent = this.nickname;
   }
 
+  isAdmin() {
+    return (this.nickname || '').trim().toLowerCase() === 'cqeta1564';
+  }
+
   updateUserNavbar() {
     const navEl = document.getElementById('navNickname');
     if (navEl) navEl.textContent = this.nickname;
+
+    const navAdminBadge = document.getElementById('navAdminBadge');
+    if (navAdminBadge) {
+      navAdminBadge.style.display = this.isAdmin() ? 'inline-flex' : 'none';
+    }
+
+    const trafficTabBtn = document.getElementById('statsTrafficTabBtn');
+    if (trafficTabBtn) {
+      trafficTabBtn.style.display = this.isAdmin() ? 'inline-flex' : 'none';
+    }
+
+    const statsAdminBadge = document.getElementById('statsAdminBadge');
+    if (statsAdminBadge) {
+      statsAdminBadge.style.display = this.isAdmin() ? 'inline-flex' : 'none';
+    }
+
+    // If active subtab was traffic and user is not admin, redirect to overview
+    if (!this.isAdmin()) {
+      const trafficPanel = document.getElementById('subtabTraffic');
+      if (trafficPanel && trafficPanel.style.display !== 'none') {
+        this.switchStatsSubtab('overview');
+      }
+    }
   }
 
   updatePracticeLiveStats() {
@@ -1572,6 +1611,10 @@ class NetAcadApp {
   }
 
   switchStatsSubtab(subtab) {
+    if (subtab === 'traffic' && !this.isAdmin()) {
+      subtab = 'overview';
+    }
+
     document.querySelectorAll('.stats-tab-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.subtab === subtab);
     });
@@ -1579,7 +1622,8 @@ class NetAcadApp {
     const panels = {
       overview: document.getElementById('subtabOverview'),
       practice: document.getElementById('subtabPractice'),
-      exams: document.getElementById('subtabExams')
+      exams: document.getElementById('subtabExams'),
+      traffic: document.getElementById('subtabTraffic')
     };
 
     Object.entries(panels).forEach(([k, el]) => {
@@ -1588,6 +1632,10 @@ class NetAcadApp {
         el.classList.toggle('active', k === subtab);
       }
     });
+
+    if (subtab === 'traffic' && this.isAdmin()) {
+      this.loadTrafficData();
+    }
   }
 
   renderStatsView() {
@@ -2051,6 +2099,204 @@ class NetAcadApp {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  /* ========================================================
+     TRAFFIC TRACKING & ADMIN ANALYTICS (cqeta1564 ONLY)
+  ======================================================== */
+  async trackPageVisit() {
+    try {
+      const todayStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      const sessionKey = 'cqeta_session_tracked_' + todayStr;
+      const isNewSession = !sessionStorage.getItem(sessionKey);
+
+      // Total Pageviews increment
+      fetch('https://countapi.mileshilliard.com/api/v1/hit/cqeta1564_cisco_netacad_prep_views')
+        .catch(() => {});
+
+      // Unique Visitor / Session increment
+      if (isNewSession) {
+        sessionStorage.setItem(sessionKey, '1');
+        
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/cqeta1564_cisco_netacad_prep_uniques')
+          .catch(() => {});
+          
+        fetch(`https://countapi.mileshilliard.com/api/v1/hit/cqeta1564_cisco_netacad_prep_date_${todayStr}`)
+          .catch(() => {});
+      }
+
+      // Redundant hit trigger to hits.sh
+      if (typeof Image !== 'undefined') {
+        const pingImg = new Image();
+        pingImg.src = 'https://hits.sh/cqeta1564.github.io/cisco-netacad-prep.svg?t=' + Date.now();
+      }
+
+      // Record local telemetry log
+      this.saveLocalVisitLog();
+    } catch (e) {
+      // Non-blocking silently ignored
+    }
+  }
+
+  saveLocalVisitLog() {
+    try {
+      const now = new Date();
+      const log = {
+        time: now.toLocaleString('cs-CZ'),
+        timestamp: now.getTime(),
+        cert: this.activeCert,
+        mode: this.activeMode,
+        userAgent: navigator.userAgent,
+        screen: `${window.screen.width}x${window.screen.height}`,
+        lang: navigator.language || 'cs-CZ',
+        theme: document.documentElement.getAttribute('data-theme') || 'dark'
+      };
+      const existing = JSON.parse(localStorage.getItem('cqeta_local_traffic_log') || '[]');
+      existing.unshift(log);
+      if (existing.length > 50) existing.length = 50;
+      localStorage.setItem('cqeta_local_traffic_log', JSON.stringify(existing));
+    } catch (e) {}
+  }
+
+  async loadTrafficData(forceRefresh = false) {
+    if (!this.isAdmin()) return;
+
+    const refreshIcon = document.getElementById('refreshTrafficIcon');
+    if (refreshIcon) refreshIcon.classList.add('spinning');
+
+    const totalViewsEl = document.getElementById('trafficTotalViews');
+    const uniquesEl = document.getElementById('trafficUniqueVisitors');
+    const todayEl = document.getElementById('trafficTodayViews');
+    const ratioEl = document.getElementById('trafficPagesPerVisitor');
+    const chartEl = document.getElementById('trafficDaysChart');
+    const telemetryEl = document.getElementById('clientTelemetryList');
+
+    // Build last 7 days keys
+    const days = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const str = d.toISOString().slice(0, 10).replace(/-/g, '');
+      const label = d.toLocaleDateString('cs-CZ', { weekday: 'short', day: 'numeric', month: 'numeric' });
+      days.push({ str, label, isToday: i === 0 });
+    }
+
+    try {
+      const todayStr = days[days.length - 1].str;
+
+      // Parallel fetch from CountAPI and hits.sh
+      const [viewsRes, uniquesRes, todayRes, hitsShRes, ...daysRes] = await Promise.allSettled([
+        fetch('https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_views').then(r => r.json()),
+        fetch('https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_uniques').then(r => r.json()),
+        fetch(`https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_date_${todayStr}`).then(r => r.json()),
+        fetch('https://hits.sh/cqeta1564.github.io/cisco-netacad-prep.svg').then(r => r.text()),
+        ...days.map(d => fetch(`https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_date_${d.str}`).then(r => r.json()))
+      ]);
+
+      // Parse hits.sh fallback count
+      let hitsShCount = 0;
+      if (hitsShRes.status === 'fulfilled' && typeof hitsShRes.value === 'string') {
+        const m = hitsShRes.value.match(/<title>hits:\s*(\d+)<\/title>/i) || hitsShRes.value.match(/aria-label="hits:\s*(\d+)"/i);
+        if (m) hitsShCount = parseInt(m[1], 10) || 0;
+      }
+
+      let totalViews = (viewsRes.status === 'fulfilled' && viewsRes.value && typeof viewsRes.value.value === 'number')
+        ? viewsRes.value.value
+        : (hitsShCount || 1);
+
+      let uniques = (uniquesRes.status === 'fulfilled' && uniquesRes.value && typeof uniquesRes.value.value === 'number')
+        ? uniquesRes.value.value
+        : Math.max(1, Math.round(totalViews * 0.7));
+
+      let todayViews = (todayRes.status === 'fulfilled' && todayRes.value && typeof todayRes.value.value === 'number')
+        ? todayRes.value.value
+        : 1;
+
+      // Extract day counts
+      const dayCounts = days.map((d, idx) => {
+        const item = daysRes[idx];
+        const val = (item && item.status === 'fulfilled' && item.value && typeof item.value.value === 'number')
+          ? item.value.value
+          : 0;
+        return { ...d, count: d.isToday ? Math.max(val, todayViews) : val };
+      });
+
+      // Update KPI widgets
+      if (totalViewsEl) totalViewsEl.textContent = totalViews.toLocaleString('cs-CZ');
+      if (uniquesEl) uniquesEl.textContent = uniques.toLocaleString('cs-CZ');
+      if (todayEl) todayEl.textContent = todayViews.toLocaleString('cs-CZ');
+      if (ratioEl) ratioEl.textContent = (totalViews / Math.max(1, uniques)).toFixed(1);
+
+      // Render 7-day chart
+      if (chartEl) {
+        chartEl.innerHTML = '';
+        const maxVal = Math.max(1, ...dayCounts.map(d => d.count));
+
+        dayCounts.forEach(d => {
+          const pct = Math.max(8, Math.round((d.count / maxVal) * 100));
+          const col = document.createElement('div');
+          col.className = 'traffic-bar-col' + (d.isToday ? ' today' : '');
+          col.innerHTML = `
+            <span class="traffic-bar-val">${d.count}</span>
+            <div class="traffic-bar-fill" style="height: ${pct}%;"></div>
+            <span class="traffic-bar-date">${this.escapeHtml(d.label)}</span>
+          `;
+          chartEl.appendChild(col);
+        });
+      }
+
+    } catch (e) {
+      console.warn('Could not fetch traffic API:', e);
+      if (totalViewsEl) totalViewsEl.textContent = '1';
+      if (uniquesEl) uniquesEl.textContent = '1';
+      if (todayEl) todayEl.textContent = '1';
+      if (ratioEl) ratioEl.textContent = '1.0';
+    } finally {
+      if (refreshIcon) {
+        setTimeout(() => refreshIcon.classList.remove('spinning'), 400);
+      }
+    }
+
+    // Render Client Telemetry
+    if (telemetryEl) {
+      const ua = navigator.userAgent;
+      let os = 'Neznámý OS';
+      if (ua.includes('Win')) os = 'Windows';
+      else if (ua.includes('Mac')) os = 'macOS';
+      else if (ua.includes('Linux')) os = 'Linux';
+      else if (ua.includes('Android')) os = 'Android';
+      else if (ua.includes('iPhone') || ua.includes('iPad')) os = 'iOS';
+
+      let browser = 'Moderní prohlížeč';
+      if (ua.includes('Edg/')) browser = 'Microsoft Edge';
+      else if (ua.includes('Chrome/')) browser = 'Google Chrome';
+      else if (ua.includes('Firefox/')) browser = 'Mozilla Firefox';
+      else if (ua.includes('Safari/') && !ua.includes('Chrome')) browser = 'Apple Safari';
+      else if (ua.includes('OPR/') || ua.includes('Opera/')) browser = 'Opera';
+
+      telemetryEl.innerHTML = `
+        <div class="tech-spec-item">
+          <span class="tech-spec-label"><i class="fas fa-desktop"></i> Operační systém</span>
+          <span class="tech-spec-value">${os}</span>
+        </div>
+        <div class="tech-spec-item">
+          <span class="tech-spec-label"><i class="fas fa-window-maximize"></i> Webový prohlížeč</span>
+          <span class="tech-spec-value">${browser}</span>
+        </div>
+        <div class="tech-spec-item">
+          <span class="tech-spec-label"><i class="fas fa-expand"></i> Rozlišení displeje</span>
+          <span class="tech-spec-value">${window.screen.width} × ${window.screen.height} (${window.screen.colorDepth || 24} bit)</span>
+        </div>
+        <div class="tech-spec-item">
+          <span class="tech-spec-label"><i class="fas fa-language"></i> Jazyk prohlížeče</span>
+          <span class="tech-spec-value">${navigator.language || 'cs-CZ'}</span>
+        </div>
+        <div class="tech-spec-item">
+          <span class="tech-spec-label"><i class="fas fa-wifi"></i> Stav připojení</span>
+          <span class="tech-spec-value" style="color: #10b981;"><i class="fas fa-check-circle"></i> Online (Aktivní)</span>
+        </div>
+      `;
+    }
   }
 }
 
