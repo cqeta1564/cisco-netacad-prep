@@ -9,12 +9,16 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
 5. **Oracle Academy: Database Design** (návrh databází, ERD, normalizace 1NF–3NF)
 6. **Oracle Academy: Database Programming With SQL** (ANSI SQL, SELECT, JOIN, DDL/DML, transakce)
 7. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
+8. **Cisco Networking Academy: NDG Linux Essentials** (příprava na certifikaci LPI 010-160)
+9. **Cisco Networking Academy: CCNA: Switching, Routing, and Wireless Essentials** (CCNA SRWE v7 / CCNA 200-301)
+
+🌐 **Online aplikace na GitHub Pages**: [https://cqeta1564.github.io/cisco-netacad-prep/](https://cqeta1564.github.io/cisco-netacad-prep/)
 
 ---
 
 ## 🌟 Funkce aplikace
 
-- **290 autentických otázek**:
+- **370 autentických otázek**:
   - 45 otázek pro HTML Essentials
   - 45 otázek pro CSS Essentials
   - 40 otázek pro JavaScript Essentials 1
@@ -22,6 +26,8 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
   - 40 otázek pro Oracle Database Design
   - 40 otázek pro Oracle Database Programming With SQL
   - 40 otázek pro Cisco Python Essentials 1
+  - 40 otázek pro Cisco NDG Linux Essentials
+  - 40 otázek pro Cisco CCNA: Switching, Routing, and Wireless Essentials (SRWE)
   - Otázky obsahují originální anglickou textaci a kódové ukázky, správné i klamné odpovědi a detailní vysvětlení v češtině.
 - **4 studijní módy**:
   1. 🎓 **Zkouškový simulátor (Exam Simulator)**:
@@ -37,10 +43,10 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
   3. ⚡ **Bleskové kartičky (Flashcards)**:
      - 3D oboustranné kartičky pro rychlé opakování a zapamatování klíčových pojmů a chytáků.
   4. 📋 **Oficiální tahák & pravidla (Cheatsheets)**:
-     - Přehledné tabulky pro každý certifikát (typy v JS, specifika `typeof null`, CSS Box Model, specificita selektorů, HTML kostra a sémantika, Python operátory a výjimky).
+     - Přehledné tabulky pro každý certifikát (typy v JS, CSS Box Model, HTML sémantika, Python operátory, SQL JOINy, Linux FHS/práva, CCNA VLANy/STP/EtherChannel/WLAN).
   5. 📊 **Moje statistiky (User Profile & Statistics)**:
      - Sledování úspěšnosti a postupu na základě cookies a volitelné přezdívky (bez nutnosti registrace a přihlašování).
-     - Přehled pokrytí celé banky otázek (0 / 250), celková přesnost a zápisník chyb k cílenému doprocvičení.
+     - Přehled pokrytí celé banky otázek (0 / 370), celková přesnost a zápisník chyb k cílenému doprocvičení.
      - Kompletní historie zkoušek s časy, procenty a přímým filtrem nesložených pokusů.
 - **Moderní UI & Audio efekty**:
   - Tmavý (Dark) i světlý (Light) režim s plynulým přepínáním.

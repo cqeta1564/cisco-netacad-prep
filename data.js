@@ -4249,4 +4249,1185 @@ const CERTIFICATES_DATA = {
     }
   ]
 }
+,
+  linux: {
+  "id": "linux",
+  "title": "Cisco Networking Academy: NDG Linux Essentials",
+  "subtitle": "Příprava na certifikaci LPI Linux Essentials (010-160) & NDG Linux",
+  "badge": "NDG Linux Essentials",
+  "icon": "fab fa-linux",
+  "color": "#EAA01A",
+  "passScore": 70,
+  "timeLimit": 45,
+  "modules": [
+    {
+      "id": "linux_m1",
+      "name": "LE-M1: Úvod do Linuxu, Open Source & Licence"
+    },
+    {
+      "id": "linux_m2",
+      "name": "LE-M2: Souborový systém, Práce se soubory & Cesty"
+    },
+    {
+      "id": "linux_m3",
+      "name": "LE-M3: Příkazový řádek, Přesměrování & Vyhledávání (Grep)"
+    },
+    {
+      "id": "linux_m4",
+      "name": "LE-M4: Uživatelé, Oprávnění (chmod) & Správa systému"
+    }
+  ],
+  "questions": [
+    {
+      "id": "linux_q01",
+      "module": "linux_m1",
+      "question": "Which of the following is the primary role of the Linux kernel?",
+      "code": null,
+      "options": [
+        "Managing hardware resources, memory, and process execution",
+        "Rendering the graphical desktop user interface (GUI)",
+        "Compiling C source code into executable binary files",
+        "Managing web browser extensions and HTML rendering"
+      ],
+      "correct": 0,
+      "explanation": "Jádro (kernel) Linuxu je základní vrstva operačního systému, která zprostředkovává komunikaci mezi softwarem a hardwarem a spravuje CPU, operační paměť (RAM), procesy a disková zařízení."
+    },
+    {
+      "id": "linux_q02",
+      "module": "linux_m1",
+      "question": "Who created the original Linux kernel in 1991?",
+      "code": null,
+      "options": [
+        "Linus Torvalds",
+        "Richard Stallman",
+        "Ken Thompson",
+        "Dennis Ritchie"
+      ],
+      "correct": 0,
+      "explanation": "Linus Torvalds oznámil a vydal první verzi jádra Linuxu v roce 1991 jako student Helsinské univerzity."
+    },
+    {
+      "id": "linux_q03",
+      "module": "linux_m1",
+      "question": "Which open source license requires that any modified versions and derivative works must also be distributed under the same license (the 'copyleft' principle)?",
+      "code": null,
+      "options": [
+        "GNU General Public License (GPL)",
+        "MIT License",
+        "BSD License",
+        "Apache 2.0 License"
+      ],
+      "correct": 0,
+      "explanation": "Licence GNU GPL (General Public License) obsahuje klauzuli copyleft: jakýkoliv odvozený software musí být šířen se zdrojovým kódem pod stejnou licencí GPL."
+    },
+    {
+      "id": "linux_q04",
+      "module": "linux_m1",
+      "question": "Which Linux distribution family uses the Debian package format (.deb) and the 'apt' package manager?",
+      "code": null,
+      "options": [
+        "Ubuntu, Linux Mint, Debian",
+        "Red Hat Enterprise Linux, CentOS, Fedora",
+        "openSUSE, SUSE Linux Enterprise",
+        "Arch Linux, Manjaro"
+      ],
+      "correct": 0,
+      "explanation": "Debian a jeho odvozeniny (včetně Ubuntu a Linux Mint) využívají balíčkovací formát .deb a nástroje dpkg a apt/apt-get. RHEL a Fedora používají .rpm."
+    },
+    {
+      "id": "linux_q05",
+      "module": "linux_m1",
+      "question": "Which environment variable contains a colon-separated list of directories searched by the shell to find executable programs?",
+      "code": null,
+      "options": [
+        "$PATH",
+        "$HOME",
+        "$SHELL",
+        "$EXEC"
+      ],
+      "correct": 0,
+      "explanation": "Proměnná prostředí $PATH obsahuje seznam adresářů oddělených dvojtečkou (např. /usr/bin:/bin:/usr/local/bin), ve kterých shell postupně hledá spustitelné programy."
+    },
+    {
+      "id": "linux_q06",
+      "module": "linux_m1",
+      "question": "Which open source operating system component project was founded by Richard Stallman in 1983 to create a completely free Unix-like system?",
+      "code": null,
+      "options": [
+        "The GNU Project",
+        "The Apache Software Foundation",
+        "The Linux Foundation",
+        "The BSD Initiative"
+      ],
+      "correct": 0,
+      "explanation": "Projekt GNU (GNU's Not Unix) založil Richard Stallman v roce 1983 za účelem vytvoření svobodného operačního systému. V kombinaci s jádrem Linuxu vytvořil kompletní systém GNU/Linux."
+    },
+    {
+      "id": "linux_q07",
+      "module": "linux_m1",
+      "question": "Which of the following describes embedded Linux?",
+      "code": null,
+      "options": [
+        "Linux customized and built to run on specialized hardware devices like routers, smart TVs, and IoT appliances",
+        "Linux running exclusively inside a virtual machine on a cloud server",
+        "A standalone text editor embedded directly into the Linux kernel",
+        "A distribution that requires at least 16 GB of RAM to boot"
+      ],
+      "correct": 0,
+      "explanation": "Vestavěný (embedded) Linux je ořezaná a optimalizovaná verze Linuxu běžící na jednoúčelových zařízeních, jako jsou síťové směrovače (OpenWrt), chytré televize, automobily a IoT senzory."
+    },
+    {
+      "id": "linux_q08",
+      "module": "linux_m1",
+      "question": "What does the command 'which' do when passed a program name as an argument?",
+      "code": "$ which python3",
+      "options": [
+        "Locates and prints the full path to the executable file by searching the directories in $PATH",
+        "Prints the version and developer information of the specified command",
+        "Installs the specified program from the official software repository",
+        "Lists all active background processes running that command"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'which' prohledá adresáře uvedené v proměnné prostředí $PATH a vypíše plnou absolutní cestu k nalezenému spustitelnému souboru (např. /usr/bin/python3)."
+    },
+    {
+      "id": "linux_q09",
+      "module": "linux_m1",
+      "question": "What command displays the current working directory path in the terminal?",
+      "code": null,
+      "options": [
+        "pwd",
+        "cwd",
+        "dir",
+        "path"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'pwd' znamená 'print working directory' a vypíše absolutní cestu k aktuálnímu pracovnímu adresáři."
+    },
+    {
+      "id": "linux_q10",
+      "module": "linux_m1",
+      "question": "Which key combination is used in the Bash shell to terminate the currently running foreground command immediately?",
+      "code": null,
+      "options": [
+        "Ctrl + C",
+        "Ctrl + Z",
+        "Ctrl + D",
+        "Ctrl + L"
+      ],
+      "correct": 0,
+      "explanation": "Klávesová zkratka Ctrl + C pošle běžícímu procesu signál SIGINT (přerušení), který proces okamžitě ukončí. Ctrl + Z proces pouze pozastaví (SIGTSTP), Ctrl + D signalizuje EOF."
+    },
+    {
+      "id": "linux_q11",
+      "module": "linux_m2",
+      "question": "According to the Filesystem Hierarchy Standard (FHS), which directory contains system-wide configuration files?",
+      "code": null,
+      "options": [
+        "/etc",
+        "/var",
+        "/bin",
+        "/dev"
+      ],
+      "correct": 0,
+      "explanation": "Adresář /etc obsahuje konfigurační soubory pro celý systém a nainstalované služby (např. /etc/passwd, /etc/hosts, /etc/network/interfaces)."
+    },
+    {
+      "id": "linux_q12",
+      "module": "linux_m2",
+      "question": "What is the difference between an absolute path and a relative path in Linux?",
+      "code": null,
+      "options": [
+        "An absolute path starts from the root directory (/) and uniquely identifies a location regardless of current directory; a relative path starts from the current directory",
+        "An absolute path can only point to files, while relative paths can only point to directories",
+        "An absolute path must begin with the tilde symbol (~), while relative paths begin with dot (.)",
+        "Relative paths are only valid for the root user"
+      ],
+      "correct": 0,
+      "explanation": "Absolutní cesta začíná vždy kořenovým lomítkem '/' (např. /var/log/syslog). Relativní cesta se vztahuje k aktuálnímu pracovnímu adresáři (např. ../docs/readme.txt)."
+    },
+    {
+      "id": "linux_q13",
+      "module": "linux_m2",
+      "question": "Which command with option lists all files in a directory, including hidden files (files beginning with a dot)?",
+      "code": null,
+      "options": [
+        "ls -a",
+        "ls -l",
+        "ls -h",
+        "ls -d"
+      ],
+      "correct": 0,
+      "explanation": "Přepínač '-a' (all) u příkazu ls zobrazí všechny soubory včetně skrytých souborů a adresářů začínajících tečkou (např. .bashrc, .profile)."
+    },
+    {
+      "id": "linux_q14",
+      "module": "linux_m2",
+      "question": "What does the command 'cd ~' (or simply 'cd') do?",
+      "code": "$ cd ~",
+      "options": [
+        "Changes the working directory to the current user's home directory",
+        "Changes to the root directory (/)",
+        "Changes to the previous directory visited",
+        "Changes to the parent directory (..)"
+      ],
+      "correct": 0,
+      "explanation": "Znak tildy '~' představuje domovský adresář přihlášeného uživatele (uložený v proměnné $HOME). Příkaz 'cd' bez argumentu nebo 'cd ~' vás okamžitě přesune do vašeho domovského adresáře."
+    },
+    {
+      "id": "linux_q15",
+      "module": "linux_m2",
+      "question": "Which command creates an empty file if it does not exist, or updates its modification timestamp if it already exists?",
+      "code": null,
+      "options": [
+        "touch",
+        "create",
+        "mkfile",
+        "new"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'touch soubor.txt' vytvoří prázdný soubor, pokud ještě neexistuje. Pokud již existuje, aktualizuje jeho časové razítko posledního přístupu a změny."
+    },
+    {
+      "id": "linux_q16",
+      "module": "linux_m2",
+      "question": "Which command and option is used to recursively copy an entire directory and all its contents?",
+      "code": null,
+      "options": [
+        "cp -r source/ destination/",
+        "mv -r source/ destination/",
+        "copy -all source/ destination/",
+        "cp -f source/ destination/"
+      ],
+      "correct": 0,
+      "explanation": "Přepínač '-r' nebo '-R' (recursive) u příkazu 'cp' je nezbytný pro kopírování celých adresářů včetně všech jejich podsložek a souborů."
+    },
+    {
+      "id": "linux_q17",
+      "module": "linux_m2",
+      "question": "What is the key difference between a hard link and a symbolic (soft) link?",
+      "code": "$ ln file hardlink\n$ ln -s file symlink",
+      "options": [
+        "A hard link points directly to the file's inode and remains valid if the original file is deleted; a symbolic link points to the pathname and breaks if the target is moved or deleted",
+        "A hard link can span across different filesystems, while a soft link cannot",
+        "A soft link cannot link to directories, while a hard link can link to directories",
+        "Hard links take up twice as much disk space as the original file"
+      ],
+      "correct": 0,
+      "explanation": "Pevný odkaz (hard link) sdílí stejný inod (číslo inodu) a datové bloky jako původní soubor — smazáním původního jména data nezmizí. Symbolický odkaz (symlink vytvořený přes ln -s) obsahuje pouze cestu k cíli; po smazání či přesunutí cíle odkaz přestane fungovat (tzv. dangling symlink)."
+    },
+    {
+      "id": "linux_q18",
+      "module": "linux_m2",
+      "question": "Which command is used to remove an empty directory?",
+      "code": null,
+      "options": [
+        "rmdir",
+        "rm -f",
+        "deldir",
+        "erase"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'rmdir' bezpečně odstraní prázdný adresář. Pokud adresář obsahuje soubory, příkaz selže, čímž chrání před nechtěným smazáním dat."
+    },
+    {
+      "id": "linux_q19",
+      "module": "linux_m2",
+      "question": "What does the wildcard '?' match in bash shell globbing?",
+      "code": "$ ls test?.txt",
+      "options": [
+        "Exactly one single arbitrary character",
+        "Zero or more arbitrary characters",
+        "Any numeric digit only",
+        "Any non-alphanumeric special symbol"
+      ],
+      "correct": 0,
+      "explanation": "V shell globbingu otazník '?' zastupuje právě jeden libovolný znak. Hvězdička '*' zastupuje libovolný počet (0 a více) znaků."
+    },
+    {
+      "id": "linux_q20",
+      "module": "linux_m2",
+      "question": "Which directory in the Filesystem Hierarchy Standard contains device nodes (virtual files representing hardware devices like disks and terminals)?",
+      "code": null,
+      "options": [
+        "/dev",
+        "/proc",
+        "/sys",
+        "/boot"
+      ],
+      "correct": 0,
+      "explanation": "Adresář /dev obsahuje speciální soubory zařízení (device files), které reprezentují hardware (např. /dev/sda pro disk, /dev/null pro zahazování výstupu, /dev/tty pro terminál)."
+    },
+    {
+      "id": "linux_q21",
+      "module": "linux_m3",
+      "question": "Which operator is used to redirect the standard output (STDOUT) of a command and append it to an existing file without overwriting?",
+      "code": "$ echo 'New entry' [???] log.txt",
+      "options": [
+        ">>",
+        ">",
+        "<",
+        "2>"
+      ],
+      "correct": 0,
+      "explanation": "Operátor '>>' připojí standardní výstup na konec souboru (append). Samostatné '>' soubor před zápisem přepíše (truncate)."
+    },
+    {
+      "id": "linux_q22",
+      "module": "linux_m3",
+      "question": "What are the standard file descriptor numbers for STDIN, STDOUT, and STDERR in Linux?",
+      "code": null,
+      "options": [
+        "STDIN = 0, STDOUT = 1, STDERR = 2",
+        "STDIN = 1, STDOUT = 2, STDERR = 3",
+        "STDIN = 0, STDOUT = 2, STDERR = 1",
+        "STDIN = 2, STDOUT = 1, STDERR = 0"
+      ],
+      "correct": 0,
+      "explanation": "V Linuxu má standardní vstup (STDIN) číslo 0, standardní výstup (STDOUT) číslo 1 a chybový výstup (STDERR) číslo 2 (proto např. 2> redirectuje chyby)."
+    },
+    {
+      "id": "linux_q23",
+      "module": "linux_m3",
+      "question": "What does the pipe operator (|) do in the command line?",
+      "code": "$ ls -l /etc | grep 'conf'",
+      "options": [
+        "Sends the standard output of the command on the left into the standard input of the command on the right",
+        "Executes both commands simultaneously in the background",
+        "Executes the second command only if the first command succeeds",
+        "Combines the output of two files into a single text file"
+      ],
+      "correct": 0,
+      "explanation": "Roura (pipe, '|') propojí standardní výstup prvního příkazu se standardním vstupem druhého příkazu, což umožňuje skládání výkonných příkazových řetězců."
+    },
+    {
+      "id": "linux_q24",
+      "module": "linux_m3",
+      "question": "Which command searches for a specific pattern or regular expression within text files?",
+      "code": null,
+      "options": [
+        "grep",
+        "find",
+        "locate",
+        "search"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'grep' (Global Regular Expression Print) prohledává obsah souborů nebo vstup ze STDIN a vypisuje řádky odpovídající zadanému vzoru či regulárnímu výrazu."
+    },
+    {
+      "id": "linux_q25",
+      "module": "linux_m3",
+      "question": "Which command is used to display the first 10 lines of a file by default?",
+      "code": null,
+      "options": [
+        "head",
+        "tail",
+        "cat",
+        "top"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'head soubor.txt' standardně vypíše prvních 10 řádků souboru. Příkaz 'tail' naopak vypíše posledních 10 řádků."
+    },
+    {
+      "id": "linux_q26",
+      "module": "linux_m3",
+      "question": "What does the command 'wc -l file.txt' output?",
+      "code": "$ wc -l file.txt",
+      "options": [
+        "The total number of lines in file.txt",
+        "The total number of words in file.txt",
+        "The total number of bytes in file.txt",
+        "The longest line length in file.txt"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'wc' (word count) s přepínačem '-l' spočítá a zobrazí počet nových řádků (lines) v souboru."
+    },
+    {
+      "id": "linux_q27",
+      "module": "linux_m3",
+      "question": "Which command is used to find files and directories in the filesystem based on criteria such as name, size, type, or modification time?",
+      "code": "$ find /home -name '*.conf'",
+      "options": [
+        "find",
+        "grep",
+        "whereis",
+        "ls"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'find' prochází strom adresářů a vyhledává soubory na základě metadat (jméno, velikost, oprávnění, datum změny atd.)."
+    },
+    {
+      "id": "linux_q28",
+      "module": "linux_m3",
+      "question": "How can you view the manual documentation page for a specific Linux command (e.g., ls)?",
+      "code": null,
+      "options": [
+        "man ls",
+        "help ls",
+        "doc ls",
+        "info -m ls"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'man' (manual) zobrazí oficiální manuálovou stránku pro zadaný příkaz či systémové volání."
+    },
+    {
+      "id": "linux_q29",
+      "module": "linux_m3",
+      "question": "What is the purpose of the command 'sort' when used in a command pipeline?",
+      "code": "$ cat names.txt | sort -u",
+      "options": [
+        "Sorts the incoming lines alphabetically or numerically and with -u removes duplicate lines",
+        "Filters out lines containing numbers",
+        "Inverts the case of all characters",
+        "Compresses the text into a zip archive"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'sort' seřadí řádky textu (abecedně nebo číselně). Přepínač '-u' (unique) zajistí, že duplicitní řádky budou po seřazení vynechány."
+    },
+    {
+      "id": "linux_q30",
+      "module": "linux_m3",
+      "question": "What does the command 'export VAR=value' do in a bash shell session?",
+      "code": "$ export SERVER_IP=192.168.1.1",
+      "options": [
+        "Makes the environment variable available to child processes and subshells started from the current shell",
+        "Saves the variable permanently into the /etc/environment configuration file",
+        "Prints the variable value to all connected network clients",
+        "Encrypts the variable value in RAM"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'export' označí proměnnou jako exportovanou proměnnou prostředí, což znamená, že její hodnota bude zděděna všemi nově spuštěnými dceřinými procesy a skripty."
+    },
+    {
+      "id": "linux_q31",
+      "module": "linux_m4",
+      "question": "What is the User ID (UID) of the root superuser in all Linux systems?",
+      "code": null,
+      "options": [
+        "0",
+        "1",
+        "1000",
+        "-1"
+      ],
+      "correct": 0,
+      "explanation": "Správcovský účet root má v Linuxu vždy pevně přiřazen UID (User ID) rovno 0."
+    },
+    {
+      "id": "linux_q32",
+      "module": "linux_m4",
+      "question": "Which file contains the encrypted passwords of user accounts and is readable only by the root user?",
+      "code": null,
+      "options": [
+        "/etc/shadow",
+        "/etc/passwd",
+        "/etc/security",
+        "/etc/keys"
+      ],
+      "correct": 0,
+      "explanation": "Soubor /etc/shadow uchovává šifrované hashe hesel uživatelů a informace o expiraci hesel. Na rozdíl od veřejně čitelného /etc/passwd má práva nastavená tak, že jej může číst pouze root."
+    },
+    {
+      "id": "linux_q33",
+      "module": "linux_m4",
+      "question": "What permissions do the octal numbers 7, 5, and 0 represent in the chmod command (chmod 750 script.sh)?",
+      "code": "$ chmod 750 script.sh",
+      "options": [
+        "Owner: rwx (7), Group: r-x (5), Others: --- (0)",
+        "Owner: r-x (7), Group: rw- (5), Others: --- (0)",
+        "Owner: rw- (7), Group: r-- (5), Others: r-x (0)",
+        "Owner: rwx (7), Group: --- (5), Others: r-x (0)"
+      ],
+      "correct": 0,
+      "explanation": "Hodnoty oprávnění jsou součtem vah: čtení (r = 4), zápis (w = 2), spuštění (x = 1). 7 = 4+2+1 (rwx), 5 = 4+1 (r-x), 0 = žádná práva (---)."
+    },
+    {
+      "id": "linux_q34",
+      "module": "linux_m4",
+      "question": "Which command is used to change the owner and group ownership of a file?",
+      "code": "$ chown alice:developers report.pdf",
+      "options": [
+        "chown",
+        "chmod",
+        "chgrp",
+        "usermod"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'chown' (change owner) slouží ke změně vlastníka a volitelně i skupiny souboru (např. chown uzivatel:skupina soubor)."
+    },
+    {
+      "id": "linux_q35",
+      "module": "linux_m4",
+      "question": "Which command is used to monitor active processes dynamically in real time, displaying CPU and memory usage updated continuously?",
+      "code": null,
+      "options": [
+        "top",
+        "ps",
+        "df",
+        "free"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'top' poskytuje dynamický živý přehled běžících procesů, vytížení procesoru (CPU), paměti (RAM) a zátěže systému (load average)."
+    },
+    {
+      "id": "linux_q36",
+      "module": "linux_m4",
+      "question": "What signal does the command 'kill -9 <PID>' send to a process?",
+      "code": "$ kill -9 1234",
+      "options": [
+        "SIGKILL (forced immediate termination that cannot be caught or ignored)",
+        "SIGTERM (polite termination request allowing cleanup)",
+        "SIGHUP (hangup / configuration reload)",
+        "SIGINT (interrupt signal from keyboard)"
+      ],
+      "correct": 0,
+      "explanation": "Signál 9 je SIGKILL — nepodmíněné a okamžité ukončení procesu přímo jádrem operačního systému, které proces nemůže zachytit ani ignorovat."
+    },
+    {
+      "id": "linux_q37",
+      "module": "linux_m4",
+      "question": "Which command and options are used to create a new gzip-compressed archive named backup.tar.gz from a directory called /data?",
+      "code": null,
+      "options": [
+        "tar -czvf backup.tar.gz /data",
+        "tar -xzvf backup.tar.gz /data",
+        "gzip -c backup.tar.gz /data",
+        "zip -tar backup.tar.gz /data"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz tar s přepínači -c (create), -z (gzip komprese), -v (verbose výpis) a -f (název souboru archivu) vytvoří komprimovaný archiv .tar.gz."
+    },
+    {
+      "id": "linux_q38",
+      "module": "linux_m4",
+      "question": "Which package management command is used on Debian and Ubuntu systems to install a package and its dependencies from remote repositories?",
+      "code": null,
+      "options": [
+        "apt-get install <package> (or apt install)",
+        "rpm -ivh <package>",
+        "dpkg -i <package>",
+        "yum install <package>"
+      ],
+      "correct": 0,
+      "explanation": "Nástroj 'apt' nebo 'apt-get' vyhledá balíček v repozitářích, stáhne jej a automaticky vyřeší a nainstaluje všechny jeho závislosti. Samotný 'dpkg -i' závislosti z repozitářů nestahuje."
+    },
+    {
+      "id": "linux_q39",
+      "module": "linux_m4",
+      "question": "What command displays information about available and used disk space on mounted filesystems in human-readable format?",
+      "code": "$ df -h",
+      "options": [
+        "df -h",
+        "du -h",
+        "free -m",
+        "fdisk -l"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'df -h' (disk filesystem human-readable) zobrazí využití diskového prostoru (volné a obsazené místo v GB/MB) na všech připojených souborových systémech."
+    },
+    {
+      "id": "linux_q40",
+      "module": "linux_m4",
+      "question": "What command temporarily elevates privileges to execute a single administrative command as the root superuser?",
+      "code": "$ sudo apt update",
+      "options": [
+        "sudo",
+        "su",
+        "admin",
+        "runas"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'sudo' (superuser do) umožňuje oprávněným uživatelům (definovaným v /etc/sudoers) spustit konkrétní příkaz s právy superuživatele root."
+    }
+  ]
+},
+  ccna_srwe: {
+  "id": "ccna_srwe",
+  "title": "Cisco NetAcad CCNA: Switching, Routing, and Wireless Essentials",
+  "subtitle": "Příprava na certifikaci CCNA 200-301 (Kurz CCNAv7 SRWE)",
+  "badge": "CCNA: SRWE",
+  "icon": "fas fa-network-wired",
+  "color": "#00BCEB",
+  "passScore": 70,
+  "timeLimit": 45,
+  "modules": [
+    {
+      "id": "srwe_m1",
+      "name": "SRWE-M1: Přepínání, VLANy & Inter-VLAN směrování"
+    },
+    {
+      "id": "srwe_m2",
+      "name": "SRWE-M2: Spanning Tree Protocol (STP & RSTP)"
+    },
+    {
+      "id": "srwe_m3",
+      "name": "SRWE-M3: EtherChannel, DHCPv4, SLAAC & Zabezpečení LAN"
+    },
+    {
+      "id": "srwe_m4",
+      "name": "SRWE-M4: Bezdrátové sítě (WLAN, WLC) & Statické směrování"
+    }
+  ],
+  "questions": [
+    {
+      "id": "srwe_q01",
+      "module": "srwe_m1",
+      "question": "Which type of VLAN is designated to carry user-generated untagged traffic across an 802.1Q trunk link?",
+      "code": null,
+      "options": [
+        "Native VLAN",
+        "Management VLAN",
+        "Default VLAN 1",
+        "Voice VLAN"
+      ],
+      "correct": 0,
+      "explanation": "Nativní VLAN (Native VLAN) na trunk lince 802.1Q přenáší rámce bez 802.1Q tagu (untagged traffic). Výchozí hodnotou je VLAN 1, ale z bezpečnostních důvodů se doporučuje změnit ji na nepoužívanou VLAN."
+    },
+    {
+      "id": "srwe_q02",
+      "module": "srwe_m1",
+      "question": "Which Cisco IOS command configures a switch port as an 802.1Q trunk link?",
+      "code": "Switch(config-if)# [???]",
+      "options": [
+        "switchport mode trunk",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode access",
+        "switchport trunk enable"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'switchport mode trunk' přepne rozhraní do trvalého trunkového režimu a začne vyjednávat trunking přes DTP (Dynamic Trunking Protocol)."
+    },
+    {
+      "id": "srwe_q03",
+      "module": "srwe_m1",
+      "question": "In a 'router-on-a-stick' inter-VLAN routing configuration, how is each subinterface associated with a specific VLAN ID?",
+      "code": "Router(config-subif)# [???] 10",
+      "options": [
+        "encapsulation dot1q 10",
+        "switchport access vlan 10",
+        "ip vlan 10",
+        "dot1q vlan 10"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'encapsulation dot1q <vlan-id>' na podrozhraní směrovače (např. G0/0.10) konfiguruje IEEE 802.1Q zapouzdření a přiřadí dané podrozhraní k příslušné VLAN."
+    },
+    {
+      "id": "srwe_q04",
+      "module": "srwe_m1",
+      "question": "What is the function of a Switch Virtual Interface (SVI) on a Layer 2 or Layer 3 switch?",
+      "code": "Switch(config)# interface vlan 10\nSwitch(config-if)# ip address 192.168.10.1 255.255.255.0",
+      "options": [
+        "It provides Layer 3 IP addressing for remote management (Layer 2) or acts as a default gateway for inter-VLAN routing (Layer 3)",
+        "It connects a physical cable to a wireless access point",
+        "It secures access ports against MAC address flooding",
+        "It acts as a backup physical port when FastEthernet0/1 goes down"
+      ],
+      "correct": 0,
+      "explanation": "SVI (Switch Virtual Interface) je virtuální rozhraní přiřazené k určité VLAN. Na L2 switchi slouží k IP správě (management), na L3 vícevrstvém přepínači funguje jako výchozí brána pro směrování mezi VLANami."
+    },
+    {
+      "id": "srwe_q05",
+      "module": "srwe_m1",
+      "question": "What happens to switch ports assigned to a VLAN when that VLAN is deleted from the switch configuration?",
+      "code": null,
+      "options": [
+        "The ports become inactive and cannot communicate with any device until reassigned to an active VLAN",
+        "The ports are automatically reassigned to default VLAN 1",
+        "The ports are shut down administratively",
+        "The ports are automatically converted to trunk ports"
+      ],
+      "correct": 0,
+      "explanation": "Pokud je VLAN smazána příkazem 'no vlan <id>', všechny přístupové porty přiřazené k této VLAN se stanou neaktivními (zůstanou ve smazané VLAN) a přestanou předávat data, dokud nejsou přiřazeny k jiné platné VLAN."
+    },
+    {
+      "id": "srwe_q06",
+      "module": "srwe_m1",
+      "question": "What is required on a Cisco multilayer switch to enable inter-VLAN routing between SVIs?",
+      "code": "Switch(config)# [???]",
+      "options": [
+        "ip routing",
+        "router inter-vlan",
+        "enable routing",
+        "switchport routing"
+      ],
+      "correct": 0,
+      "explanation": "Na L3 vícevrstvém switchi (např. Catalyst 3560/3650) je směrování ve výchozím stavu vypnuté. K jeho aktivaci v globálním konfiguračním režimu je nutné zadat příkaz 'ip routing'."
+    },
+    {
+      "id": "srwe_q07",
+      "module": "srwe_m1",
+      "question": "What command converts a physical Layer 2 switchport into a routed Layer 3 port on a multilayer switch?",
+      "code": "Switch(config-if)# [???]",
+      "options": [
+        "no switchport",
+        "ip routing port",
+        "switchport mode routed",
+        "layer3 enable"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'no switchport' odebere přepínací L2 funkce z fyzického portu a umožní na něm nakonfigurovat přímou IP adresu příkazem 'ip address', čímž se z portu stane směrovaný L3 port."
+    },
+    {
+      "id": "srwe_q08",
+      "module": "srwe_m1",
+      "question": "What information is added to an Ethernet frame header by IEEE 802.1Q encapsulation?",
+      "code": null,
+      "options": [
+        "A 4-byte VLAN tag containing a 12-bit VLAN ID (VID)",
+        "A 32-byte Cisco proprietary encryption header",
+        "A 2-byte trailer at the end of the FCS",
+        "An IP header with source and destination IP addresses"
+      ],
+      "correct": 0,
+      "explanation": "Standard 802.1Q vkládá do hlavičky Ethernet rámce 4bajtový tag, jehož součástí je 12bitové pole VLAN ID (podporující rozsah 1 až 4094)."
+    },
+    {
+      "id": "srwe_q09",
+      "module": "srwe_m1",
+      "question": "Which command displays the VLAN assignment status and all active ports associated with each VLAN on a Cisco switch?",
+      "code": null,
+      "options": [
+        "show vlan brief",
+        "show interfaces trunk",
+        "show vlan summary",
+        "show ip vlan"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'show vlan brief' přehledně zobrazí seznam všech nakonfigurovaných VLAN, jejich stav (active) a seznam přiřazených přístupových portů."
+    },
+    {
+      "id": "srwe_q10",
+      "module": "srwe_m1",
+      "question": "What is the recommended practice for the Native VLAN on 802.1Q trunk links to prevent VLAN hopping attacks?",
+      "code": null,
+      "options": [
+        "Change the native VLAN to an unused VLAN ID other than VLAN 1 on both ends of the trunk",
+        "Set the native VLAN to VLAN 1002 on one switch and VLAN 1003 on the other",
+        "Disable 802.1Q tagging entirely",
+        "Configure the native VLAN on access ports only"
+      ],
+      "correct": 0,
+      "explanation": "Doporučenou bezpečnostní praxí Cisco je změnit Native VLAN z výchozí VLAN 1 na jinou, nepoužívanou VLAN (např. VLAN 999) na obou koncích trunk linky, aby se zabránilo útokům typu VLAN Hopping (Double Tagging)."
+    },
+    {
+      "id": "srwe_q11",
+      "module": "srwe_m2",
+      "question": "What is the primary purpose of the Spanning Tree Protocol (STP, IEEE 802.1D) in a switched Ethernet network?",
+      "code": null,
+      "options": [
+        "To prevent Layer 2 switching loops and broadcast storms in redundant topologies",
+        "To encrypt Ethernet frames between switches",
+        "To dynamically assign IP addresses to hosts",
+        "To combine multiple physical links into one logical link"
+      ],
+      "correct": 0,
+      "explanation": "Primárním účelem STP je eliminovat smyčky na druhé vrstvě (L2 loops) v redundantních topologiích selektivním blokováním redundantních portů a zabránit tak všesměrovým bouřím (broadcast storms)."
+    },
+    {
+      "id": "srwe_q12",
+      "module": "srwe_m2",
+      "question": "Which switch is elected as the Root Bridge in an STP topology?",
+      "code": null,
+      "options": [
+        "The switch with the lowest Bridge ID (BID), which combines priority and MAC address",
+        "The switch with the highest MAC address",
+        "The switch with the fastest Ethernet interfaces",
+        "The switch with the highest IP address"
+      ],
+      "correct": 0,
+      "explanation": "Jako Root Bridge je zvolen přepínač s nejnižším Bridge ID (BID). BID se skládá z Bridge Priority (výchozí 32768 + VLAN ID) a MAC adresy přepínače. Nejnižší hodnota vyhrává."
+    },
+    {
+      "id": "srwe_q13",
+      "module": "srwe_m2",
+      "question": "What is the default STP bridge priority on Cisco Catalyst switches?",
+      "code": null,
+      "options": [
+        "32768",
+        "4096",
+        "1",
+        "65535"
+      ],
+      "correct": 0,
+      "explanation": "Výchozí priorita mostu (Bridge Priority) je 32768. Při použití PVST+ se k prioritě přičítá číslo VLAN (Extended System ID), takže pro VLAN 1 je výsledná priorita 32769."
+    },
+    {
+      "id": "srwe_q14",
+      "module": "srwe_m2",
+      "question": "Which port role is assigned to the switch port that provides the lowest path cost back to the Root Bridge on a non-root switch?",
+      "code": null,
+      "options": [
+        "Root Port",
+        "Designated Port",
+        "Alternate / Blocking Port",
+        "Disabled Port"
+      ],
+      "correct": 0,
+      "explanation": "Root Port (kořenový port) je port na non-root přepínači, který má nejnižší kumulativní cenu cesty (Root Path Cost) k Root Bridge. Každý non-root přepínač má právě jeden Root Port."
+    },
+    {
+      "id": "srwe_q15",
+      "module": "srwe_m2",
+      "question": "What are the port states in Rapid Spanning Tree Protocol (RSTP, 802.1w)?",
+      "code": null,
+      "options": [
+        "Discarding, Learning, Forwarding",
+        "Blocking, Listening, Learning, Forwarding, Disabled",
+        "Active, Standby, Listening",
+        "Down, Negotiation, Forwarding"
+      ],
+      "correct": 0,
+      "explanation": "RSTP (802.1w) zjednodušil stavy portů na pouhé tři: Discarding (sloučil stavy Disabled, Blocking a Listening z 802.1D), Learning a Forwarding."
+    },
+    {
+      "id": "srwe_q16",
+      "module": "srwe_m2",
+      "question": "What is the benefit of configuring Cisco PortFast on access switch ports connected to end-user workstations?",
+      "code": "Switch(config-if)# spanning-tree portfast",
+      "options": [
+        "It bypasses the Listening and Learning states, transitioning the port immediately to the Forwarding state",
+        "It increases the port bandwidth to full Gigabit speed",
+        "It automatically disables STP processing on the switch",
+        "It prevents unauthorized devices from connecting by checking MAC addresses"
+      ],
+      "correct": 0,
+      "explanation": "Funkce PortFast přeskakuje stavy Listening a Learning a přepne přístupový port okamžitě do stavu Forwarding. To zabrání zpoždění při získávání IP adresy přes DHCP při zapnutí PC."
+    },
+    {
+      "id": "srwe_q17",
+      "module": "srwe_m2",
+      "question": "What action does BPDU Guard take if a BPDU packet is received on a PortFast-enabled switch interface?",
+      "code": "Switch(config-if)# spanning-tree bpduguard enable",
+      "options": [
+        "It immediately places the interface into the err-disabled state to protect against rogue switches",
+        "It forwards the BPDU to the Root Bridge without inspecting it",
+        "It decreases the interface priority by 4096",
+        "It converts the port into a trunk port"
+      ],
+      "correct": 0,
+      "explanation": "BPDU Guard chrání topologii před připojením neautorizovaného switche: jakmile na chráněném portu zachytí BPDU rámec, port okamžitě vypne a uvede jej do stavu 'err-disabled'."
+    },
+    {
+      "id": "srwe_q18",
+      "module": "srwe_m2",
+      "question": "Which command configures a Cisco switch to use Rapid Per-VLAN Spanning Tree?",
+      "code": "Switch(config)# [???]",
+      "options": [
+        "spanning-tree mode rapid-pvst",
+        "spanning-tree mode rstp",
+        "spanning-tree rapid-pvst enable",
+        "spanning-tree protocol 802.1w"
+      ],
+      "correct": 0,
+      "explanation": "Cisco implementace standardu 802.1w se nazývá Rapid PVST+ a konfiguruje se příkazem 'spanning-tree mode rapid-pvst'."
+    },
+    {
+      "id": "srwe_q19",
+      "module": "srwe_m2",
+      "question": "What is the purpose of the Bridge Protocol Data Unit (BPDU) in STP networks?",
+      "code": null,
+      "options": [
+        "It is a specialized management frame sent between switches to elect the Root Bridge and exchange topology information",
+        "It synchronizes clock time across all switches via NTP",
+        "It authenticates administrative SSH logins on switch ports",
+        "It carries VoIP voice traffic over trunk links"
+      ],
+      "correct": 0,
+      "explanation": "BPDU (Bridge Protocol Data Unit) je zpráva STP odesílaná každé 2 sekundy, pomocí níž si přepínače vyměňují informace o BID, cenách cest a stavu topologie a volí Root Bridge."
+    },
+    {
+      "id": "srwe_q20",
+      "module": "srwe_m2",
+      "question": "Which command lowers a switch's bridge priority to make it the Root Bridge for VLAN 10?",
+      "code": "Switch(config)# [???]",
+      "options": [
+        "spanning-tree vlan 10 root primary",
+        "spanning-tree vlan 10 priority 0",
+        "spanning-tree root-bridge enable",
+        "spanning-tree vlan 10 root master"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'spanning-tree vlan 10 root primary' automaticky sníží prioritu switche (na hodnotu 24576 nebo o 4096 méně než aktuální root), aby se switch stal kořenovým mostem pro danou VLAN."
+    },
+    {
+      "id": "srwe_q21",
+      "module": "srwe_m3",
+      "question": "Which open-standard protocol is defined in IEEE 802.3ad to dynamically negotiate and form an EtherChannel bundle?",
+      "code": null,
+      "options": [
+        "LACP (Link Aggregation Control Protocol)",
+        "PAgP (Port Aggregation Protocol)",
+        "DTP (Dynamic Trunking Protocol)",
+        "CDP (Cisco Discovery Protocol)"
+      ],
+      "correct": 0,
+      "explanation": "LACP (IEEE 802.3ad) je otevřený průmyslový standard pro agregaci linek (EtherChannel), který funguje mezi zařízeními různých výrobců. PAgP je proprietární protokol Cisco."
+    },
+    {
+      "id": "srwe_q22",
+      "module": "srwe_m3",
+      "question": "Which combination of EtherChannel modes will successfully establish an LACP channel between two switches?",
+      "code": null,
+      "options": [
+        "active on Switch A and active (or passive) on Switch B",
+        "passive on Switch A and passive on Switch B",
+        "auto on Switch A and desirable on Switch B",
+        "on on Switch A and active on Switch B"
+      ],
+      "correct": 0,
+      "explanation": "V protokolu LACP musí alespoň jedna strana iniciovat vyjednávání v režimu 'active'. Kombinace active-active nebo active-passive linku sestaví. Kombinace passive-passive kanál nesestaví (obě strany pouze čekají)."
+    },
+    {
+      "id": "srwe_q23",
+      "module": "srwe_m3",
+      "question": "What parameters must strictly match across all member interfaces before an EtherChannel can form?",
+      "code": null,
+      "options": [
+        "Speed, duplex, and VLAN settings (access VLAN or trunk native/allowed VLANs)",
+        "Interface description and MAC address",
+        "IP address and subnet mask on each physical port",
+        "Cable length and physical port numbers"
+      ],
+      "correct": 0,
+      "explanation": "Všechny fyzické porty v EtherChannelu musí mít stejnou rychlost (speed), duplexní režim a identické nastavení VLAN (buď stejná přístupová VLAN, nebo stejná Native VLAN a povolené VLANy na trunku)."
+    },
+    {
+      "id": "srwe_q24",
+      "module": "srwe_m3",
+      "question": "Which command configures a DHCP relay agent on a router interface to forward client DHCP broadcast requests to a central DHCP server?",
+      "code": "Router(config-if)# [???] 192.168.1.100",
+      "options": [
+        "ip helper-address 192.168.1.100",
+        "ip dhcp-relay 192.168.1.100",
+        "ip dhcp server 192.168.1.100",
+        "ip forward dhcp 192.168.1.100"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'ip helper-address <ip-adresa>' na rozhraní směrovače zachytí klientské DHCP všesměrové vysílání (broadcast na portech 67/68) a přepošle jej jako unicast na zadanou adresu DHCP serveru."
+    },
+    {
+      "id": "srwe_q25",
+      "module": "srwe_m3",
+      "question": "How does an IPv6 host obtain an IPv6 address using Stateless Address Autoconfiguration (SLAAC)?",
+      "code": null,
+      "options": [
+        "It listens for ICMPv6 Router Advertisement (RA) messages from the local router and combines the prefix with its own interface ID",
+        "It contacts a centralized DHCPv6 server and receives a leased address and lease time",
+        "It generates a random 128-bit address without consulting any router",
+        "It uses ARP to request an address from the default gateway"
+      ],
+      "correct": 0,
+      "explanation": "Při SLAAC hostitel odešle zprávu Router Solicitation (RS) a ze zprávy Router Advertisement (RA) od lokálního směrovače získá síťový prefix (/64). K prefixu připojí svůj 64bitový Interface ID (vygenerovaný náhodně nebo přes EUI-64)."
+    },
+    {
+      "id": "srwe_q26",
+      "module": "srwe_m3",
+      "question": "What is the default violation mode when port security is enabled on a Cisco switch interface?",
+      "code": "Switch(config-if)# switchport port-security",
+      "options": [
+        "shutdown",
+        "restrict",
+        "protect",
+        "drop"
+      ],
+      "correct": 0,
+      "explanation": "Výchozím režimem narušení (violation mode) u port security je 'shutdown': port je při neoprávněné MAC adrese okamžitě vypnut a uveden do stavu err-disabled, odešle se SNMP trap a počítadlo narušení se inkrementuje."
+    },
+    {
+      "id": "srwe_q27",
+      "module": "srwe_m3",
+      "question": "Which port security violation mode drops unauthorized traffic, increments the security violation counter, and generates a syslog message WITHOUT shutting down the port?",
+      "code": null,
+      "options": [
+        "restrict",
+        "protect",
+        "shutdown",
+        "disabled"
+      ],
+      "correct": 0,
+      "explanation": "V režimu 'restrict' přepínač zahazuje neoprávněné rámce, generuje syslog zprávu a SNMP trap a navyšuje čítač porušení, ale port zůstává v provozu pro povolenou MAC adresu."
+    },
+    {
+      "id": "srwe_q28",
+      "module": "srwe_m3",
+      "question": "What security feature mitigates rogue DHCP servers by categorizing switch ports as either trusted or untrusted?",
+      "code": "Switch(config)# ip dhcp snooping",
+      "options": [
+        "DHCP Snooping",
+        "Dynamic ARP Inspection (DAI)",
+        "Port Security",
+        "BPDU Guard"
+      ],
+      "correct": 0,
+      "explanation": "Funkce DHCP Snooping rozlišuje důvěryhodné (trusted) porty (připojené k legitimnímu DHCP serveru nebo uplinku) a nedůvěryhodné (untrusted) porty (přístupové porty klientů). Odpovědi DHCP serveru (DHCPOFFER, DHCPACK) na untrusted portech zahazuje."
+    },
+    {
+      "id": "srwe_q29",
+      "module": "srwe_m3",
+      "question": "What security mechanism relies on the DHCP Snooping binding database to prevent ARP poisoning and ARP spoofing attacks?",
+      "code": "Switch(config)# ip arp inspection vlan 10",
+      "options": [
+        "Dynamic ARP Inspection (DAI)",
+        "IP Source Guard (IPSG)",
+        "MAC Limiting",
+        "Private VLANs"
+      ],
+      "correct": 0,
+      "explanation": "Dynamic ARP Inspection (DAI) zachycuje všechny ARP požadavky a odpovědi na nedůvěryhodných portech a ověřuje jejich platnost vůči databázi vazeb DHCP Snooping (porovnává IP a MAC adresu). Neplatné pakety zahazuje."
+    },
+    {
+      "id": "srwe_q30",
+      "module": "srwe_m3",
+      "question": "Which command automatically learns dynamic MAC addresses on an interface and saves them permanently into the running-config?",
+      "code": "Switch(config-if)# [???]",
+      "options": [
+        "switchport port-security mac-address sticky",
+        "switchport port-security mac-address dynamic",
+        "switchport port-security learn auto",
+        "switchport port-security mac-save"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'switchport port-security mac-address sticky' dynamicky naučí první příchozí MAC adresy na portu a zapíše je přímo do běžící konfigurace (running-config) jako trvalé záznamy."
+    },
+    {
+      "id": "srwe_q31",
+      "module": "srwe_m4",
+      "question": "Which protocol is used to establish secure control and data encapsulation tunnels between lightweight Access Points (APs) and a Wireless LAN Controller (WLC)?",
+      "code": null,
+      "options": [
+        "CAPWAP (Control and Provisioning of Wireless Access Points)",
+        "SNMPv3",
+        "IPsec",
+        "LWAPP v1"
+      ],
+      "correct": 0,
+      "explanation": "Protokol CAPWAP (Control and Provisioning of Wireless Access Points) vytváří tunel mezi lehkým AP (Lightweight AP) a WLC kontrolérem: CAPWAP Control tunel (šifrovaný UDP port 5246) a CAPWAP Data tunel (UDP port 5247)."
+    },
+    {
+      "id": "srwe_q32",
+      "module": "srwe_m4",
+      "question": "What is the difference between an Autonomous Access Point and a Lightweight Access Point (LAP)?",
+      "code": null,
+      "options": [
+        "Autonomous APs manage all RF and security functions independently; Lightweight APs require a WLC for central management via CAPWAP",
+        "Autonomous APs support only 2.4 GHz, while LAPs support only 5 GHz",
+        "Lightweight APs cannot connect wireless clients directly",
+        "Autonomous APs require cloud subscriptions to operate"
+      ],
+      "correct": 0,
+      "explanation": "Autonomní AP je samostatné zařízení, které konfigurujete přímo na něm (tzv. fat AP). Lehký AP (Lightweight / fit AP) spolupracuje s centrálním WLC řadičem, ze kterého stahuje konfiguraci, firmware a zásady zabezpečení."
+    },
+    {
+      "id": "srwe_q33",
+      "module": "srwe_m4",
+      "question": "Which Wi-Fi wireless standard operates in both the 2.4 GHz and 5 GHz frequency bands, introducing OFDMA and MU-MIMO for high-density environments (branded as Wi-Fi 6)?",
+      "code": null,
+      "options": [
+        "802.11ax",
+        "802.11ac",
+        "802.11n",
+        "802.11g"
+      ],
+      "correct": 0,
+      "explanation": "Standard IEEE 802.11ax (známý pod komerčním označením Wi-Fi 6) pracuje v obou pásmech (2.4 GHz i 5 GHz, a 6 GHz u Wi-Fi 6E) a využívá technologii OFDMA a obousměrné MU-MIMO."
+    },
+    {
+      "id": "srwe_q34",
+      "module": "srwe_m4",
+      "question": "Which wireless security standard uses the SAE (Simultaneous Authentication of Equals) handshake to prevent dictionary and offline brute-force attacks?",
+      "code": null,
+      "options": [
+        "WPA3 Personal",
+        "WPA2 Personal (PSK)",
+        "WPA Enterprise",
+        "WEP 128-bit"
+      ],
+      "correct": 0,
+      "explanation": "WPA3 Personal nahrazuje zranitelné čtyřcestné podání ruky s předsdíleným klíčem (WPA2 PSK) robustním protokolem SAE (Simultaneous Authentication of Equals / Dragonfly), který znemožňuje offline slovníkové útoky."
+    },
+    {
+      "id": "srwe_q35",
+      "module": "srwe_m4",
+      "question": "What constitutes a Basic Service Set (BSS) in an 802.11 wireless network?",
+      "code": null,
+      "options": [
+        "A single Access Point and all associated wireless client devices",
+        "Multiple interconnected Access Points sharing a common SSID",
+        "Two client stations communicating directly without an AP (ad-hoc)",
+        "A switch trunk connected to a router-on-a-stick"
+      ],
+      "correct": 0,
+      "explanation": "BSS (Basic Service Set) tvoří jeden přístupový bod (Access Point) a bezdrátoví klienti, kteří jsou k němu připojeni. Identifikátorem BSS je BSSID (zpravidla MAC adresa rádia AP). Spojení více BSS tvoří ESS (Extended Service Set)."
+    },
+    {
+      "id": "srwe_q36",
+      "module": "srwe_m4",
+      "question": "What is the syntax for configuring an IPv4 default static route on a Cisco router using next-hop IP 192.168.1.1?",
+      "code": "Router(config)# [???]",
+      "options": [
+        "ip route 0.0.0.0 0.0.0.0 192.168.1.1",
+        "ip route default 192.168.1.1",
+        "ip default-network 192.168.1.1",
+        "route 0.0.0.0 255.255.255.255 192.168.1.1"
+      ],
+      "correct": 0,
+      "explanation": "Výchozí statická cesta (default static route / quad-zero route) odpovídá všem cílům a zadává se příkazem 'ip route 0.0.0.0 0.0.0.0 <next-hop-ip | exit-interface>'."
+    },
+    {
+      "id": "srwe_q37",
+      "module": "srwe_m4",
+      "question": "What is a 'floating static route' and how is it configured in Cisco IOS?",
+      "code": "Router(config)# ip route 0.0.0.0 0.0.0.0 10.0.0.2 10",
+      "options": [
+        "A backup static route configured with an administrative distance higher than the primary route so it is only installed in the routing table when the primary route fails",
+        "A route that automatically changes its next-hop based on ping latency",
+        "A route that dynamically floats between different VLANs",
+        "A multicast route with an administrative distance of 1"
+      ],
+      "correct": 0,
+      "explanation": "Plovoucí statická cesta (floating static route) slouží jako záložní trasa. Konfiguruje se s vyšší administrativní vzdáleností (AD > 1, např. 5 nebo 10). Do směrovací tabulky se nainstaluje pouze tehdy, když primární trasa vypadne."
+    },
+    {
+      "id": "srwe_q38",
+      "module": "srwe_m4",
+      "question": "What is the Administrative Distance (AD) of a directly connected network, a static route, and OSPF respectively in Cisco IOS?",
+      "code": null,
+      "options": [
+        "Directly connected = 0, Static route = 1, OSPF = 110",
+        "Directly connected = 1, Static route = 0, OSPF = 90",
+        "Directly connected = 0, Static route = 5, OSPF = 100",
+        "Directly connected = 10, Static route = 20, OSPF = 120"
+      ],
+      "correct": 0,
+      "explanation": "Administrativní vzdálenost (AD) určuje důvěryhodnost zdroje směrování: Přímo připojená síť (Connected) má AD 0, Statická cesta (Static) má AD 1, eBGP má 20, EIGRP má 90, OSPF má 110 a RIP má 120."
+    },
+    {
+      "id": "srwe_q39",
+      "module": "srwe_m4",
+      "question": "When a router receives a packet, how does it choose the best matching route from the routing table?",
+      "code": null,
+      "options": [
+        "By the Longest Prefix Match (the route with the highest number of matching leading bits / longest subnet mask)",
+        "By the lowest metric alone, regardless of prefix length",
+        "By the first route listed in alphabetical order",
+        "By the route that was configured most recently"
+      ],
+      "correct": 0,
+      "explanation": "Směrovač vždy preferuje shodu s nejdelším prefixem (Longest Prefix Match). Například pro cíl 10.1.1.5 má přednost trasa /28 před trasou /24 a před výchozí trasou /0."
+    },
+    {
+      "id": "srwe_q40",
+      "module": "srwe_m4",
+      "question": "What Cisco IOS command displays the IPv4 routing table on a router or Layer 3 switch?",
+      "code": null,
+      "options": [
+        "show ip route",
+        "show ip routing-table",
+        "display ip route",
+        "show routes"
+      ],
+      "correct": 0,
+      "explanation": "Příkaz 'show ip route' v privilegovaném režimu EXEC zobrazí kompletní směrovací tabulku IPv4 včetně kódů zdrojů (C = Connected, S = Static, O = OSPF, D = EIGRP, * = candidate default)."
+    }
+  ]
+}
 };

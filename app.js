@@ -1130,6 +1130,94 @@ class NetAcadApp {
             ["async funkce", "Vždy vrací Promise (automaticky zabalí návratovou hodnotu)"]
           ]
         }
+      ],
+
+      linux: [
+        {
+          title: "Navigace & Souborový systém (FHS)",
+          rows: [
+            ["pwd & cd", "cd ~ (domov), cd .. (o úroveň výš), cd - (předchozí adresář), pwd (aktuální cesta)"],
+            ["/bin & /sbin", "Základní binárky; /sbin obsahuje příkazy vyhrazené pro správce root"],
+            ["/etc & /var", "/etc (systémové konfigurační textové soubory); /var (proměnná data, logy, spooly)"],
+            ["/dev & /proc", "/dev (speciální soubory zařízení); /proc (virtuální pseudo-FS stavu jádra a procesů)"],
+            ["ls přepínače", "ls -l (dlouhý výpis), -a (včetně skrytých . souborů), -h (čitelné velikosti), -R (rekurzivní)"]
+          ]
+        },
+        {
+          title: "Manipulace se soubory & Vyhledávání",
+          rows: [
+            ["cp, mv, rm", "cp -r (rekurze pro adresáře), mv (přesun/přejmenování), rm -r -f (nucené smazání)"],
+            ["mkdir & rmdir", "mkdir -p (vytvoření celé stromové cesty); rmdir (maže pouze prázdný adresář)"],
+            ["Hard link vs Symlink", "ln src dst (hard link sdílí stejný inode); ln -s src dst (symlink ukazuje na cestu)"],
+            ["grep regulární výrazy", "grep -i (nerozlišuje velikost), -v (invertuje výběr / vylučuje řádky), -r (rekurzivní prohledání)"],
+            ["Metaznaky (Wildcards)", "* (libovolný počet znaků), ? (právě jeden znak), [abc] (jeden ze znaků v závorce)"]
+          ]
+        },
+        {
+          title: "I/O Přesměrování, Rourování & Archivace",
+          rows: [
+            ["> a >> (Stdout)", "> přepíše cílový soubor novým výstupem; >> připojí výstup na konec souboru (append)"],
+            ["2> a 2>&1 (Stderr)", "2> přesměruje chybový výstup; 2>&1 sloučí chybový výstup se standardním výstupem"],
+            ["< (Stdin)", "Přesměruje obsah souboru na standardní vstup příkazu (cmd < file)"],
+            ["| (Pipeline / Roura)", "Předá standardní výstup prvního příkazu na standardní vstup druhého (cmd1 | cmd2)"],
+            ["tar archivace", "tar -czvf arch.tar.gz dir (c=create, z=gzip, v=verbose, f=file); tar -xzvf (x=extract)"],
+            ["gzip & bzip2", "gzip komprimuje do .gz a smaže originál; bzip2 nabízí vyšší kompresní poměr (.bz2)"]
+          ]
+        },
+        {
+          title: "Uživatelská oprávnění (chmod/chown) & Správa",
+          rows: [
+            ["Struktura práv (rwx)", "3 trojice: vlastník (user), skupina (group), ostatní (others); r=4, w=2, x=1"],
+            ["chmod osmičkově", "chmod 755 (rwxr-xr-x: vlastník vše, ostatní čtení a spouštění); chmod 644 (rw-r--r--)"],
+            ["chmod symbolicky", "chmod u+x, g-w, o=r (přidání/odebrání práv pro jednotlivé třídy)"],
+            ["chown & chgrp", "chown user:group soubor (změna vlastníka a skupiny); chgrp jen skupiny"],
+            ["/etc/passwd & /etc/shadow", "/etc/passwd (účty, UID, GID, shell - čitelný všem); /etc/shadow (hashe hesel - jen root)"],
+            ["ps, top & free", "ps aux (všechny běžící procesy), top (interaktivní monitor), free -m (stav RAM)"]
+          ]
+        }
+      ],
+
+      ccna_srwe: [
+        {
+          title: "Přepínání, VLANy & 802.1Q Trunking",
+          rows: [
+            ["switchport mode access", "Přiřadí port do jedné konkrétní VLAN: switchport access vlan <id>"],
+            ["switchport mode trunk", "Nastaví port jako 802.1Q trunk nesoucí provoz více VLAN najednou"],
+            ["802.1Q Native VLAN", "Přenáší netagovaný provoz; na obou stranách trunku MUSÍ být stejná (mismatch error)"],
+            ["Router-on-a-Stick", "Konfigurace subrozhraní (g0/0.10) s příkazem encapsulation dot1Q 10"],
+            ["SVI (Switch Virtual Interface)", "Virtuální IP rozhraní přepínače (interface vlan 1) pro management / směrování"]
+          ]
+        },
+        {
+          title: "Spanning Tree Protocol (STP & RSTP)",
+          rows: [
+            ["Bridge ID (BID)", "Priorita (4 bity) + Sys-ID-Ext VLAN ID (12 bitů) + MAC adresa přepínače (48 bitů)"],
+            ["Výběr Root Bridge", "Přepínač s nejnižším BID (výchozí priorita 32768, ladí se v krocích po 4096)"],
+            ["STP stavy (802.1D)", "Blocking -> Listening -> Learning -> Forwarding (konvergence trvá až 50 s)"],
+            ["RSTP stavy (802.1w)", "Discarding -> Learning -> Forwarding (blesková konvergence během milisekund)"],
+            ["PortFast & BPDU Guard", "PortFast okamžitě zapíná access port; BPDU Guard jej při příjmu BPDU vypne (err-disable)"]
+          ]
+        },
+        {
+          title: "EtherChannel & Zabezpečení LAN (L2 Security)",
+          rows: [
+            ["LACP vs PAgP", "LACP (IEEE 802.3ad standard: active/passive); PAgP (Cisco proprietární: desirable/auto)"],
+            ["channel-group mode active", "Vytvoří EtherChannel bundle rozhraní port-channel <id> řízené protokolem LACP"],
+            ["Port Security", "switchport port-security mac-address sticky; omezení počtu MAC (maximum <n>)"],
+            ["Violation módy", "protect (zahazuje), restrict (zahazuje + loguje), shutdown (vypne port do err-disable)"],
+            ["DHCP Snooping & DAI", "DHCP Snooping filtruje falešné servery (trusted/untrusted); DAI brání ARP spoofingu"]
+          ]
+        },
+        {
+          title: "DHCPv4, SLAAC & Bezdrátové sítě (WLAN/WLC)",
+          rows: [
+            ["ip helper-address <ip>", "Příkaz na rozhraní směrovače pro převod broadcast DHCP Discover na unicast serveru"],
+            ["SLAAC vs DHCPv6", "SLAAC využívá ICMPv6 Router Advertisement (prefix /64); Stateful DHCPv6 přiděluje plné IP"],
+            ["CAPWAP Protokol", "Tuneluje řízení (UDP 5246) a data (UDP 5247) mezi Lightweight AP (LAP) a kontrolérem WLC"],
+            ["WLC Konfigurace WLAN", "Mapování SSID na VLAN rozhraní, zabezpečení WPA2/WPA3 Enterprise (802.1X/RADIUS)"],
+            ["Statické směrování", "ip route prefix mask next-hop [ad] (plovoucí routa má vyšší AD než dynamický protokol)"]
+          ]
+        }
       ]
     };
   }
