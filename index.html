@@ -47,116 +47,196 @@
   <main class="container">
     
     <!-- CERTIFICATE SELECTOR CARDS -->
+    <!-- CATEGORY FILTER PILLS -->
+    <nav class="category-nav" id="categoryNav">
+      <button class="cat-pill-btn active" data-cat="all">
+        <i class="fas fa-layer-group"></i>
+        <span>Všechny obory</span>
+        <span class="cat-count-badge">10</span>
+      </button>
+      <button class="cat-pill-btn" data-cat="web">
+        <i class="fas fa-globe" style="color: #38bdf8;"></i>
+        <span>Webové aplikace</span>
+        <span class="cat-count-badge">4</span>
+      </button>
+      <button class="cat-pill-btn" data-cat="db">
+        <i class="fas fa-database" style="color: #f87171;"></i>
+        <span>Databázové systémy</span>
+        <span class="cat-count-badge">2</span>
+      </button>
+      <button class="cat-pill-btn" data-cat="systems">
+        <i class="fas fa-network-wired" style="color: #00bceb;"></i>
+        <span>Počítačové systémy a sítě</span>
+        <span class="cat-count-badge">3</span>
+      </button>
+      <button class="cat-pill-btn" data-cat="software">
+        <i class="fab fa-python" style="color: #3776ab;"></i>
+        <span>Programové vybavení</span>
+        <span class="cat-count-badge">1</span>
+      </button>
+    </nav>
+
+    <!-- CERTIFICATE SELECTOR (GROUPED BY CATEGORY) -->
     <section class="cert-tabs" id="certTabs">
-      <!-- HTML Essentials -->
-      <div class="cert-card-tab active" data-cert="html" style="--cert-color: #E44D26;">
-        <div class="cert-tab-icon" style="background: rgba(228, 77, 38, 0.15); color: #E44D26;">
-          <i class="fab fa-html5"></i>
+
+      <!-- KATEGORIE 1: Webové aplikace -->
+      <div class="cert-cat-group" data-cat="web">
+        <div class="cert-cat-header">
+          <div class="cert-cat-title">
+            <i class="fas fa-globe" style="color: #38bdf8;"></i>
+            <h3>Webové aplikace</h3>
+          </div>
+          <span class="cert-cat-badge">4 certifikace • 170 otázek</span>
         </div>
-        <div class="cert-tab-info">
-          <h3>HTML Essentials</h3>
-          <p>Cisco NetAcad (45 otázek)</p>
+        <div class="cert-cat-grid">
+          <!-- HTML Essentials -->
+          <div class="cert-card-tab active" data-cert="html" data-cat="web" style="--cert-color: #E44D26;">
+            <div class="cert-tab-icon" style="background: rgba(228, 77, 38, 0.15); color: #E44D26;">
+              <i class="fab fa-html5"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>HTML Essentials</h3>
+              <p>Cisco NetAcad (45 otázek)</p>
+            </div>
+          </div>
+
+          <!-- CSS Essentials -->
+          <div class="cert-card-tab" data-cert="css" data-cat="web" style="--cert-color: #264DE4;">
+            <div class="cert-tab-icon" style="background: rgba(38, 77, 228, 0.15); color: #264DE4;">
+              <i class="fab fa-css3-alt"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>CSS Essentials</h3>
+              <p>Cisco NetAcad (45 otázek)</p>
+            </div>
+          </div>
+
+          <!-- JavaScript Essentials 1 -->
+          <div class="cert-card-tab" data-cert="js" data-cat="web" style="--cert-color: #F7DF1E;">
+            <div class="cert-tab-icon" style="background: rgba(247, 223, 30, 0.15); color: #F7DF1E;">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>JavaScript Essentials 1</h3>
+              <p>Cisco NetAcad (40 otázek)</p>
+            </div>
+          </div>
+
+          <!-- JavaScript Essentials 2 -->
+          <div class="cert-card-tab" data-cert="js2" data-cat="web" style="--cert-color: #E5A91E;">
+            <div class="cert-tab-icon" style="background: rgba(229, 169, 30, 0.15); color: #E5A91E;">
+              <i class="fab fa-js"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>JavaScript Essentials 2</h3>
+              <p>Cisco NetAcad (40 otázek)</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- CSS Essentials -->
-      <div class="cert-card-tab" data-cert="css" style="--cert-color: #264DE4;">
-        <div class="cert-tab-icon" style="background: rgba(38, 77, 228, 0.15); color: #264DE4;">
-          <i class="fab fa-css3-alt"></i>
+      <!-- KATEGORIE 2: Databázové systémy -->
+      <div class="cert-cat-group" data-cat="db">
+        <div class="cert-cat-header">
+          <div class="cert-cat-title">
+            <i class="fas fa-database" style="color: #f87171;"></i>
+            <h3>Databázové systémy</h3>
+          </div>
+          <span class="cert-cat-badge">2 certifikace • 80 otázek</span>
         </div>
-        <div class="cert-tab-info">
-          <h3>CSS Essentials</h3>
-          <p>Cisco NetAcad (45 otázek)</p>
+        <div class="cert-cat-grid">
+          <!-- Oracle Database Design -->
+          <div class="cert-card-tab" data-cert="oracle_dd" data-cat="db" style="--cert-color: #F80000;">
+            <div class="cert-tab-icon" style="background: rgba(248, 0, 0, 0.15); color: #F80000;">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>Database Design</h3>
+              <p>Oracle Academy (40 otázek)</p>
+            </div>
+          </div>
+
+          <!-- Oracle Database Programming With SQL -->
+          <div class="cert-card-tab" data-cert="oracle_sql" data-cat="db" style="--cert-color: #C74634;">
+            <div class="cert-tab-icon" style="background: rgba(199, 70, 52, 0.15); color: #C74634;">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>Database SQL</h3>
+              <p>Oracle Academy (40 otázek)</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- JavaScript Essentials 1 -->
-      <div class="cert-card-tab" data-cert="js" style="--cert-color: #F7DF1E;">
-        <div class="cert-tab-icon" style="background: rgba(247, 223, 30, 0.15); color: #F7DF1E;">
-          <i class="fab fa-js-square"></i>
+      <!-- KATEGORIE 3: Počítačové systémy a sítě -->
+      <div class="cert-cat-group" data-cat="systems">
+        <div class="cert-cat-header">
+          <div class="cert-cat-title">
+            <i class="fas fa-network-wired" style="color: #00bceb;"></i>
+            <h3>Počítačové systémy a sítě</h3>
+          </div>
+          <span class="cert-cat-badge">3 certifikace • 120 otázek</span>
         </div>
-        <div class="cert-tab-info">
-          <h3>JavaScript Essentials 1</h3>
-          <p>Cisco NetAcad (40 otázek)</p>
+        <div class="cert-cat-grid">
+          <!-- Cisco NDG Linux Essentials -->
+          <div class="cert-card-tab" data-cert="linux" data-cat="systems" style="--cert-color: #EAA01A;">
+            <div class="cert-tab-icon" style="background: rgba(234, 160, 26, 0.15); color: #EAA01A;">
+              <i class="fab fa-linux"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>NDG Linux Essentials</h3>
+              <p>Cisco NetAcad (40 otázek)</p>
+            </div>
+          </div>
+
+          <!-- Cisco CCNA: Introduction to Networks -->
+          <div class="cert-card-tab" data-cert="ccna_itn" data-cat="systems" style="--cert-color: #049FD9;">
+            <div class="cert-tab-icon" style="background: rgba(4, 159, 217, 0.15); color: #049FD9;">
+              <i class="fas fa-ethernet"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>CCNA: ITN</h3>
+              <p>Cisco NetAcad (40 otázek)</p>
+            </div>
+          </div>
+
+          <!-- Cisco CCNA: Switching, Routing, and Wireless Essentials -->
+          <div class="cert-card-tab" data-cert="ccna_srwe" data-cat="systems" style="--cert-color: #00BCEB;">
+            <div class="cert-tab-icon" style="background: rgba(0, 188, 235, 0.15); color: #00BCEB;">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>CCNA: SRWE</h3>
+              <p>Cisco NetAcad (40 otázek)</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- JavaScript Essentials 2 -->
-      <div class="cert-card-tab" data-cert="js2" style="--cert-color: #E5A91E;">
-        <div class="cert-tab-icon" style="background: rgba(229, 169, 30, 0.15); color: #E5A91E;">
-          <i class="fab fa-js"></i>
+      <!-- KATEGORIE 4: Programové vybavení -->
+      <div class="cert-cat-group" data-cat="software">
+        <div class="cert-cat-header">
+          <div class="cert-cat-title">
+            <i class="fab fa-python" style="color: #3776ab;"></i>
+            <h3>Programové vybavení</h3>
+          </div>
+          <span class="cert-cat-badge">1 certifikace • 40 otázek</span>
         </div>
-        <div class="cert-tab-info">
-          <h3>JavaScript Essentials 2</h3>
-          <p>Cisco NetAcad (40 otázek)</p>
-        </div>
-      </div>
-
-      <!-- Oracle Database Design -->
-      <div class="cert-card-tab" data-cert="oracle_dd" style="--cert-color: #F80000;">
-        <div class="cert-tab-icon" style="background: rgba(248, 0, 0, 0.15); color: #F80000;">
-          <i class="fas fa-project-diagram"></i>
-        </div>
-        <div class="cert-tab-info">
-          <h3>Database Design</h3>
-          <p>Oracle Academy (40 otázek)</p>
-        </div>
-      </div>
-
-      <!-- Oracle Database Programming With SQL -->
-      <div class="cert-card-tab" data-cert="oracle_sql" style="--cert-color: #C74634;">
-        <div class="cert-tab-icon" style="background: rgba(199, 70, 52, 0.15); color: #C74634;">
-          <i class="fas fa-database"></i>
-        </div>
-        <div class="cert-tab-info">
-          <h3>Database SQL</h3>
-          <p>Oracle Academy (40 otázek)</p>
+        <div class="cert-cat-grid">
+          <!-- Cisco Python Essentials 1 -->
+          <div class="cert-card-tab" data-cert="python" data-cat="software" style="--cert-color: #3776AB;">
+            <div class="cert-tab-icon" style="background: rgba(55, 118, 171, 0.15); color: #3776AB;">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="cert-tab-info">
+              <h3>Python Essentials 1</h3>
+              <p>Cisco NetAcad (40 otázek)</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Cisco Python Essentials 1 -->
-      <div class="cert-card-tab" data-cert="python" style="--cert-color: #3776AB;">
-        <div class="cert-tab-icon" style="background: rgba(55, 118, 171, 0.15); color: #3776AB;">
-          <i class="fab fa-python"></i>
-        </div>
-        <div class="cert-tab-info">
-          <h3>Python Essentials 1</h3>
-          <p>Cisco NetAcad (40 otázek)</p>
-        </div>
-      </div>
-
-      <!-- Cisco NDG Linux Essentials -->
-      <div class="cert-card-tab" data-cert="linux" style="--cert-color: #EAA01A;">
-        <div class="cert-tab-icon" style="background: rgba(234, 160, 26, 0.15); color: #EAA01A;">
-          <i class="fab fa-linux"></i>
-        </div>
-        <div class="cert-tab-info">
-          <h3>NDG Linux Essentials</h3>
-          <p>Cisco NetAcad (40 otázek)</p>
-        </div>
-      </div>
-
-      <!-- Cisco CCNA: Switching, Routing, and Wireless Essentials -->
-      <div class="cert-card-tab" data-cert="ccna_srwe" style="--cert-color: #00BCEB;">
-        <div class="cert-tab-icon" style="background: rgba(0, 188, 235, 0.15); color: #00BCEB;">
-          <i class="fas fa-network-wired"></i>
-        </div>
-        <div class="cert-tab-info">
-          <h3>CCNA: SRWE</h3>
-          <p>Cisco NetAcad (40 otázek)</p>
-        </div>
-      </div>
-
-      <!-- Cisco CCNA: Introduction to Networks -->
-      <div class="cert-card-tab" data-cert="ccna_itn" style="--cert-color: #049FD9;">
-        <div class="cert-tab-icon" style="background: rgba(4, 159, 217, 0.15); color: #049FD9;">
-          <i class="fas fa-ethernet"></i>
-        </div>
-        <div class="cert-tab-info">
-          <h3>CCNA: ITN</h3>
-          <p>Cisco NetAcad (40 otázek)</p>
-        </div>
-      </div>
     </section>
 
     <!-- MODE SELECTOR TABS -->

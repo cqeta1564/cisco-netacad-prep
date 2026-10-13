@@ -1,17 +1,24 @@
 # IT Certifications Prep - Cisco NetAcad & Oracle Academy
 
-Interaktivní webová aplikace pro přípravu a trénování na oficiální certifikace z **Cisco Networking Academy** (Skills for All / OpenEDG) a **Oracle Academy**:
+Interaktivní webová aplikace pro přípravu a trénování na oficiální certifikace z **Cisco Networking Academy** (Skills for All / OpenEDG) a **Oracle Academy**, rozdělené do 4 oborových kategorií:
 
+### 🌐 Webové aplikace
 1. **Cisco Networking Academy: HTML Essentials** (příprava na certifikaci WDE™)
 2. **Cisco Networking Academy: CSS Essentials** (příprava na certifikaci WDA™)
 3. **Cisco Networking Academy: JavaScript Essentials 1** (příprava na certifikaci JSE-40-01)
 4. **Cisco Networking Academy: JavaScript Essentials 2** (příprava na certifikaci JSA-40-02)
+
+### 🗄️ Databázové systémy
 5. **Oracle Academy: Database Design** (návrh databází, ERD, normalizace 1NF–3NF)
 6. **Oracle Academy: Database Programming With SQL** (ANSI SQL, SELECT, JOIN, DDL/DML, transakce)
-7. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
-8. **Cisco Networking Academy: NDG Linux Essentials** (příprava na certifikaci LPI 010-160)
+
+### 🖥️ Počítačové systémy a sítě
+7. **Cisco Networking Academy: NDG Linux Essentials** (příprava na certifikaci LPI 010-160)
+8. **Cisco Networking Academy: CCNA: Introduction to Networks** (CCNA ITN v7 / CCNA 200-301)
 9. **Cisco Networking Academy: CCNA: Switching, Routing, and Wireless Essentials** (CCNA SRWE v7 / CCNA 200-301)
-10. **Cisco Networking Academy: CCNA: Introduction to Networks** (CCNA ITN v7 / CCNA 200-301)
+
+### 💻 Programové vybavení
+10. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
 
 🌐 **Online aplikace na GitHub Pages**: [https://cqeta1564.github.io/cisco-netacad-prep/](https://cqeta1564.github.io/cisco-netacad-prep/)
 

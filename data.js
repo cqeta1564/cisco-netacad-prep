@@ -6,9 +6,50 @@
  * 3. JavaScript Essentials 1 - JSE 1 (OpenEDG JS Institute / Cisco NetAcad)
  */
 
+const CERTIFICATE_CATEGORIES = {
+  web: {
+    id: "web",
+    name: "Webové aplikace",
+    shortName: "Web",
+    icon: "fas fa-globe",
+    color: "#38bdf8",
+    description: "HTML5, CSS3 a moderní JavaScript (JSE 1 & 2)",
+    certs: ["html", "css", "js", "js2"]
+  },
+  db: {
+    id: "db",
+    name: "Databázové systémy",
+    shortName: "Databáze",
+    icon: "fas fa-database",
+    color: "#f87171",
+    description: "Oracle Database Design & Database Programming With SQL",
+    certs: ["oracle_dd", "oracle_sql"]
+  },
+  systems: {
+    id: "systems",
+    name: "Počítačové systémy a sítě",
+    shortName: "Sítě & Systémy",
+    icon: "fas fa-network-wired",
+    color: "#00bceb",
+    description: "NDG Linux Essentials & Cisco CCNA (ITN + SRWE)",
+    certs: ["linux", "ccna_itn", "ccna_srwe"]
+  },
+  software: {
+    id: "software",
+    name: "Programové vybavení",
+    shortName: "Programování",
+    icon: "fab fa-python",
+    color: "#3776ab",
+    description: "Cisco Python Essentials 1 (PCEP)",
+    certs: ["python"]
+  }
+};
+
 const CERTIFICATES_DATA = {
   html: {
     id: "html",
+    category: "web",
+    categoryName: "Webové aplikace",
     title: "Cisco Networking Academy: HTML Essentials",
     subtitle: "Příprava na certifikaci WDE™ (Certified Entry-Level Web Developer)",
     badge: "HTML Essentials",
@@ -659,6 +700,8 @@ const CERTIFICATES_DATA = {
 
   css: {
     id: "css",
+    category: "web",
+    categoryName: "Webové aplikace",
     title: "Cisco Networking Academy: CSS Essentials",
     subtitle: "Příprava na certifikaci WDA™ (Certified Associate Web Developer)",
     badge: "CSS Essentials",
@@ -1309,6 +1352,8 @@ const CERTIFICATES_DATA = {
 
   js: {
     id: "js",
+    category: "web",
+    categoryName: "Webové aplikace",
     title: "Cisco Networking Academy: JavaScript Essentials 1",
     subtitle: "Příprava na certifikaci JSE – Certified Entry-Level JavaScript Programmer (JSE-40-01)",
     badge: "JavaScript Essentials 1",
@@ -1890,6 +1935,8 @@ const CERTIFICATES_DATA = {
 
   oracle_dd: {
   "id": "oracle_dd",
+    category: "db",
+    categoryName: "Databázové systémy",
   "title": "Oracle Academy: Database Design",
   "subtitle": "Příprava na certifikační zkoušku Oracle Academy Database Design",
   "badge": "Oracle Database Design",
@@ -2477,6 +2524,8 @@ const CERTIFICATES_DATA = {
 
   oracle_sql: {
   "id": "oracle_sql",
+    category: "db",
+    categoryName: "Databázové systémy",
   "title": "Oracle Academy: Database Programming with SQL",
   "subtitle": "Příprava na certifikační zkoušku Oracle Academy Database Programming with SQL",
   "badge": "Oracle SQL Programming",
@@ -3070,6 +3119,8 @@ const CERTIFICATES_DATA = {
 ,
   python: {
   "id": "python",
+    category: "software",
+    categoryName: "Programové vybavení",
   "title": "Cisco Networking Academy: Python Essentials 1",
   "subtitle": "Příprava na certifikaci PCEP-30-02 (Certified Entry-Level Python Programmer)",
   "badge": "Python Essentials 1",
@@ -3661,6 +3712,8 @@ const CERTIFICATES_DATA = {
 ,
   js2: {
   "id": "js2",
+    category: "web",
+    categoryName: "Webové aplikace",
   "title": "Cisco Networking Academy: JavaScript Essentials 2",
   "subtitle": "Příprava na certifikaci JSA – Certified Associate JavaScript Programmer",
   "badge": "JavaScript Essentials 2",
@@ -4252,6 +4305,8 @@ const CERTIFICATES_DATA = {
 ,
   linux: {
   "id": "linux",
+    category: "systems",
+    categoryName: "Počítačové systémy a sítě",
   "title": "Cisco Networking Academy: NDG Linux Essentials",
   "subtitle": "Příprava na certifikaci LPI Linux Essentials (010-160) & NDG Linux",
   "badge": "NDG Linux Essentials",
@@ -4842,6 +4897,8 @@ const CERTIFICATES_DATA = {
 },
   ccna_srwe: {
   "id": "ccna_srwe",
+    category: "systems",
+    categoryName: "Počítačové systémy a sítě",
   "title": "Cisco NetAcad CCNA: Switching, Routing, and Wireless Essentials",
   "subtitle": "Příprava na certifikaci CCNA 200-301 (Kurz CCNAv7 SRWE)",
   "badge": "CCNA: SRWE",
@@ -5434,6 +5491,8 @@ const CERTIFICATES_DATA = {
 
   ccna_itn: {
   "id": "ccna_itn",
+    category: "systems",
+    categoryName: "Počítačové systémy a sítě",
   "title": "Cisco Networking Academy: CCNA: Introduction to Networks (ITN)",
   "subtitle": "Příprava na certifikaci CCNA v7 ITN (Modul 1) / CCNA 200-301",
   "badge": "CCNA: ITN",

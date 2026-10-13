@@ -64,6 +64,7 @@ class NetAcadApp {
   constructor() {
     this.sound = new SoundFX();
     this.activeCert = 'html';
+    this.activeCategory = 'all';
     this.activeMode = 'simulator'; // 'simulator', 'practice', 'flashcards', 'cheatsheet'
     
     this.currentQuestions = [];
@@ -176,6 +177,15 @@ class NetAcadApp {
       });
     });
 
+    // Category filter pills
+    document.querySelectorAll('.cat-pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.cat;
+        this.sound.click();
+        this.filterCategory(cat);
+      });
+    });
+
     // Cert card tabs
     document.querySelectorAll('.cert-card-tab').forEach(tab => {
       tab.addEventListener('click', () => {
@@ -261,6 +271,36 @@ class NetAcadApp {
     }
   }
 
+  filterCategory(cat) {
+    this.activeCategory = cat;
+
+    // Update active pill button
+    document.querySelectorAll('.cat-pill-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.cat === cat);
+    });
+
+    // Toggle category groups visibility
+    const groups = document.querySelectorAll('.cert-cat-group');
+    groups.forEach(group => {
+      if (cat === 'all' || group.dataset.cat === cat) {
+        group.classList.remove('hidden');
+      } else {
+        group.classList.add('hidden');
+      }
+    });
+
+    // If currently active cert is hidden by filter, switch to first visible cert in category
+    if (cat !== 'all') {
+      const activeCertInfo = CERTIFICATES_DATA[this.activeCert];
+      if (activeCertInfo && activeCertInfo.category !== cat) {
+        const firstCertInCat = CERTIFICATE_CATEGORIES[cat]?.certs[0];
+        if (firstCertInCat) {
+          this.loadCertificate(firstCertInCat);
+        }
+      }
+    }
+  }
+
   loadCertificate(certId) {
     this.activeCert = certId;
     const cert = CERTIFICATES_DATA[certId];
@@ -272,7 +312,7 @@ class NetAcadApp {
 
     // Update current cert badge
     const badge = document.getElementById('currentCertBadge');
-    badge.innerHTML = `<i class="${cert.icon}"></i> ${cert.badge}`;
+    badge.innerHTML = `<i class="${cert.icon}"></i> ${cert.badge} <span style="font-size: 0.78rem; opacity: 0.75; font-weight: normal; margin-left: 6px;">[${cert.categoryName}]</span>`;
     badge.style.color = cert.color;
 
     // Populate practice filters & live stats
@@ -1700,86 +1740,109 @@ class NetAcadApp {
     const stats = this.getUserStats();
     const pMap = stats.practice?.questions || {};
 
-    Object.entries(CERTIFICATES_DATA).forEach(([certId, cert]) => {
-      let practicedCount = 0;
-      let correctCount = 0;
-      let wrongCount = 0;
-      let activeMistakes = 0;
-
-      cert.questions.forEach(q => {
-        const rec = pMap[q.id];
-        if (rec) {
-          practicedCount++;
-          correctCount += (rec.correct || 0);
-          wrongCount += ((rec.answered || 0) - (rec.correct || 0));
-          if (rec.lastResult === false) {
-            activeMistakes++;
-          }
-        }
-      });
-
-      const totalQuestions = cert.questions.length;
-      const coveragePct = Math.round((practicedCount / totalQuestions) * 100);
-      const totalAnswers = correctCount + wrongCount;
-      const accuracyPct = totalAnswers > 0 ? Math.round((correctCount / totalAnswers) * 100) : 0;
-
-      const card = document.createElement('div');
-      card.className = 'practice-cert-card';
-      card.innerHTML = `
-        <div class="cert-stat-header">
-          <div class="cert-stat-title-wrap">
-            <i class="${cert.icon}" style="color: ${cert.color};"></i>
-            <div>
-              <h4>${this.escapeHtml(cert.title)}</h4>
-              <span>${practicedCount} z ${totalQuestions} otázek procvičeno (${coveragePct} %)</span>
-            </div>
+    // Group certificates by categories
+    Object.entries(CERTIFICATE_CATEGORIES).forEach(([catId, catInfo]) => {
+      const groupSection = document.createElement('div');
+      groupSection.className = 'practice-cat-group-section';
+      groupSection.innerHTML = `
+        <div class="practice-cat-header">
+          <div class="practice-cat-title">
+            <i class="${catInfo.icon}" style="color: ${catInfo.color};"></i>
+            <h4>${this.escapeHtml(catInfo.name)}</h4>
           </div>
-          ${activeMistakes > 0 ? `<span class="status-badge failed"><i class="fas fa-triangle-exclamation"></i> ${activeMistakes} chyb</span>` : (practicedCount > 0 ? `<span class="status-badge passed"><i class="fas fa-check"></i> 100 % správně</span>` : `<span class="status-badge empty">Neprocvičeno</span>`)}
+          <span class="practice-cat-desc">${this.escapeHtml(catInfo.description)}</span>
         </div>
-
-        <div class="cert-stat-metrics">
-          <div>
-            <div class="metric-item-val" style="color: ${totalAnswers > 0 ? '#38bdf8' : 'inherit'}">${accuracyPct} %</div>
-            <div class="metric-item-lbl">Přesnost odpovědí</div>
-          </div>
-          <div>
-            <div class="metric-item-val" style="color: #10b981">${correctCount}</div>
-            <div class="metric-item-lbl">Správně</div>
-          </div>
-          <div>
-            <div class="metric-item-val" style="color: ${wrongCount > 0 ? '#ef4444' : 'inherit'}">${wrongCount}</div>
-            <div class="metric-item-lbl">Chybně</div>
-          </div>
-        </div>
-
-        <div class="cert-stat-progress">
-          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
-            <span>Pokrytí otázek</span>
-            <span>${coveragePct} %</span>
-          </div>
-          <div class="cert-stat-progress-bar">
-            <div class="cert-stat-progress-fill" style="width: ${coveragePct}%; background: ${coveragePct === 100 ? '#10b981' : '#38bdf8'};"></div>
-          </div>
-        </div>
-
-        <div class="practice-actions-row">
-          <button class="btn btn-secondary btn-sm" onclick="app.launchPractice('${certId}', 'all')">
-            <i class="fas fa-play"></i> Trénovat
-          </button>
-          ${activeMistakes > 0 ? `
-            <button class="btn btn-sm btn-outline-danger" onclick="app.launchPractice('${certId}', 'mistakes')">
-              <i class="fas fa-redo"></i> Opravit chyby (${activeMistakes})
-            </button>
-          ` : ''}
-          ${(totalQuestions - practicedCount) > 0 ? `
-            <button class="btn btn-secondary btn-sm" onclick="app.launchPractice('${certId}', 'unseen')">
-              <i class="fas fa-sparkles"></i> Nové (${totalQuestions - practicedCount})
-            </button>
-          ` : ''}
-        </div>
+        <div class="practice-cat-grid"></div>
       `;
 
-      grid.appendChild(card);
+      const subGrid = groupSection.querySelector('.practice-cat-grid');
+
+      catInfo.certs.forEach(certId => {
+        const cert = CERTIFICATES_DATA[certId];
+        if (!cert) return;
+
+        let practicedCount = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        let activeMistakes = 0;
+
+        cert.questions.forEach(q => {
+          const rec = pMap[q.id];
+          if (rec) {
+            practicedCount++;
+            correctCount += (rec.correct || 0);
+            wrongCount += ((rec.answered || 0) - (rec.correct || 0));
+            if (rec.lastResult === false) {
+              activeMistakes++;
+            }
+          }
+        });
+
+        const totalQuestions = cert.questions.length;
+        const coveragePct = Math.round((practicedCount / totalQuestions) * 100);
+        const totalAnswers = correctCount + wrongCount;
+        const accuracyPct = totalAnswers > 0 ? Math.round((correctCount / totalAnswers) * 100) : 0;
+
+        const card = document.createElement('div');
+        card.className = 'practice-cert-card';
+        card.innerHTML = `
+          <div class="cert-stat-header">
+            <div class="cert-stat-title-wrap">
+              <i class="${cert.icon}" style="color: ${cert.color};"></i>
+              <div>
+                <h4>${this.escapeHtml(cert.title)}</h4>
+                <span>${practicedCount} z ${totalQuestions} otázek procvičeno (${coveragePct} %)</span>
+              </div>
+            </div>
+            ${activeMistakes > 0 ? `<span class="status-badge failed"><i class="fas fa-triangle-exclamation"></i> ${activeMistakes} chyb</span>` : (practicedCount > 0 ? `<span class="status-badge passed"><i class="fas fa-check"></i> 100 % správně</span>` : `<span class="status-badge empty">Neprocvičeno</span>`)}
+          </div>
+
+          <div class="cert-stat-metrics">
+            <div>
+              <div class="metric-item-val" style="color: ${totalAnswers > 0 ? '#38bdf8' : 'inherit'}">${accuracyPct} %</div>
+              <div class="metric-item-lbl">Přesnost odpovědí</div>
+            </div>
+            <div>
+              <div class="metric-item-val" style="color: #10b981">${correctCount}</div>
+              <div class="metric-item-lbl">Správně</div>
+            </div>
+            <div>
+              <div class="metric-item-val" style="color: ${wrongCount > 0 ? '#ef4444' : 'inherit'}">${wrongCount}</div>
+              <div class="metric-item-lbl">Chybně</div>
+            </div>
+          </div>
+
+          <div class="cert-stat-progress">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+              <span>Pokrytí otázek</span>
+              <span>${coveragePct} %</span>
+            </div>
+            <div class="cert-stat-progress-bar">
+              <div class="cert-stat-progress-fill" style="width: ${coveragePct}%; background: ${coveragePct === 100 ? '#10b981' : '#38bdf8'};"></div>
+            </div>
+          </div>
+
+          <div class="practice-actions-row">
+            <button class="btn btn-secondary btn-sm" onclick="app.launchPractice('${certId}', 'all')">
+              <i class="fas fa-play"></i> Trénovat
+            </button>
+            ${activeMistakes > 0 ? `
+              <button class="btn btn-sm btn-outline-danger" onclick="app.launchPractice('${certId}', 'mistakes')">
+                <i class="fas fa-redo"></i> Opravit chyby (${activeMistakes})
+              </button>
+            ` : ''}
+            ${(totalQuestions - practicedCount) > 0 ? `
+              <button class="btn btn-secondary btn-sm" onclick="app.launchPractice('${certId}', 'unseen')">
+                <i class="fas fa-sparkles"></i> Nové (${totalQuestions - practicedCount})
+              </button>
+            ` : ''}
+          </div>
+        `;
+
+        subGrid.appendChild(card);
+      });
+
+      grid.appendChild(groupSection);
     });
   }
 
