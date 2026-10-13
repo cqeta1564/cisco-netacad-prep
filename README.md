@@ -5,18 +5,20 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
 1. **Cisco Networking Academy: HTML Essentials** (příprava na certifikaci WDE™)
 2. **Cisco Networking Academy: CSS Essentials** (příprava na certifikaci WDA™)
 3. **Cisco Networking Academy: JavaScript Essentials 1** (příprava na certifikaci JSE-40-01)
-4. **Oracle Academy: Database Design** (návrh databází, ERD, normalizace 1NF–3NF)
-5. **Oracle Academy: Database Programming With SQL** (ANSI SQL, SELECT, JOIN, DDL/DML, transakce)
-6. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
+4. **Cisco Networking Academy: JavaScript Essentials 2** (příprava na certifikaci JSA-40-02)
+5. **Oracle Academy: Database Design** (návrh databází, ERD, normalizace 1NF–3NF)
+6. **Oracle Academy: Database Programming With SQL** (ANSI SQL, SELECT, JOIN, DDL/DML, transakce)
+7. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
 
 ---
 
 ## 🌟 Funkce aplikace
 
-- **250 autentických otázek**:
+- **290 autentických otázek**:
   - 45 otázek pro HTML Essentials
   - 45 otázek pro CSS Essentials
   - 40 otázek pro JavaScript Essentials 1
+  - 40 otázek pro JavaScript Essentials 2
   - 40 otázek pro Oracle Database Design
   - 40 otázek pro Oracle Database Programming With SQL
   - 40 otázek pro Cisco Python Essentials 1

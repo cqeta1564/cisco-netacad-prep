@@ -3658,4 +3658,595 @@ const CERTIFICATES_DATA = {
     }
   ]
 }
+,
+  js2: {
+  "id": "js2",
+  "title": "Cisco Networking Academy: JavaScript Essentials 2",
+  "subtitle": "Příprava na certifikaci JSA – Certified Associate JavaScript Programmer",
+  "badge": "JavaScript Essentials 2",
+  "icon": "fab fa-js",
+  "color": "#E5A91E",
+  "passScore": 70,
+  "timeLimit": 45,
+  "modules": [
+    {
+      "id": "js2_m1",
+      "name": "JSE2-M1: Bezřídové objekty & Prototypy (Classless Objects)"
+    },
+    {
+      "id": "js2_m2",
+      "name": "JSE2-M2: Třídy & Objektově orientovaný přístup (Classes & OOP)"
+    },
+    {
+      "id": "js2_m3",
+      "name": "JSE2-M3: Vestavěné objekty & Datové struktury (Built-In Objects)"
+    },
+    {
+      "id": "js2_m4",
+      "name": "JSE2-M4: Pokročilé funkce & Asynchronní programování"
+    }
+  ],
+  "questions": [
+    {
+      "id": "js2_q01",
+      "module": "js2_m1",
+      "question": "Which notation is strictly required to access a property whose key contains spaces, hyphens, or begins with a number (e.g., 'first name')?",
+      "code": "let user = { 'first name': 'Alice' };",
+      "options": [
+        "user['first name'] (bracket notation)",
+        "user.'first name' (quoted dot notation)",
+        "user->'first name' (arrow notation)",
+        "user::first name (scope resolution notation)"
+      ],
+      "correct": 0,
+      "explanation": "Tečková notace (dot notation) vyžaduje platný JavaScript identifikátor bez mezer a pomlček. Pokud klíč obsahuje mezery, pomlčky nebo začíná číslicí, je nutné použít závorkovou notaci (bracket notation): user['first name']."
+    },
+    {
+      "id": "js2_q02",
+      "module": "js2_m1",
+      "question": "What is the result of executing the following snippet?",
+      "code": "let book = { title: 'JS Guide', pages: 300 };\ndelete book.pages;\nconsole.log(book.pages);",
+      "options": [
+        "undefined",
+        "null",
+        "0",
+        "ReferenceError"
+      ],
+      "correct": 0,
+      "explanation": "Operátor delete odstraní vlastnost 'pages' z objektu 'book'. Pokus o přístup k neexistující vlastnosti objektu v JavaScriptu vrací hodnotu undefined (nevyvolá chybu)."
+    },
+    {
+      "id": "js2_q03",
+      "module": "js2_m1",
+      "question": "What is the key difference between using the 'in' operator and the 'hasOwnProperty()' method when checking for property existence?",
+      "code": null,
+      "options": [
+        "The 'in' operator checks the object and its entire prototype chain, while 'hasOwnProperty()' checks only the object's direct (own) properties",
+        "'hasOwnProperty()' checks the prototype chain, while 'in' checks only direct properties",
+        "The 'in' operator only works on arrays, while 'hasOwnProperty()' works only on plain objects",
+        "There is no difference; they are exact aliases"
+      ],
+      "correct": 0,
+      "explanation": "Operátor 'in' prochází celý prototypový řetězec (prototype chain) a vrátí true, i když je vlastnost zděděná z prototypu. Metoda hasOwnProperty() testuje výhradně přímé (vlastní) vlastnosti daného objektu bez procházení prototypu."
+    },
+    {
+      "id": "js2_q04",
+      "module": "js2_m1",
+      "question": "What will the following loop iterate over?",
+      "code": "let car = { make: 'Toyota', model: 'Corolla' };\nfor (let prop in car) {\n  console.log(prop);\n}",
+      "options": [
+        "The names of the enumerable properties ('make', 'model')",
+        "The values of the properties ('Toyota', 'Corolla')",
+        "Both keys and values as arrays [key, value]",
+        "The indices of the properties as numbers (0, 1)"
+      ],
+      "correct": 0,
+      "explanation": "Cyklus for...in v JavaScriptu iteruje přes názvy (klíče) všech vyčíslitelných (enumerable) vlastností objektu, nikoli přes jejich hodnoty."
+    },
+    {
+      "id": "js2_q05",
+      "module": "js2_m1",
+      "question": "What is the output of the following code snippet?",
+      "code": "let point1 = { x: 10, y: 20 };\nlet point2 = point1;\npoint2.x = 99;\nconsole.log(point1.x);",
+      "options": [
+        "99",
+        "10",
+        "undefined",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Objekty jsou v JavaScriptu referenční datové typy. Přiřazení point2 = point1 nevytváří nezávislou kopii, nýbrž druhou referenci ukazující na tentýž objekt v paměti. Změna přes point2.x se proto projeví i v point1.x."
+    },
+    {
+      "id": "js2_q06",
+      "module": "js2_m1",
+      "question": "When defining a new property using Object.defineProperty() without explicitly providing descriptor attributes, what are the default values of writable, enumerable, and configurable?",
+      "code": "let obj = {};\nObject.defineProperty(obj, 'test', { value: 100 });",
+      "options": [
+        "writable: false, enumerable: false, configurable: false",
+        "writable: true, enumerable: true, configurable: true",
+        "writable: true, enumerable: false, configurable: false",
+        "writable: false, enumerable: true, configurable: true"
+      ],
+      "correct": 0,
+      "explanation": "Při definici vlastnosti pomocí Object.defineProperty() mají všechny vynechané booleovské příznaky (writable, enumerable, configurable) výchozí hodnotu false (na rozdíl od běžného přiřazení obj.test = 100, kde jsou nastaveny na true)."
+    },
+    {
+      "id": "js2_q07",
+      "module": "js2_m1",
+      "question": "What will the following code snippet output?",
+      "code": "let config = {};\nObject.defineProperty(config, 'mode', {\n  value: 'strict',\n  writable: false\n});\nconfig.mode = 'lenient';\nconsole.log(config.mode);",
+      "options": [
+        "'strict'",
+        "'lenient'",
+        "undefined",
+        "null"
+      ],
+      "correct": 0,
+      "explanation": "Příznak writable: false způsobí, že vlastnost je pouze pro čtení (read-only). Pokus o přepsání v běžném režimu tiše selže a hodnota zůstane 'strict' (ve striktním režimu 'use strict' by vyvolal TypeError)."
+    },
+    {
+      "id": "js2_q08",
+      "module": "js2_m1",
+      "question": "What effect does Object.freeze() have on an object?",
+      "code": null,
+      "options": [
+        "It prevents adding new properties, removing existing properties, and modifying existing property values",
+        "It only prevents deleting properties, but existing values can still be changed",
+        "It converts all object properties into private variables",
+        "It deep-freezes all nested objects recursively"
+      ],
+      "correct": 0,
+      "explanation": "Metoda Object.freeze() objekt zmrazí (mělká neměnnost / shallow freeze): nelze přidávat nové vlastnosti, mazat existující ani měnit jejich hodnoty či konfigurovat jejich deskriptory."
+    },
+    {
+      "id": "js2_q09",
+      "module": "js2_m1",
+      "question": "What is the difference between Object.seal() and Object.freeze()?",
+      "code": null,
+      "options": [
+        "Object.seal() allows modifying the values of existing writable properties, whereas Object.freeze() makes all properties read-only",
+        "Object.freeze() allows adding new properties, while Object.seal() does not",
+        "Object.seal() operates recursively, while Object.freeze() is shallow",
+        "There is no difference; they are identical methods"
+      ],
+      "correct": 0,
+      "explanation": "Zapečetěný objekt (Object.seal) neumožňuje přidávat ani mazat vlastnosti, ale stávající hodnoty lze stále přepisovat (pokud jsou writable: true). Zmrazený objekt (Object.freeze) navíc nastaví všechny vlastnosti na writable: false."
+    },
+    {
+      "id": "js2_q10",
+      "module": "js2_m1",
+      "question": "What will be printed to the console?",
+      "code": "let vehicle = { wheels: 4 };\nlet truck = Object.create(vehicle);\ntruck.capacity = '5T';\nconsole.log(truck.wheels);",
+      "options": [
+        "4",
+        "undefined",
+        "null",
+        "ReferenceError"
+      ],
+      "correct": 0,
+      "explanation": "Metoda Object.create(vehicle) vytvoří nový objekt 'truck', jehož prototypem je 'vehicle'. Protože 'truck' nemá vlastní vlastnost 'wheels', vyhledá ji JavaScript po prototypovém řetězci (prototype chain) u prototypu a vrátí 4."
+    },
+    {
+      "id": "js2_q11",
+      "module": "js2_m2",
+      "question": "What is the primary role of the constructor method in a JavaScript ES6 class?",
+      "code": null,
+      "options": [
+        "It is a special method automatically executed when an instance of the class is created with the new keyword",
+        "It is an optional destructor executed when an object is removed by garbage collection",
+        "It is a static method used to register the class in the global scope",
+        "It converts the class into an abstract prototype interface"
+      ],
+      "correct": 0,
+      "explanation": "Metoda constructor je speciální metoda třídy, která se automaticky spustí při vytváření nové instance pomocí operátoru 'new'. Třída může obsahovat pouze jeden constructor."
+    },
+    {
+      "id": "js2_q12",
+      "module": "js2_m2",
+      "question": "What will be the output of the following code snippet?",
+      "code": "class Device {}\nclass Phone extends Device {}\nlet myPhone = new Phone();\nconsole.log(myPhone instanceof Device);",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Operátor instanceof ověřuje, zda se Device.prototype nachází kdekoliv v prototypovém řetězci objektu myPhone. Protože Phone dědí z Device, výraz vrátí true."
+    },
+    {
+      "id": "js2_q13",
+      "module": "js2_m2",
+      "question": "What will happen when running the following code snippet?",
+      "code": "class Animal {\n  constructor(name) { this.name = name; }\n}\nclass Dog extends Animal {\n  constructor(name, breed) {\n    this.breed = breed;\n    super(name);\n  }\n}\nlet d = new Dog('Rex', 'Shepherd');",
+      "options": [
+        "It throws a ReferenceError because super() must be called before accessing this",
+        "It executes successfully and creates the Dog instance",
+        "It prints undefined",
+        "It throws a SyntaxError because constructor cannot take two parameters"
+      ],
+      "correct": 0,
+      "explanation": "V odvozené třídě (subclass) s explicitním konstruktorem MUSÍ být volání super() provedeno před jakýmkoliv použitím klíčového slova 'this'. Pokus o přístup k this před super() vyvolá ReferenceError."
+    },
+    {
+      "id": "js2_q14",
+      "module": "js2_m2",
+      "question": "How can a method in a subclass invoke the overridden method of its superclass?",
+      "code": null,
+      "options": [
+        "super.methodName()",
+        "parent.methodName()",
+        "this.super.methodName()",
+        "base.methodName()"
+      ],
+      "correct": 0,
+      "explanation": "Klíčové slovo super v těle metody umožňuje přímý přístup k původní metodě rodičovské třídy: super.methodName()."
+    },
+    {
+      "id": "js2_q15",
+      "module": "js2_m2",
+      "question": "What will the following code output?",
+      "code": "class Calculator {\n  static multiply(a, b) {\n    return a * b;\n  }\n}\nlet calc = new Calculator();\nconsole.log(calc.multiply(3, 4));",
+      "options": [
+        "TypeError: calc.multiply is not a function",
+        "12",
+        "undefined",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "Statické metody (static) jsou navázány na samotnou třídu (funkci konstruktoru), nikoli na její vytvořené instance. Správné volání je Calculator.multiply(3, 4). Na instanci calc metoda multiply neexistuje, což vyvolá TypeError."
+    },
+    {
+      "id": "js2_q16",
+      "module": "js2_m2",
+      "question": "What is the expected output of the following code snippet?",
+      "code": "class Rectangle {\n  constructor(w, h) { this.w = w; this.h = h; }\n  get area() { return this.w * this.h; }\n}\nlet r = new Rectangle(5, 4);\nconsole.log(r.area);",
+      "options": [
+        "20",
+        "undefined",
+        "TypeError: r.area is not a function",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "Gettery (definované klíčovým slovem 'get') se v JavaScriptu čtou jako běžné vlastnosti bez kulatých závorek. Výraz r.area tedy zavolá getter a vrátí 5 * 4 = 20."
+    },
+    {
+      "id": "js2_q17",
+      "module": "js2_m2",
+      "question": "How are private field members declared in modern JavaScript ES6+ classes?",
+      "code": null,
+      "options": [
+        "By prefixing the field name with a hash symbol # (e.g. #secret)",
+        "By using the private keyword (e.g. private secret)",
+        "By starting the field name with an underscore _ (e.g. _secret)",
+        "By placing the field inside a Symbol() constructor"
+      ],
+      "correct": 0,
+      "explanation": "Standardní privátní vlastnosti tříd v moderním JavaScriptu začínají znakem mřížky '#' (např. #balance). Jsou zcela nepřístupné mimo tělo dané třídy (pokus o přístup zvnějšku skončí SyntaxError). Podtržítko '_' bylo pouze neoficiální konvencí."
+    },
+    {
+      "id": "js2_q18",
+      "module": "js2_m2",
+      "question": "Which statement is true regarding class declaration hoisting in JavaScript?",
+      "code": null,
+      "options": [
+        "Class declarations are not hoisted like function declarations; accessing a class before its declaration throws a ReferenceError",
+        "Classes are fully hoisted to the top of the scope and can be instantiated before declaration",
+        "Only classes declared with the export keyword are hoisted",
+        "Classes are hoisted and initialized to null"
+      ],
+      "correct": 0,
+      "explanation": "Třídy v JavaScriptu nepodléhají hoistingu jako běžné funkce. Nacházejí se v tzv. Temporal Dead Zone (TDZ), takže pokus o jejich použití před řádkem deklarace vyvolá ReferenceError."
+    },
+    {
+      "id": "js2_q19",
+      "module": "js2_m2",
+      "question": "Which of the following is the correct syntax for declaring a method inside an ES6 class?",
+      "code": null,
+      "options": [
+        "display() { console.log(this.name); }",
+        "function display() { console.log(this.name); }",
+        "display: function() { console.log(this.name); },",
+        "def display(self): { console.log(this.name); }"
+      ],
+      "correct": 0,
+      "explanation": "V těle třídy ES6 se metody definují moderní zkrácenou syntaxí: nazevMetody(parametry) { ... } bez klíčového slova function a bez oddělovacích čárek."
+    },
+    {
+      "id": "js2_q20",
+      "module": "js2_m2",
+      "question": "What is the relationship between ES6 classes and prototype-based inheritance?",
+      "code": null,
+      "options": [
+        "ES6 classes are syntactical sugar built over JavaScript's existing prototype-based inheritance model",
+        "ES6 classes completely replace the prototype engine and introduce traditional class-based memory tables",
+        "Classes cannot have prototypes; prototype is undefined for classes",
+        "Classes require a special WebAssembly module to emulate OOP"
+      ],
+      "correct": 0,
+      "explanation": "Třídy v JavaScriptu (ES6 class) představují syntaktický cukr (syntactic sugar) nad prototypovým modelem jazyka. Pod kapotou stále fungují prototypové vazby (prototype chain)."
+    },
+    {
+      "id": "js2_q21",
+      "module": "js2_m3",
+      "question": "What is the output of the following check in JavaScript?",
+      "code": "console.log(Number.isInteger(10.0));\nconsole.log(Number.isInteger(10.5));",
+      "options": [
+        "true false",
+        "false true",
+        "true true",
+        "false false"
+      ],
+      "correct": 0,
+      "explanation": "V JavaScriptu jsou čísla reprezentována podle standardu IEEE-754. Hodnota 10.0 nemá žádnou desetinnou část a v paměti je reprezentována stejně jako celé číslo 10. Proto Number.isInteger(10.0) vrací true, zatímco pro 10.5 vrací false."
+    },
+    {
+      "id": "js2_q22",
+      "module": "js2_m3",
+      "question": "What will be printed to the console?",
+      "code": "console.log(isNaN('Hello'));\nconsole.log(Number.isNaN('Hello'));",
+      "options": [
+        "true false",
+        "true true",
+        "false false",
+        "false true"
+      ],
+      "correct": 0,
+      "explanation": "Globální isNaN() nejprve svůj argument implicitně převede na číslo; Number('Hello') je NaN, takže vrátí true. Naproti tomu Number.isNaN() neprovádí žádnou typovou konverzi a vrátí true POUZE tehdy, pokud je hodnota typu Number a současně je rovna NaN. Řetězec 'Hello' tedy vrátí false."
+    },
+    {
+      "id": "js2_q23",
+      "module": "js2_m3",
+      "question": "What is the result of the following string slice operation?",
+      "code": "let str = 'JavaScript';\nconsole.log(str.slice(-6));",
+      "options": [
+        "'Script'",
+        "'JavaSc'",
+        "''",
+        "IndexError"
+      ],
+      "correct": 0,
+      "explanation": "Metoda String.prototype.slice() se záporným indexem počítá pozici od konce řetězce. Pozice -6 odpovídá začátku slova 'Script' (index 4). Výsledkem je 'Script'."
+    },
+    {
+      "id": "js2_q24",
+      "module": "js2_m3",
+      "question": "Which month does the following Date object represent in JavaScript?",
+      "code": "let d = new Date(2025, 0, 15);",
+      "options": [
+        "January (Leden)",
+        "February (Únor)",
+        "December (Prosinec)",
+        "October (Říjen)"
+      ],
+      "correct": 0,
+      "explanation": "V objektu Date v JavaScriptu jsou měsíce indexovány od 0 (0 = leden, 1 = únor, ..., 11 = prosinec). Číslo 0 tedy představuje leden."
+    },
+    {
+      "id": "js2_q25",
+      "module": "js2_m3",
+      "question": "What is the primary difference between Array.prototype.map() and Array.prototype.forEach()?",
+      "code": null,
+      "options": [
+        "map() returns a new array containing the transformed elements, while forEach() always returns undefined",
+        "forEach() creates a new array, while map() mutates the original array in place",
+        "map() can only be used with numbers, while forEach() works with any data type",
+        "forEach() executes asynchronously, while map() executes synchronously"
+      ],
+      "correct": 0,
+      "explanation": "Metoda map() vytvoří a vrátí nový pole s výsledky volání předané callback funkce pro každý prvek. Metoda forEach() provede operaci pro každý prvek, ale vždy vrací hodnotu undefined."
+    },
+    {
+      "id": "js2_q26",
+      "module": "js2_m3",
+      "question": "What is the output of the following reduce operation?",
+      "code": "let numbers = [1, 2, 3, 4];\nlet result = numbers.reduce((acc, curr) => acc + curr, 10);\nconsole.log(result);",
+      "options": [
+        "20",
+        "10",
+        "14",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Druhým argumentem reduce() je počáteční hodnota akumulátoru (10). K této hodnotě se postupně přičtou prvky pole: 10 + 1 + 2 + 3 + 4 = 20."
+    },
+    {
+      "id": "js2_q27",
+      "module": "js2_m3",
+      "question": "What is the output of the following code snippet?",
+      "code": "let set = new Set([1, 2, 2, 3, 3, 4]);\nset.add(4);\nconsole.log(set.size);",
+      "options": [
+        "4",
+        "6",
+        "7",
+        "undefined"
+      ],
+      "correct": 0,
+      "explanation": "Objekt Set ukládá pouze unikátní hodnoty. Duplicitní prvky (2, 3 i opakovaně přidaný 4) jsou automaticky ignorovány. Set obsahuje prvky {1, 2, 3, 4}, takže jeho vlastnost size je 4."
+    },
+    {
+      "id": "js2_q28",
+      "module": "js2_m3",
+      "question": "Which feature distinguishes a JavaScript Map from a standard Object?",
+      "code": null,
+      "options": [
+        "Map keys can be of any data type (objects, functions, primitives), whereas standard Object keys are only strings or symbols",
+        "Standard Objects are ordered by insertion, while Maps are unordered",
+        "Maps can only store primitive data types as values",
+        "Objects have a built-in .size property, while Maps do not"
+      ],
+      "correct": 0,
+      "explanation": "Základním rozdílem je, že v Map mohou být klíče jakéhokoliv datového typu (včetně objektů a funkcí). Běžné objekty převádějí všechny klíče na řetězce nebo symboly. Map navíc garantuje pořadí vkládání a má přímou vlastnost .size."
+    },
+    {
+      "id": "js2_q29",
+      "module": "js2_m3",
+      "question": "What is the output of the following JSON serialization?",
+      "code": "let user = {\n  name: 'Bob',\n  age: undefined,\n  greet: function() { return 'hi'; }\n};\nconsole.log(JSON.stringify(user));",
+      "options": [
+        "'{\"name\":\"Bob\"}'",
+        "'{\"name\":\"Bob\",\"age\":null,\"greet\":\"hi\"}'",
+        "'{\"name\":\"Bob\",\"age\":undefined}'",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Metoda JSON.stringify() při serializaci objektů automaticky vynechává vlastnosti, jejichž hodnotou je undefined, funkce nebo Symbol. Výsledkem je pouze řetězec '{\"name\":\"Bob\"}'."
+    },
+    {
+      "id": "js2_q30",
+      "module": "js2_m3",
+      "question": "What is the output of the following mathematical operations?",
+      "code": "console.log(Math.trunc(-3.7));\nconsole.log(Math.floor(-3.7));",
+      "options": [
+        "-3 -4",
+        "-4 -3",
+        "-3 -3",
+        "-4 -4"
+      ],
+      "correct": 0,
+      "explanation": "Math.trunc() jednoduše odřízne desetinnou část čísla směrem k nule, takže z -3.7 vznikne -3. Math.floor() zaokrouhluje dolů (směrem k menšímu číslu / zápornému nekonečnu), takže z -3.7 vznikne -4."
+    },
+    {
+      "id": "js2_q31",
+      "module": "js2_m4",
+      "question": "What is the output of the following function invocation?",
+      "code": "function fn(a, b, ...rest) {\n  return rest.length;\n}\nconsole.log(fn(1, 2, 3, 4, 5));",
+      "options": [
+        "3",
+        "5",
+        "2",
+        "undefined"
+      ],
+      "correct": 0,
+      "explanation": "Parametr 'a' obdrží hodnotu 1, 'b' obdrží 2. Zbylé argumenty (3, 4, 5) jsou uloženy do pole 'rest' pomocí rest parametru. Pole rest má tedy délku 3."
+    },
+    {
+      "id": "js2_q32",
+      "module": "js2_m4",
+      "question": "What will the following code output?",
+      "code": "function makeCounter() {\n  let count = 0;\n  return function() {\n    return ++count;\n  };\n}\nlet c1 = makeCounter();\nconsole.log(c1(), c1());",
+      "options": [
+        "1 2",
+        "1 1",
+        "0 1",
+        "ReferenceError"
+      ],
+      "correct": 0,
+      "explanation": "Vnitřní anonymní funkce tvoří uzávěru (closure) a uchovává si referenci na proměnnou 'count' ve svém vnějším lexikálním prostředí. Při každém volání c1() se count inkrementuje a vrátí: nejprve 1 a poté 2."
+    },
+    {
+      "id": "js2_q33",
+      "module": "js2_m4",
+      "question": "What is the primary purpose of an Immediately Invoked Function Expression (IIFE)?",
+      "code": "(function() {\n  let temp = 42;\n})();",
+      "options": [
+        "To create a new private scope and prevent variables from polluting the outer/global scope",
+        "To run the function asynchronously in a background web worker thread",
+        "To optimize function execution speed by compiling directly to bytecode",
+        "To create an immutable singleton class"
+      ],
+      "correct": 0,
+      "explanation": "IIFE se provede okamžitě po své definici a jejím hlavním účelem je vytvořit izolovaný privátní lexikální rozsah (scope), aby lokální proměnné (jako 'temp') neznečišťovaly globální jmenný prostor."
+    },
+    {
+      "id": "js2_q34",
+      "module": "js2_m4",
+      "question": "What is the difference between Function.prototype.call() and Function.prototype.apply()?",
+      "code": null,
+      "options": [
+        "call() accepts additional arguments individually (comma-separated), while apply() accepts them as an array",
+        "apply() binds this permanently, while call() binds it temporarily",
+        "call() executes asynchronously, while apply() is synchronous",
+        "apply() cannot accept a thisArg context"
+      ],
+      "correct": 0,
+      "explanation": "Obě metody okamžitě zavolají funkci s explicitně nastaveným kontextem 'this'. Rozdíl je v předávání dalších argumentů: call(thisArg, arg1, arg2) bere argumenty jednotlivě, zatímco apply(thisArg, [arg1, arg2]) je přijímá v poli."
+    },
+    {
+      "id": "js2_q35",
+      "module": "js2_m4",
+      "question": "What is the output of the following code snippet?",
+      "code": "let user = {\n  name: 'Charlie',\n  getName() { return this.name; }\n};\nlet fn = user.getName;\nlet boundFn = user.getName.bind(user);\nconsole.log(boundFn());",
+      "options": [
+        "'Charlie'",
+        "undefined",
+        "null",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Metoda bind() vytvoří novou funkci s trvale navázaným kontextem this na zadaný objekt (zde 'user'). Při jejím volání boundFn() je 'this' stále 'user', takže vrátí 'Charlie'."
+    },
+    {
+      "id": "js2_q36",
+      "module": "js2_m4",
+      "question": "Which statement is true regarding the 'this' binding in arrow functions?",
+      "code": null,
+      "options": [
+        "Arrow functions do not have their own 'this'; they inherit 'this' lexically from the enclosing scope",
+        "Arrow functions bind 'this' to the global window/global object regardless of scope",
+        "Arrow functions can rebind their 'this' using call() or apply()",
+        "Arrow functions bind 'this' to the DOM element that fired the event"
+      ],
+      "correct": 0,
+      "explanation": "Šipkové funkce (arrow functions) nemají vlastní kontext 'this', 'arguments' ani 'super'. Přebírají hodnotu 'this' lexikálně z okolního kontextu, ve kterém byly vytvořeny, a nelze ji změnit pomocí call, apply ani bind."
+    },
+    {
+      "id": "js2_q37",
+      "module": "js2_m4",
+      "question": "What is the output of the following generator snippet?",
+      "code": "function* idGenerator() {\n  yield 1;\n  yield 2;\n  return 3;\n}\nlet gen = idGenerator();\nconsole.log(gen.next().value, gen.next().value, gen.next().value);",
+      "options": [
+        "1 2 3",
+        "1 2 undefined",
+        "undefined undefined 3",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Generátor pozastavuje běh na každém příkazu yield. První gen.next() vrátí { value: 1, done: false }, druhý { value: 2, done: false }, a třetí narazí na return 3, což vrátí { value: 3, done: true }. Výstupem vlastností value je 1 2 3."
+    },
+    {
+      "id": "js2_q38",
+      "module": "js2_m4",
+      "question": "What is the initial state of a newly created Promise instance before resolution or rejection?",
+      "code": "let p = new Promise((resolve, reject) => {});",
+      "options": [
+        "'pending'",
+        "'fulfilled'",
+        "'rejected'",
+        "'settled'"
+      ],
+      "correct": 0,
+      "explanation": "Při vytvoření se Promise nachází v počátečním stavu 'pending' (čekající). Teprve po zavolání funkce resolve() přejde do stavu 'fulfilled', nebo po reject() do stavu 'rejected'."
+    },
+    {
+      "id": "js2_q39",
+      "module": "js2_m4",
+      "question": "How does Promise.all() behave if one of the promises in the iterable rejects?",
+      "code": null,
+      "options": [
+        "It immediately rejects with the reason of the first promise that rejected (fail-fast)",
+        "It waits for all other promises to resolve and ignores the rejection",
+        "It returns an array containing null in place of the rejected promise",
+        "It automatically retries the rejected promise up to 3 times"
+      ],
+      "correct": 0,
+      "explanation": "Metoda Promise.all() se chová podle principu fail-fast: jakmile kterýkoliv z předaných Promisů selže (reject), Promise.all okamžitě zamítne celý výsledek s chybou prvního selhání, aniž by čekal na dokončení ostatních."
+    },
+    {
+      "id": "js2_q40",
+      "module": "js2_m4",
+      "question": "What does an async function in JavaScript always return?",
+      "code": "async function test() {\n  return 42;\n}",
+      "options": [
+        "A Promise that resolves with the return value",
+        "The raw primitive value directly (number 42)",
+        "A generator iterator object",
+        "undefined"
+      ],
+      "correct": 0,
+      "explanation": "Klíčové slovo async zaručuje, že funkce vždy vrátí Promise. Pokud funkce vrací běžnou hodnotu (např. 42), JavaScript ji automaticky zabalí do vyřešeného Promisu (Promise.resolve(42))."
+    }
+  ]
+}
 };

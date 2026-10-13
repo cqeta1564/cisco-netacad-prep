@@ -1079,6 +1079,57 @@ class NetAcadApp {
             ["Pořadí except bloků", "Specifičtější výjimky musí předcházet obecnějším předkům; výchozí except: musí být poslední"]
           ]
         }
+      ],
+
+      js2: [
+        {
+          title: "Bezřídové objekty, Deskriptory & Prototypy",
+          rows: [
+            ["Object.defineProperty(obj, p, d)", "Definuje vlastnost; vynechané atributy mají výchozí hodnotu false!"],
+            ["writable: false", "Vlastnost je read-only; pokus o přepis v use strict vyvolá TypeError"],
+            ["enumerable: false", "Skrytá pro for...in a Object.keys(), ale přímo přístupná"],
+            ["configurable: false", "Nelze smazat (delete) ani znovu konfigurovat deskriptor"],
+            ["Object.freeze(obj)", "Úplné zmrazení: zakáže přidávání, mazání i modifikaci hodnot"],
+            ["Object.seal(obj)", "Zapečetění: zakáže přidávání a mazání, ale existující writable hodnoty lze měnit"],
+            ["Object.create(proto)", "Vytvoří nový objekt s explicitně nastaveným prototypem proto"]
+          ]
+        },
+        {
+          title: "ES6 Třídy (Classes) & Dědičnost",
+          rows: [
+            ["class Sub extends Super", "Třídní dědičnost (syntaktický cukr nad prototypy)"],
+            ["super(...args)", "Povinné volání konstruktoru předka před jakýmkoliv použitím 'this'!"],
+            ["super.method()", "Volání původní přepsané metody z rodičovské třídy"],
+            ["static methodName()", "Statická metoda navázaná na samotnou třídu (Constructor), nikoliv na instance"],
+            ["get prop() / set prop(val)", "Gettery a settery — čtou se a zapisují bez závorek ()"],
+            ["#privateField", "Privátní vlastnosti třídy s prefixem #; nepřístupné mimo tělo třídy"]
+          ]
+        },
+        {
+          title: "Vestavěné objekty & Pokročilé kolekce",
+          rows: [
+            ["Set (kolekce)", "Ukládá pouze unikátní hodnoty; metody .add(), .has(), vlastnost .size"],
+            ["Map (asociativní pole)", "Klíče mohou být libovolného typu (objekty, čísla); .set(), .get(), .size"],
+            ["JSON.stringify(obj)", "Při serializaci vynechává vlastnosti s undefined, funkcemi a Symboly"],
+            ["Number.isNaN(v)", "Striktní test bez implicitní typové konverze (isNaN('a')=true vs Number.isNaN('a')=false)"],
+            ["Date měsíce", "Měsíce jsou indexovány od 0: 0 = leden, 1 = únor, 11 = prosinec"],
+            ["reduce(acc, curr, init)", "Agregace pole do jedné hodnoty se zadaným počátečním akumulátorem"]
+          ]
+        },
+        {
+          title: "Funkce, Kontext 'this' & Asynchronie",
+          rows: [
+            ["...rest parametr", "Shromažďuje zbylé argumenty do pole; MUSÍ být posledním parametrem"],
+            ["Uzávěra (Closure)", "Funkce si uchovává přístup k proměnným ze svého vnějšího lexikálního scope"],
+            ["IIFE", "(function(){ ... })() — okamžitě vyvolaná funkce tvořící izolovaný scope"],
+            ["call vs apply", "call(this, a, b) předává argumenty jednotlivě; apply(this, [a, b]) v poli"],
+            ["bind(thisArg)", "Vrací novou funkci s trvale navázaným kontextem this"],
+            ["Arrow funkce this", "Nemají vlastní 'this', přebírají jej lexikálně z okolí (nelze přebindovat)"],
+            ["Generátory (function*)", "Pozastavitelné funkce s operátorem yield; iterátor vrací { value, done }"],
+            ["Promise stavy", "pending (čeká), fulfilled (vyřešen), rejected (zamítnut); fail-fast Promise.all"],
+            ["async funkce", "Vždy vrací Promise (automaticky zabalí návratovou hodnotu)"]
+          ]
+        }
       ]
     };
   }
