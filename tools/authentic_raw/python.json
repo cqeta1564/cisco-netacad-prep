@@ -1,0 +1,741 @@
+[
+  {
+    "question": "What is the output of the following snippet?",
+    "options": [
+      "44",
+      "4",
+      "(4)",
+      "(4,)"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Assuming that my_tuple is a correctly crated tuple, the fact that tuples are immutable means that the following instruction:",
+    "options": [
+      "may be illegal if the tuple contains strings",
+      "is illegal",
+      "can be executed if and only if the tuple contains at least two elements",
+      "is full correct"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following lines correctly . invoke the function defined below? (Select two answers)",
+    "options": [
+      "fun()",
+      "fun(0, 1, 2)",
+      "fun(b=0, a=0)",
+      "fun(b=1)"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "The meaning of a positional argument is determined by:",
+    "options": [
+      "its position within the argument list",
+      "its connection with existing variables",
+      "its value",
+      "the argument’s name specified along with its value"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will happen when you attempt to run the following code?",
+    "options": [
+      "The code will raise the AttributeError exception.",
+      "The code will raise the systemError exception.",
+      "The code will raise the ValueError exception.",
+      "The code will print Hello World to the console.",
+      "The code will raise the TyepError exception."
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "The following snippet:",
+    "options": [
+      "will output 4",
+      "will output None",
+      "will output 2",
+      "is erroneous"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of the following piece of code?",
+    "options": [
+      "a b c",
+      "abc",
+      "asepbsepcsep",
+      "asepbsepc"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following sentences are true about the code? (Select two answers)",
+    "options": [
+      "nums and vals are different names of the same list",
+      "vals is longer tha nums",
+      "nums and vals are different lists",
+      "nums has the same length as vals"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "The result of the following division:",
+    "options": [
+      "is equal to 0.5",
+      "is equal to 0",
+      "is equal to 0.0",
+      "cannot be predicted"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "What is the expected behavior of the following program?",
+    "options": [
+      "The program will cause a ValueError exception.",
+      "The program will output 1 to the screen.",
+      "The program will cause a SyntaxError exception.",
+      "The program will cause a TypeError exception.",
+      "The program will cause an AttributeError exception."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How many element does the lst list contain?",
+    "options": [
+      "two",
+      "three",
+      "zero",
+      "one"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of the following piece of code if the user enters two lines containing 2 and 4 respectively?",
+    "options": [
+      "4.0",
+      "2.0",
+      "0.0",
+      "1.0"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of the following code if the user enters a 0 ?",
+    "options": [
+      "Very bad input...",
+      "Very very bad input...",
+      "Bad input...",
+      "Booo!",
+      "0.0",
+      "1.0"
+    ],
+    "correct": 4,
+    "explanation": ""
+  },
+  {
+    "question": "What value will be assignment to the x variable?",
+    "options": [
+      "False",
+      "0",
+      "1",
+      "True"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of the following piece of the code if the user enter two lines containing 3 and 6 respectively?",
+    "options": [
+      "36",
+      "3",
+      "63",
+      "6"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following variable names are illegal and will cause the SystemError exception? (Select two answers)",
+    "options": [
+      "print",
+      "in",
+      "for",
+      "in"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Take a look at the snippet and choose the true statement:",
+    "options": [
+      "the snippet will cause a runtime error",
+      "vals is longer than nums",
+      "nums is longer than vals",
+      "nums and vals have the same length"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of the following piece of code if the user enters two lines containing 3 and 2 respectively?",
+    "options": [
+      "1",
+      "3",
+      "2",
+      "0"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Which if the following snippets shows the correct way of handing multiple excepting in a single except clause?",
+    "options": [
+      "except TypeError, ValueError, ZeroDivisinError: # Some code.",
+      "except: (TypeError, ValueError, ZeroDivisinError) # Some code.",
+      "except TypeError, ValueError, ZeroDivisinError # Some code.",
+      "except: TypeError, ValueError, ZeroDivisinError # Some code.",
+      "except: (TypeError, ValueError, ZeroDivisinError): # Some code.",
+      "except (TypeError, ValueError, ZeroDivisinError) # Some code."
+    ],
+    "correct": 4,
+    "explanation": ""
+  },
+  {
+    "question": "An operator able to check two values are not equal is code as:",
+    "options": [
+      "=/=",
+      "!=",
+      "<>",
+      "not =="
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the output of the following snippet?",
+    "options": [
+      "1 1",
+      "0 0",
+      "1 0",
+      "0 1"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "How many stars (*) will the following snippet send to the console?",
+    "options": [
+      "zero",
+      "the snippet will enter an infinite loop, printing one star per line",
+      "one",
+      "two"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "How many hashes (*) will the following snippet sent to the console?",
+    "options": [
+      "nine",
+      "zero",
+      "three",
+      "six"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "What is true about compilation? (Select two answers)",
+    "options": [
+      "Both you and user must have the compiler to run your code",
+      "The code is converted directly into machine code executable by the processor",
+      "It tends to be faster than interpretation",
+      "It tends to be than interpretation The correct answers are: The code is converted directly into machine code executable by the processor Compilation translates the entire source code into machine code, which is then directly executed by the processor."
+    ],
+    "correct": 1,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What is CPython?",
+    "options": [
+      "It’s the default, reference implementation of the C language, written in Python",
+      "It’s a programming language that is a supperset of the Python, designed to produce C-like performance with code written in Python",
+      "It’s the default, reference implementation of Python, written in the C language",
+      "It’s a programming that is a superset of the C language, designed to produce Python-like performance with code written in C",
+      "The correct answer is: It’s the default, reference implementation of Python, written in the C language CPython is the original and most widely used implementation of the Python programming language. It is written in C and serves as the reference implementation that defines the Python language specification."
+    ],
+    "correct": 2,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What are the four fundamental elements that make a language?",
+    "options": [
+      "An alphabet, morphology, phonetics, and semantics",
+      "An alphabet, a lexis, a syntax, and semantics",
+      "An alphabet, a lexis, phonetics, and semantics",
+      "An alphabet, phonetics, phonology, and semantics",
+      "The correct answer is: An alphabet, a lexis, a syntax, and semantics The four fundamental elements that make up a language are: Alphabet : The set of symbols or characters used to write the language.",
+      "Lexis : The vocabulary or set of words in the language.",
+      "Syntax : The rules for structuring sentences and expressions in the language.",
+      "Semantics : The meaning conveyed by the words and structures in the language."
+    ],
+    "correct": 1,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What do you call a file containing a program written in a high-level programming language?",
+    "options": [
+      "A machine file",
+      "A code file",
+      "A target file",
+      "A source file",
+      "The correct answer is: A source file A file containing a program written in a high-level programming language is called a source file because it is the source code that needs to be compiled or interpreted to create an executable or to run the program."
+    ],
+    "correct": 3,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What do you call a command-line interpreter which lets you interact with your OS and execute Python commands and scripts?",
+    "options": [
+      "An editor",
+      "A console",
+      "A compiler",
+      "Jython",
+      "The correct answer is: A console A console is a command-line interpreter that allows you to interact with your operating system and execute Python commands and scripts. It provides an environment for running Python code interactively or running Python scripts directly."
+    ],
+    "correct": 1,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What is the best definition of a script ?",
+    "options": [
+      "It’s an error message generated by the interpreter",
+      "It’s an error message generated by the compiler",
+      "It’s a text file that contains which make up a Python program",
+      "It’s a text file that contains sequences of zeroes and ones",
+      "The correct answer is: It’s a text file that contains which make up a Python program A script is a text file that contains a sequence of instructions written in a programming language like Python. These instructions (code) can be executed by an interpreter to perform specific tasks. Scripts are often used for automating tasks, data processing, or running programs."
+    ],
+    "correct": 2,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What is machine code?",
+    "options": [
+      "A high-level programming language consisting of instruction lists that humans can read and understand",
+      "A medium-level programming language consisting of the assembly code designed for the computer processor",
+      "A low-level programming language consisting of binary digits/bits that the computer reads and understands",
+      "A low-level programming language consisting of hexadecimal digits that make up high-level language instructions",
+      "The correct answer is: A low-level programming language consisting of binary digits/bits that the computer reads and understands Machine code is the lowest level of programming language, consisting of binary digits (0s and 1s) that a computer’s processor directly executes. Unlike high-level or assembly languages, machine code is not intended to be human-readable. It represents instructions in a form that the hardware can process directly."
+    ],
+    "correct": 2,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "Select the true statements. (Select two answers)",
+    "options": [
+      "Python is a good choice for creating and executing tests for applications",
+      "Python 3 is backwards compatible with Python 2",
+      "Python is a good choice for low-level programming e.g., when you want to implement an effective driver",
+      "Python is free, open-source, and multiplatform",
+      "The correct answers are: Python is a good choice for creating and executing tests for applications Python’s simplicity, readability, and extensive libraries make it an excellent choice for creating and executing tests for various applications."
+    ],
+    "correct": 0,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "The \\n digraph forces the print() function to:",
+    "options": [
+      "stop its execution",
+      "duplicate the character next to the digragh",
+      "break the output line",
+      "output exactly two characters: \\ and n The digraph, called the newline character, causes the current line to end at the point indicated by the digraph, and creates a new line that starts right after it."
+    ],
+    "correct": 2,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the output of the following snippet if the user enters two lines containing 2 and 4 respectively?",
+    "options": [
+      "8.0",
+      "the code will cause a runtime error",
+      "4.0",
+      "2.0",
+      "Let’s analyze this example: the x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+      "the y variable is assigned the integer value of 4 (4 is inputted by the user, converted to a string by the input() function, and",
+      "then converted to an integer by the int() function)",
+      "an operation is performed resulting in the x variable being assigned the value of 0.5 (2 / 4 = 0.5)",
+      "an operation is performed resulting in the y variable being assigned the value of 8.0 (4 / 0.5 = 8.0) the value assigned to the y variable ( 8.0 ) is printed to the screen."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the output of the following snippet if the user enter two lines containing 2 and 4 respectively?",
+    "options": [
+      "2",
+      "24",
+      "4",
+      "6"
+    ],
+    "correct": 3,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following variable names are illegal ? (Select two answers)",
+    "options": [
+      "true",
+      "and",
+      "TRUE",
+      "True",
+      "True and and are Python keywords (reserved words), and they cannot be used as variable names. And since Python is case-sensitive, the names true and TRUE are perfectly legal, though not necessarily the best names."
+    ],
+    "correct": 1,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "The ** operator:",
+    "options": [
+      "does not exist",
+      "performs duplicated multiplication",
+      "performs exponentiation",
+      "perform floating-point multiplication",
+      "The ** operator performs the exponent arithmetic in Python. It is also called the power operator."
+    ],
+    "correct": 2,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "The value twenty point twelve times ten raised to the power of eight should be written as:",
+    "options": [
+      "20.12*10^8",
+      "20E12.8",
+      "20.12E8.0",
+      "20.12E8",
+      "Keeping in mind that Python chooses the most efficient format for presenting numbers, and the letter E is used to mean ten to the power of in scientific notation, the correct way of writing the number 20.12 × 10 8 is 20.12E8 ."
+    ],
+    "correct": 3,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the output of the following snippet if the user enter two lines containing 2 ​​and 4 respectively?",
+    "options": [
+      "the code will cause a runtime error",
+      "2.0",
+      "8.0",
+      "4.0",
+      "Let’s analyze this example: the x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+      "the y variable is assigned the integer value of 4 (4 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+      "an operation is performed resulting in the x variable being assigned the value of 0 (2 // 4=0)",
+      "an operation is being performed, but a ZeroDivisionException is raised, because the // operator cannot accept 0 as its right operand. The program is terminated."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "The print() function can output values of:",
+    "options": [
+      "not more than five arguments",
+      "any number of arguments (including zero)",
+      "any number of arguments (excluding zero)",
+      "just one argument",
+      "The print() function can take no arguments at all (e.g. print() ), three arguments (e.g. print(\"one\", \"two\", \"three\" ), or three thousand three hundred thirty three… (though we haven’t actually checked it!)."
+    ],
+    "correct": 1,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the output of the following snippet if the user enters two lines containing 3 and 6 respectively?",
+    "options": [
+      "333333",
+      "36",
+      "18",
+      "666",
+      "Let’s analyze this example: the x variable is assigned the value of “3” (3 is inputted by the user and converted to a string by the input() function)",
+      "the y variable is assigned the value of 6 (6 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+      "the print() function outputs the result of the following string multiplication: “3” * 6, that is 333333"
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "is equal to :",
+    "options": [
+      "0.0",
+      "0",
+      "4.5",
+      "0.166666666666666666",
+      "Left-sided binding means that the expression is evaluated from left to right: 1 // 2 = 0, and 0 * 3 = 0."
+    ],
+    "correct": 1,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following statements are true ? (Select two answers)",
+    "options": [
+      "The result of the / operator is always an integer value.",
+      "The ** operator uses right-sided binding.",
+      "Adding precedes multiplication.",
+      "The right argument of the % operator cannot be zero.",
+      "The % operator (modulus) returns the remainder of a division, and because you cannot divide by zero, the right operand must be a non-zero number. Otherwise, a ZeroDivisionException will be raised. The ** operator uses right-sided binding, which means the expression 2**2**3 is evaluated from right to left: 2**3 = 8, and 2**8 = 256."
+    ],
+    "correct": 1,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "The meaning of the keyword parameter is determined by:",
+    "options": [
+      "its value",
+      "the argument’s name specified along with its value",
+      "its connection with existing variables",
+      "its position within the argument list",
+      "Keyword parameters (also called named parameters) are parameters that have values determined by a keyword name followed by an equals sign (=) and a default value assigned to that keyword name. An example of a keyword argument: def my_function(x=1):."
+    ],
+    "correct": 1,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "After execution of the following snippet, the sum of the all vals elements will equal to:",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "How many hashes( # ) will the following snippet send to the console?",
+    "options": [
+      "zero",
+      "three",
+      "two",
+      "one"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "How many stars( # ) will the following snippet send to the console?",
+    "options": [
+      "three",
+      "two",
+      "one",
+      "zero"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Take a look at the snippet, and choose the true statements: (Select two answer)",
+    "options": [
+      "nums is longer than vals",
+      "nums and vals are of the same length",
+      "nums and vals refer to the same list",
+      "nums is replicated and assigned to vals"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "What value will be assigned to the x variable?",
+    "options": [
+      "1",
+      "0",
+      "True",
+      "False"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following sentences are true? (Select two answers)",
+    "options": [
+      "nums and vals are two different lists",
+      "vals is longer than nums",
+      "nums and vals are of the same length",
+      "nums is longer than vals"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "An operator able to check whether two values are equal is code as:",
+    "options": [
+      "=",
+      "!=",
+      "==",
+      "==="
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "The second assignment:",
+    "options": [
+      "doesn’t change the list",
+      "reverses the list",
+      "shortens the list",
+      "extends the list"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "The value eventually assigned to x is equal to :",
+    "options": [
+      "0",
+      "1",
+      "True",
+      "False"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "How many elements does the my_list list contain?",
+    "options": [
+      "two",
+      "three",
+      "four",
+      "one"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following lines properly starts a function using two parameters, both with zeroed default values?",
+    "options": [
+      "def fun (a=b=0) :",
+      "def fun (a=0, b=0) :",
+      "fun fun (a=0, b) :",
+      "fun fun (a, b=0) :"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following statement are true ? (Select two answers)",
+    "options": [
+      "The None value can be assigned to variables",
+      "The None value cannot be used outside functions",
+      "The​ None value can be used as an argument of arithmetic operators",
+      "The None value can be compared with variables"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of thee following snippet?",
+    "options": [
+      "2",
+      "6",
+      "4",
+      "the snippet is erroneous"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Assuming that my_tuple is a correctly created tuple, the fact that tuples are immutable means that the following instruction:",
+    "options": [
+      "can be executed if and only if the tuple contains at least two elements",
+      "is illegal",
+      "may be illegal if the tuple contains string",
+      "is fully correct"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "A function defined in the following way: (Select two answers)",
+    "options": [
+      "may be invoked with exactly one argument",
+      "must be invoked with exactly one argument",
+      "must be invoked without any argument",
+      "may be invoked without any argument"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output o the following snippet?",
+    "options": [
+      "3",
+      "5",
+      "the code erroneous",
+      "4"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Select the true statements about the try-exception block in relation to the following example. (Select two answers.)",
+    "options": [
+      "if you suspect that a snippet may raise an exception, you should place it in the try block",
+      "The code that follows the try statement will be executed if the code in the except clause runs into an error.",
+      "The code that follows the except statement will be executed if the code in the try clause runs into an error.",
+      "If there is a syntax error in code located in the try block, the except branch will not handle it, and a SyntaxError exception will be raised instead."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which one if the following lines properly starts a parameterless function definition?",
+    "options": [
+      "def fun:",
+      "def fun():",
+      "function fun():",
+      "fun function():"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "What is the output of the following code?",
+    "options": [
+      "Booo!",
+      "Bad input...",
+      "Very very bad input...",
+      "Very bad input..."
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "The fact that tuples belong to sequence types means that:",
+    "options": [
+      "they can be indexed and sliced like lists",
+      "they can be extended using the .append() method",
+      "they can be modified using the del instruction",
+      "they are actually lists"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "A built-in function is a function which:",
+    "options": [
+      "is hidden from programmers",
+      "has been placed within your code by another programmer",
+      "has to be imported before use",
+      "comes with Python, ans is an integer part of Python"
+    ],
+    "correct": 3,
+    "explanation": ""
+  }
+]

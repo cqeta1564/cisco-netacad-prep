@@ -1,0 +1,775 @@
+[
+  {
+    "question": "Embedded Systems means:",
+    "options": [
+      "Businesses cannot charge anything for the software, only the hardware",
+      "Systems designed to do a specific task on hardware optimized for only that purpose",
+      "Users must support the systems themselves",
+      "You can view the software’s source code",
+      "Companies must share their changes"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Linux originally only ran on:",
+    "options": [
+      "Specialized processor chips",
+      "Raspberry Pi computers",
+      "Xerox copy machines",
+      "Intel 386 PCs",
+      "Macintosh"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Bundling utilities, management tools, and application software with a Linux kernel is called a:",
+    "options": [
+      "A text editor",
+      "A type of hardware",
+      "A distribution of Linux",
+      "A trademark"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "A software release cycle describes:",
+    "options": [
+      "How often the software’s memory is released back to the operating system",
+      "How often the computer must be rebooted",
+      "How often upgrades come out for software",
+      "How often security fixes are implemented",
+      "How often the computer must be upgraded to support new software"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "(choose three)",
+    "options": [
+      "Tightly integrated with Apple hardware",
+      "A fully certified UNIX distribution",
+      "Primarily used to manage network services",
+      "Able to natively run Windows binaries",
+      "Derived from Linux",
+      "Partially based on code from the FreeBSD project"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "(choose three)",
+    "options": [
+      "Offers both desktop and server products",
+      "Has a short maintenance cycle",
+      "Has a Linux compatibility mode",
+      "Is generally backwards compatible with previous versions",
+      "Has a scripting environment called PowerShell",
+      "Has a new desktop version every year."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "Takes fewer resources to run than a compiled language",
+      "Requires a compilation step but no linking step",
+      "Tends to offer more features than compiled languages",
+      "Is converted into machine specific instructions as the program runs",
+      "Requires a linking step but no compilation step"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "Emacs",
+      "Korn shell",
+      "Bourne Shell",
+      "C Shell",
+      "Python Shell"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "The guest is the machine that runs the virtual machines",
+      "The terms can be used interchangeably",
+      "The host is the machine that runs the virtual machines",
+      "A guest is a virtual machine",
+      "A host is a virtual machine"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Cloud computing is:",
+    "options": [
+      "Is made possible by faster internet speeds",
+      "Is useful for both business and home users",
+      "All are correct",
+      "Requires fewer resources because systems are shared among many users",
+      "Allows users in different geographical regions to work together in real time"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "(choose three)",
+    "options": [
+      "Includes symbols",
+      "At least 10 characters long",
+      "A mix of upper and lower case",
+      "Based on easy to remember items like birthdays",
+      "Long so that it can be reused on multiple sites"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "A license where you don’t have access to the source code is called:",
+    "options": [
+      "Closed source",
+      "Sourceless",
+      "Impaired source",
+      "Open source"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "A copyleft provision in a software license means:",
+    "options": [
+      "You must provide support for your modifications",
+      "You must provide free copies of the software if you use it",
+      "You may not link against third party closed source software",
+      "You give up your copyright to the software",
+      "If you redistribute the software, you must distribute the source to any changes you make"
+    ],
+    "correct": 4,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "Software should be free to modify",
+      "Software should be free to share",
+      "No money should ever change hands",
+      "People should write software with no expectation of making money",
+      "Software should not have copyright"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does it mean when a work is placed in the public domain?",
+    "options": [
+      "The author has relinquished the copyright on the work",
+      "The author has died",
+      "You must redistribute changes to the software",
+      "You may not use the work for commercial purposes",
+      "The work was done by a government agency"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "To be able to output messages to the screen, use the _______ command:",
+    "options": [
+      "type",
+      "print",
+      "display",
+      "echo"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "The _______ command will print a list of the commands that you’ve previously executed.",
+    "options": [
+      "history",
+      "exec",
+      "eval",
+      "list"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "HOME is an example of _________.",
+    "options": [
+      "An internal command",
+      "An alias",
+      "A path variable",
+      "A local variable",
+      "An environment variable"
+    ],
+    "correct": 4,
+    "explanation": ""
+  },
+  {
+    "question": "The directory where additional documentation for software packages most likely can be found is:",
+    "options": [
+      "/usr/share/doc",
+      "/var/share/doc",
+      "/var/lib/doc",
+      "/usr/software/doc"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "To start searching a man page, the first key you press is:",
+    "options": [
+      "s",
+      "!",
+      "/",
+      "f"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "help info",
+      "man info",
+      "info -q",
+      "info info"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "The _____ command can be used to find any file, not just commands or man pages.",
+    "options": [
+      "whatis",
+      "whereis",
+      "apropos",
+      "locate"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Hidden files are files that begin with what character?",
+    "options": [
+      "A dash (-)",
+      "A plus (+)",
+      "A period (.)",
+      "An asterisk (*)"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "The top-level directory on a Linux system is represented as:",
+    "options": [
+      "C:",
+      "/home",
+      "/",
+      "/root"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "The ls command without options or arguments…",
+    "options": [
+      "…lists the contents of the current directory.",
+      "…prompts for a directory to list.",
+      "…generates an error as this command requires arguments.",
+      "…lists the contents of a user’s home directory."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "The command ls -S will sort files:",
+    "options": [
+      "By size, smallest to largest",
+      "By size, largest to smallest",
+      "By number of symlinks, largest to smallest",
+      "By modification date, newest to oldest"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which option can be used with the rm command to prompt before deleting?",
+    "options": [
+      "l",
+      "-i",
+      "A",
+      "-P"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which command would list files that do not begin with a T or a W ?",
+    "options": [
+      "echo /etc/*[TW!]",
+      "echo /etc/[!TW]",
+      "echo /etc/!TW",
+      "echo /etc/[*TW]!"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "In general, for which of the following would you want to use lossless compression?",
+    "options": [
+      "An mp3 audio file",
+      "A movie",
+      "A JPEG image",
+      "A log file",
+      "An encrypted email"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "myfile.tar is removed",
+      "An error; you forgot to pass the name of the output file",
+      "myfile.tar is unarchived into the current directory",
+      "myfile.tar.gz holds a compressed version of myfile.tar",
+      "An error; you forgot to specify the file with -f"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which command will show what is inside the compressed tarball with a name of foo.tar.gz ?",
+    "options": [
+      "tar –tf foo.tar.gz",
+      "tar –lf foo.tar.gz",
+      "tar –tzf foo.tar.gz",
+      "tar –tjf foo.tar.gz",
+      "tar –xf foo.tar.gz"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Error messages generated by commands are sent where by default?",
+    "options": [
+      "STDOUT",
+      "Log files",
+      "STDERR",
+      "STDIN"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will display only lines that begin with test ?",
+    "options": [
+      "grep $test* file.txt",
+      "grep ^test file.txt",
+      "grep &test file.txt",
+      "grep *test file.txt"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will display lines that contain either start or end?",
+    "options": [
+      "egrep start end file.txt",
+      "egrep (start|end) file.txt",
+      "egrep start&end file.txt",
+      "egrep 'start|end' file.txt"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "A file begins with #!/bin/csh. This means:",
+    "options": [
+      "Nothing, this is a comment",
+      "This is a Perl script",
+      "Running the script will invoke /bin/csh to interpret the rest of the file",
+      "The operator should not be using /bin/csh",
+      "C Shell compatibility mode is enabled"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Most of nano ’s commands take the form of:",
+    "options": [
+      "Alt and another character",
+      "Control and another character",
+      "The F1 through F12 function keys",
+      "Mouse clicks",
+      "Escape followed by another character"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "The if command looks for what exit code to consider a condition to be true?",
+    "options": [
+      "0",
+      "10",
+      "255",
+      "2",
+      "1"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "The number of users logged in is in a variable called USERS . How would you test to see if there are 5 users logged in?",
+    "options": [
+      "test –f USERS=5",
+      "test $USERS –eq 5",
+      "test $USERS = 5",
+      "test $USERS –a 5",
+      "test $USERS,5"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "GPT",
+      "PC",
+      "MBR",
+      "BIOS"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Software that allows hardware devices to communicate with the installed operating system is called?",
+    "options": [
+      "Packages",
+      "Drivers",
+      "Instructions",
+      "Programs"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will check hard disk GPT partitions?(choose three)",
+    "options": [
+      "gdisk",
+      "sfdisk",
+      "gfdisk",
+      "sgdisk",
+      "cgdisk"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "The free command outputs statistics about:",
+    "options": [
+      "Disk usage",
+      "Memory usage",
+      "Software usage",
+      "CPU usage"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which file contains the information passed to the kernel at boot time?",
+    "options": [
+      "/proc/kernel",
+      "/proc/kargs",
+      "/proc/kopts",
+      "/proc/cmdline"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "To make changes permanent for kernel parameter files found under /proc/sys, the following file can have entries added to it:",
+    "options": [
+      "/etc/sysinfo.conf",
+      "/etc/sysctl.conf",
+      "/etc/procctl.conf",
+      "/etc/procsys.conf"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will display the IP address on a Linux system?",
+    "options": [
+      "dig",
+      "ifconfig",
+      "route",
+      "ipconfig"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "When issuing the service network restart command, which of the following occurs?",
+    "options": [
+      "…the networking for the system is stopped and then started back up.",
+      "…brings up all network interfaces, re-reads all related configuration files and then the networking for the system is restarted.",
+      "…takes down all network interfaces, re-reads all related configuration files and then the networking for the system is restarted."
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands can be used to display socket statistics, and supports all major packet and socket types?",
+    "options": [
+      "route",
+      "ss",
+      "top",
+      "ifconfig"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will display the groups that the user bob belongs to?",
+    "options": [
+      "groups -a",
+      "group bob",
+      "all bob",
+      "id bob"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Traditional UNIX systems allowed users to belong to how many groups?",
+    "options": [
+      "256",
+      "65,000",
+      "1",
+      "10,000",
+      "16"
+    ],
+    "correct": 4,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "The first line of this command displays how long the system has been running since being rebooted.",
+    "options": [
+      "getent",
+      "id",
+      "w",
+      "su",
+      "who"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "(choose two)",
+    "options": [
+      "-G",
+      "-s",
+      "-S",
+      "-g"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following files contains user IDs?",
+    "options": [
+      "/etc/usr",
+      "/etc/shadow",
+      "/etc/group",
+      "/etc/passwd"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands, run as root, will prevent the user bob from logging in?",
+    "options": [
+      "usermod -D bob",
+      "usermod -d bob",
+      "usermod -L bob",
+      "usermod -l bob"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "What directory contains a user’s home directory?",
+    "options": [
+      "/rootfs",
+      "/",
+      "/home",
+      "/user"
+    ],
+    "correct": 2,
+    "explanation": ""
+  },
+  {
+    "question": "GIDs under 500 (or 1000) are usually reserved for what kind of groups?",
+    "options": [
+      "Administrators",
+      "System use",
+      "User private groups (UPG)",
+      "Are not used for groups, but for user accounts"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "A user cannot delete a file if they do not own it. True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "The chown command permits changing group ownership done by root only. True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will list hidden files as well as their ownership?",
+    "options": [
+      "ls -l",
+      "ls -z",
+      "ls -a",
+      "ls -la"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands will set setuid for the /usr/bin/ program?",
+    "options": [
+      "chmod 1755 /usr/bin/program",
+      "None of the above",
+      "chmod 2755 /usr/bin/program",
+      "chmod 4755 /usr/bin/program"
+    ],
+    "correct": 3,
+    "explanation": ""
+  },
+  {
+    "question": "Setting setgid on a directory…",
+    "options": [
+      "…will set the group owner of all files created in the directory to the group owner of the directory.",
+      "…will allow scripts in the directory to be executed as the group owner of the directory.",
+      "…does nothing.",
+      "…is not allowed by the system."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Deleting a source file will break an associated hard link. True or False?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following commands would create a hard link, link to file?",
+    "options": [
+      "ln link file",
+      "ln -s file link",
+      "ln -s link file",
+      "ln file link"
+    ],
+    "correct": 3,
+    "explanation": ""
+  }
+]

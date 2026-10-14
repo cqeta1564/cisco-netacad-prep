@@ -26,18 +26,18 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
 
 ## 🌟 Funkce aplikace
 
-- **410 autentických otázek**:
-  - 45 otázek pro HTML Essentials
-  - 45 otázek pro CSS Essentials
+- **430 autentických otázek z reálných zkoušek**:
+  - 40 otázek pro HTML Essentials
+  - 40 otázek pro CSS Essentials
   - 40 otázek pro JavaScript Essentials 1
   - 40 otázek pro JavaScript Essentials 2
-  - 40 otázek pro Oracle Database Design
-  - 40 otázek pro Oracle Database Programming With SQL
-  - 40 otázek pro Cisco Python Essentials 1
-  - 40 otázek pro Cisco NDG Linux Essentials
-  - 40 otázek pro Cisco CCNA: Switching, Routing, and Wireless Essentials (SRWE)
-  - 40 otázek pro Cisco CCNA: Introduction to Networks (ITN)
-  - Otázky obsahují originální anglickou textaci a kódové ukázky, správné i klamné odpovědi a detailní vysvětlení v češtině.
+  - 45 otázek pro Oracle Database Design
+  - 45 otázek pro Oracle Database Programming With SQL
+  - 45 otázek pro Cisco Python Essentials 1
+  - 45 otázek pro Cisco NDG Linux Essentials
+  - 45 otázek pro Cisco CCNA: Switching, Routing, and Wireless Essentials (SRWE)
+  - 45 otázek pro Cisco CCNA: Introduction to Networks (ITN)
+  - Všechny otázky jsou 100% autentické a převzaté z oficiálních zkouškových testů a bank (Oracle Academy iLearning, Cisco Networking Academy, OpenEDG, LPI). Obsahují originální anglickou textaci z ostrých testů, kódové ukázky, přesné možnosti a detailní vysvětlení pravidel v češtině.
 - **4 studijní módy**:
   1. 🎓 **Zkouškový simulátor (Exam Simulator)**:
      - Realistické podmínky (40–45 minutový odpočet, 30 náhodně vybraných otázek, hranice úspěšnosti 70 %).
@@ -55,7 +55,7 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
      - Přehledné tabulky pro každý certifikát (typy v JS, CSS Box Model, HTML sémantika, Python operátory, SQL JOINy, Linux FHS/práva, CCNA ITN OSI/IPv4/IPv6/TCP/UDP, CCNA SRWE VLANy/STP/EtherChannel/WLAN).
   5. 📊 **Moje statistiky (User Profile & Statistics)**:
      - Sledování úspěšnosti a postupu na základě cookies a volitelné přezdívky (bez nutnosti registrace a přihlašování).
-     - Přehled pokrytí celé banky otázek (0 / 410), celková přesnost a zápisník chyb k cílenému doprocvičení.
+     - Přehled pokrytí celé banky otázek (0 / 430), celková přesnost a zápisník chyb k cílenému doprocvičení.
      - Kompletní historie zkoušek s časy, procenty a přímým filtrem nesložených pokusů.
      - 🛡️ **Statistiky návštěvnosti webu (Admin Dashboard)**: Při zadání administrátorské přezdívky `cqeta1564` se v profilu automaticky odemkne živý přehled návštěvnosti webu (celkový počet zobrazení, unikátní návštěvníci, dnešní aktivita, 7denní trend a telemetrie). Pro běžné uživatele zůstává sekce zcela skrytá.
 - **Moderní UI & Audio efekty**:

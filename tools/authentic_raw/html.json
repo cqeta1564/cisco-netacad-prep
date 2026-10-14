@@ -1,0 +1,1032 @@
+[
+  {
+    "question": "How do you correctly add a simple JavaScript alert that says “Clicked!” when a button is clicked?",
+    "options": [
+      "Click me",
+      "Click me",
+      "Click me",
+      "Click me"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the alt attribute provide when used within an element?",
+    "options": [
+      "It specifies an alternate text for an image, if the image cannot be displayed.",
+      "It defines the image’s size and dimensions.",
+      "It adds a caption below the image.",
+      "It specifies the source URL of the image."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which syntax correctly applies two separate classes to a single HTML element?",
+    "options": [
+      "Content",
+      "Content",
+      "Content",
+      "Content"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the main difference between using class and id attributes in HTML?",
+    "options": [
+      "The class attribute can be applied to multiple elements, while the id attribute must be unique to a single element.",
+      "The class attribute is used exclusively for styling, while the id attribute is used for both styling and JavaScript.",
+      "The id attribute is used to style elements when classes are not available.",
+      "The class attribute cannot be used with the element, while the id attribute can."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which statement is true regarding the use of and ?",
+    "options": [
+      "can contain block-level elements, whereas is used for inline styling.",
+      "is used for block-level content, while is for inline content.",
+      "and are interchangeable and have no difference in styling.",
+      "is used to style text, while is for larger sections of HTML."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you correctly set the font family to Calibri in a CSS rule?",
+    "options": [
+      "font-family: Calibri, sans-serif;",
+      "font-face: Calibri, sans-serif;",
+      "font: Calibri, sans-serif;",
+      "typeface: Calibri, sans-serif;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which snippet correctly changes the background color of all elements to blue using an internal stylesheet?",
+    "options": [
+      "div {background-color: blue;}",
+      "div {color: blue;}",
+      "div {background: blue;}",
+      "#div {background-color: blue;}"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following scenarios is most appropriate for the use of in HTML forms?",
+    "options": [
+      "Grouping related form elements, such as multiple choices within a survey that asks for a respondent’s preferred leisure activities.",
+      "Applying a consistent font style across multiple sections of an HTML form.",
+      "Enhancing the visual design of a form’s submit button with custom graphics and animations.",
+      "Encrypting form data to secure sensitive information like passwords and credit card numbers."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you create a link that opens the user’s email client to send an email to “ [email protected] ”?",
+    "options": [
+      "[email protected] \">Email Us",
+      "[email protected] \">Email Us",
+      "[email protected] \">Email Us",
+      "[email protected] \">Email Us"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which input field is correctly marked as required?",
+    "options": [
+      ".",
+      ".",
+      ".",
+      "."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Consider the following HTML snippet:",
+    "options": [
+      "Use the selected attribute on the “Canada” .",
+      "Add default to the tag of the “Canada” option.",
+      "Set value=\"canada\" in the tag of the “Canada” option.",
+      "Use JavaScript to select the “Canada” option after the page loads."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is true about emojis in HTML?",
+    "options": [
+      "Emojis can be included using their HTML entity codes or Unicode representations, but their appearance may vary across devices and browsers.",
+      "Emojis can only be displayed using images, not Unicode or HTML entities.",
+      "Emojis must be included as JavaScript code in HTML.",
+      "Emojis will always display correctly regardless of the device or font used."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Select the correct fragment of code that needs to be inserted in the following snippet to correctly define a rectangle with SVG:",
+    "options": [
+      "rect",
+      "rectangle",
+      "polygon",
+      "square"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which attribute value should you insert in the following snippet to correctly create an image map named “workMap” for an image?",
+    "options": [
+      "#workMap",
+      "workmap.jpg",
+      "@workMap",
+      "true"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Why is the element used in this form field?",
+    "options": [
+      "To improve form accessibility by providing a text label.",
+      "To increase the clickable area for the input field.",
+      "To style the input field as the search button.",
+      "To add a “Search” button to the form."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How should the following snippet be corrected to display a less than symbol?",
+    "options": [
+      "Replace with &lt; .",
+      "Add quotes around .",
+      "Replace with \\ .",
+      "Wrap in and --> ."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which attribute should be used to specify the language of the content in an HTML document, enhancing accessibility for users?",
+    "options": [
+      "lang",
+      "language",
+      "html-lang",
+      "html-language"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following tools can be used to test your website for accessibility issues?",
+    "options": [
+      "Chrome Accessibility DevTools",
+      "Google Analytics",
+      "Adobe Dreamweaver",
+      "Photoshop"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which ARIA attribute should be used to indicate the current state of an element that can be expanded or collapsed, such as an accordion panel?",
+    "options": [
+      "aria-expanded",
+      "aria-collapsed",
+      "aria-expanded-collapsed",
+      "aria-checked"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which level of conformance does the Web Content Accessibility Guidelines (WCAG) require to meet the needs of most people with disabilities?",
+    "options": [
+      "Level AA",
+      "Level AAA",
+      "Level A",
+      "Level A+"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which HTML code correctly creates a nested list with ordered and unordered lists?",
+    "options": [
+      "Item One Subitem A Item Two",
+      "Item One Subitem 1 Item Two",
+      "Item One Subitem A Item Two",
+      "Item One Subitem A Item Two"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How does this code snippet facilitate navigation to a specific part of a webpage?",
+    "options": [
+      "By scrolling the page to where is located .",
+      "By refreshing the page when “Go to Section 2” is clicked.",
+      "By creating a popup that links to Section 2.",
+      "By redirecting to a new page named “Section 2”"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the srcset attribute in this tag?",
+    "options": [
+      "To define multiple image sources for different viewport widths.",
+      "To set multiple sources for the same image to load faster.",
+      "To specify different images to be displayed on hover.",
+      "To provide a fallback image if the original fails to load."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the characteristic of the text within the tag in this HTML snippet?",
+    "options": [
+      "It preserves both spaces and line breaks.",
+      "It preserves font size, weight, and family.",
+      "It preserves line breaks and puts it in bold.",
+      "It is highlighted and preserves spaces."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you merge two cells vertically in a table?",
+    "options": [
+      "Use rowspan=\"2\" in the first cell you want to extend.",
+      "Use colspan=\"2\" in the first cell you want to extend.",
+      "Merge cells using CSS by applying cell-merge: vertical; .",
+      "HTML tables do not support vertical cell merging."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which attribute of the tag controls the space between the cell content and the cell border?",
+    "options": [
+      "cellpadding",
+      "cellspacing",
+      "bgcolor",
+      "align"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which HTML code snippet demonstrates the correct use of line breaks for addresses and paragraph tags for separating ideas?",
+    "options": [
+      "123 Anywhere St. Springfield Welcome to our website.",
+      "123 Anywhere St., Springfield Welcome to our website.",
+      "123 Anywhere St. Springfield Welcome to our website.",
+      "123 Anywhere St. Springfield Welcome to our website."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the tag do in HTML?",
+    "options": [
+      "It highlights the text with a background color to indicate special importance.",
+      "It changes the font color of the text.",
+      "It adds a bold effect to the text.",
+      "It underlines the text."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which HTML snippet correctly emphasizes text for semantic importance and visual distinction?",
+    "options": [
+      "This is important text.",
+      "This is important text.",
+      "This is important text.",
+      "This is important text."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "When discussing HTML semantics, which term is used to describe the combination of an opening tag, its content, and its closing tag?",
+    "options": [
+      "Element",
+      "Attribute",
+      "Value",
+      "Markup"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the main role of the element?",
+    "options": [
+      "To define a section for navigation links.",
+      "To create a header for the webpage.",
+      "To mark the main content of the webpage.",
+      "To provide a footer for the webpage."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the declaration?",
+    "options": [
+      "To define the version of HTML the document is using.",
+      "To specify the character encoding for the document.",
+      "To link the HTML document to an external CSS file.",
+      "To initialize JavaScript in the document."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the poster attribute in the tag used for?",
+    "options": [
+      "To define the thumbnail image shown before the video plays.",
+      "To specify the video file to be played.",
+      "To set the video to play automatically when loaded.",
+      "To loop the video indefinitely."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Considering the default behavior of HTML headings regarding font size, which statement accurately describes the relationship between , , and tags?",
+    "options": [
+      "has the largest default font size, suitable for the main title of a page. is used for major section headings with a smaller font size than , and is for sub-sections, with a font size smaller than , reflecting a hierarchical document structure.",
+      "HTML headings do not influence the hierarchy of content; CSS is solely responsible for defining such relationships.",
+      "The font sizes for , , and are the same, with differences only in semantic importance.",
+      "is the largest and should be used for the main title, while and are for subsections and minor points, respectively."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following accurately describes the function of the tag in HTML?",
+    "options": [
+      "The tag defines a paragraph, automatically adding a blank line above and below the enclosed text and taking up the full width of its container.",
+      "The tag is used to create a new line within a paragraph without adding any space above or below.",
+      "The tag is an inline element that formats text without affecting its block-level structure.",
+      "The tag defines a paragraph, without adding any space above or below."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the tag in HTML?",
+    "options": [
+      "The tag highlights the word “Wednesday”, drawing attention to it with a background color.",
+      "The tag makes the word “Wednesday” italic to emphasize a specific part of the paragraph.",
+      "The tag underlines the word “Wednesday” to indicate hyperlinks without creating an actual link.",
+      "The tag underlines and highlights the word “Wednesday”, drawing attention to it with a font color."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How does the tag differ from the tag in HTML?",
+    "options": [
+      "The tag is used for longer quotations that need to be separated from the main text, often indented or styled differently from the surrounding content.",
+      "The tag is deprecated and should not be used; is the modern replacement.",
+      "is for inline quotations, while is for block-level quotations.",
+      "There is no functional difference; both tags can be used for short and long quotations."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the correct way to include a citation source for a block quotation in HTML?",
+    "options": [
+      "The cite attribute should be used within the tag to specify the URL of the quotation’s source.",
+      "The source URL should be included inside the tag for all quotations.",
+      "Citation sources are typically not included in the HTML but rather in the accompanying CSS.",
+      "The tag should be used as a container for the entire quotation and its source URL."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which statement is true about using quotation marks with the and tags?",
+    "options": [
+      "The tag automatically adds quotation marks around the enclosed text, while the tag does not.",
+      "Both and tags automatically add double quotation marks around the text.",
+      "The tag requires manual addition of quotation marks, but the tag does not.",
+      "Quotation marks must be manually added when using both and tags for proper formatting."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following statements accurately describes the use of the and tags in HTML?",
+    "options": [
+      "The tag is used for adding a new line within a paragraph, while the tag is used to insert a visual horizontal line to separate content.",
+      "Both and tags are used for creating new paragraphs.",
+      "is used to create a line break in text, and is for drawing a horizontal line.",
+      "Both tags require closing tags to function correctly in HTML documents."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the primary purpose of the tag in HTML?",
+    "options": [
+      "The tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.",
+      "The tag is used to indicate text that should be interpreted as programming variables.",
+      "The tag serves as a container for embedding executable code within HTML.",
+      "The tag provides semantic meaning to text, indicating technical terms or identifiers outside of code contexts."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How does the tag affect the display of text in an HTML document?",
+    "options": [
+      "The tag preserves the text’s white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.",
+      "The tag is used to pre-process text, applying automatic formatting rules.",
+      "The tag organizes text into pre-defined sections for improved document structure.",
+      "The tag prioritizes text for search engines, enhancing SEO for preformatted content."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Considering accessibility and HTML semantics, what is the significance of nesting within or vice versa?",
+    "options": [
+      "Nesting lists, such as incorporating within or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.",
+      "Nesting provides semantic clarity, enabling search engines to better understand and index the content structure, potentially improving SEO performance.",
+      "By utilizing nested lists, developers can implement complex web designs more efficiently, as it simplifies the CSS needed for list customization.",
+      "Nesting lists facilitates the automatic adaptation of content to various screen sizes, improving the responsive design of web pages without additional CSS."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which HTML tag pair is specifically used for creating a list of terms and their respective definitions?",
+    "options": [
+      "for the list, for each term, and for each definition.",
+      "for the list, followed by for each term and definition.",
+      "for the list, with tags marking each term and definition pair.",
+      "for the list, with and tags for terms and definitions."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the correct way to add a caption to an HTML table?",
+    "options": [
+      "The element, placed immediately after the opening tag, is used to provide a title or caption for the table.",
+      "Use the element within a table for captions.",
+      "Captions are added using the alt attribute on the tag.",
+      "The element should be used at the beginning of a table to add a caption."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Considering HTML5 standards, which table attributes are recommended to control the appearance and layout of a table?",
+    "options": [
+      "CSS styles are recommended for controlling the appearance and layout of tables in HTML5.",
+      "The border, the cellpadding, and the cellspacing attributes are the HTML5 recommended method.",
+      "Use the border and cellspacing attributes for appearance and layout control.",
+      "The border and bgcolor attributes are preferred for styling tables."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What role does the summary attribute play in HTML tables, and why is it important?",
+    "options": [
+      "It is used to describe the table’s content and purpose for assistive technologies, enhances accessibility by providing context.",
+      "It summarizes the table data in a tooltip.",
+      "It is a visual summary displayed at the top of the table.",
+      "It is primarily designed for enhancing table accessibility, not directly influencing SEO or providing visible content to all users."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Identify which statement accurately reflects the purpose of the alt attribute.",
+    "options": [
+      "It provides a description of the image for users who cannot see it, such as those using screen readers.",
+      "It specifies a textual animation to accompany the image when it is clicked.",
+      "It captions the image directly on the webpage, visible to all users.",
+      "It provides a detailed narrative of the image for inclusion in the page’s footer. The alt attribute in the tag provides alternative text that describes the image for users who cannot see it, including those using screen readers or when the image fails to load. This enhances accessibility by ensuring that the content of the image is still accessible to all users."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is the primary benefit of specifying both width and height attributes in an tag? Select the best answer.",
+    "options": [
+      "To ensure that the image loads with the correct dimensions, improving page layout stability during loading.",
+      "To automatically crop the image to the specified dimensions.",
+      "To increase the image resolution based on the specified size.",
+      "To ensure the image is aligned centrally within its parent container automatically.",
+      "Specifying both width and height attributes for an tag helps the browser allocate the necessary space for the image before it fully loads. This prevents layout shifts and ensures that the page maintains a stable layout while the image is loading."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What does the use of absolute paths for image sources in HTML entail?",
+    "options": [
+      "Referencing an image hosted on a web server using its full URL.",
+      "Specifying a path relative to the current document.",
+      "Embedding an image directly into the HTML document in base64 format.",
+      "Forcing the browser to download the image before rendering the page.",
+      "An absolute path specifies the complete URL or file location for an image, including the protocol (e.g., http:// or https:// ), the domain, and the file path. This method is used when the image is hosted on a different server or when referencing resources by their full web address."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What does the href attribute specify in an tag?",
+    "options": [
+      "The URL of the webpage that the link points to.",
+      "The URL for a backup page if the primary page fails to load.",
+      "The fallback URL if the content is not available in the user’s language.",
+      "The URL that specifies the source document of the hyperlink.",
+      "The href attribute in an tag (anchor tag) specifies the destination URL of the link. When a user clicks on the link, the browser navigates to the URL provided in the href attribute. In this case, the link points to “https://www.example.com/”."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is the purpose of wrapping the element with the tag?",
+    "options": [
+      "To make the image act as a clickable link to the specified target location.",
+      "To validate the image source URL using the link’s href attribute.",
+      "To define the image as the background for the hyperlink text.",
+      "To provide the location where the image can be downloaded from and rendered on a web page.",
+      "Wrapping the element with the tag turns the image into a clickable link. When users click on the image, they are redirected to the URL specified in the href attribute of the tag, in this case, “/about-us”. This is a common practice to make logos or other images act as clickable links, typically leading to the homepage or other key pages."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What role does the download attribute play in tag linking to a file?",
+    "options": [
+      "Instructs the browser to download the linked file instead of navigating to it.",
+      "Downloads the document in the background for faster access.",
+      "Verifies the document’s download speed before starting the download.",
+      "Customizes the download button with a specified filename.",
+      "The download attribute in the tag tells the browser to download the linked file rather than navigating to it. Additionally, if a filename is specified (as with download=”CustomFileName.pdf” ), it allows the user to save the file under that custom name rather than the original file name."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is the correct way to create an anchor link to a specific section of the same webpage?",
+    "options": [
+      "Go to Section 2 Section 2",
+      "Go to Section 2 Section 2",
+      "Go to Section 2 Section 2",
+      "Go to Section 2 Section 2",
+      "To create an anchor link that navigates to a specific section of the same webpage, you use the href attribute with a hash ( # ) followed by the id of the target element. In this case, the id=”section2″ on the element creates a linkable section, and the anchor ( ) tag uses href=”#section2″ to refer to that section."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Examine the following HTML code. Which statement is true regarding the controls attribute?",
+    "options": [
+      "The controls attribute adds play, pause, and volume control buttons to the video player.",
+      "Adding controls automatically enables the video to play in fullscreen mode.",
+      "The controls attribute is required for the video to be accessible on mobile devices.",
+      "The controls restricts video playback to only when the user hovers over the video player.",
+      "The controls attribute in the tag enables the built-in video player controls, such as play, pause, volume, and sometimes a progress bar, for the user to interact with. This makes it easier for users to control playback of the video."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Which set of elements and attributes ensures a video can be played across different browsers due to codec compatibility?",
+    "options": [
+      "The combination of multiple elements with different type attributes within a element.",
+      "A single with an additional codec attribute.",
+      "Multiple elements, each with a different source file.",
+      "A element with a srcset attribute for different video resolutions.",
+      "By including multiple elements within the tag, each with a different src attribute (pointing to different video formats) and a corresponding type attribute (indicating the MIME type of the video file), browsers can select the most compatible format based on their supported codecs. This ensures broader compatibility across different browsers and devices. For example: Your browser does not support the video tag."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How can you provide an image to be displayed before a video starts playing?",
+    "options": [
+      "Use the poster attribute in the element to specify an image URL.",
+      "Embed an element inside the tag.",
+      "Apply a background image to the element using the background attribute.",
+      "Specify an image in the first element within the tag.",
+      "The poster attribute in the tag allows you to specify an image that will be shown before the video starts playing. It serves as a preview or thumbnail for the video."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "For ensuring that a video is responsive and adapts to different screen sizes, which approach is recommended?",
+    "options": [
+      "Using the media attribute within elements to specify different videos for different viewport conditions.",
+      "Setting fixed width and height attributes on the tag for all devices.",
+      "Embedding a separate element for each screen size using media queries.",
+      "Utilizing the viewport attribute in the tag to control responsiveness.",
+      "The element with the media attribute allows you to specify different video sources based on the viewport size, ensuring that the video adapts to various screen sizes and resolutions."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is the significance of the type attribute in an element?",
+    "options": [
+      "It defines the functionality and data validation rules for the input field.",
+      "It specifies the CSS type and styles to be applied to the input field.",
+      "It indicates the MIME type of the data to be submitted with the form.",
+      "It determines the type of encoding used when sending the input data.",
+      "The type attribute specifies the input field’s behavior, such as text, email, password, etc., and also defines built-in validation rules (e.g., ensuring proper email format)."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What does the required attribute ensure in HTML forms?",
+    "options": [
+      "It makes the input field mandatory, preventing form submission if the field is empty.",
+      "It requires the input field to only accept text values of a certain length.",
+      "It mandates that the input field be filled out before any other fields in the form.",
+      "It specifies that the input field value must match a specific pattern or regular expression.",
+      "The required attribute ensures that the input field must be filled out before submitting the form; if left empty, the form cannot be submitted."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How do you associate a element with an field?",
+    "options": [
+      "By matching the for attribute of the with the id attribute of the .",
+      "By placing the element inside the element.",
+      "By ensuring the name attribute of both elements is the same.",
+      "By matching the for attribute of the with the id attribute of the .",
+      "The for attribute in the element links it to an field by matching the id of the , improving accessibility and allowing users to click the label to focus the input."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What functionalities do the , , , and elements provide in an HTML form?",
+    "options": [
+      "allows for multiline input, offers dropdown selections, triggers form submission, and groups related form items.",
+      "is for URL entries, switches the form’s language, minimizes the form, and sets the form’s background color.",
+      "restricts input to numbers, displays images as options, clears the form, and encrypts submitted data.",
+      "auto-validates email format, is for multiple concurrent selections, previews form data, and automatically submits the form after a countdown.",
+      "The element is used for multiline text input, provides a dropdown menu for selections, is used to submit the form, and groups related form elements together, often with a visual border."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Where is the element typically placed when using an internal stylesheet?",
+    "options": [
+      "In the section of the HTML document.",
+      "Directly inside each HTML element you wish to style.",
+      "Immediately after the tag opens.",
+      "Just before the closing tag. The element is typically placed within the section to define internal CSS styles for the entire document, ensuring proper separation of content and styling."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Which of the following is a benefit of using inline styling?",
+    "options": [
+      "It allows for quick and specific style applications without affecting other elements.",
+      "It is the best method for styling large-scale websites.",
+      "It automatically generates a CSS file.",
+      "It applies styles globally across multiple web pages.",
+      "Inline styling applies styles directly to individual HTML elements, making it useful for quick, specific changes without affecting other elements on the page."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Why is an internal stylesheet often preferred over inline styling for certain projects?",
+    "options": [
+      "It offers a centralized way to style multiple elements consistently without repeating code.",
+      "It automatically optimizes the website’s loading speed by compressing CSS.",
+      "It provides automatic browser compatibility fixes that inline styles lack.",
+      "It allows for real-time editing and preview of styles across multiple devices simultaneously.",
+      "Internal stylesheets allow for easier maintenance and consistency by defining styles in one place, which can be applied to multiple elements across the document, unlike inline styling, which requires repetitive code for each element."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What will happen if you set the color and background-color to the same value in an element’s style?",
+    "options": [
+      "The text will be invisible against the background.",
+      "The browser will automatically adjust the text color for readability.",
+      "The background color will override the text color, making the text transparent.",
+      "A contrasting border will be added around the text for visibility.",
+      "If the color (text color) and background-color are set to the same value, the text will blend into the background, making it invisible since both the text and the background will have the same color."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is wrong with the following inline style that might prevent it from correctly changing the background color of the div to blue?",
+    "options": [
+      "The style property and value pair should be separated by a colon (:) instead of a semicolon (;).",
+      "The style property and value pair should be separated by an equals sign (=) instead of a semicolon (;).",
+      "The color blue should be specified using a hex code instead.",
+      "The style attribute should be placed inside a tag.",
+      "In the inline style, the property and value should be separated by a colon ( background-color: blue; ), not a semicolon. The semicolon is used to separate multiple declarations within the style attribute, not between the property and its value."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What would you add to the following CSS rule to also change the font size of the element to 24 pixels?",
+    "options": [
+      "font-size: 24px; inside the curly braces.",
+      "size: 24px; after the color property.",
+      "text-size: 24px; before the color property.",
+      "h1-size: 24px; at the end of the rule.",
+      "To change the font size, you should add font-size: 24px; inside the curly braces of the h1 rule, like this: h1 { color: green; font-size: 24px; }"
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "In an internal stylesheet, how do you specify a style for a class named highlight?",
+    "options": [
+      ".highlight { background-color: yellow; }",
+      "#highlight { background-color: yellow; }",
+      "highlight { background-color: yellow; }",
+      "highlight { background-color = yellow; }",
+      "In CSS, a class is targeted with a period (.) before the class name. The correct syntax for styling a class named highlight is .highlight { background-color: yellow; } ."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How can you set the text color of a paragraph to red using a hexadecimal value?",
+    "options": [
+      "This is a paragraph.",
+      "This is a paragraph.",
+      "This is a paragraph.",
+      "This is a paragraph.",
+      "The correct way to set the text color using a hexadecimal value is color: #FF0000; , where #FF0000 is the hex code for red."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Given the following CSS rules, which one correctly applies font properties to a paragraph element to achieve a monospace font, 20px, bold, and italic?",
+    "options": [
+      "p { font-family: monospace; font-size: 20px; font-weight: bold; font-style: italic; }",
+      "p { font-type: monospace; font-size: 20; font-density: heavy; font-shape: italic; }",
+      "p { family-font: monospace; size-font: 20; weight-font: heavy; style-font: italic; }",
+      "p { font: monospace; size: 20px; weight: bold; style: italic; }",
+      "The correct properties for setting font-related styles are font-family , font-size , font-weight , and font-style . This rule applies the monospace font, sets the font size to 20px, makes the text bold, and italicised it."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is the correct way to use both and to style text and its container for emphasis?",
+    "options": [
+      "Notice: Important",
+      "Notice: Important",
+      "Notice: Important",
+      "Notice: Important",
+      "The element is used to style the container (background color), and the element is used to style the text inside (text color). This setup properly uses each element for its intended purpose."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How can you apply a specific style to a group of elements using one of the global attributes? Select the best answer.",
+    "options": [
+      "By using the class attribute to group elements and style them collectively.",
+      "By assigning the same id to target all elements in the group.",
+      "By using the def attribute to define common styles for a group of elements.",
+      "By implementing the title attribute to target multiple elements from the same groups.",
+      "The class attribute is commonly used to apply the same style to a group of elements. By assigning the same class name to multiple elements, you can target them collectively with a CSS rule."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Given the CSS rule below, which HTML element will be correctly styled with red text?",
+    "options": [
+      "This is spam.",
+      "This is spam.",
+      "This is spam.",
+      "This is spam.",
+      "The CSS rule targets the element with the id attribute set to “spam” ( #spam ). Therefore, the element will be styled with red text."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Which attribute would you use to hide an element from being displayed on the webpage?",
+    "options": [
+      "hidden",
+      "hide",
+      "no-show",
+      "hidden: true; within the style attribute",
+      "The hidden attribute can be added to an HTML element to hide it from being displayed on the webpage. For example, Content here will prevent the element from being visible."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How would you modify this button to alert “Saved!” when clicked?",
+    "options": [
+      "Save Recipe",
+      "Save Recipe",
+      "Save Recipe",
+      "Save Recipe",
+      "The onclick attribute is used to specify the JavaScript code to run when the button is clicked.In this case, alert(‘Saved!’) will display the message “Saved!” when the button is clicked."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How would you modify it to use semantic markup for the emphasized word “important”?",
+    "options": [
+      "Replace with .",
+      "Add a class=”important” to the .",
+      "Use instead of .",
+      "Add a class=”strong” to the . The tag provides semantic meaning, indicating that the content is important. It is more appropriate than for emphasizing the word “important.”"
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What should be changed in this snippet to make “Introduction” act as a caption for the figure?",
+    "options": [
+      "Wrap “Introduction” with tags.",
+      "Wrap “Introduction” with tags.",
+      "Add a title=”Introduction” attribute to the .",
+      "Replace “Introduction” with a self-closing tag.",
+      "The tag is used to provide a caption or description for the content inside a element. Wrapping “Introduction” in ensures it is properly associated as the figure’s caption."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Which tag should be added to mark up a quotation in the following snippet for semantic accuracy? Select the best answer.",
+    "options": [
+      "Surround the quotation with tags.",
+      "Use around the entire paragraph.",
+      "Replace the paragraph ( ) tags with .",
+      "Enclose the quotation in tags.",
+      "The tag is used for inline quotations, making it semantically appropriate for marking up short quotes within a paragraph."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How would you add a semantic element to specify the author’s name, “John Doe”?",
+    "options": [
+      "Add Author: John Doe inside the .",
+      "Insert within .",
+      "Place Author: John Doe directly after .",
+      "Enclose “John Doe” in tags at the end of the article.",
+      "The element within an is semantically appropriate for metadata like the author’s name, as it is intended to provide information related to the content of the article."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How would you correctly add John Doe’s phone number using hCard?",
+    "options": [
+      "Phone: 123-456-7890",
+      "123-456-7890",
+      "123-456-7890",
+      "123-456-7890",
+      "In hCard, the tel class is used to mark up a phone number semantically. Wrapping it in a within a for context (e.g., “Phone:”) is a common and semantically appropriate approach."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Add a Schema.org email property correctly to this snippet:",
+    "options": [
+      "[email protected] ” itemprop=”email”> [email protected]",
+      "Email: [email protected] ”> [email protected]",
+      "Email: [email protected]",
+      "Email: [email protected]",
+      "The email property in Schema.org specifies the email address of a person. Wrapping the email in an tag with a mailto: link ensures it’s both semantically correct and functional."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How can you make this image accessible for users who rely on screen readers? Select the best answer.",
+    "options": [
+      "Add an alt attribute with a descriptive text.",
+      "Use a summary element.",
+      "Add a title attribute with a description.",
+      "Surround it with a figure element.",
+      "The attribute provides alternative text for an image, which is essential for accessibility. It allows screen readers to describe the image to visually impaired users. For example:"
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "To meet WCAG Level AA compliance for forms, which element is crucial for associating text labels with form inputs?",
+    "options": [
+      "with a for attribute matching the input’s name.",
+      "and code class=”code-bg”> surrounding the input field.",
+      "The placeholder attribute within the tag.",
+      "The aria-label attribute within the tag.",
+      "WCAG Level AA compliance requires accessible forms. Using a element with a for attribute ensures that text labels are properly associated with their corresponding input fields, making the form usable for assistive technologies."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Which ARIA role should be used for a navigation menu?",
+    "options": [
+      "role=”navigation”",
+      "role=”nav”",
+      "role=”menu”",
+      "role=”list”",
+      "The role=”navigation” ARIA role is used to identify a navigation menu. This helps assistive technologies understand the purpose of the section as navigation, improving accessibility."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "How can you indicate that a dropdown menu is currently expanded using ARIA?",
+    "options": [
+      "Menu",
+      "Menu",
+      "Menu",
+      "Menu",
+      "The aria-expanded attribute is used to indicate whether a dropdown menu (or any collapsible content) is expanded or collapsed. Setting aria-expanded=”true” signifies that the menu is currently expanded, while aria-expanded=”false” would indicate that it is collapsed."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What best describes usability testing in the context of web accessibility?",
+    "options": [
+      "An evaluation technique involving real users, including those with disabilities, to get feedback on the website’s accessibility and user experience.",
+      "Automated testing conducted by software to identify broken links and missing images on a website.",
+      "A method of checking the website’s color palette to ensure it is aesthetically pleasing.",
+      "A process where developers test the website’s loading speed on various devices.",
+      "Usability testing for web accessibility involves gathering feedback from real users, including those with disabilities, to assess how easily they can navigate and interact with a website. This helps identify potential accessibility barriers and improves the overall user experience for all users."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What is the primary reason for avoiding deprecated tags like , , and in modern HTML?",
+    "options": [
+      "It’s best to use CSS for styling to keep the structure and presentation separate.",
+      "They only work in older versions of browsers.",
+      "They are reserved for future use in HTML.",
+      "They add unnecessary complexity to web design.",
+      "Deprecated tags like , , and are used for presentation purposes but should be avoided because modern HTML encourages separating structure (HTML) from presentation (CSS). Using CSS for styling ensures cleaner, more maintainable code and better accessibility."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "Why is it important to specify the character encoding in HTML documents using?",
+    "options": [
+      "To ensure proper rendering of special characters and symbols.",
+      "To encrypt the HTML document.",
+      "To automatically translate the content into multiple languages.",
+      "To optimize the HTML document for faster download speeds.",
+      "Specifying the character encoding with ensures that the web page can display special characters, symbols, and non-English characters correctly, regardless of the user’s language or device. UTF-8 is a widely supported character encoding that includes most characters from all languages, making it essential for proper text rendering."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  },
+  {
+    "question": "What role does using meaningful IDs and class names in HTML play? Select the best answer.",
+    "options": [
+      "It facilitates the targeting of elements for styling and scripting by providing specific references.",
+      "It standardizes naming conventions across different web development projects.",
+      "It enhances SEO by making content more discoverable to search engines.",
+      "It automatically optimizes the website’s responsiveness across various devices.",
+      "Meaningful IDs and class names make it easier to reference and target elements in CSS and JavaScript. This improves maintainability, organization, and the flexibility of styling and scripting by allowing specific elements to be selected more effectively."
+    ],
+    "correct": 0,
+    "explanation": "and Hint:"
+  }
+]

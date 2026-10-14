@@ -1,0 +1,1142 @@
+[
+  {
+    "source_num": 1,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "An entity can only have one Primary UID. True or False?"
+  },
+  {
+    "source_num": 2,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "If an entity has no attribute suitable to be a Primary UID, we can create an artificial one. True or False?"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "There is no limit to how many columns can make up an entity's UID. True or False?"
+  },
+  {
+    "source_num": 4,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "A unique identifier can only be made up of one attribute. True or False?"
+  },
+  {
+    "source_num": 5,
+    "options": [
+      "When all non-UID attributes are dependent upon the entire UID.",
+      "When attributes with repeating or multi-values are present.",
+      "When no attritibutes are mutually independent and all are fully dependent on the primary key.",
+      "None of the Above."
+    ],
+    "correct": 0,
+    "question": "When is an entity in 2nd Normal Form?"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "No non-UID attributes can be dependent on any part of the UID.",
+      "Some non-UID attributes can be dependent on the entire UID.",
+      "All non-UID attributes must be dependent upon the entire UID.",
+      "None of the above"
+    ],
+    "correct": 2,
+    "question": "What is the rule of Second Normal Form?"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "Do nothing, it is already in 2nd Normal Form.",
+      "Delete the attribute STORE ID",
+      "Move the attribute STORE LOCATION to a new entity, STORE, with a UID of STORE ID, and create a relationship to the original entity.",
+      "Move the attribute STORE LOCATION to a new entity, STORE, with a UID of STORE LOCATION, and create a relationship to the original entity."
+    ],
+    "correct": 2,
+    "question": "Examine the following entity and decide how to make it conform to the rule of 2nd Normal Form:\nENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION\nDATE"
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "Dependency",
+      "Functional dependency",
+      "Non-dependency",
+      "Transitive dependency"
+    ],
+    "correct": 3,
+    "question": "When any attribute in an entity is dependent on any other non-UID attribute in that entity, this is known as:"
+  },
+  {
+    "source_num": 9,
+    "options": [
+      "1st Normal Form.",
+      "2nd Normal Form.",
+      "3rd Normal Form.",
+      "None of the above, the entity is fully normalised."
+    ],
+    "correct": 0,
+    "question": "Examine the following Entity and decide which rule of Normal Form is being violated:\nENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nORDER ID\nSTREET\nZIP CODE"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "As a database designer, you do not need to worry about where in the datamodel you store a particular attribute; as long as you get it onto the ERD, your job is done. True or False?"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "1st Normal Form.",
+      "2nd Normal Form.",
+      "3rd Normal Form.",
+      "None of the above, the entity is fully normalised."
+    ],
+    "correct": 3,
+    "question": "Examine the following Entity and decide which rule of Normal Form is being violated:\nENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nSTREET\nCITY\nZIP CODE"
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "Normalcy",
+      "Replication",
+      "Normalization",
+      "Decency"
+    ],
+    "correct": 2,
+    "question": "When data is stored in more than one place in a database, the database violates the rules of ___________."
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "Make the attribute optional",
+      "Do nothing, an entity does not have to be in 1st Normal Form",
+      "Create an additional entity and relate it to the original entity with a 1:M relationship.",
+      "Create an additional entity and relate it to the original entity with a M:M relationship."
+    ],
+    "correct": 2,
+    "question": "If an entity has a multi-valued attribute, to conform to the rule of 1st Normal Form we:"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "An entity ORDER has the attributes Order ID, Order Date, Product id, Customer ID. This entity is in 1st Normal Form. True or False?"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "An entity can have repeated values and still be in 1st Normal Form. True or False?"
+  },
+  {
+    "source_num": 16,
+    "options": [
+      "Invalid Relationship",
+      "General Relationship",
+      "Heirarchical Relationship",
+      "Recursive Relationship"
+    ],
+    "correct": 2,
+    "question": "Cascading UIDs are a feature often found in what type of Relationship?"
+  },
+  {
+    "source_num": 17,
+    "options": [
+      "General Relationship",
+      "Recursive Relationship",
+      "Heirarchical Relationship",
+      "Invalid Relationship"
+    ],
+    "correct": 1,
+    "question": "A relationship between an entity and itself is called a/an:"
+  },
+  {
+    "source_num": 18,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "A single relationship can be both Recursive and Hierarchical at the same time. True or False?"
+  },
+  {
+    "source_num": 19,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "A Hierarchical relationship is a series of relationships that reflect entities organized into successive levels. True or False?"
+  },
+  {
+    "source_num": 20,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "A particular problem may be solved using either a Recursive Relationship or a Hierarchical Relationship, though not at the same time. True or False?"
+  },
+  {
+    "source_num": 21,
+    "options": [
+      "STUDENT (Grade A student, Average Student)",
+      "PARENT (Girl, Bob)",
+      "TEACHER (Female, Bob)",
+      "DELIVERY ADDRESS (Home, Office)"
+    ],
+    "correct": 3,
+    "question": "Which of the following would best be represented by an arc?"
+  },
+  {
+    "source_num": 22,
+    "options": [
+      "Sameness",
+      "Differences",
+      "Exclusivity",
+      "Inheritance"
+    ],
+    "correct": 2,
+    "question": "Arcs are used to visually represent _________ between two or more relationships in an ERD."
+  },
+  {
+    "source_num": 23,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "An arc can often be modeled as Supertype and Subtypes. True or False?"
+  },
+  {
+    "source_num": 25,
+    "options": [
+      "Daily traffic patterns must be monitored to determine which countries are overcrowded.",
+      "People have births and deaths in their countries that must be tracked by the system.",
+      "If you are doing a system for France or Germany, you would need security clearance.",
+      "Countries may change their names and/or borders over a period of time."
+    ],
+    "correct": 3,
+    "question": "Which of the following would be a logical constraint when modeling time for a country entity?"
+  },
+  {
+    "source_num": 26,
+    "options": [
+      "Daily traffic patterns must be monitored to determine how many law enforcement officers are needed.",
+      "If you are doing a system for any French City, you would need security clearance.",
+      "Cites may change their names and/or country association if the borders of a country change.",
+      "People are born in the city and people die in the city."
+    ],
+    "correct": 2,
+    "question": "Which of the following would be a logical constraint when modeling time for a City entity?"
+  },
+  {
+    "source_num": 27,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "All systems must include functionality to provide logging or journaling in conceptual data models. True or False?"
+  },
+  {
+    "source_num": 28,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "When a system requires that old values for attributes are kept on record, this is know as Journaling or Logging. True or False?"
+  },
+  {
+    "source_num": 29,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "There is no point in trying to group your entities together on your diagram according to volume, and making a diagram look nice is a waste of time. True or False?"
+  },
+  {
+    "source_num": 30,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "Formal rules exist for drawing ERD's. You must always follow them, even if it results in an ERD that is difficult to read. True or False?"
+  },
+  {
+    "source_num": 31,
+    "options": [
+      "(Choose all correct answers)",
+      "LIBRARY and NUMBER OF BOOKS",
+      "STUDENT and GRADE",
+      "STUDENT and AGE",
+      "LIBRARY and BOOK"
+    ],
+    "correct": 2,
+    "question": "Which of the following scenarios should be modeled so that historical data is kept? (Choose two)"
+  },
+  {
+    "source_num": 32,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "Historical data must never be kept. True or False?"
+  },
+  {
+    "source_num": 33,
+    "options": [
+      "Referential integrity",
+      "Column integrity",
+      "Entity integrity",
+      "User-defined integrity"
+    ],
+    "correct": 2,
+    "question": "The explanation below is an example of which constraint type?"
+  },
+  {
+    "source_num": 34,
+    "options": [
+      "It refers to the same table",
+      "It is part of a primary key",
+      "It refers to another table",
+      "It contains three or more columns"
+    ],
+    "correct": 1,
+    "question": "Foreign keys cannot be null when"
+  },
+  {
+    "source_num": 36,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "A foreign key cannot refer to a primary key in the same table. True or False?"
+  },
+  {
+    "source_num": 37,
+    "options": [
+      "Columns always containing text data less than 255 characters",
+      "Columns always containing values consistent with the defined data format",
+      "Columns always having values",
+      "Columns always containing positive numbers"
+    ],
+    "correct": 1,
+    "question": "Column integrity refers to"
+  },
+  {
+    "source_num": 38,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "When an Arc is transformed to the physical model every relationship in the Arc becomes a mandatory Foreign Key. True or False?"
+  },
+  {
+    "source_num": 39,
+    "options": [
+      "Unique Key",
+      "Optional Foreign Key",
+      "Mandatory Foreign Key",
+      "Primary Key"
+    ],
+    "correct": 1,
+    "question": "One-to-Many Optional to Mandatory becomes a _______________ on the Master table."
+  },
+  {
+    "source_num": 40,
+    "options": [
+      "The Column Name",
+      "The Check Constraint",
+      "The Table Name",
+      "The Primary Key"
+    ],
+    "correct": 3,
+    "question": "A barrred Relationship will result in a Foreign Key column that also is part of:"
+  },
+  {
+    "source_num": 41,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "Relationships on an ERD can only be transformed into UIDs in the physical model? True or False?"
+  },
+  {
+    "source_num": 42,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "One-to-One relationships are transformed into Check Constraints in the tables created at either end of that relationship. True or False?"
+  },
+  {
+    "source_num": 43,
+    "options": [
+      "Cascade Implementation",
+      "Supertype Implementation",
+      "Subtype Implementation",
+      "Supertype and Subtype Implementation"
+    ],
+    "correct": 3,
+    "question": "The \"Arc Implementation\" is a synonym for what type of implementation?"
+  },
+  {
+    "source_num": 44,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "When mapping supertypes, relationships at the supertype level transform as usual. Relationships at the subtype level are implemented as foreign keys, but the foreign key columns all become optional. True or False?"
+  },
+  {
+    "source_num": 45,
+    "options": [
+      "Columns",
+      "Tables",
+      "Foreign Keys",
+      "Unique Keys"
+    ],
+    "correct": 1,
+    "question": "The transformation from an ER diagram to a physical design involves changing terminology. Entities in the ER diagram become __________ :"
+  },
+  {
+    "source_num": 46,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "The conceptual model is transformed into a physical model. The physical implementation will be a relational database. True or False?"
+  },
+  {
+    "source_num": 47,
+    "options": [
+      "There is no problem here. You can create a table called 1_TABLE.",
+      "Object names must not start with a number. They must begin with a letter.",
+      "TABLE is a reserved word.",
+      "The database does not understand all capital letters."
+    ],
+    "correct": 1,
+    "question": "In an Oracle database, why would 1_TABLE not work as a table name?"
+  },
+  {
+    "source_num": 48,
+    "options": [
+      "JOBS is a reserved word",
+      "The database does not understand all capital letters",
+      "You cannot have spaces between words in a table name",
+      "EMPLOYEE is a reserved word"
+    ],
+    "correct": 2,
+    "question": "In an Oracle database, why would the following table name not be allowed 'EMPLOYEE JOBS'?"
+  },
+  {
+    "source_num": 49,
+    "options": [
+      "(Choose all correct answers)",
+      "Build and Document",
+      "Analysis",
+      "Transition",
+      "Strategy"
+    ],
+    "correct": 1,
+    "question": "In which phases of the System Development Life Cycle will we need to use SQL as a language? (Choose Two)"
+  },
+  {
+    "source_num": 50,
+    "options": [
+      "Build and Transition",
+      "Design and Production",
+      "Strategy and Analysis",
+      "Transition and Production"
+    ],
+    "correct": 3,
+    "question": "During which phases of the System Development Life Cycle would you roll out the system to the users?"
+  },
+  {
+    "source_num": 2,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "A transitive dependency exists when any attribute in an entity is dependent on any other non-UID attribute in that entity."
+  },
+  {
+    "source_num": 4,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "The Rule of 3rd Normal Form states that No Non-UID attribute can be dependent on another non-UID attribute. True or False?"
+  },
+  {
+    "source_num": 5,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Normalizing an Entity to 1st Normal Form is done by removing any attributes that contain muliple values. True or False?"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "2nd Normal Form",
+      "4th Normal Form",
+      "1st Normal Form",
+      "3rd Normal Form"
+    ],
+    "correct": 2,
+    "question": "When all attributes are single-valued, the database model is said to conform to:"
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "Reduction",
+      "Normality",
+      "Multiplication",
+      "Normalization"
+    ],
+    "correct": 3,
+    "question": "When data is only stored in one place in a database, the database conforms to the rules of ___________."
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "Move the attribute that violates 2nd Normal Form to a new entity with a relationship to the original entity.",
+      "Move the attribute that violates 2nd Normal Form to a new ERD.",
+      "Do nothing, an entity does not need to be in 2nd Normal Form.",
+      "Delete the attribute that was causing the violation."
+    ],
+    "correct": 0,
+    "question": "To resolve a 2nd Normal Form violation, we:"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Any Non-UID attribute must be dependent upon the entire UID. True or False?"
+  },
+  {
+    "source_num": 1,
+    "options": [
+      "(Choose all correct answers)",
+      "Social Security Number",
+      "Last Name",
+      "Employee ID",
+      "Address"
+    ],
+    "correct": 1,
+    "question": "Which of the following would be suitable UIDs for the entity EMPLOYEE: (Choose Two)"
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "1st Normal Form.",
+      "2nd Normal Form.",
+      "3rd Normal Form.",
+      "None of the above, the entity is fully normalised."
+    ],
+    "correct": 1,
+    "question": "Examine the following Entity and decide which rule of Normal Form is being violated:\nENTITY: CLIENT ORDER\nATTRIBUTES:\n# CLIENT ID\n# ORDER ID\nFIRST NAME\nLAST NAME\nORDER DATE\nCITY\nZIP CODE"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "Yes, this is the way UID's are named.",
+      "No, each Entity can only have one UID, the secondary one.",
+      "No, it is not possible to have more than one UID for an Entity.",
+      "No, after UIDs are first sorted, the first one is called the Primary UID, the second is the Secondary UID, etc."
+    ],
+    "correct": 0,
+    "question": "The candidate UID that is chosen to identify an entity is called the Primary UID; other candidate UIDs are called Secondary UIDs."
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "Composite",
+      "Simple",
+      "Secondary",
+      "Candidate"
+    ],
+    "correct": 3,
+    "question": "Where an entity has more than one attribute suitable to be the Primary UID, these are known as _____________ UIDs."
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "To convert an entity with a multi valued attribute to 1st Normal Form, we create an additional entity and relate it to the original entity with a 1:1 relationship. True or False?"
+  },
+  {
+    "source_num": 4,
+    "options": [
+      "Composite",
+      "Secondary",
+      "Simple",
+      "Artificial"
+    ],
+    "correct": 1,
+    "question": "A candidate UID that is not chosen to be the Primary UID is called:"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "STORE LOCATION",
+      "CUSTOMER ID",
+      "DATE",
+      "STORE ID"
+    ],
+    "correct": 0,
+    "question": "Examine the following entity and decide which attribute breaks the 2nd Normal Form rule:\nENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION\nDATE"
+  },
+  {
+    "source_num": 2,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "Arcs are Mandatory in Data modeling. All ERD's must have at least one Arc. True or False?"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "Arc",
+      "Relationship",
+      "Attribute",
+      "UID"
+    ],
+    "correct": 0,
+    "question": "To visually represent exclusivity between two or more relationships in an ERD you would most likely use an ________."
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "All relationships participating in an arc must be mandatory. True or False?"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "Constraints.",
+      "Relationships",
+      "Entities.",
+      "Attributes"
+    ],
+    "correct": 0,
+    "question": "Every business has restrictions on which attribute values and which relationships are allowed. These are known as:"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "Single Toe",
+      "Pig's Ear",
+      "Crow's Foot",
+      "Dog's Tail"
+    ],
+    "correct": 1,
+    "question": "A Recursive Relationship is represented on an ERD by a/an:"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Business organizational charts are often modeled as a Hierarchical relationship. True or False?"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "A recursive relationship must be Mandatory at both ends. True or False?"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "An optional attribute can be created",
+      "A composite attribute",
+      "An attribute",
+      "An arc can be assigned"
+    ],
+    "correct": 3,
+    "question": "Which of the following can be added to a relationship?"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Arcs model an Exclusive OR constraint. True or False?"
+  },
+  {
+    "source_num": 2,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "When modeling historical data the unique identifier is always made up of a barred relationship from the original two entities. True or False?"
+  },
+  {
+    "source_num": 4,
+    "options": [
+      "(Choose all correct answers)",
+      "You must ensure that you have every single entity--even if hundreds of them exist--on one single, big diagram.",
+      "The crows feet (many ends) can point whichever way is the easiest to draw.",
+      "Avoid crossing one relationship line with another.",
+      "It is OK to break down a large ERD into subsets of the overall picture. By doing so, you end up with more than one ERD that, taken together, documents the entire system."
+    ],
+    "correct": 3,
+    "question": "Which of the following statements are true for ERD's to enhance their readability. (Choose Two)"
+  },
+  {
+    "source_num": 5,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "No formal rules exist for drawing ERD's. The most important thing is to make sure that all entities, attributes, and relationships are documented on the diagram, and the diagram is clear and readable. True or False?"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "You must make sure all entities of a proposed system can fit onto one diagram. It is not allowed to break up a data model into more than one diagram. True or False?"
+  },
+  {
+    "source_num": 9,
+    "options": [
+      "End Date must be before the Start Date.",
+      "EMPLOYEE periods can overlap causing the database to crash.",
+      "Dates must be stored with Time.",
+      "An ASSIGNMENT may only refer to an EMPLOYEE with a valid employee record at the Start Date of the ASSIGNMENT."
+    ],
+    "correct": 3,
+    "question": "Which of the following is a logical constraint that could result from considering how time impacts an example of data storage?"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "Represents entities as time in the data model.",
+      "Creates a fixed time for all events in a data model.",
+      "Gives a timestamp to all entities.",
+      "Allows you to track the history of attribute values, relationships, and/or entire entities"
+    ],
+    "correct": 3,
+    "question": "What is the function of logging or journaling in conceptual data models?"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "It depends on the functional needs of the system .",
+      "Always model time; you can take it out later if it is not needed.",
+      "You would first determine the existence of the concept of time and map it against the Greenwich Mean Time.",
+      "The rules are fixed and should be followed."
+    ],
+    "correct": 0,
+    "question": "How do you know when to use the different types of time in your design?"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "In a payroll system, it is desirable to have an entity called DAY with a holiday attribute when you want to track special holiday dates. True or False?"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Modeling historical data is optional. True or False?"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "Transferable Relationship",
+      "Non-transferable Relationship.",
+      "Conditional Non-transferable Relationship.",
+      "Arc."
+    ],
+    "correct": 2,
+    "question": "When a relationship may or may not be transferable, depending on time, this is know as a/an:"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "In an ERD, it is a good idea to group your entities according to the expected volumes. By grouping high volume entities together, the diagrams could become easier to read. True or False?"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Modeling historical data can produce a unique identifier that includes a date. True or False?"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "When you add the concept of time to your data model, your model becomes more complex. True or False?"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "If you have an entity with a DATE attribute, in addition to other attributes that track date characteristics, you should create a DAY entity. True or False?"
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "There are no circumstances where you would create a DAY entity. True or False?"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "Email current prices to all employees whenever a price changes.",
+      "Update the prices in the system, print out the current prices when they change, and pin them on the company noticeboard.",
+      "Allow them to enter whatever delivery charge they want.",
+      "Use a Delivery Day entity, which holds prices against week days, and ensure the we also have an attribute for the Requested Delivery Day in the Order Entity."
+    ],
+    "correct": 3,
+    "question": "You are doing a data model for a computer sales company where the price of postage depends upon the day of the week that goods are shipped. So shipping is more expensive if the customer wants a delivery to take place on a Saturday or Sunday. What would be the best way to model this?"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "The Government of your country might want to be notified of this transaction.",
+      "You would not want to model this; it is not important.",
+      "The price of gold fluctuates and, to determine the current price, you need to know the time of purchase.",
+      "Sales people must determine where the gold is coming from."
+    ],
+    "correct": 2,
+    "question": "Why would you want to model a time component when designing a system that lets people buy bars of gold?"
+  },
+  {
+    "source_num": 5,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "All systems must have an entity called WEEK with a holiday attribute, so you know when to give your employees a holiday. True or False?"
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "If you have an entity that a DATE attribute, and other attributes that track characteristics of the date, you should create a DAY entity. True or False?"
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "In an ERD, High Volume Entities usually have very few relationships to other entities. True or False?"
+  },
+  {
+    "source_num": 1,
+    "options": [
+      "A. Create a product entity and a related price entity with start and end dates, and then let the users enter the new price whenever required.",
+      "B. Create a new item and a new price every day.",
+      "C. Use a price entity with a start and end date",
+      "D. Allow them to delete the item and enter a new one.",
+      "E. Both A and C"
+    ],
+    "correct": 4,
+    "question": "You are doing a data model for a computer sales company where the price fluctuates on a regular basis. If you want to allow the company to modify the price and keep track of the changes, what is the best way to model this?"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "(Choose all correct answers)",
+      "Crossing relationship lines help the readability of the diagram.",
+      "Crows feet (the many-ends of relationships) should consistently point the same direction where possible, either South & East or North & West",
+      "Relationship lines should not cross.",
+      "It does not matter which way the crows feet (many ends of a relationship) point."
+    ],
+    "correct": 2,
+    "question": "Which of the following statements are true to enhance the readability of ERDs? (Choose Two)"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "All systems must have an entity called WEEK with a holiday attribute so that you know when to give employees a holiday. True or False?"
+  },
+  {
+    "source_num": 1,
+    "options": [
+      "(Choose all correct answers)",
+      "Make all relationships mandatory",
+      "Make all relationships optional",
+      "Create an additional check constraint to verify that one foreign key is populated and the others are not",
+      "All the above"
+    ],
+    "correct": 2,
+    "question": "When translating an arc relationship to a physical design, you must turn the arc relationships into foreign keys. What additional step must you take with the created foreign keys to ensure the exclusivity principle of arc relationships? (Assume that you are implementing an Exclusive Design) (Choose Two)"
+  },
+  {
+    "source_num": 2,
+    "options": [
+      "The common access paths for the supertypes are different.",
+      "The resulting table will reside in a single database and be used by just ONE user.",
+      "Business functionality, business rules, access paths, and frequency of access are all very different between the subtypes.",
+      "Most of the relationships are at the supertype level."
+    ],
+    "correct": 2,
+    "question": "Which of the following is a valid reason for considering a Subtype Implementation?"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "When mapping supertypes, relationships at the supertype level transform as usual. Relationships at subtype level are implemented as foreign keys, but the foreign key columns all become mandatory. True or False?"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "Table names must begin with an alphabetic character.",
+      "It is too long.",
+      "The Plus sign + is not allowed in object names.",
+      "None of the above."
+    ],
+    "correct": 2,
+    "question": "Why would this table name NOT work in an Oracle database? this_year_end+next_year"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "Constraint",
+      "Table",
+      "Foreign Key",
+      "Column"
+    ],
+    "correct": 3,
+    "question": "In a physical data model, an attribute becomes a _____________."
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "Unique key constraints",
+      "Intersection entity",
+      "Intersection table",
+      "Two tables with Foreign key constraints between them"
+    ],
+    "correct": 2,
+    "question": "To resolve a many to many relationship in a physical model you create a(n) ___________________?"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "The Oracle Database can implement a many to many relationship. You simply create two foreign keys between the two tables. True or False?"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "(Choose all correct answers)",
+      "Only one column that must be null.",
+      "A single column that uniquely identifies each column in a table.",
+      "One or more columns in a table that uniquely identifies each row in that table.",
+      "A set of columns in one table that uniquely identifies each row in another table."
+    ],
+    "correct": 1,
+    "question": "Identify all of the incorrect statements that complete this sentence: A primary key is...(Choose three)"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "(Choose all correct answers)",
+      "Only one column that cannot be null",
+      "A set of columns and keys in a single table that uniquely identifies each row in a single table",
+      "A single column that uniquely identifies each row in a table",
+      "A set of columns that uniquely identifies each row in a table"
+    ],
+    "correct": 2,
+    "question": "Identify all of the correct statements that complete this sentence: A primary key is: (Choose Three)"
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "Constraint",
+      "Table",
+      "Physical",
+      "Conceptual"
+    ],
+    "correct": 3,
+    "question": "The Physical model is created by transforming which of the following models?"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "Attributes become columns in a database table. True or False?"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "An Arc is transformed to the physical model by adding a foeign Key for every relationship in the Arc. True or False?"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "One-to-One relationships are transformed into Foreign Keys in the tables created at either end of that relationship. True or False?"
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "Foreign keys must be null. True or False?"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "A foreign key always refers to a primary key in the same table. True or False?"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "question": "A table does not have to have a primary key. True or False?"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "An \"Arc Implementation\" can be done just like any other Relationship - you simply add the required Foreign Keys. True or False?"
+  },
+  {
+    "source_num": 5,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "question": "A table must have a primary key. True or False?"
+  },
+  {
+    "source_num": 8,
+    "options": [
+      "Intersection Entity",
+      "Intersection Table",
+      "Subtype",
+      "Supertype"
+    ],
+    "correct": 1,
+    "question": "In a physical model, many to many relationships are resolved via a structure called a(n): ________________"
+  }
+]

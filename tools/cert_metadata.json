@@ -1,0 +1,330 @@
+{
+  "html": {
+    "id": "html",
+    "category": "web",
+    "categoryName": "Webové aplikace",
+    "title": "Cisco Networking Academy: HTML Essentials",
+    "subtitle": "Příprava na certifikaci WDE™ (Certified Entry-Level Web Developer)",
+    "badge": "HTML Essentials",
+    "icon": "fab fa-html5",
+    "color": "#E44D26",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "html_m1",
+        "name": "Modul 1: Úvod do HTML a struktura dokumentu"
+      },
+      {
+        "id": "html_m2",
+        "name": "Modul 2: Formátování textu a struktura obsahu"
+      },
+      {
+        "id": "html_m3",
+        "name": "Modul 3: Odkazy, obrázky a multimédia"
+      },
+      {
+        "id": "html_m4",
+        "name": "Modul 4: Tabulky a formuláře"
+      },
+      {
+        "id": "html_m5",
+        "name": "Modul 5: Sémantické elementy a osvědčené postupy"
+      }
+    ]
+  },
+  "css": {
+    "id": "css",
+    "category": "web",
+    "categoryName": "Webové aplikace",
+    "title": "Cisco Networking Academy: CSS Essentials",
+    "subtitle": "Příprava na certifikaci WDA™ (Certified Associate Web Developer)",
+    "badge": "CSS Essentials",
+    "icon": "fab fa-css3-alt",
+    "color": "#264DE4",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "css_m1",
+        "name": "Modul 1: Úvod do CSS a syntaxe"
+      },
+      {
+        "id": "css_m2",
+        "name": "Modul 2: Selektory, kaskáda a specificita"
+      },
+      {
+        "id": "css_m3",
+        "name": "Modul 3: Box Model, rozměry a typografie"
+      },
+      {
+        "id": "css_m4",
+        "name": "Modul 4: Pozicování a layouty"
+      },
+      {
+        "id": "css_m5",
+        "name": "Modul 5: Moderní layouty (Flexbox, Grid) a responzivita"
+      }
+    ]
+  },
+  "js": {
+    "id": "js",
+    "category": "web",
+    "categoryName": "Webové aplikace",
+    "title": "Cisco Networking Academy: JavaScript Essentials 1",
+    "subtitle": "Příprava na certifikaci JSE – Certified Entry-Level JavaScript Programmer (JSE-40-01)",
+    "badge": "JavaScript Essentials 1",
+    "icon": "fab fa-js-square",
+    "color": "#F7DF1E",
+    "passScore": 70,
+    "timeLimit": 40,
+    "modules": [
+      {
+        "id": "js_m1",
+        "name": "Blok 1: Úvod do JavaScriptu a prostředí"
+      },
+      {
+        "id": "js_m2",
+        "name": "Blok 2: Proměnné, datové typy a přetypování"
+      },
+      {
+        "id": "js_m3",
+        "name": "Blok 3: Operátory a interakce s uživatelem"
+      },
+      {
+        "id": "js_m4",
+        "name": "Blok 4: Složené typy (Objekty a pole)"
+      },
+      {
+        "id": "js_m5",
+        "name": "Blok 5: Řízení toku (Podmínky a cykly)"
+      },
+      {
+        "id": "js_m6",
+        "name": "Blok 6: Funkce, výjimky a ladění"
+      }
+    ]
+  },
+  "oracle_dd": {
+    "id": "oracle_dd",
+    "category": "db",
+    "categoryName": "Databázové systémy",
+    "title": "Oracle Academy: Database Design",
+    "subtitle": "Příprava na certifikační zkoušku Oracle Academy Database Design",
+    "badge": "Oracle Database Design",
+    "icon": "fas fa-project-diagram",
+    "color": "#F80000",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "dd_m1",
+        "name": "Sekce 1 & 2: Úvod do databází, podnikové potřeby a analýza"
+      },
+      {
+        "id": "dd_m2",
+        "name": "Sekce 3 & 4: Entity, atributy a vztahy (ERD)"
+      },
+      {
+        "id": "dd_m3",
+        "name": "Sekce 5: Subtypy, supertypy a pokročilé vztahy"
+      },
+      {
+        "id": "dd_m4",
+        "name": "Sekce 6 & 7: Normalizace (1NF, 2NF, 3NF) a integritní pravidla"
+      },
+      {
+        "id": "dd_m5",
+        "name": "Sekce 8 & 9: Fyzický model, mapování na tabulky a integrita dat"
+      }
+    ]
+  },
+  "oracle_sql": {
+    "id": "oracle_sql",
+    "category": "db",
+    "categoryName": "Databázové systémy",
+    "title": "Oracle Academy: Database Programming with SQL",
+    "subtitle": "Příprava na certifikační zkoušku Oracle Academy Database Programming with SQL",
+    "badge": "Oracle SQL Programming",
+    "icon": "fas fa-database",
+    "color": "#C74634",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "sql_m1",
+        "name": "Sekce 1 & 2: Základní dotazy SELECT, operátory a řazení (WHERE, ORDER BY)"
+      },
+      {
+        "id": "sql_m2",
+        "name": "Sekce 3 & 4: Jednořádkové funkce (Znakové, Číselné, Datové a Konverzní)"
+      },
+      {
+        "id": "sql_m3",
+        "name": "Sekce 5 & 6: Agregační funkce a seskupování (GROUP BY, HAVING)"
+      },
+      {
+        "id": "sql_m4",
+        "name": "Sekce 7 & 8: Spojování tabulek (ANSI JOINs, INNER, OUTER, CROSS)"
+      },
+      {
+        "id": "sql_m5",
+        "name": "Sekce 9 & 10: Poddotazy (Subqueries) a množinové operátory"
+      },
+      {
+        "id": "sql_m6",
+        "name": "Sekce 11 & 12: DDL, DML, řízení transakcí a integritní omezení"
+      }
+    ]
+  },
+  "python": {
+    "id": "python",
+    "category": "software",
+    "categoryName": "Programové vybavení",
+    "title": "Cisco Networking Academy: Python Essentials 1",
+    "subtitle": "Příprava na certifikaci PCEP-30-02 (Certified Entry-Level Python Programmer)",
+    "badge": "Python Essentials 1",
+    "icon": "fab fa-python",
+    "color": "#3776AB",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "py_m1",
+        "name": "PE1-M1: Úvod do programování & Základní syntaxe"
+      },
+      {
+        "id": "py_m2",
+        "name": "PE1-M2: Datové typy, Operátory & Vstup/Výstup"
+      },
+      {
+        "id": "py_m3",
+        "name": "PE1-M3: Řízení toku, Cykly & Seznamy (Lists)"
+      },
+      {
+        "id": "py_m4",
+        "name": "PE1-M4: Funkce, N-tice (Tuples), Slovníky & Výjimky"
+      }
+    ]
+  },
+  "js2": {
+    "id": "js2",
+    "category": "web",
+    "categoryName": "Webové aplikace",
+    "title": "Cisco Networking Academy: JavaScript Essentials 2",
+    "subtitle": "Příprava na certifikaci JSA – Certified Associate JavaScript Programmer",
+    "badge": "JavaScript Essentials 2",
+    "icon": "fab fa-js",
+    "color": "#E5A91E",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "js2_m1",
+        "name": "JSE2-M1: Bezřídové objekty & Prototypy (Classless Objects)"
+      },
+      {
+        "id": "js2_m2",
+        "name": "JSE2-M2: Třídy & Objektově orientovaný přístup (Classes & OOP)"
+      },
+      {
+        "id": "js2_m3",
+        "name": "JSE2-M3: Vestavěné objekty & Datové struktury (Built-In Objects)"
+      },
+      {
+        "id": "js2_m4",
+        "name": "JSE2-M4: Pokročilé funkce & Asynchronní programování"
+      }
+    ]
+  },
+  "linux": {
+    "id": "linux",
+    "category": "systems",
+    "categoryName": "Počítačové systémy a sítě",
+    "title": "Cisco Networking Academy: NDG Linux Essentials",
+    "subtitle": "Příprava na certifikaci LPI Linux Essentials (010-160) & NDG Linux",
+    "badge": "NDG Linux Essentials",
+    "icon": "fab fa-linux",
+    "color": "#EAA01A",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "linux_m1",
+        "name": "LE-M1: Úvod do Linuxu, Open Source & Licence"
+      },
+      {
+        "id": "linux_m2",
+        "name": "LE-M2: Souborový systém, Práce se soubory & Cesty"
+      },
+      {
+        "id": "linux_m3",
+        "name": "LE-M3: Příkazový řádek, Přesměrování & Vyhledávání (Grep)"
+      },
+      {
+        "id": "linux_m4",
+        "name": "LE-M4: Uživatelé, Oprávnění (chmod) & Správa systému"
+      }
+    ]
+  },
+  "ccna_srwe": {
+    "id": "ccna_srwe",
+    "category": "systems",
+    "categoryName": "Počítačové systémy a sítě",
+    "title": "Cisco NetAcad CCNA: Switching, Routing, and Wireless Essentials",
+    "subtitle": "Příprava na certifikaci CCNA 200-301 (Kurz CCNAv7 SRWE)",
+    "badge": "CCNA: SRWE",
+    "icon": "fas fa-network-wired",
+    "color": "#00BCEB",
+    "passScore": 70,
+    "timeLimit": 45,
+    "modules": [
+      {
+        "id": "srwe_m1",
+        "name": "SRWE-M1: Přepínání, VLANy & Inter-VLAN směrování"
+      },
+      {
+        "id": "srwe_m2",
+        "name": "SRWE-M2: Spanning Tree Protocol (STP & RSTP)"
+      },
+      {
+        "id": "srwe_m3",
+        "name": "SRWE-M3: EtherChannel, DHCPv4, SLAAC & Zabezpečení LAN"
+      },
+      {
+        "id": "srwe_m4",
+        "name": "SRWE-M4: Bezdrátové sítě (WLAN, WLC) & Statické směrování"
+      }
+    ]
+  },
+  "ccna_itn": {
+    "id": "ccna_itn",
+    "category": "systems",
+    "categoryName": "Počítačové systémy a sítě",
+    "title": "Cisco Networking Academy: CCNA: Introduction to Networks (ITN)",
+    "subtitle": "Příprava na certifikaci CCNA v7 ITN (Modul 1) / CCNA 200-301",
+    "badge": "CCNA: ITN",
+    "icon": "fas fa-ethernet",
+    "color": "#049FD9",
+    "passScore": 70,
+    "timeLimit": 60,
+    "modules": [
+      {
+        "id": "itn_m1",
+        "name": "ITN-M1: Základy sítí, Modely OSI / TCP-IP & Cisco IOS"
+      },
+      {
+        "id": "itn_m2",
+        "name": "ITN-M2: Fyzická vrstva, Ethernet & Linková vrstva (L2)"
+      },
+      {
+        "id": "itn_m3",
+        "name": "ITN-M3: Síťová vrstva, IPv4 adresace & Subnetting"
+      },
+      {
+        "id": "itn_m4",
+        "name": "ITN-M4: IPv6, Transportní vrstva (TCP/UDP) & Aplikační služby"
+      }
+    ]
+  }
+}

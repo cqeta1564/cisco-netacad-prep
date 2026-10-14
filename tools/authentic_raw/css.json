@@ -1,0 +1,1874 @@
+[
+  {
+    "question": "Which class is used to create a responsive navbar in Bootstrap 5?",
+    "options": [
+      ".navbar-expand",
+      ".navbar-fixed",
+      ".navbar-responsive",
+      ".navbar-container"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How does Bootstrap’s responsive embed utilities help with embedding media?",
+    "options": [
+      "It maintains a fixed aspect ratio for the media and resizes it with the content.",
+      "It resizes the media to fit within any container.",
+      "It automatically adjusts the media’s aspect ratio to fit the screen size.",
+      "It centers the media on the page."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which Bootstrap 5 class will make an element visible only on large devices and larger?",
+    "options": [
+      "d-none d-lg-block",
+      "d-block d-lg-none",
+      "d-none d-md-block",
+      "d-none d-xl-block"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you include Bootstrap in your project?",
+    "options": [
+      "By including a link to the Bootstrap CDN for the CSS and JavaScript files in your HTML.",
+      "By only downloading the Bootstrap files and linking the CSS and JavaScript files in your HTML.",
+      "By linking to the Bootstrap CSS file and downloading the JavaScript file separately.",
+      "By both downloading the files and using a CDN in your HTML."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which class is used to make an element hidden in Bootstrap 5?",
+    "options": [
+      ".d-none",
+      ".hidden",
+      ".invisible",
+      ".hide"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which Bootstrap class adds a margin to the top side of an element?",
+    "options": [
+      "mt-",
+      "mb-",
+      "m-top-",
+      "mtop-"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Select the correct Bootstrap class to make the following button have a primary color.",
+    "options": [
+      "Click me",
+      "Click me",
+      "Click me",
+      "Click me"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is a key benefit of using a CSS preprocessor like Sass or Less?",
+    "options": [
+      "It allows you to use features like variables, mixins, and nested rules to make your code more maintainable and efficient.",
+      "It allows you to write CSS in a more readable, unstructured way.",
+      "It eliminates the need for variables or mixins.",
+      "It directly compiles CSS into HTML."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you define a variable in Less?",
+    "options": [
+      "$primary-color: #333;",
+      "@primary-color: #333;",
+      "var primary-color = #333;",
+      "--primary-color: #333;"
+    ],
+    "correct": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule will cause grid items to be placed in rows by default, controlling the automatic flow of items and filling each row before moving to the next?",
+    "options": [
+      ".container { display: grid; grid-auto-flow: row; }",
+      ".container { display: grid; grid-auto-flow: column; }",
+      ".container { display: grid; grid-auto-rows: auto; }",
+      ".container { display: grid; grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule aligns flex items along the cross axis (perpendicular to the main axis)?",
+    "options": [
+      ".container { display: flex; align-items: center; }",
+      ".container { display: flex; justify-content: space-between; }",
+      ".container { inline-block: flex; justify-content: center; }",
+      ".container { display: flex; align-content: space-around; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the Flex layout justify-content property do?",
+    "options": [
+      "It aligns flex items along the main axis of the container.",
+      "It aligns flex items along the cross axis (perpendicular to the main axis).",
+      "It defines the direction in which the flex items are laid out in the container.",
+      "It allows flex items to wrap onto multiple lines, from top to bottom."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which values of the grid-template-columns allows you to create three columns with ratio 1:2:1?",
+    "options": [
+      "grid-template-columns: 1fr 2fr 1fr;",
+      "grid-template-columns: 1 2 1;",
+      "grid-template-columns: 100% 200% 100%;",
+      "grid-template-columns: repeat(3, 100px);"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule will allow flex items to wrap onto multiple lines within a flex container?",
+    "options": [
+      ".container { display: flex; flex-wrap: wrap; }",
+      ".container { display: flex; flex-direction: column; }",
+      ".container { display: flex; align-content: stretch; }",
+      ".container { display: flex; align-content: wrap; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you nest CSS selectors in Sass?",
+    "options": [
+      "nav { ul { margin: 0; padding: 0; list-style: none; } }",
+      "nav > ul { margin: 0; padding: 0; list-style: none; }",
+      "nav ul { margin: 0; padding: 0; list-style: none; }",
+      "nav: { ul: { margin: 0; padding: 0; list-style: none; } }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the transition-timing-function property used for?",
+    "options": [
+      "It describes how the intermediate values of the transition are calculated, influencing the acceleration and the overall feel of the transition.",
+      "It specifies the duration over which the transition occurs.",
+      "It defines the waiting time before the transition effect starts.",
+      "It specifies the name of the CSS property to which the transition effect is applied."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule will apply a transition effect to change the background color of an element over 0.5 seconds when hovered?",
+    "options": [
+      ".element { transition: background-color 0.5s; } .element:hover { background-color: blue; }",
+      ".element { transition: color 0.5s; } .element:hover { background-color: blue; }",
+      ".element { transition: background-color; } .element:hover { background-color: blue; }",
+      ".element { transition: background-color; } .element { background-color: blue; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS property is used to trigger an animation on an element?",
+    "options": [
+      "animation-name",
+      "animation-play",
+      "animation-effect",
+      "animation-trigger"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Why is it recommended to avoid using inline styles in CSS?",
+    "options": [
+      "Inline styles make it difficult to maintain and update styles across multiple elements.",
+      "Inline styles are not supported by all browsers.",
+      "Inline styles are automatically overridden by external stylesheets.",
+      "Inline styles are limited to defining font sizes only."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which practice enhances the maintainability of your CSS code?",
+    "options": [
+      "Organize CSS into modular components.",
+      "Write all CSS rules in a single large file.",
+      "Use IDs for all styling.",
+      "Use !important frequently to override styles."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following techniques helps ensure that content is accessible to screen readers while being hidden visually?",
+    "options": [
+      "Using CSS to move content off-screen with a class like .screen-reader-text .",
+      "Using the display: none; property in CSS.",
+      "Using the visibility: hidden; property in CSS.",
+      "Using JavaScript to dynamically remove the element from the DOM."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the primary purpose of compiling preprocessor code (e.g., Sass or Less)?",
+    "options": [
+      "To convert preprocessor code into regular CSS that browsers can understand.",
+      "To make the code executable in a browser without any changes.",
+      "To improve the speed of loading the CSS file in the browser.",
+      "To convert the code into HTML tags."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is a key goal of web accessibility?",
+    "options": [
+      "To ensure content is understandable and usable for as many people as possible, including those with disabilities.",
+      "To make websites usable only for people without disabilities.",
+      "To limit website design to only a few colors and fonts for simplicity.",
+      "To create websites that can be used only with a mouse and keyboard."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is a key legal requirement related to web accessibility in many regions?",
+    "options": [
+      "Websites should be accessible to individuals with disabilities to comply with laws like the ADA and WCAG guidelines.",
+      "Websites must be visually attractive to comply with the law.",
+      "Websites must include video content to meet legal standards.",
+      "Websites should only be accessible on desktop devices."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Why is using rem units for font sizes considered a good practice for web accessibility?",
+    "options": [
+      "Because rem units provide scalability, respect user preferences, and ensure consistency across your website.",
+      "Because rem units are smaller than px units.",
+      "Because rem units are easier to write than em units.",
+      "Because rem units are only used for setting margins and paddings."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule will wrap text around an image by floating the image to the left?",
+    "options": [
+      "img { float: left; margin: 0 10px 10px 0; }",
+      "img { float: right; margin: 0 0 10px 10px; }",
+      "img { text-align: float; padding: 10px; }",
+      "img { display: float; block; margin: 10px; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is a recommended naming convention for CSS class names to improve readability and maintainability?",
+    "options": [
+      "Use BEM (Block Element Modifier) naming convention.",
+      "Use single-letter class names.",
+      "Use class names with mixed upper and lower case letters.",
+      "Use random strings for class names."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following practices helps improve CSS performance?",
+    "options": [
+      "Minimize the use of universal selectors.",
+      "Use inline styles for all elements.",
+      "Load all CSS files synchronously.",
+      "Use very specific selectors for all elements."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is the best practice for creating responsive designs in CSS?",
+    "options": [
+      "Use CSS Grid and Flexbox for layout.",
+      "Use fixed pixel widths for all elements.",
+      "Use table-based layouts.",
+      "Use only media queries with fixed breakpoints."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the CSS Selector definitions is correct?",
+    "options": [
+      "It specifies which HTML elements the rule will apply to.",
+      "It defines the aspect you want to style, such as color, font-size, margin, padding, background, etc.",
+      "It determines the styling details.",
+      "It’s a set of property-value pairs enclosed in curly braces {}."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the correct way of combining the CSS selectors?",
+    "options": [
+      "selector1, selector2 { property: value; }",
+      "selector1 selector2 { property: value; }",
+      "selector1 & selector2 { property: value; }",
+      "selector1 + selector2 { property: value; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "To style elements with the class highlight only when they are hovered over, which selector would you use?",
+    "options": [
+      ".highlight:hover",
+      ".highlight:focus",
+      "#highlight:hover",
+      ".highlight::hover"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the best approach to make the layout adapt to different screen sizes?",
+    "options": [
+      "Using media queries to ensure the layout adapts to different screen sizes.",
+      "Using the overflow: scroll; property to allow the user to scroll the content of the website regardless of the screen resolution.",
+      "Creating different versions of the website for different devices, so they are displayed correctly on every screen.",
+      "No action is needed—the layout will adapt to any screen size by default."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which property allows you to add a scrollbar to the container, allowing the user to scroll vertically and horizontally to view the entire content of the .content div, even though it overflows the container’s boundaries?",
+    "options": [
+      "overflow: scroll;",
+      "text-align: scrollable;",
+      "scroll: auto;",
+      "overflow: auto;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rules you will use to hide an element if you want an element to disappear entirely from the page layout?",
+    "options": [
+      "display: none;",
+      "display: hidden;",
+      "visibility: hidden;",
+      "visibility: none;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule will style a table with a border, set the spacing between table cells to 0, and apply a background color to alternating rows?",
+    "options": [
+      "table { border: 1px solid black; border-collapse: collapse; } table tr:nth-child(even) { background-color: #f2f2f2; }",
+      "table { border: 1px solid black; border-spacing: 0; } table tr:nth-child(odd) { background-color: #f2f2f2; }",
+      "table { border: 1px dashed black; border-collapse: separate; } table tr:hover { background-color: #f2f2f2; }",
+      "table { border: 1px solid black; border-spacing: 5px; } table tr:nth-child(odd) { background-color: #f2f2f2; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the primary purpose of using fieldset and legend elements in an HTML form?",
+    "options": [
+      "The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset .",
+      "The fieldset element is used to style form controls and the legend element is used to add tooltips to the controls.",
+      "The fieldset element is used to create a container for input fields and the legend element is used to submit the form.",
+      "The fieldset element is used to add spacing between form controls and the legend element is used to add a label to each control."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which sentence describes the fixed layout?",
+    "options": [
+      "It has a set width (usually measured in pixels) and does not change size based on the browser window.",
+      "It stretches and contracts with the browser window, filling the available space.",
+      "It scales depending on the user’s font size settings, making the layout accessible.",
+      "It often incorporates media queries to change styles based on different device characteristics, leading to a responsive design."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What values can the clear property take?",
+    "options": [
+      "none, left, right, both",
+      "yes, no",
+      "first, second, third",
+      "all, none"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which media query will apply styles specifically for devices in landscape orientation?",
+    "options": [
+      "@media (orientation: landscape) { ... }",
+      "@media (orientation: portrait) { ... }",
+      "@media (position: landscape) { ... }",
+      "@media (screen: landscape) { ... }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rules will create a simple two-column grid layout using floats?",
+    "options": [
+      ".container { width: 100%; overflow: hidden; } .column { float: left; width: 50%; }",
+      ".container { display: grid; grid-template-columns: 1fr 1fr; } .column { float: left; }",
+      ".float-container { width: 100%; display: flex; } .column { flex: 1; }",
+      ".float-container { width: 100%; display: block; } .column { display: inline-block; width: 50%; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following CSS rules ensures that an image inside a hyperlink appears without an underline, has no border, and scales properly within the link?",
+    "options": [
+      "a img { border: 0; display: block; max-width: 100%; text-decoration: none; }",
+      "a img { text-decoration: none; width: auto; }",
+      "a { border: 0; max-width: 100%; text-decoration: none; img('image.png') }",
+      "a img('image.png') { border: none; display: inline; max-width: 100%; underline: none; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Consider the following CSS rules and HTML. What will be the color of the element with the ID element ?",
+    "options": [
+      "Green",
+      "Yellow",
+      "Orange",
+      "Either a random color or an error will occur"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the correct way of setting the div background color to blue and its text color to white?",
+    "options": [
+      "div { background: blue; color: white; }",
+      "div { background-color: blue; text-color: white; }",
+      "div { background: blue; text: white; }",
+      "div { background: blue; font-color: white; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the correct way of setting the preferred font for text elements?",
+    "options": [
+      "p { font-family: \"Roboto\", Arial, sans-serif; }",
+      "p { font: Arial; }",
+      "p { font-family: \"Roboto\", 16px, bold; }",
+      "p { font: \"Roboto\", Arial, sans-serif; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following CSS rules sets the font size to 16px, font weight to bold, and font style to italic for a paragraph element?",
+    "options": [
+      "p { font-size: 16px; font-weight: bold; font-style: italic; }",
+      "p { font: 16px bold italic; }",
+      "p { font-style: bold italic 16px; }",
+      "p { font: 16px; font-weight: italic; font-style: bold; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS rule combines properties to set the text color to blue, center-align the text, set the font family to Arial, and add a line height of 1.5?",
+    "options": [
+      "p { color: blue; text-align: center; font-family: Arial, sans-serif; line-height: 1.5; }",
+      "p { color: blue; align-text: center; font-family: Arial, sans-serif; line-height: 1.5; }",
+      "p { text-color: blue; text-align: middle; font-family: Arial, sans-serif; line-spacing: 1.5; }",
+      "p { color: blue; text-align: center; font-family: Arial, serif; height: 1.5; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the primary difference between the CSS properties margin and padding ?",
+    "options": [
+      "margin creates space outside the element’s border, while padding creates space between the element’s content and its border.",
+      "margin creates space between the element’s content and its border, while padding creates space outside the element’s border.",
+      "margin and padding both create space outside the element’s border.",
+      "margin and padding both create space between the element’s content and its border."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Measuring by the visible pink border, how wide is the .box element in the following scenario, assuming no other CSS has been applied?",
+    "options": [
+      "244px",
+      "240px",
+      "200px",
+      "0px"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the following CSS rule do?",
+    "options": [
+      "It sets the text color of all elements to red.",
+      "It sets the background color of all elements to red.",
+      "It sets the border color of all elements to red.",
+      "It sets the text color of all elements inside elements to red. The color property in CSS specifically sets the text color of an element. In this case, the rule targets all elements and changes their text color to red. It does not affect the background, border, or child elements inside the elements unless they inherit the text color explicitly."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "In the CSS cascade, which of the following has the lowest precedence?",
+    "options": [
+      "Element selectors",
+      "Inline styles",
+      "ID selectors",
+      "Class selectors",
+      "In the CSS cascade, precedence is determined by specificity. From lowest to highestprecedence: Element selectors (e.g., p, h1) have the lowest specificity",
+      "Class selectors (e.g., .class) have higher specificity",
+      "ID selectors (e.g., #id) have even higher specificity.",
+      "Inline styles (e.g., style=”color: red;”) have the highest precedence among these options."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following has the highest specificity?",
+    "options": [
+      "ID selectors",
+      "Class selectors",
+      "Attribute selectors",
+      "Element selectors",
+      "Specificity determines which CSS rule is applied when there are conflicting styles. The specificity hierarchy is as follows (from highest to lowest): Inline styles (e.g., style=”color: red;”)",
+      "ID selectors (e.g., #id)",
+      "Class selectors, pseudo-classes, and attribute selectors (e.g., .class,[type=”text”], :hover)",
+      "Element selectors and pseudo-elements (e.g., p, ::before)"
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What will be the font size of the text “Hello World”?",
+    "options": [
+      "20 pixels",
+      "16 pixels",
+      "18 pixels",
+      "24 pixels",
+      "In the provided CSS: The .parent class sets the font size to 16px, but this applies only to the parent element.",
+      "The p selector explicitly sets the font size to 20px for all elements, overriding the inherited value from .parent ."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What effect does the !important declaration have in CSS?",
+    "options": [
+      "It overrides all other styles regardless of specificity",
+      "It increases the specificity of the selector",
+      "It applies the style only if no other rules apply",
+      "It disables the style rule",
+      "The ! important declaration in CSS is a way to ensure that a specific ruletakesprecedence over all other conflicting rules, regardless of the normal specificity hierarchy. When a rule is marked with ! important, it will be applied even if there are other rules that would normally have higher specificity."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "When is it appropriate to use the !important declaration?",
+    "options": [
+      "Sparingly, as a last resort to override user-agent or third-party styles",
+      "Whenever you want to ensure a style is applied",
+      "To replace inline styles",
+      "As the first choice for all critical styles",
+      "The !important declaration should be used sparingly and only as a last resort to overridespecific styles from user-agent stylesheets or third-party libraries when no other method works, as it can make debugging and maintaining CSS more difficult."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What does the pseudo-class selector :focus target in the given code?",
+    "options": [
+      "The element when it receives keyboard or mouse input focus",
+      "The element when the user hovers over it",
+      "The element when it is clicked",
+      "The element when it is active",
+      "The :focus pseudo-class targets an element when it gains focus, typically via keyboard navigation (e.g., when the user tabs to a link) or when it is clicked or selected with a mouse. In this case, the a:focus { color: blue; } rule changes the text color of the element to blue when it is focused, either by clicking or through keyboard input (e.g., tabbing to the link)."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the purpose of CSS comments?",
+    "options": [
+      "To provide",
+      "To provide additional information for the visitor of the page",
+      "To include visible annotations for users inspecting the page with browser tools",
+      "To add inline styles directly within the CSS file",
+      "CSS comments are used to add notes or"
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the order of specificity from highest to lowest?",
+    "options": [
+      "ID selectors, class selectors, element selectors",
+      "Class selectors, ID selectors, element selectors",
+      "Element selectors, class selectors, ID selectors",
+      "Class selectors, element selectors, ID selectors",
+      "The text-align: center rule horizontally centers inline content inside a , and overflow: hidden ensures that any content exceeding the dimensions of the is hidden. Other options either use incorrect property names or invalid values."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS property is typically inherited by child elements?",
+    "options": [
+      "font-size",
+      "width",
+      "margin",
+      "padding",
+      "Properties related to text, such as font-size, font-family, and color, are typically inherited by child elements, whereas box model properties like width, margin, and padding are not."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What does the adjacent sibling combinator ( + ) in CSS do?",
+    "options": [
+      "It targets the element that immediately follows a element.",
+      "It targets all elements within elements, including nested ones.",
+      "It targets the first element within each element.",
+      "It targets all elements preceding elements.",
+      "The adjacent sibling combinator (+) selects an element that is directly next to a specified element at the same level in the DOM hierarchy."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What does the RGB color model represent in CSS?",
+    "options": [
+      "Red, Green, Blue",
+      "Red, Gold, Black",
+      "Red, Green, Brown",
+      "Red, Gray, Blue The RGB color model in CSS stands for Red, Green, and Blue, which are combined in varying intensities to create a wide range of colors."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What does the HEX color code #00FF00 represent?",
+    "options": [
+      "Green",
+      "Red",
+      "Blue",
+      "Yellow",
+      "In the HEX color code #00FF00 , the Red (00) and Blue (00) components are absent, while the Green (FF) component is at its maximum value, resulting in a pure green color."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "You want to set a background color to an element, but only if it does not already have a background image applied. Which CSS rule would accomplish this? (Choose two.)",
+    "options": [
+      "element { background-color: lightblue; }",
+      "element { background: lightblue; }",
+      "element { background: lightblue url('image.jpg'); }",
+      "element { background: url('image.jpg') no-repeat; }",
+      "Both answers { background-color: lightblue; } and element { background: lightblue; }. background-color property is used to set the background color of the element, and background property is a shorthand for background-color and more."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following is a valid CSS gradient function?",
+    "options": [
+      "linear-gradient()",
+      "circular-gradient()",
+      "rectangular-gradient()",
+      "diagonal-gradient()",
+      "linear-gradient() is a valid CSS function used to create gradients along a straight line, while the other options (circular-gradient, rectangular-gradient, and diagonal-gradient) do not exist in CSS."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following CSS properties can influence the total width and height of an element?",
+    "options": [
+      "padding , border , and margin",
+      "font-size , font-weight , and line-height",
+      "background-color , background-image , and background-position",
+      "text-align , text-decoration , and text-transform",
+      "The padding and border directly add to the total width and height of an element, while margin affects the space around the element, influencing its layout in the document flow."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What will be the visual effect of the border on the element?",
+    "options": [
+      "The element will have a 2px solid red border on the top and left sides only.",
+      "The element will have a 2px solid red border on all sides.",
+      "The element will have a 2px solid red border on the left side only.",
+      "The element will have a 2px solid red border on the top side only.",
+      "The border-width property specifies widths in the order: top, right, bottom, left. Here, 2px 0 0 2px sets the top and left borders to 2px, while the right and bottom borders are set to 0 (no border)."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following CSS rules correctly creates a radial gradient that transitions from red at the center to blue at the edges?",
+    "options": [
+      "background: radial-gradient(circle, red, blue);",
+      "background: linear-gradient(circle, red, blue);",
+      "background: radial-gradient(linear, red, blue);",
+      "background: linear-gradient(radial, red, blue);",
+      "This CSS rule creates a radial gradient, starting with red at the center and transitioning to blue at the edges. The circle keyword defines the shape of the gradient’s spread."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What will be the visual effect on the link?",
+    "options": [
+      "The visited link text color will change to purple and will be underlined",
+      "The visited link text color will change to purple and the underline will be removed.",
+      "The unvisited link text color will change to purple and will be underlined.",
+      "The active link text color will change to purple and the underline will be removed.",
+      "The a:visited pseudo-class targets links that the user has previously visited. The specified CSS rule changes the text color to purple and applies an underline to these links."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What effect does this rule have?",
+    "options": [
+      "It applies a 2px solid red outline to an element when it receives focus via keyboard navigation or mouse click.",
+      "It applies a 2px solid red outline to an element when the user hovers over it.",
+      "It applies a 2px solid red outline to an element when it is clicked.",
+      "It applies a 2px solid red outline to an element when it is visited.",
+      "The :focus pseudo-class is used to style an element when it has focus, which typically occurs when it is clicked or navigated to using the keyboard (e.g., via the Tab key)."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS rule applies a 50% grayscale filter to an image element, making it partially grayscale?",
+    "options": [
+      "img { filter: grayscale(50%); }",
+      "img { filter: grayscale(0.5); }",
+      "img { filter: grayscale(50px); }",
+      "img { filter: grayscale(0.05); }",
+      "The grayscale() filter in CSS accepts values ranging from 0% to 100% . A value of 50% will apply a 50% grayscale effect to the image, making it partially grayscale."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS rule would you use to create an element with rounded corners only at the top-left and bottom-left corners?",
+    "options": [
+      "element { border-radius: 10px 0 0 10px; }",
+      "element { border-radius: 10px; }",
+      "element { border-radius: 0 10px 10px 0; }",
+      "element { border-radius: 10px 10px 0 0; }",
+      "This rule applies a 10px radius to the top-left and bottom-left corners, while leaving the top-right and bottom-right corners with no rounding (0px). The values follow the order: top-left, top-right, bottom-right, bottom-left."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "How will the image be displayed within its container?",
+    "options": [
+      "The image will be resized to cover the entire container while maintaining its aspect ratio. Parts of the image may be cropped.",
+      "The image will be stretched to fit the container, possibly distorting the image.",
+      "The image will be resized to fit within the container without cropping or distortion.",
+      "The image will be displayed at its original size, and overflow will be visible.",
+      "The object-fit: cover; rule ensures the image covers the container’s entire area while maintaining its aspect ratio, potentially cropping parts of the image if the container’s aspect ratio differs from the image’s."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following CSS rules correctly applies a background image that covers the entire element without repeating, and is centered?",
+    "options": [
+      "div { background-image: url('image.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; }",
+      "div { background-image: url('image.jpg'); background-size: contain; background-repeat: repeat; background-position: left; }",
+      "div { background-image: url('image.jpg'); background-size: auto; background-repeat: no-repeat; background-position: bottom; }",
+      "div { background-image: url('image.jpg'); background-size: 100%; background-repeat: repeat-x; background-position: top; }",
+      "This rule ensures that the background image covers the entire element, doesn’t repeat, and is centered within the element. The background-size: cover; makes sure the image scales to cover the element without distorting its aspect ratio, and background-position: center; centers the image."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following CSS rules creates a linear gradient background that transitions from blue at the top to green at the bottom?",
+    "options": [
+      "div { background: linear-gradient(to bottom, blue, green); }",
+      "div { background: linear-gradient(to top, blue, green); }",
+      "div { background: linear-gradient(to right, blue, green); }",
+      "div { background: radial-gradient(circle, blue, green); }",
+      "This rule creates a linear gradient that transitions from blue at the top to green at the bottom, as specified by the to bottom direction."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following CSS rules correctly sets the margin to 10px on all sides and the padding to 20px on the top and bottom, and 15px on the left and right?",
+    "options": [
+      "div { margin: 10px; padding: 20px 15px; }",
+      "div { margin: 10px; padding: 15px 20px; }",
+      "div { margin: 10px 15px; padding: 20px; }",
+      "div { margin: 20px 10px; padding: 15px 20px; }",
+      "This rule sets the margin to 10px on all sides, and the padding to 20px on the top and bottom, and 15px on the left and right. The shorthand padding: 20px 15px; applies 20px to the top and bottom, and 15px to the left and right."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Insert the necessary CSS to create a box with a padding of 20px and a margin of 10px.",
+    "options": [
+      ".box { padding: 20px; margin: 10px; }",
+      "box { padding: 20px; margin: 10px; }",
+      "{ padding: 20px; margin: 10px; }",
+      ".box { padding, margin: 20px 10px; }",
+      "The correct CSS rule is .box { padding: 20px; margin: 10px; } because it correctly targets elements with the class box and applies the specified styles. The padding and margin properties are separated, with padding: 20px; applying 20px of space inside the element on all sides, and margin: 10px; applying 10px of space outside the element. The other options are incorrect due to missing or improperly formatted selectors, incorrect syntax, or lack of a valid selector."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Insert the necessary CSS to position an element absolutely within its container at 50px from the top and 100px from the left.",
+    "options": [
+      ".container { position: relative; } .absolute-box { position: absolute; top: 50px; left: 100px; }",
+      ".container { position: absolute; } .absolute-box { position: relative; top: 50px; left: 100px; }",
+      ".container { position: absolute; } .absolute-box { position: static; top: 50px; left: 100px; }",
+      ".container { position: relative; } .absolute-box { position: fixed; top: 50px; left: 100px; }",
+      "This works because the .container has position: relative; , which establishes it as the containing block for the absolutely positioned .absolute-box. The .absolute-box is then positioned 50px from the top and 100px from the left of its nearest positioned ancestor, which is the .container in this case."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which display property value makes an element behave like an inline element while allowing it to accept width and height values?",
+    "options": [
+      "inline-block",
+      "block",
+      "inline",
+      "none",
+      "The inline-block value makes an element behave like an inline element (flowing in the same line as others) but also allows it to accept width and height values, which inline elements typically cannot."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What does the overflow: scroll; property do when applied to a container element?",
+    "options": [
+      "Adds scrollbars to the container when its content overflows.",
+      "Hides the overflow content.",
+      "Expands the container to fit the overflow content.",
+      "Clips the overflow content without adding scrollbars.",
+      "The overflow: scroll; property ensures that scrollbars are always present on the container, even if the content does not overflow. If the content exceeds the container’s size,users can scroll to see the hidden content."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "If an element has a width of 200px, padding of 10px, border of 5px, and a margin of 20px, what is the total width of the element?",
+    "options": [
+      "270px",
+      "290px",
+      "250px",
+      "220px",
+      "The total width of an element includes the following components: Width: 200px",
+      "Padding: 10px on each side (10px + 10px = 20px)",
+      "Border: 5px on each side (5px + 5px = 10px)"
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS property is used to horizontally center text within a block-level element?",
+    "options": [
+      "text-align: center;",
+      "margin: auto;",
+      "align-items: center;",
+      "justify-content: center;",
+      "The text-align: center; property is used to horizontally center text (or inline content) within a block-level element, like a div. It does not affect the element itself but aligns the content inside it."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS property is used to vertically center content within a flex container?",
+    "options": [
+      "align-items: center;",
+      "vertical-align: middle;",
+      "text-align: center;",
+      "justify-content: center;",
+      "In a flex container, align-items: center; vertically centers the content along the cross axis (perpendicular to the main axis), which is typically the vertical direction unless the flex direction is changed."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following best describes static positioning in CSS?",
+    "options": [
+      "An element’s default positioning, following the normal document flow.",
+      "An element’s position relative to its closest positioned ancestor.",
+      "An element’s position relative to the viewport, remaining fixed during scrolling.",
+      "An element’s position adjusted from its normal position in the document flow.",
+      "Static positioning is the default behavior for elements in CSS. Elements with position: static; are positioned according to the normal document flow, meaning they appear in the order they are written in the HTML, without any special positioning adjustments."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Insert the necessary CSS to center a block-level element horizontally within its parent container.",
+    "options": [
+      ".container { display: flex; justify-content: center; } .centered-box { width: 200px; }",
+      ".container { text-align: center; } .centered-box { width: 200px; }",
+      ".container { display: block; margin: auto; } .centered-box { width: 200px; }",
+      ".container { display: grid; place-items: center; } .centered-box { width: 200px; } This approach uses display: flex; on the .container to establish a flex container, and justify-content: center; centers the .centered-box horizontally within it. The width: 200px; on .centered-box ensures the element has a defined width, so it can be centered properly."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS property is used to eliminate the space between table borders?",
+    "options": [
+      "border-collapse: collapse;",
+      "border-spacing: 0;",
+      "table-layout: fixed;",
+      "display: table;",
+      "The border-collapse: collapse; property is used to eliminate the space between table borders, making them collapse into a single border rather than having space between them."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the effect of the following CSS code snippet on a table?",
+    "options": [
+      "Rows change to light gray when hovered, and even rows have a very light gray background color for better readability.",
+      "All rows change to dark gray when hovered, and odd rows have a very light gray background color.",
+      "Only the header row changes color when hovered, and all rows have the same background color.",
+      "Rows change to blue when hovered, and even rows have a light blue background color.",
+      "The tr:hover selector changes the background color of a row to light gray when hovered, while tr:nth-child(even) targets even-numbered rows, applying a very light graybackground color to them. This improves readability by alternating row colors and highlighting the hovered row."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which CSS property enables horizontal scrolling for tables on smaller screens?",
+    "options": [
+      "overflow-x: auto;",
+      "overflow-y: auto;",
+      "display: block;",
+      "max-width: 100%;",
+      "The overflow-x: auto; property enables horizontal scrolling for elements (such as tables) if their content overflows horizontally. This is particularly useful for making tables scrollable on smaller screens when they extend beyond the available width."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "What is the effect of the following CSS code snippet on an element?",
+    "options": [
+      "The element will be positioned according to the normal document flow, with a width of 200px, height of 100px, a sky blue background, and a margin of 20px.",
+      "The element will be fixed at the top of the viewport with a width of 200px, height of 100px, a sky blue background, and a margin of 20px.",
+      "The element will be absolutely positioned relative to its nearest positioned ancestor with a width of 200px, height of 100px, and a sky blue background.",
+      "The element will be positioned relative to its normal position with a width of 200px, height of 100px, a sky blue background, and a margin of 20px.",
+      "With position: static; , the element follows the normal document flow, meaning it will be positioned based on the default flow of content in the HTML structure. The other properties (width, height, background-color, and margin) are applied as usual, but the position: static; means it is not affected by properties like top, right, bottom, or left."
+    ],
+    "correct": 0,
+    "explanation": "& Hint:"
+  },
+  {
+    "question": "Which of the following best describes a flexible web layout?",
+    "options": [
+      "A layout that adjusts dynamically using relative units and media queries.",
+      "A layout that uses fixed pixel values for all elements.",
+      "A layout that only works on desktop browsers.",
+      "A layout that uses absolute positioning for all elements."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of a media query in CSS?",
+    "options": [
+      "To apply CSS rules only when certain conditions are met, such as screen size.",
+      "To include JavaScript code within CSS files.",
+      "To add animations to HTML elements.",
+      "To style print documents."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What CSS rule should be added to create three equal-width columns?styles.css",
+    "options": [
+      "width: 33.33%;",
+      "width: 3",
+      "width: col-3;",
+      "width: 3 100%;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the float: right; property do to an element?",
+    "options": [
+      "Positions the element to the right of its container, allowing text to wrap around it on the left.",
+      "Positions the element to the left of its container, allowing text to wrap around it on the right.",
+      "Centers the element within its container.",
+      "Removes the element from the right side of the document flow."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the clearfix technique in CSS?",
+    "options": [
+      "To ensure a parent container fully wraps around its floated children.",
+      "To clear the float property from an element.",
+      "To remove the margin from an element.",
+      "To center an element within its container."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the following media query do? Select the best answer.",
+    "options": [
+      "Hides the .container element on screens equal to or smaller than 600px wide.",
+      "Shows the .container element only on screens smaller than 600px wide.",
+      "Changes the background color of the .container element on screens larger than 600px wide.",
+      "Applies a flex layout to the .container element on screens smaller than 600px wide.",
+      "Hides the .container element on screens smaller than 600px wide."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS property combination would you use to wrap text around an image and add space between the image and the text?",
+    "options": [
+      "float: left; margin-right: 10px;",
+      "wrap: right; margin-right: 10px;",
+      "display: block; padding: 10px;",
+      "position: absolute; margin: 10px;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will happen if you remove the clear: both; property from the clearfix pseudo-element in the following CSS?",
+    "options": [
+      "The parent container will collapse and not wrap around its floated children properly.",
+      "The floated children will not be aligned horizontally.",
+      "The parent container will add extra space below the floated children.",
+      "The floated children will overlap each other."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the effect of the following CSS code on the testimonial section?",
+    "options": [
+      "Creates three testimonials per row, each taking up one-third of the container’s width.",
+      "Creates a single testimonial that takes up the full width of the container.",
+      "Centers three testimonials within the container.",
+      "Creates one testimonials per row, each taking up half of the container’s width."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the following CSS media query achieve?",
+    "options": [
+      "Stacks the grid items vertically on screens 480px wide or smaller.",
+      "Hides the grid items on screens 480px wide or smaller.",
+      "Increases the width of the grid items on larger screens.",
+      "Changes the background color of the grid items on smaller screens."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What CSS rule should be added to make the navigation bar items stack vertically on smaller screens?",
+    "options": [
+      "float: none; display: block;",
+      "float: left; display: inline-block;",
+      "position: absolute; width: 100%;",
+      "display: inline; width: 50%;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the main difference between using the clear property and the clearfix technique?",
+    "options": [
+      "The clear property is used on individual elements to prevent them from wrapping around floated elements, while clearfix is used on the parent container to contain floated children.",
+      "The clear property removes floating from elements, while clearfix applies floating to elements.",
+      "The clear property is only used for left floats, while clearfix works for both left and right floats.",
+      "The clear property is deprecated and should be replaced by clearfix."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the primary purpose of using the overflow: auto; method on a container elemen?",
+    "options": [
+      "To contain floated elements within the container and provide scrollbars when content overflows.",
+      "To hide any overflowing content within the container.",
+      "To clip the overflowing content without providing scrollbars.",
+      "To expand the container to fit all overflowing content."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the float: inherit; property do when applied to an element?",
+    "options": [
+      "Specifies that the element should inherit the float value from its parent element",
+      "Specifies that the element should inherit both the float and display values from its parent element",
+      "Specifies that the element should inherit the clear property value from its parent element",
+      "Specifies that the element should inherit all CSS properties from its parent element"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the effect of this CSS on the image within the container?",
+    "options": [
+      "The image floats to the start of the inline direction and has a 10px margin to the end of the inline direction",
+      "The image floats to the left side of the container regardless of text direction",
+      "The image floats to the right side of the container with a 10px margin to the left",
+      "The image floats to the end of the inline direction and has a 10px margin to the start of the inline direction"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the following CSS code do?",
+    "options": [
+      "It centers the flex items horizontally within the flex container.",
+      "It centers the flex items vertically within the flex container.",
+      "It spaces the flex items evenly with equal space between them.",
+      "It aligns the flex items at the start of the flex container."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the effect of the following code on flex items?",
+    "options": [
+      "The flex items will be arranged in a vertical column.",
+      "The flex items will be arranged in a horizontal row.",
+      "The flex items will be wrapped onto multiple lines.",
+      "The flex items will be centered within the container."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How many columns will be created by the following CSS code?",
+    "options": [
+      "Four",
+      "Three",
+      "Two",
+      "One"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the layout of items in the following CSS grid?",
+    "options": [
+      "The grid will have three rows with the middle row taking up the remaining space.",
+      "The grid will have three columns with the middle column taking up the remaining space.",
+      "The grid will have three rows of equal height.",
+      "The grid will have three columns of equal width."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the effect of the following CSS code on a flex item?",
+    "options": [
+      "The flex item will grow twice as fast as other flex items in the same container.",
+      "The flex item will shrink twice as fast as other flex items in the same container.",
+      "The flex item will not grow or shrink.",
+      "The flex item will grow to twice its original size."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the effect of the following CSS code on a flex item with class .flex-item?",
+    "options": [
+      "The flex item will be positioned after items with an order value lower than 3.",
+      "The flex item will grow to three times its original size.",
+      "The flex item will shrink to one-third of its original size.",
+      "The flex item will be positioned before items with an order value lower than 3."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the effect of the following CSS code on a grid item?",
+    "options": [
+      "The grid item will be aligned to the end of its grid cell vertically.",
+      "The grid item will be aligned to the end of its grid cell horizontally.",
+      "The grid item will be centered within its grid cell vertically.",
+      "The grid item will be centered within its grid cell horizontally."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the effect of the following CSS code on a flex container with class .flex-container?",
+    "options": [
+      "Flex items will wrap onto multiple lines if necessary.",
+      "Flex items will grow to fill the available space.",
+      "Flex items will be evenly distributed along the main axis.",
+      "Flex items will be aligned to the center of the flex container."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will happen if you remove grid-template-columns from the CSS of a grid container?",
+    "options": [
+      "The grid container will not create any columns, and the grid items will stack in a single column.",
+      "The grid container will create three columns of equal width.",
+      "The grid container will create a single row with three columns.",
+      "The grid container will not display any grid items."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the flex-basis property control?",
+    "options": [
+      "The initial size of the flex item before any remaining space is distributed.",
+      "The maximum size of the flex item.",
+      "The minimum size of the flex item.",
+      "The amount by which the flex item can grow."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What will be the effect of the following CSS code on a grid container with class .grid-container?",
+    "options": [
+      "The grid will have three rows with heights of 100px, 200px, and 100px respectively.",
+      "The grid will have three columns with widths of 100px, 200px, and 100px respectively.",
+      "The grid will automatically generate rows based on content size.",
+      "The grid will have gaps of 100px, 200px, and 100px between rows."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the align-items property in Flexbox?",
+    "options": [
+      "It aligns flex items along the cross axis.",
+      "It aligns flex items along the main axis.",
+      "It justifies the content of the flex container.",
+      "It changes the order of the flex items."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the gap property do in a CSS grid?",
+    "options": [
+      "It creates space between the grid items.",
+      "It sets the size of the grid items.",
+      "It aligns the grid items within their cells.",
+      "It defines the number of columns in the grid."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How can you make a CSS grid item span multiple rows?",
+    "options": [
+      "By using the grid-row property with the value span 2.",
+      "By using the grid-column property with the value span 2.",
+      "By using the grid-template-rows property.",
+      "By using the align-self property."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the flex-direction property control?",
+    "options": [
+      "The direction in which the flex items are placed in the container.",
+      "The alignment of flex items along the main axis.",
+      "The growth and shrinkage of flex items.",
+      "The wrapping of flex items."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS property allows you to control the order of items within a grid?",
+    "options": [
+      "order",
+      "grid-column",
+      "grid-row",
+      "align-self"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the justify-content property in Flexbox?",
+    "options": [
+      "It aligns flex items along the main axis.",
+      "It aligns flex items along the cross axis.",
+      "It changes the order of the flex items.",
+      "It makes the flex items grow to fill the container."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS property is used to set both the number of columns and the number of rows in a grid?",
+    "options": [
+      "grid-template",
+      "grid-columns-rows",
+      "grid-rows-columns",
+      "grid-auto-flow"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the transition property do in CSS?",
+    "options": [
+      "It specifies the property, duration, timing function, and delay for a transition effect.",
+      "It defines keyframes for an animation.",
+      "It specifies how an element moves across the screen.",
+      "It changes the color of an element."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which property is used to define the keyframes for a CSS animation?",
+    "options": [
+      "@keyframes",
+      "@media",
+      "animation-frames",
+      "keyframes-definition"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you delay the start of a transition effect?",
+    "options": [
+      "Using the transition-delay property.",
+      "Using the delay-start property.",
+      "Using the animation-delay property.",
+      "Using the transition-duration property."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the animation-timing-function property?",
+    "options": [
+      "It specifies the speed curve of the animation.",
+      "It defines the name of the keyframes.",
+      "It sets the duration of the animation.",
+      "It determines how many times the animation should repeat."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which value of the animation-iteration-count property makes the animation loop indefinitely?",
+    "options": [
+      "infinite",
+      "loop",
+      "forever",
+      "repeat"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the animation-direction: alternate property do?",
+    "options": [
+      "It makes the animation play forwards and then backwards in each cycle.",
+      "It makes the animation start from the end point and go to the start point.",
+      "It makes the animation pause at the end of each cycle.",
+      "It makes the animation skip every other cycle."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which transition-timing-function value creates a transition that starts slowly, speeds up, and then slows down again?",
+    "options": [
+      "ease-in-out",
+      "linear",
+      "ease",
+      "ease-in"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS property is used to control the visibility of an element during an animation, ensuring it is displayed properly?",
+    "options": [
+      "visibility",
+      "display",
+      "opacity",
+      "z-index"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following properties is not animatable with CSS transitions?",
+    "options": [
+      "display",
+      "opacity",
+      "color",
+      "transform"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which property value ensures an animation runs continuously without pausing?",
+    "options": [
+      "animation-iteration-count: infinite;",
+      "animation-play-state: running;",
+      "animation-delay: 0s;",
+      "animation-direction: normal;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the effect of the animation-fill-mode: forwards; property?",
+    "options": [
+      "The animation retains the styles from the last keyframe after it ends.",
+      "The animation starts from the last keyframe.",
+      "The animation repeats backwards after it ends.",
+      "The animation starts with the styles from the first keyframe."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How can you ensure a transition only occurs when an element is hovered over?",
+    "options": [
+      "Apply the transition property to the hover pseudo-class.",
+      "Apply the transition property to the active pseudo-class.",
+      "Use the hover: transition property.",
+      "Use the animation: hover property."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which property controls the intermediate steps in a CSS animation sequence?",
+    "options": [
+      "animation-timing-function",
+      "animation-delay",
+      "animation-iteration-count",
+      "animation-direction"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS property can you use to smoothly change the size of an element?",
+    "options": [
+      "transition",
+      "transform",
+      "animation",
+      "keyframes"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which keyframe value is used to specify the styles at the start of the animation?",
+    "options": [
+      "0%",
+      "50%",
+      "100%",
+      "start"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which CSS framework is known for its simplicity and use of the Flexbox layout model?",
+    "options": [
+      "Bulma",
+      "Bootstrap",
+      "Foundation",
+      "Tailwind CSS"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the Bootstrap class .btn-outline-primary do?",
+    "options": [
+      "Creates a button with a primary color outline and transparent background.",
+      "Creates a button with a solid primary color background.",
+      "Creates a button with a primary color text and no border.",
+      "Creates a button with a gradient primary color background."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the class .text-center do in Bootstrap?",
+    "options": [
+      "Centers text horizontally within its container.",
+      "Centers text vertically within its container.",
+      "Centers text both horizontally and vertically.",
+      "Centers text horizontally and applies a bold font weight."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which class in Bootstrap would you use to make an element float to the right?",
+    "options": [
+      ".float-right",
+      ".float-left",
+      ".float-end",
+      ".float-md-right"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How can you make a Bootstrap navbar responsive?",
+    "options": [
+      "Use the .navbar-expand-* class along with .navbar-toggler and .collapse classes.",
+      "Add the .navbar-responsive class to the navbar.",
+      "Include the .navbar-collapse class only.",
+      "Use the .navbar-flex class to make it responsive."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What does the class .align-items-center do when applied to a Bootstrap row?",
+    "options": [
+      "Aligns all the columns inside the row to the center vertically.",
+      "Aligns all the columns inside the row to the center horizontally.",
+      "Aligns all the columns inside the row to the center both horizontally and vertically.",
+      "Aligns all the columns inside the row to the left."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What class in Bootstrap is used to make an element have zero margin on all sides?",
+    "options": [
+      ".m-0",
+      ".p-0",
+      ".no-margin",
+      ".margin-0"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which class in Bootstrap would you use to hide an element on large screens and show it on small screens? Select the best answer.",
+    "options": [
+      ".d-lg-none .d-block",
+      ".d-block .d-lg-none",
+      ".d-none .d-sm-block",
+      ".d-lg-block .d-sm-none"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What class in Bootstrap will apply a small amount of padding to an element on all sides?",
+    "options": [
+      ".p-2",
+      ".m-2",
+      ".pt-2",
+      ".pb-2"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you create a Bootstrap modal with a header, body, and footer?",
+    "options": [
+      "Modal title × Modal body text goes here. Save changes Close",
+      "Modal title × Modal body text goes here.",
+      "Modal body text goes here. Save changes Close",
+      "Modal title × Save changes Close"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which Bootstrap class is used to set a primary button style?",
+    "options": [
+      ".btn-primary",
+      ".btn-main",
+      ".button-primary",
+      ".button-main"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the purpose of the .jumbotron class in Bootstrap?",
+    "options": [
+      "To create a large, attention-grabbing container for showcasing content or information.",
+      "To create a small, inconspicuous container for minor content.",
+      "To create a footer section with links and contact information.",
+      "To create a container with rounded corners and a shadow effect."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which class in Bootstrap 5 would you use to make text bold?",
+    "options": [
+      ".fw-bold",
+      ".text-bold",
+      ".font-bold",
+      ".font-weight-bold"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What class in Bootstrap would you use to create a rounded image?",
+    "options": [
+      ".rounded",
+      ".img-rounded",
+      ".rounded-img",
+      ".circle-img"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How do you change the default padding of a Bootstrap card?",
+    "options": [
+      ".card { padding: 20px; }",
+      ".card { margin: 20px; }",
+      ".card-body { margin: 20px; }",
+      ".card-body { padding: 20px; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What class would you use to hide an element on small screens and show it on medium and larger screens in Bootstrap?",
+    "options": [
+      ".d-none .d-md-block",
+      ".d-block .d-md-none",
+      ".d-hidden .d-md-visible",
+      ".d-xs-none .d-lg-block"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is the correct way to create a card in Bootstrap with an image, title, and text content?",
+    "options": [
+      "Card title Some quick example text.",
+      "Card title Some quick example text.",
+      "Card title Some quick example text. Go somewhere",
+      "Card title Some quick example text. Go somewhere"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which class in Bootstrap will make an element only visible on large screens and above?",
+    "options": [
+      ".d-none .d-lg-block",
+      ".d-block .d-lg-none",
+      ".d-none .d-md-block",
+      ".d-lg-none .d-xl-block"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What happens when you change the value of a Less variable used throughout your stylesheet?",
+    "options": [
+      "All instances of the variable update automatically.",
+      "Only the first instance of the variable updates.",
+      "The variable value cannot be changed once declared.",
+      "You must manually update each instance of the variable."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "styles.css",
+    "options": [
+      "@include border-radius(10px);",
+      "@import border-radius;",
+      ".border-radius(10px);",
+      "@mixin border-radius;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Select the correct code to declare and use a variable for the primary color in Sass.",
+    "options": [
+      "$primary-color",
+      "@primary-color",
+      "$primary",
+      "primary-color"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following tools can be used to write and compile Less directly in the browser?",
+    "options": [
+      "Less Playground",
+      "Visual Studio Code",
+      "GitHub",
+      "Sublime Text"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Insert the correct code to declare and use a variable for the secondary color in Less.",
+    "options": [
+      "@secondary-color",
+      "$secondary-color",
+      "@secondary",
+      "secondary-color"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "What is a key difference between Sass mixins and functions?",
+    "options": [
+      "Functions return values, while mixins output CSS rules.",
+      "Mixins can take parameters, but functions cannot.",
+      "Functions cannot be reused, but mixins can.",
+      "Mixins cannot contain CSS rules, but functions can."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is a correct way to declare a variable in Less?",
+    "options": [
+      "@font-size: 16px;",
+      "$font-size: 16px;",
+      "font-size: 16px;",
+      ":font-size 16px;"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Insert the correct code to declare and use a variable for the font size in Sass.",
+    "options": [
+      "$font-size",
+      "@font-size",
+      "font-size",
+      "$font"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is true about Less functions?",
+    "options": [
+      "They allow you to perform operations and return values.",
+      "They compile directly to HTML.",
+      "They cannot accept parameters.",
+      "They only work with color values."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "Which statement is true about both Sass and Less?",
+    "options": [
+      "Both preprocessors require compilation to generate standard CSS.",
+      "Sass uses the @ symbol for variables, while Less uses the $ symbol.",
+      "Less has a larger community and more libraries than Sass.",
+      "Both preprocessors were created by the same developer."
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How would you create the same nested rule in Sass?",
+    "options": [
+      ".menu { ul { … }",
+      ".menu { @ul { … }",
+      ".menu { > ul { … }",
+      ".menu { * ul { … }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
+    "question": "How would you create a mixin with parameters in Sass?",
+    "options": [
+      "@mixin border-radius($radius) { border-radius: $radius; }",
+      "@mixin border-radius(@radius) { border-radius: @radius; }",
+      "@define border-radius($radius) { border-radius: $radius; }",
+      "@function border-radius($radius) { border-radius: $radius; }"
+    ],
+    "correct": 0,
+    "explanation": ""
+  }
+]
