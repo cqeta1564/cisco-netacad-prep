@@ -26,21 +26,21 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
 
 ## 🌟 Funkce aplikace
 
-- **430 autentických otázek z reálných zkoušek**:
-  - 40 otázek pro HTML Essentials
-  - 40 otázek pro CSS Essentials
-  - 40 otázek pro JavaScript Essentials 1
-  - 40 otázek pro JavaScript Essentials 2
-  - 45 otázek pro Oracle Database Design
-  - 45 otázek pro Oracle Database Programming With SQL
-  - 45 otázek pro Cisco Python Essentials 1
-  - 45 otázek pro Cisco NDG Linux Essentials
-  - 45 otázek pro Cisco CCNA: Switching, Routing, and Wireless Essentials (SRWE)
-  - 45 otázek pro Cisco CCNA: Introduction to Networks (ITN)
+- **550 autentických otázek z reálných zkoušek**:
+  - 50 otázek pro HTML Essentials (test: 35 otázek, 45 min)
+  - 50 otázek pro CSS Essentials (test: 35 otázek, 45 min)
+  - 50 otázek pro JavaScript Essentials 1 (test: 35 otázek, 45 min)
+  - 50 otázek pro JavaScript Essentials 2 (test: 35 otázek, 45 min)
+  - 65 otázek pro Oracle Database Design (oficiální ostrý test: **50 otázek**, 60 min)
+  - 65 otázek pro Oracle Database Programming With SQL (oficiální ostrý test: **50 otázek**, 60 min)
+  - 50 otázek pro Cisco Python Essentials 1 (test: 35 otázek, 45 min)
+  - 50 otázek pro Cisco NDG Linux Essentials (test: 40 otázek, 60 min)
+  - 60 otázek pro Cisco CCNA: Switching, Routing, and Wireless Essentials (test: 50 otázek, 75 min)
+  - 60 otázek pro Cisco CCNA: Introduction to Networks (test: 50 otázek, 75 min)
   - Všechny otázky jsou 100% autentické a převzaté z oficiálních zkouškových testů a bank (Oracle Academy iLearning, Cisco Networking Academy, OpenEDG, LPI). Obsahují originální anglickou textaci z ostrých testů, kódové ukázky, přesné možnosti a detailní vysvětlení pravidel v češtině.
 - **4 studijní módy**:
   1. 🎓 **Zkouškový simulátor (Exam Simulator)**:
-     - Realistické podmínky (40–45 minutový odpočet, 30 náhodně vybraných otázek, hranice úspěšnosti 70 %).
+     - Realistické podmínky (časový limit 45–75 minut, přesný oficiální počet otázek: např. **50 otázek pro Oracle Database Design**, hranice úspěšnosti 70 %).
      - Možnost označit otázku k revizi (Flag for review).
      - Mřížka všech otázek pro rychlý přehled.
      - Závěrečné podrobné vyhodnocení s procentuální úspěšností, časem a kompletním rozborem chyb.
@@ -55,7 +55,7 @@ Interaktivní webová aplikace pro přípravu a trénování na oficiální cert
      - Přehledné tabulky pro každý certifikát (typy v JS, CSS Box Model, HTML sémantika, Python operátory, SQL JOINy, Linux FHS/práva, CCNA ITN OSI/IPv4/IPv6/TCP/UDP, CCNA SRWE VLANy/STP/EtherChannel/WLAN).
   5. 📊 **Moje statistiky (User Profile & Statistics)**:
      - Sledování úspěšnosti a postupu na základě cookies a volitelné přezdívky (bez nutnosti registrace a přihlašování).
-     - Přehled pokrytí celé banky otázek (0 / 430), celková přesnost a zápisník chyb k cílenému doprocvičení.
+     - Přehled pokrytí celé banky otázek (0 / 550), celková přesnost a zápisník chyb k cílenému doprocvičení.
      - Kompletní historie zkoušek s časy, procenty a přímým filtrem nesložených pokusů.
      - 🛡️ **Statistiky návštěvnosti webu (Admin Dashboard)**: Při zadání administrátorské přezdívky `cqeta1564` se v profilu automaticky odemkne živý přehled návštěvnosti webu (celkový počet zobrazení, unikátní návštěvníci, dnešní aktivita, 7denní trend a telemetrie). Pro běžné uživatele zůstává sekce zcela skrytá.
 - **Moderní UI & Audio efekty**:

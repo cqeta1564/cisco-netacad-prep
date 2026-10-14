@@ -392,10 +392,11 @@ class NetAcadApp {
     this.stopTimer();
     const cert = CERTIFICATES_DATA[this.activeCert];
 
-    // Pick questions (shuffle and take up to 30 for real Cisco NetAcad length)
+    // Pick questions according to official certification exam length (e.g. 50 questions for Oracle & CCNA)
     const all = [...cert.questions];
     this.shuffleArray(all);
-    const count = Math.min(30, all.length);
+    const targetCount = cert.examQuestionCount || Math.min(50, all.length);
+    const count = Math.min(targetCount, all.length);
     this.currentQuestions = all.slice(0, count);
 
     this.currentIndex = 0;

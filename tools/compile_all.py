@@ -4,7 +4,10 @@ from cert_compiler import clean_question_text, merge_broken_options
 from module_mapper import assign_module
 from explanation_builder import generate_explanation
 
-with open('cert_metadata.json', 'r', encoding='utf-8') as f:
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+with open(os.path.join(BASE_DIR, 'cert_metadata.json'), 'r', encoding='utf-8') as f:
     CERT_META = json.load(f)
 
 # Categories definition to preserve exactly
@@ -49,15 +52,41 @@ CATEGORIES_JS = """const CERTIFICATE_CATEGORIES = {
 """
 
 target_counts = {
-    'html': 40,
-    'css': 40,
-    'js': 40,
-    'js2': 40,
-    'oracle_dd': 45,
-    'oracle_sql': 45,
-    'linux': 45,
-    'ccna_itn': 45,
-    'ccna_srwe': 45,
+    'html': 50,
+    'css': 50,
+    'js': 50,
+    'js2': 50,
+    'oracle_dd': 65,
+    'oracle_sql': 65,
+    'linux': 50,
+    'ccna_itn': 60,
+    'ccna_srwe': 60,
+    'python': 50,
+}
+
+exam_question_counts = {
+    'oracle_dd': 50,
+    'oracle_sql': 50,
+    'ccna_itn': 50,
+    'ccna_srwe': 50,
+    'linux': 40,
+    'html': 35,
+    'css': 35,
+    'js': 35,
+    'js2': 35,
+    'python': 35,
+}
+
+exam_time_limits = {
+    'oracle_dd': 60,
+    'oracle_sql': 60,
+    'ccna_itn': 75,
+    'ccna_srwe': 75,
+    'linux': 60,
+    'html': 45,
+    'css': 45,
+    'js': 45,
+    'js2': 45,
     'python': 45,
 }
 
@@ -103,7 +132,7 @@ def extract_code_snippet(qtext):
     return qtext, None
 
 def compile_cert(cert_id):
-    raw_file = f'authentic_raw/{cert_id}.json'
+    raw_file = os.path.join(BASE_DIR, 'authentic_raw', f'{cert_id}.json')
     with open(raw_file, 'r', encoding='utf-8') as f:
         raw_items = json.load(f)
         
@@ -160,6 +189,8 @@ def compile_cert(cert_id):
     print(f"Compiled {cert_id}: {len(selected)} / {target_count} questions")
     return {
         **meta,
+        'examQuestionCount': exam_question_counts.get(cert_id, 50),
+        'timeLimit': exam_time_limits.get(cert_id, meta.get('timeLimit', 45)),
         'questions': selected
     }
 
@@ -176,7 +207,8 @@ if __name__ == '__main__':
     # Generate JavaScript file content
     js_content = CATEGORIES_JS + "\nconst CERTIFICATES_DATA = " + json.dumps(all_compiled, ensure_ascii=False, indent=2) + ";\n"
     
-    with open('data.js', 'w', encoding='utf-8') as f:
+    data_out = os.path.join(os.path.dirname(BASE_DIR), 'data.js')
+    with open(data_out, 'w', encoding='utf-8') as f:
         f.write(js_content)
         
-    print("data.js successfully written!")
+    print(f"data.js successfully written to {data_out}!")

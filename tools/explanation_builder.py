@@ -3,9 +3,15 @@ import re
 from cert_compiler import clean_question_text, merge_broken_options
 from module_mapper import assign_module
 
-# Load cert metadata
-with open('cert_metadata.json', 'r', encoding='utf-8') as f:
-    CERT_META = json.load(f)
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+meta_path = os.path.join(BASE_DIR, 'cert_metadata.json')
+if os.path.exists(meta_path):
+    with open(meta_path, 'r', encoding='utf-8') as f:
+        CERT_META = json.load(f)
+else:
+    CERT_META = {}
 
 # Explanation builder for all certificates
 def generate_explanation(cert_id, qtext, options, correct_idx, orig_exp):

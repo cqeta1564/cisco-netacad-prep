@@ -71,6 +71,7 @@ const CERTIFICATES_DATA = {
         "name": "Modul 5: Sémantické elementy a osvědčené postupy"
       }
     ],
+    "examQuestionCount": 35,
     "questions": [
       {
         "id": "html_q01",
@@ -629,6 +630,148 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 0,
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag is used for adding a new line within a paragraph, while the tag is used to insert a visual horizontal line to separate content.'."
+      },
+      {
+        "id": "html_q41",
+        "module": "html_m4",
+        "question": "What is the primary purpose of the tag in HTML?",
+        "code": null,
+        "options": [
+          "The tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.",
+          "The tag is used to indicate text that should be interpreted as programming variables.",
+          "The tag serves as a container for embedding executable code within HTML.",
+          "The tag provides semantic meaning to text, indicating technical terms or identifiers outside of code contexts."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.'."
+      },
+      {
+        "id": "html_q42",
+        "module": "html_m4",
+        "question": "How does the tag affect the display of text in an HTML document?",
+        "code": null,
+        "options": [
+          "The tag preserves the text’s white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.",
+          "The tag is used to pre-process text, applying automatic formatting rules.",
+          "The tag organizes text into pre-defined sections for improved document structure.",
+          "The tag prioritizes text for search engines, enhancing SEO for preformatted content."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag preserves the text’s white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.'."
+      },
+      {
+        "id": "html_q43",
+        "module": "html_m5",
+        "question": "Considering accessibility and HTML semantics, what is the significance of nesting within or vice versa?",
+        "code": null,
+        "options": [
+          "Nesting lists, such as incorporating within or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.",
+          "Nesting provides semantic clarity, enabling search engines to better understand and index the content structure, potentially improving SEO performance.",
+          "By utilizing nested lists, developers can implement complex web designs more efficiently, as it simplifies the CSS needed for list customization.",
+          "Nesting lists facilitates the automatic adaptation of content to various screen sizes, improving the responsive design of web pages without additional CSS."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Nesting lists, such as incorporating within or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.'."
+      },
+      {
+        "id": "html_q44",
+        "module": "html_m4",
+        "question": "Which HTML tag pair is specifically used for creating a list of terms and their respective definitions?",
+        "code": null,
+        "options": [
+          "for the list, for each term, and for each definition.",
+          "for the list, followed by for each term and definition.",
+          "for the list, with tags marking each term and definition pair.",
+          "for the list, with and tags for terms and definitions."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'for the list, for each term, and for each definition.'."
+      },
+      {
+        "id": "html_q45",
+        "module": "html_m4",
+        "question": "What is the correct way to add a caption to an HTML table?",
+        "code": null,
+        "options": [
+          "The element, placed immediately after the opening tag, is used to provide a title or caption for the table.",
+          "Use the element within a table for captions.",
+          "Captions are added using the alt attribute on the tag.",
+          "The element should be used at the beginning of a table to add a caption."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The element, placed immediately after the opening tag, is used to provide a title or caption for the table.'."
+      },
+      {
+        "id": "html_q46",
+        "module": "html_m4",
+        "question": "Considering HTML5 standards, which table attributes are recommended to control the appearance and layout of a table?",
+        "code": null,
+        "options": [
+          "CSS styles are recommended for controlling the appearance and layout of tables in HTML5.",
+          "The border, the cellpadding, and the cellspacing attributes are the HTML5 recommended method.",
+          "Use the border and cellspacing attributes for appearance and layout control.",
+          "The border and bgcolor attributes are preferred for styling tables."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'CSS styles are recommended for controlling the appearance and layout of tables in HTML5.'."
+      },
+      {
+        "id": "html_q47",
+        "module": "html_m4",
+        "question": "What role does the summary attribute play in HTML tables, and why is it important?",
+        "code": null,
+        "options": [
+          "It is used to describe the table’s content and purpose for assistive technologies, enhances accessibility by providing context.",
+          "It summarizes the table data in a tooltip.",
+          "It is a visual summary displayed at the top of the table.",
+          "It is primarily designed for enhancing table accessibility, not directly influencing SEO or providing visible content to all users."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'It is used to describe the table’s content and purpose for assistive technologies, enhances accessibility by providing context.'."
+      },
+      {
+        "id": "html_q48",
+        "module": "html_m4",
+        "question": "Identify which statement accurately reflects the purpose of the alt attribute.",
+        "code": null,
+        "options": [
+          "It provides a description of the image for users who cannot see it, such as those using screen readers.",
+          "It specifies a textual animation to accompany the image when it is clicked.",
+          "It captions the image directly on the webpage, visible to all users.",
+          "It provides a detailed narrative of the image for inclusion in the page’s footer. The alt attribute in the tag provides alternative text that describes the image for users who cannot see it, including those using screen readers or when the image fails to load. This enhances accessibility by ensuring that the content of the image is still accessible to all users."
+        ],
+        "correct": 0,
+        "explanation": "Atribut 'alt' u tagu <img> poskytuje alternativní textový popis v případě, že se obrázek nepodaří načíst, a slouží čtečkám obrazovky pro nevidomé. Správná odpověď: It provides a description of the image for users who cannot see it, such as those using screen readers.."
+      },
+      {
+        "id": "html_q49",
+        "module": "html_m4",
+        "question": "What is the primary benefit of specifying both width and height attributes in an tag? Select the best answer.",
+        "code": null,
+        "options": [
+          "To ensure that the image loads with the correct dimensions, improving page layout stability during loading.",
+          "To automatically crop the image to the specified dimensions.",
+          "To increase the image resolution based on the specified size.",
+          "To ensure the image is aligned centrally within its parent container automatically.",
+          "Specifying both width and height attributes for an tag helps the browser allocate the necessary space for the image before it fully loads. This prevents layout shifts and ensures that the page maintains a stable layout while the image is loading."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To ensure that the image loads with the correct dimensions, improving page layout stability during loading.'."
+      },
+      {
+        "id": "html_q50",
+        "module": "html_m4",
+        "question": "What does the use of absolute paths for image sources in HTML entail?",
+        "code": null,
+        "options": [
+          "Referencing an image hosted on a web server using its full URL.",
+          "Specifying a path relative to the current document.",
+          "Embedding an image directly into the HTML document in base64 format.",
+          "Forcing the browser to download the image before rendering the page.",
+          "An absolute path specifies the complete URL or file location for an image, including the protocol (e.g., http:// or https:// ), the domain, and the file path. This method is used when the image is hosted on a different server or when referencing resources by their full web address."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Referencing an image hosted on a web server using its full URL.'."
       }
     ]
   },
@@ -665,6 +808,7 @@ const CERTIFICATES_DATA = {
         "name": "Modul 5: Moderní layouty (Flexbox, Grid) a responzivita"
       }
     ],
+    "examQuestionCount": 35,
     "questions": [
       {
         "id": "css_q01",
@@ -1225,6 +1369,146 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 0,
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '@media (orientation: landscape) { ... }'."
+      },
+      {
+        "id": "css_q41",
+        "module": "css_m5",
+        "question": "Which CSS rules will create a simple two-column grid layout using floats?",
+        "code": null,
+        "options": [
+          ".container { width: 100%; overflow: hidden; } .column { float: left; width: 50%; }",
+          ".container { display: grid; grid-template-columns: 1fr 1fr; } .column { float: left; }",
+          ".float-container { width: 100%; display: flex; } .column { flex: 1; }",
+          ".float-container { width: 100%; display: block; } .column { display: inline-block; width: 50%; }"
+        ],
+        "correct": 0,
+        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container { width: 100%; overflow: hidden; } .column { float: left; width: 50%; }."
+      },
+      {
+        "id": "css_q42",
+        "module": "css_m3",
+        "question": "Which of the following CSS rules ensures that an image inside a hyperlink appears without an underline, has no border, and scales properly within the link?",
+        "code": null,
+        "options": [
+          "a img { border: 0; display: block; max-width: 100%; text-decoration: none; }",
+          "a img { text-decoration: none; width: auto; }",
+          "a { border: 0; max-width: 100%; text-decoration: none; img('image.png') }",
+          "a img('image.png') { border: none; display: inline; max-width: 100%; underline: none; }"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'a img { border: 0; display: block; max-width: 100%; text-decoration: none; }'."
+      },
+      {
+        "id": "css_q43",
+        "module": "css_m3",
+        "question": "Consider the following CSS rules and HTML. What will be the color of the element with the ID element ?",
+        "code": null,
+        "options": [
+          "Green",
+          "Yellow",
+          "Orange",
+          "Either a random color or an error will occur"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'Green'."
+      },
+      {
+        "id": "css_q44",
+        "module": "css_m3",
+        "question": "What is the correct way of setting the div background color to blue and its text color to white?",
+        "code": null,
+        "options": [
+          "div { background: blue; color: white; }",
+          "div { background-color: blue; text-color: white; }",
+          "div { background: blue; text: white; }",
+          "div { background: blue; font-color: white; }"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'div { background: blue; color: white; }'."
+      },
+      {
+        "id": "css_q45",
+        "module": "css_m3",
+        "question": "What is the correct way of setting the preferred font for text elements?",
+        "code": null,
+        "options": [
+          "p { font-family: \"Roboto\", Arial, sans-serif; }",
+          "p { font: Arial; }",
+          "p { font-family: \"Roboto\", 16px, bold; }",
+          "p { font: \"Roboto\", Arial, sans-serif; }"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p { font-family: \"Roboto\", Arial, sans-serif; }'."
+      },
+      {
+        "id": "css_q46",
+        "module": "css_m3",
+        "question": "Which of the following CSS rules sets the font size to 16px, font weight to bold, and font style to italic for a paragraph element?",
+        "code": null,
+        "options": [
+          "p { font-size: 16px; font-weight: bold; font-style: italic; }",
+          "p { font: 16px bold italic; }",
+          "p { font-style: bold italic 16px; }",
+          "p { font: 16px; font-weight: italic; font-style: bold; }"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p { font-size: 16px; font-weight: bold; font-style: italic; }'."
+      },
+      {
+        "id": "css_q47",
+        "module": "css_m3",
+        "question": "Which CSS rule combines properties to set the text color to blue, center-align the text, set the font family to Arial, and add a line height of 1.5?",
+        "code": null,
+        "options": [
+          "p { color: blue; text-align: center; font-family: Arial, sans-serif; line-height: 1.5; }",
+          "p { color: blue; align-text: center; font-family: Arial, sans-serif; line-height: 1.5; }",
+          "p { text-color: blue; text-align: middle; font-family: Arial, sans-serif; line-spacing: 1.5; }",
+          "p { color: blue; text-align: center; font-family: Arial, serif; height: 1.5; }"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p { color: blue; text-align: center; font-family: Arial, sans-serif; line-height: 1.5; }'."
+      },
+      {
+        "id": "css_q48",
+        "module": "css_m3",
+        "question": "What is the primary difference between the CSS properties margin and padding ?",
+        "code": null,
+        "options": [
+          "margin creates space outside the element’s border, while padding creates space between the element’s content and its border.",
+          "margin creates space between the element’s content and its border, while padding creates space outside the element’s border.",
+          "margin and padding both create space outside the element’s border.",
+          "margin and padding both create space between the element’s content and its border."
+        ],
+        "correct": 0,
+        "explanation": "CSS Box Model se skládá z content, padding (vnitřní okraj), border (rámeček) a margin (vnější odstup). Správná odpověď: margin creates space outside the element’s border, while padding creates space between the element’s content and its border.."
+      },
+      {
+        "id": "css_q49",
+        "module": "css_m3",
+        "question": "Measuring by the visible pink border, how wide is the .box element in the following scenario, assuming no other CSS has been applied?",
+        "code": null,
+        "options": [
+          "244px",
+          "240px",
+          "200px",
+          "0px"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '244px'."
+      },
+      {
+        "id": "css_q50",
+        "module": "css_m1",
+        "question": "What does the following CSS rule do?",
+        "code": null,
+        "options": [
+          "It sets the text color of all elements to red.",
+          "It sets the background color of all elements to red.",
+          "It sets the border color of all elements to red.",
+          "It sets the text color of all elements inside elements to red. The color property in CSS specifically sets the text color of an element. In this case, the rule targets all elements and changes their text color to red. It does not affect the background, border, or child elements inside the elements unless they inherit the text color explicitly."
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'It sets the text color of all elements to red.'."
       }
     ]
   },
@@ -1238,7 +1522,7 @@ const CERTIFICATES_DATA = {
     "icon": "fab fa-js-square",
     "color": "#F7DF1E",
     "passScore": 70,
-    "timeLimit": 40,
+    "timeLimit": 45,
     "modules": [
       {
         "id": "js_m1",
@@ -1265,6 +1549,7 @@ const CERTIFICATES_DATA = {
         "name": "Blok 6: Funkce, výjimky a ladění"
       }
     ],
+    "examQuestionCount": 35,
     "questions": [
       {
         "id": "js_q01",
@@ -1857,6 +2142,168 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'false'."
+      },
+      {
+        "id": "js_q41",
+        "module": "js_m5",
+        "question": "What value will the test variable have if, after running the code, we immediately press the Ok button on the newly created dialog?",
+        "code": null,
+        "options": [
+          "true",
+          "\"Hello\"",
+          "\"OK\"",
+          "\"World\"",
+          "Answers If, after running the code let test = prompt(\"Hello\", \"World\"); , you immediately press the “OK” button on the dialog without modifying the input, the test variable will have the value “World”. The prompt function in JavaScript displays a dialog box with an optional message and a default value. In this case, the message is “Hello” and the default value is “World”. When the dialog appears, if you click “OK” without modifying the input, the default value (“World”) will be assigned to the test variable. Here’s an example of what the code could look like and the outcome: let test = prompt(\"Hello\", \"World\"); console.log(test); Scenario: User presses “OK” without modifying the input: Dialog box appears with the default input “World”.",
+          "User presses “OK” without modifying the input.",
+          "The default value (“World”) will be assigned to the test variable.",
+          "The output will be “World”."
+        ],
+        "correct": 3,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '\"World\"'."
+      },
+      {
+        "id": "js_q42",
+        "module": "js_m3",
+        "question": "The number 2 is stored in the variable n (let n = 2;) . The command n = n*n*n is then called. This last command can be replaced by:",
+        "code": null,
+        "options": [
+          "n **= n;",
+          "n **= 3;",
+          "n *= 3;",
+          "n ***= n;",
+          "Answers The command n = n * n * n can be replaced by n **= 3 . In JavaScript, the **= operator is the exponentiation assignment operator. It raises the left-hand side operand to the power of the right-hand side operand and assigns the result back to the left-hand side variable. So, when n = n * n * n is replaced with n **= 3 , it means n will be raised to the power of 3 and the result will be assigned back to n . It is equivalent to performing n = n ** 3 . Here’s an example to illustrate this: let n = 2; n **= 3; console.log(n); // Output: 8 In this case, the value of n is initially 2. After executing n **= 3 , n is raised to the power of 3, resulting in 8. Therefore, the output will be 8. To summarize, the command n = n * n * n can be replaced by n **= 3 to achieve the same result."
+        ],
+        "correct": 1,
+        "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: n **= 3;."
+      },
+      {
+        "id": "js_q43",
+        "module": "js_m2",
+        "question": "The result is stored in the variable n is:",
+        "code": null,
+        "options": [
+          "18",
+          "36",
+          "215",
+          "53",
+          "Answers The result stored in the variable n after executing the code snippet let n = 2 * 3 ** 3 - 1; is 53. Let’s break down the code snippet step by step: 3 ** 3 is an exponentiation operation where 3 is raised to the power of 3. This results in 27.",
+          "Next, 2 * 27 is multiplied, which gives 54.",
+          "Finally, 54 - 1 is subtracted, resulting in 53."
+        ],
+        "correct": 3,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '53'."
+      },
+      {
+        "id": "js_q44",
+        "module": "js_m1",
+        "question": "The result of the comparison \"abcd\" > \"Abcd\" will be:",
+        "code": null,
+        "options": [
+          "\"abcd\"",
+          "true",
+          "false",
+          "1",
+          "Answers The result of the comparison \"abcd\" > \"Abcd\" will be true . When comparing strings in JavaScript using the greater-than operator ( > ), the comparison is made based on lexicographic order, which follows the Unicode values of the characters. In this case, comparing the strings “abcd” and “Abcd” character by character, the first differing characters are “a” and “A”. In Unicode, the lowercase letters have higher values than uppercase letters. Therefore, “a” is greater than “A” in lexicographic order. Since the first differing character (“a”) in the first string is greater than the corresponding character (“A”) in the second string, the comparison evaluates to true . To illustrate this in code: console.log(\"abcd\" > \"Abcd\"); // Output: true So, the correct answer is true ."
+        ],
+        "correct": 1,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'true'."
+      },
+      {
+        "id": "js_q45",
+        "module": "js_m2",
+        "question": "Its execution will result in the following values in the variables n and m :",
+        "code": null,
+        "options": [
+          "n: 11 , m: 10",
+          "n: 10 , m: 11",
+          "n: 11 , m: 11",
+          "n: 10 , m: 10",
+          "Answers The execution of the code snippet let n = 10; let m = ++n; will result in the following values in the variables n and m : n will have a value of 11.",
+          "m will also have a value of 11."
+        ],
+        "correct": 2,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'n: 11 , m: 11'."
+      },
+      {
+        "id": "js_q46",
+        "module": "js_m6",
+        "question": "The confirm method allows you to create a dialog box. What value does this method return when the user closes the window?",
+        "code": null,
+        "options": [
+          "Always true .",
+          "Always false .",
+          "The string entered by the user.",
+          "It depends on the option selected by the user.",
+          "Answers The confirm method in JavaScript allows you to create a dialog box with an OK and Cancel button. When the user interacts with the dialog box, the method returns a boolean value that indicates the user’s choice. Specifically, when the user closes the window or clicks on either the OK or Cancel button in the dialog box, the confirm method will return true if the user clicked on OK, and false if the user clicked on Cancel or closed the window. So, the correct answer is: It depends on the option selected by the user. Here’s an example to demonstrate the usage of the confirm method: let result = confirm(\"Are you sure you want to proceed?\"); console.log(result); In this example, a confirm dialog box with the message “Are you sure you want to proceed?” is displayed. If the user clicks on OK, the value of result will be true . If the user clicks on Cancel or closes the window, the value of result will be false . The output will reflect the user’s choice. Therefore, the return value of the confirm method depends on the option selected by the user."
+        ],
+        "correct": 3,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'It depends on the option selected by the user.'."
+      },
+      {
+        "id": "js_q47",
+        "module": "js_m5",
+        "question": "The string \"12\" has been written into the str variable: ( let str = \"12\";) . Then the operations str = +str is performed. As a result, the variable str will contain:",
+        "code": null,
+        "options": [
+          "NaN",
+          "12",
+          "\"+12\"",
+          "\"12\"",
+          "Answers The variable str will contain the number 12 as a result of the operation str = +str . Let’s break down the code step by step: Initially, the string “12” is assigned to the variable str using let str = \"12\"; .",
+          "The unary plus operator ( + ) is used to convert the string value to a number. When applied to a string, the unary plus operator attempts to convert the string to a numeric value.",
+          "In this case, the unary plus operator is applied to the string “12”, resulting in the number 12.",
+          "The result of the conversion is then assigned back to the variable str using str = +str . Since the conversion is successful, the variable str now holds the number 12."
+        ],
+        "correct": 1,
+        "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: 12."
+      },
+      {
+        "id": "js_q48",
+        "module": "js_m2",
+        "question": "After its execution, the variables x , y , and z will have the values:",
+        "code": null,
+        "options": [
+          "x: false , y: true , z: 1",
+          "x: null , y: null , z: 1",
+          "x: true , y: false , z: 1",
+          "x: 1 , y: 1 , z: 1",
+          "Answers After executing the code snippet: let nr = \"1\"; let x = (nr === 1); let y = (nr == 1); let z = (nr = 1); The variables x , y , and z will have the following values: x will have a value of false .",
+          "y will have a value of true .",
+          "z will have a value of 1 ."
+        ],
+        "correct": 0,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'x: false , y: true , z: 1'."
+      },
+      {
+        "id": "js_q49",
+        "module": "js_m5",
+        "question": "The methods window.altert , window.confirm , and window.prompt are methods of the window object. Which of the following is not true ?",
+        "code": null,
+        "options": [
+          "The alert , confrim , and prompt methods require an argument specifying the position of the dialog in which the information will be displayed.",
+          "The alert , confirm , and prompt methods display information in modal windows that block access to the page until they are closed.",
+          "You can call window methods, such as window.alert , without including the name window, so calling alert(\"abc\") would be correct.",
+          "The window object represents the window in which the HTML document containing the JavaScript code currently being executed is open.",
+          "Answers The statement “The alert, confirm, and prompt methods require an argument specifying the position of the dialog in which the information will be displayed” is not true. The position of the dialog in which the information will be displayed is not specified as an argument when using the alert , confirm , or prompt methods. These methods display modal dialog boxes that are centered on the user’s screen by default. The position of the dialog is handled by the browser itself, and the methods do not provide a way to control or specify the position explicitly. The correct information regarding the given options is as follows: The alert , confirm , and prompt methods display information in modal windows that block access to the page until they are closed. This means that the user needs to interact with the dialog before continuing to use the page.",
+          "You can call window methods, such as window.alert , without including the name window . For example, calling alert(\"abc\") directly is correct. This is because these methods are part of the window object, and they can be accessed globally without explicitly referencing the window object.",
+          "The window object represents the window in which the HTML document containing the JavaScript code is open. It provides access to various properties and methods related to the window and the document within it."
+        ],
+        "correct": 0,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'The alert , confrim , and prompt methods require an argument specifying the position of the dialog in which the information will be displayed.'."
+      },
+      {
+        "id": "js_q50",
+        "module": "js_m5",
+        "question": "The condition if( a >= 0 ) can be replaced by the condition:",
+        "code": null,
+        "options": [
+          "if (a > 0 || a == 0);",
+          "if (a > 0 && a == 0);",
+          "if (0",
+          "if (!(a > 0 && a == 0)); The condition if( a >= 0 ) can be replaced by the condition: if (a > 0 || a == 0); The replacement condition checks if “a” is greater than 0 or equal to 0. This is equivalent to the original condition a >= 0 because if “a” is greater than or equal to 0, it satisfies the condition a > 0 || a == 0."
+        ],
+        "correct": 0,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'if (a > 0 || a == 0);'."
       }
     ]
   },
@@ -1889,6 +2336,7 @@ const CERTIFICATES_DATA = {
         "name": "JSE2-M4: Pokročilé funkce & Asynchronní programování"
       }
     ],
+    "examQuestionCount": 35,
     "questions": [
       {
         "id": "js2_q01",
@@ -2455,6 +2903,146 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 3,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'name x y color The correct option is: name x y color The name property is defined with a default value of ‘Point’ at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value ‘Point’. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor(‘red’);.'."
+      },
+      {
+        "id": "js2_q41",
+        "module": "js2_m2",
+        "question": "Select the correct missing line in order to insert a private property declaration in the code:",
+        "code": null,
+        "options": [
+          "name = 'Bob';",
+          "private name = 'Bob'",
+          "#name = 'Bob';",
+          "this.#name = 'Bob'; The correct missing line of code to insert a private property declaration in the code is: #name = ‘Bob’; It uses the # symbol to declare a private class field named #name and initializes it with the value ‘Bob’."
+        ],
+        "correct": 2,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: '#name = 'Bob';'."
+      },
+      {
+        "id": "js2_q42",
+        "module": "js2_m1",
+        "question": "Select the correct command in order for the console to show the following string after running the whole code: Bob Marley",
+        "code": null,
+        "options": [
+          "console.log(user.getfullName);",
+          "console.log(user.fullName());",
+          "console.log(user.fullName);",
+          "console.log(user['get fullName']); The correct command to use in order for the console to show the following string “Bob Marley” after running the whole code is: console.log(user.fullName); It accesses the fullName getter method of the user object, which returns the full name as “Bob Marley”."
+        ],
+        "correct": 2,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'console.log(user.fullName);'."
+      },
+      {
+        "id": "js2_q43",
+        "module": "js2_m1",
+        "question": "There is one line missing in the code below:",
+        "code": null,
+        "options": [
+          "A(val);",
+          "this = new A(val);",
+          "super(val);",
+          "An empty line The correct missing line of code to make the executed code result in the desired console output “A: 10 B: 10” is: super(val); It calls the constructor of the superclass A with the val argument, ensuring that the A class constructor is executed before the B class constructor."
+        ],
+        "correct": 2,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'super(val);'."
+      },
+      {
+        "id": "js2_q44",
+        "module": "js2_m2",
+        "question": "A static method defined in a class:",
+        "code": null,
+        "options": [
+          "is visible only in the object created from the class, but can only be called by other methods of the object.",
+          "is bound to the class only and will not be available in the object created from it.",
+          "is visible both in the class and in the object created from it (it can be called in both).",
+          "is visible only in the object created from the class and can be called arbitrarily in that object. The correct answer is: is bound to the class only and will not be available in the object created from it. A static method is associated with the class itself, not with instances (objects) created from the class. It is defined on the class and can be called on the class itself, rather than on instances of the class. Static methods are not available on instances of the class. They are not bound to individual objects and cannot access or modify instance-specific data or properties. Static methods are often used for utility functions or operations that are relevant to the class as a whole, rather than to specific instances."
+        ],
+        "correct": 1,
+        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: is bound to the class only and will not be available in the object created from it.."
+      },
+      {
+        "id": "js2_q45",
+        "module": "js2_m1",
+        "question": "Select the correct call so that the executed code results in the following console output: Test",
+        "code": null,
+        "options": [
+          "Test.info()",
+          "test['static info']()",
+          "test.info()",
+          "Test.info The correct call to make the executed code result in the desired console output “Test” is: Test.info() This is the correct choice. It calls the static method info() on the Test class, which returns ‘Test’."
+        ],
+        "correct": 0,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'Test.info()'."
+      },
+      {
+        "id": "js2_q46",
+        "module": "js2_m1",
+        "question": "As a result of its execution:",
+        "code": null,
+        "options": [
+          "false false will be displayed, because B inheriting from A will also be a function.",
+          "true true will be displayed, because A will be treated as a constructor during inheritance.",
+          "an error will appear because you are trying to inherit in class B from function A and not from another class.",
+          "false true will be displayed, because A is not a class. The correct result of executing the provided code is: true true will be displayed, because A will be treated as a constructor during inheritance. The A function in the code acts as a constructor function, and the B class extends A. This inheritance means that B inherits the prototype chain of A. When you create an instance b of class B with new B();, it is also an instance of the A constructor function because of the inheritance relationship. Therefore, b instanceof A evaluates to true because b is an instance of both A and B. Similarly, b instanceof B evaluates to true because b is also an instance of class B."
+        ],
+        "correct": 1,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'true true will be displayed, because A will be treated as a constructor during inheritance.'."
+      },
+      {
+        "id": "js2_q47",
+        "module": "js2_m3",
+        "question": "A call to Date.now() will return:",
+        "code": null,
+        "options": [
+          "the number of milliseconds since 00:00:00 on 1 January 1970.",
+          "a Date class object containing the current time and date.",
+          "the number of milliseconds since 00:00:00 on January 1, 2000.",
+          "the number of seconds since 00:00:00 on 1 January 1970."
+        ],
+        "correct": 0,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'the number of milliseconds since 00:00:00 on 1 January 1970.'."
+      },
+      {
+        "id": "js2_q48",
+        "module": "js2_m1",
+        "question": "Retrieving the current year can be done by the command:",
+        "code": null,
+        "options": [
+          "let year = (new Date(Date.now())).getFullYear();",
+          "let year = (new Date.now()).getFullYear();",
+          "let year = Date.now().getFullYear();",
+          "let year = Date.getFullYear();"
+        ],
+        "correct": 0,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'let year = (new Date(Date.now())).getFullYear();'."
+      },
+      {
+        "id": "js2_q49",
+        "module": "js2_m3",
+        "question": "A user object can be converted to JSON format using the command:",
+        "code": null,
+        "options": [
+          "JSON.stringify(user);",
+          "JSON.parse(user);",
+          "JSON(user);",
+          "user.toJSON();"
+        ],
+        "correct": 0,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'JSON.stringify(user);'."
+      },
+      {
+        "id": "js2_q50",
+        "module": "js2_m1",
+        "question": "Select the correct command in order for the data to be converted to an object that will be written to the point variable:",
+        "code": null,
+        "options": [
+          "let point = JSON.parse(strPoint);",
+          "let point = JSON.stringify(strPoint);",
+          "let point = JSON(strPoint);",
+          "let point = Object(strPoint);"
+        ],
+        "correct": 0,
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'let point = JSON.parse(strPoint);'."
       }
     ]
   },
@@ -2468,7 +3056,7 @@ const CERTIFICATES_DATA = {
     "icon": "fas fa-project-diagram",
     "color": "#F80000",
     "passScore": 70,
-    "timeLimit": 45,
+    "timeLimit": 60,
     "modules": [
       {
         "id": "dd_m1",
@@ -2491,6 +3079,7 @@ const CERTIFICATES_DATA = {
         "name": "Sekce 8 & 9: Fyzický model, mapování na tabulky a integrita dat"
       }
     ],
+    "examQuestionCount": 50,
     "questions": [
       {
         "id": "dd_q01",
@@ -3076,6 +3665,272 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 2,
         "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: You cannot have spaces between words in a table name."
+      },
+      {
+        "id": "dd_q46",
+        "module": "dd_m1",
+        "question": "In which phases of the System Development Life Cycle will we need to use SQL as a language? (Choose Two)",
+        "code": null,
+        "options": [
+          "Build and Document",
+          "Analysis",
+          "Transition",
+          "Strategy"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Build and Document'."
+      },
+      {
+        "id": "dd_q47",
+        "module": "dd_m1",
+        "question": "During which phases of the System Development Life Cycle would you roll out the system to the users?",
+        "code": null,
+        "options": [
+          "Build and Transition",
+          "Design and Production",
+          "Strategy and Analysis",
+          "Transition and Production"
+        ],
+        "correct": 3,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Transition and Production'."
+      },
+      {
+        "id": "dd_q48",
+        "module": "dd_m4",
+        "question": "A transitive dependency exists when any attribute in an entity is dependent on any other non-UID attribute in that entity.",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
+      },
+      {
+        "id": "dd_q49",
+        "module": "dd_m4",
+        "question": "The Rule of 3rd Normal Form states that No Non-UID attribute can be dependent on another non-UID attribute. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Třetí normální forma (3NF) vyžaduje 2NF a odstranění tranzitivních závislostí – neklíčové atributy nesmí záviset na jiných neklíčových atributech. Správná odpověď: True."
+      },
+      {
+        "id": "dd_q50",
+        "module": "dd_m4",
+        "question": "Normalizing an Entity to 1st Normal Form is done by removing any attributes that contain muliple values. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: True."
+      },
+      {
+        "id": "dd_q51",
+        "module": "dd_m2",
+        "question": "When all attributes are single-valued, the database model is said to conform to:",
+        "code": null,
+        "options": [
+          "2nd Normal Form",
+          "4th Normal Form",
+          "1st Normal Form",
+          "3rd Normal Form"
+        ],
+        "correct": 2,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: '1st Normal Form'."
+      },
+      {
+        "id": "dd_q52",
+        "module": "dd_m1",
+        "question": "When data is only stored in one place in a database, the database conforms to the rules of ___________.",
+        "code": null,
+        "options": [
+          "Reduction",
+          "Normality",
+          "Multiplication",
+          "Normalization"
+        ],
+        "correct": 3,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Normalization'."
+      },
+      {
+        "id": "dd_q53",
+        "module": "dd_m4",
+        "question": "To resolve a 2nd Normal Form violation, we:",
+        "code": null,
+        "options": [
+          "Move the attribute that violates 2nd Normal Form to a new entity with a relationship to the original entity.",
+          "Move the attribute that violates 2nd Normal Form to a new ERD.",
+          "Do nothing, an entity does not need to be in 2nd Normal Form.",
+          "Delete the attribute that was causing the violation."
+        ],
+        "correct": 0,
+        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: Move the attribute that violates 2nd Normal Form to a new entity with a relationship to the original entity.."
+      },
+      {
+        "id": "dd_q54",
+        "module": "dd_m2",
+        "question": "Any Non-UID attribute must be dependent upon the entire UID. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
+      },
+      {
+        "id": "dd_q55",
+        "module": "dd_m2",
+        "question": "Which of the following would be suitable UIDs for the entity EMPLOYEE: (Choose Two)",
+        "code": null,
+        "options": [
+          "Social Security Number",
+          "Last Name",
+          "Employee ID",
+          "Address"
+        ],
+        "correct": 0,
+        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: Social Security Number."
+      },
+      {
+        "id": "dd_q56",
+        "module": "dd_m2",
+        "question": "The candidate UID that is chosen to identify an entity is called the Primary UID; other candidate UIDs are called Secondary UIDs.",
+        "code": null,
+        "options": [
+          "Yes, this is the way UID's are named.",
+          "No, each Entity can only have one UID, the secondary one.",
+          "No, it is not possible to have more than one UID for an Entity.",
+          "No, after UIDs are first sorted, the first one is called the Primary UID, the second is the Secondary UID, etc."
+        ],
+        "correct": 0,
+        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: Yes, this is the way UID's are named.."
+      },
+      {
+        "id": "dd_q57",
+        "module": "dd_m2",
+        "question": "Where an entity has more than one attribute suitable to be the Primary UID, these are known as _____________ UIDs.",
+        "code": null,
+        "options": [
+          "Composite",
+          "Simple",
+          "Secondary",
+          "Candidate"
+        ],
+        "correct": 3,
+        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: Candidate."
+      },
+      {
+        "id": "dd_q58",
+        "module": "dd_m4",
+        "question": "To convert an entity with a multi valued attribute to 1st Normal Form, we create an additional entity and relate it to the original entity with a 1:1 relationship. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: False."
+      },
+      {
+        "id": "dd_q59",
+        "module": "dd_m2",
+        "question": "A candidate UID that is not chosen to be the Primary UID is called:",
+        "code": null,
+        "options": [
+          "Composite",
+          "Secondary",
+          "Simple",
+          "Artificial"
+        ],
+        "correct": 1,
+        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: Secondary."
+      },
+      {
+        "id": "dd_q60",
+        "module": "dd_m4",
+        "question": "Examine the following entity and decide which attribute breaks the 2nd Normal Form rule:\nENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION",
+        "code": "DATE",
+        "options": [
+          "STORE LOCATION",
+          "CUSTOMER ID",
+          "DATE",
+          "STORE ID"
+        ],
+        "correct": 0,
+        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: STORE LOCATION."
+      },
+      {
+        "id": "dd_q61",
+        "module": "dd_m3",
+        "question": "Arcs are Mandatory in Data modeling. All ERD's must have at least one Arc. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: False."
+      },
+      {
+        "id": "dd_q62",
+        "module": "dd_m2",
+        "question": "To visually represent exclusivity between two or more relationships in an ERD you would most likely use an ________.",
+        "code": null,
+        "options": [
+          "Arc",
+          "Relationship",
+          "Attribute",
+          "UID"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Arc'."
+      },
+      {
+        "id": "dd_q63",
+        "module": "dd_m3",
+        "question": "All relationships participating in an arc must be mandatory. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: False."
+      },
+      {
+        "id": "dd_q64",
+        "module": "dd_m2",
+        "question": "Every business has restrictions on which attribute values and which relationships are allowed. These are known as:",
+        "code": null,
+        "options": [
+          "Constraints.",
+          "Relationships",
+          "Entities.",
+          "Attributes"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Constraints.'."
+      },
+      {
+        "id": "dd_q65",
+        "module": "dd_m3",
+        "question": "A Recursive Relationship is represented on an ERD by a/an:",
+        "code": null,
+        "options": [
+          "Single Toe",
+          "Pig's Ear",
+          "Crow's Foot",
+          "Dog's Tail"
+        ],
+        "correct": 1,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Pig's Ear'."
       }
     ]
   },
@@ -3089,7 +3944,7 @@ const CERTIFICATES_DATA = {
     "icon": "fas fa-database",
     "color": "#C74634",
     "passScore": 70,
-    "timeLimit": 45,
+    "timeLimit": 60,
     "modules": [
       {
         "id": "sql_m1",
@@ -3116,6 +3971,7 @@ const CERTIFICATES_DATA = {
         "name": "Sekce 11 & 12: DDL, DML, řízení transakcí a integritní omezení"
       }
     ],
+    "examQuestionCount": 50,
     "questions": [
       {
         "id": "sql_q01",
@@ -3719,6 +4575,272 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 3,
         "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Manipulation'."
+      },
+      {
+        "id": "sql_q46",
+        "module": "sql_m2",
+        "question": "In the default order of precedence, which operator would be evaluated first?",
+        "code": null,
+        "options": [
+          "Multiplications and Divisions are at the same level and would be evaluated first based on left to right order",
+          "Subtractions and Additions are at the same level and would be evaluated first based on left to right order",
+          "Divisions and Subtractions are at the same level and would be evaluated first based on left to right order",
+          "Additions and Multiplications are at the same level and would be evaluated first based on left to right order"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Multiplications and Divisions are at the same level and would be evaluated first based on left to right order'."
+      },
+      {
+        "id": "sql_q47",
+        "module": "sql_m1",
+        "question": "You cannot use computers unless you completely understand exactly how they work. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q48",
+        "module": "sql_m2",
+        "question": "There is only one kind of software used by all computers. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q49",
+        "module": "sql_m3",
+        "question": "Databases are used in most countries and by most governments. Life, as we know it, would change drastically if we no longer had access to databases. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q50",
+        "module": "sql_m2",
+        "question": "When using the \"LIKE\" operator, the % and _ symbols can be used to do a pattern-matching, wild card search. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q51",
+        "module": "sql_m2",
+        "question": "Which SELECT statement will display both unique and non-unique combinations of the MANAGER_ID and DEPARTMENT_ID values from the EMPLOYEES table?",
+        "code": null,
+        "options": [
+          "SELECT manager_id, department_id FROM employees;",
+          "SELECT manager_id, DISTINCT department_id FROM employees;",
+          "SELECT manager_id, department_id DISTINCT FROM employees;",
+          "SELECT DISTINCT manager_id, department_id FROM employees;"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'SELECT manager_id, department_id FROM employees;'."
+      },
+      {
+        "id": "sql_q52",
+        "module": "sql_m2",
+        "question": "You want to retrieve a list of customers whose last names begin with the letters 'Fr' . Which keyword should you include in the WHERE clause of your SELECT statement to achieve the desired result?",
+        "code": null,
+        "options": [
+          "BETWEEN",
+          "AND",
+          "IN",
+          "LIKE"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'LIKE'."
+      },
+      {
+        "id": "sql_q53",
+        "module": "sql_m2",
+        "question": "Which of the following elements cannot be included in a WHERE clause?",
+        "code": null,
+        "options": [
+          "A constant",
+          "A column name",
+          "A column alias",
+          "A comparison condition"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'A column alias'."
+      },
+      {
+        "id": "sql_q54",
+        "module": "sql_m1",
+        "question": "You need to display employees with salaries that are at least 30000 or higher. Which comparison operator should you use?",
+        "code": null,
+        "options": [
+          "\"=>\"",
+          ">",
+          "!=",
+          ">="
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '>='."
+      },
+      {
+        "id": "sql_q55",
+        "module": "sql_m2",
+        "question": "What value will the following SQL statement return?\nFROM employees\nWHERE employee_id BETWEEN 100 AND 150\nOR employee_id IN(119, 175, 205)\nAND (employee_id BETWEEN 150 AND 200);",
+        "code": "SELECT employee_id",
+        "options": [
+          "200, 201, 202, 203, 204, 205, 206",
+          "100, 101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149",
+          "19",
+          "No rows will be returned"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '100, 101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149'."
+      },
+      {
+        "id": "sql_q56",
+        "module": "sql_m2",
+        "question": "Which clause would you include in a SELECT statement to sort the rows returned by the LAST_NAME column?",
+        "code": null,
+        "options": [
+          "ORDER BY WHERE",
+          "HAVING FROM"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'ORDER BY WHERE'."
+      },
+      {
+        "id": "sql_q57",
+        "module": "sql_m2",
+        "question": "Will the following statement return one row?\nFROM employees;",
+        "code": "SELECT MAX(salary), MIN(Salary), AVG(SALARY)",
+        "options": [
+          "Yes, it will return the highest salary from each employee.",
+          "Yes, it will return the average salary from the employees table.",
+          "Yes, it will return the highest salary, the lowest salary, and the average salary from all employees.",
+          "No, it is illegal. You cannot use more than one multi-row function in a SELECT statement."
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Yes, it will return the highest salary, the lowest salary, and the average salary from all employees.'."
+      },
+      {
+        "id": "sql_q58",
+        "module": "sql_m2",
+        "question": "ROUND and TRUNC functions can be used with which of the following Datatypes?",
+        "code": null,
+        "options": [
+          "Dates and numbers",
+          "Dates and characters",
+          "Numbers and characters",
+          "None of the above"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Dates and numbers'."
+      },
+      {
+        "id": "sql_q59",
+        "module": "sql_m2",
+        "question": "You query the database with this SQL statement:\nSELECT LOWER(SUBSTR(CONCAT(last_name, first_name)), 1, 5) \"ID\"\nFROM employee;\nIn which order are the functions evaluated?",
+        "code": null,
+        "options": [
+          "LOWER, CONCAT, SUBSTR",
+          "CONCAT, SUBSTR, LOWER",
+          "LOWER, SUBSTR, CONCAT",
+          "SUBSTR, CONCAT, LOWER"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'CONCAT, SUBSTR, LOWER'."
+      },
+      {
+        "id": "sql_q60",
+        "module": "sql_m2",
+        "question": "CASE and DECODE evaluate expressions in a similar way to IF-THEN-ELSE logic. However, DECODE is specific to Oracle syntax. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q61",
+        "module": "sql_m2",
+        "question": "You need to replace null values in the DEPT_ID column with the text N/A. Which functions should you use?",
+        "code": null,
+        "options": [
+          "TO_CHAR and NULLIF",
+          "TO_NUMBER and NULLIF",
+          "TO_CHAR and NVL",
+          "TO_CHAR and NULL"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'TO_CHAR and NVL'."
+      },
+      {
+        "id": "sql_q62",
+        "module": "sql_m2",
+        "question": "If you use the RR format when writing a query using the date 27-Oct-17 and the year is 2001, what year would be the result?",
+        "code": null,
+        "options": [
+          "1917",
+          "1901",
+          "2017",
+          "2001"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '2017'."
+      },
+      {
+        "id": "sql_q63",
+        "module": "sql_m2",
+        "question": "Which best describes the TO_CHAR function?",
+        "code": null,
+        "options": [
+          "The TO_CHAR function can be used to remove text from column data that will be returned by the database.",
+          "The TO_CHAR function can be used to display dates and numbers according to formatting conventions that are supported by Oracle.",
+          "The TO_CHAR function can be used to specify meaningful column names in an SQL statement's result set.",
+          "The TO_CHAR function can only be used on Date columns."
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The TO_CHAR function can be used to display dates and numbers according to formatting conventions that are supported by Oracle.'."
+      },
+      {
+        "id": "sql_q64",
+        "module": "sql_m1",
+        "question": "Hierarchical queries MUST use the LEVEL pseudo column. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q65",
+        "module": "sql_m3",
+        "question": "You need to join all the rows in the EMPLOYEES table to all the rows in the EMP_REFERENCE table. Which type of join should you create?",
+        "code": null,
+        "options": [
+          "A cross join",
+          "An inner join",
+          "An equijoin",
+          "A full outer join"
+        ],
+        "correct": 0,
+        "explanation": "V Oracle SQL spojujeme tabulky pomocí ANSI syntaxe (INNER JOIN, LEFT/RIGHT/FULL OUTER JOIN, CROSS JOIN) na základě spojovací podmínky ON nebo USING. Správná odpověď: A cross join."
       }
     ]
   },
@@ -3732,7 +4854,7 @@ const CERTIFICATES_DATA = {
     "icon": "fab fa-linux",
     "color": "#EAA01A",
     "passScore": 70,
-    "timeLimit": 45,
+    "timeLimit": 60,
     "modules": [
       {
         "id": "linux_m1",
@@ -3751,6 +4873,7 @@ const CERTIFICATES_DATA = {
         "name": "LE-M4: Uživatelé, Oprávnění (chmod) & Správa systému"
       }
     ],
+    "examQuestionCount": 40,
     "questions": [
       {
         "id": "linux_q01",
@@ -4397,6 +5520,72 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 2,
         "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'usermod -L bob'."
+      },
+      {
+        "id": "linux_q46",
+        "module": "linux_m1",
+        "question": "What directory contains a user’s home directory?",
+        "code": null,
+        "options": [
+          "/rootfs",
+          "/",
+          "/home",
+          "/user"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/home'."
+      },
+      {
+        "id": "linux_q47",
+        "module": "linux_m1",
+        "question": "GIDs under 500 (or 1000) are usually reserved for what kind of groups?",
+        "code": null,
+        "options": [
+          "Administrators",
+          "System use",
+          "User private groups (UPG)",
+          "Are not used for groups, but for user accounts"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'System use'."
+      },
+      {
+        "id": "linux_q48",
+        "module": "linux_m1",
+        "question": "A user cannot delete a file if they do not own it. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'False'."
+      },
+      {
+        "id": "linux_q49",
+        "module": "linux_m1",
+        "question": "The chown command permits changing group ownership done by root only. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'False'."
+      },
+      {
+        "id": "linux_q50",
+        "module": "linux_m4",
+        "question": "Which of the following commands will list hidden files as well as their ownership?",
+        "code": null,
+        "options": [
+          "ls -l",
+          "ls -z",
+          "ls -a",
+          "ls -la"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'ls -la'."
       }
     ]
   },
@@ -4410,7 +5599,7 @@ const CERTIFICATES_DATA = {
     "icon": "fas fa-ethernet",
     "color": "#049FD9",
     "passScore": 70,
-    "timeLimit": 60,
+    "timeLimit": 75,
     "modules": [
       {
         "id": "itn_m1",
@@ -4429,6 +5618,7 @@ const CERTIFICATES_DATA = {
         "name": "ITN-M4: IPv6, Transportní vrstva (TCP/UDP) & Aplikační služby"
       }
     ],
+    "examQuestionCount": 50,
     "questions": [
       {
         "id": "itn_q01",
@@ -5078,6 +6268,225 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 4,
         "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'Update the operating system and other application software.'."
+      },
+      {
+        "id": "itn_q46",
+        "module": "itn_m1",
+        "question": "Which type of security threat would be responsible if a spreadsheet add-on disables the local software firewall?",
+        "code": null,
+        "options": [
+          "brute-force attack",
+          "Trojan horse",
+          "DoS",
+          "buffer overflow"
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'Trojan horse'."
+      },
+      {
+        "id": "itn_q47",
+        "module": "itn_m2",
+        "question": "Which frame field is created by a source node and used by a destination node to ensure that a transmitted data signal has not been altered by interference, distortion, or signal loss?",
+        "code": null,
+        "options": [
+          "User Datagram Protocol field",
+          "transport layer error check field",
+          "flow control field",
+          "frame check sequence field",
+          "error correction process field"
+        ],
+        "correct": 3,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'frame check sequence field'."
+      },
+      {
+        "id": "itn_q48",
+        "module": "itn_m4",
+        "question": "A network administrator is adding a new LAN to a branch office. The new LAN must support 4 connected devices. What is the smallest network mask that the network administrator can use for the new network?",
+        "code": null,
+        "options": [
+          "255.255.255.248",
+          "255.255.255.0",
+          "255.255.255.128",
+          "255.255.255.192"
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: '255.255.255.248'."
+      },
+      {
+        "id": "itn_q49",
+        "module": "itn_m1",
+        "question": "What service is provided by POP3?",
+        "code": null,
+        "options": [
+          "Retrieves email from the server by downloading the email to the local mail application of the client.",
+          "An application that allows real-time chatting among remote users.",
+          "Allows remote access to network devices and servers.",
+          "Uses encryption to provide secure remote access to network devices and servers."
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'Retrieves email from the server by downloading the email to the local mail application of the client.'."
+      },
+      {
+        "id": "itn_q50",
+        "module": "itn_m1",
+        "question": "What two security solutions are most likely to be used only in a corporate environment? (Choose two.)",
+        "code": null,
+        "options": [
+          "antispyware",
+          "virtual private networks",
+          "intrusion prevention systems",
+          "strong passwords",
+          "antivirus software"
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'virtual private networks'."
+      },
+      {
+        "id": "itn_q51",
+        "module": "itn_m1",
+        "question": "What characteristic describes antivirus software?",
+        "code": null,
+        "options": [
+          "applications that protect end devices from becoming infected with malicious software",
+          "a network device that filters access and traffic coming into a network",
+          "a tunneling protocol that provides remote users with secure access into the network of an organization",
+          "software on a router that filters traffic based on IP addresses or applications"
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'applications that protect end devices from becoming infected with malicious software'."
+      },
+      {
+        "id": "itn_q52",
+        "module": "itn_m4",
+        "question": "What mechanism is used by a router to prevent a received IPv4 packet from traveling endlessly on a network?",
+        "code": null,
+        "options": [
+          "It checks the value of the TTL field and if it is 0, it discards the packet and sends a Destination Unreachable message to the source host.",
+          "It checks the value of the TTL field and if it is 100, it discards the packet and sends a Destination Unreachable message to the source host.",
+          "It decrements the value of the TTL field by 1 and if the result is 0, it discards the packet and sends a Time Exceeded message to the source host.",
+          "It increments the value of the TTL field by 1 and if the result is 100, it discards the packet and sends a Parameter Problem message to the source host."
+        ],
+        "correct": 2,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'It decrements the value of the TTL field by 1 and if the result is 0, it discards the packet and sends a Time Exceeded message to the source host.'."
+      },
+      {
+        "id": "itn_q53",
+        "module": "itn_m4",
+        "question": "A client packet is received by a server. The packet has a destination port number of 69. What service is the client requesting?",
+        "code": null,
+        "options": [
+          "DNS",
+          "DHCP",
+          "SMTP",
+          "TFTP"
+        ],
+        "correct": 3,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'TFTP'."
+      },
+      {
+        "id": "itn_q54",
+        "module": "itn_m1",
+        "question": "An administrator defined a local user account with a secret password on router R1 for use with SSH. Which three additional steps are required to configure R1 to accept only encrypted SSH connections? (Choose three.)",
+        "code": null,
+        "options": [
+          "Configure DNS on the router.",
+          "Generate two-way pre-shared keys.",
+          "Configure the IP domain name on the router.",
+          "Generate the SSH keys.",
+          "Enable inbound vty SSH sessions.",
+          "Enable inbound vty Telnet sessions."
+        ],
+        "correct": 2,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'Configure the IP domain name on the router.'."
+      },
+      {
+        "id": "itn_q55",
+        "module": "itn_m2",
+        "question": "Which two functions are performed at the MAC sublayer of the OSI Data Link Layer to facilitate Ethernet communication? (Choose two.)",
+        "code": null,
+        "options": [
+          "handles communication between upper layer networking software and Ethernet NIC hardware",
+          "implements trailer with frame check sequence for error detection",
+          "places information in the Ethernet frame that identifies which network layer protocol is being encapsulated by the frame",
+          "implements a process to delimit fields within an Ethernet 2 frame",
+          "adds Ethernet control information to network protocol data"
+        ],
+        "correct": 1,
+        "explanation": "Ethernetový rámec na linkové vrstvě (L2) obsahuje zdrojovou a cílovou MAC adresu (48 bitů). Minimální velikost rámce je 64 bajtů. Správná odpověď: implements trailer with frame check sequence for error detection."
+      },
+      {
+        "id": "itn_q56",
+        "module": "itn_m4",
+        "question": "An IPv6 enabled device sends a data packet with the destination address of FF02::2. What is the target of this packet?​",
+        "code": null,
+        "options": [
+          "all IPv6 enabled devices on the local link​",
+          "all IPv6 DHCP servers​",
+          "all IPv6 enabled devices across the network​",
+          "all IPv6 configured routers on the local link​"
+        ],
+        "correct": 3,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'all IPv6 configured routers on the local link​'."
+      },
+      {
+        "id": "itn_q57",
+        "module": "itn_m3",
+        "question": "What are the three parts of an IPv6 global unicast address? (Choose three.)",
+        "code": null,
+        "options": [
+          "subnet ID",
+          "subnet mask",
+          "broadcast address",
+          "global routing prefix",
+          "interface ID"
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'subnet ID'."
+      },
+      {
+        "id": "itn_q58",
+        "module": "itn_m1",
+        "question": "A network administrator is designing the layout of a new wireless network. Which three areas of concern should be accounted for when building a wireless network? (Choose three.)",
+        "code": null,
+        "options": [
+          "extensive cabling",
+          "mobility options",
+          "packet collision",
+          "interference",
+          "security",
+          "coverage area"
+        ],
+        "correct": 3,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'interference'."
+      },
+      {
+        "id": "itn_q59",
+        "module": "itn_m1",
+        "question": "A new network administrator has been asked to enter a banner message on a Cisco device. What is the fastest way a network administrator could test whether the banner is properly configured?",
+        "code": null,
+        "options": [
+          "Enter CTRL-Z at the privileged mode prompt.",
+          "Exit global configuration mode.",
+          "Power cycle the device.",
+          "Reboot the device.",
+          "Exit privileged EXEC mode and press Enter ."
+        ],
+        "correct": 4,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'Exit privileged EXEC mode and press Enter .'."
+      },
+      {
+        "id": "itn_q60",
+        "module": "itn_m1",
+        "question": "What method is used to manage contention-based access on a wireless network?",
+        "code": null,
+        "options": [
+          "token passing",
+          "CSMA/CA",
+          "priority ordering",
+          "CSMA/CD"
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Introduction to Networks (ITN) je správným řešením: 'CSMA/CA'."
       }
     ]
   },
@@ -5091,7 +6500,7 @@ const CERTIFICATES_DATA = {
     "icon": "fas fa-network-wired",
     "color": "#00BCEB",
     "passScore": 70,
-    "timeLimit": 45,
+    "timeLimit": 75,
     "modules": [
       {
         "id": "srwe_m1",
@@ -5110,6 +6519,7 @@ const CERTIFICATES_DATA = {
         "name": "SRWE-M4: Bezdrátové sítě (WLAN, WLC) & Statické směrování"
       }
     ],
+    "examQuestionCount": 50,
     "questions": [
       {
         "id": "srwe_q01",
@@ -5755,6 +7165,218 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 2,
         "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'the ipv6 unicast-routing command'."
+      },
+      {
+        "id": "srwe_q46",
+        "module": "srwe_m4",
+        "question": "A network administrator is using the router-on-a-stick model to configure a switch and a router for inter-VLAN routing. What configuration should be made on the switch port that connects to the router?",
+        "code": null,
+        "options": [
+          "Configure it as a trunk port and allow only untagged traffic.",
+          "Configure the port as an access port and a member of VLAN1.",
+          "Configure the port as an 802.1q trunk port.",
+          "Configure the port as a trunk port and assign it to VLAN1."
+        ],
+        "correct": 2,
+        "explanation": "Trunk linky v protokolu IEEE 802.1Q vkládají do Ethernet rámce 4bajtový VLAN tag s identifikátorem VID. Správná odpověď: Configure the port as an 802.1q trunk port.."
+      },
+      {
+        "id": "srwe_q47",
+        "module": "srwe_m1",
+        "question": "What are three techniques for mitigating VLAN attacks? (Choose three.)",
+        "code": null,
+        "options": [
+          "Use private VLANs.",
+          "Enable BPDU guard.",
+          "Enable trunking manually",
+          "Enable Source Guard.",
+          "Disable DTP. Set the native VLAN to an unused VLAN."
+        ],
+        "correct": 2,
+        "explanation": "Trunk linky v protokolu IEEE 802.1Q vkládají do Ethernet rámce 4bajtový VLAN tag s identifikátorem VID. Správná odpověď: Enable trunking manually."
+      },
+      {
+        "id": "srwe_q48",
+        "module": "srwe_m3",
+        "question": "Match the DHCP message types to the order of the DHCPv4 process. (Not all options are used.) Step 1 DHCPDISCOVER Step 2 DHCPOFFER Step 3 DHCPREQUEST Step 4 DHCPACK Explanation: Topic 7.1.3 The broadcast DHCPDISCOVER message finds DHCPv4 servers on the network. When the DHCPv4 server receives a DHCPDISCOVER message, it reserves an available IPv4 address to lease to the client and sends the unicast DHCPOFFER message to the requesting client. When the client receives the DHCPOFFER from the server, it sends back a DHCPREQUEST. On receiving the DHCPREQUEST message the server replies with a unicast DHCPACK message. DHCPREPLY and DHCPINFORMATION-REQUEST are DHCPv6 messages. 109. In which situation would a technician use the show interfaces switch command?",
+        "code": null,
+        "options": [
+          "to determine if remote access is enabled",
+          "when packets are being dropped from a particular directly attached host",
+          "when an end device can reach local devices, but not remote devices",
+          "to determine the MAC address of a directly attached network device on a particular interface"
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'when packets are being dropped from a particular directly attached host'."
+      },
+      {
+        "id": "srwe_q49",
+        "module": "srwe_m1",
+        "question": "What is a drawback of the local database method of securing device access that can be solved by using AAA with centralized servers?",
+        "code": null,
+        "options": [
+          "There is no ability to provide accountability.",
+          "User accounts must be configured locally on each device, which is an unscalable authentication solution.",
+          "It is very susceptible to brute-force attacks because there is no username.",
+          "The passwords can only be stored in plain text in the running configuration."
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'User accounts must be configured locally on each device, which is an unscalable authentication solution.'."
+      },
+      {
+        "id": "srwe_q50",
+        "module": "srwe_m3",
+        "question": "What action does a DHCPv4 client take if it receives more than one DHCPOFFER from multiple DHCP servers?",
+        "code": null,
+        "options": [
+          "It sends a DHCPREQUEST that identifies which lease offer the client is accepting.",
+          "It sends a DHCPNAK and begins the DHCP process over again.",
+          "It discards both offers and sends a new DHCPDISCOVER.",
+          "It accepts both DHCPOFFER messages and sends a DHCPACK."
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'It sends a DHCPREQUEST that identifies which lease offer the client is accepting.'."
+      },
+      {
+        "id": "srwe_q51",
+        "module": "srwe_m1",
+        "question": "A network administrator has found a user sending a double-tagged 802.1Q frame to a switch. What is the best solution to prevent this type of attack?",
+        "code": null,
+        "options": [
+          "The native VLAN number used on any trunk should be one of the active data VLANs.",
+          "The VLANs for user access ports should be different VLANs than any native VLANs used on trunk ports.",
+          "Trunk ports should be configured with port security.",
+          "Trunk ports should use the default VLAN as the native VLAN number."
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'The VLANs for user access ports should be different VLANs than any native VLANs used on trunk ports.'."
+      },
+      {
+        "id": "srwe_q52",
+        "module": "srwe_m1",
+        "question": "A new switch is to be added to an existing network in a remote office. The network administrator does not want the technicians in the remote office to be able to add new VLANs to the switch, but the switch should receive VLAN updates from the VTP domain. Which two steps must be performed to configure VTP on the new switch to meet these conditions? (Choose two.)",
+        "code": null,
+        "options": [
+          "Configure the new switch as a VTP client.",
+          "Configure the existing VTP domain name on the new switch.",
+          "Configure an IP address on the new switch.",
+          "Configure all ports of both switches to access mode.",
+          "Enable VTP pruning."
+        ],
+        "correct": 0,
+        "explanation": "Trunk linky v protokolu IEEE 802.1Q vkládají do Ethernet rámce 4bajtový VLAN tag s identifikátorem VID. Správná odpověď: Configure the new switch as a VTP client.."
+      },
+      {
+        "id": "srwe_q53",
+        "module": "srwe_m1",
+        "question": "What is the effect of entering the ip dhcp snooping configuration command on a switch?",
+        "code": null,
+        "options": [
+          "It enables DHCP snooping globally on a switch.",
+          "It enables PortFast globally on a switch.",
+          "It disables DTP negotiations on trunking ports.",
+          "It manually enables a trunk link."
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'It enables DHCP snooping globally on a switch.'."
+      },
+      {
+        "id": "srwe_q54",
+        "module": "srwe_m1",
+        "question": "What is a result of connecting two or more switches together?",
+        "code": null,
+        "options": [
+          "The number of broadcast domains is increased.",
+          "The size of the broadcast domain is increased.",
+          "The number of collision domains is reduced.",
+          "The size of the collision domain is increased."
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'The size of the broadcast domain is increased.'."
+      },
+      {
+        "id": "srwe_q55",
+        "module": "srwe_m1",
+        "question": "Branch users were able to access a site in the morning but have had no connectivity with the site since lunch time. What should be done or checked?",
+        "code": null,
+        "options": [
+          "Verify that the static route to the server is present in the routing table.",
+          "Use the \"show ip interface brief\" command to see if an interface is down.",
+          "Check the configuration on the floating static route and adjust the AD.",
+          "Create a floating static route to that network."
+        ],
+        "correct": 0,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'Verify that the static route to the server is present in the routing table.'."
+      },
+      {
+        "id": "srwe_q56",
+        "module": "srwe_m1",
+        "question": "What is the effect of entering the switchport port-security configuration command on a switch?",
+        "code": null,
+        "options": [
+          "It dynamically learns the L2 address and copies it to the running configuration.",
+          "It enables port security on an interface.",
+          "It enables port security globally on the switch.",
+          "It restricts the number of discovery messages, per second, to be received on the interface."
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'It enables port security on an interface.'."
+      },
+      {
+        "id": "srwe_q57",
+        "module": "srwe_m4",
+        "question": "A network administrator is configuring a WLAN. Why would the administrator use multiple lightweight APs?",
+        "code": null,
+        "options": [
+          "to centralize management of multiple WLANs",
+          "to monitor the operation of the wireless network",
+          "to provide prioritized service for time-sensitive applications",
+          "to facilitate group configuration and management of multiple WLANs through a WLC"
+        ],
+        "correct": 3,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'to facilitate group configuration and management of multiple WLANs through a WLC'."
+      },
+      {
+        "id": "srwe_q58",
+        "module": "srwe_m4",
+        "question": "A network administrator is configuring a WLAN. Why would the administrator apply WPA2 with AES to the WLAN?",
+        "code": null,
+        "options": [
+          "to reduce the risk of unauthorized APs being added to the network",
+          "to centralize management of multiple WLANs",
+          "to provide prioritized service for time-sensitive applications",
+          "to provide privacy and integrity to wireless traffic by using encryption"
+        ],
+        "correct": 3,
+        "explanation": "Zabezpečení WPA2 využívající šifrování AES (šifra CCMP) je standardem pro bezpečné bezdrátové sítě WLAN. Správná odpověď: to provide privacy and integrity to wireless traffic by using encryption."
+      },
+      {
+        "id": "srwe_q59",
+        "module": "srwe_m1",
+        "question": "Users on a LAN are unable to get to a company web server but are able to get elsewhere. What should be done or checked?",
+        "code": null,
+        "options": [
+          "Ensure that the old default route has been removed from the company edge routers.",
+          "Verify that the static route to the server is present in the routing table.",
+          "Check the configuration on the floating static route and adjust the AD.",
+          "Create a floating static route to that network."
+        ],
+        "correct": 1,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'Verify that the static route to the server is present in the routing table.'."
+      },
+      {
+        "id": "srwe_q60",
+        "module": "srwe_m1",
+        "question": "What IPv6 prefix is designed for link-local communication?",
+        "code": null,
+        "options": [
+          "2001::/3",
+          "ff00::/8",
+          "fc::/07",
+          "fe80::/10"
+        ],
+        "correct": 3,
+        "explanation": "V certifikaci CCNA: Switching, Routing, and Wireless Essentials (SRWE) je správná odpověď: 'fe80::/10'."
       }
     ]
   },
@@ -5787,6 +7409,7 @@ const CERTIFICATES_DATA = {
         "name": "PE1-M4: Funkce, N-tice (Tuples), Slovníky & Výjimky"
       }
     ],
+    "examQuestionCount": 35,
     "questions": [
       {
         "id": "py_q01",
@@ -6446,6 +8069,76 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 1,
         "explanation": "Python vyhodnocuje kód přesně podle priorit operátorů a pravidel jazyka. Výsledkem spuštění je: nums and vals are of the same length."
+      },
+      {
+        "id": "py_q46",
+        "module": "py_m1",
+        "question": "What value will be assigned to the x variable?",
+        "code": null,
+        "options": [
+          "1",
+          "0",
+          "True",
+          "False"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'True'."
+      },
+      {
+        "id": "py_q47",
+        "module": "py_m1",
+        "question": "Which of the following sentences are true? (Select two answers)",
+        "code": null,
+        "options": [
+          "nums and vals are two different lists",
+          "vals is longer than nums",
+          "nums and vals are of the same length",
+          "nums is longer than vals"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'nums and vals are two different lists'."
+      },
+      {
+        "id": "py_q48",
+        "module": "py_m2",
+        "question": "An operator able to check whether two values are equal is code as:",
+        "code": null,
+        "options": [
+          "=",
+          "!=",
+          "==",
+          "==="
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: '=='."
+      },
+      {
+        "id": "py_q49",
+        "module": "py_m1",
+        "question": "The second assignment:",
+        "code": null,
+        "options": [
+          "doesn’t change the list",
+          "reverses the list",
+          "shortens the list",
+          "extends the list"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'reverses the list'."
+      },
+      {
+        "id": "py_q50",
+        "module": "py_m1",
+        "question": "The value eventually assigned to x is equal to :",
+        "code": null,
+        "options": [
+          "0",
+          "1",
+          "True",
+          "False"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'True'."
       }
     ]
   }
