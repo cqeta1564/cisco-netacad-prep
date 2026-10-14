@@ -5,7 +5,7 @@
       "Businesses cannot charge anything for the software, only the hardware",
       "Systems designed to do a specific task on hardware optimized for only that purpose",
       "Users must support the systems themselves",
-      "You can view the software’s source code",
+      "You can view the software's source code",
       "Companies must share their changes"
     ],
     "correct": 1,
@@ -37,7 +37,7 @@
   {
     "question": "A software release cycle describes:",
     "options": [
-      "How often the software’s memory is released back to the operating system",
+      "How often the software's memory is released back to the operating system",
       "How often the computer must be rebooted",
       "How often upgrades come out for software",
       "How often security fixes are implemented",
@@ -133,7 +133,7 @@
     "explanation": ""
   },
   {
-    "question": "A license where you don’t have access to the source code is called:",
+    "question": "A license where you don't have access to the source code is called:",
     "options": [
       "Closed source",
       "Sourceless",
@@ -200,7 +200,7 @@
     "explanation": ""
   },
   {
-    "question": "The _______ command will print a list of the commands that you’ve previously executed.",
+    "question": "The _______ command will print a list of the commands that you've previously executed.",
     "options": [
       "history",
       "exec",
@@ -294,7 +294,7 @@
       "…lists the contents of the current directory.",
       "…prompts for a directory to list.",
       "…generates an error as this command requires arguments.",
-      "…lists the contents of a user’s home directory."
+      "…lists the contents of a user's home directory."
     ],
     "correct": 0,
     "explanation": ""
@@ -331,7 +331,7 @@
     "explanation": ""
   },
   {
-    "question": "Which command would list files that do not begin with a T or a W ?",
+    "question": "Which command would list files that do not begin with a T or a W?",
     "options": [
       "echo /etc/*[TW!]",
       "echo /etc/[!TW]",
@@ -366,7 +366,7 @@
     "explanation": ""
   },
   {
-    "question": "Which command will show what is inside the compressed tarball with a name of foo.tar.gz ?",
+    "question": "Which command will show what is inside the compressed tarball with a name of foo.tar.gz?",
     "options": [
       "tar –tf foo.tar.gz",
       "tar –lf foo.tar.gz",
@@ -398,7 +398,7 @@
     "explanation": ""
   },
   {
-    "question": "Which of the following commands will display only lines that begin with test ?",
+    "question": "Which of the following commands will display only lines that begin with test?",
     "options": [
       "grep $test* file.txt",
       "grep ^test file.txt",
@@ -432,7 +432,7 @@
     "explanation": ""
   },
   {
-    "question": "Most of nano ’s commands take the form of:",
+    "question": "Most of nano's commands take the form of:",
     "options": [
       "Alt and another character",
       "Control and another character",
@@ -456,7 +456,7 @@
     "explanation": ""
   },
   {
-    "question": "The number of users logged in is in a variable called USERS . How would you test to see if there are 5 users logged in?",
+    "question": "The number of users logged in is in a variable called USERS. How would you test to see if there are 5 users logged in?",
     "options": [
       "test –f USERS=5",
       "test $USERS –eq 5",
@@ -680,7 +680,7 @@
     "explanation": ""
   },
   {
-    "question": "What directory contains a user’s home directory?",
+    "question": "What directory contains a user's home directory?",
     "options": [
       "/rootfs",
       "/",
@@ -731,7 +731,7 @@
     "explanation": ""
   },
   {
-    "question": "Which of the following commands will set setuid for the /usr/bin/ program?",
+    "question": "Which of the following commands will set setuid for the /usr/bin/program?",
     "options": [
       "chmod 1755 /usr/bin/program",
       "None of the above",

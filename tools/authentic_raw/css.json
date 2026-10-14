@@ -11,11 +11,11 @@
     "explanation": ""
   },
   {
-    "question": "How does Bootstrap’s responsive embed utilities help with embedding media?",
+    "question": "How does Bootstrap's responsive embed utilities help with embedding media?",
     "options": [
       "It maintains a fixed aspect ratio for the media and resizes it with the content.",
       "It resizes the media to fit within any container.",
-      "It automatically adjusts the media’s aspect ratio to fit the screen size.",
+      "It automatically adjusts the media's aspect ratio to fit the screen size.",
       "It centers the media on the page."
     ],
     "correct": 0,
@@ -68,10 +68,10 @@
   {
     "question": "Select the correct Bootstrap class to make the following button have a primary color.",
     "options": [
-      "Click me",
-      "Click me",
-      "Click me",
-      "Click me"
+      "<button class=\"btn btn-primary\">Click me</button>",
+      "<button class=\"btn-primary\">Click me</button>",
+      "<button class=\"btn btn-main\">Click me</button>",
+      "<button class=\"button-primary\">Click me</button>"
     ],
     "correct": 0,
     "explanation": ""
@@ -101,10 +101,10 @@
   {
     "question": "Which CSS rule will cause grid items to be placed in rows by default, controlling the automatic flow of items and filling each row before moving to the next?",
     "options": [
-      ".container { display: grid; grid-auto-flow: row; }",
-      ".container { display: grid; grid-auto-flow: column; }",
-      ".container { display: grid; grid-auto-rows: auto; }",
-      ".container { display: grid; grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); }"
+      ".container {\r\n display: grid;\r\n grid-auto-flow: row;\r\n}",
+      ".container {\r\n display: grid;\r\n grid-auto-flow: column;\r\n}",
+      ".container {\r\n display: grid;\r\n grid-auto-rows: auto;\r\n}",
+      ".container {\r\n display: grid;\r\n grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -112,10 +112,10 @@
   {
     "question": "Which CSS rule aligns flex items along the cross axis (perpendicular to the main axis)?",
     "options": [
-      ".container { display: flex; align-items: center; }",
-      ".container { display: flex; justify-content: space-between; }",
-      ".container { inline-block: flex; justify-content: center; }",
-      ".container { display: flex; align-content: space-around; }"
+      ".container {\r\n display: flex;\r\n align-items: center;\r\n}",
+      ".container {\r\n display: flex;\r\n justify-content: space-between;\r\n}",
+      ".container {\r\n inline-block: flex;\r\n justify-content: center;\r\n}",
+      ".container {\r\n display: flex;\r\n align-content: space-around;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -145,10 +145,10 @@
   {
     "question": "Which CSS rule will allow flex items to wrap onto multiple lines within a flex container?",
     "options": [
-      ".container { display: flex; flex-wrap: wrap; }",
-      ".container { display: flex; flex-direction: column; }",
-      ".container { display: flex; align-content: stretch; }",
-      ".container { display: flex; align-content: wrap; }"
+      ".container {\r\n display: flex;\r\n flex-wrap: wrap;\r\n}",
+      ".container {\r\n display: flex;\r\n flex-direction: column;\r\n}",
+      ".container {\r\n display: flex;\r\n align-content: stretch;\r\n}",
+      ".container {\r\n display: flex;\r\n align-content: wrap;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -156,10 +156,10 @@
   {
     "question": "How do you nest CSS selectors in Sass?",
     "options": [
-      "nav { ul { margin: 0; padding: 0; list-style: none; } }",
-      "nav > ul { margin: 0; padding: 0; list-style: none; }",
-      "nav ul { margin: 0; padding: 0; list-style: none; }",
-      "nav: { ul: { margin: 0; padding: 0; list-style: none; } }"
+      "nav {\r\n ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n }\r\n}",
+      "nav > ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n}",
+      "nav ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n}",
+      "nav: {\r\n ul: {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n }\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -178,10 +178,10 @@
   {
     "question": "Which CSS rule will apply a transition effect to change the background color of an element over 0.5 seconds when hovered?",
     "options": [
-      ".element { transition: background-color 0.5s; } .element:hover { background-color: blue; }",
-      ".element { transition: color 0.5s; } .element:hover { background-color: blue; }",
-      ".element { transition: background-color; } .element:hover { background-color: blue; }",
-      ".element { transition: background-color; } .element { background-color: blue; }"
+      ".element {\r\n transition: background-color 0.5s;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}",
+      ".element {\r\n transition: color 0.5s;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}",
+      ".element {\r\n transition: background-color;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}",
+      ".element {\r\n transition: background-color;\r\n}\r\n.element {\r\n background-color: blue;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -222,7 +222,7 @@
   {
     "question": "Which of the following techniques helps ensure that content is accessible to screen readers while being hidden visually?",
     "options": [
-      "Using CSS to move content off-screen with a class like .screen-reader-text .",
+      "Using CSS to move content off-screen with a class like .screen-reader-text.",
       "Using the display: none; property in CSS.",
       "Using the visibility: hidden; property in CSS.",
       "Using JavaScript to dynamically remove the element from the DOM."
@@ -277,10 +277,10 @@
   {
     "question": "Which CSS rule will wrap text around an image by floating the image to the left?",
     "options": [
-      "img { float: left; margin: 0 10px 10px 0; }",
-      "img { float: right; margin: 0 0 10px 10px; }",
-      "img { text-align: float; padding: 10px; }",
-      "img { display: float; block; margin: 10px; }"
+      "img {\r\n float: left;\r\n margin: 0 10px 10px 0;\r\n}",
+      "img {\r\n float: right;\r\n margin: 0 0 10px 10px;\r\n}",
+      "img {\r\n text-align: float;\r\n padding: 10px;\r\n}",
+      "img {\r\n display: float; block;\r\n margin: 10px;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -319,12 +319,23 @@
     "explanation": ""
   },
   {
+    "question": "In which section is the external CSS file referred to?",
+    "options": [
+      "<head>",
+      "<body>",
+      "<header>",
+      "<style>"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
     "question": "Which of the CSS Selector definitions is correct?",
     "options": [
       "It specifies which HTML elements the rule will apply to.",
       "It defines the aspect you want to style, such as color, font-size, margin, padding, background, etc.",
       "It determines the styling details.",
-      "It’s a set of property-value pairs enclosed in curly braces {}."
+      "It's a set of property-value pairs enclosed in curly braces {}."
     ],
     "correct": 0,
     "explanation": ""
@@ -332,10 +343,10 @@
   {
     "question": "What is the correct way of combining the CSS selectors?",
     "options": [
-      "selector1, selector2 { property: value; }",
-      "selector1 selector2 { property: value; }",
-      "selector1 & selector2 { property: value; }",
-      "selector1 + selector2 { property: value; }"
+      "selector1, selector2 {\r\n property: value;\r\n}",
+      "selector1 selector2 {\r\n property: value;\r\n}",
+      "selector1 & selector2 {\r\n property: value;\r\n}",
+      "selector1 + selector2 {\r\n property: value;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -363,7 +374,7 @@
     "explanation": ""
   },
   {
-    "question": "Which property allows you to add a scrollbar to the container, allowing the user to scroll vertically and horizontally to view the entire content of the .content div, even though it overflows the container’s boundaries?",
+    "question": "Which property allows you to add a scrollbar to the container, allowing the user to scroll vertically and horizontally to view the entire content of the .content div, even though it overflows the container's boundaries?",
     "options": [
       "overflow: scroll;",
       "text-align: scrollable;",
@@ -387,10 +398,10 @@
   {
     "question": "Which CSS rule will style a table with a border, set the spacing between table cells to 0, and apply a background color to alternating rows?",
     "options": [
-      "table { border: 1px solid black; border-collapse: collapse; } table tr:nth-child(even) { background-color: #f2f2f2; }",
-      "table { border: 1px solid black; border-spacing: 0; } table tr:nth-child(odd) { background-color: #f2f2f2; }",
-      "table { border: 1px dashed black; border-collapse: separate; } table tr:hover { background-color: #f2f2f2; }",
-      "table { border: 1px solid black; border-spacing: 5px; } table tr:nth-child(odd) { background-color: #f2f2f2; }"
+      "table {\r\n border: 1px solid black;\r\n border-collapse: collapse;\r\n}\r\ntable tr:nth-child(even) {\r\n background-color: #f2f2f2;\r\n}",
+      "table {\r\n border: 1px solid black;\r\n border-spacing: 0;\r\n}\r\ntable tr:nth-child(odd) {\r\n background-color: #f2f2f2;\r\n}",
+      "table {\r\n border: 1px dashed black;\r\n border-collapse: separate;\r\n}\r\ntable tr:hover {\r\n background-color: #f2f2f2;\r\n}",
+      "table {\r\n border: 1px solid black;\r\n border-spacing: 5px;\r\n}\r\ntable tr:nth-child(odd) {\r\n background-color: #f2f2f2;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -398,7 +409,7 @@
   {
     "question": "What is the primary purpose of using fieldset and legend elements in an HTML form?",
     "options": [
-      "The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset .",
+      "The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset.",
       "The fieldset element is used to style form controls and the legend element is used to add tooltips to the controls.",
       "The fieldset element is used to create a container for input fields and the legend element is used to submit the form.",
       "The fieldset element is used to add spacing between form controls and the legend element is used to add a label to each control."
@@ -411,7 +422,7 @@
     "options": [
       "It has a set width (usually measured in pixels) and does not change size based on the browser window.",
       "It stretches and contracts with the browser window, filling the available space.",
-      "It scales depending on the user’s font size settings, making the layout accessible.",
+      "It scales depending on the user's font size settings, making the layout accessible.",
       "It often incorporates media queries to change styles based on different device characteristics, leading to a responsive design."
     ],
     "correct": 0,
@@ -442,10 +453,10 @@
   {
     "question": "Which CSS rules will create a simple two-column grid layout using floats?",
     "options": [
-      ".container { width: 100%; overflow: hidden; } .column { float: left; width: 50%; }",
-      ".container { display: grid; grid-template-columns: 1fr 1fr; } .column { float: left; }",
-      ".float-container { width: 100%; display: flex; } .column { flex: 1; }",
-      ".float-container { width: 100%; display: block; } .column { display: inline-block; width: 50%; }"
+      ".container {\r\n width: 100%;\r\n overflow: hidden;\r\n}\r\n.column {\r\n float: left;\r\n width: 50%;\r\n}",
+      ".container {\r\n display: grid;\r\n grid-template-columns: 1fr 1fr;\r\n}\r\n.column {\r\n float: left;\r\n}",
+      ".float-container {\r\n width: 100%;\r\n display: flex;\r\n}\r\n.column {\r\n flex: 1;\r\n}",
+      ".float-container {\r\n width: 100%;\r\n display: block;\r\n}\r\n.column {\r\n display: inline-block;\r\n width: 50%;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -453,16 +464,16 @@
   {
     "question": "Which of the following CSS rules ensures that an image inside a hyperlink appears without an underline, has no border, and scales properly within the link?",
     "options": [
-      "a img { border: 0; display: block; max-width: 100%; text-decoration: none; }",
-      "a img { text-decoration: none; width: auto; }",
-      "a { border: 0; max-width: 100%; text-decoration: none; img('image.png') }",
-      "a img('image.png') { border: none; display: inline; max-width: 100%; underline: none; }"
+      "a img {\r\n border: 0;\r\n display: block;\r\n max-width: 100%;\r\n text-decoration: none;\r\n}",
+      "a img {\r\n text-decoration: none;\r\n width: auto;\r\n}",
+      "a {\r\n border: 0;\r\n max-width: 100%;\r\n text-decoration: none;\r\n img('image.png')\r\n}",
+      "a img('image.png') {\r\n border: none;\r\n display: inline;\r\n max-width: 100%;\r\n underline: none;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
   },
   {
-    "question": "Consider the following CSS rules and HTML. What will be the color of the element with the ID element ?",
+    "question": "Consider the following CSS rules and HTML. What will be the color of the element with the ID element?",
     "options": [
       "Green",
       "Yellow",
@@ -475,10 +486,10 @@
   {
     "question": "What is the correct way of setting the div background color to blue and its text color to white?",
     "options": [
-      "div { background: blue; color: white; }",
-      "div { background-color: blue; text-color: white; }",
-      "div { background: blue; text: white; }",
-      "div { background: blue; font-color: white; }"
+      "div {\r\n background: blue;\r\n color: white;\r\n}",
+      "div {\r\n background-color: blue;\r\n text-color: white;\r\n}",
+      "div {\r\n background: blue;\r\n text: white;\r\n}",
+      "div {\r\n background: blue;\r\n font-color: white;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -486,10 +497,10 @@
   {
     "question": "What is the correct way of setting the preferred font for text elements?",
     "options": [
-      "p { font-family: \"Roboto\", Arial, sans-serif; }",
-      "p { font: Arial; }",
-      "p { font-family: \"Roboto\", 16px, bold; }",
-      "p { font: \"Roboto\", Arial, sans-serif; }"
+      "p {\r\n font-family: \"Roboto\", Arial, sans-serif;\r\n}",
+      "p {\r\n font: Arial;\r\n}",
+      "p {\r\n font-family: \"Roboto\", 16px, bold;\r\n}",
+      "p {\r\n font: \"Roboto\", Arial, sans-serif;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -497,10 +508,10 @@
   {
     "question": "Which of the following CSS rules sets the font size to 16px, font weight to bold, and font style to italic for a paragraph element?",
     "options": [
-      "p { font-size: 16px; font-weight: bold; font-style: italic; }",
-      "p { font: 16px bold italic; }",
-      "p { font-style: bold italic 16px; }",
-      "p { font: 16px; font-weight: italic; font-style: bold; }"
+      "p {\r\n font-size: 16px;\r\n font-weight: bold;\r\n font-style: italic;\r\n}",
+      "p {\r\n font: 16px bold italic;\r\n}",
+      "p {\r\n font-style: bold italic 16px;\r\n}",
+      "p {\r\n font: 16px;\r\n font-weight: italic;\r\n font-style: bold;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -508,21 +519,21 @@
   {
     "question": "Which CSS rule combines properties to set the text color to blue, center-align the text, set the font family to Arial, and add a line height of 1.5?",
     "options": [
-      "p { color: blue; text-align: center; font-family: Arial, sans-serif; line-height: 1.5; }",
-      "p { color: blue; align-text: center; font-family: Arial, sans-serif; line-height: 1.5; }",
-      "p { text-color: blue; text-align: middle; font-family: Arial, sans-serif; line-spacing: 1.5; }",
-      "p { color: blue; text-align: center; font-family: Arial, serif; height: 1.5; }"
+      "p {\r\n color: blue;\r\n text-align: center; font-family: Arial, sans-serif;\r\n line-height: 1.5;\r\n}",
+      "p {\r\n color: blue;\r\n align-text: center; font-family: Arial, sans-serif;\r\n line-height: 1.5;\r\n}",
+      "p {\r\n text-color: blue;\r\n text-align: middle; font-family: Arial, sans-serif;\r\n line-spacing: 1.5;\r\n}",
+      "p {\r\n color: blue;\r\n text-align: center; font-family: Arial, serif;\r\n height: 1.5;\r\n}"
     ],
     "correct": 0,
     "explanation": ""
   },
   {
-    "question": "What is the primary difference between the CSS properties margin and padding ?",
+    "question": "What is the primary difference between the CSS properties margin and padding?",
     "options": [
-      "margin creates space outside the element’s border, while padding creates space between the element’s content and its border.",
-      "margin creates space between the element’s content and its border, while padding creates space outside the element’s border.",
-      "margin and padding both create space outside the element’s border.",
-      "margin and padding both create space between the element’s content and its border."
+      "margin creates space outside the element's border, while padding creates space between the element's content and its border.",
+      "margin creates space between the element's content and its border, while padding creates space outside the element's border.",
+      "margin and padding both create space outside the element's border.",
+      "margin and padding both create space between the element's content and its border."
     ],
     "correct": 0,
     "explanation": ""
@@ -541,10 +552,10 @@
   {
     "question": "What does the following CSS rule do?",
     "options": [
-      "It sets the text color of all elements to red.",
-      "It sets the background color of all elements to red.",
-      "It sets the border color of all elements to red.",
-      "It sets the text color of all elements inside elements to red. The color property in CSS specifically sets the text color of an element. In this case, the rule targets all elements and changes their text color to red. It does not affect the background, border, or child elements inside the elements unless they inherit the text color explicitly."
+      "It sets the text color of all <p> elements to red.",
+      "It sets the background color of all <p> elements to red.",
+      "It sets the border color of all <p> elements to red.",
+      "It sets the text color of all elements inside <p> elements to red.\n\n\n\n\n\nThe color property in CSS specifically sets the text color of an element. In this case, the rule targets all <p> elements and changes their text color to red. It does not affect the background, border, or child elements inside the <p> elements unless they inherit the text color explicitly."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -556,10 +567,10 @@
       "Inline styles",
       "ID selectors",
       "Class selectors",
-      "In the CSS cascade, precedence is determined by specificity. From lowest to highestprecedence: Element selectors (e.g., p, h1) have the lowest specificity",
+      "In the CSS cascade, precedence is determined by specificity. From lowest to highestprecedence:\n\n\nElement selectors (e.g., p, h1) have the lowest specificity",
       "Class selectors (e.g., .class) have higher specificity",
       "ID selectors (e.g., #id) have even higher specificity.",
-      "Inline styles (e.g., style=”color: red;”) have the highest precedence among these options."
+      "Inline styles (e.g., style=\"color: red;\") have the highest precedence among these options."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -571,23 +582,23 @@
       "Class selectors",
       "Attribute selectors",
       "Element selectors",
-      "Specificity determines which CSS rule is applied when there are conflicting styles. The specificity hierarchy is as follows (from highest to lowest): Inline styles (e.g., style=”color: red;”)",
+      "Specificity determines which CSS rule is applied when there are conflicting styles. The specificity hierarchy is as follows (from highest to lowest):\n\n\nInline styles (e.g., style=\"color: red;\")",
       "ID selectors (e.g., #id)",
-      "Class selectors, pseudo-classes, and attribute selectors (e.g., .class,[type=”text”], :hover)",
+      "Class selectors, pseudo-classes, and attribute selectors (e.g., .class,[type=\"text\"], :hover)",
       "Element selectors and pseudo-elements (e.g., p, ::before)"
     ],
     "correct": 0,
     "explanation": "& Hint:"
   },
   {
-    "question": "What will be the font size of the text “Hello World”?",
+    "question": "What will be the font size of the text \"Hello World\"?",
     "options": [
       "20 pixels",
       "16 pixels",
       "18 pixels",
       "24 pixels",
-      "In the provided CSS: The .parent class sets the font size to 16px, but this applies only to the parent element.",
-      "The p selector explicitly sets the font size to 20px for all elements, overriding the inherited value from .parent ."
+      "In the provided CSS:\n\n \n\n\nThe .parent class sets the font size to 16px, but this applies only to the parent<div> element.",
+      "The p selector explicitly sets the font size to 20px for all <p> elements, overriding the inherited value from .parent."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -619,11 +630,11 @@
   {
     "question": "What does the pseudo-class selector :focus target in the given code?",
     "options": [
-      "The element when it receives keyboard or mouse input focus",
-      "The element when the user hovers over it",
-      "The element when it is clicked",
-      "The element when it is active",
-      "The :focus pseudo-class targets an element when it gains focus, typically via keyboard navigation (e.g., when the user tabs to a link) or when it is clicked or selected with a mouse. In this case, the a:focus { color: blue; } rule changes the text color of the element to blue when it is focused, either by clicking or through keyboard input (e.g., tabbing to the link)."
+      "The <a> element when it receives keyboard or mouse input focus",
+      "The <a> element when the user hovers over it",
+      "The <a> element when it is clicked",
+      "The <a> element when it is active",
+      "The :focus pseudo-class targets an element when it gains focus, typically via keyboard navigation (e.g., when the user tabs to a link) or when it is clicked or selected with a mouse. In this case, the a:focus { color: blue; } rule changes the text color of the <a> element to blue when it is focused, either by clicking or through keyboard input (e.g., tabbing to the link)."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -647,7 +658,7 @@
       "Class selectors, ID selectors, element selectors",
       "Element selectors, class selectors, ID selectors",
       "Class selectors, element selectors, ID selectors",
-      "The text-align: center rule horizontally centers inline content inside a , and overflow: hidden ensures that any content exceeding the dimensions of the is hidden. Other options either use incorrect property names or invalid values."
+      "The text-align: center rule horizontally centers inline content inside a <div>, and overflow: hidden ensures that any content exceeding the dimensions of the <div> is hidden. Other options either use incorrect property names or invalid values."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -665,12 +676,12 @@
     "explanation": "& Hint:"
   },
   {
-    "question": "What does the adjacent sibling combinator ( + ) in CSS do?",
+    "question": "What does the adjacent sibling combinator (+) in CSS do?",
     "options": [
-      "It targets the element that immediately follows a element.",
-      "It targets all elements within elements, including nested ones.",
-      "It targets the first element within each element.",
-      "It targets all elements preceding elements.",
+      "It targets the <p> element that immediately follows a <div> element.",
+      "It targets all <p> elements within <div> elements, including nested ones.",
+      "It targets the first <p> element within each <div> element.",
+      "It targets all <p> elements preceding <div> elements.",
       "The adjacent sibling combinator (+) selects an element that is directly next to a specified element at the same level in the DOM hierarchy."
     ],
     "correct": 0,
@@ -682,7 +693,7 @@
       "Red, Green, Blue",
       "Red, Gold, Black",
       "Red, Green, Brown",
-      "Red, Gray, Blue The RGB color model in CSS stands for Red, Green, and Blue, which are combined in varying intensities to create a wide range of colors."
+      "Red, Gray, Blue\n\n\n\n\n\nThe RGB color model in CSS stands for Red, Green, and Blue, which are combined in varying intensities to create a wide range of colors."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -694,7 +705,7 @@
       "Red",
       "Blue",
       "Yellow",
-      "In the HEX color code #00FF00 , the Red (00) and Blue (00) components are absent, while the Green (FF) component is at its maximum value, resulting in a pure green color."
+      "In the HEX color code #00FF00, the Red (00) and Blue (00) components are absent, while the Green (FF) component is at its maximum value, resulting in a pure green color."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -702,10 +713,10 @@
   {
     "question": "You want to set a background color to an element, but only if it does not already have a background image applied. Which CSS rule would accomplish this? (Choose two.)",
     "options": [
-      "element { background-color: lightblue; }",
-      "element { background: lightblue; }",
-      "element { background: lightblue url('image.jpg'); }",
-      "element { background: url('image.jpg') no-repeat; }",
+      "element {\r\n background-color: lightblue;\r\n}",
+      "element {\r\n background: lightblue;\r\n}",
+      "element {\r\n background: lightblue url('image.jpg');\r\n}",
+      "element {\r\n background: url('image.jpg') no-repeat;\r\n}",
       "Both answers { background-color: lightblue; } and element { background: lightblue; }. background-color property is used to set the background color of the element, and background property is a shorthand for background-color and more."
     ],
     "correct": 0,
@@ -726,17 +737,17 @@
   {
     "question": "Which of the following CSS properties can influence the total width and height of an element?",
     "options": [
-      "padding , border , and margin",
-      "font-size , font-weight , and line-height",
-      "background-color , background-image , and background-position",
-      "text-align , text-decoration , and text-transform",
+      "padding, border, and margin",
+      "font-size, font-weight, and line-height",
+      "background-color, background-image, and background-position",
+      "text-align, text-decoration, and text-transform",
       "The padding and border directly add to the total width and height of an element, while margin affects the space around the element, influencing its layout in the document flow."
     ],
     "correct": 0,
     "explanation": "& Hint:"
   },
   {
-    "question": "What will be the visual effect of the border on the element?",
+    "question": "What will be the visual effect of the border on the <div> element?",
     "options": [
       "The element will have a 2px solid red border on the top and left sides only.",
       "The element will have a 2px solid red border on all sides.",
@@ -754,7 +765,7 @@
       "background: linear-gradient(circle, red, blue);",
       "background: radial-gradient(linear, red, blue);",
       "background: linear-gradient(radial, red, blue);",
-      "This CSS rule creates a radial gradient, starting with red at the center and transitioning to blue at the edges. The circle keyword defines the shape of the gradient’s spread."
+      "This CSS rule creates a radial gradient, starting with red at the center and transitioning to blue at the edges. The circle keyword defines the shape of the gradient's spread."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -774,10 +785,10 @@
   {
     "question": "What effect does this rule have?",
     "options": [
-      "It applies a 2px solid red outline to an element when it receives focus via keyboard navigation or mouse click.",
-      "It applies a 2px solid red outline to an element when the user hovers over it.",
-      "It applies a 2px solid red outline to an element when it is clicked.",
-      "It applies a 2px solid red outline to an element when it is visited.",
+      "It applies a 2px solid red outline to an <a> element when it receives focus via keyboard navigation or mouse click.",
+      "It applies a 2px solid red outline to an <a> element when the user hovers over it.",
+      "It applies a 2px solid red outline to an <a> element when it is clicked.",
+      "It applies a 2px solid red outline to an <a> element when it is visited.",
       "The :focus pseudo-class is used to style an element when it has focus, which typically occurs when it is clicked or navigated to using the keyboard (e.g., via the Tab key)."
     ],
     "correct": 0,
@@ -786,11 +797,11 @@
   {
     "question": "Which CSS rule applies a 50% grayscale filter to an image element, making it partially grayscale?",
     "options": [
-      "img { filter: grayscale(50%); }",
-      "img { filter: grayscale(0.5); }",
-      "img { filter: grayscale(50px); }",
-      "img { filter: grayscale(0.05); }",
-      "The grayscale() filter in CSS accepts values ranging from 0% to 100% . A value of 50% will apply a 50% grayscale effect to the image, making it partially grayscale."
+      "img {\r\n filter: grayscale(50%);\r\n}",
+      "img {\r\n filter: grayscale(0.5);\r\n}",
+      "img {\r\n filter: grayscale(50px);\r\n}",
+      "img {\r\n filter: grayscale(0.05);\r\n}",
+      "The grayscale() filter in CSS accepts values ranging from 0% to 100%. A value of 50% will apply a 50% grayscale effect to the image, making it partially grayscale."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -798,10 +809,10 @@
   {
     "question": "Which CSS rule would you use to create an element with rounded corners only at the top-left and bottom-left corners?",
     "options": [
-      "element { border-radius: 10px 0 0 10px; }",
-      "element { border-radius: 10px; }",
-      "element { border-radius: 0 10px 10px 0; }",
-      "element { border-radius: 10px 10px 0 0; }",
+      "element {\r\n border-radius: 10px 0 0 10px;\r\n}",
+      "element {\r\n border-radius: 10px;\r\n}",
+      "element {\r\n border-radius: 0 10px 10px 0;\r\n}",
+      "element {\r\n border-radius: 10px 10px 0 0;\r\n}",
       "This rule applies a 10px radius to the top-left and bottom-left corners, while leaving the top-right and bottom-right corners with no rounding (0px). The values follow the order: top-left, top-right, bottom-right, bottom-left."
     ],
     "correct": 0,
@@ -814,7 +825,7 @@
       "The image will be stretched to fit the container, possibly distorting the image.",
       "The image will be resized to fit within the container without cropping or distortion.",
       "The image will be displayed at its original size, and overflow will be visible.",
-      "The object-fit: cover; rule ensures the image covers the container’s entire area while maintaining its aspect ratio, potentially cropping parts of the image if the container’s aspect ratio differs from the image’s."
+      "The object-fit: cover; rule ensures the image covers the container's entire area while maintaining its aspect ratio, potentially cropping parts of the image if the container's aspect ratio differs from the image's."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -822,11 +833,11 @@
   {
     "question": "Which of the following CSS rules correctly applies a background image that covers the entire element without repeating, and is centered?",
     "options": [
-      "div { background-image: url('image.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; }",
-      "div { background-image: url('image.jpg'); background-size: contain; background-repeat: repeat; background-position: left; }",
-      "div { background-image: url('image.jpg'); background-size: auto; background-repeat: no-repeat; background-position: bottom; }",
-      "div { background-image: url('image.jpg'); background-size: 100%; background-repeat: repeat-x; background-position: top; }",
-      "This rule ensures that the background image covers the entire element, doesn’t repeat, and is centered within the element. The background-size: cover; makes sure the image scales to cover the element without distorting its aspect ratio, and background-position: center; centers the image."
+      "div {\r\n background-image: url('image.jpg');\r\n background-size: cover;\r\n background-repeat: no-repeat;\r\n background-position: center;\r\n}",
+      "div {\r\n background-image: url('image.jpg');\r\n background-size: contain;\r\n background-repeat: repeat; background-position: left;\r\n}",
+      "div {\r\n background-image: url('image.jpg');\r\n background-size: auto;\r\n background-repeat: no-repeat;\r\n background-position: bottom;\r\n}",
+      "div {\r\n background-image: url('image.jpg');\r\n background-size: 100%;\r\n background-repeat: repeat-x;\r\n background-position: top;\r\n}",
+      "This rule ensures that the background image covers the entire element, doesn't repeat, and is centered within the element. The background-size: cover; makes sure the image scales to cover the element without distorting its aspect ratio, and background-position: center; centers the image."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -834,10 +845,10 @@
   {
     "question": "Which of the following CSS rules creates a linear gradient background that transitions from blue at the top to green at the bottom?",
     "options": [
-      "div { background: linear-gradient(to bottom, blue, green); }",
-      "div { background: linear-gradient(to top, blue, green); }",
-      "div { background: linear-gradient(to right, blue, green); }",
-      "div { background: radial-gradient(circle, blue, green); }",
+      "div {\r\n background: linear-gradient(to bottom, blue, green);\r\n}",
+      "div {\r\n background: linear-gradient(to top, blue, green);\r\n}",
+      "div {\r\n background: linear-gradient(to right, blue, green);\r\n}",
+      "div {\r\n background: radial-gradient(circle, blue, green);\r\n}",
       "This rule creates a linear gradient that transitions from blue at the top to green at the bottom, as specified by the to bottom direction."
     ],
     "correct": 0,
@@ -846,10 +857,10 @@
   {
     "question": "Which of the following CSS rules correctly sets the margin to 10px on all sides and the padding to 20px on the top and bottom, and 15px on the left and right?",
     "options": [
-      "div { margin: 10px; padding: 20px 15px; }",
-      "div { margin: 10px; padding: 15px 20px; }",
-      "div { margin: 10px 15px; padding: 20px; }",
-      "div { margin: 20px 10px; padding: 15px 20px; }",
+      "div {\r\n margin: 10px;\r\n padding: 20px 15px;\r\n}",
+      "div {\r\n margin: 10px;\r\n padding: 15px 20px;\r\n}",
+      "div {\r\n margin: 10px 15px;\r\n padding: 20px;\r\n}",
+      "div {\r\n margin: 20px 10px;\r\n padding: 15px 20px;\r\n}",
       "This rule sets the margin to 10px on all sides, and the padding to 20px on the top and bottom, and 15px on the left and right. The shorthand padding: 20px 15px; applies 20px to the top and bottom, and 15px to the left and right."
     ],
     "correct": 0,
@@ -858,10 +869,10 @@
   {
     "question": "Insert the necessary CSS to create a box with a padding of 20px and a margin of 10px.",
     "options": [
-      ".box { padding: 20px; margin: 10px; }",
-      "box { padding: 20px; margin: 10px; }",
-      "{ padding: 20px; margin: 10px; }",
-      ".box { padding, margin: 20px 10px; }",
+      ".box {\r\n padding: 20px;\r\n margin: 10px;\r\n}",
+      "box {\r\n padding: 20px;\r\n margin: 10px;\r\n}",
+      "{\r\n padding: 20px;\r\n margin: 10px;\r\n}",
+      ".box {\r\n padding, margin: 20px 10px;\r\n}",
       "The correct CSS rule is .box { padding: 20px; margin: 10px; } because it correctly targets elements with the class box and applies the specified styles. The padding and margin properties are separated, with padding: 20px; applying 20px of space inside the element on all sides, and margin: 10px; applying 10px of space outside the element. The other options are incorrect due to missing or improperly formatted selectors, incorrect syntax, or lack of a valid selector."
     ],
     "correct": 0,
@@ -870,11 +881,11 @@
   {
     "question": "Insert the necessary CSS to position an element absolutely within its container at 50px from the top and 100px from the left.",
     "options": [
-      ".container { position: relative; } .absolute-box { position: absolute; top: 50px; left: 100px; }",
-      ".container { position: absolute; } .absolute-box { position: relative; top: 50px; left: 100px; }",
-      ".container { position: absolute; } .absolute-box { position: static; top: 50px; left: 100px; }",
-      ".container { position: relative; } .absolute-box { position: fixed; top: 50px; left: 100px; }",
-      "This works because the .container has position: relative; , which establishes it as the containing block for the absolutely positioned .absolute-box. The .absolute-box is then positioned 50px from the top and 100px from the left of its nearest positioned ancestor, which is the .container in this case."
+      ".container {\r\n position: relative;\r\n}\r\n.absolute-box {\r\n position: absolute;\r\n top: 50px;\r\n left: 100px;\r\n}",
+      ".container {\r\n position: absolute;\r\n}\r\n.absolute-box {\r\n position: relative;\r\n top: 50px;\r\n left: 100px;\r\n}",
+      ".container {\r\n position: absolute;\r\n}\r\n.absolute-box {\r\n position: static;\r\n top: 50px;\r\n left: 100px;\r\n}",
+      ".container {\r\n position: relative;\r\n}\r\n.absolute-box {\r\n position: fixed;\r\n top: 50px;\r\n left: 100px;\r\n}",
+      "This works because the .container has position: relative;, which establishes it as the containing block for the absolutely positioned .absolute-box. The .absolute-box is then positioned 50px from the top and 100px from the left of its nearest positioned ancestor, which is the .container in this case."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -898,7 +909,7 @@
       "Hides the overflow content.",
       "Expands the container to fit the overflow content.",
       "Clips the overflow content without adding scrollbars.",
-      "The overflow: scroll; property ensures that scrollbars are always present on the container, even if the content does not overflow. If the content exceeds the container’s size,users can scroll to see the hidden content."
+      "The overflow: scroll; property ensures that scrollbars are always present on the container, even if the content does not overflow. If the content exceeds the container's size,users can scroll to see the hidden content."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -910,7 +921,7 @@
       "290px",
       "250px",
       "220px",
-      "The total width of an element includes the following components: Width: 200px",
+      "The total width of an element includes the following components:\n\n\nWidth: 200px",
       "Padding: 10px on each side (10px + 10px = 20px)",
       "Border: 5px on each side (5px + 5px = 10px)"
     ],
@@ -944,10 +955,10 @@
   {
     "question": "Which of the following best describes static positioning in CSS?",
     "options": [
-      "An element’s default positioning, following the normal document flow.",
-      "An element’s position relative to its closest positioned ancestor.",
-      "An element’s position relative to the viewport, remaining fixed during scrolling.",
-      "An element’s position adjusted from its normal position in the document flow.",
+      "An element's default positioning, following the normal document flow.",
+      "An element's position relative to its closest positioned ancestor.",
+      "An element's position relative to the viewport, remaining fixed during scrolling.",
+      "An element's position adjusted from its normal position in the document flow.",
       "Static positioning is the default behavior for elements in CSS. Elements with position: static; are positioned according to the normal document flow, meaning they appear in the order they are written in the HTML, without any special positioning adjustments."
     ],
     "correct": 0,
@@ -956,10 +967,10 @@
   {
     "question": "Insert the necessary CSS to center a block-level element horizontally within its parent container.",
     "options": [
-      ".container { display: flex; justify-content: center; } .centered-box { width: 200px; }",
-      ".container { text-align: center; } .centered-box { width: 200px; }",
-      ".container { display: block; margin: auto; } .centered-box { width: 200px; }",
-      ".container { display: grid; place-items: center; } .centered-box { width: 200px; } This approach uses display: flex; on the .container to establish a flex container, and justify-content: center; centers the .centered-box horizontally within it. The width: 200px; on .centered-box ensures the element has a defined width, so it can be centered properly."
+      ".container {\r\n display: flex;\r\n justify-content: center;\r\n}\r\n.centered-box {\r\n width: 200px;\r\n}",
+      ".container {\r\n text-align: center;\r\n}\r\n.centered-box {\r\n width: 200px;\r\n}",
+      ".container {\r\n display: block;\r\n margin: auto;\r\n}\r\n.centered-box {\r\n width: 200px;\r\n}",
+      ".container {\r\n display: grid;\r\n place-items: center;\r\n}\r\n.centered-box {\r\n width: 200px;\r\n}\n\n\n\n\nThis approach uses display: flex; on the .container to establish a flex container, and justify-content: center; centers the .centered-box horizontally within it. The width: 200px; on .centered-box ensures the element has a defined width, so it can be centered properly."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -1007,7 +1018,7 @@
       "The element will be fixed at the top of the viewport with a width of 200px, height of 100px, a sky blue background, and a margin of 20px.",
       "The element will be absolutely positioned relative to its nearest positioned ancestor with a width of 200px, height of 100px, and a sky blue background.",
       "The element will be positioned relative to its normal position with a width of 200px, height of 100px, a sky blue background, and a margin of 20px.",
-      "With position: static; , the element follows the normal document flow, meaning it will be positioned based on the default flow of content in the HTML structure. The other properties (width, height, background-color, and margin) are applied as usual, but the position: static; means it is not affected by properties like top, right, bottom, or left."
+      "With position: static;, the element follows the normal document flow, meaning it will be positioned based on the default flow of content in the HTML structure. The other properties (width, height, background-color, and margin) are applied as usual, but the position: static; means it is not affected by properties like top, right, bottom, or left."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -1082,10 +1093,10 @@
   {
     "question": "Which CSS property combination would you use to wrap text around an image and add space between the image and the text?",
     "options": [
-      "float: left; margin-right: 10px;",
-      "wrap: right; margin-right: 10px;",
-      "display: block; padding: 10px;",
-      "position: absolute; margin: 10px;"
+      "float: left;\r\nmargin-right: 10px;",
+      "wrap: right;\r\nmargin-right: 10px;",
+      "display: block;\r\npadding: 10px;",
+      "position: absolute;\r\nmargin: 10px;"
     ],
     "correct": 0,
     "explanation": ""
@@ -1104,10 +1115,10 @@
   {
     "question": "What is the effect of the following CSS code on the testimonial section?",
     "options": [
-      "Creates three testimonials per row, each taking up one-third of the container’s width.",
+      "Creates three testimonials per row, each taking up one-third of the container's width.",
       "Creates a single testimonial that takes up the full width of the container.",
       "Centers three testimonials within the container.",
-      "Creates one testimonials per row, each taking up half of the container’s width."
+      "Creates one testimonials per row, each taking up half of the container's width."
     ],
     "correct": 0,
     "explanation": ""
@@ -1126,10 +1137,10 @@
   {
     "question": "What CSS rule should be added to make the navigation bar items stack vertically on smaller screens?",
     "options": [
-      "float: none; display: block;",
-      "float: left; display: inline-block;",
-      "position: absolute; width: 100%;",
-      "display: inline; width: 50%;"
+      "float: none;\n\ndisplay: block;",
+      "float: left;\n\ndisplay: inline-block;",
+      "position: absolute;\n\nwidth: 100%;",
+      "display: inline;\n\nwidth: 50%;"
     ],
     "correct": 0,
     "explanation": ""
@@ -1564,6 +1575,17 @@
     "explanation": ""
   },
   {
+    "question": "How do you make an image responsive in Bootstrap?",
+    "options": [
+      "<img src=\"path-to-image.jpg\" class=\"img-fluid\" alt=\"Responsive image\">",
+      "<img src=\"path-to-image.jpg\" class=\"img-responsive\" alt=\"Responsive image\">",
+      "<img src=\"path-to-image.jpg\" class=\"responsive-img\" alt=\"Responsive image\">",
+      "<img src=\"path-to-image.jpg\" class=\"img-full\" alt=\"Responsive image\">"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
     "question": "What does the class .text-center do in Bootstrap?",
     "options": [
       "Centers text horizontally within its container.",
@@ -1619,12 +1641,23 @@
     "explanation": ""
   },
   {
+    "question": "How can you create a responsive embedded video in Bootstrap?",
+    "options": [
+      "<div class=\"embed-responsive embed-responsive-16by9″>\n\n <iframe class=\"embed-responsive-item\" src=\"your-video-link\" allowfullscreen></iframe>\n\n</div>",
+      "<div class=\"video-responsive video-responsive-16by9″>\n\n<iframe class=\"video-responsive-item\" src=\"your-video-link\" allowfullscreen></iframe>\n\n</div>",
+      "<div class=\"responsive-video responsive-video-16by9″>\n\n<iframe class=\"responsive-video-item\" src=\"your-video-link\" allowfullscreen></iframe>\n\n</div>",
+      "<div class=\"video-embed video-embed-16by9″>\n\n<iframe class=\"video-embed-item\" src=\"your-video-link\" allowfullscreen></iframe>\n\n</div>"
+    ],
+    "correct": 0,
+    "explanation": ""
+  },
+  {
     "question": "Which class in Bootstrap would you use to hide an element on large screens and show it on small screens? Select the best answer.",
     "options": [
-      ".d-lg-none .d-block",
-      ".d-block .d-lg-none",
-      ".d-none .d-sm-block",
-      ".d-lg-block .d-sm-none"
+      ".d-lg-none\n\n.d-block",
+      ".d-block\n\n.d-lg-none",
+      ".d-none\n\n.d-sm-block",
+      ".d-lg-block\n\n.d-sm-none"
     ],
     "correct": 0,
     "explanation": ""
@@ -1643,10 +1676,10 @@
   {
     "question": "How do you create a Bootstrap modal with a header, body, and footer?",
     "options": [
-      "Modal title × Modal body text goes here. Save changes Close",
-      "Modal title × Modal body text goes here.",
-      "Modal body text goes here. Save changes Close",
-      "Modal title × Save changes Close"
+      "<div class=\"modal\" tabindex=\"-1″ role=\"dialog\">\n\n <div class=\"modal-dialog\" role=\"document\">\n\n <div class=\"modal-content\">\n\n <div class=\"modal-header\">\n\n <h5 class=\"modal-title\">Modal title</h5>\n\n <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n\n <span aria-hidden=\"true\">×</span>\n\n </button>\n\n </div>\n\n <div class=\"modal-body\">\n\n <p>Modal body text goes here.</p>\n\n </div>\n\n <div class=\"modal-footer\">\n\n <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n\n <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n\n </div>\n\n </div>\n\n </div>\n\n</div>",
+      "<div class=\"modal\" tabindex=\"-1″ role=\"dialog\">\n\n<div class=\"modal-dialog\" role=\"document\">\n\n<div class=\"modal-content\">\n\n<div class=\"modal-header\">\n\n<h5 class=\"modal-title\">Modal title</h5>\n\n<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n\n<span aria-hidden=\"true\">×</span>\n\n</button>\n\n</div>\n\n<div class=\"modal-body\">\n\n<p>Modal body text goes here.</p>\n\n</div>\n\n</div>\n\n</div>\n\n</div>",
+      "<div class=\"modal\" tabindex=\"-1″ role=\"dialog\">\n\n<div class=\"modal-dialog\" role=\"document\">\n\n<div class=\"modal-content\">\n\n<div class=\"modal-body\">\n\n<p>Modal body text goes here.</p>\n\n</div>\n\n<div class=\"modal-footer\">\n\n<button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n\n</div>\n\n</div>\n\n</div>\n\n</div>",
+      "<div class=\"modal\" tabindex=\"-1″ role=\"dialog\">\n\n<div class=\"modal-dialog\" role=\"document\">\n\n<div class=\"modal-content\">\n\n<div class=\"modal-header\">\n\n<h5 class=\"modal-title\">Modal title</h5>\n\n<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n\n<span aria-hidden=\"true\">×</span>\n\n</button>\n\n</div>\n\n<div class=\"modal-footer\">\n\n<button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n\n</div>\n\n</div>\n\n</div>\n\n</div>"
     ],
     "correct": 0,
     "explanation": ""
@@ -1698,10 +1731,10 @@
   {
     "question": "How do you change the default padding of a Bootstrap card?",
     "options": [
-      ".card { padding: 20px; }",
-      ".card { margin: 20px; }",
-      ".card-body { margin: 20px; }",
-      ".card-body { padding: 20px; }"
+      ".card {\n\n padding: 20px;\n\n}",
+      ".card {\n\nmargin: 20px;\n\n}",
+      ".card-body {\n\nmargin: 20px;\n\n}",
+      ".card-body {\n\npadding: 20px;\n\n}"
     ],
     "correct": 0,
     "explanation": ""
@@ -1709,10 +1742,10 @@
   {
     "question": "What class would you use to hide an element on small screens and show it on medium and larger screens in Bootstrap?",
     "options": [
-      ".d-none .d-md-block",
-      ".d-block .d-md-none",
-      ".d-hidden .d-md-visible",
-      ".d-xs-none .d-lg-block"
+      ".d-none\n\n.d-md-block",
+      ".d-block\n\n.d-md-none",
+      ".d-hidden\n\n.d-md-visible",
+      ".d-xs-none\n\n.d-lg-block"
     ],
     "correct": 0,
     "explanation": ""
@@ -1720,10 +1753,10 @@
   {
     "question": "What is the correct way to create a card in Bootstrap with an image, title, and text content?",
     "options": [
-      "Card title Some quick example text.",
-      "Card title Some quick example text.",
-      "Card title Some quick example text. Go somewhere",
-      "Card title Some quick example text. Go somewhere"
+      "<div class=\"card\" style=\"width: 18rem;\">\n\n <img src=\"…\" class=\"card-img-top\" alt=\"…\">\n\n <div class=\"card-body\">\n\n <h5 class=\"card-title\">Card title</h5>\n\n <p class=\"card-text\">Some quick example text.</p>\n\n </div>\n\n</div>",
+      "<div class=\"card\" style=\"width: 18rem;\">\n\n<img src=\"…\" class=\"card-img\" alt=\"…\">\n\n<div class=\"card-body\">\n\n<h5 class=\"card-title\">Card title</h5>\n\n<p class=\"card-text\">Some quick example text.</p>\n\n</div>\n\n</div>",
+      "<div class=\"card\" style=\"width: 18rem;\">\n\n<img src=\"…\" class=\"card-img\" alt=\"…\">\n\n<div class=\"card-body\">\n\n<h5 class=\"card-title\">Card title</h5>\n\n<p class=\"card-text\">Some quick example text.</p>\n\n</div>\n\n<div class=\"card-footer\">\n\n<a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n\n</div>\n\n</div>",
+      "<div class=\"card\" style=\"width: 18rem;\">\n\n<img src=\"…\" class=\"card-img-top\" alt=\"…\">\n\n<div class=\"card-body\">\n\n<h5 class=\"card-title\">Card title</h5>\n\n<p class=\"card-text\">Some quick example text.</p>\n\n<a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n\n</div>\n\n</div>"
     ],
     "correct": 0,
     "explanation": ""
@@ -1731,10 +1764,10 @@
   {
     "question": "Which class in Bootstrap will make an element only visible on large screens and above?",
     "options": [
-      ".d-none .d-lg-block",
-      ".d-block .d-lg-none",
-      ".d-none .d-md-block",
-      ".d-lg-none .d-xl-block"
+      ".d-none\n\n.d-lg-block",
+      ".d-block\n\n.d-lg-none",
+      ".d-none\n\n.d-md-block",
+      ".d-lg-none\n\n.d-xl-block"
     ],
     "correct": 0,
     "explanation": ""
@@ -1852,10 +1885,10 @@
   {
     "question": "How would you create the same nested rule in Sass?",
     "options": [
-      ".menu { ul { … }",
-      ".menu { @ul { … }",
-      ".menu { > ul { … }",
-      ".menu { * ul { … }"
+      ".menu {\n\n ul { … }",
+      ".menu {\n\n@ul { … }",
+      ".menu {\n\n> ul { … }",
+      ".menu {\n\n* ul { … }"
     ],
     "correct": 0,
     "explanation": ""
@@ -1863,10 +1896,10 @@
   {
     "question": "How would you create a mixin with parameters in Sass?",
     "options": [
-      "@mixin border-radius($radius) { border-radius: $radius; }",
-      "@mixin border-radius(@radius) { border-radius: @radius; }",
-      "@define border-radius($radius) { border-radius: $radius; }",
-      "@function border-radius($radius) { border-radius: $radius; }"
+      "@mixin border-radius($radius) {\n\n border-radius: $radius;\n\n}",
+      "@mixin border-radius(@radius) {\n\nborder-radius: @radius;\n\n}",
+      "@define border-radius($radius) {\n\nborder-radius: $radius;\n\n}",
+      "@function border-radius($radius) {\n\nborder-radius: $radius;\n\n}"
     ],
     "correct": 0,
     "explanation": ""

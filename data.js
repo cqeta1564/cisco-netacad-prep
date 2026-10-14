@@ -76,25 +76,25 @@ const CERTIFICATES_DATA = {
       {
         "id": "html_q01",
         "module": "html_m4",
-        "question": "How do you correctly add a simple JavaScript alert that says “Clicked!” when a button is clicked?",
+        "question": "How do you correctly add a simple JavaScript alert that says \"Clicked!\" when a button is clicked?",
         "code": null,
         "options": [
-          "Click me",
-          "Click me",
-          "Click me",
-          "Click me"
+          "<button onclick=\"alert('Clicked!')\">Click me</button>",
+          "<button action=\"alert('Clicked!')\">Click me</button>",
+          "<button on-click=\"alert('Clicked!')\">Click me</button>",
+          "<button><onclick=\"alert('Clicked!')\">Click me</button>"
         ],
         "correct": 0,
-        "explanation": "Klikací událost tlačítka se v HTML definuje atributem onclick=\"...\". Správná odpověď: Click me."
+        "explanation": "Klikací událost tlačítka se v HTML definuje atributem onclick=\"...\". Správná odpověď: <button onclick=\"alert('Clicked!')\">Click me</button>."
       },
       {
         "id": "html_q02",
         "module": "html_m4",
-        "question": "What does the alt attribute provide when used within an element?",
+        "question": "What does the alt attribute provide when used within an <img> element?",
         "code": null,
         "options": [
           "It specifies an alternate text for an image, if the image cannot be displayed.",
-          "It defines the image’s size and dimensions.",
+          "It defines the image's size and dimensions.",
           "It adds a caption below the image.",
           "It specifies the source URL of the image."
         ],
@@ -107,13 +107,13 @@ const CERTIFICATES_DATA = {
         "question": "Which syntax correctly applies two separate classes to a single HTML element?",
         "code": null,
         "options": [
-          "Content",
-          "Content",
-          "Content",
-          "Content"
+          "<div class=\"class1 class2″>Content</div>",
+          "<div class=\"class1, class2″>Content</div>",
+          "<div class=\"class1″ class=\"class2″>Content</div>",
+          "<div classes=\"class1 class2″>Content</div>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Content'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<div class=\"class1 class2″>Content</div>'."
       },
       {
         "id": "html_q04",
@@ -124,27 +124,41 @@ const CERTIFICATES_DATA = {
           "The class attribute can be applied to multiple elements, while the id attribute must be unique to a single element.",
           "The class attribute is used exclusively for styling, while the id attribute is used for both styling and JavaScript.",
           "The id attribute is used to style elements when classes are not available.",
-          "The class attribute cannot be used with the element, while the id attribute can."
+          "The class attribute cannot be used with the <div> element, while the id attribute can."
         ],
         "correct": 0,
         "explanation": "Atribut 'id' musí být na stránce unikátní pro jeden element, zatímco 'class' lze aplikovat na libovolné množství elementů. Správná odpověď: The class attribute can be applied to multiple elements, while the id attribute must be unique to a single element.."
       },
       {
         "id": "html_q05",
-        "module": "html_m4",
-        "question": "Which statement is true regarding the use of and ?",
+        "module": "html_m2",
+        "question": "Which element do you use to add an internal stylesheet to your document?",
         "code": null,
         "options": [
-          "can contain block-level elements, whereas is used for inline styling.",
-          "is used for block-level content, while is for inline content.",
-          "and are interchangeable and have no difference in styling.",
-          "is used to style text, while is for larger sections of HTML."
+          "<style>",
+          "<css>",
+          "<script>",
+          "<link>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'can contain block-level elements, whereas is used for inline styling.'."
+        "explanation": "Interní kaskádové styly se vkládají do elementu <style> uvnitř sekce <head>. Správná odpověď: <style>."
       },
       {
         "id": "html_q06",
+        "module": "html_m4",
+        "question": "Which statement is true regarding the use of <span> and <div>?",
+        "code": null,
+        "options": [
+          "<div> can contain block-level elements, whereas <span> is used for inline styling.",
+          "<span> is used for block-level content, while <div> is for inline content.",
+          "<span> and <div> are interchangeable and have no difference in styling.",
+          "<div> is used to style text, while <span> is for larger sections of HTML."
+        ],
+        "correct": 0,
+        "explanation": "Element <div> je blokový kontejner (block-level), zatímco <span> je řádkový element (inline) určený k formátování části textu. Správná odpověď: <div> can contain block-level elements, whereas <span> is used for inline styling.."
+      },
+      {
+        "id": "html_q07",
         "module": "html_m4",
         "question": "How do you correctly set the font family to Calibri in a CSS rule?",
         "code": null,
@@ -158,9 +172,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'font-family: Calibri, sans-serif;'."
       },
       {
-        "id": "html_q07",
+        "id": "html_q08",
         "module": "html_m4",
-        "question": "Which snippet correctly changes the background color of all elements to blue using an internal stylesheet?",
+        "question": "Which snippet correctly changes the background color of all <div> elements to blue using an internal stylesheet?",
         "code": null,
         "options": [
           "div {background-color: blue;}",
@@ -172,62 +186,76 @@ const CERTIFICATES_DATA = {
         "explanation": "Interní kaskádové styly se vkládají do elementu <style> uvnitř sekce <head>. Správná odpověď: div {background-color: blue;}."
       },
       {
-        "id": "html_q08",
-        "module": "html_m4",
-        "question": "Which of the following scenarios is most appropriate for the use of in HTML forms?",
-        "code": null,
-        "options": [
-          "Grouping related form elements, such as multiple choices within a survey that asks for a respondent’s preferred leisure activities.",
-          "Applying a consistent font style across multiple sections of an HTML form.",
-          "Enhancing the visual design of a form’s submit button with custom graphics and animations.",
-          "Encrypting form data to secure sensitive information like passwords and credit card numbers."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Grouping related form elements, such as multiple choices within a survey that asks for a respondent’s preferred leisure activities.'."
-      },
-      {
         "id": "html_q09",
         "module": "html_m4",
-        "question": "How do you create a link that opens the user’s email client to send an email to “ [email protected] ”?",
+        "question": "Which of the following correctly applies a 1-pixel wide solid blue border to a <div> element?",
         "code": null,
         "options": [
-          "[email protected] \">Email Us",
-          "[email protected] \">Email Us",
-          "[email protected] \">Email Us",
-          "[email protected] \">Email Us"
+          "<div style=\"border: 1px solid blue;\"></div>",
+          "<div border-style=\"1px solid blue;\"></div>",
+          "<div style:\"border=1px solid blue;\"></div>",
+          "<div style=\"box-sizing: border-box 1px solid blue;\"></div>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '[email protected] \">Email Us'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<div style=\"border: 1px solid blue;\"></div>'."
       },
       {
         "id": "html_q10",
         "module": "html_m4",
-        "question": "Which input field is correctly marked as required?",
+        "question": "Which of the following scenarios is most appropriate for the use of <fieldset> in HTML forms?",
         "code": null,
         "options": [
-          ".",
-          ".",
-          ".",
-          "."
+          "Grouping related form elements, such as multiple choices within a survey that asks for a respondent's preferred leisure activities.",
+          "Applying a consistent font style across multiple sections of an HTML form.",
+          "Enhancing the visual design of a form's submit button with custom graphics and animations.",
+          "Encrypting form data to secure sensitive information like passwords and credit card numbers."
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Grouping related form elements, such as multiple choices within a survey that asks for a respondent's preferred leisure activities.'."
       },
       {
         "id": "html_q11",
         "module": "html_m4",
-        "question": "Consider the following HTML snippet:",
+        "question": "How do you create a link that opens the user's email client to send an email to \"[email protected]\"?",
         "code": null,
         "options": [
-          "Use the selected attribute on the “Canada” . Add default to the tag of the “Canada” option.",
-          "Set value=\"canada\" in the tag of the “Canada” option.",
-          "Use JavaScript to select the “Canada” option after the page loads."
+          "<a href=\"mailto:[email protected]\">Email Us</a>",
+          "<a href=\"email:[email protected]\">Email Us</a>",
+          "<a href=\"sendto:[email protected]\">Email Us</a>",
+          "<a email=\"[email protected]\">Email Us</a>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Use the selected attribute on the “Canada” . Add default to the tag of the “Canada” option.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<a href=\"mailto:[email protected]\">Email Us</a>'."
       },
       {
         "id": "html_q12",
+        "module": "html_m4",
+        "question": "Which input field is correctly marked as required?",
+        "code": null,
+        "options": [
+          "<input type=\"text\" name=\"firstName\" required>.",
+          "<input required=\"true\" type=\"text\" name=\"firstName\">.",
+          "<input type=\"required\" name=\"firstName\">.",
+          "<required input type=\"text\">."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<input type=\"text\" name=\"firstName\" required>.'."
+      },
+      {
+        "id": "html_q13",
+        "module": "html_m4",
+        "question": "Consider the following HTML snippet:",
+        "code": null,
+        "options": [
+          "Use the selected attribute on the \"Canada\" <option>. Add default to the <select> tag of the \"Canada\" option.",
+          "Set value=\"canada\" in the <select> tag of the \"Canada\" option.",
+          "Use JavaScript to select the \"Canada\" option after the page loads."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Use the selected attribute on the \"Canada\" <option>. Add default to the <select> tag of the \"Canada\" option.'."
+      },
+      {
+        "id": "html_q14",
         "module": "html_m4",
         "question": "Which of the following is true about emojis in HTML?",
         "code": null,
@@ -241,7 +269,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Emojis can be included using their HTML entity codes or Unicode representations, but their appearance may vary across devices and browsers.'."
       },
       {
-        "id": "html_q13",
+        "id": "html_q15",
         "module": "html_m4",
         "question": "Select the correct fragment of code that needs to be inserted in the following snippet to correctly define a rectangle with SVG:",
         "code": null,
@@ -255,9 +283,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'rect'."
       },
       {
-        "id": "html_q14",
+        "id": "html_q16",
         "module": "html_m4",
-        "question": "Which attribute value should you insert in the following snippet to correctly create an image map named “workMap” for an image?",
+        "question": "Which attribute value should you insert in the following snippet to correctly create an image map named \"workMap\" for an image?",
         "code": null,
         "options": [
           "#workMap",
@@ -269,34 +297,48 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '#workMap'."
       },
       {
-        "id": "html_q15",
+        "id": "html_q17",
         "module": "html_m4",
-        "question": "Why is the element used in this form field?",
+        "question": "Why is the <label> element used in this form field?",
         "code": null,
         "options": [
           "To improve form accessibility by providing a text label.",
           "To increase the clickable area for the input field.",
           "To style the input field as the search button.",
-          "To add a “Search” button to the form."
+          "To add a \"Search\" button to the form."
         ],
         "correct": 0,
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To improve form accessibility by providing a text label.'."
       },
       {
-        "id": "html_q16",
+        "id": "html_q18",
         "module": "html_m4",
         "question": "How should the following snippet be corrected to display a less than symbol?",
         "code": null,
         "options": [
-          "Replace with &lt; . Add quotes around .",
-          "Replace with \\ .",
-          "Wrap in and --> ."
+          "Replace < with &lt;. Add quotes around <.",
+          "Replace < with \\<.",
+          "Wrap < in <!-- and -->."
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Replace with &lt; . Add quotes around .'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Replace < with &lt;. Add quotes around <.'."
       },
       {
-        "id": "html_q17",
+        "id": "html_q19",
+        "module": "html_m4",
+        "question": "Which HTML snippet shows the correct way to link a CSS stylesheet to a website?",
+        "code": null,
+        "options": [
+          "<link rel=\"stylesheet\" href=\"style.css\">",
+          "<link type=\"stylesheet\" href=\"style.css\">",
+          "<link rel=\"stylesheet\" src=\"style.css\">",
+          "<link href=\"stylesheet\" rel=\"style.css\">"
+        ],
+        "correct": 0,
+        "explanation": "Interní kaskádové styly se vkládají do elementu <style> uvnitř sekce <head>. Správná odpověď: <link rel=\"stylesheet\" href=\"style.css\">."
+      },
+      {
+        "id": "html_q20",
         "module": "html_m5",
         "question": "Which attribute should be used to specify the language of the content in an HTML document, enhancing accessibility for users?",
         "code": null,
@@ -310,7 +352,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'lang'."
       },
       {
-        "id": "html_q18",
+        "id": "html_q21",
         "module": "html_m5",
         "question": "Which of the following tools can be used to test your website for accessibility issues?",
         "code": null,
@@ -324,7 +366,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Chrome Accessibility DevTools'."
       },
       {
-        "id": "html_q19",
+        "id": "html_q22",
         "module": "html_m5",
         "question": "Which ARIA attribute should be used to indicate the current state of an element that can be expanded or collapsed, such as an accordion panel?",
         "code": null,
@@ -338,7 +380,21 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'aria-expanded'."
       },
       {
-        "id": "html_q20",
+        "id": "html_q23",
+        "module": "html_m5",
+        "question": "Which HTML5 element is used to represent a generic container without any additional semantic meaning?",
+        "code": null,
+        "options": [
+          "<div>",
+          "<article>",
+          "<main>",
+          "<aside>"
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<div>'."
+      },
+      {
+        "id": "html_q24",
         "module": "html_m5",
         "question": "Which level of conformance does the Web Content Accessibility Guidelines (WCAG) require to meet the needs of most people with disabilities?",
         "code": null,
@@ -352,37 +408,37 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Level AA'."
       },
       {
-        "id": "html_q21",
+        "id": "html_q25",
         "module": "html_m4",
         "question": "Which HTML code correctly creates a nested list with ordered and unordered lists?",
         "code": null,
         "options": [
-          "Item One Subitem A Item Two",
-          "Item One Subitem 1 Item Two",
-          "Item One Subitem A Item Two",
-          "Item One Subitem A Item Two"
+          "<ol><li>Item One<ul><li>Subitem A</li></ul></li><li>Item Two</li></ol>",
+          "<ul><li>Item One<ol><li>Subitem 1</li></ol></li><li>Item Two</li></ul>",
+          "<ol><li>Item One<li>Subitem A</li></li><li>Item Two</li></ol>",
+          "<ul><li>Item One</li><ul><li>Subitem A</li></ul><li>Item Two</li></ul>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Item One Subitem A Item Two'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<ol><li>Item One<ul><li>Subitem A</li></ul></li><li>Item Two</li></ol>'."
       },
       {
-        "id": "html_q22",
+        "id": "html_q26",
         "module": "html_m5",
         "question": "How does this code snippet facilitate navigation to a specific part of a webpage?",
         "code": null,
         "options": [
-          "By scrolling the page to where is located .",
-          "By refreshing the page when “Go to Section 2” is clicked.",
+          "By scrolling the page to where <h2 id=\"section2\"> is located.",
+          "By refreshing the page when \"Go to Section 2\" is clicked.",
           "By creating a popup that links to Section 2.",
-          "By redirecting to a new page named “Section 2”"
+          "By redirecting to a new page named \"Section 2\""
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'By scrolling the page to where is located .'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'By scrolling the page to where <h2 id=\"section2\"> is located.'."
       },
       {
-        "id": "html_q23",
+        "id": "html_q27",
         "module": "html_m4",
-        "question": "What is the purpose of the srcset attribute in this tag?",
+        "question": "What is the purpose of the srcset attribute in this <img> tag?",
         "code": null,
         "options": [
           "To define multiple image sources for different viewport widths.",
@@ -394,9 +450,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To define multiple image sources for different viewport widths.'."
       },
       {
-        "id": "html_q24",
+        "id": "html_q28",
         "module": "html_m4",
-        "question": "What is the characteristic of the text within the tag in this HTML snippet?",
+        "question": "What is the characteristic of the text within the <pre> tag in this HTML snippet?",
         "code": null,
         "options": [
           "It preserves both spaces and line breaks.",
@@ -408,23 +464,23 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'It preserves both spaces and line breaks.'."
       },
       {
-        "id": "html_q25",
+        "id": "html_q29",
         "module": "html_m4",
         "question": "How do you merge two cells vertically in a table?",
         "code": null,
         "options": [
           "Use rowspan=\"2\" in the first cell you want to extend.",
           "Use colspan=\"2\" in the first cell you want to extend.",
-          "Merge cells using CSS by applying cell-merge: vertical; .",
+          "Merge cells using CSS by applying cell-merge: vertical;.",
           "HTML tables do not support vertical cell merging."
         ],
         "correct": 0,
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Use rowspan=\"2\" in the first cell you want to extend.'."
       },
       {
-        "id": "html_q26",
+        "id": "html_q30",
         "module": "html_m4",
-        "question": "Which attribute of the tag controls the space between the cell content and the cell border?",
+        "question": "Which attribute of the <table> tag controls the space between the cell content and the cell border?",
         "code": null,
         "options": [
           "cellpadding",
@@ -436,23 +492,23 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'cellpadding'."
       },
       {
-        "id": "html_q27",
+        "id": "html_q31",
         "module": "html_m4",
         "question": "Which HTML code snippet demonstrates the correct use of line breaks for addresses and paragraph tags for separating ideas?",
         "code": null,
         "options": [
-          "123 Anywhere St. Springfield Welcome to our website.",
-          "123 Anywhere St., Springfield Welcome to our website.",
-          "123 Anywhere St. Springfield Welcome to our website.",
-          "123 Anywhere St. Springfield Welcome to our website."
+          "<p>123 Anywhere St.<br>Springfield</p><p>Welcome to our website.</p>",
+          "<address>123 Anywhere St., Springfield</address><p>Welcome to our website.</p>",
+          "<p>123 Anywhere St. Springfield</p><br><p>Welcome to our website.</p>",
+          "<p>123 Anywhere St.</p><p>Springfield</p><p>Welcome to our website.</p>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '123 Anywhere St. Springfield Welcome to our website.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<p>123 Anywhere St.<br>Springfield</p><p>Welcome to our website.</p>'."
       },
       {
-        "id": "html_q28",
+        "id": "html_q32",
         "module": "html_m4",
-        "question": "What does the tag do in HTML?",
+        "question": "What does the <mark> tag do in HTML?",
         "code": null,
         "options": [
           "It highlights the text with a background color to indicate special importance.",
@@ -464,21 +520,35 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'It highlights the text with a background color to indicate special importance.'."
       },
       {
-        "id": "html_q29",
+        "id": "html_q33",
         "module": "html_m5",
         "question": "Which HTML snippet correctly emphasizes text for semantic importance and visual distinction?",
         "code": null,
         "options": [
-          "This is important text.",
-          "This is important text.",
-          "This is important text.",
-          "This is important text."
+          "<p>This is <strong>important</strong> text.</p>",
+          "<p>This is <em>important</em> text.</p>",
+          "<p>This is <mark>important</mark> text.</p>",
+          "<p>This is <b>important</b> text.</p>"
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'This is important text.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<p>This is <strong>important</strong> text.</p>'."
       },
       {
-        "id": "html_q30",
+        "id": "html_q34",
+        "module": "html_m4",
+        "question": "Which of the following is considered a block-level element in HTML5?",
+        "code": null,
+        "options": [
+          "<div>",
+          "<span>",
+          "<img>",
+          "<br>"
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<div>'."
+      },
+      {
+        "id": "html_q35",
         "module": "html_m5",
         "question": "When discussing HTML semantics, which term is used to describe the combination of an opening tag, its content, and its closing tag?",
         "code": null,
@@ -492,9 +562,23 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Element'."
       },
       {
-        "id": "html_q31",
+        "id": "html_q36",
         "module": "html_m4",
-        "question": "What is the main role of the element?",
+        "question": "Which of the following is considered a self-closing tag?",
+        "code": null,
+        "options": [
+          "<img>",
+          "<div>",
+          "<a>",
+          "<p>"
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<img>'."
+      },
+      {
+        "id": "html_q37",
+        "module": "html_m5",
+        "question": "What is the main role of the <nav> element?",
         "code": null,
         "options": [
           "To define a section for navigation links.",
@@ -506,9 +590,23 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To define a section for navigation links.'."
       },
       {
-        "id": "html_q32",
+        "id": "html_q38",
+        "module": "html_m5",
+        "question": "Which section of an HTML document typically contains metadata like keywords and descriptions?",
+        "code": null,
+        "options": [
+          "<head>",
+          "<body>",
+          "<footer>",
+          "<header>"
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<head>'."
+      },
+      {
+        "id": "html_q39",
         "module": "html_m4",
-        "question": "What is the purpose of the declaration?",
+        "question": "What is the purpose of the <!DOCTYPE html> declaration?",
         "code": null,
         "options": [
           "To define the version of HTML the document is using.",
@@ -517,12 +615,12 @@ const CERTIFICATES_DATA = {
           "To initialize JavaScript in the document."
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To define the version of HTML the document is using.'."
+        "explanation": "Deklarace <!DOCTYPE html> musí být na prvním řádku HTML5 dokumentu a informuje prohlížeč o standardním režimu vykreslování. Správná odpověď: To define the version of HTML the document is using.."
       },
       {
-        "id": "html_q33",
+        "id": "html_q40",
         "module": "html_m4",
-        "question": "What is the poster attribute in the tag used for?",
+        "question": "What is the poster attribute in the <video> tag used for?",
         "code": null,
         "options": [
           "To define the thumbnail image shown before the video plays.",
@@ -534,244 +632,144 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To define the thumbnail image shown before the video plays.'."
       },
       {
-        "id": "html_q34",
-        "module": "html_m4",
-        "question": "Considering the default behavior of HTML headings regarding font size, which statement accurately describes the relationship between , , and tags?",
-        "code": null,
-        "options": [
-          "has the largest default font size, suitable for the main title of a page. is used for major section headings with a smaller font size than , and is for sub-sections, with a font size smaller than , reflecting a hierarchical document structure.",
-          "HTML headings do not influence the hierarchy of content; CSS is solely responsible for defining such relationships.",
-          "The font sizes for , , and are the same, with differences only in semantic importance.",
-          "is the largest and should be used for the main title, while and are for subsections and minor points, respectively."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'has the largest default font size, suitable for the main title of a page. is used for major section headings with a smaller font size than , and is for sub-sections, with a font size smaller than , reflecting a hierarchical document structure.'."
-      },
-      {
-        "id": "html_q35",
-        "module": "html_m4",
-        "question": "Which of the following accurately describes the function of the tag in HTML?",
-        "code": null,
-        "options": [
-          "The tag defines a paragraph, automatically adding a blank line above and below the enclosed text and taking up the full width of its container.",
-          "The tag is used to create a new line within a paragraph without adding any space above or below.",
-          "The tag is an inline element that formats text without affecting its block-level structure.",
-          "The tag defines a paragraph, without adding any space above or below."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag defines a paragraph, automatically adding a blank line above and below the enclosed text and taking up the full width of its container.'."
-      },
-      {
-        "id": "html_q36",
-        "module": "html_m4",
-        "question": "What is the purpose of the tag in HTML?",
-        "code": null,
-        "options": [
-          "The tag highlights the word “Wednesday”, drawing attention to it with a background color.",
-          "The tag makes the word “Wednesday” italic to emphasize a specific part of the paragraph.",
-          "The tag underlines the word “Wednesday” to indicate hyperlinks without creating an actual link.",
-          "The tag underlines and highlights the word “Wednesday”, drawing attention to it with a font color."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag highlights the word “Wednesday”, drawing attention to it with a background color.'."
-      },
-      {
-        "id": "html_q37",
-        "module": "html_m4",
-        "question": "How does the tag differ from the tag in HTML?",
-        "code": null,
-        "options": [
-          "The tag is used for longer quotations that need to be separated from the main text, often indented or styled differently from the surrounding content.",
-          "The tag is deprecated and should not be used; is the modern replacement.",
-          "is for inline quotations, while is for block-level quotations.",
-          "There is no functional difference; both tags can be used for short and long quotations."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag is used for longer quotations that need to be separated from the main text, often indented or styled differently from the surrounding content.'."
-      },
-      {
-        "id": "html_q38",
-        "module": "html_m4",
-        "question": "What is the correct way to include a citation source for a block quotation in HTML?",
-        "code": null,
-        "options": [
-          "The cite attribute should be used within the tag to specify the URL of the quotation’s source.",
-          "The source URL should be included inside the tag for all quotations.",
-          "Citation sources are typically not included in the HTML but rather in the accompanying CSS.",
-          "The tag should be used as a container for the entire quotation and its source URL."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The cite attribute should be used within the tag to specify the URL of the quotation’s source.'."
-      },
-      {
-        "id": "html_q39",
-        "module": "html_m4",
-        "question": "Which statement is true about using quotation marks with the and tags?",
-        "code": null,
-        "options": [
-          "The tag automatically adds quotation marks around the enclosed text, while the tag does not.",
-          "Both and tags automatically add double quotation marks around the text.",
-          "The tag requires manual addition of quotation marks, but the tag does not.",
-          "Quotation marks must be manually added when using both and tags for proper formatting."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag automatically adds quotation marks around the enclosed text, while the tag does not.'."
-      },
-      {
-        "id": "html_q40",
-        "module": "html_m4",
-        "question": "Which of the following statements accurately describes the use of the and tags in HTML?",
-        "code": null,
-        "options": [
-          "The tag is used for adding a new line within a paragraph, while the tag is used to insert a visual horizontal line to separate content.",
-          "Both and tags are used for creating new paragraphs.",
-          "is used to create a line break in text, and is for drawing a horizontal line.",
-          "Both tags require closing tags to function correctly in HTML documents."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag is used for adding a new line within a paragraph, while the tag is used to insert a visual horizontal line to separate content.'."
-      },
-      {
         "id": "html_q41",
         "module": "html_m4",
-        "question": "What is the primary purpose of the tag in HTML?",
+        "question": "Considering the default behavior of HTML headings regarding font size, which statement accurately describes the relationship between <h1>, <h2>, and <h3> tags?",
         "code": null,
         "options": [
-          "The tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.",
-          "The tag is used to indicate text that should be interpreted as programming variables.",
-          "The tag serves as a container for embedding executable code within HTML.",
-          "The tag provides semantic meaning to text, indicating technical terms or identifiers outside of code contexts."
+          "<h1> has the largest default font size, suitable for the main title of a page. <h2> is used for major section headings with a smaller font size than <h1>, and <h3> is for sub-sections, with a font size smaller than <h2>, reflecting a hierarchical document structure.",
+          "HTML headings do not influence the hierarchy of content; CSS is solely responsible for defining such relationships.",
+          "The font sizes for <h1>, <h2>, and <h3> are the same, with differences only in semantic importance.",
+          "<h3> is the largest and should be used for the main title, while <h2> and <h1> are for subsections and minor points, respectively."
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: '<h1> has the largest default font size, suitable for the main title of a page. <h2> is used for major section headings with a smaller font size than <h1>, and <h3> is for sub-sections, with a font size smaller than <h2>, reflecting a hierarchical document structure.'."
       },
       {
         "id": "html_q42",
         "module": "html_m4",
-        "question": "How does the tag affect the display of text in an HTML document?",
+        "question": "Which of the following accurately describes the function of the <p> tag in HTML?",
         "code": null,
         "options": [
-          "The tag preserves the text’s white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.",
-          "The tag is used to pre-process text, applying automatic formatting rules.",
-          "The tag organizes text into pre-defined sections for improved document structure.",
-          "The tag prioritizes text for search engines, enhancing SEO for preformatted content."
+          "The <p> tag defines a paragraph, automatically adding a blank line above and below the enclosed text and taking up the full width of its container.",
+          "The <p> tag is used to create a new line within a paragraph without adding any space above or below.",
+          "The <p> tag is an inline element that formats text without affecting its block-level structure.",
+          "The <p> tag defines a paragraph, without adding any space above or below."
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The tag preserves the text’s white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <p> tag defines a paragraph, automatically adding a blank line above and below the enclosed text and taking up the full width of its container.'."
       },
       {
         "id": "html_q43",
-        "module": "html_m5",
-        "question": "Considering accessibility and HTML semantics, what is the significance of nesting within or vice versa?",
+        "module": "html_m4",
+        "question": "What is the purpose of the <mark> tag in HTML?",
         "code": null,
         "options": [
-          "Nesting lists, such as incorporating within or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.",
+          "The <mark> tag highlights the word \"Wednesday\", drawing attention to it with a background color.",
+          "The <mark> tag makes the word \"Wednesday\" italic to emphasize a specific part of the paragraph.",
+          "The <mark> tag underlines the word \"Wednesday\" to indicate hyperlinks without creating an actual link.",
+          "The <mark> tag underlines and highlights the word \"Wednesday\", drawing attention to it with a font color."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <mark> tag highlights the word \"Wednesday\", drawing attention to it with a background color.'."
+      },
+      {
+        "id": "html_q44",
+        "module": "html_m4",
+        "question": "How does the <blockquote> tag differ from the <q> tag in HTML?",
+        "code": null,
+        "options": [
+          "The <blockquote> tag is used for longer quotations that need to be separated from the main text, often indented or styled differently from the surrounding content.",
+          "The <q> tag is deprecated and should not be used; <blockquote> is the modern replacement.",
+          "<blockquote> is for inline quotations, while <q> is for block-level quotations.",
+          "There is no functional difference; both tags can be used for short and long quotations."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <blockquote> tag is used for longer quotations that need to be separated from the main text, often indented or styled differently from the surrounding content.'."
+      },
+      {
+        "id": "html_q45",
+        "module": "html_m4",
+        "question": "What is the correct way to include a citation source for a block quotation in HTML?",
+        "code": null,
+        "options": [
+          "The cite attribute should be used within the <blockquote> tag to specify the URL of the quotation's source.",
+          "The source URL should be included inside the <q> tag for all quotations.",
+          "Citation sources are typically not included in the HTML but rather in the accompanying CSS.",
+          "The <cite> tag should be used as a container for the entire quotation and its source URL."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The cite attribute should be used within the <blockquote> tag to specify the URL of the quotation's source.'."
+      },
+      {
+        "id": "html_q46",
+        "module": "html_m4",
+        "question": "Which statement is true about using quotation marks with the <q> and <blockquote> tags?",
+        "code": null,
+        "options": [
+          "The <q> tag automatically adds quotation marks around the enclosed text, while the <blockquote> tag does not.",
+          "Both <q> and <blockquote> tags automatically add double quotation marks around the text.",
+          "The <blockquote> tag requires manual addition of quotation marks, but the <q> tag does not.",
+          "Quotation marks must be manually added when using both <q> and <blockquote> tags for proper formatting."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <q> tag automatically adds quotation marks around the enclosed text, while the <blockquote> tag does not.'."
+      },
+      {
+        "id": "html_q47",
+        "module": "html_m4",
+        "question": "Which of the following statements accurately describes the use of the <br> and <hr> tags in HTML?",
+        "code": null,
+        "options": [
+          "The <br> tag is used for adding a new line within a paragraph, while the <hr> tag is used to insert a visual horizontal line to separate content.",
+          "Both <br> and <hr> tags are used for creating new paragraphs.",
+          "<hr> is used to create a line break in text, and <br> is for drawing a horizontal line.",
+          "Both tags require closing tags to function correctly in HTML documents."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <br> tag is used for adding a new line within a paragraph, while the <hr> tag is used to insert a visual horizontal line to separate content.'."
+      },
+      {
+        "id": "html_q48",
+        "module": "html_m4",
+        "question": "What is the primary purpose of the <code> tag in HTML?",
+        "code": null,
+        "options": [
+          "The <code> tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.",
+          "The <code> tag is used to indicate text that should be interpreted as programming variables.",
+          "The <code> tag serves as a container for embedding executable code within HTML.",
+          "The <code> tag provides semantic meaning to text, indicating technical terms or identifiers outside of code contexts."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <code> tag is used to display a snippet of computer code inline with other text, highlighting it in a monospaced font to distinguish it from the surrounding text.'."
+      },
+      {
+        "id": "html_q49",
+        "module": "html_m4",
+        "question": "How does the <pre> tag affect the display of text in an HTML document?",
+        "code": null,
+        "options": [
+          "The <pre> tag preserves the text's white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.",
+          "The <pre> tag is used to pre-process text, applying automatic formatting rules.",
+          "The <pre> tag organizes text into pre-defined sections for improved document structure.",
+          "The <pre> tag prioritizes text for search engines, enhancing SEO for preformatted content."
+        ],
+        "correct": 0,
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The <pre> tag preserves the text's white space and line breaks, displaying it exactly as written within the tag, which is useful for showing code or poetry.'."
+      },
+      {
+        "id": "html_q50",
+        "module": "html_m5",
+        "question": "Considering accessibility and HTML semantics, what is the significance of nesting <ol> within <ul> or vice versa?",
+        "code": null,
+        "options": [
+          "Nesting lists, such as incorporating <ol> within <ul> or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.",
           "Nesting provides semantic clarity, enabling search engines to better understand and index the content structure, potentially improving SEO performance.",
           "By utilizing nested lists, developers can implement complex web designs more efficiently, as it simplifies the CSS needed for list customization.",
           "Nesting lists facilitates the automatic adaptation of content to various screen sizes, improving the responsive design of web pages without additional CSS."
         ],
         "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Nesting lists, such as incorporating within or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.'."
-      },
-      {
-        "id": "html_q44",
-        "module": "html_m4",
-        "question": "Which HTML tag pair is specifically used for creating a list of terms and their respective definitions?",
-        "code": null,
-        "options": [
-          "for the list, for each term, and for each definition.",
-          "for the list, followed by for each term and definition.",
-          "for the list, with tags marking each term and definition pair.",
-          "for the list, with and tags for terms and definitions."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'for the list, for each term, and for each definition.'."
-      },
-      {
-        "id": "html_q45",
-        "module": "html_m4",
-        "question": "What is the correct way to add a caption to an HTML table?",
-        "code": null,
-        "options": [
-          "The element, placed immediately after the opening tag, is used to provide a title or caption for the table.",
-          "Use the element within a table for captions.",
-          "Captions are added using the alt attribute on the tag.",
-          "The element should be used at the beginning of a table to add a caption."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'The element, placed immediately after the opening tag, is used to provide a title or caption for the table.'."
-      },
-      {
-        "id": "html_q46",
-        "module": "html_m4",
-        "question": "Considering HTML5 standards, which table attributes are recommended to control the appearance and layout of a table?",
-        "code": null,
-        "options": [
-          "CSS styles are recommended for controlling the appearance and layout of tables in HTML5.",
-          "The border, the cellpadding, and the cellspacing attributes are the HTML5 recommended method.",
-          "Use the border and cellspacing attributes for appearance and layout control.",
-          "The border and bgcolor attributes are preferred for styling tables."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'CSS styles are recommended for controlling the appearance and layout of tables in HTML5.'."
-      },
-      {
-        "id": "html_q47",
-        "module": "html_m4",
-        "question": "What role does the summary attribute play in HTML tables, and why is it important?",
-        "code": null,
-        "options": [
-          "It is used to describe the table’s content and purpose for assistive technologies, enhances accessibility by providing context.",
-          "It summarizes the table data in a tooltip.",
-          "It is a visual summary displayed at the top of the table.",
-          "It is primarily designed for enhancing table accessibility, not directly influencing SEO or providing visible content to all users."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'It is used to describe the table’s content and purpose for assistive technologies, enhances accessibility by providing context.'."
-      },
-      {
-        "id": "html_q48",
-        "module": "html_m4",
-        "question": "Identify which statement accurately reflects the purpose of the alt attribute.",
-        "code": null,
-        "options": [
-          "It provides a description of the image for users who cannot see it, such as those using screen readers.",
-          "It specifies a textual animation to accompany the image when it is clicked.",
-          "It captions the image directly on the webpage, visible to all users.",
-          "It provides a detailed narrative of the image for inclusion in the page’s footer. The alt attribute in the tag provides alternative text that describes the image for users who cannot see it, including those using screen readers or when the image fails to load. This enhances accessibility by ensuring that the content of the image is still accessible to all users."
-        ],
-        "correct": 0,
-        "explanation": "Atribut 'alt' u tagu <img> poskytuje alternativní textový popis v případě, že se obrázek nepodaří načíst, a slouží čtečkám obrazovky pro nevidomé. Správná odpověď: It provides a description of the image for users who cannot see it, such as those using screen readers.."
-      },
-      {
-        "id": "html_q49",
-        "module": "html_m4",
-        "question": "What is the primary benefit of specifying both width and height attributes in an tag? Select the best answer.",
-        "code": null,
-        "options": [
-          "To ensure that the image loads with the correct dimensions, improving page layout stability during loading.",
-          "To automatically crop the image to the specified dimensions.",
-          "To increase the image resolution based on the specified size.",
-          "To ensure the image is aligned centrally within its parent container automatically.",
-          "Specifying both width and height attributes for an tag helps the browser allocate the necessary space for the image before it fully loads. This prevents layout shifts and ensures that the page maintains a stable layout while the image is loading."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'To ensure that the image loads with the correct dimensions, improving page layout stability during loading.'."
-      },
-      {
-        "id": "html_q50",
-        "module": "html_m4",
-        "question": "What does the use of absolute paths for image sources in HTML entail?",
-        "code": null,
-        "options": [
-          "Referencing an image hosted on a web server using its full URL.",
-          "Specifying a path relative to the current document.",
-          "Embedding an image directly into the HTML document in base64 format.",
-          "Forcing the browser to download the image before rendering the page.",
-          "An absolute path specifies the complete URL or file location for an image, including the protocol (e.g., http:// or https:// ), the domain, and the file path. This method is used when the image is hosted on a different server or when referencing resources by their full web address."
-        ],
-        "correct": 0,
-        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Referencing an image hosted on a web server using its full URL.'."
+        "explanation": "Podle specifikace HTML5 standardu W3C/WHATWG je správná odpověď: 'Nesting lists, such as incorporating <ol> within <ul> or vice versa, organizes information hierarchically. This enhances document structure and accessibility by delineating subcategories or sequential steps within broader categories.'."
       }
     ]
   },
@@ -827,12 +825,12 @@ const CERTIFICATES_DATA = {
       {
         "id": "css_q02",
         "module": "css_m5",
-        "question": "How does Bootstrap’s responsive embed utilities help with embedding media?",
+        "question": "How does Bootstrap's responsive embed utilities help with embedding media?",
         "code": null,
         "options": [
           "It maintains a fixed aspect ratio for the media and resizes it with the content.",
           "It resizes the media to fit within any container.",
-          "It automatically adjusts the media’s aspect ratio to fit the screen size.",
+          "It automatically adjusts the media's aspect ratio to fit the screen size.",
           "It centers the media on the page."
         ],
         "correct": 0,
@@ -900,13 +898,13 @@ const CERTIFICATES_DATA = {
         "question": "Select the correct Bootstrap class to make the following button have a primary color.",
         "code": null,
         "options": [
-          "Click me",
-          "Click me",
-          "Click me",
-          "Click me"
+          "<button class=\"btn btn-primary\">Click me</button>",
+          "<button class=\"btn-primary\">Click me</button>",
+          "<button class=\"btn btn-main\">Click me</button>",
+          "<button class=\"button-primary\">Click me</button>"
         ],
         "correct": 0,
-        "explanation": "V Bootstrapu se pro responzivní rozbalení navigační lišty používá třída .navbar-expand. Správná odpověď: Click me."
+        "explanation": "V Bootstrapu se pro responzivní rozbalení navigační lišty používá třída .navbar-expand. Správná odpověď: <button class=\"btn btn-primary\">Click me</button>."
       },
       {
         "id": "css_q08",
@@ -942,13 +940,13 @@ const CERTIFICATES_DATA = {
         "question": "Which CSS rule will cause grid items to be placed in rows by default, controlling the automatic flow of items and filling each row before moving to the next?",
         "code": null,
         "options": [
-          ".container { display: grid; grid-auto-flow: row; }",
-          ".container { display: grid; grid-auto-flow: column; }",
-          ".container { display: grid; grid-auto-rows: auto; }",
-          ".container { display: grid; grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); }"
+          ".container {\r\n display: grid;\r\n grid-auto-flow: row;\r\n}",
+          ".container {\r\n display: grid;\r\n grid-auto-flow: column;\r\n}",
+          ".container {\r\n display: grid;\r\n grid-auto-rows: auto;\r\n}",
+          ".container {\r\n display: grid;\r\n grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));\r\n}"
         ],
         "correct": 0,
-        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container { display: grid; grid-auto-flow: row; }."
+        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container {\r\n display: grid;\r\n grid-auto-flow: row;\r\n}."
       },
       {
         "id": "css_q11",
@@ -956,13 +954,13 @@ const CERTIFICATES_DATA = {
         "question": "Which CSS rule aligns flex items along the cross axis (perpendicular to the main axis)?",
         "code": null,
         "options": [
-          ".container { display: flex; align-items: center; }",
-          ".container { display: flex; justify-content: space-between; }",
-          ".container { inline-block: flex; justify-content: center; }",
-          ".container { display: flex; align-content: space-around; }"
+          ".container {\r\n display: flex;\r\n align-items: center;\r\n}",
+          ".container {\r\n display: flex;\r\n justify-content: space-between;\r\n}",
+          ".container {\r\n inline-block: flex;\r\n justify-content: center;\r\n}",
+          ".container {\r\n display: flex;\r\n align-content: space-around;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container { display: flex; align-items: center; }."
+        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container {\r\n display: flex;\r\n align-items: center;\r\n}."
       },
       {
         "id": "css_q12",
@@ -998,13 +996,13 @@ const CERTIFICATES_DATA = {
         "question": "Which CSS rule will allow flex items to wrap onto multiple lines within a flex container?",
         "code": null,
         "options": [
-          ".container { display: flex; flex-wrap: wrap; }",
-          ".container { display: flex; flex-direction: column; }",
-          ".container { display: flex; align-content: stretch; }",
-          ".container { display: flex; align-content: wrap; }"
+          ".container {\r\n display: flex;\r\n flex-wrap: wrap;\r\n}",
+          ".container {\r\n display: flex;\r\n flex-direction: column;\r\n}",
+          ".container {\r\n display: flex;\r\n align-content: stretch;\r\n}",
+          ".container {\r\n display: flex;\r\n align-content: wrap;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container { display: flex; flex-wrap: wrap; }."
+        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container {\r\n display: flex;\r\n flex-wrap: wrap;\r\n}."
       },
       {
         "id": "css_q15",
@@ -1012,13 +1010,13 @@ const CERTIFICATES_DATA = {
         "question": "How do you nest CSS selectors in Sass?",
         "code": null,
         "options": [
-          "nav { ul { margin: 0; padding: 0; list-style: none; } }",
-          "nav > ul { margin: 0; padding: 0; list-style: none; }",
-          "nav ul { margin: 0; padding: 0; list-style: none; }",
-          "nav: { ul: { margin: 0; padding: 0; list-style: none; } }"
+          "nav {\r\n ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n }\r\n}",
+          "nav > ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n}",
+          "nav ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n}",
+          "nav: {\r\n ul: {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n }\r\n}"
         ],
         "correct": 0,
-        "explanation": "Specificita selektorů v CSS určuje prioritu pravidel: inline styl > ID selektor (#) > třída (.) / pseudo-třída > element. Správná odpověď: nav { ul { margin: 0; padding: 0; list-style: none; } }."
+        "explanation": "Specificita selektorů v CSS určuje prioritu pravidel: inline styl > ID selektor (#) > třída (.) / pseudo-třída > element. Správná odpověď: nav {\r\n ul {\r\n margin: 0;\r\n padding: 0;\r\n list-style: none;\r\n }\r\n}."
       },
       {
         "id": "css_q16",
@@ -1040,13 +1038,13 @@ const CERTIFICATES_DATA = {
         "question": "Which CSS rule will apply a transition effect to change the background color of an element over 0.5 seconds when hovered?",
         "code": null,
         "options": [
-          ".element { transition: background-color 0.5s; } .element:hover { background-color: blue; }",
-          ".element { transition: color 0.5s; } .element:hover { background-color: blue; }",
-          ".element { transition: background-color; } .element:hover { background-color: blue; }",
-          ".element { transition: background-color; } .element { background-color: blue; }"
+          ".element {\r\n transition: background-color 0.5s;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}",
+          ".element {\r\n transition: color 0.5s;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}",
+          ".element {\r\n transition: background-color;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}",
+          ".element {\r\n transition: background-color;\r\n}\r\n.element {\r\n background-color: blue;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '.element { transition: background-color 0.5s; } .element:hover { background-color: blue; }'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '.element {\r\n transition: background-color 0.5s;\r\n}\r\n.element:hover {\r\n background-color: blue;\r\n}'."
       },
       {
         "id": "css_q18",
@@ -1096,13 +1094,13 @@ const CERTIFICATES_DATA = {
         "question": "Which of the following techniques helps ensure that content is accessible to screen readers while being hidden visually?",
         "code": null,
         "options": [
-          "Using CSS to move content off-screen with a class like .screen-reader-text .",
+          "Using CSS to move content off-screen with a class like .screen-reader-text.",
           "Using the display: none; property in CSS.",
           "Using the visibility: hidden; property in CSS.",
           "Using JavaScript to dynamically remove the element from the DOM."
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'Using CSS to move content off-screen with a class like .screen-reader-text .'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'Using CSS to move content off-screen with a class like .screen-reader-text.'."
       },
       {
         "id": "css_q22",
@@ -1166,13 +1164,13 @@ const CERTIFICATES_DATA = {
         "question": "Which CSS rule will wrap text around an image by floating the image to the left?",
         "code": null,
         "options": [
-          "img { float: left; margin: 0 10px 10px 0; }",
-          "img { float: right; margin: 0 0 10px 10px; }",
-          "img { text-align: float; padding: 10px; }",
-          "img { display: float; block; margin: 10px; }"
+          "img {\r\n float: left;\r\n margin: 0 10px 10px 0;\r\n}",
+          "img {\r\n float: right;\r\n margin: 0 0 10px 10px;\r\n}",
+          "img {\r\n text-align: float;\r\n padding: 10px;\r\n}",
+          "img {\r\n display: float; block;\r\n margin: 10px;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'img { float: left; margin: 0 10px 10px 0; }'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'img {\r\n float: left;\r\n margin: 0 10px 10px 0;\r\n}'."
       },
       {
         "id": "css_q27",
@@ -1218,6 +1216,20 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "css_q30",
+        "module": "css_m1",
+        "question": "In which section is the external CSS file referred to?",
+        "code": null,
+        "options": [
+          "<head>",
+          "<body>",
+          "<header>",
+          "<style>"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '<head>'."
+      },
+      {
+        "id": "css_q31",
         "module": "css_m2",
         "question": "Which of the CSS Selector definitions is correct?",
         "code": null,
@@ -1225,27 +1237,27 @@ const CERTIFICATES_DATA = {
           "It specifies which HTML elements the rule will apply to.",
           "It defines the aspect you want to style, such as color, font-size, margin, padding, background, etc.",
           "It determines the styling details.",
-          "It’s a set of property-value pairs enclosed in curly braces {}."
+          "It's a set of property-value pairs enclosed in curly braces {}."
         ],
         "correct": 0,
         "explanation": "Specificita selektorů v CSS určuje prioritu pravidel: inline styl > ID selektor (#) > třída (.) / pseudo-třída > element. Správná odpověď: It specifies which HTML elements the rule will apply to.."
       },
       {
-        "id": "css_q31",
+        "id": "css_q32",
         "module": "css_m2",
         "question": "What is the correct way of combining the CSS selectors?",
         "code": null,
         "options": [
-          "selector1, selector2 { property: value; }",
-          "selector1 selector2 { property: value; }",
-          "selector1 & selector2 { property: value; }",
-          "selector1 + selector2 { property: value; }"
+          "selector1, selector2 {\r\n property: value;\r\n}",
+          "selector1 selector2 {\r\n property: value;\r\n}",
+          "selector1 & selector2 {\r\n property: value;\r\n}",
+          "selector1 + selector2 {\r\n property: value;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Specificita selektorů v CSS určuje prioritu pravidel: inline styl > ID selektor (#) > třída (.) / pseudo-třída > element. Správná odpověď: selector1, selector2 { property: value; }."
+        "explanation": "Specificita selektorů v CSS určuje prioritu pravidel: inline styl > ID selektor (#) > třída (.) / pseudo-třída > element. Správná odpověď: selector1, selector2 {\r\n property: value;\r\n}."
       },
       {
-        "id": "css_q32",
+        "id": "css_q33",
         "module": "css_m2",
         "question": "To style elements with the class highlight only when they are hovered over, which selector would you use?",
         "code": null,
@@ -1259,7 +1271,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Specificita selektorů v CSS určuje prioritu pravidel: inline styl > ID selektor (#) > třída (.) / pseudo-třída > element. Správná odpověď: .highlight:hover."
       },
       {
-        "id": "css_q33",
+        "id": "css_q34",
         "module": "css_m1",
         "question": "What is the best approach to make the layout adapt to different screen sizes?",
         "code": null,
@@ -1273,9 +1285,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'Using media queries to ensure the layout adapts to different screen sizes.'."
       },
       {
-        "id": "css_q34",
+        "id": "css_q35",
         "module": "css_m1",
-        "question": "Which property allows you to add a scrollbar to the container, allowing the user to scroll vertically and horizontally to view the entire content of the .content div, even though it overflows the container’s boundaries?",
+        "question": "Which property allows you to add a scrollbar to the container, allowing the user to scroll vertically and horizontally to view the entire content of the .content div, even though it overflows the container's boundaries?",
         "code": null,
         "options": [
           "overflow: scroll;",
@@ -1287,7 +1299,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'overflow: scroll;'."
       },
       {
-        "id": "css_q35",
+        "id": "css_q36",
         "module": "css_m2",
         "question": "Which CSS rules you will use to hide an element if you want an element to disappear entirely from the page layout?",
         "code": null,
@@ -1301,49 +1313,49 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'display: none;'."
       },
       {
-        "id": "css_q36",
+        "id": "css_q37",
         "module": "css_m3",
         "question": "Which CSS rule will style a table with a border, set the spacing between table cells to 0, and apply a background color to alternating rows?",
         "code": null,
         "options": [
-          "table { border: 1px solid black; border-collapse: collapse; } table tr:nth-child(even) { background-color: #f2f2f2; }",
-          "table { border: 1px solid black; border-spacing: 0; } table tr:nth-child(odd) { background-color: #f2f2f2; }",
-          "table { border: 1px dashed black; border-collapse: separate; } table tr:hover { background-color: #f2f2f2; }",
-          "table { border: 1px solid black; border-spacing: 5px; } table tr:nth-child(odd) { background-color: #f2f2f2; }"
+          "table {\r\n border: 1px solid black;\r\n border-collapse: collapse;\r\n}\r\ntable tr:nth-child(even) {\r\n background-color: #f2f2f2;\r\n}",
+          "table {\r\n border: 1px solid black;\r\n border-spacing: 0;\r\n}\r\ntable tr:nth-child(odd) {\r\n background-color: #f2f2f2;\r\n}",
+          "table {\r\n border: 1px dashed black;\r\n border-collapse: separate;\r\n}\r\ntable tr:hover {\r\n background-color: #f2f2f2;\r\n}",
+          "table {\r\n border: 1px solid black;\r\n border-spacing: 5px;\r\n}\r\ntable tr:nth-child(odd) {\r\n background-color: #f2f2f2;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'table { border: 1px solid black; border-collapse: collapse; } table tr:nth-child(even) { background-color: #f2f2f2; }'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'table {\r\n border: 1px solid black;\r\n border-collapse: collapse;\r\n}\r\ntable tr:nth-child(even) {\r\n background-color: #f2f2f2;\r\n}'."
       },
       {
-        "id": "css_q37",
+        "id": "css_q38",
         "module": "css_m1",
         "question": "What is the primary purpose of using fieldset and legend elements in an HTML form?",
         "code": null,
         "options": [
-          "The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset .",
+          "The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset.",
           "The fieldset element is used to style form controls and the legend element is used to add tooltips to the controls.",
           "The fieldset element is used to create a container for input fields and the legend element is used to submit the form.",
           "The fieldset element is used to add spacing between form controls and the legend element is used to add a label to each control."
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset .'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset.'."
       },
       {
-        "id": "css_q38",
+        "id": "css_q39",
         "module": "css_m4",
         "question": "Which sentence describes the fixed layout?",
         "code": null,
         "options": [
           "It has a set width (usually measured in pixels) and does not change size based on the browser window.",
           "It stretches and contracts with the browser window, filling the available space.",
-          "It scales depending on the user’s font size settings, making the layout accessible.",
+          "It scales depending on the user's font size settings, making the layout accessible.",
           "It often incorporates media queries to change styles based on different device characteristics, leading to a responsive design."
         ],
         "correct": 0,
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'It has a set width (usually measured in pixels) and does not change size based on the browser window.'."
       },
       {
-        "id": "css_q39",
+        "id": "css_q40",
         "module": "css_m4",
         "question": "What values can the clear property take?",
         "code": null,
@@ -1357,7 +1369,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'none, left, right, both'."
       },
       {
-        "id": "css_q40",
+        "id": "css_q41",
         "module": "css_m5",
         "question": "Which media query will apply styles specifically for devices in landscape orientation?",
         "code": null,
@@ -1371,37 +1383,37 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '@media (orientation: landscape) { ... }'."
       },
       {
-        "id": "css_q41",
+        "id": "css_q42",
         "module": "css_m5",
         "question": "Which CSS rules will create a simple two-column grid layout using floats?",
         "code": null,
         "options": [
-          ".container { width: 100%; overflow: hidden; } .column { float: left; width: 50%; }",
-          ".container { display: grid; grid-template-columns: 1fr 1fr; } .column { float: left; }",
-          ".float-container { width: 100%; display: flex; } .column { flex: 1; }",
-          ".float-container { width: 100%; display: block; } .column { display: inline-block; width: 50%; }"
+          ".container {\r\n width: 100%;\r\n overflow: hidden;\r\n}\r\n.column {\r\n float: left;\r\n width: 50%;\r\n}",
+          ".container {\r\n display: grid;\r\n grid-template-columns: 1fr 1fr;\r\n}\r\n.column {\r\n float: left;\r\n}",
+          ".float-container {\r\n width: 100%;\r\n display: flex;\r\n}\r\n.column {\r\n flex: 1;\r\n}",
+          ".float-container {\r\n width: 100%;\r\n display: block;\r\n}\r\n.column {\r\n display: inline-block;\r\n width: 50%;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container { width: 100%; overflow: hidden; } .column { float: left; width: 50%; }."
-      },
-      {
-        "id": "css_q42",
-        "module": "css_m3",
-        "question": "Which of the following CSS rules ensures that an image inside a hyperlink appears without an underline, has no border, and scales properly within the link?",
-        "code": null,
-        "options": [
-          "a img { border: 0; display: block; max-width: 100%; text-decoration: none; }",
-          "a img { text-decoration: none; width: auto; }",
-          "a { border: 0; max-width: 100%; text-decoration: none; img('image.png') }",
-          "a img('image.png') { border: none; display: inline; max-width: 100%; underline: none; }"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'a img { border: 0; display: block; max-width: 100%; text-decoration: none; }'."
+        "explanation": "Moderní CSS layouty využívají Flexbox (1D rozvržení po osách) a CSS Grid (2D maticové rozvržení řádků a sloupců). Správná odpověď: .container {\r\n width: 100%;\r\n overflow: hidden;\r\n}\r\n.column {\r\n float: left;\r\n width: 50%;\r\n}."
       },
       {
         "id": "css_q43",
         "module": "css_m3",
-        "question": "Consider the following CSS rules and HTML. What will be the color of the element with the ID element ?",
+        "question": "Which of the following CSS rules ensures that an image inside a hyperlink appears without an underline, has no border, and scales properly within the link?",
+        "code": null,
+        "options": [
+          "a img {\r\n border: 0;\r\n display: block;\r\n max-width: 100%;\r\n text-decoration: none;\r\n}",
+          "a img {\r\n text-decoration: none;\r\n width: auto;\r\n}",
+          "a {\r\n border: 0;\r\n max-width: 100%;\r\n text-decoration: none;\r\n img('image.png')\r\n}",
+          "a img('image.png') {\r\n border: none;\r\n display: inline;\r\n max-width: 100%;\r\n underline: none;\r\n}"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'a img {\r\n border: 0;\r\n display: block;\r\n max-width: 100%;\r\n text-decoration: none;\r\n}'."
+      },
+      {
+        "id": "css_q44",
+        "module": "css_m3",
+        "question": "Consider the following CSS rules and HTML. What will be the color of the element with the ID element?",
         "code": null,
         "options": [
           "Green",
@@ -1413,77 +1425,77 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'Green'."
       },
       {
-        "id": "css_q44",
+        "id": "css_q45",
         "module": "css_m3",
         "question": "What is the correct way of setting the div background color to blue and its text color to white?",
         "code": null,
         "options": [
-          "div { background: blue; color: white; }",
-          "div { background-color: blue; text-color: white; }",
-          "div { background: blue; text: white; }",
-          "div { background: blue; font-color: white; }"
+          "div {\r\n background: blue;\r\n color: white;\r\n}",
+          "div {\r\n background-color: blue;\r\n text-color: white;\r\n}",
+          "div {\r\n background: blue;\r\n text: white;\r\n}",
+          "div {\r\n background: blue;\r\n font-color: white;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'div { background: blue; color: white; }'."
-      },
-      {
-        "id": "css_q45",
-        "module": "css_m3",
-        "question": "What is the correct way of setting the preferred font for text elements?",
-        "code": null,
-        "options": [
-          "p { font-family: \"Roboto\", Arial, sans-serif; }",
-          "p { font: Arial; }",
-          "p { font-family: \"Roboto\", 16px, bold; }",
-          "p { font: \"Roboto\", Arial, sans-serif; }"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p { font-family: \"Roboto\", Arial, sans-serif; }'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'div {\r\n background: blue;\r\n color: white;\r\n}'."
       },
       {
         "id": "css_q46",
         "module": "css_m3",
-        "question": "Which of the following CSS rules sets the font size to 16px, font weight to bold, and font style to italic for a paragraph element?",
+        "question": "What is the correct way of setting the preferred font for text elements?",
         "code": null,
         "options": [
-          "p { font-size: 16px; font-weight: bold; font-style: italic; }",
-          "p { font: 16px bold italic; }",
-          "p { font-style: bold italic 16px; }",
-          "p { font: 16px; font-weight: italic; font-style: bold; }"
+          "p {\r\n font-family: \"Roboto\", Arial, sans-serif;\r\n}",
+          "p {\r\n font: Arial;\r\n}",
+          "p {\r\n font-family: \"Roboto\", 16px, bold;\r\n}",
+          "p {\r\n font: \"Roboto\", Arial, sans-serif;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p { font-size: 16px; font-weight: bold; font-style: italic; }'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p {\r\n font-family: \"Roboto\", Arial, sans-serif;\r\n}'."
       },
       {
         "id": "css_q47",
         "module": "css_m3",
-        "question": "Which CSS rule combines properties to set the text color to blue, center-align the text, set the font family to Arial, and add a line height of 1.5?",
+        "question": "Which of the following CSS rules sets the font size to 16px, font weight to bold, and font style to italic for a paragraph element?",
         "code": null,
         "options": [
-          "p { color: blue; text-align: center; font-family: Arial, sans-serif; line-height: 1.5; }",
-          "p { color: blue; align-text: center; font-family: Arial, sans-serif; line-height: 1.5; }",
-          "p { text-color: blue; text-align: middle; font-family: Arial, sans-serif; line-spacing: 1.5; }",
-          "p { color: blue; text-align: center; font-family: Arial, serif; height: 1.5; }"
+          "p {\r\n font-size: 16px;\r\n font-weight: bold;\r\n font-style: italic;\r\n}",
+          "p {\r\n font: 16px bold italic;\r\n}",
+          "p {\r\n font-style: bold italic 16px;\r\n}",
+          "p {\r\n font: 16px;\r\n font-weight: italic;\r\n font-style: bold;\r\n}"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p { color: blue; text-align: center; font-family: Arial, sans-serif; line-height: 1.5; }'."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p {\r\n font-size: 16px;\r\n font-weight: bold;\r\n font-style: italic;\r\n}'."
       },
       {
         "id": "css_q48",
         "module": "css_m3",
-        "question": "What is the primary difference between the CSS properties margin and padding ?",
+        "question": "Which CSS rule combines properties to set the text color to blue, center-align the text, set the font family to Arial, and add a line height of 1.5?",
         "code": null,
         "options": [
-          "margin creates space outside the element’s border, while padding creates space between the element’s content and its border.",
-          "margin creates space between the element’s content and its border, while padding creates space outside the element’s border.",
-          "margin and padding both create space outside the element’s border.",
-          "margin and padding both create space between the element’s content and its border."
+          "p {\r\n color: blue;\r\n text-align: center; font-family: Arial, sans-serif;\r\n line-height: 1.5;\r\n}",
+          "p {\r\n color: blue;\r\n align-text: center; font-family: Arial, sans-serif;\r\n line-height: 1.5;\r\n}",
+          "p {\r\n text-color: blue;\r\n text-align: middle; font-family: Arial, sans-serif;\r\n line-spacing: 1.5;\r\n}",
+          "p {\r\n color: blue;\r\n text-align: center; font-family: Arial, serif;\r\n height: 1.5;\r\n}"
         ],
         "correct": 0,
-        "explanation": "CSS Box Model se skládá z content, padding (vnitřní okraj), border (rámeček) a margin (vnější odstup). Správná odpověď: margin creates space outside the element’s border, while padding creates space between the element’s content and its border.."
+        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'p {\r\n color: blue;\r\n text-align: center; font-family: Arial, sans-serif;\r\n line-height: 1.5;\r\n}'."
       },
       {
         "id": "css_q49",
+        "module": "css_m3",
+        "question": "What is the primary difference between the CSS properties margin and padding?",
+        "code": null,
+        "options": [
+          "margin creates space outside the element's border, while padding creates space between the element's content and its border.",
+          "margin creates space between the element's content and its border, while padding creates space outside the element's border.",
+          "margin and padding both create space outside the element's border.",
+          "margin and padding both create space between the element's content and its border."
+        ],
+        "correct": 0,
+        "explanation": "CSS Box Model se skládá z content, padding (vnitřní okraj), border (rámeček) a margin (vnější odstup). Správná odpověď: margin creates space outside the element's border, while padding creates space between the element's content and its border.."
+      },
+      {
+        "id": "css_q50",
         "module": "css_m3",
         "question": "Measuring by the visible pink border, how wide is the .box element in the following scenario, assuming no other CSS has been applied?",
         "code": null,
@@ -1495,20 +1507,6 @@ const CERTIFICATES_DATA = {
         ],
         "correct": 0,
         "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: '244px'."
-      },
-      {
-        "id": "css_q50",
-        "module": "css_m1",
-        "question": "What does the following CSS rule do?",
-        "code": null,
-        "options": [
-          "It sets the text color of all elements to red.",
-          "It sets the background color of all elements to red.",
-          "It sets the border color of all elements to red.",
-          "It sets the text color of all elements inside elements to red. The color property in CSS specifically sets the text color of an element. In this case, the rule targets all elements and changes their text color to red. It does not affect the background, border, or child elements inside the elements unless they inherit the text color explicitly."
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních standardů CSS Essentials je správná volba: 'It sets the text color of all elements to red.'."
       }
     ]
   },
@@ -1558,12 +1556,12 @@ const CERTIFICATES_DATA = {
         "code": null,
         "options": [
           "open a tab with information about your browser.",
-          "generate a page with information about the browser’s status and send it to the developer.",
+          "generate a page with information about the browser's status and send it to the developer.",
           "reset the browser to its default settings.",
-          "generate and load a minimal blank HTML page into the current tab. Answers"
+          "generate and load a minimal blank HTML page into the current tab.\n\n\n\n\nAnswers \nEntering \"about:blank\" in the address bar of your browser will generate and load a minimal blank HTML page into the current tab. It essentially creates an empty page with no content or specific information. It is commonly used as a starting point or a way to clear the current page and have a blank slate."
         ],
         "correct": 3,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'generate and load a minimal blank HTML page into the current tab. Answers'."
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'generate and load a minimal blank HTML page into the current tab.\n\n\n\n\nAnswers \nEntering \"about:blank\" in the address bar of your browser will generate and load a minimal blank HTML page into the current tab. It essentially creates an empty page with no content or specific information. It is commonly used as a starting point or a way to clear the current page and have a blank slate.'."
       },
       {
         "id": "js_q02",
@@ -1574,27 +1572,41 @@ const CERTIFICATES_DATA = {
           "the original name for JavaScript, which has been changed over time.",
           "a new language base on JavaScript which, among other things, introduces static typing.",
           "an alternative name for JavaScript",
-          "a variant of JavaScript that is compiled rather than interpreted. Answers The TypeScript language is a new language based on JavaScript. It is developed by Microsoft and adds several features to JavaScript, including static typing. TypeScript introduces optional static typing, which allows developers to define types for variables, function parameters, and return values. This provides better tooling, compile-time type checking, and improved code organization and maintainability. TypeScript code is transpiled into plain JavaScript, which can then be run in any JavaScript environment. It is worth noting that TypeScript is not the original name for JavaScript, and it is not an alternative name for JavaScript."
+          "a variant of JavaScript that is compiled rather than interpreted.\n\n\n\n\nAnswers \nThe TypeScript language is a new language based on JavaScript. It is developed by Microsoft and adds several features to JavaScript, including static typing. TypeScript introduces optional static typing, which allows developers to define types for variables, function parameters, and return values. This provides better tooling, compile-time type checking, and improved code organization and maintainability. TypeScript code is transpiled into plain JavaScript, which can then be run in any JavaScript environment. It is worth noting that TypeScript is not the original name for JavaScript, and it is not an alternative name for JavaScript."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'a new language base on JavaScript which, among other things, introduces static typing.'."
       },
       {
         "id": "js_q03",
+        "module": "js_m1",
+        "question": "What HTML tag is used to indicate that we are embedding JavaScript code?",
+        "code": null,
+        "options": [
+          "<execute>",
+          "<script>",
+          "<source>",
+          "<js>\n\n\n\n\nAnswers \nThe HTML tag used to indicate that we are embedding JavaScript code is the <script> tag. This tag is used to define or reference external JavaScript files or to include JavaScript code directly within an HTML document. Here is an example of how the <script> tag is typically used:\n\n<script>\r\n// JavaScript code goes here\r\n</script>\nAlternatively, you can also reference an external JavaScript file by specifying the source using the src attribute within the <script> tag:\n\n<script src=\"script.js\"></script>\nIn both cases, the JavaScript code within the <script> tag will be executed by the browser."
+        ],
+        "correct": 1,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '<script>'."
+      },
+      {
+        "id": "js_q04",
         "module": "js_m3",
-        "question": "In the browser, we type into the address bar a string starting with file:/// . This means that:",
+        "question": "In the browser, we type into the address bar a string starting with file:///. This means that:",
         "code": null,
         "options": [
           "the rest of the string is the path to the file on our local computer that we want to open in the browser.",
           "we want the browser to create an empty page for us with the name we give as a continuation of the string.",
           "we want to save the page as a local file.",
-          "we do not want to open the page, but only download a file from the remote address and save it on the local machine. Answers When typing a string starting with “file:///” in the browser’s address bar, it typically indicates that you want to open a local file on your computer in the browser. The rest of the string after “file:///” represents the path to the file you want to open. For example, if you type “file:///path/to/file.html” in the address bar, it means you want to open the “file.html” file located at the specified path on your local computer. It’s important to note that modern browsers often have security restrictions in place that prevent opening arbitrary local files directly from the file system for security reasons. In such cases, you may encounter limitations or security warnings when trying to open local files using the “file:///” protocol."
+          "we do not want to open the page, but only download a file from the remote address and save it on the local machine.\n\n\n\n\nAnswers \nWhen typing a string starting with \"file:///\" in the browser's address bar, it typically indicates that you want to open a local file on your computer in the browser. The rest of the string after \"file:///\" represents the path to the file you want to open.\n\nFor example, if you type \"file:///path/to/file.html\" in the address bar, it means you want to open the \"file.html\" file located at the specified path on your local computer.\n\nIt's important to note that modern browsers often have security restrictions in place that prevent opening arbitrary local files directly from the file system for security reasons. In such cases, you may encounter limitations or security warnings when trying to open local files using the \"file:///\" protocol."
         ],
         "correct": 0,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'the rest of the string is the path to the file on our local computer that we want to open in the browser.'."
       },
       {
-        "id": "js_q04",
+        "id": "js_q05",
         "module": "js_m1",
         "question": "In a browser, we want to open a local file by typing the path to it in the address bar. The path must be preceded by:",
         "code": null,
@@ -1602,13 +1614,13 @@ const CERTIFICATES_DATA = {
           "local:///",
           "http://",
           "https://",
-          "file:/// Answers To open a local file in a browser by typing its path in the address bar, the path must be preceded by “file:///”. For example, if you have an HTML file named “index.html” located at “C:\\Users\\Username\\Documents\\index.html”, you would type the following in the address bar: file:///C:/Users/Username/Documents/index.html The “file:///” prefix indicates that you want to access a file on the local file system."
+          "file:///\n\n\n\n\nAnswers \nTo open a local file in a browser by typing its path in the address bar, the path must be preceded by \"file:///\".\n\nFor example, if you have an HTML file named \"index.html\" located at \"C:\\Users\\Username\\Documents\\index.html\", you would type the following in the address bar:\n\nfile:///C:/Users/Username/Documents/index.html\nThe \"file:///\" prefix indicates that you want to access a file on the local file system."
         ],
         "correct": 3,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'file:/// Answers To open a local file in a browser by typing its path in the address bar, the path must be preceded by “file:///”. For example, if you have an HTML file named “index.html” located at “C:\\Users\\Username\\Documents\\index.html”, you would type the following in the address bar: file:///C:/Users/Username/Documents/index.html The “file:///” prefix indicates that you want to access a file on the local file system.'."
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'file:///\n\n\n\n\nAnswers \nTo open a local file in a browser by typing its path in the address bar, the path must be preceded by \"file:///\".\n\nFor example, if you have an HTML file named \"index.html\" located at \"C:\\Users\\Username\\Documents\\index.html\", you would type the following in the address bar:\n\nfile:///C:/Users/Username/Documents/index.html\nThe \"file:///\" prefix indicates that you want to access a file on the local file system.'."
       },
       {
-        "id": "js_q05",
+        "id": "js_q06",
         "module": "js_m5",
         "question": "Using JavaScript, we want to display the word \"test\" in the console. What statement do we use to do this?",
         "code": null,
@@ -1616,13 +1628,13 @@ const CERTIFICATES_DATA = {
           "console (log, \"test\");",
           "console.log(\"test\");",
           "console(\"test\");",
-          "log(\"test\"); Answers To display the word “test” in the console using JavaScript, you would use the statement: console.log(\"test\"); The console.log() function is a built-in function in JavaScript that outputs a message or value to the console. In this case, it will display the string “test” in the console."
+          "log(\"test\");\n\n\n\n\nAnswers \nTo display the word \"test\" in the console using JavaScript, you would use the statement:\n\n\nconsole.log(\"test\");\nThe console.log() function is a built-in function in JavaScript that outputs a message or value to the console. In this case, it will display the string \"test\" in the console."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'console.log(\"test\");'."
       },
       {
-        "id": "js_q06",
+        "id": "js_q07",
         "module": "js_m3",
         "question": "A client-side JavaScript program:",
         "code": null,
@@ -1630,27 +1642,41 @@ const CERTIFICATES_DATA = {
           "runs directly in a web browser and can contain an HTML document inside it.",
           "may be embedded inside an HTML document or run standalone in the browser.",
           "requires server support to run.",
-          "should be embedded inside an HTML document. Answers A client-side JavaScript program should be embedded inside an HTML document. When developing a client-side JavaScript program, it is common practice to embed the JavaScript code within an HTML document. This allows the JavaScript code to interact with the HTML elements and be executed when the HTML document is loaded in a web browser. JavaScript code can be included in an HTML document using the tag. The tag can be placed in the section or at the end of the section of the HTML document. Here’s an example: Client-side JavaScript Example // JavaScript code goes here By embedding JavaScript code within the HTML document, you can access and manipulate the HTML elements, respond to events, perform calculations, and perform other client-side operations directly within the browser."
+          "should be embedded inside an HTML document.\n\n\n\n\nAnswers \nA client-side JavaScript program should be embedded inside an HTML document.\n\nWhen developing a client-side JavaScript program, it is common practice to embed the JavaScript code within an HTML document. This allows the JavaScript code to interact with the HTML elements and be executed when the HTML document is loaded in a web browser.\n\nJavaScript code can be included in an HTML document using the <script> tag. The <script> tag can be placed in the <head> section or at the end of the <body> section of the HTML document. Here's an example:\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Client-side JavaScript Example</title>\r\n<script>\r\n// JavaScript code goes here\r\n</script>\r\n</head>\r\n<body>\r\n<!-- HTML content -->\r\n</body>\r\n</html>\nBy embedding JavaScript code within the HTML document, you can access and manipulate the HTML elements, respond to events, perform calculations, and perform other client-side operations directly within the browser."
         ],
         "correct": 3,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'should be embedded inside an HTML document. Answers A client-side JavaScript program should be embedded inside an HTML document. When developing a client-side JavaScript program, it is common practice to embed the JavaScript code within an HTML document. This allows the JavaScript code to interact with the HTML elements and be executed when the HTML document is loaded in a web browser. JavaScript code can be included in an HTML document using the tag. The tag can be placed in the section or at the end of the section of the HTML document. Here’s an example: Client-side JavaScript Example // JavaScript code goes here By embedding JavaScript code within the HTML document, you can access and manipulate the HTML elements, respond to events, perform calculations, and perform other client-side operations directly within the browser.'."
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'should be embedded inside an HTML document.\n\n\n\n\nAnswers \nA client-side JavaScript program should be embedded inside an HTML document.\n\nWhen developing a client-side JavaScript program, it is common practice to embed the JavaScript code within an HTML document. This allows the JavaScript code to interact with the HTML elements and be executed when the HTML document is loaded in a web browser.\n\nJavaScript code can be included in an HTML document using the <script> tag. The <script> tag can be placed in the <head> section or at the end of the <body> section of the HTML document. Here's an example:\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Client-side JavaScript Example</title>\r\n<script>\r\n// JavaScript code goes here\r\n</script>\r\n</head>\r\n<body>\r\n<!-- HTML content -->\r\n</body>\r\n</html>\nBy embedding JavaScript code within the HTML document, you can access and manipulate the HTML elements, respond to events, perform calculations, and perform other client-side operations directly within the browser.'."
       },
       {
-        "id": "js_q07",
+        "id": "js_q08",
         "module": "js_m3",
         "question": "The JavaScript code includes the console.log(\"http://test.org\"); command. Its execution will:",
         "code": null,
         "options": [
-          "send a log with information about the currently executed script to the indicated address http://test.org .",
+          "send a log with information about the currently executed script to the indicated address http://test.org.",
           "display on the console information about the progress of http://test.org page loading.",
-          "display the following message on the console: \"http://test.org\" .",
-          "cause the page http://test.org to be loaded into the browser. Answers The execution of the JavaScript code console.log(\"http://test.org\"); will display the following message on the console: “http://test.org”. The console.log() function is used to output a message or value to the console for debugging or informational purposes. In this case, the provided message is “http://test.org”. It will not send a log to the indicated address or load the page http://test.org into the browser. It simply logs the string “http://test.org” as a message in the console for you to see during development or testing."
+          "display the following message on the console: \"http://test.org\".",
+          "cause the page http://test.org to be loaded into the browser.\n\n\n\n\nAnswers \nThe execution of the JavaScript code console.log(\"http://test.org\"); will display the following message on the console: \"http://test.org\".\n\nThe console.log() function is used to output a message or value to the console for debugging or informational purposes. In this case, the provided message is \"http://test.org\". It will not send a log to the indicated address or load the page http://test.org into the browser. It simply logs the string \"http://test.org\" as a message in the console for you to see during development or testing."
         ],
         "correct": 2,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'display the following message on the console: \"http://test.org\" .'."
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'display the following message on the console: \"http://test.org\".'."
       },
       {
-        "id": "js_q08",
+        "id": "js_q09",
+        "module": "js_m5",
+        "question": "The <html> tag indicates the start of the actual HTML document. What tag should appear at the end of the document?",
+        "code": null,
+        "options": [
+          "<lmth>",
+          "</html>",
+          "<html/>",
+          "<html>\n\n\n\n\nAnswers \nThe correct tag that should appear at the end of an HTML document is </html>. This closing </html> tag marks the end of the HTML document and is used to indicate the completion of the HTML structure.\n\nHere's an example of a basic HTML document structure:\n\n<html>\r\n<head>\r\n<title>My Webpage</title>\r\n</head>\r\n<body>\r\n<!-- Content of the webpage -->\r\n</body>\r\n</html>\nThe opening <html> tag at the beginning and the closing </html> tag at the end enclose the entire HTML document. Any HTML content, such as the <head> and <body> sections, should be placed between these tags."
+        ],
+        "correct": 1,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '</html>'."
+      },
+      {
+        "id": "js_q10",
         "module": "js_m1",
         "question": "Where will we definitely not be able to execute JavaScript code?",
         "code": null,
@@ -1658,7 +1684,7 @@ const CERTIFICATES_DATA = {
           "Directly in the processor.",
           "In a server environment using node.js.",
           "On a mobile device.",
-          "In a web browser. Answers JavaScript code cannot be executed directly in the processor. Processors execute machine code or instructions specific to their architecture, and JavaScript is an interpreted language that requires a JavaScript engine to run. JavaScript can be executed in various environments, including: In a server environment using Node.js: Node.js allows executing JavaScript code on the server-side. It provides a runtime environment that enables server-side scripting using JavaScript.",
+          "In a web browser.\n\n\n\n\nAnswers \nJavaScript code cannot be executed directly in the processor. Processors execute machine code or instructions specific to their architecture, and JavaScript is an interpreted language that requires a JavaScript engine to run.\n\nJavaScript can be executed in various environments, including:\n\n\nIn a server environment using Node.js: Node.js allows executing JavaScript code on the server-side. It provides a runtime environment that enables server-side scripting using JavaScript.",
           "In a web browser: JavaScript is primarily executed in web browsers. Browsers have built-in JavaScript engines that interpret and execute JavaScript code embedded within HTML pages.",
           "On a mobile device: Many mobile devices, such as smartphones and tablets, have web browsers that support JavaScript execution. Mobile web browsers provide JavaScript engine support to run JavaScript code within web pages or mobile web applications."
         ],
@@ -1666,7 +1692,21 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'Directly in the processor.'."
       },
       {
-        "id": "js_q09",
+        "id": "js_q11",
+        "module": "js_m5",
+        "question": "What tag do we use in HTML to denote the main part of the document inside which we define the page elements?",
+        "code": null,
+        "options": [
+          "<body>",
+          "<head>",
+          "<content>",
+          "<main>\n\n\n\n\nAnswers \nThe tag used in HTML to denote the main part of the document inside which we define the page elements is the <body> tag.\n\nThe <body> tag represents the main content area of an HTML document. It contains all the visible elements of the webpage, such as text, images, links, forms, and more. The content placed within the <body> tag is what is displayed to the user in the web browser.\n\nHere's an example of how the <body> tag is used:\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>My Webpage</title>\r\n</head>\r\n<body>\r\n<h1>Welcome to my webpage!</h1>\r\n<p>This is the main content area.</p>\r\n<!-- Additional page elements -->\r\n</body>\r\n</html>\n\n\n\n\n\n\nIn the above example, the main content of the webpage, including the heading <h1> and paragraph <p>, is placed within the <body> tag."
+        ],
+        "correct": 0,
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '<body>'."
+      },
+      {
+        "id": "js_q12",
         "module": "js_m1",
         "question": "The basic toolkit needed to effectively develop JavaScript code consists of two elements:",
         "code": null,
@@ -1674,14 +1714,14 @@ const CERTIFICATES_DATA = {
           "interpreter, package manager.",
           "interpreter, debugger.",
           "code editor, interpreter.",
-          "code editor, debugger. Answers The basic toolkit needed to effectively develop JavaScript code consists of a code editor and an interpreter. Code Editor: A code editor is a software tool that allows you to write, edit, and manage your JavaScript code. It provides features like syntax highlighting, code completion, formatting, and other productivity-enhancing features. Popular code editors for JavaScript development include Visual Studio Code, Sublime Text, Atom, and JetBrains WebStorm.",
+          "code editor, debugger.\n\n\n\n\nAnswers \nThe basic toolkit needed to effectively develop JavaScript code consists of a code editor and an interpreter.\n\n\nCode Editor: A code editor is a software tool that allows you to write, edit, and manage your JavaScript code. It provides features like syntax highlighting, code completion, formatting, and other productivity-enhancing features. Popular code editors for JavaScript development include Visual Studio Code, Sublime Text, Atom, and JetBrains WebStorm.",
           "Interpreter: An interpreter is responsible for executing JavaScript code. It takes the source code and interprets it line by line, executing the code in real-time. Web browsers have built-in JavaScript engines that act as interpreters, executing JavaScript code directly in the browser. Examples include V8 in Chrome, SpiderMonkey in Firefox, and JavaScriptCore in Safari."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'code editor, interpreter.'."
       },
       {
-        "id": "js_q10",
+        "id": "js_q13",
         "module": "js_m1",
         "question": "What is not the task of the interpreter?",
         "code": null,
@@ -1689,15 +1729,15 @@ const CERTIFICATES_DATA = {
           "Transforming the individual commands of the source code into the target form.",
           "Creating a runtime environment for the program.",
           "Verifying the correctness of the program source code (syntax).",
-          "Transforming all program code into target code before execution. Answers The task of the interpreter does not include transforming all program code into target code before execution. Interpreters work by executing the program code line by line, transforming each individual command from the source code into executable instructions as it encounters them. The interpreter takes care of executing these instructions directly without prior transformation of the entire program into target code. This is in contrast to compilers, which typically transform the entire program into target code before execution. The other tasks mentioned are typically associated with interpreters: Transforming the individual commands of the source code into the target form: Interpreters translate each command or statement in the source code into executable instructions or bytecode as they encounter them during runtime.",
+          "Transforming all program code into target code before execution.\n\n\n\n\nAnswers \nThe task of the interpreter does not include transforming all program code into target code before execution.\n\nInterpreters work by executing the program code line by line, transforming each individual command from the source code into executable instructions as it encounters them. The interpreter takes care of executing these instructions directly without prior transformation of the entire program into target code. This is in contrast to compilers, which typically transform the entire program into target code before execution.\n\nThe other tasks mentioned are typically associated with interpreters:\n\n\nTransforming the individual commands of the source code into the target form: Interpreters translate each command or statement in the source code into executable instructions or bytecode as they encounter them during runtime.",
           "Creating a runtime environment for the program: Interpreters set up the necessary runtime environment, including allocating memory, managing variables and objects, handling input and output, and providing the necessary runtime libraries or APIs for program execution.",
-          "Verifying the correctness of the program source code (syntax): Interpreters perform syntax checking to ensure that the program adheres to the language’s syntax rules. They identify and report syntax errors in the source code before executing it."
+          "Verifying the correctness of the program source code (syntax): Interpreters perform syntax checking to ensure that the program adheres to the language's syntax rules. They identify and report syntax errors in the source code before executing it."
         ],
         "correct": 3,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'Transforming all program code into target code before execution. Answers The task of the interpreter does not include transforming all program code into target code before execution. Interpreters work by executing the program code line by line, transforming each individual command from the source code into executable instructions as it encounters them. The interpreter takes care of executing these instructions directly without prior transformation of the entire program into target code. This is in contrast to compilers, which typically transform the entire program into target code before execution. The other tasks mentioned are typically associated with interpreters: Transforming the individual commands of the source code into the target form: Interpreters translate each command or statement in the source code into executable instructions or bytecode as they encounter them during runtime.'."
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'Transforming all program code into target code before execution.\n\n\n\n\nAnswers \nThe task of the interpreter does not include transforming all program code into target code before execution.\n\nInterpreters work by executing the program code line by line, transforming each individual command from the source code into executable instructions as it encounters them. The interpreter takes care of executing these instructions directly without prior transformation of the entire program into target code. This is in contrast to compilers, which typically transform the entire program into target code before execution.\n\nThe other tasks mentioned are typically associated with interpreters:\n\n\nTransforming the individual commands of the source code into the target form: Interpreters translate each command or statement in the source code into executable instructions or bytecode as they encounter them during runtime.'."
       },
       {
-        "id": "js_q11",
+        "id": "js_q14",
         "module": "js_m5",
         "question": "To change the value of the age field to 6 , we need to perform:",
         "code": null,
@@ -1705,13 +1745,13 @@ const CERTIFICATES_DATA = {
           "dog{age} = 6;",
           "age of dog = 6;",
           "dog.age = 6;",
-          "dog[age] = 6; Answers To change the value of the age field to 6 in the given object, you would use the syntax: dog.age = 6; This will update the age field of the dog object to 6."
+          "dog[age] = 6;\n\n\n\n\nAnswers \nTo change the value of the age field to 6 in the given object, you would use the syntax:\n\n\ndog.age = 6;\n\n\n\n\n\n\n\nThis will update the age field of the dog object to 6."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'dog.age = 6;'."
       },
       {
-        "id": "js_q12",
+        "id": "js_q15",
         "module": "js_m4",
         "question": "In order to check the number of elements of the array stored in the names variable, we call:",
         "code": null,
@@ -1719,27 +1759,27 @@ const CERTIFICATES_DATA = {
           "names.length",
           "names.count",
           "length of names;",
-          "names.length(); Answers To check the number of elements in the array stored in the names variable, you would use the syntax: names.length This will return the length or number of elements in the names array."
+          "names.length();\n\n\n\n\nAnswers \nTo check the number of elements in the array stored in the names variable, you would use the syntax:\n\n\nnames.length\n\n\n\n\n\n\n\nThis will return the length or number of elements in the names array."
         ],
         "correct": 0,
         "explanation": "Pole v JS je indexovaný seznam hodnot s metodami jako push, pop, shift, unshift, slice a splice. Správná odpověď: names.length."
       },
       {
-        "id": "js_q13",
+        "id": "js_q16",
         "module": "js_m5",
-        "question": "We need to come up with a name for a variable where we will store the age of a user . All of the following variable names are formally correct, but one of them is the most readable, indicate which one:",
+        "question": "We need to come up with a name for a variable where we will store the age of a user. All of the following variable names are formally correct, but one of them is the most readable, indicate which one:",
         "code": null,
         "options": [
           "userAge",
           "ua",
           "user",
-          "age Answers The most readable variable name among the options provided is userAge . This name clearly indicates that it stores the age of a user, making it more understandable and self-explanatory compared to the other options."
+          "age\n\n\n\n\nAnswers \nThe most readable variable name among the options provided is userAge.\n\nThis name clearly indicates that it stores the age of a user, making it more understandable and self-explanatory compared to the other options."
         ],
         "correct": 0,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'userAge'."
       },
       {
-        "id": "js_q14",
+        "id": "js_q17",
         "module": "js_m2",
         "question": "We can replace the declaration let x = 0x21; with:",
         "code": null,
@@ -1747,13 +1787,13 @@ const CERTIFICATES_DATA = {
           "let x = \"0x21\"",
           "let x = 33;",
           "let x = 17;",
-          "let x = 21; Answers The replacement for the declaration let x = 0x21; can be: let x = 33; The hexadecimal value 0x21 represents the decimal value 33, so assigning x to 33 achieves the same result as the original declaration."
+          "let x = 21;\n\n\n\n\nAnswers \nThe replacement for the declaration let x = 0x21; can be:\n\n\nlet x = 33;\nThe hexadecimal value 0x21 represents the decimal value 33, so assigning x to 33 achieves the same result as the original declaration."
         ],
         "correct": 1,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: let x = 33;."
       },
       {
-        "id": "js_q15",
+        "id": "js_q18",
         "module": "js_m4",
         "question": "In the daysOfWeek variable, we place an array with the names of the days of the week. To reverse the order of the array elements, we should call:",
         "code": null,
@@ -1761,13 +1801,13 @@ const CERTIFICATES_DATA = {
           "reverse daysOfWeek;",
           "daysOfWeek.invert();",
           "invert(daysOfWeek);",
-          "daysOfWeek.reverse(); Answers To reverse the order of the array elements stored in the daysOfWeek variable, you should call: daysOfWeek.reverse(); The reverse() method is used to reverse the order of elements in an array in JavaScript. By calling daysOfWeek.reverse() , the elements in the daysOfWeek array will be reversed."
+          "daysOfWeek.reverse();\n\n\n\n\nAnswers \nTo reverse the order of the array elements stored in the daysOfWeek variable, you should call:\n\ndaysOfWeek.reverse();\nThe reverse() method is used to reverse the order of elements in an array in JavaScript. By calling daysOfWeek.reverse(), the elements in the daysOfWeek array will be reversed."
         ],
         "correct": 3,
-        "explanation": "Pole v JS je indexovaný seznam hodnot s metodami jako push, pop, shift, unshift, slice a splice. Správná odpověď: daysOfWeek.reverse(); Answers To reverse the order of the array elements stored in the daysOfWeek variable, you should call: daysOfWeek.reverse(); The reverse() method is used to reverse the order of elements in an array in JavaScript. By calling daysOfWeek.reverse() , the elements in the daysOfWeek array will be reversed.."
+        "explanation": "Pole v JS je indexovaný seznam hodnot s metodami jako push, pop, shift, unshift, slice a splice. Správná odpověď: daysOfWeek.reverse();\n\n\n\n\nAnswers \nTo reverse the order of the array elements stored in the daysOfWeek variable, you should call:\n\ndaysOfWeek.reverse();\nThe reverse() method is used to reverse the order of elements in an array in JavaScript. By calling daysOfWeek.reverse(), the elements in the daysOfWeek array will be reversed.."
       },
       {
-        "id": "js_q16",
+        "id": "js_q19",
         "module": "js_m6",
         "question": "By default, JavaScript allows us to write to an undeclared variable (it declares it implicitly for us). If we want the interpreter to treat such a situation as an error, we have to:",
         "code": null,
@@ -1775,27 +1815,27 @@ const CERTIFICATES_DATA = {
           "perform all writes to variables in a block of code delimited by braces.",
           "place the \"use strict\"; directive before each write we want to protect.",
           "place the \"use strict\"; directive at the beginning of the script.",
-          "place the \"prevent undeclared variables\"; directive at the beginning of the script. Answers To treat writing to an undeclared variable as an error in JavaScript, you would need to place the \"use strict\"; directive at the beginning of the script. So the correct option is: place the \"use strict\"; directive at the beginning of the script. By using the \"use strict\"; directive, you enable strict mode in JavaScript, which helps catch common mistakes and enforces stricter rules for variable declaration and usage. It will treat writing to an undeclared variable as an error instead of implicitly declaring it."
+          "place the \"prevent undeclared variables\"; directive at the beginning of the script.\n\n\n\n\nAnswers \nTo treat writing to an undeclared variable as an error in JavaScript, you would need to place the \"use strict\"; directive at the beginning of the script.\n\nSo the correct option is:\n\nplace the \"use strict\"; directive at the beginning of the script.\nBy using the \"use strict\"; directive, you enable strict mode in JavaScript, which helps catch common mistakes and enforces stricter rules for variable declaration and usage. It will treat writing to an undeclared variable as an error instead of implicitly declaring it."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'place the \"use strict\"; directive at the beginning of the script.'."
       },
       {
-        "id": "js_q17",
+        "id": "js_q20",
         "module": "js_m5",
-        "question": "If a variable stores the value false , then the variable:",
+        "question": "If a variable stores the value false, then the variable:",
         "code": null,
         "options": [
           "is of the Logical type.",
           "is of the Math type.",
           "is of the Boolean type.",
-          "will no longer be used in the program. Answers If a variable stores the value false , then the variable is of the Boolean type. The Boolean type in JavaScript represents a logical value that can have two possible states: true or false . Therefore, when a variable stores the value false , it is considered a Boolean variable. The variable can still be used in the program and can hold other Boolean values or be reassigned to different values as needed."
+          "will no longer be used in the program.\n\n\n\n\nAnswers \nIf a variable stores the value false, then the variable is of the Boolean type.\n\nThe Boolean type in JavaScript represents a logical value that can have two possible states: true or false. Therefore, when a variable stores the value false, it is considered a Boolean variable. The variable can still be used in the program and can hold other Boolean values or be reassigned to different values as needed."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'is of the Boolean type.'."
       },
       {
-        "id": "js_q18",
+        "id": "js_q21",
         "module": "js_m5",
         "question": "The msg variable contains a String type value. Information about the number of characters of this string can be obtained using:",
         "code": null,
@@ -1803,13 +1843,13 @@ const CERTIFICATES_DATA = {
           "msg.chars",
           "msg.charsAt()",
           "msg.length",
-          "msg.length() Answers To obtain information about the number of characters in a string stored in the msg variable, you can use the following syntax: msg.length The length property is used to retrieve the number of characters in a string in JavaScript. By calling msg.length , you will get the length or number of characters in the msg string. Note that msg.chars , msg.charsAt() , and msg.length() are not valid ways to get the length of a string in JavaScript."
+          "msg.length()\n\n\n\n\nAnswers \nTo obtain information about the number of characters in a string stored in the msg variable, you can use the following syntax:\n\n\nmsg.length\n\nThe length property is used to retrieve the number of characters in a string in JavaScript. By calling msg.length, you will get the length or number of characters in the msg string.\n\nNote that msg.chars, msg.charsAt(), and msg.length() are not valid ways to get the length of a string in JavaScript."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'msg.length'."
       },
       {
-        "id": "js_q19",
+        "id": "js_q22",
         "module": "js_m5",
         "question": "After declaring a counter variable, we want to put a short comment with information about what the variable is used for. To do this, we modify the line declaration to the form:",
         "code": null,
@@ -1817,44 +1857,44 @@ const CERTIFICATES_DATA = {
           "// let counter = 0; user visit counter",
           "let counter = 0; // user visit counter",
           "let counter = 0; /* user visite counter",
-          "let counter = 0; # user visite counter Answers To put a short comment with information about what the counter variable is used for, you can modify the line declaration in the following ways: let counter = 0; // user visit counter or // let counter = 0; user visit counter let counter = 0; Both of these modifications achieve the desired result by adding a comment next to the declaration of the counter variable. It provides information that the variable is used for counting user visits. Note that in JavaScript, single-line comments start with // , and multi-line comments are enclosed between /* and */ . The # symbol is not used for comments in JavaScript."
+          "let counter = 0; # user visite counter\n\n\n\n\nAnswers \nTo put a short comment with information about what the counter variable is used for, you can modify the line declaration in the following ways:\n\nlet counter = 0; // user visit counter\nor\n\n// let counter = 0; user visit counter\r\nlet counter = 0;\nBoth of these modifications achieve the desired result by adding a comment next to the declaration of the counter variable. It provides information that the variable is used for counting user visits.\n\nNote that in JavaScript, single-line comments start with //, and multi-line comments are enclosed between /* and */. The # symbol is not used for comments in JavaScript."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'let counter = 0; // user visit counter'."
       },
       {
-        "id": "js_q20",
+        "id": "js_q23",
         "module": "js_m5",
-        "question": "Analyze the code snippet. Identify which variables are local and which are global ;",
+        "question": "Analyze the code snippet. Identify which variables are local and which are global;",
         "code": null,
         "options": [
           "name ==> Global",
           "profession ==> Local",
           "age ==> Global",
           "height ==> Local",
-          "weight ==> Local Answers In the given code snippet, the variables can be classified as follows: Global variables: name",
+          "weight ==> Local \n\n\n\n\nAnswers \nIn the given code snippet, the variables can be classified as follows:\n\nGlobal variables:\n\n\nname",
           "age"
         ],
         "correct": 0,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'name ==> Global'."
       },
       {
-        "id": "js_q21",
+        "id": "js_q24",
         "module": "js_m2",
-        "question": "We want to convert the string \"1024\" to type Number and store the result in variable n . Point out the correct statement",
+        "question": "We want to convert the string \"1024\" to type Number and store the result in variable n. Point out the correct statement",
         "code": null,
         "options": [
           "let n = Number(\"1024\");",
           "let n = String(\"1024\");",
           "let n = StringToNumber(\"1024\");",
           "let n = \"1024\" + 0;",
-          "Answers The correct answer is: let n = Number(\"1024\"); This code converts the string “1024” to a number using the Number() function and stores the result in the variable n ."
+          "Answers \nThe correct answer is:\n\n\nlet n = Number(\"1024\");\n\n\n\n\n\n\n\nThis code converts the string \"1024\" to a number using the Number() function and stores the result in the variable n."
         ],
         "correct": 0,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'let n = Number(\"1024\");'."
       },
       {
-        "id": "js_q22",
+        "id": "js_q25",
         "module": "js_m4",
         "question": "The index variable will have the value:",
         "code": null,
@@ -1863,58 +1903,58 @@ const CERTIFICATES_DATA = {
           "1",
           "True",
           "\"June\"",
-          "Answers The indexOf() method is used to find the index of the first occurrence of a specified element within an array. In this case, it is used to find the index of the string “June” within the summer array. Since arrays in JavaScript are zero-based, meaning the first element has an index of 0, the indexOf() method will return the index of “June” as 0. Therefore, the variable index will have the value 0."
+          "Answers \nThe indexOf() method is used to find the index of the first occurrence of a specified element within an array. In this case, it is used to find the index of the string \"June\" within the summer array.\n\nSince arrays in JavaScript are zero-based, meaning the first element has an index of 0, the indexOf() method will return the index of \"June\" as 0. Therefore, the variable index will have the value 0."
         ],
         "correct": 0,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '0'."
       },
       {
-        "id": "js_q23",
+        "id": "js_q26",
         "module": "js_m5",
-        "question": "We have declared an array of animals let animals = [\"dog\", \"cat\", \"hamster\"]; . Then we call the method animals.push(\"canary\"); . As a result, the animals array will look like this:",
+        "question": "We have declared an array of animals let animals = [\"dog\", \"cat\", \"hamster\"];. Then we call the method animals.push(\"canary\");. As a result, the animals array will look like this:",
         "code": null,
         "options": [
           "[\"dog\", \"cat\", \"hamster\"]",
           "[\"canary\", \"dog\", \"cat\", \"hamster\"]",
           "[\"canary\"]",
           "[\"dog\"], \"cat\", \"hamster\", \"canary\"]",
-          "Answers After calling the method animals.push(\"canary\"); , the animals array will look like this: [“dog”, “cat”, “hamster”, “canary”] The push() method is used to add elements to the end of an array. In this case, it adds the string “canary” to the end of the animals array. Therefore, the resulting array will have the elements “dog”, “cat”, “hamster”, and “canary” in that order."
+          "Answers \nAfter calling the method animals.push(\"canary\");, the animals array will look like this:\n\n[\"dog\", \"cat\", \"hamster\", \"canary\"]\n\nThe push() method is used to add elements to the end of an array. In this case, it adds the string \"canary\" to the end of the animals array. Therefore, the resulting array will have the elements \"dog\", \"cat\", \"hamster\", and \"canary\" in that order."
         ],
         "correct": 3,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: [\"dog\"], \"cat\", \"hamster\", \"canary\"]."
       },
       {
-        "id": "js_q24",
+        "id": "js_q27",
         "module": "js_m5",
-        "question": "We perform the operation: let x = \"abcdefg\".slice(2, 4) . As a result, the value:",
+        "question": "We perform the operation: let x = \"abcdefg\".slice(2, 4). As a result, the value:",
         "code": null,
         "options": [
           "\"ab\" will be written to the variable x",
           "\"cd\" will be written to the variable x",
           "\"cdef\" will be written to the variable x",
           "\"cdefg\" will be written to the variable x",
-          "Answers The slice() method is used to extract a portion of a string based on the specified starting and ending indices. In this case, \"abcdefg\".slice(2,4) will extract characters starting from index 2 (inclusive) up to index 4 (exclusive). The resulting substring will be “cd”, and it will be assigned to the variable x ."
+          "Answers \nThe slice() method is used to extract a portion of a string based on the specified starting and ending indices. In this case, \"abcdefg\".slice(2,4) will extract characters starting from index 2 (inclusive) up to index 4 (exclusive).\n\nThe resulting substring will be \"cd\", and it will be assigned to the variable x."
         ],
         "correct": 1,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: \"cd\" will be written to the variable x."
       },
       {
-        "id": "js_q25",
+        "id": "js_q28",
         "module": "js_m2",
-        "question": "We want to declare a distance constant and initialize it with the value 120 . What should such a declaration look like?",
+        "question": "We want to declare a distance constant and initialize it with the value 120. What should such a declaration look like?",
         "code": null,
         "options": [
           "const distance = 120;",
           "const distance; distance = 120;",
           "let distance; const distance = 120;",
           "let constant distance = 120;",
-          "Answers In JavaScript, when declaring a constant using the const keyword, you need to provide both the constant name and its initial value in a single statement. Therefore, the correct way to declare and initialize the constant distance with the value of 120 is by using the code snippet above."
+          "Answers \nIn JavaScript, when declaring a constant using the const keyword, you need to provide both the constant name and its initial value in a single statement. Therefore, the correct way to declare and initialize the constant distance with the value of 120 is by using the code snippet above."
         ],
         "correct": 0,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: const distance = 120;."
       },
       {
-        "id": "js_q26",
+        "id": "js_q29",
         "module": "js_m1",
         "question": "As a result of its execution:",
         "code": null,
@@ -1923,13 +1963,13 @@ const CERTIFICATES_DATA = {
           "it will display 0.1 in the console",
           "it will display \"number\" in the console.",
           "it will display \"fraction\" in the console.",
-          "Answers performs the division operation 10 / 100 and assigns the result to the variable x . In JavaScript, the division operation between two numbers results in a floating-point number. The console.log(typeof(x)) statement outputs the type of the variable x to the console. Since the result of the division is a floating-point number, the typeof operator will return \"number\" . Therefore, executing the code will display \"number\" in the console."
+          "Answers \nperforms the division operation 10 / 100 and assigns the result to the variable x. In JavaScript, the division operation between two numbers results in a floating-point number.\n\nThe console.log(typeof(x)) statement outputs the type of the variable x to the console. Since the result of the division is a floating-point number, the typeof operator will return \"number\". Therefore, executing the code will display \"number\" in the console."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'it will display \"number\" in the console.'."
       },
       {
-        "id": "js_q27",
+        "id": "js_q30",
         "module": "js_m2",
         "question": "We have access to the weight variable:",
         "code": null,
@@ -1937,44 +1977,44 @@ const CERTIFICATES_DATA = {
           "in the part marked 1.",
           "throughout the program.",
           "nowhere, as we have no access at all (the variable has not been initialized).",
-          "in the part marked 2 .",
+          "in the part marked 2.",
           "Answers"
         ],
         "correct": 0,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'in the part marked 1.'."
       },
       {
-        "id": "js_q28",
+        "id": "js_q31",
         "module": "js_m5",
         "question": "Performing the operation: let x = 20n + 10; will:",
         "code": null,
         "options": [
-          "result in the string \"20n10\" being stored in the variable x .",
+          "result in the string \"20n10\" being stored in the variable x.",
           "cause the program to abort due to an error.",
-          "result in a value of 30n being stored in the variable x .",
-          "result in a value of 30 being stored in the variable x .",
-          "Answers Performing the operation in JavaScript will result in an Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions."
+          "result in a value of 30n being stored in the variable x.",
+          "result in a value of 30 being stored in the variable x.",
+          "Answers \n\n\n\n\n\n\n\nPerforming the operation in JavaScript will result in an Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions."
         ],
         "correct": 1,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: cause the program to abort due to an error.."
       },
       {
-        "id": "js_q29",
+        "id": "js_q32",
         "module": "js_m5",
         "question": "Performing the operation: let x = 100 / 0; will result in",
         "code": null,
         "options": [
-          "an Infinity value being stored in the variable x .",
-          "the value NaN being stored in the variable x .",
-          "the value 0 being stored in the variable x .",
+          "an Infinity value being stored in the variable x.",
+          "the value NaN being stored in the variable x.",
           "the value 0 being stored in the variable x.",
-          "Answers In JavaScript, dividing a non-zero number by zero results in a special value called Infinity. Therefore, when performing the operation let x = 100/0; , the value Infinity will be stored in the variable x . It’s important to note that dividing zero by zero ( 0/0 ) results in NaN (Not a Number), but dividing a non-zero number by zero results in Infinity."
+          "the value 0 being stored in the variable x.",
+          "Answers \nIn JavaScript, dividing a non-zero number by zero results in a special value called Infinity. Therefore, when performing the operation let x = 100/0;, the value Infinity will be stored in the variable x.\n\nIt's important to note that dividing zero by zero (0/0) results in NaN (Not a Number), but dividing a non-zero number by zero results in Infinity."
         ],
         "correct": 0,
-        "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: an Infinity value being stored in the variable x .."
+        "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: an Infinity value being stored in the variable x.."
       },
       {
-        "id": "js_q30",
+        "id": "js_q33",
         "module": "js_m3",
         "question": "As a result of its execution, the following should appear in the console:",
         "code": null,
@@ -1983,13 +2023,13 @@ const CERTIFICATES_DATA = {
           "32",
           "error message: \"uncaught ReferenceError: Age is not defined\" .",
           "33",
-          "Answers In the code snippet provided, there is a mismatch in the variable names. The variable age is declared and assigned the value 32 . Then, it is incremented by 1 using age = age + 1; . However, when attempting to console.log(Age); , it refers to a variable Age with a capital “A”, which has not been declared or assigned any value. JavaScript is case-sensitive, so Age and age are considered as separate variables. Since Age is not defined, it will result in an “uncaught ReferenceError” when trying to access it."
+          "Answers \nIn the code snippet provided, there is a mismatch in the variable names. The variable age is declared and assigned the value 32. Then, it is incremented by 1 using age = age + 1;. However, when attempting to console.log(Age);, it refers to a variable Age with a capital \"A\", which has not been declared or assigned any value.\n\nJavaScript is case-sensitive, so Age and age are considered as separate variables. Since Age is not defined, it will result in an \"uncaught ReferenceError\" when trying to access it."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'error message: \"uncaught ReferenceError: Age is not defined\" .'."
       },
       {
-        "id": "js_q31",
+        "id": "js_q34",
         "module": "js_m5",
         "question": "Performing the operation: let x = \"Alice\" + 10; will result in:",
         "code": null,
@@ -1998,13 +2038,13 @@ const CERTIFICATES_DATA = {
           "the value NaN of Number type to be stored in the variable x .",
           "the value 15 of Number type to be stored in the variable x .",
           "the value \"Alice10\" of String type to be stored in the variable x .",
-          "Answers In JavaScript, when you use the + operator with a string and a number, the number is implicitly converted to a string, and the concatenation of the two values is performed. In the code snippet let x = \"Alice\" + 10; , the string “Alice” is concatenated with the number 10. The result of this operation is the string “Alice10”, which is then stored in the variable x ."
+          "Answers \nIn JavaScript, when you use the + operator with a string and a number, the number is implicitly converted to a string, and the concatenation of the two values is performed.\n\nIn the code snippet let x = \"Alice\" + 10;, the string \"Alice\" is concatenated with the number 10. The result of this operation is the string \"Alice10\", which is then stored in the variable x."
         ],
         "correct": 3,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: the value \"Alice10\" of String type to be stored in the variable x .."
       },
       {
-        "id": "js_q32",
+        "id": "js_q35",
         "module": "js_m2",
         "question": "Complex (or composite) data types:",
         "code": null,
@@ -2013,43 +2053,43 @@ const CERTIFICATES_DATA = {
           "may consist of multiple elements, of which is of a primitive type.",
           "may consist of multiple elements, each of which may be of a primitive or composite type.",
           "are not used in JavaScript.",
-          "Answers Complex (or composite) data types in JavaScript can consist of multiple elements, and each element can be of a primitive type or another complex data type. Examples of complex data types in JavaScript include arrays, objects, and functions. Primitive types, on the other hand, are not complex data types. They are basic data types that represent simple values, such as numbers, strings, booleans, null, and undefined. Therefore, complex data types can have multiple elements, each of which can be either a primitive type or another complex data type, making them more versatile and flexible in storing and representing data."
+          "Answers \nComplex (or composite) data types in JavaScript can consist of multiple elements, and each element can be of a primitive type or another complex data type. Examples of complex data types in JavaScript include arrays, objects, and functions.\n\nPrimitive types, on the other hand, are not complex data types. They are basic data types that represent simple values, such as numbers, strings, booleans, null, and undefined.\n\nTherefore, complex data types can have multiple elements, each of which can be either a primitive type or another complex data type, making them more versatile and flexible in storing and representing data."
         ],
         "correct": 2,
         "explanation": "V JavaScriptu mezi složené (referenční) typy patří objekty (Object) a pole (Array), zatímco primitivní jsou např. number, string, boolean. Správná odpověď: may consist of multiple elements, each of which may be of a primitive or composite type.."
       },
       {
-        "id": "js_q33",
+        "id": "js_q36",
         "module": "js_m4",
-        "question": "We have declared an array of selected month names let summer = [\"June\", \"July\", \"August\"]; . We want to change the value \"July\" stored in the array to the number 7 :",
+        "question": "We have declared an array of selected month names let summer = [\"June\", \"July\", \"August\"];. We want to change the value \"July\" stored in the array to the number 7:",
         "code": null,
         "options": [
           "summer[1] = 7;",
           "We cannot do this (an array can only contain elements of the same type).",
           "summer.July = 7;",
           "summer[0] = 7;",
-          "Answers To change the value “July” stored in the array summer to the number 7, you can use the index notation ( [] ) and assign the new value to the corresponding index. In JavaScript arrays, elements can be of different types, so you can replace an element in the array with a value of a different type. By using summer[1] = 7; , you are accessing the element at index 1 (which is “July”) and assigning the value 7 to it, effectively changing the element to the number 7. Therefore, after executing summer[1] = 7; , the summer array will become [\"June\", 7, \"August\"] , with the element at index 1 being replaced by the number 7."
+          "Answers \nTo change the value \"July\" stored in the array summer to the number 7, you can use the index notation ([]) and assign the new value to the corresponding index.\n\nIn JavaScript arrays, elements can be of different types, so you can replace an element in the array with a value of a different type. By using summer[1] = 7;, you are accessing the element at index 1 (which is \"July\") and assigning the value 7 to it, effectively changing the element to the number 7.\n\nTherefore, after executing summer[1] = 7;, the summer array will become [\"June\", 7, \"August\"], with the element at index 1 being replaced by the number 7."
         ],
         "correct": 0,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: summer[1] = 7;."
       },
       {
-        "id": "js_q34",
+        "id": "js_q37",
         "module": "js_m5",
-        "question": "We have declared an array let animals = [\"dog\", \"cat\", \"hamster\"]; . We want to temporarily comment out the element \"cat\" , and to do this, we can modify the declaration as follows:",
+        "question": "We have declared an array let animals = [\"dog\", \"cat\", \"hamster\"];. We want to temporarily comment out the element \"cat\", and to do this, we can modify the declaration as follows:",
         "code": null,
         "options": [
           "let animals = [\"dog\", \"hamster\"];",
           "let animals = [\"dog\", #\"cat\",# \"hamster\"];",
           "let animals = [\"dog\", //\"cat\",// \"hamster\"];",
           "let animals = [\"dog\", /*\"cat\",*/ \"hamster\"];",
-          "Answers In JavaScript, you can use the /* */ syntax for multiline comments. By placing the /* before the element you want to comment out and the */ after it, you effectively turn that part of the code into a comment. Therefore, modifying the declaration of the animals array as shown above will temporarily comment out the element “cat”, resulting in an array with only the elements “dog” and “hamster”."
+          "Answers \nIn JavaScript, you can use the /* */ syntax for multiline comments. By placing the /* before the element you want to comment out and the */ after it, you effectively turn that part of the code into a comment.\n\nTherefore, modifying the declaration of the animals array as shown above will temporarily comment out the element \"cat\", resulting in an array with only the elements \"dog\" and \"hamster\"."
         ],
         "correct": 3,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: let animals = [\"dog\", /*\"cat\",*/ \"hamster\"];."
       },
       {
-        "id": "js_q35",
+        "id": "js_q38",
         "module": "js_m2",
         "question": "Point out the correct declaration of the height variable:",
         "code": null,
@@ -2058,13 +2098,13 @@ const CERTIFICATES_DATA = {
           "height is variable;",
           "let height;",
           "variable height;",
-          "Answers In JavaScript, variables are typically declared using the let keyword, followed by the variable name. The statement let height; declares a variable named height without assigning it an initial value. Therefore, let height; is the correct syntax for declaring the height variable in JavaScript."
+          "Answers \nIn JavaScript, variables are typically declared using the let keyword, followed by the variable name. The statement let height; declares a variable named height without assigning it an initial value.\n\nTherefore, let height; is the correct syntax for declaring the height variable in JavaScript."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'let height;'."
       },
       {
-        "id": "js_q36",
+        "id": "js_q39",
         "module": "js_m1",
         "question": "The result of the operation 20 || 5 will be:",
         "code": null,
@@ -2073,13 +2113,13 @@ const CERTIFICATES_DATA = {
           "25",
           "20",
           "true",
-          "Answers In JavaScript, the double vertical bar “||” is indeed used as the logical OR operator. The logical OR operator in JavaScript returns the first operand if it is truthy, otherwise, it returns the second operand. In the case of the expression “20 || 5”, both 20 and 5 are considered truthy values in JavaScript. Therefore, the result of the operation would be 20, which is the first truthy value encountered. To illustrate this in code: console.log(20 || 5); // Output: 20 So, the result of the operation “20 || 5” in JavaScript is 20."
+          "Answers \nIn JavaScript, the double vertical bar \"||\" is indeed used as the logical OR operator. The logical OR operator in JavaScript returns the first operand if it is truthy, otherwise, it returns the second operand.\n\nIn the case of the expression \"20 || 5\", both 20 and 5 are considered truthy values in JavaScript. Therefore, the result of the operation would be 20, which is the first truthy value encountered.\n\nTo illustrate this in code:\n\nconsole.log(20 || 5); // Output: 20\n\n\n\n\n\n\nSo, the result of the operation \"20 || 5\" in JavaScript is 20."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '20'."
       },
       {
-        "id": "js_q37",
+        "id": "js_q40",
         "module": "js_m1",
         "question": "The result of the operation false || \"false\" will be:",
         "code": null,
@@ -2088,13 +2128,13 @@ const CERTIFICATES_DATA = {
           "\"false\"",
           "false",
           "true",
-          "Answers The result of the operation false || \"false\" in JavaScript is indeed false . The logical OR operator ( || ) returns the first truthy value it encounters or the last operand if all operands are falsy. In this case, the first operand is false , which is falsy. The second operand is the string \"false\" , which is also truthy. Since the logical OR operator did not encounter a truthy value in the operands before reaching the last operand, it returns the last operand, which is false . Therefore, the correct answer is false ."
+          "Answers \nThe result of the operation false || \"false\" in JavaScript is indeed false.\n\nThe logical OR operator (||) returns the first truthy value it encounters or the last operand if all operands are falsy. In this case, the first operand is false, which is falsy. The second operand is the string \"false\", which is also truthy. Since the logical OR operator did not encounter a truthy value in the operands before reaching the last operand, it returns the last operand, which is false.\n\nTherefore, the correct answer is false."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '\"false\"'."
       },
       {
-        "id": "js_q38",
+        "id": "js_q41",
         "module": "js_m3",
         "question": "The result of the operation 3 * 4 > 20 - 15 will be:",
         "code": null,
@@ -2103,13 +2143,13 @@ const CERTIFICATES_DATA = {
           "false",
           "true",
           "-14",
-          "Answers To evaluate the expression “3 * 4 > 20 – 15,” let’s break it down: First, we calculate the values on both sides of the comparison: 3 * 4 = 12 20 – 15 = 5 Now we can compare the two values: 12 > 5 Since 12 is indeed greater than 5, the result of the comparison is true. Therefore, the correct answer is true."
+          "Answers \nTo evaluate the expression \"3 * 4 > 20 – 15,\" let's break it down:\n\nFirst, we calculate the values on both sides of the comparison:\n\n3 * 4 = 12 20 – 15 = 5\n\nNow we can compare the two values:\n\n12 > 5\n\nSince 12 is indeed greater than 5, the result of the comparison is true.\n\nTherefore, the correct answer is true."
         ],
         "correct": 2,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'true'."
       },
       {
-        "id": "js_q39",
+        "id": "js_q42",
         "module": "js_m5",
         "question": "Which operator do we use if we want to check if two variables store the same values of exactly the same type?",
         "code": null,
@@ -2118,16 +2158,16 @@ const CERTIFICATES_DATA = {
           "===",
           "==",
           "!==",
-          "Answers To check if two variables store the same values of exactly the same type in JavaScript, you would use the strict equality operator, which is “===”. Here’s an “===” (strict equality operator): It compares two values for equality without performing any type coercion. It returns true if the values are equal in value and type.",
-          "“==” (loose equality operator): It also compares two values for equality, but it allows for type coercion. JavaScript will try to convert the operands to the same type before making the comparison. This operator can lead to unexpected results due to the type coercion rules, so it’s generally recommended to use the strict equality operator (===) instead.",
-          "“!=” (loose inequality operator): It checks if two values are not equal after performing type coercion.",
-          "“!==” (strict inequality operator): It checks if two values are not equal without performing any type coercion."
+          "Answers \nTo check if two variables store the same values of exactly the same type in JavaScript, you would use the strict equality operator, which is \"===\".\n\nHere's an \n\n\"===\" (strict equality operator): It compares two values for equality without performing any type coercion. It returns true if the values are equal in value and type.",
+          "\"==\" (loose equality operator): It also compares two values for equality, but it allows for type coercion. JavaScript will try to convert the operands to the same type before making the comparison. This operator can lead to unexpected results due to the type coercion rules, so it's generally recommended to use the strict equality operator (===) instead.",
+          "\"!=\" (loose inequality operator): It checks if two values are not equal after performing type coercion.",
+          "\"!==\" (strict inequality operator): It checks if two values are not equal without performing any type coercion."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '==='."
       },
       {
-        "id": "js_q40",
+        "id": "js_q43",
         "module": "js_m1",
         "question": "The result of the operation !(true && false || true) will be:",
         "code": null,
@@ -2136,15 +2176,15 @@ const CERTIFICATES_DATA = {
           "false",
           "1",
           "true",
-          "Answers The result of the operation “!(true && false || true)” will be “false”. To evaluate this expression, let’s break it down step by step: The innermost part of the expression is the logical AND operation “true && false”, which evaluates to “false”. This is because both operands need to be true for the logical AND to return true.",
-          "Next, we have the logical OR operation “false || true”, which evaluates to “true”. This is because at least one of the operands needs to be true for the logical OR to return true.",
-          "Finally, we have the logical NOT operation “!true”, which negates the result and returns the opposite. Since the result of the previous step is “true”, the logical NOT operation returns “false”."
+          "Answers \nThe result of the operation \"!(true && false || true)\" will be \"false\".\n\nTo evaluate this expression, let's break it down step by step:\n\n\nThe innermost part of the expression is the logical AND operation \"true && false\", which evaluates to \"false\". This is because both operands need to be true for the logical AND to return true.",
+          "Next, we have the logical OR operation \"false || true\", which evaluates to \"true\". This is because at least one of the operands needs to be true for the logical OR to return true.",
+          "Finally, we have the logical NOT operation \"!true\", which negates the result and returns the opposite. Since the result of the previous step is \"true\", the logical NOT operation returns \"false\"."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'false'."
       },
       {
-        "id": "js_q41",
+        "id": "js_q44",
         "module": "js_m5",
         "question": "What value will the test variable have if, after running the code, we immediately press the Ok button on the newly created dialog?",
         "code": null,
@@ -2153,31 +2193,31 @@ const CERTIFICATES_DATA = {
           "\"Hello\"",
           "\"OK\"",
           "\"World\"",
-          "Answers If, after running the code let test = prompt(\"Hello\", \"World\"); , you immediately press the “OK” button on the dialog without modifying the input, the test variable will have the value “World”. The prompt function in JavaScript displays a dialog box with an optional message and a default value. In this case, the message is “Hello” and the default value is “World”. When the dialog appears, if you click “OK” without modifying the input, the default value (“World”) will be assigned to the test variable. Here’s an example of what the code could look like and the outcome: let test = prompt(\"Hello\", \"World\"); console.log(test); Scenario: User presses “OK” without modifying the input: Dialog box appears with the default input “World”.",
-          "User presses “OK” without modifying the input.",
-          "The default value (“World”) will be assigned to the test variable.",
-          "The output will be “World”."
+          "Answers \nIf, after running the code let test = prompt(\"Hello\", \"World\");, you immediately press the \"OK\" button on the dialog without modifying the input, the test variable will have the value \"World\".\n\nThe prompt function in JavaScript displays a dialog box with an optional message and a default value. In this case, the message is \"Hello\" and the default value is \"World\".\n\nWhen the dialog appears, if you click \"OK\" without modifying the input, the default value (\"World\") will be assigned to the test variable.\n\nHere's an example of what the code could look like and the outcome:\n\nlet test = prompt(\"Hello\", \"World\");\r\nconsole.log(test);\nScenario: User presses \"OK\" without modifying the input:\n\n\nDialog box appears with the default input \"World\".",
+          "User presses \"OK\" without modifying the input.",
+          "The default value (\"World\") will be assigned to the test variable.",
+          "The output will be \"World\"."
         ],
         "correct": 3,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '\"World\"'."
       },
       {
-        "id": "js_q42",
+        "id": "js_q45",
         "module": "js_m3",
-        "question": "The number 2 is stored in the variable n (let n = 2;) . The command n = n*n*n is then called. This last command can be replaced by:",
+        "question": "The number 2 is stored in the variable n (let n = 2;). The command n = n*n*n is then called. This last command can be replaced by:",
         "code": null,
         "options": [
           "n **= n;",
           "n **= 3;",
           "n *= 3;",
           "n ***= n;",
-          "Answers The command n = n * n * n can be replaced by n **= 3 . In JavaScript, the **= operator is the exponentiation assignment operator. It raises the left-hand side operand to the power of the right-hand side operand and assigns the result back to the left-hand side variable. So, when n = n * n * n is replaced with n **= 3 , it means n will be raised to the power of 3 and the result will be assigned back to n . It is equivalent to performing n = n ** 3 . Here’s an example to illustrate this: let n = 2; n **= 3; console.log(n); // Output: 8 In this case, the value of n is initially 2. After executing n **= 3 , n is raised to the power of 3, resulting in 8. Therefore, the output will be 8. To summarize, the command n = n * n * n can be replaced by n **= 3 to achieve the same result."
+          "Answers \nThe command n = n * n * n can be replaced by n **= 3.\n\nIn JavaScript, the **= operator is the exponentiation assignment operator. It raises the left-hand side operand to the power of the right-hand side operand and assigns the result back to the left-hand side variable.\n\nSo, when n = n * n * n is replaced with n **= 3, it means n will be raised to the power of 3 and the result will be assigned back to n. It is equivalent to performing n = n ** 3.\n\nHere's an example to illustrate this:\n\nlet n = 2;\r\nn **= 3;\r\nconsole.log(n); // Output: 8\nIn this case, the value of n is initially 2. After executing n **= 3, n is raised to the power of 3, resulting in 8. Therefore, the output will be 8.\n\nTo summarize, the command n = n * n * n can be replaced by n **= 3 to achieve the same result."
         ],
         "correct": 1,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: n **= 3;."
       },
       {
-        "id": "js_q43",
+        "id": "js_q46",
         "module": "js_m2",
         "question": "The result is stored in the variable n is:",
         "code": null,
@@ -2186,7 +2226,7 @@ const CERTIFICATES_DATA = {
           "36",
           "215",
           "53",
-          "Answers The result stored in the variable n after executing the code snippet let n = 2 * 3 ** 3 - 1; is 53. Let’s break down the code snippet step by step: 3 ** 3 is an exponentiation operation where 3 is raised to the power of 3. This results in 27.",
+          "Answers \nThe result stored in the variable n after executing the code snippet let n = 2 * 3 ** 3 - 1; is 53.\n\nLet's break down the code snippet step by step:\n\n\n3 ** 3 is an exponentiation operation where 3 is raised to the power of 3. This results in 27.",
           "Next, 2 * 27 is multiplied, which gives 54.",
           "Finally, 54 - 1 is subtracted, resulting in 53."
         ],
@@ -2194,7 +2234,7 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: '53'."
       },
       {
-        "id": "js_q44",
+        "id": "js_q47",
         "module": "js_m1",
         "question": "The result of the comparison \"abcd\" > \"Abcd\" will be:",
         "code": null,
@@ -2203,107 +2243,59 @@ const CERTIFICATES_DATA = {
           "true",
           "false",
           "1",
-          "Answers The result of the comparison \"abcd\" > \"Abcd\" will be true . When comparing strings in JavaScript using the greater-than operator ( > ), the comparison is made based on lexicographic order, which follows the Unicode values of the characters. In this case, comparing the strings “abcd” and “Abcd” character by character, the first differing characters are “a” and “A”. In Unicode, the lowercase letters have higher values than uppercase letters. Therefore, “a” is greater than “A” in lexicographic order. Since the first differing character (“a”) in the first string is greater than the corresponding character (“A”) in the second string, the comparison evaluates to true . To illustrate this in code: console.log(\"abcd\" > \"Abcd\"); // Output: true So, the correct answer is true ."
+          "Answers \nThe result of the comparison \"abcd\" > \"Abcd\" will be true.\n\nWhen comparing strings in JavaScript using the greater-than operator (>), the comparison is made based on lexicographic order, which follows the Unicode values of the characters.\n\nIn this case, comparing the strings \"abcd\" and \"Abcd\" character by character, the first differing characters are \"a\" and \"A\". In Unicode, the lowercase letters have higher values than uppercase letters. Therefore, \"a\" is greater than \"A\" in lexicographic order.\n\nSince the first differing character (\"a\") in the first string is greater than the corresponding character (\"A\") in the second string, the comparison evaluates to true.\n\nTo illustrate this in code:\n\nconsole.log(\"abcd\" > \"Abcd\"); // Output: true\n\n\n\n\n\n\nSo, the correct answer is true."
         ],
         "correct": 1,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'true'."
       },
       {
-        "id": "js_q45",
+        "id": "js_q48",
         "module": "js_m2",
-        "question": "Its execution will result in the following values in the variables n and m :",
+        "question": "Its execution will result in the following values in the variables n and m:",
         "code": null,
         "options": [
-          "n: 11 , m: 10",
-          "n: 10 , m: 11",
-          "n: 11 , m: 11",
-          "n: 10 , m: 10",
-          "Answers The execution of the code snippet let n = 10; let m = ++n; will result in the following values in the variables n and m : n will have a value of 11.",
+          "n: 11, m: 10",
+          "n: 10, m: 11",
+          "n: 11, m: 11",
+          "n: 10, m:10",
+          "Answers \nThe execution of the code snippet let n = 10; let m = ++n; will result in the following values in the variables n and m:\n\n\nn will have a value of 11.",
           "m will also have a value of 11."
         ],
         "correct": 2,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'n: 11 , m: 11'."
+        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'n: 11, m: 11'."
       },
       {
-        "id": "js_q46",
+        "id": "js_q49",
         "module": "js_m6",
         "question": "The confirm method allows you to create a dialog box. What value does this method return when the user closes the window?",
         "code": null,
         "options": [
-          "Always true .",
-          "Always false .",
+          "Always true.",
+          "Always false.",
           "The string entered by the user.",
           "It depends on the option selected by the user.",
-          "Answers The confirm method in JavaScript allows you to create a dialog box with an OK and Cancel button. When the user interacts with the dialog box, the method returns a boolean value that indicates the user’s choice. Specifically, when the user closes the window or clicks on either the OK or Cancel button in the dialog box, the confirm method will return true if the user clicked on OK, and false if the user clicked on Cancel or closed the window. So, the correct answer is: It depends on the option selected by the user. Here’s an example to demonstrate the usage of the confirm method: let result = confirm(\"Are you sure you want to proceed?\"); console.log(result); In this example, a confirm dialog box with the message “Are you sure you want to proceed?” is displayed. If the user clicks on OK, the value of result will be true . If the user clicks on Cancel or closes the window, the value of result will be false . The output will reflect the user’s choice. Therefore, the return value of the confirm method depends on the option selected by the user."
+          "Answers \nThe confirm method in JavaScript allows you to create a dialog box with an OK and Cancel button. When the user interacts with the dialog box, the method returns a boolean value that indicates the user's choice.\n\nSpecifically, when the user closes the window or clicks on either the OK or Cancel button in the dialog box, the confirm method will return true if the user clicked on OK, and false if the user clicked on Cancel or closed the window.\n\nSo, the correct answer is: It depends on the option selected by the user.\n\nHere's an example to demonstrate the usage of the confirm method:\n\nlet result = confirm(\"Are you sure you want to proceed?\");\r\nconsole.log(result);\nIn this example, a confirm dialog box with the message \"Are you sure you want to proceed?\" is displayed. If the user clicks on OK, the value of result will be true. If the user clicks on Cancel or closes the window, the value of result will be false. The output will reflect the user's choice.\n\nTherefore, the return value of the confirm method depends on the option selected by the user."
         ],
         "correct": 3,
         "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'It depends on the option selected by the user.'."
       },
       {
-        "id": "js_q47",
+        "id": "js_q50",
         "module": "js_m5",
-        "question": "The string \"12\" has been written into the str variable: ( let str = \"12\";) . Then the operations str = +str is performed. As a result, the variable str will contain:",
+        "question": "The string \"12\" has been written into the str variable: (let str = \"12\";). Then the operations str = +str is performed. As a result, the variable str will contain:",
         "code": null,
         "options": [
           "NaN",
           "12",
           "\"+12\"",
           "\"12\"",
-          "Answers The variable str will contain the number 12 as a result of the operation str = +str . Let’s break down the code step by step: Initially, the string “12” is assigned to the variable str using let str = \"12\"; .",
-          "The unary plus operator ( + ) is used to convert the string value to a number. When applied to a string, the unary plus operator attempts to convert the string to a numeric value.",
-          "In this case, the unary plus operator is applied to the string “12”, resulting in the number 12.",
-          "The result of the conversion is then assigned back to the variable str using str = +str . Since the conversion is successful, the variable str now holds the number 12."
+          "Answers \nThe variable str will contain the number 12 as a result of the operation str = +str.\n\nLet's break down the code step by step:\n\n\nInitially, the string \"12\" is assigned to the variable str using let str = \"12\";.",
+          "The unary plus operator (+) is used to convert the string value to a number. When applied to a string, the unary plus operator attempts to convert the string to a numeric value.",
+          "In this case, the unary plus operator is applied to the string \"12\", resulting in the number 12.",
+          "The result of the conversion is then assigned back to the variable str using str = +str. Since the conversion is successful, the variable str now holds the number 12."
         ],
         "correct": 1,
         "explanation": "Klíčová slova let a const mají blokový rozsah platnosti (block scope), zatímco var má funkční rozsah (function scope). Správná odpověď: 12."
-      },
-      {
-        "id": "js_q48",
-        "module": "js_m2",
-        "question": "After its execution, the variables x , y , and z will have the values:",
-        "code": null,
-        "options": [
-          "x: false , y: true , z: 1",
-          "x: null , y: null , z: 1",
-          "x: true , y: false , z: 1",
-          "x: 1 , y: 1 , z: 1",
-          "Answers After executing the code snippet: let nr = \"1\"; let x = (nr === 1); let y = (nr == 1); let z = (nr = 1); The variables x , y , and z will have the following values: x will have a value of false .",
-          "y will have a value of true .",
-          "z will have a value of 1 ."
-        ],
-        "correct": 0,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'x: false , y: true , z: 1'."
-      },
-      {
-        "id": "js_q49",
-        "module": "js_m5",
-        "question": "The methods window.altert , window.confirm , and window.prompt are methods of the window object. Which of the following is not true ?",
-        "code": null,
-        "options": [
-          "The alert , confrim , and prompt methods require an argument specifying the position of the dialog in which the information will be displayed.",
-          "The alert , confirm , and prompt methods display information in modal windows that block access to the page until they are closed.",
-          "You can call window methods, such as window.alert , without including the name window, so calling alert(\"abc\") would be correct.",
-          "The window object represents the window in which the HTML document containing the JavaScript code currently being executed is open.",
-          "Answers The statement “The alert, confirm, and prompt methods require an argument specifying the position of the dialog in which the information will be displayed” is not true. The position of the dialog in which the information will be displayed is not specified as an argument when using the alert , confirm , or prompt methods. These methods display modal dialog boxes that are centered on the user’s screen by default. The position of the dialog is handled by the browser itself, and the methods do not provide a way to control or specify the position explicitly. The correct information regarding the given options is as follows: The alert , confirm , and prompt methods display information in modal windows that block access to the page until they are closed. This means that the user needs to interact with the dialog before continuing to use the page.",
-          "You can call window methods, such as window.alert , without including the name window . For example, calling alert(\"abc\") directly is correct. This is because these methods are part of the window object, and they can be accessed globally without explicitly referencing the window object.",
-          "The window object represents the window in which the HTML document containing the JavaScript code is open. It provides access to various properties and methods related to the window and the document within it."
-        ],
-        "correct": 0,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'The alert , confrim , and prompt methods require an argument specifying the position of the dialog in which the information will be displayed.'."
-      },
-      {
-        "id": "js_q50",
-        "module": "js_m5",
-        "question": "The condition if( a >= 0 ) can be replaced by the condition:",
-        "code": null,
-        "options": [
-          "if (a > 0 || a == 0);",
-          "if (a > 0 && a == 0);",
-          "if (0",
-          "if (!(a > 0 && a == 0)); The condition if( a >= 0 ) can be replaced by the condition: if (a > 0 || a == 0); The replacement condition checks if “a” is greater than 0 or equal to 0. This is equivalent to the original condition a >= 0 because if “a” is greater than or equal to 0, it satisfies the condition a > 0 || a == 0."
-        ],
-        "correct": 0,
-        "explanation": "Podle standardu ECMAScript a kurzu JS Essentials 1 je správná hodnota: 'if (a > 0 || a == 0);'."
       }
     ]
   },
@@ -2344,13 +2336,13 @@ const CERTIFICATES_DATA = {
         "question": "What declaration should precede the statement so that the text Jeep appears in the console as a result of its execution?",
         "code": null,
         "options": [
-          "let car = {make: ‘Jeep’, model: ‘Cherokee’};",
-          "let car = [make: ‘Jeep’, model: ‘Cherokee’];",
-          "let car = [make: ‘Jeep’];",
-          "var car = {‘Jeep’};"
+          "let car = {make: 'Jeep', model: 'Cherokee'};",
+          "let car = [make: 'Jeep', model: 'Cherokee'];",
+          "let car = [make: 'Jeep'];",
+          "var car = {'Jeep'};"
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'let car = {make: ‘Jeep’, model: ‘Cherokee’};'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'let car = {make: 'Jeep', model: 'Cherokee'};'."
       },
       {
         "id": "js2_q02",
@@ -2372,13 +2364,13 @@ const CERTIFICATES_DATA = {
         "question": "Which of the following is the correct way to refer to this property?",
         "code": null,
         "options": [
-          "user[‘full name’]",
+          "user['full name']",
           "user[full name]",
-          "user.’full name’",
+          "user.'full name'",
           "You cannot use a property name consisting of several words."
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'user[‘full name’]'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'user['full name']'."
       },
       {
         "id": "js2_q04",
@@ -2411,13 +2403,13 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q06",
         "module": "js2_m1",
-        "question": "What will be the population of the city stored in “largestCity” after executing this code?",
+        "question": "What will be the population of the city stored in \"largestCity\" after executing this code?",
         "code": null,
         "options": [
           "8537673",
           "39776830",
           "124744503",
-          "‘Los Angeles’"
+          "'Los Angeles'"
         ],
         "correct": 1,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: '39776830'."
@@ -2439,7 +2431,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q08",
         "module": "js2_m3",
-        "question": "You want to create a setter for the user’s first name, allowing you to set both “_firstName” and “_lastName” when updating the first name. Which line of code should you insert?",
+        "question": "You want to create a setter for the user's first name, allowing you to set both \"_firstName\" and \"_lastName\" when updating the first name. Which line of code should you insert?",
         "code": null,
         "options": [
           "set firstName(name) { this._firstName = name; }",
@@ -2467,16 +2459,16 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q10",
         "module": "js2_m2",
-        "question": "Which of the following code snippets correctly demonstrates the creation of an anonymous class for a “Person” object with a constructor that initializes the properties “name” and “age”?",
+        "question": "Which of the following code snippets correctly demonstrates the creation of an anonymous class for a \"Person\" object with a constructor that initializes the properties \"name\" and \"age\"?",
         "code": null,
         "options": [
-          "let Person = class { constructor(name, age) { name = this.name; age = this.age; } }",
-          "let Person = class { constructor(name, age) { this.name = name; this.age = age; } }",
-          "let Person = (name, age) => { constructor: { this.name = name; this.age = age; } }",
-          "let Person = function(name, age) { this.name = name; this.age = age; }"
+          "let Person = class {\n\nconstructor(name, age) {\n\nname = this.name;\n\nage = this.age;\n\n}\n\n}",
+          "let Person = class {\n\n constructor(name, age) {\n\n this.name = name;\n\n this.age = age;\n\n }\n\n}",
+          "let Person = (name, age) => {\n\nconstructor: {\n\nthis.name = name;\n\nthis.age = age;\n\n}\n\n}",
+          "let Person = function(name, age) {\n\nthis.name = name;\n\nthis.age = age;\n\n}"
         ],
         "correct": 1,
-        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: let Person = class { constructor(name, age) { this.name = name; this.age = age; } }."
+        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: let Person = class {\n\n constructor(name, age) {\n\n this.name = name;\n\n this.age = age;\n\n }\n\n}."
       },
       {
         "id": "js2_q11",
@@ -2484,18 +2476,18 @@ const CERTIFICATES_DATA = {
         "question": "Which of the following is the correct way to create a mountain object of this class?",
         "code": null,
         "options": [
-          "let mountain = new Mountain(‘Manaslu’, 8156);",
-          "let mountain = create Mountain(‘Manaslu’, 8156);",
-          "let mountain = Mountain(‘Manaslu’, 8156);",
-          "Mountain(let mountain, ‘Manaslu’, 8156);"
+          "let mountain = new Mountain('Manaslu', 8156);",
+          "let mountain = create Mountain('Manaslu', 8156);",
+          "let mountain = Mountain('Manaslu', 8156);",
+          "Mountain(let mountain, 'Manaslu', 8156);"
         ],
         "correct": 0,
-        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: let mountain = new Mountain(‘Manaslu’, 8156);."
+        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: let mountain = new Mountain('Manaslu', 8156);."
       },
       {
         "id": "js2_q12",
         "module": "js2_m2",
-        "question": "What properties and methods does an instance of the “Book” class have when created with the following code?",
+        "question": "What properties and methods does an instance of the \"Book\" class have when created with the following code?",
         "code": null,
         "options": [
           "Properties: title, author, genre; Methods: setGenre",
@@ -2509,7 +2501,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q13",
         "module": "js2_m2",
-        "question": "What should you insert into the “Cat” class so that it properly inherits from the “Animal” class?",
+        "question": "What should you insert into the \"Cat\" class so that it properly inherits from the \"Animal\" class?",
         "code": null,
         "options": [
           "class Cat extends Animal {}",
@@ -2528,7 +2520,7 @@ const CERTIFICATES_DATA = {
         "options": [
           "Mountain.className()",
           "Mountain.className",
-          "mountain [‘static className ‘]()",
+          "mountain ['static className ']()",
           "mountain.className()"
         ],
         "correct": 0,
@@ -2551,30 +2543,30 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q16",
         "module": "js2_m1",
-        "question": "Select the correct value so that the executed code results in the following console output: ‘0.01’",
+        "question": "Select the correct value so that the executed code results in the following console output: '0.01'",
         "code": null,
         "options": [
-          "’12e-3′",
-          "‘-0x01’",
+          "'12e-3′",
+          "'-0x01'",
           "1",
           "0.01e-2"
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: '’12e-3′'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: ''12e-3′'."
       },
       {
         "id": "js2_q17",
         "module": "js2_m1",
-        "question": "You have a JavaScript function “processText” that takes a string as input and processes it to return an array of words in reverse order. Fill in the missing line of code:",
+        "question": "You have a JavaScript function \"processText\" that takes a string as input and processes it to return an array of words in reverse order. Fill in the missing line of code:",
         "code": null,
         "options": [
-          "return str.split(‘ ‘).reverse();",
-          "return str.join(‘ ‘).reverse();",
-          "return str.reverse().split(‘ ‘);",
-          "return str.join(‘ ‘).split(‘ ‘).reverse();"
+          "return str.split(' ').reverse();",
+          "return str.join(' ').reverse();",
+          "return str.reverse().split(' ');",
+          "return str.join(' ').split(' ').reverse();"
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'return str.split(‘ ‘).reverse();'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'return str.split(' ').reverse();'."
       },
       {
         "id": "js2_q18",
@@ -2624,27 +2616,27 @@ const CERTIFICATES_DATA = {
         "question": "Which line of code achieves the following output: red,green,purple,pink,orange?",
         "code": null,
         "options": [
-          "colors.splice(2, 0, ‘purple’, ‘pink’);",
-          "colors.splice(2, 1, ‘purple’, ‘pink’);",
-          "colors.splice(2, ‘purple’, ‘pink’);",
-          "colors.splice(2, 0, 1, ‘purple’, ‘pink’);"
+          "colors.splice(2, 0, 'purple', 'pink');",
+          "colors.splice(2, 1, 'purple', 'pink');",
+          "colors.splice(2, 'purple', 'pink');",
+          "colors.splice(2, 0, 1, 'purple', 'pink');"
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'colors.splice(2, 0, ‘purple’, ‘pink’);'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'colors.splice(2, 0, 'purple', 'pink');'."
       },
       {
         "id": "js2_q22",
         "module": "js2_m1",
-        "question": "Considering the following code, what will be the result of accessing fruitColors.get(‘kiwi’)?",
+        "question": "Considering the following code, what will be the result of accessing fruitColors.get('kiwi')?",
         "code": null,
         "options": [
-          "‘green’",
-          "‘purple’",
-          "‘yellow’",
+          "'green'",
+          "'purple'",
+          "'yellow'",
           "undefined"
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: '‘green’'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: ''green''."
       },
       {
         "id": "js2_q23",
@@ -2683,7 +2675,7 @@ const CERTIFICATES_DATA = {
           "let r = /.\\.jpg/;",
           "let r = (.\\.jpg);",
           "let r = \\.\\.jpg\\;",
-          "let r = RegExp(‘.\\.jpg’);"
+          "let r = RegExp('.\\.jpg');"
         ],
         "correct": 0,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'let r = /.\\.jpg/;'."
@@ -2694,13 +2686,13 @@ const CERTIFICATES_DATA = {
         "question": "What will be the result of executing this code?",
         "code": null,
         "options": [
-          "Two ‘Custom Method’ messages will appear in the console.",
-          "A single message ‘Custom Method’ will appear in the console (object firstArray does not have the customMethod).",
+          "Two 'Custom Method' messages will appear in the console.",
+          "A single message 'Custom Method' will appear in the console (object firstArray does not have the customMethod).",
           "An error will appear when trying to execute firstArray.customMethod() because the method was added after the creation of the array object firstArray.",
           "An error will appear because the customMethod is bound to the Array class and not to the objects created from it (objects firstArray and secondArray do not have the customMethod)."
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'Two ‘Custom Method’ messages will appear in the console.'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'Two 'Custom Method' messages will appear in the console.'."
       },
       {
         "id": "js2_q27",
@@ -2719,21 +2711,21 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q28",
         "module": "js2_m1",
-        "question": "Select the correct missing line to ensure the console displays ‘Delayed message’ with a delay of 5 seconds:",
+        "question": "Select the correct missing line to ensure the console displays 'Delayed message' with a delay of 5 seconds:",
         "code": null,
         "options": [
-          "setTimeout(printText, 2000, ‘Delayed message’);",
-          "setTimeout(printText.bind(this, ‘Delayed message’), 5000);",
-          "printText(‘Delayed message’, 5000);",
-          "setTimeout(() => printText(‘Delayed message’), 5000);"
+          "setTimeout(printText, 2000, 'Delayed message');",
+          "setTimeout(printText.bind(this, 'Delayed message'), 5000);",
+          "printText('Delayed message', 5000);",
+          "setTimeout(() => printText('Delayed message'), 5000);"
         ],
         "correct": 1,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'setTimeout(printText.bind(this, ‘Delayed message’), 5000);'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'setTimeout(printText.bind(this, 'Delayed message'), 5000);'."
       },
       {
         "id": "js2_q29",
         "module": "js2_m1",
-        "question": "When using XMLHttpRequest (XHR) in JavaScript to make network requests, what is the purpose of the event listener added with the ‘load’ event?",
+        "question": "When using XMLHttpRequest (XHR) in JavaScript to make network requests, what is the purpose of the event listener added with the 'load' event?",
         "code": null,
         "options": [
           "To listen for errors that may occur during the request.",
@@ -2754,7 +2746,7 @@ const CERTIFICATES_DATA = {
           "let user = {name: 'Bob', age: 30};",
           "let user = [name: 'Bob', age: 30];",
           "var user = {'Bob'};",
-          "let user = {name: ‘Bob’, age: 30}; It creates an object user with a property name set to ‘Bob’, and when you log user.name, it will print ‘Bob’ to the console."
+          "let user = {name: 'Bob', age: 30};\n\nIt creates an object user with a property name set to 'Bob', and when you log user.name, it will print 'Bob' to the console."
         ],
         "correct": 1,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'let user = {name: 'Bob', age: 30};'."
@@ -2784,7 +2776,7 @@ const CERTIFICATES_DATA = {
           "car.set('model', 'Viper'); car.add('color', 'red');",
           "An empty line – it is not possible to add a new color property to a previously created object.",
           "car = {model: 'Viper', color: 'red'};",
-          "To achieve the desired console output of “Dodge Viper, color: red” after running the whole code, you should use the following line: car.model = ‘Viper’; car.color = ‘red’; This line reassigns the car variable with a new object that has both the model and color properties set to the desired values."
+          "To achieve the desired console output of \"Dodge Viper, color: red\" after running the whole code, you should use the following line:\n\ncar.model = 'Viper'; car.color = 'red';\n\nThis line reassigns the car variable with a new object that has both the model and color properties set to the desired values."
         ],
         "correct": 0,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'car.model = 'Viper'; car.color = 'red';'."
@@ -2792,14 +2784,14 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q33",
         "module": "js2_m1",
-        "question": "Which of the following will display the value of the circle’s x -coordinate (i.e. 10 ) in the console?",
+        "question": "Which of the following will display the value of the circle's x-coordinate (i.e. 10) in the console?",
         "code": null,
         "options": [
           "console.log(circle.centre.x);",
           "console.log(circle.centre);",
           "console.log(centre.x);",
           "console.log(circle.x);",
-          "The correct option to display the value of the circle’s x-coordinate (i.e., 10) in the console is: console.log(circle.centre.x); It accesses the center property of the circle object and then the x property of the center object to display the x-coordinate"
+          "The correct option to display the value of the circle's x-coordinate (i.e., 10) in the console is:\n\nconsole.log(circle.centre.x);\n\nIt accesses the center property of the circle object and then the x property of the center object to display the x-coordinate"
         ],
         "correct": 0,
         "explanation": "Obvod kruhu se v JS počítá vzorcem 2 * r * Math.PI. Správná odpověď: console.log(circle.centre.x);."
@@ -2814,7 +2806,7 @@ const CERTIFICATES_DATA = {
           "for(key in user) console.log(key);",
           "console.log(user[name, age]);",
           "Object.keys(user).forEach(key => console.log(user[key]));",
-          "The correct line of code to display the values of all object properties (i.e., “Ian” and 44) is: Object.keys(user).forEach(key => console.log(user[key])); It uses Object.keys() to get an array of the object’s keys (in this case, ‘name’ and ‘age’) and then iterates over them to access the corresponding values and print them to the console."
+          "The correct line of code to display the values of all object properties (i.e., \"Ian\" and 44) is:\n\nObject.keys(user).forEach(key => console.log(user[key]));\n\nIt uses Object.keys() to get an array of the object's keys (in this case, 'name' and 'age') and then iterates over them to access the corresponding values and print them to the console."
         ],
         "correct": 3,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'Object.keys(user).forEach(key => console.log(user[key]));'."
@@ -2822,14 +2814,14 @@ const CERTIFICATES_DATA = {
       {
         "id": "js2_q35",
         "module": "js2_m1",
-        "question": "The default way to call the show method is: point.show() . Select the correct alternative to call this method:",
+        "question": "The default way to call the show method is: point.show(). Select the correct alternative to call this method:",
         "code": null,
         "options": [
           "point[show]()",
           "point.show",
           "point[show]",
           "point['show']();",
-          "The correct alternative to call the show method of the point object is: point[‘show’](); This is an acceptable way to call the method using bracket notation, but it’s not the default way. The dot notation point.show() is more commonly used."
+          "The correct alternative to call the show method of the point object is:\n\npoint['show']();\n\nThis is an acceptable way to call the method using bracket notation, but it's not the default way. The dot notation point.show() is more commonly used."
         ],
         "correct": 3,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'point['show']();'."
@@ -2841,37 +2833,37 @@ const CERTIFICATES_DATA = {
         "code": null,
         "options": [
           "of any name that will be defined first in the class.",
-          "named this .",
-          "of any name preceded by the word constructor .",
-          "named constructor . In JavaScript classes, the constructor is a special method that is automatically called when an instance of the class is created. It must have the name “constructor” (case-sensitive) and is used to initialize object properties and perform any setup needed for instances of the class."
+          "named this.",
+          "of any name preceded by the word constructor.",
+          "named constructor.\n\n\n\n\n\nIn JavaScript classes, the constructor is a special method that is automatically called when an instance of the class is created. It must have the name \"constructor\" (case-sensitive) and is used to initialize object properties and perform any setup needed for instances of the class."
         ],
         "correct": 3,
-        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: named constructor . In JavaScript classes, the constructor is a special method that is automatically called when an instance of the class is created. It must have the name “constructor” (case-sensitive) and is used to initialize object properties and perform any setup needed for instances of the class.."
+        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: named constructor.\n\n\n\n\n\nIn JavaScript classes, the constructor is a special method that is automatically called when an instance of the class is created. It must have the name \"constructor\" (case-sensitive) and is used to initialize object properties and perform any setup needed for instances of the class.."
       },
       {
         "id": "js2_q37",
         "module": "js2_m2",
-        "question": "You have defined a class Point whose constructor takes two arguments: x and y . Which of the following is the correct way to create a point object of this class?",
+        "question": "You have defined a class Point whose constructor takes two arguments: x and y. Which of the following is the correct way to create a point object of this class?",
         "code": null,
         "options": [
           "let point = Point(100, 200);",
           "let point = create Point(100, 200);",
           "Point(let point, 100, 200);",
-          "let point = new Point(100, 200); The correct way to create a point object of the class Point with a constructor that takes two arguments, x and y, is: let point = new Point(100, 200); This correctly creates a new instance of the Point class with the x and y values set to 100 and 200, respectively."
+          "let point = new Point(100, 200);\n\n\n\n\n\nThe correct way to create a point object of the class Point with a constructor that takes two arguments, x and y, is:\n\nlet point = new Point(100, 200);\n\nThis correctly creates a new instance of the Point class with the x and y values set to 100 and 200, respectively."
         ],
         "correct": 3,
-        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: let point = new Point(100, 200); The correct way to create a point object of the class Point with a constructor that takes two arguments, x and y, is: let point = new Point(100, 200); This correctly creates a new instance of the Point class with the x and y values set to 100 and 200, respectively.."
+        "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: let point = new Point(100, 200);\n\n\n\n\n\nThe correct way to create a point object of the class Point with a constructor that takes two arguments, x and y, is:\n\nlet point = new Point(100, 200);\n\nThis correctly creates a new instance of the Point class with the x and y values set to 100 and 200, respectively.."
       },
       {
         "id": "js2_q38",
         "module": "js2_m1",
-        "question": "Select the correct missing line in order to declare a property named test and initialize it with the value 10 :",
+        "question": "Select the correct missing line in order to declare a property named test and initialize it with the value 10:",
         "code": null,
         "options": [
           "test = 10;",
           "test: 10;",
           "test: 10",
-          "this.test = 10; The correct missing line of code to declare a property named test and initialize it with the value 10 in the A class is: test = 10; It uses the modern class field syntax to declare and initialize the test property with the value 10 directly within the class definition."
+          "this.test = 10;\n\n\n\n\n\nThe correct missing line of code to declare a property named test and initialize it with the value 10 in the A class is:\n\ntest = 10;\n\nIt uses the modern class field syntax to declare and initialize the test property with the value 10 directly within the class definition."
         ],
         "correct": 0,
         "explanation": "K vlastnostem objektu, jejichž název obsahuje mezery nebo speciální znaky, přistupujeme pomocí závorkové notace: objekt['vlastnost']. Správná odpověď: test = 10;."
@@ -2882,13 +2874,13 @@ const CERTIFICATES_DATA = {
         "question": "Analyze the following code:",
         "code": null,
         "options": [
-          "has three properties: x , y and color .",
+          "has three properties: x, y and color.",
           "will not be created – setColor references a color property that was not defined in the constructor.",
           "will not be created – the constructor and the setColor method refer to properties that have not been defined in the class body.",
-          "has two properties: x and y (only these are defined in the constructor) The correct answer is: has three properties: x, y, and color The Point class has a constructor that initializes x and y properties, and a setColor method that sets the color property. When you create a new instance of the Point class using let point = new Point(100, 200);, you’re calling the constructor with x and y values, which initializes the x and y properties of the point object. Then, you call the setColor(‘red’) method on the point object, which sets the color property to ‘red’."
+          "has two properties: x and y (only these are defined in the constructor)\n\n\n\n\n\nThe correct answer is:\n\nhas three properties: x, y, and color\n\nThe Point class has a constructor that initializes x and y properties, and a setColor method that sets the color property. When you create a new instance of the Point class using let point = new Point(100, 200);, you're calling the constructor with x and y values, which initializes the x and y properties of the point object. Then, you call the setColor('red') method on the point object, which sets the color property to 'red'."
         ],
         "correct": 0,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'has three properties: x , y and color .'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'has three properties: x, y and color.'."
       },
       {
         "id": "js2_q40",
@@ -2899,10 +2891,10 @@ const CERTIFICATES_DATA = {
           "x y",
           "name",
           "name x y",
-          "name x y color The correct option is: name x y color The name property is defined with a default value of ‘Point’ at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value ‘Point’. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor(‘red’);."
+          "name x y color\n\n\n\n\n\nThe correct option is:\n\nname x y color\n\nThe name property is defined with a default value of 'Point' at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value 'Point'. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor('red');."
         ],
         "correct": 3,
-        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'name x y color The correct option is: name x y color The name property is defined with a default value of ‘Point’ at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value ‘Point’. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor(‘red’);.'."
+        "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'name x y color\n\n\n\n\n\nThe correct option is:\n\nname x y color\n\nThe name property is defined with a default value of 'Point' at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value 'Point'. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor('red');.'."
       },
       {
         "id": "js2_q41",
@@ -2913,7 +2905,7 @@ const CERTIFICATES_DATA = {
           "name = 'Bob';",
           "private name = 'Bob'",
           "#name = 'Bob';",
-          "this.#name = 'Bob'; The correct missing line of code to insert a private property declaration in the code is: #name = ‘Bob’; It uses the # symbol to declare a private class field named #name and initializes it with the value ‘Bob’."
+          "this.#name = 'Bob';\n\n\n\n\n\nThe correct missing line of code to insert a private property declaration in the code is:\n\n#name = 'Bob';\n\nIt uses the # symbol to declare a private class field named #name and initializes it with the value 'Bob'."
         ],
         "correct": 2,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: '#name = 'Bob';'."
@@ -2927,7 +2919,7 @@ const CERTIFICATES_DATA = {
           "console.log(user.getfullName);",
           "console.log(user.fullName());",
           "console.log(user.fullName);",
-          "console.log(user['get fullName']); The correct command to use in order for the console to show the following string “Bob Marley” after running the whole code is: console.log(user.fullName); It accesses the fullName getter method of the user object, which returns the full name as “Bob Marley”."
+          "console.log(user['get fullName']);\n\n\n\n\n\nThe correct command to use in order for the console to show the following string \"Bob Marley\" after running the whole code is:\n\nconsole.log(user.fullName);\n\nIt accesses the fullName getter method of the user object, which returns the full name as \"Bob Marley\"."
         ],
         "correct": 2,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'console.log(user.fullName);'."
@@ -2941,7 +2933,7 @@ const CERTIFICATES_DATA = {
           "A(val);",
           "this = new A(val);",
           "super(val);",
-          "An empty line The correct missing line of code to make the executed code result in the desired console output “A: 10 B: 10” is: super(val); It calls the constructor of the superclass A with the val argument, ensuring that the A class constructor is executed before the B class constructor."
+          "An empty line\n\n\n\n\n\nThe correct missing line of code to make the executed code result in the desired console output \"A: 10 B: 10\" is:\n\nsuper(val);\n\nIt calls the constructor of the superclass A with the val argument, ensuring that the A class constructor is executed before the B class constructor."
         ],
         "correct": 2,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'super(val);'."
@@ -2955,7 +2947,7 @@ const CERTIFICATES_DATA = {
           "is visible only in the object created from the class, but can only be called by other methods of the object.",
           "is bound to the class only and will not be available in the object created from it.",
           "is visible both in the class and in the object created from it (it can be called in both).",
-          "is visible only in the object created from the class and can be called arbitrarily in that object. The correct answer is: is bound to the class only and will not be available in the object created from it. A static method is associated with the class itself, not with instances (objects) created from the class. It is defined on the class and can be called on the class itself, rather than on instances of the class. Static methods are not available on instances of the class. They are not bound to individual objects and cannot access or modify instance-specific data or properties. Static methods are often used for utility functions or operations that are relevant to the class as a whole, rather than to specific instances."
+          "is visible only in the object created from the class and can be called arbitrarily in that object.\n\n\n\n\n\nThe correct answer is:\n\nis bound to the class only and will not be available in the object created from it.\n\nA static method is associated with the class itself, not with instances (objects) created from the class. It is defined on the class and can be called on the class itself, rather than on instances of the class. Static methods are not available on instances of the class. They are not bound to individual objects and cannot access or modify instance-specific data or properties. Static methods are often used for utility functions or operations that are relevant to the class as a whole, rather than to specific instances."
         ],
         "correct": 1,
         "explanation": "V OOP třídách v JavaScriptu volá konstruktor potomka konstruktor rodiče pomocí super() před přístupem k this. Správná odpověď: is bound to the class only and will not be available in the object created from it.."
@@ -2969,7 +2961,7 @@ const CERTIFICATES_DATA = {
           "Test.info()",
           "test['static info']()",
           "test.info()",
-          "Test.info The correct call to make the executed code result in the desired console output “Test” is: Test.info() This is the correct choice. It calls the static method info() on the Test class, which returns ‘Test’."
+          "Test.info\n\n\n\n\n\nThe correct call to make the executed code result in the desired console output \"Test\" is:\n\nTest.info()\n\nThis is the correct choice. It calls the static method info() on the Test class, which returns 'Test'."
         ],
         "correct": 0,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'Test.info()'."
@@ -2983,7 +2975,7 @@ const CERTIFICATES_DATA = {
           "false false will be displayed, because B inheriting from A will also be a function.",
           "true true will be displayed, because A will be treated as a constructor during inheritance.",
           "an error will appear because you are trying to inherit in class B from function A and not from another class.",
-          "false true will be displayed, because A is not a class. The correct result of executing the provided code is: true true will be displayed, because A will be treated as a constructor during inheritance. The A function in the code acts as a constructor function, and the B class extends A. This inheritance means that B inherits the prototype chain of A. When you create an instance b of class B with new B();, it is also an instance of the A constructor function because of the inheritance relationship. Therefore, b instanceof A evaluates to true because b is an instance of both A and B. Similarly, b instanceof B evaluates to true because b is also an instance of class B."
+          "false true will be displayed, because A is not a class.\n\n\n\n\n\nThe correct result of executing the provided code is:\n\ntrue true will be displayed, because A will be treated as a constructor during inheritance.\n\nThe A function in the code acts as a constructor function, and the B class extends A. This inheritance means that B inherits the prototype chain of A. When you create an instance b of class B with new B();, it is also an instance of the A constructor function because of the inheritance relationship. Therefore, b instanceof A evaluates to true because b is an instance of both A and B. Similarly, b instanceof B evaluates to true because b is also an instance of class B."
         ],
         "correct": 1,
         "explanation": "V pokročilém JavaScriptu (JSE 2) je správným řešením: 'true true will be displayed, because A will be treated as a constructor during inheritance.'."
@@ -3083,32 +3075,32 @@ const CERTIFICATES_DATA = {
     "questions": [
       {
         "id": "dd_q01",
-        "module": "dd_m2",
-        "question": "An entity can only have one Primary UID. True or False?",
+        "module": "dd_m1",
+        "question": "An",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 0,
-        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: True."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
         "id": "dd_q02",
-        "module": "dd_m2",
-        "question": "If an entity has no attribute suitable to be a Primary UID, we can create an artificial one. True or False?",
+        "module": "dd_m1",
+        "question": "If an",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 0,
-        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: True."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
         "id": "dd_q03",
-        "module": "dd_m2",
-        "question": "There is no limit to how many columns can make up an entity's UID. True or False?",
+        "module": "dd_m1",
+        "question": "There",
         "code": null,
         "options": [
           "True",
@@ -3119,90 +3111,8 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "dd_q04",
-        "module": "dd_m2",
-        "question": "A unique identifier can only be made up of one attribute. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 1,
-        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: False."
-      },
-      {
-        "id": "dd_q05",
-        "module": "dd_m4",
-        "question": "When is an entity in 2nd Normal Form?",
-        "code": null,
-        "options": [
-          "When all non-UID attributes are dependent upon the entire UID.",
-          "When attributes with repeating or multi-values are present.",
-          "When no attritibutes are mutually independent and all are fully dependent on the primary key.",
-          "None of the Above."
-        ],
-        "correct": 0,
-        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: When all non-UID attributes are dependent upon the entire UID.."
-      },
-      {
-        "id": "dd_q06",
-        "module": "dd_m4",
-        "question": "What is the rule of Second Normal Form?",
-        "code": null,
-        "options": [
-          "No non-UID attributes can be dependent on any part of the UID.",
-          "Some non-UID attributes can be dependent on the entire UID.",
-          "All non-UID attributes must be dependent upon the entire UID.",
-          "None of the above"
-        ],
-        "correct": 2,
-        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: All non-UID attributes must be dependent upon the entire UID.."
-      },
-      {
-        "id": "dd_q07",
-        "module": "dd_m4",
-        "question": "Examine the following entity and decide how to make it conform to the rule of 2nd Normal Form:\nENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION",
-        "code": "DATE",
-        "options": [
-          "Do nothing, it is already in 2nd Normal Form.",
-          "Delete the attribute STORE ID",
-          "Move the attribute STORE LOCATION to a new entity, STORE, with a UID of STORE ID, and create a relationship to the original entity.",
-          "Move the attribute STORE LOCATION to a new entity, STORE, with a UID of STORE LOCATION, and create a relationship to the original entity."
-        ],
-        "correct": 2,
-        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: Move the attribute STORE LOCATION to a new entity, STORE, with a UID of STORE ID, and create a relationship to the original entity.."
-      },
-      {
-        "id": "dd_q08",
-        "module": "dd_m2",
-        "question": "When any attribute in an entity is dependent on any other non-UID attribute in that entity, this is known as:",
-        "code": null,
-        "options": [
-          "Dependency",
-          "Functional dependency",
-          "Non-dependency",
-          "Transitive dependency"
-        ],
-        "correct": 3,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Transitive dependency'."
-      },
-      {
-        "id": "dd_q09",
-        "module": "dd_m4",
-        "question": "Examine the following Entity and decide which rule of Normal Form is being violated:\nENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nORDER ID\nSTREET\nZIP CODE",
-        "code": null,
-        "options": [
-          "1st Normal Form.",
-          "2nd Normal Form.",
-          "3rd Normal Form.",
-          "None of the above, the entity is fully normalised."
-        ],
-        "correct": 0,
-        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: 1st Normal Form.."
-      },
-      {
-        "id": "dd_q10",
-        "module": "dd_m2",
-        "question": "As a database designer, you do not need to worry about where in the datamodel you store a particular attribute; as long as you get it onto the ERD, your job is done. True or False?",
+        "module": "dd_m1",
+        "question": "A",
         "code": null,
         "options": [
           "True",
@@ -3212,9 +3122,91 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
+        "id": "dd_q05",
+        "module": "dd_m1",
+        "question": "When",
+        "code": null,
+        "options": [
+          "When\nall non-UID attributes are dependent upon the entire UID.",
+          "When\nattributes with repeating or multi-values are present.",
+          "When\nno attritibutes are mutually independent and all are fully dependent on the\nprimary key.",
+          "None\nof the Above."
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'When\nall non-UID attributes are dependent upon the entire UID.'."
+      },
+      {
+        "id": "dd_q06",
+        "module": "dd_m1",
+        "question": "What",
+        "code": null,
+        "options": [
+          "No\nnon-UID attributes can be dependent on any part of the UID.",
+          "Some\nnon-UID attributes can be dependent on the entire UID.",
+          "All\nnon-UID attributes must be dependent upon the entire UID.",
+          "None\nof the above"
+        ],
+        "correct": 2,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'All\nnon-UID attributes must be dependent upon the entire UID.'."
+      },
+      {
+        "id": "dd_q07",
+        "module": "dd_m2",
+        "question": "Examine\nENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION\nDATE",
+        "code": null,
+        "options": [
+          "Do\nnothing, it is already in 2nd Normal Form.",
+          "Delete\nthe attribute STORE ID",
+          "Move\nthe attribute STORE LOCATION to a new entity, STORE, with a UID of STORE ID,\nand create a relationship to the original entity.",
+          "Move\nthe attribute STORE LOCATION to a new entity, STORE, with a UID of STORE\nLOCATION, and create a relationship to the original entity."
+        ],
+        "correct": 2,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: Move\nthe attribute STORE LOCATION to a new entity, STORE, with a UID of STORE ID,\nand create a relationship to the original entity.."
+      },
+      {
+        "id": "dd_q08",
+        "module": "dd_m2",
+        "question": "Examine\nENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nORDER ID\nSTREET\nZIP CODE",
+        "code": null,
+        "options": [
+          "1st\nNormal Form.",
+          "2nd\nNormal Form.",
+          "3rd\nNormal Form.",
+          "None\nof the above, the entity is fully normalised."
+        ],
+        "correct": 0,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: 1st\nNormal Form.."
+      },
+      {
+        "id": "dd_q09",
+        "module": "dd_m1",
+        "question": "As a database designer, you do not need",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
+      },
+      {
+        "id": "dd_q10",
+        "module": "dd_m2",
+        "question": "Examine the following Entity and decide\nENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nSTREET\nCITY\nZIP CODE",
+        "code": null,
+        "options": [
+          "1st\nNormal Form.",
+          "2nd\nNormal Form.",
+          "3rd\nNormal Form.",
+          "None\nof the above, the entity is fully normalised."
+        ],
+        "correct": 3,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: None\nof the above, the entity is fully normalised.."
+      },
+      {
         "id": "dd_q11",
         "module": "dd_m1",
-        "question": "When data is stored in more than one place in a database, the database violates the rules of ___________.",
+        "question": "When data is stored in more than one",
         "code": null,
         "options": [
           "Normalcy",
@@ -3227,74 +3219,74 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "dd_q12",
-        "module": "dd_m4",
-        "question": "If an entity has a multi-valued attribute, to conform to the rule of 1st Normal Form we:",
+        "module": "dd_m2",
+        "question": "If an entity has a multi-valued",
         "code": null,
         "options": [
-          "Make the attribute optional",
-          "Do nothing, an entity does not have to be in 1st Normal Form",
-          "Create an additional entity and relate it to the original entity with a 1:M relationship.",
-          "Create an additional entity and relate it to the original entity with a M:M relationship."
+          "Make\nthe attribute optional",
+          "Do\nnothing, an entity does not have to be in 1st Normal Form",
+          "Create\nan additional entity and relate it to the original entity with a 1:M\nrelationship.",
+          "Create\nan additional entity and relate it to the original entity with a M:M\nrelationship."
         ],
         "correct": 2,
-        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: Create an additional entity and relate it to the original entity with a 1:M relationship.."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Create\nan additional entity and relate it to the original entity with a 1:M\nrelationship.'."
       },
       {
         "id": "dd_q13",
-        "module": "dd_m4",
-        "question": "An entity ORDER has the attributes Order ID, Order Date, Product id, Customer ID. This entity is in 1st Normal Form. True or False?",
+        "module": "dd_m2",
+        "question": "An entity ORDER has the attributes Order",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: False."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
         "id": "dd_q14",
-        "module": "dd_m4",
-        "question": "An entity can have repeated values and still be in 1st Normal Form. True or False?",
+        "module": "dd_m2",
+        "question": "An entity can have repeated values and",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: False."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
         "id": "dd_q15",
         "module": "dd_m2",
-        "question": "Cascading UIDs are a feature often found in what type of Relationship?",
+        "question": "Cascading UIDs are a feature often found",
         "code": null,
         "options": [
-          "Invalid Relationship",
-          "General Relationship",
-          "Heirarchical Relationship",
-          "Recursive Relationship"
+          "Invalid\nRelationship",
+          "General\nRelationship",
+          "Heirarchical\nRelationship",
+          "Recursive\nRelationship"
         ],
         "correct": 2,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Heirarchical Relationship'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Heirarchical\nRelationship'."
       },
       {
         "id": "dd_q16",
         "module": "dd_m2",
-        "question": "A relationship between an entity and itself is called a/an:",
+        "question": "A relationship between an entity and",
         "code": null,
         "options": [
-          "General Relationship",
-          "Recursive Relationship",
-          "Heirarchical Relationship",
-          "Invalid Relationship"
+          "General\nRelationship",
+          "Recursive\nRelationship",
+          "Heirarchical\nRelationship",
+          "Invalid\nRelationship"
         ],
         "correct": 1,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Recursive Relationship'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Recursive\nRelationship'."
       },
       {
         "id": "dd_q17",
-        "module": "dd_m3",
-        "question": "A single relationship can be both Recursive and Hierarchical at the same time. True or False?",
+        "module": "dd_m2",
+        "question": "A single relationship can be both",
         "code": null,
         "options": [
           "True",
@@ -3306,7 +3298,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "dd_q18",
         "module": "dd_m3",
-        "question": "A Hierarchical relationship is a series of relationships that reflect entities organized into successive levels. True or False?",
+        "question": "A Hierarchical relationship is a series",
         "code": null,
         "options": [
           "True",
@@ -3317,8 +3309,8 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "dd_q19",
-        "module": "dd_m3",
-        "question": "A particular problem may be solved using either a Recursive Relationship or a Hierarchical Relationship, though not at the same time. True or False?",
+        "module": "dd_m1",
+        "question": "A particular problem may be solved using",
         "code": null,
         "options": [
           "True",
@@ -3329,22 +3321,22 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "dd_q20",
-        "module": "dd_m3",
-        "question": "Which of the following would best be represented by an arc?",
+        "module": "dd_m1",
+        "question": "Which of the following would best be",
         "code": null,
         "options": [
-          "STUDENT (Grade A student, Average Student)",
-          "PARENT (Girl, Bob)",
-          "TEACHER (Female, Bob)",
-          "DELIVERY ADDRESS (Home, Office)"
+          "STUDENT\n(Grade A student, Average Student)",
+          "PARENT\n(Girl, Bob)",
+          "TEACHER\n(Female, Bob)",
+          "DELIVERY\nADDRESS (Home, Office)"
         ],
         "correct": 3,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'DELIVERY ADDRESS (Home, Office)'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'DELIVERY\nADDRESS (Home, Office)'."
       },
       {
         "id": "dd_q21",
         "module": "dd_m3",
-        "question": "Arcs are used to visually represent _________ between two or more relationships in an ERD.",
+        "question": "Arcs are used to visually represent",
         "code": null,
         "options": [
           "Sameness",
@@ -3358,7 +3350,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "dd_q22",
         "module": "dd_m3",
-        "question": "An arc can often be modeled as Supertype and Subtypes. True or False?",
+        "question": "An arc can often be modeled as Supertype",
         "code": null,
         "options": [
           "True",
@@ -3369,36 +3361,22 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "dd_q23",
-        "module": "dd_m2",
-        "question": "Which of the following would be a logical constraint when modeling time for a country entity?",
+        "module": "dd_m1",
+        "question": "Which of the following would be a",
         "code": null,
         "options": [
-          "Daily traffic patterns must be monitored to determine which countries are overcrowded.",
-          "People have births and deaths in their countries that must be tracked by the system.",
-          "If you are doing a system for France or Germany, you would need security clearance.",
-          "Countries may change their names and/or borders over a period of time."
+          "Daily\ntraffic patterns must be monitored to determine which countries are\novercrowded.",
+          "People\nhave births and deaths in their countries that must be tracked by the system.",
+          "If\nyou are doing a system for France or Germany, you would need security\nclearance.",
+          "Countries\nmay change their names and/or borders over a period of time."
         ],
         "correct": 3,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Countries may change their names and/or borders over a period of time.'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Countries\nmay change their names and/or borders over a period of time.'."
       },
       {
         "id": "dd_q24",
-        "module": "dd_m2",
-        "question": "Which of the following would be a logical constraint when modeling time for a City entity?",
-        "code": null,
-        "options": [
-          "Daily traffic patterns must be monitored to determine how many law enforcement officers are needed.",
-          "If you are doing a system for any French City, you would need security clearance.",
-          "Cites may change their names and/or country association if the borders of a country change.",
-          "People are born in the city and people die in the city."
-        ],
-        "correct": 2,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Cites may change their names and/or country association if the borders of a country change.'."
-      },
-      {
-        "id": "dd_q25",
         "module": "dd_m1",
-        "question": "All systems must include functionality to provide logging or journaling in conceptual data models. True or False?",
+        "question": "All systems must include functionality",
         "code": null,
         "options": [
           "True",
@@ -3408,9 +3386,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
-        "id": "dd_q26",
-        "module": "dd_m2",
-        "question": "When a system requires that old values for attributes are kept on record, this is know as Journaling or Logging. True or False?",
+        "id": "dd_q25",
+        "module": "dd_m1",
+        "question": "When a system requires that old values",
         "code": null,
         "options": [
           "True",
@@ -3420,9 +3398,21 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
-        "id": "dd_q27",
+        "id": "dd_q26",
         "module": "dd_m1",
-        "question": "There is no point in trying to group your entities together on your diagram according to volume, and making a diagram look nice is a waste of time. True or False?",
+        "question": "There is no point in trying to group",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
+      },
+      {
+        "id": "dd_q27",
+        "module": "dd_m2",
+        "question": "Formal rules exist for drawing ERD's.",
         "code": null,
         "options": [
           "True",
@@ -3433,34 +3423,22 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "dd_q28",
-        "module": "dd_m2",
-        "question": "Formal rules exist for drawing ERD's. You must always follow them, even if it results in an ERD that is difficult to read. True or False?",
+        "module": "dd_m1",
+        "question": "Which of the following scenarios should",
         "code": null,
         "options": [
-          "True",
-          "False"
+          "LIBRARY\nand NUMBER OF BOOKS",
+          "STUDENT\nand GRADE",
+          "STUDENT\nand AGE",
+          "LIBRARY\nand BOOK"
         ],
         "correct": 1,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'STUDENT\nand GRADE'."
       },
       {
         "id": "dd_q29",
         "module": "dd_m1",
-        "question": "Which of the following scenarios should be modeled so that historical data is kept? (Choose two)",
-        "code": null,
-        "options": [
-          "LIBRARY and NUMBER OF BOOKS",
-          "STUDENT and GRADE",
-          "STUDENT and AGE",
-          "LIBRARY and BOOK"
-        ],
-        "correct": 1,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'STUDENT and GRADE'."
-      },
-      {
-        "id": "dd_q30",
-        "module": "dd_m1",
-        "question": "Historical data must never be kept. True or False?",
+        "question": "Historical data must never be kept. True",
         "code": null,
         "options": [
           "True",
@@ -3470,36 +3448,49 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
-        "id": "dd_q31",
+        "id": "dd_q30",
         "module": "dd_m5",
-        "question": "The explanation below is an example of which constraint type?",
+        "question": "The explanation below is an example of\nA primary key must be unique, and no part of the primary\nkey can be null. Mark for\nReview",
         "code": null,
         "options": [
-          "Referential integrity Column integrity",
-          "Entity integrity",
-          "User-defined integrity"
+          "Referential\nintegrity Column\nintegrity",
+          "Entity\nintegrity",
+          "User-defined\nintegrity"
         ],
         "correct": 1,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Entity integrity'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Entity\nintegrity'."
       },
       {
-        "id": "dd_q32",
+        "id": "dd_q31",
         "module": "dd_m5",
         "question": "Foreign keys cannot be null when",
         "code": null,
         "options": [
-          "It refers to the same table",
-          "It is part of a primary key",
-          "It refers to another table",
-          "It contains three or more columns"
+          "It\nrefers to the same table",
+          "It\nis part of a primary key",
+          "It\nrefers to another table",
+          "It\ncontains three or more columns"
         ],
         "correct": 1,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: It is part of a primary key."
+        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: It\nis part of a primary key."
+      },
+      {
+        "id": "dd_q32",
+        "module": "dd_m1",
+        "question": "The explanation below is an example of",
+        "code": null,
+        "options": [
+          "User-defined\nintegrity",
+          "Entity\nintegrity Column\nintegrity",
+          "Referential\nintegrity"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'User-defined\nintegrity'."
       },
       {
         "id": "dd_q33",
         "module": "dd_m5",
-        "question": "A foreign key cannot refer to a primary key in the same table. True or False?",
+        "question": "A foreign key cannot refer to a primary",
         "code": null,
         "options": [
           "True",
@@ -3514,190 +3505,122 @@ const CERTIFICATES_DATA = {
         "question": "Column integrity refers to",
         "code": null,
         "options": [
-          "Columns always containing text data less than 255 characters",
-          "Columns always containing values consistent with the defined data format",
-          "Columns always having values",
-          "Columns always containing positive numbers"
+          "Columns\nalways containing text data less than 255 characters",
+          "Columns\nalways containing values consistent with the defined data format",
+          "Columns\nalways having values",
+          "Columns\nalways containing positive numbers"
         ],
         "correct": 1,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Columns always containing values consistent with the defined data format'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Columns\nalways containing values consistent with the defined data format'."
       },
       {
         "id": "dd_q35",
         "module": "dd_m3",
-        "question": "When an Arc is transformed to the physical model every relationship in the Arc becomes a mandatory Foreign Key. True or False?",
+        "question": "When an Arc is transformed to the",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: False."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
         "id": "dd_q36",
         "module": "dd_m2",
-        "question": "One-to-Many Optional to Mandatory becomes a _______________ on the Master table.",
+        "question": "One-to-Many Optional to Mandatory",
         "code": null,
         "options": [
-          "Unique Key",
-          "Optional Foreign Key",
-          "Mandatory Foreign Key",
-          "Primary Key"
+          "Unique\nKey",
+          "Optional\nForeign Key",
+          "Mandatory\nForeign Key",
+          "Primary\nKey"
         ],
         "correct": 1,
-        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: Optional Foreign Key."
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: Optional\nForeign Key."
       },
       {
         "id": "dd_q37",
         "module": "dd_m3",
-        "question": "A barrred Relationship will result in a Foreign Key column that also is part of:",
+        "question": "A barrred Relationship will result in a",
         "code": null,
         "options": [
-          "The Column Name",
-          "The Check Constraint",
-          "The Table Name",
-          "The Primary Key"
+          "The\nColumn Name",
+          "The\nCheck Constraint",
+          "The\nTable Name",
+          "The\nPrimary Key"
         ],
         "correct": 3,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: The Primary Key."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'The\nPrimary Key'."
       },
       {
         "id": "dd_q38",
         "module": "dd_m2",
-        "question": "Relationships on an ERD can only be transformed into UIDs in the physical model? True or False?",
+        "question": "Relationships on an ERD can only be",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: False."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
         "id": "dd_q39",
         "module": "dd_m2",
-        "question": "One-to-One relationships are transformed into Check Constraints in the tables created at either end of that relationship. True or False?",
+        "question": "One-to-One relationships are transformed",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: False."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'False'."
       },
       {
         "id": "dd_q40",
         "module": "dd_m3",
-        "question": "The \"Arc Implementation\" is a synonym for what type of implementation?",
+        "question": "The \"Arc Implementation\" is a",
         "code": null,
         "options": [
-          "Cascade Implementation",
-          "Supertype Implementation",
-          "Subtype Implementation",
-          "Supertype and Subtype Implementation"
+          "Cascade\nImplementation",
+          "Supertype\nImplementation",
+          "Subtype\nImplementation",
+          "Supertype\nand Subtype Implementation"
         ],
         "correct": 3,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Supertype and Subtype Implementation'."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Supertype\nand Subtype Implementation'."
       },
       {
         "id": "dd_q41",
         "module": "dd_m3",
-        "question": "When mapping supertypes, relationships at the supertype level transform as usual. Relationships at the subtype level are implemented as foreign keys, but the foreign key columns all become optional. True or False?",
+        "question": "When mapping supertypes, relationships",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 0,
-        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: True."
+        "explanation": "Subtypy v Oracle ERD dědí všechny atributy a vztahy svého supertypu a musí splňovat pravidlo vzájemného vyloučení a úplnosti. Správná odpověď: True."
       },
       {
         "id": "dd_q42",
-        "module": "dd_m5",
-        "question": "The transformation from an ER diagram to a physical design involves changing terminology. Entities in the ER diagram become __________ :",
+        "module": "dd_m1",
+        "question": "The transformation from an ER diagram to",
         "code": null,
         "options": [
           "Columns",
           "Tables",
-          "Foreign Keys",
-          "Unique Keys"
+          "Foreign\nKeys",
+          "Unique\nKeys"
         ],
         "correct": 1,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: Tables."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Tables'."
       },
       {
         "id": "dd_q43",
-        "module": "dd_m5",
-        "question": "The conceptual model is transformed into a physical model. The physical implementation will be a relational database. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: True."
-      },
-      {
-        "id": "dd_q44",
-        "module": "dd_m5",
-        "question": "In an Oracle database, why would 1_TABLE not work as a table name?",
-        "code": null,
-        "options": [
-          "There is no problem here. You can create a table called 1_TABLE.",
-          "Object names must not start with a number. They must begin with a letter.",
-          "TABLE is a reserved word.",
-          "The database does not understand all capital letters."
-        ],
-        "correct": 1,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: Object names must not start with a number. They must begin with a letter.."
-      },
-      {
-        "id": "dd_q45",
-        "module": "dd_m5",
-        "question": "In an Oracle database, why would the following table name not be allowed 'EMPLOYEE JOBS'?",
-        "code": null,
-        "options": [
-          "JOBS is a reserved word",
-          "The database does not understand all capital letters",
-          "You cannot have spaces between words in a table name",
-          "EMPLOYEE is a reserved word"
-        ],
-        "correct": 2,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: You cannot have spaces between words in a table name."
-      },
-      {
-        "id": "dd_q46",
         "module": "dd_m1",
-        "question": "In which phases of the System Development Life Cycle will we need to use SQL as a language? (Choose Two)",
-        "code": null,
-        "options": [
-          "Build and Document",
-          "Analysis",
-          "Transition",
-          "Strategy"
-        ],
-        "correct": 0,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Build and Document'."
-      },
-      {
-        "id": "dd_q47",
-        "module": "dd_m1",
-        "question": "During which phases of the System Development Life Cycle would you roll out the system to the users?",
-        "code": null,
-        "options": [
-          "Build and Transition",
-          "Design and Production",
-          "Strategy and Analysis",
-          "Transition and Production"
-        ],
-        "correct": 3,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Transition and Production'."
-      },
-      {
-        "id": "dd_q48",
-        "module": "dd_m4",
-        "question": "A transitive dependency exists when any attribute in an entity is dependent on any other non-UID attribute in that entity.",
+        "question": "The conceptual model is transformed into",
         "code": null,
         "options": [
           "True",
@@ -3707,9 +3630,105 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
+        "id": "dd_q44",
+        "module": "dd_m5",
+        "question": "In an Oracle database, why would 1_TABLE",
+        "code": null,
+        "options": [
+          "There\nis no problem here. You can create a table called 1_TABLE.",
+          "Object\nnames must not start with a number. They must begin with a letter.",
+          "TABLE\nis a reserved word.",
+          "The\ndatabase does not understand all capital letters."
+        ],
+        "correct": 1,
+        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: Object\nnames must not start with a number. They must begin with a letter.."
+      },
+      {
+        "id": "dd_q45",
+        "module": "dd_m1",
+        "question": "In an Oracle database, why would the",
+        "code": null,
+        "options": [
+          "JOBS\nis a reserved word",
+          "The\ndatabase does not understand all capital letters",
+          "You\ncannot have spaces between words in a table name",
+          "EMPLOYEE\nis a reserved word"
+        ],
+        "correct": 2,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'You\ncannot have spaces between words in a table name'."
+      },
+      {
+        "id": "dd_q46",
+        "module": "dd_m1",
+        "question": "In which phases of the System",
+        "code": null,
+        "options": [
+          "Build\nand Document",
+          "Analysis",
+          "Transition",
+          "Strategy"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Build\nand Document'."
+      },
+      {
+        "id": "dd_q47",
+        "module": "dd_m1",
+        "question": "During which phases of the System",
+        "code": null,
+        "options": [
+          "Build\nand Transition",
+          "Design\nand Production",
+          "Strategy\nand Analysis",
+          "Transition\nand Production"
+        ],
+        "correct": 3,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Transition\nand Production'."
+      },
+      {
+        "id": "dd_q48",
+        "module": "dd_m2",
+        "question": "Examine the following Entity and\nENTITY:\nCLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nSTREET\nCITY\nZIP CODE",
+        "code": null,
+        "options": [
+          "1st Normal Form.",
+          "2nd Normal Form.",
+          "3rd Normal Form.",
+          "None of the above, the entity is\nfully normalised."
+        ],
+        "correct": 3,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: None of the above, the entity is\nfully normalised.."
+      },
+      {
         "id": "dd_q49",
         "module": "dd_m4",
-        "question": "The Rule of 3rd Normal Form states that No Non-UID attribute can be dependent on another non-UID attribute. True or False?",
+        "question": "A transitive dependency exists",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
+      },
+      {
+        "id": "dd_q50",
+        "module": "dd_m2",
+        "question": "When any attribute in an entity is",
+        "code": null,
+        "options": [
+          "Functional dependency",
+          "Dependency",
+          "Transitive dependency",
+          "Non-dependency"
+        ],
+        "correct": 2,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Transitive dependency'."
+      },
+      {
+        "id": "dd_q51",
+        "module": "dd_m4",
+        "question": "The Rule of 3rd Normal Form states",
         "code": null,
         "options": [
           "True",
@@ -3719,21 +3738,21 @@ const CERTIFICATES_DATA = {
         "explanation": "Třetí normální forma (3NF) vyžaduje 2NF a odstranění tranzitivních závislostí – neklíčové atributy nesmí záviset na jiných neklíčových atributech. Správná odpověď: True."
       },
       {
-        "id": "dd_q50",
-        "module": "dd_m4",
-        "question": "Normalizing an Entity to 1st Normal Form is done by removing any attributes that contain muliple values. True or False?",
+        "id": "dd_q52",
+        "module": "dd_m2",
+        "question": "Normalizing an Entity to 1st",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 0,
-        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: True."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
-        "id": "dd_q51",
+        "id": "dd_q53",
         "module": "dd_m2",
-        "question": "When all attributes are single-valued, the database model is said to conform to:",
+        "question": "When all attributes are",
         "code": null,
         "options": [
           "2nd Normal Form",
@@ -3745,9 +3764,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: '1st Normal Form'."
       },
       {
-        "id": "dd_q52",
+        "id": "dd_q54",
         "module": "dd_m1",
-        "question": "When data is only stored in one place in a database, the database conforms to the rules of ___________.",
+        "question": "When data is only stored in one",
         "code": null,
         "options": [
           "Reduction",
@@ -3759,23 +3778,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Normalization'."
       },
       {
-        "id": "dd_q53",
-        "module": "dd_m4",
-        "question": "To resolve a 2nd Normal Form violation, we:",
-        "code": null,
-        "options": [
-          "Move the attribute that violates 2nd Normal Form to a new entity with a relationship to the original entity.",
-          "Move the attribute that violates 2nd Normal Form to a new ERD.",
-          "Do nothing, an entity does not need to be in 2nd Normal Form.",
-          "Delete the attribute that was causing the violation."
-        ],
-        "correct": 0,
-        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: Move the attribute that violates 2nd Normal Form to a new entity with a relationship to the original entity.."
-      },
-      {
-        "id": "dd_q54",
+        "id": "dd_q55",
         "module": "dd_m2",
-        "question": "Any Non-UID attribute must be dependent upon the entire UID. True or False?",
+        "question": "There is no limit to how many columns can make up an entity's UID. True or",
         "code": null,
         "options": [
           "True",
@@ -3785,9 +3790,47 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
-        "id": "dd_q55",
-        "module": "dd_m2",
-        "question": "Which of the following would be suitable UIDs for the entity EMPLOYEE: (Choose Two)",
+        "id": "dd_q56",
+        "module": "dd_m1",
+        "question": "If",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
+      },
+      {
+        "id": "dd_q57",
+        "module": "dd_m1",
+        "question": "To",
+        "code": null,
+        "options": [
+          "Move the attribute that violates 2nd\nNormal Form to a new entity with a relationship to the original entity.",
+          "Move the attribute that violates 2nd\nNormal Form to a new ERD.",
+          "Do nothing, an entity does not need\nto be in 2nd Normal Form.",
+          "Delete the attribute that was\ncausing the violation."
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Move the attribute that violates 2nd\nNormal Form to a new entity with a relationship to the original entity.'."
+      },
+      {
+        "id": "dd_q58",
+        "module": "dd_m1",
+        "question": "Any",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
+      },
+      {
+        "id": "dd_q59",
+        "module": "dd_m1",
+        "question": "Which of the following would be",
         "code": null,
         "options": [
           "Social Security Number",
@@ -3796,141 +3839,83 @@ const CERTIFICATES_DATA = {
           "Address"
         ],
         "correct": 0,
-        "explanation": "Při transformaci na fyzický model se entity převádějí na tabulky, atributy na sloupce a vztahy 1:M se implementují pomocí cizího klíče (FK) na straně M. Správná odpověď: Social Security Number."
-      },
-      {
-        "id": "dd_q56",
-        "module": "dd_m2",
-        "question": "The candidate UID that is chosen to identify an entity is called the Primary UID; other candidate UIDs are called Secondary UIDs.",
-        "code": null,
-        "options": [
-          "Yes, this is the way UID's are named.",
-          "No, each Entity can only have one UID, the secondary one.",
-          "No, it is not possible to have more than one UID for an Entity.",
-          "No, after UIDs are first sorted, the first one is called the Primary UID, the second is the Secondary UID, etc."
-        ],
-        "correct": 0,
-        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: Yes, this is the way UID's are named.."
-      },
-      {
-        "id": "dd_q57",
-        "module": "dd_m2",
-        "question": "Where an entity has more than one attribute suitable to be the Primary UID, these are known as _____________ UIDs.",
-        "code": null,
-        "options": [
-          "Composite",
-          "Simple",
-          "Secondary",
-          "Candidate"
-        ],
-        "correct": 3,
-        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: Candidate."
-      },
-      {
-        "id": "dd_q58",
-        "module": "dd_m4",
-        "question": "To convert an entity with a multi valued attribute to 1st Normal Form, we create an additional entity and relate it to the original entity with a 1:1 relationship. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 1,
-        "explanation": "První normální forma (1NF) vyžaduje atomicitu hodnot (žádné vícehodnotové atributy) a odstranění opakujících se skupin. Správná odpověď: False."
-      },
-      {
-        "id": "dd_q59",
-        "module": "dd_m2",
-        "question": "A candidate UID that is not chosen to be the Primary UID is called:",
-        "code": null,
-        "options": [
-          "Composite",
-          "Secondary",
-          "Simple",
-          "Artificial"
-        ],
-        "correct": 1,
-        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: Secondary."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Social Security Number'."
       },
       {
         "id": "dd_q60",
-        "module": "dd_m4",
-        "question": "Examine the following entity and decide which attribute breaks the 2nd Normal Form rule:\nENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION",
-        "code": "DATE",
+        "module": "dd_m1",
+        "question": "There is no limit to how many",
+        "code": null,
         "options": [
-          "STORE LOCATION",
-          "CUSTOMER ID",
-          "DATE",
-          "STORE ID"
+          "True",
+          "False"
         ],
         "correct": 0,
-        "explanation": "Druhá normální forma (2NF) vyžaduje, aby tabulka byla v 1NF a všechny neklíčové atributy plně funkčně závisely na celém primárním klíči (žádné částečné závislosti). Správná odpověď: STORE LOCATION."
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       },
       {
         "id": "dd_q61",
-        "module": "dd_m3",
-        "question": "Arcs are Mandatory in Data modeling. All ERD's must have at least one Arc. True or False?",
+        "module": "dd_m2",
+        "question": "A unique identifier can only be",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: False."
+        "explanation": "V datovém modelování Oracle Academy má každá entita právě jedno primární UID (i když může být složené z více atributů). Pokud vhodný kandidát neexistuje, vytvoří se umělý identifikátor. Správná odpověď: False."
       },
       {
         "id": "dd_q62",
         "module": "dd_m2",
-        "question": "To visually represent exclusivity between two or more relationships in an ERD you would most likely use an ________.",
-        "code": null,
-        "options": [
-          "Arc",
-          "Relationship",
-          "Attribute",
-          "UID"
-        ],
-        "correct": 0,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Arc'."
-      },
-      {
-        "id": "dd_q63",
-        "module": "dd_m3",
-        "question": "All relationships participating in an arc must be mandatory. True or False?",
+        "question": "If an entity has no attribute",
         "code": null,
         "options": [
           "True",
           "False"
         ],
-        "correct": 1,
-        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: False."
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
+      },
+      {
+        "id": "dd_q63",
+        "module": "dd_m2",
+        "question": "Examine the following Entity and\nENTITY:\nCLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nORDER ID\nSTREET\nZIP CODE",
+        "code": null,
+        "options": [
+          "1st Normal Form.",
+          "2nd Normal Form.",
+          "3rd Normal Form.",
+          "None of the above, the entity is\nfully normalised."
+        ],
+        "correct": 0,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: 1st Normal Form.."
       },
       {
         "id": "dd_q64",
         "module": "dd_m2",
-        "question": "Every business has restrictions on which attribute values and which relationships are allowed. These are known as:",
-        "code": null,
+        "question": "Examine the following Entity and\nENTITY:\nCLIENT ORDER\nATTRIBUTES:\n# CLIENT ID\n# ORDER ID\nFIRST NAME\nLAST NAME\nCITY\nZIP CODE",
+        "code": "ORDER DATE",
         "options": [
-          "Constraints.",
-          "Relationships",
-          "Entities.",
-          "Attributes"
+          "1st Normal Form.",
+          "2nd Normal Form.",
+          "3rd Normal Form.",
+          "None of the above, the entity is\nfully normalised."
         ],
-        "correct": 0,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Constraints.'."
+        "correct": 1,
+        "explanation": "V notaci Oracle Academy ERD označuje hvězdička (*) povinný atribut, kroužek (o) volitelný atribut a křížek (#) atribut tvořící UID. Správná odpověď: 2nd Normal Form.."
       },
       {
         "id": "dd_q65",
-        "module": "dd_m3",
-        "question": "A Recursive Relationship is represented on an ERD by a/an:",
+        "module": "dd_m1",
+        "question": "Any\nMark\nfor Review",
         "code": null,
         "options": [
-          "Single Toe",
-          "Pig's Ear",
-          "Crow's Foot",
-          "Dog's Tail"
+          "True",
+          "False"
         ],
-        "correct": 1,
-        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'Pig's Ear'."
+        "correct": 0,
+        "explanation": "Podle standardů kurzu Oracle Academy Database Design je správným řešením: 'True'."
       }
     ]
   },
@@ -3975,48 +3960,48 @@ const CERTIFICATES_DATA = {
     "questions": [
       {
         "id": "sql_q01",
-        "module": "sql_m4",
-        "question": "In a conditional multi-table insert, you can specify either __________ or __________.",
+        "module": "sql_m2",
+        "question": "In a",
         "code": null,
         "options": [
-          "All; First",
-          "First; Second",
-          "All; Second",
-          "Null; Default"
+          "All;\nFirst",
+          "First;\nSecond",
+          "All;\nSecond",
+          "Null;\nDefault"
         ],
         "correct": 0,
-        "explanation": "Při podmíněném multi-table INSERT slouží INSERT ALL ke vložení do všech splněných větví, zatímco INSERT FIRST vloží pouze do první vyhovující větve. Správná odpověď: All; First."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'All;\nFirst'."
       },
       {
         "id": "sql_q02",
-        "module": "sql_m4",
-        "question": "A multi-table insert statement can insert into more than one table. (True or False?)",
+        "module": "sql_m1",
+        "question": "A",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 0,
-        "explanation": "Při podmíněném multi-table INSERT slouží INSERT ALL ke vložení do všech splněných větví, zatímco INSERT FIRST vloží pouze do první vyhovující větve. Správná odpověď: True."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
       },
       {
         "id": "sql_q03",
         "module": "sql_m1",
-        "question": "You need to remove a row from the EMPLOYEES table. Which statement would you use?",
+        "question": "You",
         "code": null,
         "options": [
-          "INSERT with a WHERE clause",
-          "DELETE with a WHERE clause",
-          "UPDATE with a WHERE clause",
-          "MERGE with a WHERE clause"
+          "INSERT\nwith a WHERE clause",
+          "DELETE\nwith a WHERE clause",
+          "UPDATE\nwith a WHERE clause",
+          "MERGE\nwith a WHERE clause"
         ],
         "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'DELETE with a WHERE clause'."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'DELETE\nwith a WHERE clause'."
       },
       {
         "id": "sql_q04",
         "module": "sql_m4",
-        "question": "DELETE statements can use correlated subqueries? (True or False)",
+        "question": "DELETE",
         "code": null,
         "options": [
           "True",
@@ -4027,8 +4012,8 @@ const CERTIFICATES_DATA = {
       },
       {
         "id": "sql_q05",
-        "module": "sql_m2",
-        "question": "Which two commands can be used to modify existing data in a database row?",
+        "module": "sql_m1",
+        "question": "Which",
         "code": null,
         "options": [
           "DELETE",
@@ -4042,88 +4027,61 @@ const CERTIFICATES_DATA = {
       {
         "id": "sql_q06",
         "module": "sql_m2",
-        "question": "Evaluate the structure of the EMPLOYEE table:\nThe EMPLOYEE_ID column currently contains 500 employee identification numbers. Business requirements have changed and you need to allow users to include text characters in the identification values. Which statement should you use to change this column's data type?",
+        "question": "Evaluate\nThe EMPLOYEE_ID column currently contains 500 employee\nidentification numbers. Business requirements have changed and you need to\nallow users to include text characters in the identification values. Which\nstatement should you use to change this column's data type?",
         "code": "EMPLOYEE_ID NUMBER(9)\nLAST_NAME VARCHAR2(25)\nFIRST_NAME VARCHAR2(25)\nDEPARTMENT_ID NUMBER(9)\nMANAGER_ID NUMBER(9)\nSALARY NUMBER(7,2)",
         "options": [
-          "You CANNOT modify the data type of the EMPLOYEE_ID column, as the table is not empty.",
-          "ALTER employee TABLE MODIFY COLUMN (employee_id VARCHAR2(15));",
-          "ALTER TABLE employee MODIFY (employee_id VARCHAR2(9));",
-          "ALTER TABLE employee REPLACE (employee_id VARCHAR2(9));"
+          "You\nCANNOT modify the data type of the EMPLOYEE_ID column, as the table is not\nempty.",
+          "ALTER\nemployee TABLE MODIFY COLUMN (employee_id VARCHAR2(15));",
+          "ALTER\nTABLE employee MODIFY (employee_id VARCHAR2(9));",
+          "ALTER\nTABLE employee REPLACE (employee_id VARCHAR2(9));"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'You CANNOT modify the data type of the EMPLOYEE_ID column, as the table is not empty.'."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'You\nCANNOT modify the data type of the EMPLOYEE_ID column, as the table is not\nempty.'."
       },
       {
         "id": "sql_q07",
-        "module": "sql_m2",
-        "question": "Which command could you use to quickly remove all data from the rows in a table without deleting the table itself?",
+        "module": "sql_m5",
+        "question": "You\nALTER TABLE products SET UNUSED COLUMN color;\nWhat will be the result of issuing this command?",
         "code": null,
         "options": [
-          "DROP TABLE",
-          "TRUNCATE TABLE",
-          "ALTER TABLE MODIFY"
+          "The\ncolumn named COLOR in the table named PRODUCTS will be created.",
+          "The\ncolumn named COLOR in the table named PRODUCTS will not be returned in\nsubsequent reads of the table by Oracle, as it has been deleted logically.",
+          "The\ncolumn named COLOR in the table named PRODUCTS will be assigned default values.",
+          "The\ncolumn named COLOR in the table named PRODUCTS will be deleted."
         ],
         "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'TRUNCATE TABLE'."
+        "explanation": "ALTER TABLE ... SET UNUSED COLUMN slouží k okamžitému logickému zneplatnění sloupce, čímž se vyhne nákladnému fyzickému přepisu tabulky v produkčním provozu. Správná odpověď: The\ncolumn named COLOR in the table named PRODUCTS will not be returned in\nsubsequent reads of the table by Oracle, as it has been deleted logically.."
       },
       {
         "id": "sql_q08",
-        "module": "sql_m2",
-        "question": "You want to issue the following command on a database that includes your company's inventory information:\nWhat will be the result of issuing this command?",
-        "code": "ALTER TABLE products SET UNUSED COLUMN color;",
-        "options": [
-          "The column named COLOR in the table named PRODUCTS will be created.",
-          "The column named COLOR in the table named PRODUCTS will not be returned in subsequent reads of the table by Oracle, as it has been deleted logically.",
-          "The column named COLOR in the table named PRODUCTS will be assigned default values.",
-          "The column named COLOR in the table named PRODUCTS will be deleted."
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The column named COLOR in the table named PRODUCTS will not be returned in subsequent reads of the table by Oracle, as it has been deleted logically.'."
-      },
-      {
-        "id": "sql_q09",
-        "module": "sql_m4",
-        "question": "The FLASHBACK QUERY statement can restore data back to a point in time before the last COMMIT. True or False?",
+        "module": "sql_m1",
+        "question": "The",
         "code": null,
         "options": [
           "True",
           "False"
         ],
         "correct": 1,
-        "explanation": "Oracle Flashback Query dovoluje nahlížet na data v minulosti v rámci UNDO retenčního intervalu. Správná odpověď: False."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q09",
+        "module": "sql_m1",
+        "question": "Evaluate",
+        "code": null,
+        "options": [
+          "You\ncan produce the same results by issuing the 'DROP TABLE employee' statement.",
+          "You\ncan issue this statement to retain the structure of the employees table.",
+          "You\ncan produce the same results by issuing the 'DELETE employees' statement.",
+          "You\ncan reverse this statement by issuing the ROLLBACK statement."
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'You\ncan issue this statement to retain the structure of the employees table.'."
       },
       {
         "id": "sql_q10",
-        "module": "sql_m1",
-        "question": "Evaluate this statement:",
-        "code": null,
-        "options": [
-          "You can produce the same results by issuing the 'DROP TABLE employee' statement.",
-          "You can issue this statement to retain the structure of the employees table.",
-          "You can produce the same results by issuing the 'DELETE employees' statement.",
-          "You can reverse this statement by issuing the ROLLBACK statement."
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'You can issue this statement to retain the structure of the employees table.'."
-      },
-      {
-        "id": "sql_q11",
-        "module": "sql_m1",
-        "question": "The TIMESTAMP data type allows what?",
-        "code": null,
-        "options": [
-          "Time to be stored as an interval of years and months.",
-          "Time to be stored as a date with fractional seconds.",
-          "Time to be stored as an interval of days to hours, minutes and seconds.",
-          "None of the above."
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Time to be stored as a date with fractional seconds.'."
-      },
-      {
-        "id": "sql_q12",
         "module": "sql_m2",
-        "question": "The ELEMENTS column is defined as:\nNUMBER(6,4)\nHow many digits to the right of the decimal point are allowed for the ELEMENTS column?",
+        "question": "The\nNUMBER(6,4)\nHow many digits to the right of the decimal point are\nallowed for the ELEMENTS column?",
         "code": null,
         "options": [
           "Two",
@@ -4135,224 +4093,88 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Four'."
       },
       {
-        "id": "sql_q13",
-        "module": "sql_m2",
-        "question": "I have a table named School_Friends in my schema. You want to build a table in your schema named School_Friends. This is ______________, because ____________________________________.",
+        "id": "sql_q11",
+        "module": "sql_m1",
+        "question": "I have",
         "code": null,
         "options": [
-          "impossible; no matter what, there can never be two tables with the same name, even if they are in separate schemas.",
-          "impossible; School_Friends is a reserved term in SQL.",
-          "possible; my schema is separate from yours, and it is okay for us to have like-named tables in our separate schemas.",
-          "possible; our data will merge into one table, and we can more easily access our mutual friends information."
+          "impossible;\nno matter what, there can never be two tables with the same name, even if they\nare in separate schemas.",
+          "impossible;\nSchool_Friends is a reserved term in SQL.",
+          "possible;\nmy schema is separate from yours, and it is okay for us to have like-named\ntables in our separate schemas.",
+          "possible;\nour data will merge into one table, and we can more easily access our mutual\nfriends information."
         ],
         "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'possible; my schema is separate from yours, and it is okay for us to have like-named tables in our separate schemas.'."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'possible;\nmy schema is separate from yours, and it is okay for us to have like-named\ntables in our separate schemas.'."
+      },
+      {
+        "id": "sql_q12",
+        "module": "sql_m1",
+        "question": "A table",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q13",
+        "module": "sql_m5",
+        "question": "You\nALTER TABLE employees\nENABLE employee_id_pk;\nWhich statement is true?",
+        "code": null,
+        "options": [
+          "The\nstatement will NOT execute because it contains a syntax error.",
+          "The\nstatement will execute, but will not verify that the existing values are\nunique.",
+          "The\nstatement will achieve the desired result.",
+          "The\nstatement will execute, but will ensure that the new ID values are unique."
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The\nstatement will NOT execute because it contains a syntax error.'."
       },
       {
         "id": "sql_q14",
         "module": "sql_m1",
-        "question": "Which column name is valid?",
+        "question": "What is",
         "code": null,
         "options": [
-          "1NUMBER",
-          "NUMBER",
-          "NUMBER_1$",
-          "1_NUMBER#"
+          "To\nprovide restricted data access",
+          "To\nprovide data dependence",
+          "To\nbe able to store the same data in more than one place"
         ],
-        "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'NUMBER_1$'."
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'To\nprovide restricted data access'."
       },
       {
         "id": "sql_q15",
-        "module": "sql_m5",
-        "question": "Which CREATE TABLE statement will fail?",
+        "module": "sql_m1",
+        "question": "A Top-N",
         "code": null,
         "options": [
-          "CREATE TABLE date (date_id NUMBER(9));",
-          "CREATE TABLE time (time_id NUMBER(9));",
-          "CREATE TABLE time_date (time NUMBER(9));",
-          "CREATE TABLE date_1 (date_1 DATE);"
+          "True",
+          "False"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'CREATE TABLE date (date_id NUMBER(9));'."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
       },
       {
         "id": "sql_q16",
-        "module": "sql_m2",
-        "question": "A column defined as NOT NULL can have a DEFAULT value of NULL. True or False?",
+        "module": "sql_m1",
+        "question": "If a",
         "code": null,
         "options": [
-          "True",
-          "False"
+          "WITH\nCHECK OPTION",
+          "FORCE",
+          "WITH\nREAD ONLY",
+          "WITH\nCONSTRAINT CHECK"
         ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'WITH\nCHECK OPTION'."
       },
       {
         "id": "sql_q17",
-        "module": "sql_m5",
-        "question": "A table must have at least one not null constraint and one unique constraint. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
-      },
-      {
-        "id": "sql_q18",
-        "module": "sql_m5",
-        "question": "A table can have more than one UNIQUE key constraint. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q19",
-        "module": "sql_m5",
-        "question": "You disabled the EMPLOYEE_ID_PK PRIMARY KEY constraint on the ID column in the EMPLOYEES table and imported 100 records. You need to enable the constraint and verify that the new and existing ID column values do not violate the PRIMARY KEY constraint. Evaluate this statement:\nENABLE employee_id_pk;\nWhich statement is true?",
-        "code": "ALTER TABLE employees",
-        "options": [
-          "The statement will NOT execute because it contains a syntax error.",
-          "The statement will execute, but will not verify that the existing values are unique.",
-          "The statement will achieve the desired result.",
-          "The statement will execute, but will ensure that the new ID values are unique."
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The statement will NOT execute because it contains a syntax error.'."
-      },
-      {
-        "id": "sql_q20",
         "module": "sql_m1",
-        "question": "A Primary Key that is made up of more than one column is called a:",
-        "code": null,
-        "options": [
-          "Multiple Primary Key",
-          "Composite Primary Key",
-          "Double Key",
-          "Primary Multi-Key",
-          "None of the Above"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Composite Primary Key'."
-      },
-      {
-        "id": "sql_q21",
-        "module": "sql_m5",
-        "question": "The table that contains the Primary Key in a Foreign Key Constraint is known as:",
-        "code": null,
-        "options": [
-          "Child Table",
-          "Mother and Father Table",
-          "Parent Table",
-          "Detail Table"
-        ],
-        "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Parent Table'."
-      },
-      {
-        "id": "sql_q22",
-        "module": "sql_m5",
-        "question": "What is one advantage of using views?",
-        "code": null,
-        "options": [
-          "To provide restricted data access",
-          "To provide data dependence",
-          "To be able to store the same data in more than one place"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'To provide restricted data access'."
-      },
-      {
-        "id": "sql_q23",
-        "module": "sql_m5",
-        "question": "Which of the following statements is a valid reason for using a view?",
-        "code": null,
-        "options": [
-          "Views allow access to the data because the view displays all of the columns from the table.",
-          "Views are used when you only want to restrict DML operations using a WITH CHECK OPTION.",
-          "Views are not valid unless you have more than one user.",
-          "Views provide data independence for infrequent users and application programs. One view can be used to retrieve data from several tables. Views can be used to provide data security."
-        ],
-        "correct": 3,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Views provide data independence for infrequent users and application programs. One view can be used to retrieve data from several tables. Views can be used to provide data security.'."
-      },
-      {
-        "id": "sql_q24",
-        "module": "sql_m5",
-        "question": "Which statement would you use to alter a view?",
-        "code": null,
-        "options": [
-          "CREATE OR REPLACE VIEW MODIFY VIEW",
-          "ALTER VIEW",
-          "ALTER TABLE"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'CREATE OR REPLACE VIEW MODIFY VIEW'."
-      },
-      {
-        "id": "sql_q25",
-        "module": "sql_m2",
-        "question": "A Top-N Analysis is capable of ranking a top or bottom set of results. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q26",
-        "module": "sql_m5",
-        "question": "What is the purpose of including the WITH CHECK OPTION clause when creating a view?",
-        "code": null,
-        "options": [
-          "To insure that no rows are updated through the view that would prevent those rows from being returned by the view in the future.",
-          "To keep views form being queried by unauthorized persons",
-          "To make sure that the parent table(s) actually exist",
-          "To make sure that data is not duplicated in the view"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'To insure that no rows are updated through the view that would prevent those rows from being returned by the view in the future.'."
-      },
-      {
-        "id": "sql_q27",
-        "module": "sql_m5",
-        "question": "Which option would you use when creating a view to ensure that no DML operations occur on the view?",
-        "code": null,
-        "options": [
-          "WITH READ ONLY",
-          "FORCE",
-          "WITH ADMIN OPTION",
-          "NOFORCE"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'WITH READ ONLY'."
-      },
-      {
-        "id": "sql_q28",
-        "module": "sql_m5",
-        "question": "If a database administrator wants to ensure that changes performed through a view do not violate existing constraints, which clause should he include when creating the view?",
-        "code": null,
-        "options": [
-          "WITH CHECK OPTION",
-          "FORCE",
-          "WITH READ ONLY",
-          "WITH CONSTRAINT CHECK"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'WITH CHECK OPTION'."
-      },
-      {
-        "id": "sql_q29",
-        "module": "sql_m5",
-        "question": "When creating a sequence, which keyword or option specifies the minimum sequence value?",
+        "question": "When",
         "code": null,
         "options": [
           "MINVALUE",
@@ -4364,52 +4186,23 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'MINVALUE'."
       },
       {
-        "id": "sql_q30",
-        "module": "sql_m5",
-        "question": "Which statement would you use to remove the EMP_ID_SEQ sequence?",
+        "id": "sql_q18",
+        "module": "sql_m1",
+        "question": "What",
         "code": null,
         "options": [
-          "DROP SEQUENCE emp_id_seq;",
-          "ALTER SEQUENCE emp_id_seq;",
-          "DELETE SEQUENCE emp_id_seq;",
-          "REMOVE SEQUENCE emp_id_seq;"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'DROP SEQUENCE emp_id_seq;'."
-      },
-      {
-        "id": "sql_q31",
-        "module": "sql_m5",
-        "question": "When used in a CREATE SEQUENCE statement, which keyword specifies that a range of sequence values will be preloaded into memory?",
-        "code": null,
-        "options": [
-          "CACHE",
-          "NOCACHE",
-          "NOCYCLE",
-          "LOAD",
-          "MEMORY"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'CACHE'."
-      },
-      {
-        "id": "sql_q32",
-        "module": "sql_m5",
-        "question": "What kind of INDEX is created by Oracle when you create a primary key?",
-        "code": null,
-        "options": [
-          "UNIQUE INDEX",
-          "NONUNIQUE INDEX",
+          "UNIQUE\nINDEX",
+          "NONUNIQUE\nINDEX",
           "INDEX",
-          "Oracle cannot create indexes automatically."
+          "Oracle\ncannot create indexes automatically."
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'UNIQUE INDEX'."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'UNIQUE\nINDEX'."
       },
       {
-        "id": "sql_q33",
+        "id": "sql_q19",
         "module": "sql_m5",
-        "question": "Indexes can be used to speed up queries. True or False?",
+        "question": "Indexes",
         "code": null,
         "options": [
           "True",
@@ -4419,379 +4212,203 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
       },
       {
-        "id": "sql_q34",
-        "module": "sql_m5",
-        "question": "Which of the following is created automatically by Oracle when a UNIQUE integrity constraint is created?",
+        "id": "sql_q20",
+        "module": "sql_m1",
+        "question": "System",
         "code": null,
         "options": [
-          "An index",
-          "A PRIMARY KEY constraint",
-          "A FOREIGN KEY constraint",
-          "A CHECK constraint"
+          "A\ncollection of objects, such as tables, views, and sequences.",
+          "Required\nto manipulate the content of objects in the database.",
+          "Required\nto gain access to the database.",
+          "Named\ngroups of related privileges given to a user."
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Required\nto gain access to the database.'."
+      },
+      {
+        "id": "sql_q21",
+        "module": "sql_m2",
+        "question": "Evaluate\nWhich statement about the result of executing this\nstatement is true?",
+        "code": "ALTER USER bob IDENTIFIED BY jim;",
+        "options": [
+          "A\nnew user JIM is created from user BOB's profile.",
+          "The\nuser BOB is assigned the same privileges as user JIM.",
+          "The\nuser BOB is renamed and is accessible as user JIM.",
+          "A\nnew password is assigned to user BOB."
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'A\nnew password is assigned to user BOB.'."
+      },
+      {
+        "id": "sql_q22",
+        "module": "sql_m1",
+        "question": "Regular",
+        "code": null,
+        "options": [
+          "True",
+          "False"
         ],
         "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'An index'."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q23",
+        "module": "sql_m1",
+        "question": "A role",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q24",
+        "module": "sql_m2",
+        "question": "Scott\nGRANT select ON employees TO PUBLIC;\nAllison Plumb has been granted CREATE SESSION by the DBA.\nShe logs into the database and issues the following statement:\nGRANT ﾠselect ON ﾠscott_king.employees\nTO jennifer_cho;\nTrue or False: Allison's statement will fail.",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q25",
+        "module": "sql_m1",
+        "question": "If Oracle",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q26",
+        "module": "sql_m2",
+        "question": "In the",
+        "code": null,
+        "options": [
+          "Multiplications\nand Divisions are at the same level and would be evaluated first based on left\nto right order",
+          "Subtractions\nand Additions are at the same level and would be evaluated first based on left\nto right order",
+          "Divisions\nand Subtractions are at the same level and would be evaluated first based on\nleft to right order",
+          "Additions\nand Multiplications are at the same level and would be evaluated first based on\nleft to right order"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Multiplications\nand Divisions are at the same level and would be evaluated first based on left\nto right order'."
+      },
+      {
+        "id": "sql_q27",
+        "module": "sql_m1",
+        "question": "There",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q28",
+        "module": "sql_m1",
+        "question": "Databases",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q29",
+        "module": "sql_m2",
+        "question": "When using",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q30",
+        "module": "sql_m2",
+        "question": "What\nSELECT employee_id\nFROM employees\nWHERE employee_id BETWEEN 100 AND 150\nOR employee_id\nIN(119, 175, 205)\nAND (employee_id\nBETWEEN 150 AND 200);",
+        "code": null,
+        "options": [
+          "200,\n201, 202, 203, 204, 205, 206",
+          "100,\n101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149",
+          "19",
+          "No\nrows will be returned"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '100,\n101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149'."
+      },
+      {
+        "id": "sql_q31",
+        "module": "sql_m3",
+        "question": "Will\nSELECT MAX(salary), MIN(Salary), AVG(SALARY)\nFROM employees;",
+        "code": null,
+        "options": [
+          "Yes,\nit will return the highest salary from each employee.",
+          "Yes,\nit will return the average salary from the employees table.",
+          "Yes,\nit will return the highest salary, the lowest salary, and the average salary\nfrom all employees.",
+          "No,\nit is illegal. You cannot use more than one multi-row function in a SELECT\nstatement."
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Yes,\nit will return the highest salary, the lowest salary, and the average salary\nfrom all employees.'."
+      },
+      {
+        "id": "sql_q32",
+        "module": "sql_m2",
+        "question": "ROUND",
+        "code": null,
+        "options": [
+          "Dates\nand numbers",
+          "Dates\nand characters",
+          "Numbers\nand characters",
+          "None\nof the above"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Dates\nand numbers'."
+      },
+      {
+        "id": "sql_q33",
+        "module": "sql_m2",
+        "question": "You\nSELECT LOWER(SUBSTR(CONCAT(last_name, first_name)), 1, 5)\n\"ID\"\nFROM employee;\nIn which order are the functions evaluated?",
+        "code": null,
+        "options": [
+          "LOWER,\nCONCAT, SUBSTR",
+          "CONCAT,\nSUBSTR, LOWER",
+          "LOWER,\nSUBSTR, CONCAT",
+          "SUBSTR,\nCONCAT, LOWER"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'CONCAT,\nSUBSTR, LOWER'."
+      },
+      {
+        "id": "sql_q34",
+        "module": "sql_m1",
+        "question": "CASE",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
       },
       {
         "id": "sql_q35",
         "module": "sql_m1",
-        "question": "System privileges are:",
-        "code": null,
-        "options": [
-          "A collection of objects, such as tables, views, and sequences.",
-          "Required to manipulate the content of objects in the database.",
-          "Required to gain access to the database.",
-          "Named groups of related privileges given to a user."
-        ],
-        "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Required to gain access to the database.'."
-      },
-      {
-        "id": "sql_q36",
-        "module": "sql_m2",
-        "question": "Evaluate this statement:\nWhich statement about the result of executing this statement is true?",
-        "code": "ALTER USER bob IDENTIFIED BY jim;",
-        "options": [
-          "A new user JIM is created from user BOB's profile.",
-          "The user BOB is assigned the same privileges as user JIM.",
-          "The user BOB is renamed and is accessible as user JIM.",
-          "A new password is assigned to user BOB."
-        ],
-        "correct": 3,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'A new password is assigned to user BOB.'."
-      },
-      {
-        "id": "sql_q37",
-        "module": "sql_m2",
-        "question": "Which of these SQL functions used to manipulate strings is NOT a valid regular expression function ?",
-        "code": null,
-        "options": [
-          "REGEXP_SUBSTR",
-          "REGEXP",
-          "REGEXP_REPLACE",
-          "REGEXP_LIKE"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'REGEXP'."
-      },
-      {
-        "id": "sql_q38",
-        "module": "sql_m5",
-        "question": "Regular expressions used as check constraints are another way to ensure data is formatted correctly prior to being written into the database table. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q39",
-        "module": "sql_m1",
-        "question": "A role can be granted to another role. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q40",
-        "module": "sql_m2",
-        "question": "Scott King owns a table called employees. He issues the following statement:\nGRANT select ON employees TO PUBLIC;\nAllison Plumb has been granted CREATE SESSION by the DBA. She logs into the database and issues the following statement:\nGRANT ﾠ select ON ﾠ scott_king.employees TO jennifer_cho;\nTrue or False: Allison's statement will fail.",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q41",
-        "module": "sql_m1",
-        "question": "Which keyword would you use to grant an object privilege to all database users?",
-        "code": null,
-        "options": [
-          "PUBLIC",
-          "ALL",
-          "ADMIN",
-          "USERS"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'PUBLIC'."
-      },
-      {
-        "id": "sql_q42",
-        "module": "sql_m1",
-        "question": "If Oracle crashes, your changes are automatically rolled back. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q43",
-        "module": "sql_m1",
-        "question": "When you logout of Oracle, your data changes are automatically rolled back. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
-      },
-      {
-        "id": "sql_q44",
-        "module": "sql_m1",
-        "question": "A software verification and validation method.",
-        "code": null,
-        "options": [
-          "Documentation",
-          "Unit testing",
-          "Software engineering",
-          "Production"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Unit testing'."
-      },
-      {
-        "id": "sql_q45",
-        "module": "sql_m2",
-        "question": "The SELECT statement retrieves information from the database. In a SELECT statement, you can do all of the following EXCEPT:",
-        "code": null,
-        "options": [
-          "Joining",
-          "Selection",
-          "Projection",
-          "Manipulation"
-        ],
-        "correct": 3,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Manipulation'."
-      },
-      {
-        "id": "sql_q46",
-        "module": "sql_m2",
-        "question": "In the default order of precedence, which operator would be evaluated first?",
-        "code": null,
-        "options": [
-          "Multiplications and Divisions are at the same level and would be evaluated first based on left to right order",
-          "Subtractions and Additions are at the same level and would be evaluated first based on left to right order",
-          "Divisions and Subtractions are at the same level and would be evaluated first based on left to right order",
-          "Additions and Multiplications are at the same level and would be evaluated first based on left to right order"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Multiplications and Divisions are at the same level and would be evaluated first based on left to right order'."
-      },
-      {
-        "id": "sql_q47",
-        "module": "sql_m1",
-        "question": "You cannot use computers unless you completely understand exactly how they work. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
-      },
-      {
-        "id": "sql_q48",
-        "module": "sql_m2",
-        "question": "There is only one kind of software used by all computers. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
-      },
-      {
-        "id": "sql_q49",
-        "module": "sql_m3",
-        "question": "Databases are used in most countries and by most governments. Life, as we know it, would change drastically if we no longer had access to databases. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q50",
-        "module": "sql_m2",
-        "question": "When using the \"LIKE\" operator, the % and _ symbols can be used to do a pattern-matching, wild card search. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q51",
-        "module": "sql_m2",
-        "question": "Which SELECT statement will display both unique and non-unique combinations of the MANAGER_ID and DEPARTMENT_ID values from the EMPLOYEES table?",
-        "code": null,
-        "options": [
-          "SELECT manager_id, department_id FROM employees;",
-          "SELECT manager_id, DISTINCT department_id FROM employees;",
-          "SELECT manager_id, department_id DISTINCT FROM employees;",
-          "SELECT DISTINCT manager_id, department_id FROM employees;"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'SELECT manager_id, department_id FROM employees;'."
-      },
-      {
-        "id": "sql_q52",
-        "module": "sql_m2",
-        "question": "You want to retrieve a list of customers whose last names begin with the letters 'Fr' . Which keyword should you include in the WHERE clause of your SELECT statement to achieve the desired result?",
-        "code": null,
-        "options": [
-          "BETWEEN",
-          "AND",
-          "IN",
-          "LIKE"
-        ],
-        "correct": 3,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'LIKE'."
-      },
-      {
-        "id": "sql_q53",
-        "module": "sql_m2",
-        "question": "Which of the following elements cannot be included in a WHERE clause?",
-        "code": null,
-        "options": [
-          "A constant",
-          "A column name",
-          "A column alias",
-          "A comparison condition"
-        ],
-        "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'A column alias'."
-      },
-      {
-        "id": "sql_q54",
-        "module": "sql_m1",
-        "question": "You need to display employees with salaries that are at least 30000 or higher. Which comparison operator should you use?",
-        "code": null,
-        "options": [
-          "\"=>\"",
-          ">",
-          "!=",
-          ">="
-        ],
-        "correct": 3,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '>='."
-      },
-      {
-        "id": "sql_q55",
-        "module": "sql_m2",
-        "question": "What value will the following SQL statement return?\nFROM employees\nWHERE employee_id BETWEEN 100 AND 150\nOR employee_id IN(119, 175, 205)\nAND (employee_id BETWEEN 150 AND 200);",
-        "code": "SELECT employee_id",
-        "options": [
-          "200, 201, 202, 203, 204, 205, 206",
-          "100, 101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149",
-          "19",
-          "No rows will be returned"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '100, 101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149'."
-      },
-      {
-        "id": "sql_q56",
-        "module": "sql_m2",
-        "question": "Which clause would you include in a SELECT statement to sort the rows returned by the LAST_NAME column?",
-        "code": null,
-        "options": [
-          "ORDER BY WHERE",
-          "HAVING FROM"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'ORDER BY WHERE'."
-      },
-      {
-        "id": "sql_q57",
-        "module": "sql_m2",
-        "question": "Will the following statement return one row?\nFROM employees;",
-        "code": "SELECT MAX(salary), MIN(Salary), AVG(SALARY)",
-        "options": [
-          "Yes, it will return the highest salary from each employee.",
-          "Yes, it will return the average salary from the employees table.",
-          "Yes, it will return the highest salary, the lowest salary, and the average salary from all employees.",
-          "No, it is illegal. You cannot use more than one multi-row function in a SELECT statement."
-        ],
-        "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Yes, it will return the highest salary, the lowest salary, and the average salary from all employees.'."
-      },
-      {
-        "id": "sql_q58",
-        "module": "sql_m2",
-        "question": "ROUND and TRUNC functions can be used with which of the following Datatypes?",
-        "code": null,
-        "options": [
-          "Dates and numbers",
-          "Dates and characters",
-          "Numbers and characters",
-          "None of the above"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Dates and numbers'."
-      },
-      {
-        "id": "sql_q59",
-        "module": "sql_m2",
-        "question": "You query the database with this SQL statement:\nSELECT LOWER(SUBSTR(CONCAT(last_name, first_name)), 1, 5) \"ID\"\nFROM employee;\nIn which order are the functions evaluated?",
-        "code": null,
-        "options": [
-          "LOWER, CONCAT, SUBSTR",
-          "CONCAT, SUBSTR, LOWER",
-          "LOWER, SUBSTR, CONCAT",
-          "SUBSTR, CONCAT, LOWER"
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'CONCAT, SUBSTR, LOWER'."
-      },
-      {
-        "id": "sql_q60",
-        "module": "sql_m2",
-        "question": "CASE and DECODE evaluate expressions in a similar way to IF-THEN-ELSE logic. However, DECODE is specific to Oracle syntax. True or False?",
-        "code": null,
-        "options": [
-          "True",
-          "False"
-        ],
-        "correct": 0,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
-      },
-      {
-        "id": "sql_q61",
-        "module": "sql_m2",
-        "question": "You need to replace null values in the DEPT_ID column with the text N/A. Which functions should you use?",
-        "code": null,
-        "options": [
-          "TO_CHAR and NULLIF",
-          "TO_NUMBER and NULLIF",
-          "TO_CHAR and NVL",
-          "TO_CHAR and NULL"
-        ],
-        "correct": 2,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'TO_CHAR and NVL'."
-      },
-      {
-        "id": "sql_q62",
-        "module": "sql_m2",
-        "question": "If you use the RR format when writing a query using the date 27-Oct-17 and the year is 2001, what year would be the result?",
+        "question": "If you",
         "code": null,
         "options": [
           "1917",
@@ -4803,23 +4420,9 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '2017'."
       },
       {
-        "id": "sql_q63",
-        "module": "sql_m2",
-        "question": "Which best describes the TO_CHAR function?",
-        "code": null,
-        "options": [
-          "The TO_CHAR function can be used to remove text from column data that will be returned by the database.",
-          "The TO_CHAR function can be used to display dates and numbers according to formatting conventions that are supported by Oracle.",
-          "The TO_CHAR function can be used to specify meaningful column names in an SQL statement's result set.",
-          "The TO_CHAR function can only be used on Date columns."
-        ],
-        "correct": 1,
-        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The TO_CHAR function can be used to display dates and numbers according to formatting conventions that are supported by Oracle.'."
-      },
-      {
-        "id": "sql_q64",
+        "id": "sql_q36",
         "module": "sql_m1",
-        "question": "Hierarchical queries MUST use the LEVEL pseudo column. True or False?",
+        "question": "Hierarchical",
         "code": null,
         "options": [
           "True",
@@ -4829,18 +4432,392 @@ const CERTIFICATES_DATA = {
         "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
       },
       {
-        "id": "sql_q65",
+        "id": "sql_q37",
         "module": "sql_m3",
-        "question": "You need to join all the rows in the EMPLOYEES table to all the rows in the EMP_REFERENCE table. Which type of join should you create?",
+        "question": "The\nSELECT car.vehicle_id, driver.name\nFROM car\nLEFT OUTER JOIN driver ON (driver_id) ;",
         "code": null,
         "options": [
-          "A cross join",
-          "An inner join",
-          "An equijoin",
-          "A full outer join"
+          "Equijoin",
+          "Outer\nJoin",
+          "Inner\nJoin",
+          "Optimal\nJoin"
+        ],
+        "correct": 1,
+        "explanation": "V Oracle SQL spojujeme tabulky pomocí ANSI syntaxe (INNER JOIN, LEFT/RIGHT/FULL OUTER JOIN, CROSS JOIN) na základě spojovací podmínky ON nebo USING. Správná odpověď: Outer\nJoin."
+      },
+      {
+        "id": "sql_q38",
+        "module": "sql_m2",
+        "question": "Will\nSELECT department_name, last_name\nFROM employees, departments\nWHERE department_id = department_id;",
+        "code": null,
+        "options": [
+          "No,\nOracle will not allow joins in the WHERE clause",
+          "Yes,\nOracle will resolve which department_id colum comes from which table.",
+          "No,\nOracle will return a Column Ambiguously Defined error.",
+          "Yes,\nthere are no syntax errors in that statement"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'No,\nOracle will return a Column Ambiguously Defined error.'."
+      },
+      {
+        "id": "sql_q39",
+        "module": "sql_m3",
+        "question": "Evaluate\nt.team_name\nFROM player p\nLEFT OUTER JOIN player m ON (p.manager_id = m.player_id)\nLEFT OUTER JOIN team t ON (p.team_id = t.team_id);\nWhich join is evaluated first?",
+        "code": "SELECT p.player_id, m.last_name, m.first_name,",
+        "options": [
+          "The\njoin between the player table and the team table on TEAM_ID",
+          "The\njoin between the player table and the team table on MANAGER_ID",
+          "The\njoin between the player table and the team table on PLAYER_ID",
+          "The\nself-join of the player table"
+        ],
+        "correct": 3,
+        "explanation": "V Oracle SQL spojujeme tabulky pomocí ANSI syntaxe (INNER JOIN, LEFT/RIGHT/FULL OUTER JOIN, CROSS JOIN) na základě spojovací podmínky ON nebo USING. Správná odpověď: The\nself-join of the player table."
+      },
+      {
+        "id": "sql_q40",
+        "module": "sql_m1",
+        "question": "Evaluate\nFROM products;\nWhich statement is true?",
+        "code": "SELECT COUNT(*)",
+        "options": [
+          "The\nnumber of unique PRODUCT_IDs in the table is displayed.",
+          "An\nerror occurs due to an error in the SELECT clause.",
+          "The\nnumber of rows in the table is displayed.",
+          "An\nerror occurs because no WHERE clause is included in the SELECT statement."
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The\nnumber of rows in the table is displayed.'."
+      },
+      {
+        "id": "sql_q41",
+        "module": "sql_m1",
+        "question": "The\nVENDOR_ID NUMBER Primary Key\nNAME VARCHAR2(30)\nLOCATION_ID NUMBER\nORDER_DT DATE\nORDER_AMOUNT NUMBER(8,2)\nWhich two clauses represent valid uses of aggregate\nfunctions for this table?",
+        "code": null,
+        "options": [
+          "SELECT\nSUM(order_dt)",
+          "SELECT\nMIN(AVG(order_amount)) WHERE\nMAX(order_dt) = order_dt",
+          "FROM\nMAX(order_dt)",
+          "SELECT\nSUM(order_amount)"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'SELECT\nMIN(AVG(order_amount)) WHERE\nMAX(order_dt) = order_dt'."
+      },
+      {
+        "id": "sql_q42",
+        "module": "sql_m3",
+        "question": "Examine\nSELECT department_id, manager_id, job_id, SUM(salary)\nFROM employees\nGROUP BY GROUPING SETS(.......);\nSelect the correct GROUP BY GROUPING SETS clause from the\nfollowing list:",
+        "code": null,
+        "options": [
+          "GROUP\nBY GROUPING SETS (department_id, salary), (department_id, job_id),\n(department_id, manager_id)",
+          "GROUP\nBY GROUPING SETS ((department_id, manager_id), (department_id, SUM(salary),\n(manager_id, job_id))",
+          "GROUP\nBY GROUPING SETS (department_id, AVG(salary)), (department_id, job_id),\n(department_id, manager_id)",
+          "GROUP\nBY GROUPING SETS ((department_id, manager_id), (department_id, job_id),\n(manager_id, job_id))"
+        ],
+        "correct": 3,
+        "explanation": "Klauzule GROUP BY sdružuje řádky do skupin pro agregační funkce (COUNT, SUM, AVG...), zatímco HAVING tyto agregované skupiny filtruje. Správná odpověď: GROUP\nBY GROUPING SETS ((department_id, manager_id), (department_id, job_id),\n(manager_id, job_id))."
+      },
+      {
+        "id": "sql_q43",
+        "module": "sql_m1",
+        "question": "CUBE",
+        "code": null,
+        "options": [
+          "True",
+          "False"
         ],
         "correct": 0,
-        "explanation": "V Oracle SQL spojujeme tabulky pomocí ANSI syntaxe (INNER JOIN, LEFT/RIGHT/FULL OUTER JOIN, CROSS JOIN) na základě spojovací podmínky ON nebo USING. Správná odpověď: A cross join."
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q44",
+        "module": "sql_m1",
+        "question": "Group functions",
+        "code": null,
+        "options": [
+          "Group\nfunctions cannot be nested.",
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'Two'."
+      },
+      {
+        "id": "sql_q45",
+        "module": "sql_m3",
+        "question": "Evaluate\nFROM employees\nGROUP BY department_id;\nWhich values are displayed?",
+        "code": "SELECT MIN(hire_date), department_id",
+        "options": [
+          "The\nlatest hire date in the EMPLOYEES table",
+          "The\nearliest hire date in the EMPLOYEES table",
+          "The\nearliest hire date in each department",
+          "The\nhire dates in the EMPLOYEES table that contain NULL values"
+        ],
+        "correct": 2,
+        "explanation": "Klauzule GROUP BY sdružuje řádky do skupin pro agregační funkce (COUNT, SUM, AVG...), zatímco HAVING tyto agregované skupiny filtruje. Správná odpověď: The\nearliest hire date in each department."
+      },
+      {
+        "id": "sql_q46",
+        "module": "sql_m1",
+        "question": "Which statement",
+        "code": null,
+        "options": [
+          "The\nANY operator can be used with the DISTINCT keyword.",
+          "The\nANY operator can be used with the LIKE and IN operators.",
+          "The\nANY operator is a synonym for the ALL operator.",
+          "The\nANY operator compares every value returned by the subquery."
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'The\nANY operator compares every value returned by the subquery.'."
+      },
+      {
+        "id": "sql_q47",
+        "module": "sql_m2",
+        "question": "Evaluate\nFROM players\nWHERE team_id IN\n(SELECT team_id\nFROM teams\nWHERE team_id\n> 300 AND salary_cap > 400000);\nWhat would happen if the inner query returned a NULL\nvalue?",
+        "code": "SELECT player_id, name",
+        "options": [
+          "No\nrows would be returned by the outer query.",
+          "A\nsyntax error in the inner query would be returned.",
+          "A\nsyntax error in the outer query would be returned.",
+          "All\nthe rows in the PLAYER table would be returned by the outer query."
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'No\nrows would be returned by the outer query.'."
+      },
+      {
+        "id": "sql_q48",
+        "module": "sql_m1",
+        "question": "Table",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q49",
+        "module": "sql_m4",
+        "question": "Steven King's row in the EMPLOYEES table\nUPDATE\nemployees\nSET\nsalary = salary * 2\nWHERE\nemployee_id = 100;\nCOMMIT;\nUPDATE\nemployees\nSET\nsalary = 30000\nWHERE\nemployee_id = 100;\nThe\nuser's database session now ends abnormally. What is now King's salary in the\ntable?",
+        "code": null,
+        "options": [
+          "78000",
+          "30000",
+          "24000",
+          "48000"
+        ],
+        "correct": 3,
+        "explanation": "Příkaz UPDATE slouží ke změně existujících dat ve sloupcích. Spolu s MERGE je to základní nástroj úpravy hodnot v databázi. Správná odpověď: 48000."
+      },
+      {
+        "id": "sql_q50",
+        "module": "sql_m4",
+        "question": "Table MYTAB contains only one column of\nINSERT\nINTO mytab VALUES ('A');\nINSERT\nINTO mytab VALUES ('B');\nCOMMIT;\nINSERT\nINTO mytab VALUES ('C');\nROLLBACK;\nWhich\nrows does the table now contain?",
+        "code": null,
+        "options": [
+          "A, B, and C",
+          "A and B",
+          "C",
+          "None of the above"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'A and B'."
+      },
+      {
+        "id": "sql_q51",
+        "module": "sql_m1",
+        "question": "If Oracle crashes, your changes are",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q52",
+        "module": "sql_m2",
+        "question": "Examine the following statements:\nemployees SET salary = 15000;\nSAVEPOINT\nupd1_done;\nemployees SET salary = 22000;\nSAVEPOINT\nupd2_done;\nFROM employees;\nYou\nwant to retain all the employees with a salary of 15000; What statement would\nyou execute next?",
+        "code": "UPDATE\nUPDATE\nDELETE",
+        "options": [
+          "ROLLBACK;",
+          "ROLLBACK TO SAVEPOINT upd1_done;",
+          "ROLLBACK TO SAVEPOINT upd2_done;",
+          "ROLLBACK TO SAVE upd1_done;",
+          "There is nothing you can do; either\nall changes must be rolled back, or none of them can be rolled back."
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'ROLLBACK TO SAVEPOINT upd1_done;'."
+      },
+      {
+        "id": "sql_q53",
+        "module": "sql_m4",
+        "question": "COMMIT saves all outstanding data",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q54",
+        "module": "sql_m4",
+        "question": "Examine the following statements:\nINTO emps SELECT * FROM employees; -- 107 rows inserted.\nSAVEPOINT\nIns_Done;\nemployees; -- 107 rows deleted\nSAVEPOINT\nDel_Done;\nemps SET last_name = 'Smith';\nHow\nwould you undo the last Update only?",
+        "code": "INSERT\nDELETE\nUPDATE",
+        "options": [
+          "ROLLBACK to SAVEPOINT Del_Done;",
+          "COMMIT Del_Done;",
+          "There is nothing you can do.",
+          "ROLLBACK UPDATE;"
+        ],
+        "correct": 0,
+        "explanation": "Příkaz DELETE je DML operace odstraňující řádky splňující podmínku WHERE. Změnu lze potvrdit (COMMIT) nebo vrátit (ROLLBACK). Správná odpověď: ROLLBACK to SAVEPOINT Del_Done;."
+      },
+      {
+        "id": "sql_q55",
+        "module": "sql_m1",
+        "question": "Which SQL statement is used to remove",
+        "code": null,
+        "options": [
+          "REVOKE;",
+          "ROLLBACK TO SAVEPOINT;",
+          "ROLLBACK;",
+          "UNDO;"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'ROLLBACK;'."
+      },
+      {
+        "id": "sql_q56",
+        "module": "sql_m2",
+        "question": "You need not worry about controlling",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q57",
+        "module": "sql_m3",
+        "question": "User\nSELECT\nCOUNT(*) FROM bob.customers;\nWhat\nresult will JANE see?",
+        "code": null,
+        "options": [
+          "22",
+          "20",
+          "JANE will receive an error message\nbecause she is not allowed to query the table while BOB is updating it.",
+          "2"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '20'."
+      },
+      {
+        "id": "sql_q58",
+        "module": "sql_m1",
+        "question": "If",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q59",
+        "module": "sql_m1",
+        "question": "If UserB has privileges to see the data",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q60",
+        "module": "sql_m3",
+        "question": "User BOB's CUSTOMERS table contains 20\nSELECT\nCOUNT(*) FROM bob.customers;\nWhat\nresult will JANE see?",
+        "code": null,
+        "options": [
+          "JANE will receive an error message\nbecause she is not allowed to query the table while BOB is updating it.",
+          "2",
+          "20",
+          "22"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: '20'."
+      },
+      {
+        "id": "sql_q61",
+        "module": "sql_m1",
+        "question": "When you logout of Oracle, your data",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'False'."
+      },
+      {
+        "id": "sql_q62",
+        "module": "sql_m2",
+        "question": "Which of the following best describes",
+        "code": null,
+        "options": [
+          "It prevents users from querying\ntables on which they have not been granted SELECT privilege",
+          "It prevents other users from\nquerying a table while updates are being executed on it",
+          "It prevents other users from seeing\nchanges to a table until those changes have been committed",
+          "It ensures that all changes to a\ntable are automatically committed"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'It prevents other users from seeing\nchanges to a table until those changes have been committed'."
+      },
+      {
+        "id": "sql_q63",
+        "module": "sql_m4",
+        "question": "If a database crashes, all uncommitted",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q64",
+        "module": "sql_m4",
+        "question": "COMMIT",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních pravidel Oracle SQL je správným výsledkem: 'True'."
+      },
+      {
+        "id": "sql_q65",
+        "module": "sql_m4",
+        "question": "Examine\nUPDATE\nemployees SET salary = 15000;\nSAVEPOINT\nupd1_done;\nUPDATE\nemployees SET salary = 22000;\nSAVEPOINT\nupd2_done;\nDELETE\nFROM employees;\nYou\nwant to retain all the employees with a salary of 15000; What statement would\nyou execute next?",
+        "code": null,
+        "options": [
+          "ROLLBACK;",
+          "ROLLBACK TO SAVEPOINT upd1_done;",
+          "ROLLBACK TO SAVEPOINT upd2_done;",
+          "ROLLBACK TO SAVE upd1_done;",
+          "There is nothing you can do; either\nall changes must be rolled back, or none of them can be rolled back."
+        ],
+        "correct": 1,
+        "explanation": "Příkaz DELETE je DML operace odstraňující řádky splňující podmínku WHERE. Změnu lze potvrdit (COMMIT) nebo vrátit (ROLLBACK). Správná odpověď: ROLLBACK TO SAVEPOINT upd1_done;."
       }
     ]
   },
@@ -4884,7 +4861,7 @@ const CERTIFICATES_DATA = {
           "Businesses cannot charge anything for the software, only the hardware",
           "Systems designed to do a specific task on hardware optimized for only that purpose",
           "Users must support the systems themselves",
-          "You can view the software’s source code",
+          "You can view the software's source code",
           "Companies must share their changes"
         ],
         "correct": 1,
@@ -4925,7 +4902,7 @@ const CERTIFICATES_DATA = {
         "question": "A software release cycle describes:",
         "code": null,
         "options": [
-          "How often the software’s memory is released back to the operating system",
+          "How often the software's memory is released back to the operating system",
           "How often the computer must be rebooted",
           "How often upgrades come out for software",
           "How often security fixes are implemented",
@@ -4983,7 +4960,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q08",
         "module": "linux_m1",
-        "question": "A license where you don’t have access to the source code is called:",
+        "question": "A license where you don't have access to the source code is called:",
         "code": null,
         "options": [
           "Closed source",
@@ -5053,7 +5030,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q13",
         "module": "linux_m3",
-        "question": "The _______ command will print a list of the commands that you’ve previously executed.",
+        "question": "The _______ command will print a list of the commands that you've previously executed.",
         "code": null,
         "options": [
           "history",
@@ -5158,7 +5135,7 @@ const CERTIFICATES_DATA = {
           "…lists the contents of the current directory.",
           "…prompts for a directory to list.",
           "…generates an error as this command requires arguments.",
-          "…lists the contents of a user’s home directory."
+          "…lists the contents of a user's home directory."
         ],
         "correct": 0,
         "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '…lists the contents of the current directory.'."
@@ -5194,7 +5171,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q23",
         "module": "linux_m2",
-        "question": "Which command would list files that do not begin with a T or a W ?",
+        "question": "Which command would list files that do not begin with a T or a W?",
         "code": null,
         "options": [
           "echo /etc/*[TW!]",
@@ -5223,7 +5200,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q25",
         "module": "linux_m1",
-        "question": "Which command will show what is inside the compressed tarball with a name of foo.tar.gz ?",
+        "question": "Which command will show what is inside the compressed tarball with a name of foo.tar.gz?",
         "code": null,
         "options": [
           "tar –tf foo.tar.gz",
@@ -5252,7 +5229,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q27",
         "module": "linux_m1",
-        "question": "Which of the following commands will display only lines that begin with test ?",
+        "question": "Which of the following commands will display only lines that begin with test?",
         "code": null,
         "options": [
           "grep $test* file.txt",
@@ -5295,7 +5272,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q30",
         "module": "linux_m2",
-        "question": "Most of nano ’s commands take the form of:",
+        "question": "Most of nano's commands take the form of:",
         "code": null,
         "options": [
           "Alt and another character",
@@ -5325,7 +5302,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q32",
         "module": "linux_m1",
-        "question": "The number of users logged in is in a variable called USERS . How would you test to see if there are 5 users logged in?",
+        "question": "The number of users logged in is in a variable called USERS. How would you test to see if there are 5 users logged in?",
         "code": null,
         "options": [
           "test –f USERS=5",
@@ -5524,7 +5501,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "linux_q46",
         "module": "linux_m1",
-        "question": "What directory contains a user’s home directory?",
+        "question": "What directory contains a user's home directory?",
         "code": null,
         "options": [
           "/rootfs",
@@ -5778,7 +5755,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "itn_q12",
         "module": "itn_m1",
-        "question": "A host is trying to send a packet to a device on a remote LAN segment, but there are currently no mappings in its ARP cache. How will the device obtain a destination MAC address? (A host is trying to send a packet to a device on a remote LAN segment, but there are currently no mappings in the ARP cache. How will the device obtain a destination MAC address?) It will send the frame and use its own MAC address as the destination. It will send an ARP request for the MAC address of the destination device. It will send the frame with a broadcast MAC address. It will send a request to the DNS server for the destination MAC address. It will send an ARP request for the MAC address of the default gateway. Explanation: Topic 9.2.5 When a source host identifies that a destination IP address resides on a remote network segment , it must forward the packet to its default gateway (the local router) to reach that destination. Because Layer 2 Ethernet frames are designed for local delivery within the same segment, the host requires the physical MAC address of the gateway's interface to encapsulate the IP packet. If the ARP cache does not contain a mapping for the gateway's IP address, the host initiates an ARP request specifically for the default gateway's MAC address . The host does not request the MAC address of the final destination device, as that device is not on the local segment and cannot respond to local Layer 2 broadcast requests. Once the gateway's MAC address is resolved and stored in the cache, the host can successfully transmit the frame to the router for further delivery across the internetwork. 22. A client packet is received by a server. The packet has a destination port number of 53. What service is the client requesting?",
+        "question": "A host is trying to send a packet to a device on a remote LAN segment, but there are currently no mappings in its ARP cache. How will the device obtain a destination MAC address?\n\n(A host is trying to send a packet to a device on a remote LAN segment, but there are currently no mappings in the ARP cache. How will the device obtain a destination MAC address?)\n\n\nIt will send the frame and use its own MAC address as the destination.\nIt will send an ARP request for the MAC address of the destination device.\nIt will send the frame with a broadcast MAC address.\nIt will send a request to the DNS server for the destination MAC address.\nIt will send an ARP request for the MAC address of the default gateway.\n\nExplanation: Topic 9.2.5\n\nWhen a source host identifies that a destination IP address resides on a remote network segment, it must forward the packet to its default gateway (the local router) to reach that destination. Because Layer 2 Ethernet frames are designed for local delivery within the same segment, the host requires the physical MAC address of the gateway's interface to encapsulate the IP packet. If the ARP cache does not contain a mapping for the gateway's IP address, the host initiates an ARP request specifically for the default gateway's MAC address. The host does not request the MAC address of the final destination device, as that device is not on the local segment and cannot respond to local Layer 2 broadcast requests. Once the gateway's MAC address is resolved and stored in the cache, the host can successfully transmit the frame to the router for further delivery across the internetwork.\n\n\n\n22. A client packet is received by a server. The packet has a destination port number of 53. What service is the client requesting?",
         "code": null,
         "options": [
           "DNS",
@@ -5862,7 +5839,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "itn_q18",
         "module": "itn_m1",
-        "question": "Match the application protocols to the correct transport protocols. Explanation: Topic 14.4.3 31. What service is provided by SMTP?",
+        "question": "Match the application protocols to the correct transport protocols.\n\n\n\nExplanation: Topic 14.4.3\n\n\n\n31. What service is provided by SMTP?",
         "code": null,
         "options": [
           "Allows clients to send email to a mail server and the servers to send email to other servers.",
@@ -5935,7 +5912,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "itn_q23",
         "module": "itn_m4",
-        "question": "An employee of a large corporation remotely logs into the company using the appropriate username and password. The employee is attending an important video conference with a customer concerning a large sale. It is important for the video quality to be excellent during the meeting. The employee is unaware that after a successful login, the connection to the company ISP failed. The secondary connection, however, activated within seconds. The disruption was not noticed by the employee or other employees. What three network characteristics are described in this scenario? (Choose three.)",
+        "question": "An employee of a large corporation remotely logs into the company using the appropriate username and password. The employee is attending an important video conference with a customer concerning a large sale. It is important for the video quality to be excellent during the meeting. The employee is unaware that after a successful login, the connection to the company ISP failed. The secondary connection, however, activated within seconds. The disruption was not noticed by the employee or other employees.\n\nWhat three network characteristics are described in this scenario? (Choose three.)",
         "code": null,
         "options": [
           "security",
@@ -6140,7 +6117,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "itn_q37",
         "module": "itn_m4",
-        "question": "Match the type of threat with the cause. (Not all options are used.) electrical threats voltage spikes, insufficient supply voltage (brownouts), unconditioned power (noise), and total power loss hardware threats physical damage to servers, routers, switches, cabling plant, and workstations environmental threats temperature extremes (too hot or too cold) or humidity extremes (too wet or too dry) maintenance threats poor handling of key electrical components (electrostatic discharge), lack of critical spare parts, poor cabling, and poor labeling Explanation: Topic 16.1.3 59. A disgruntled employee is using some free wireless networking tools to determine information about the enterprise wireless networks. This person is planning on using this information to hack the wireless network. What type of attack is this?",
+        "question": "Match the type of threat with the cause. (Not all options are used.)\n\n\n\n\n\n\nelectrical threats\nvoltage spikes, insufficient supply voltage (brownouts), unconditioned power (noise), and total power loss\n\n\nhardware threats\nphysical damage to servers, routers, switches, cabling plant, and workstations\n\n\nenvironmental threats\ntemperature extremes (too hot or too cold) or humidity extremes (too wet or too dry)\n\n\nmaintenance threats\npoor handling of key electrical components (electrostatic discharge), lack of critical spare parts, poor cabling, and poor labeling\n\n\n\nExplanation: Topic 16.1.3\n\n\n\n59. A disgruntled employee is using some free wireless networking tools to determine information about the enterprise wireless networks. This person is planning on using this information to hack the wireless network. What type of attack is this?",
         "code": null,
         "options": [
           "DoS",
@@ -6869,7 +6846,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "srwe_q25",
         "module": "srwe_m4",
-        "question": "The exhibit shows two PCs called PC A and PC B, two routes called R1 and R2, and two switches. PC A has the address 172.16.1.1/24 and is connected to a switch and into an interface on R1 that has the IP address 172.16.1.254. PC B has the address 172.16.2.1/24 and is connected to a switch that is connected to another interface on R1 with the IP address 172.16.2.254. The serial interface on R1 has the address 172.16.3.1 and is connected to the serial interface on R2 that has the address 172.16.3.2/24. R2 is connected to the internet cloud. Which command will create a static route on R2 in order to reach PC B? R2(config)# ip route 172.16.2.1 255.255.255.0 172.16.3.1 R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.2.254 R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1 R2(config)# ip route 172.16.3.0 255.255.255.0 172.16.2.254 Explanation: Topic 15.2.1 The correct syntax is: router(config)# ip route destination-network destination-mask {next-hop-ip-address | exit-interface} If the local exit interface instead of the next-hop IP address is used then the route will be displayed as a directly connected route instead of a static route in the routing table. Because the network to be reached is 172.16.2.0 and the next-hop IP address is 172.16.3.1, the command is R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1 65. What protocol or technology allows data to transmit over redundant switch links?",
+        "question": "The exhibit shows two PCs called PC A and PC B, two routes called R1 and R2, and two switches. PC A has the address 172.16.1.1/24 and is connected to a switch and into an interface on R1 that has the IP address 172.16.1.254. PC B has the address 172.16.2.1/24 and is connected to a switch that is connected to another interface on R1 with the IP address 172.16.2.254. The serial interface on R1 has the address 172.16.3.1 and is connected to the serial interface on R2 that has the address 172.16.3.2/24. R2 is connected to the internet cloud. Which command will create a static route on R2 in order to reach PC B?\n\n\n\n\nR2(config)# ip route 172.16.2.1 255.255.255.0 172.16.3.1\nR2(config)# ip route 172.16.2.0 255.255.255.0 172.16.2.254\nR2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1\nR2(config)# ip route 172.16.3.0 255.255.255.0 172.16.2.254\n\nExplanation: Topic 15.2.1\n\nThe correct syntax is:\n\nrouter(config)# ip route destination-network destination-mask {next-hop-ip-address | exit-interface}\n\nIf the local exit interface instead of the next-hop IP address is used then the route will be displayed as a directly connected route instead of a static route in the routing table. Because the network to be reached is 172.16.2.0 and the next-hop IP address is 172.16.3.1, the command is R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1\n\n65. What protocol or technology allows data to transmit over redundant switch links?",
         "code": null,
         "options": [
           "EtherChannel",
@@ -7026,7 +7003,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "srwe_q36",
         "module": "srwe_m4",
-        "question": "A technician is configuring a router for a small company with multiple WLANs and doesn’t need the complexity of a dynamic routing protocol. What should be done or checked?",
+        "question": "A technician is configuring a router for a small company with multiple WLANs and doesn't need the complexity of a dynamic routing protocol. What should be done or checked?",
         "code": null,
         "options": [
           "Verify that there is not a default route in any of the edge router routing tables.",
@@ -7096,7 +7073,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "srwe_q41",
         "module": "srwe_m1",
-        "question": "Match the purpose with its DHCP message type. (Not all options are used.) Explanation: Topic 7.1.3 DHCPREQUEST A message that is used to locate any available DHCP server on a network DHCPOFFER A message that is used to suggest a lease to a client DHCPDISCOVER A message that is used to identify the explicit server and lease offer to accept DHCPNAK A message that is used to acknowledge that the lease is successful DHCPACK A message is used by a server to finalize a successful lease with a client 94. Which protocol adds security to remote connections?",
+        "question": "Match the purpose with its DHCP message type. (Not all options are used.)\n\n\n\nExplanation: Topic 7.1.3\n\n\n\n\nDHCPREQUEST\nA message that is used to locate any available DHCP server on a network\n\n\nDHCPOFFER\nA message that is used to suggest a lease to a client\n\n\nDHCPDISCOVER\nA message that is used to identify the explicit server and lease offer to accept\n\n\nDHCPNAK\nA message that is used to acknowledge that the lease is successful\n\n\nDHCPACK\nA message is used by a server to finalize a successful lease with a client\n\n\n\n \n\n\n\n94. Which protocol adds security to remote connections?",
         "code": null,
         "options": [
           "FTP",
@@ -7198,7 +7175,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "srwe_q48",
         "module": "srwe_m3",
-        "question": "Match the DHCP message types to the order of the DHCPv4 process. (Not all options are used.) Step 1 DHCPDISCOVER Step 2 DHCPOFFER Step 3 DHCPREQUEST Step 4 DHCPACK Explanation: Topic 7.1.3 The broadcast DHCPDISCOVER message finds DHCPv4 servers on the network. When the DHCPv4 server receives a DHCPDISCOVER message, it reserves an available IPv4 address to lease to the client and sends the unicast DHCPOFFER message to the requesting client. When the client receives the DHCPOFFER from the server, it sends back a DHCPREQUEST. On receiving the DHCPREQUEST message the server replies with a unicast DHCPACK message. DHCPREPLY and DHCPINFORMATION-REQUEST are DHCPv6 messages. 109. In which situation would a technician use the show interfaces switch command?",
+        "question": "Match the DHCP message types to the order of the DHCPv4 process. (Not all options are used.)\n\n\n\n\n\n\nStep 1\nDHCPDISCOVER\n\n\nStep 2\nDHCPOFFER\n\n\nStep 3\nDHCPREQUEST\n\n\nStep 4\nDHCPACK\n\n\n\nExplanation: Topic 7.1.3\n\nThe broadcast DHCPDISCOVER message finds DHCPv4 servers on the network. When the DHCPv4 server receives a DHCPDISCOVER message, it reserves an available IPv4 address to lease to the client and sends the unicast DHCPOFFER message to the requesting client. When the client receives the DHCPOFFER from the server, it sends back a DHCPREQUEST. On receiving the DHCPREQUEST message the server replies with a unicast DHCPACK message. DHCPREPLY and DHCPINFORMATION-REQUEST are DHCPv6 messages.\n\n109. In which situation would a technician use the show interfaces switch command?",
         "code": null,
         "options": [
           "to determine if remote access is enabled",
@@ -7440,7 +7417,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "py_q03",
         "module": "py_m4",
-        "question": "Which of the following lines correctly . invoke the function defined below? (Select two answers)",
+        "question": "Which of the following lines correctly. invoke the function defined below? (Select two answers)",
         "code": null,
         "options": [
           "fun()",
@@ -7460,7 +7437,7 @@ const CERTIFICATES_DATA = {
           "its position within the argument list",
           "its connection with existing variables",
           "its value",
-          "the argument’s name specified along with its value"
+          "the argument's name specified along with its value"
         ],
         "correct": 0,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'its position within the argument list'."
@@ -7671,15 +7648,15 @@ const CERTIFICATES_DATA = {
         "question": "Which if the following snippets shows the correct way of handing multiple excepting in a single except clause?",
         "code": null,
         "options": [
-          "except TypeError, ValueError, ZeroDivisinError: # Some code.",
-          "except: (TypeError, ValueError, ZeroDivisinError) # Some code.",
-          "except TypeError, ValueError, ZeroDivisinError # Some code.",
-          "except: TypeError, ValueError, ZeroDivisinError # Some code.",
-          "except: (TypeError, ValueError, ZeroDivisinError): # Some code.",
-          "except (TypeError, ValueError, ZeroDivisinError) # Some code."
+          "except TypeError, ValueError, ZeroDivisinError:\n\n# Some code.",
+          "except: (TypeError, ValueError, ZeroDivisinError)\n\n# Some code.",
+          "except TypeError, ValueError, ZeroDivisinError\n\n# Some code.",
+          "except: TypeError, ValueError, ZeroDivisinError\n\n# Some code.",
+          "except: (TypeError, ValueError, ZeroDivisinError):\n\n# Some code.",
+          "except (TypeError, ValueError, ZeroDivisinError)\n\n# Some code."
         ],
         "correct": 4,
-        "explanation": "Python vyhodnocuje kód přesně podle priorit operátorů a pravidel jazyka. Výsledkem spuštění je: except: (TypeError, ValueError, ZeroDivisinError): # Some code.."
+        "explanation": "Python vyhodnocuje kód přesně podle priorit operátorů a pravidel jazyka. Výsledkem spuštění je: except: (TypeError, ValueError, ZeroDivisinError):\n\n# Some code.."
       },
       {
         "id": "py_q20",
@@ -7746,7 +7723,7 @@ const CERTIFICATES_DATA = {
           "Both you and user must have the compiler to run your code",
           "The code is converted directly into machine code executable by the processor",
           "It tends to be faster than interpretation",
-          "It tends to be than interpretation The correct answers are: The code is converted directly into machine code executable by the processor Compilation translates the entire source code into machine code, which is then directly executed by the processor."
+          "It tends to be than interpretation\n\n\n\n\n\nThe correct answers are:\n\n\nThe code is converted directly into machine code executable by the processor\n\nCompilation translates the entire source code into machine code, which is then directly executed by the processor."
         ],
         "correct": 1,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'The code is converted directly into machine code executable by the processor'."
@@ -7757,14 +7734,14 @@ const CERTIFICATES_DATA = {
         "question": "What is CPython?",
         "code": null,
         "options": [
-          "It’s the default, reference implementation of the C language, written in Python",
-          "It’s a programming language that is a supperset of the Python, designed to produce C-like performance with code written in Python",
-          "It’s the default, reference implementation of Python, written in the C language",
-          "It’s a programming that is a superset of the C language, designed to produce Python-like performance with code written in C",
-          "The correct answer is: It’s the default, reference implementation of Python, written in the C language CPython is the original and most widely used implementation of the Python programming language. It is written in C and serves as the reference implementation that defines the Python language specification."
+          "It's the default, reference implementation of the C language, written in Python",
+          "It's a programming language that is a supperset of the Python, designed to produce C-like performance with code written in Python",
+          "It's the default, reference implementation of Python, written in the C language",
+          "It's a programming that is a superset of the C language, designed to produce Python-like performance with code written in C",
+          "The correct answer is:\n\nIt's the default, reference implementation of Python, written in the C language\n\n\nCPython is the original and most widely used implementation of the Python programming language. It is written in C and serves as the reference implementation that defines the Python language specification."
         ],
         "correct": 2,
-        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'It’s the default, reference implementation of Python, written in the C language'."
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'It's the default, reference implementation of Python, written in the C language'."
       },
       {
         "id": "py_q26",
@@ -7776,10 +7753,10 @@ const CERTIFICATES_DATA = {
           "An alphabet, a lexis, a syntax, and semantics",
           "An alphabet, a lexis, phonetics, and semantics",
           "An alphabet, phonetics, phonology, and semantics",
-          "The correct answer is: An alphabet, a lexis, a syntax, and semantics The four fundamental elements that make up a language are: Alphabet : The set of symbols or characters used to write the language.",
-          "Lexis : The vocabulary or set of words in the language.",
-          "Syntax : The rules for structuring sentences and expressions in the language.",
-          "Semantics : The meaning conveyed by the words and structures in the language."
+          "The correct answer is:\n\nAn alphabet, a lexis, a syntax, and semantics\n\n\nThe four fundamental elements that make up a language are:\n\n\nAlphabet: The set of symbols or characters used to write the language.",
+          "Lexis: The vocabulary or set of words in the language.",
+          "Syntax: The rules for structuring sentences and expressions in the language.",
+          "Semantics: The meaning conveyed by the words and structures in the language."
         ],
         "correct": 1,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'An alphabet, a lexis, a syntax, and semantics'."
@@ -7794,7 +7771,7 @@ const CERTIFICATES_DATA = {
           "A code file",
           "A target file",
           "A source file",
-          "The correct answer is: A source file A file containing a program written in a high-level programming language is called a source file because it is the source code that needs to be compiled or interpreted to create an executable or to run the program."
+          "The correct answer is:\n\nA source file\n\n\nA file containing a program written in a high-level programming language is called a source file because it is the source code that needs to be compiled or interpreted to create an executable or to run the program."
         ],
         "correct": 3,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'A source file'."
@@ -7809,7 +7786,7 @@ const CERTIFICATES_DATA = {
           "A console",
           "A compiler",
           "Jython",
-          "The correct answer is: A console A console is a command-line interpreter that allows you to interact with your operating system and execute Python commands and scripts. It provides an environment for running Python code interactively or running Python scripts directly."
+          "The correct answer is:\n\nA console\n\n\nA console is a command-line interpreter that allows you to interact with your operating system and execute Python commands and scripts. It provides an environment for running Python code interactively or running Python scripts directly."
         ],
         "correct": 1,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'A console'."
@@ -7817,17 +7794,17 @@ const CERTIFICATES_DATA = {
       {
         "id": "py_q29",
         "module": "py_m4",
-        "question": "What is the best definition of a script ?",
+        "question": "What is the best definition of a script?",
         "code": null,
         "options": [
-          "It’s an error message generated by the interpreter",
-          "It’s an error message generated by the compiler",
-          "It’s a text file that contains which make up a Python program",
-          "It’s a text file that contains sequences of zeroes and ones",
-          "The correct answer is: It’s a text file that contains which make up a Python program A script is a text file that contains a sequence of instructions written in a programming language like Python. These instructions (code) can be executed by an interpreter to perform specific tasks. Scripts are often used for automating tasks, data processing, or running programs."
+          "It's an error message generated by the interpreter",
+          "It's an error message generated by the compiler",
+          "It's a text file that contains which make up a Python program",
+          "It's a text file that contains sequences of zeroes and ones",
+          "The correct answer is:\n\nIt's a text file that contains which make up a Python program\n\n\nA script is a text file that contains a sequence of instructions written in a programming language like Python. These instructions (code) can be executed by an interpreter to perform specific tasks. Scripts are often used for automating tasks, data processing, or running programs."
         ],
         "correct": 2,
-        "explanation": "Definice funkce v Pythonu začíná klíčovým slovem def jmeno(parametry): s odsazeným tělem. Správná odpověď: It’s a text file that contains which make up a Python program."
+        "explanation": "Definice funkce v Pythonu začíná klíčovým slovem def jmeno(parametry): s odsazeným tělem. Správná odpověď: It's a text file that contains which make up a Python program."
       },
       {
         "id": "py_q30",
@@ -7839,7 +7816,7 @@ const CERTIFICATES_DATA = {
           "A medium-level programming language consisting of the assembly code designed for the computer processor",
           "A low-level programming language consisting of binary digits/bits that the computer reads and understands",
           "A low-level programming language consisting of hexadecimal digits that make up high-level language instructions",
-          "The correct answer is: A low-level programming language consisting of binary digits/bits that the computer reads and understands Machine code is the lowest level of programming language, consisting of binary digits (0s and 1s) that a computer’s processor directly executes. Unlike high-level or assembly languages, machine code is not intended to be human-readable. It represents instructions in a form that the hardware can process directly."
+          "The correct answer is:\n\nA low-level programming language consisting of binary digits/bits that the computer reads and understands\n\n\nMachine code is the lowest level of programming language, consisting of binary digits (0s and 1s) that a computer's processor directly executes. Unlike high-level or assembly languages, machine code is not intended to be human-readable. It represents instructions in a form that the hardware can process directly."
         ],
         "correct": 2,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'A low-level programming language consisting of binary digits/bits that the computer reads and understands'."
@@ -7854,7 +7831,7 @@ const CERTIFICATES_DATA = {
           "Python 3 is backwards compatible with Python 2",
           "Python is a good choice for low-level programming e.g., when you want to implement an effective driver",
           "Python is free, open-source, and multiplatform",
-          "The correct answers are: Python is a good choice for creating and executing tests for applications Python’s simplicity, readability, and extensive libraries make it an excellent choice for creating and executing tests for various applications."
+          "The correct answers are:\n\n\nPython is a good choice for creating and executing tests for applications\n\nPython's simplicity, readability, and extensive libraries make it an excellent choice for creating and executing tests for various applications."
         ],
         "correct": 0,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'Python is a good choice for creating and executing tests for applications'."
@@ -7868,7 +7845,7 @@ const CERTIFICATES_DATA = {
           "stop its execution",
           "duplicate the character next to the digragh",
           "break the output line",
-          "output exactly two characters: \\ and n The digraph, called the newline character, causes the current line to end at the point indicated by the digraph, and creates a new line that starts right after it."
+          "output exactly two characters: \\ and n\n\n\n\n\n\nThe digraph, called the newline character, causes the current line to end at the point indicated by the digraph, and creates a new line that starts right after it."
         ],
         "correct": 2,
         "explanation": "Definice funkce v Pythonu začíná klíčovým slovem def jmeno(parametry): s odsazeným tělem. Správná odpověď: break the output line."
@@ -7883,11 +7860,11 @@ const CERTIFICATES_DATA = {
           "the code will cause a runtime error",
           "4.0",
           "2.0",
-          "Let’s analyze this example: the x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+          "Let's analyze this example:\n\n\nthe x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
           "the y variable is assigned the integer value of 4 (4 is inputted by the user, converted to a string by the input() function, and",
           "then converted to an integer by the int() function)",
           "an operation is performed resulting in the x variable being assigned the value of 0.5 (2 / 4 = 0.5)",
-          "an operation is performed resulting in the y variable being assigned the value of 8.0 (4 / 0.5 = 8.0) the value assigned to the y variable ( 8.0 ) is printed to the screen."
+          "an operation is performed resulting in the y variable being assigned the value of 8.0 (4 / 0.5 = 8.0)\n\nthe value assigned to the y variable (8.0) is printed to the screen."
         ],
         "correct": 0,
         "explanation": "Python vyhodnocuje kód přesně podle priorit operátorů a pravidel jazyka. Výsledkem spuštění je: 8.0."
@@ -7909,7 +7886,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "py_q35",
         "module": "py_m1",
-        "question": "Which of the following variable names are illegal ? (Select two answers)",
+        "question": "Which of the following variable names are illegal? (Select two answers)",
         "code": null,
         "options": [
           "true",
@@ -7946,7 +7923,7 @@ const CERTIFICATES_DATA = {
           "20E12.8",
           "20.12E8.0",
           "20.12E8",
-          "Keeping in mind that Python chooses the most efficient format for presenting numbers, and the letter E is used to mean ten to the power of in scientific notation, the correct way of writing the number 20.12 × 10 8 is 20.12E8 ."
+          "Keeping in mind that Python chooses the most efficient format for presenting numbers, and the letter E is used to mean ten to the power of in scientific notation, the correct way of writing the number 20.12 × 108 is 20.12E8."
         ],
         "correct": 3,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: '20.12E8'."
@@ -7961,7 +7938,7 @@ const CERTIFICATES_DATA = {
           "any number of arguments (including zero)",
           "any number of arguments (excluding zero)",
           "just one argument",
-          "The print() function can take no arguments at all (e.g. print() ), three arguments (e.g. print(\"one\", \"two\", \"three\" ), or three thousand three hundred thirty three… (though we haven’t actually checked it!)."
+          "The print() function can take no arguments at all (e.g. print()), three arguments (e.g. print(\"one\", \"two\", \"three\"), or three thousand three hundred thirty three… (though we haven't actually checked it!)."
         ],
         "correct": 1,
         "explanation": "Python vyhodnocuje kód přesně podle priorit operátorů a pravidel jazyka. Výsledkem spuštění je: any number of arguments (including zero)."
@@ -7976,9 +7953,9 @@ const CERTIFICATES_DATA = {
           "36",
           "18",
           "666",
-          "Let’s analyze this example: the x variable is assigned the value of “3” (3 is inputted by the user and converted to a string by the input() function)",
+          "Let's analyze this example:\n\n\nthe x variable is assigned the value of \"3\" (3 is inputted by the user and converted to a string by the input() function)",
           "the y variable is assigned the value of 6 (6 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
-          "the print() function outputs the result of the following string multiplication: “3” * 6, that is 333333"
+          "the print() function outputs the result of the following string multiplication: \"3\" * 6, that is 333333"
         ],
         "correct": 0,
         "explanation": "Python vyhodnocuje kód přesně podle priorit operátorů a pravidel jazyka. Výsledkem spuštění je: 333333."
@@ -8001,14 +7978,14 @@ const CERTIFICATES_DATA = {
       {
         "id": "py_q41",
         "module": "py_m1",
-        "question": "Which of the following statements are true ? (Select two answers)",
+        "question": "Which of the following statements are true? (Select two answers)",
         "code": null,
         "options": [
           "The result of the / operator is always an integer value.",
           "The ** operator uses right-sided binding.",
           "Adding precedes multiplication.",
           "The right argument of the % operator cannot be zero.",
-          "The % operator (modulus) returns the remainder of a division, and because you cannot divide by zero, the right operand must be a non-zero number. Otherwise, a ZeroDivisionException will be raised. The ** operator uses right-sided binding, which means the expression 2**2**3 is evaluated from right to left: 2**3 = 8, and 2**8 = 256."
+          "The % operator (modulus) returns the remainder of a division, and because you cannot divide by zero, the right operand must be a non-zero number. Otherwise, a ZeroDivisionException will be raised.\n\nThe ** operator uses right-sided binding, which means the expression 2**2**3 is evaluated from right to left: 2**3 = 8, and 2**8 = 256."
         ],
         "correct": 1,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'The ** operator uses right-sided binding.'."
@@ -8020,13 +7997,13 @@ const CERTIFICATES_DATA = {
         "code": null,
         "options": [
           "its value",
-          "the argument’s name specified along with its value",
+          "the argument's name specified along with its value",
           "its connection with existing variables",
           "its position within the argument list",
           "Keyword parameters (also called named parameters) are parameters that have values determined by a keyword name followed by an equals sign (=) and a default value assigned to that keyword name. An example of a keyword argument: def my_function(x=1):."
         ],
         "correct": 1,
-        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'the argument’s name specified along with its value'."
+        "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'the argument's name specified along with its value'."
       },
       {
         "id": "py_q43",
@@ -8045,7 +8022,7 @@ const CERTIFICATES_DATA = {
       {
         "id": "py_q44",
         "module": "py_m2",
-        "question": "How many hashes( # ) will the following snippet send to the console?",
+        "question": "How many hashes(#) will the following snippet send to the console?",
         "code": null,
         "options": [
           "zero",
@@ -8093,7 +8070,7 @@ const CERTIFICATES_DATA = {
           "nums and vals are two different lists",
           "vals is longer than nums",
           "nums and vals are of the same length",
-          "nums is longer than vals"
+          "numsis longer than vals"
         ],
         "correct": 0,
         "explanation": "Podle oficiálních osnov Python Institute (PCEP / Python Essentials 1) je správným výsledkem: 'nums and vals are two different lists'."
@@ -8118,7 +8095,7 @@ const CERTIFICATES_DATA = {
         "question": "The second assignment:",
         "code": null,
         "options": [
-          "doesn’t change the list",
+          "doesn't change the list",
           "reverses the list",
           "shortens the list",
           "extends the list"

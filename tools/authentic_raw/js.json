@@ -3,9 +3,9 @@
     "question": "Entering about:blank in the address bar of your browser will:",
     "options": [
       "open a tab with information about your browser.",
-      "generate a page with information about the browser’s status and send it to the developer.",
+      "generate a page with information about the browser's status and send it to the developer.",
       "reset the browser to its default settings.",
-      "generate and load a minimal blank HTML page into the current tab. Answers Entering “about:blank” in the address bar of your browser will generate and load a minimal blank HTML page into the current tab. It essentially creates an empty page with no content or specific information. It is commonly used as a starting point or a way to clear the current page and have a blank slate."
+      "generate and load a minimal blank HTML page into the current tab.\n\n\n\n\nAnswers \nEntering \"about:blank\" in the address bar of your browser will generate and load a minimal blank HTML page into the current tab. It essentially creates an empty page with no content or specific information. It is commonly used as a starting point or a way to clear the current page and have a blank slate."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -16,18 +16,29 @@
       "the original name for JavaScript, which has been changed over time.",
       "a new language base on JavaScript which, among other things, introduces static typing.",
       "an alternative name for JavaScript",
-      "a variant of JavaScript that is compiled rather than interpreted. Answers The TypeScript language is a new language based on JavaScript. It is developed by Microsoft and adds several features to JavaScript, including static typing. TypeScript introduces optional static typing, which allows developers to define types for variables, function parameters, and return values. This provides better tooling, compile-time type checking, and improved code organization and maintainability. TypeScript code is transpiled into plain JavaScript, which can then be run in any JavaScript environment. It is worth noting that TypeScript is not the original name for JavaScript, and it is not an alternative name for JavaScript."
+      "a variant of JavaScript that is compiled rather than interpreted.\n\n\n\n\nAnswers \nThe TypeScript language is a new language based on JavaScript. It is developed by Microsoft and adds several features to JavaScript, including static typing. TypeScript introduces optional static typing, which allows developers to define types for variables, function parameters, and return values. This provides better tooling, compile-time type checking, and improved code organization and maintainability. TypeScript code is transpiled into plain JavaScript, which can then be run in any JavaScript environment. It is worth noting that TypeScript is not the original name for JavaScript, and it is not an alternative name for JavaScript."
     ],
     "correct": 1,
     "explanation": "& Hints:"
   },
   {
-    "question": "In the browser, we type into the address bar a string starting with file:/// . This means that:",
+    "question": "What HTML tag is used to indicate that we are embedding JavaScript code?",
+    "options": [
+      "<execute>",
+      "<script>",
+      "<source>",
+      "<js>\n\n\n\n\nAnswers \nThe HTML tag used to indicate that we are embedding JavaScript code is the <script> tag. This tag is used to define or reference external JavaScript files or to include JavaScript code directly within an HTML document. Here is an example of how the <script> tag is typically used:\n\n<script>\r\n// JavaScript code goes here\r\n</script>\nAlternatively, you can also reference an external JavaScript file by specifying the source using the src attribute within the <script> tag:\n\n<script src=\"script.js\"></script>\nIn both cases, the JavaScript code within the <script> tag will be executed by the browser."
+    ],
+    "correct": 1,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "In the browser, we type into the address bar a string starting with file:///. This means that:",
     "options": [
       "the rest of the string is the path to the file on our local computer that we want to open in the browser.",
       "we want the browser to create an empty page for us with the name we give as a continuation of the string.",
       "we want to save the page as a local file.",
-      "we do not want to open the page, but only download a file from the remote address and save it on the local machine. Answers When typing a string starting with “file:///” in the browser’s address bar, it typically indicates that you want to open a local file on your computer in the browser. The rest of the string after “file:///” represents the path to the file you want to open. For example, if you type “file:///path/to/file.html” in the address bar, it means you want to open the “file.html” file located at the specified path on your local computer. It’s important to note that modern browsers often have security restrictions in place that prevent opening arbitrary local files directly from the file system for security reasons. In such cases, you may encounter limitations or security warnings when trying to open local files using the “file:///” protocol."
+      "we do not want to open the page, but only download a file from the remote address and save it on the local machine.\n\n\n\n\nAnswers \nWhen typing a string starting with \"file:///\" in the browser's address bar, it typically indicates that you want to open a local file on your computer in the browser. The rest of the string after \"file:///\" represents the path to the file you want to open.\n\nFor example, if you type \"file:///path/to/file.html\" in the address bar, it means you want to open the \"file.html\" file located at the specified path on your local computer.\n\nIt's important to note that modern browsers often have security restrictions in place that prevent opening arbitrary local files directly from the file system for security reasons. In such cases, you may encounter limitations or security warnings when trying to open local files using the \"file:///\" protocol."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -38,7 +49,7 @@
       "local:///",
       "http://",
       "https://",
-      "file:/// Answers To open a local file in a browser by typing its path in the address bar, the path must be preceded by “file:///”. For example, if you have an HTML file named “index.html” located at “C:\\Users\\Username\\Documents\\index.html”, you would type the following in the address bar: file:///C:/Users/Username/Documents/index.html The “file:///” prefix indicates that you want to access a file on the local file system."
+      "file:///\n\n\n\n\nAnswers \nTo open a local file in a browser by typing its path in the address bar, the path must be preceded by \"file:///\".\n\nFor example, if you have an HTML file named \"index.html\" located at \"C:\\Users\\Username\\Documents\\index.html\", you would type the following in the address bar:\n\nfile:///C:/Users/Username/Documents/index.html\nThe \"file:///\" prefix indicates that you want to access a file on the local file system."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -49,7 +60,7 @@
       "console (log, \"test\");",
       "console.log(\"test\");",
       "console(\"test\");",
-      "log(\"test\"); Answers To display the word “test” in the console using JavaScript, you would use the statement: console.log(\"test\"); The console.log() function is a built-in function in JavaScript that outputs a message or value to the console. In this case, it will display the string “test” in the console."
+      "log(\"test\");\n\n\n\n\nAnswers \nTo display the word \"test\" in the console using JavaScript, you would use the statement:\n\n\nconsole.log(\"test\");\nThe console.log() function is a built-in function in JavaScript that outputs a message or value to the console. In this case, it will display the string \"test\" in the console."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -60,7 +71,7 @@
       "runs directly in a web browser and can contain an HTML document inside it.",
       "may be embedded inside an HTML document or run standalone in the browser.",
       "requires server support to run.",
-      "should be embedded inside an HTML document. Answers A client-side JavaScript program should be embedded inside an HTML document. When developing a client-side JavaScript program, it is common practice to embed the JavaScript code within an HTML document. This allows the JavaScript code to interact with the HTML elements and be executed when the HTML document is loaded in a web browser. JavaScript code can be included in an HTML document using the tag. The tag can be placed in the section or at the end of the section of the HTML document. Here’s an example: Client-side JavaScript Example // JavaScript code goes here By embedding JavaScript code within the HTML document, you can access and manipulate the HTML elements, respond to events, perform calculations, and perform other client-side operations directly within the browser."
+      "should be embedded inside an HTML document.\n\n\n\n\nAnswers \nA client-side JavaScript program should be embedded inside an HTML document.\n\nWhen developing a client-side JavaScript program, it is common practice to embed the JavaScript code within an HTML document. This allows the JavaScript code to interact with the HTML elements and be executed when the HTML document is loaded in a web browser.\n\nJavaScript code can be included in an HTML document using the <script> tag. The <script> tag can be placed in the <head> section or at the end of the <body> section of the HTML document. Here's an example:\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Client-side JavaScript Example</title>\r\n<script>\r\n// JavaScript code goes here\r\n</script>\r\n</head>\r\n<body>\r\n<!-- HTML content -->\r\n</body>\r\n</html>\nBy embedding JavaScript code within the HTML document, you can access and manipulate the HTML elements, respond to events, perform calculations, and perform other client-side operations directly within the browser."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -68,12 +79,23 @@
   {
     "question": "The JavaScript code includes the console.log(\"http://test.org\"); command. Its execution will:",
     "options": [
-      "send a log with information about the currently executed script to the indicated address http://test.org .",
+      "send a log with information about the currently executed script to the indicated address http://test.org.",
       "display on the console information about the progress of http://test.org page loading.",
-      "display the following message on the console: \"http://test.org\" .",
-      "cause the page http://test.org to be loaded into the browser. Answers The execution of the JavaScript code console.log(\"http://test.org\"); will display the following message on the console: “http://test.org”. The console.log() function is used to output a message or value to the console for debugging or informational purposes. In this case, the provided message is “http://test.org”. It will not send a log to the indicated address or load the page http://test.org into the browser. It simply logs the string “http://test.org” as a message in the console for you to see during development or testing."
+      "display the following message on the console: \"http://test.org\".",
+      "cause the page http://test.org to be loaded into the browser.\n\n\n\n\nAnswers \nThe execution of the JavaScript code console.log(\"http://test.org\"); will display the following message on the console: \"http://test.org\".\n\nThe console.log() function is used to output a message or value to the console for debugging or informational purposes. In this case, the provided message is \"http://test.org\". It will not send a log to the indicated address or load the page http://test.org into the browser. It simply logs the string \"http://test.org\" as a message in the console for you to see during development or testing."
     ],
     "correct": 2,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "The <html> tag indicates the start of the actual HTML document. What tag should appear at the end of the document?",
+    "options": [
+      "<lmth>",
+      "</html>",
+      "<html/>",
+      "<html>\n\n\n\n\nAnswers \nThe correct tag that should appear at the end of an HTML document is </html>. This closing </html> tag marks the end of the HTML document and is used to indicate the completion of the HTML structure.\n\nHere's an example of a basic HTML document structure:\n\n<html>\r\n<head>\r\n<title>My Webpage</title>\r\n</head>\r\n<body>\r\n<!-- Content of the webpage -->\r\n</body>\r\n</html>\nThe opening <html> tag at the beginning and the closing </html> tag at the end enclose the entire HTML document. Any HTML content, such as the <head> and <body> sections, should be placed between these tags."
+    ],
+    "correct": 1,
     "explanation": "& Hints:"
   },
   {
@@ -82,9 +104,20 @@
       "Directly in the processor.",
       "In a server environment using node.js.",
       "On a mobile device.",
-      "In a web browser. Answers JavaScript code cannot be executed directly in the processor. Processors execute machine code or instructions specific to their architecture, and JavaScript is an interpreted language that requires a JavaScript engine to run. JavaScript can be executed in various environments, including: In a server environment using Node.js: Node.js allows executing JavaScript code on the server-side. It provides a runtime environment that enables server-side scripting using JavaScript.",
+      "In a web browser.\n\n\n\n\nAnswers \nJavaScript code cannot be executed directly in the processor. Processors execute machine code or instructions specific to their architecture, and JavaScript is an interpreted language that requires a JavaScript engine to run.\n\nJavaScript can be executed in various environments, including:\n\n\nIn a server environment using Node.js: Node.js allows executing JavaScript code on the server-side. It provides a runtime environment that enables server-side scripting using JavaScript.",
       "In a web browser: JavaScript is primarily executed in web browsers. Browsers have built-in JavaScript engines that interpret and execute JavaScript code embedded within HTML pages.",
       "On a mobile device: Many mobile devices, such as smartphones and tablets, have web browsers that support JavaScript execution. Mobile web browsers provide JavaScript engine support to run JavaScript code within web pages or mobile web applications."
+    ],
+    "correct": 0,
+    "explanation": "& Hints:"
+  },
+  {
+    "question": "What tag do we use in HTML to denote the main part of the document inside which we define the page elements?",
+    "options": [
+      "<body>",
+      "<head>",
+      "<content>",
+      "<main>\n\n\n\n\nAnswers \nThe tag used in HTML to denote the main part of the document inside which we define the page elements is the <body> tag.\n\nThe <body> tag represents the main content area of an HTML document. It contains all the visible elements of the webpage, such as text, images, links, forms, and more. The content placed within the <body> tag is what is displayed to the user in the web browser.\n\nHere's an example of how the <body> tag is used:\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>My Webpage</title>\r\n</head>\r\n<body>\r\n<h1>Welcome to my webpage!</h1>\r\n<p>This is the main content area.</p>\r\n<!-- Additional page elements -->\r\n</body>\r\n</html>\n\n\n\n\n\n\nIn the above example, the main content of the webpage, including the heading <h1> and paragraph <p>, is placed within the <body> tag."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -95,7 +128,7 @@
       "interpreter, package manager.",
       "interpreter, debugger.",
       "code editor, interpreter.",
-      "code editor, debugger. Answers The basic toolkit needed to effectively develop JavaScript code consists of a code editor and an interpreter. Code Editor: A code editor is a software tool that allows you to write, edit, and manage your JavaScript code. It provides features like syntax highlighting, code completion, formatting, and other productivity-enhancing features. Popular code editors for JavaScript development include Visual Studio Code, Sublime Text, Atom, and JetBrains WebStorm.",
+      "code editor, debugger.\n\n\n\n\nAnswers \nThe basic toolkit needed to effectively develop JavaScript code consists of a code editor and an interpreter.\n\n\nCode Editor: A code editor is a software tool that allows you to write, edit, and manage your JavaScript code. It provides features like syntax highlighting, code completion, formatting, and other productivity-enhancing features. Popular code editors for JavaScript development include Visual Studio Code, Sublime Text, Atom, and JetBrains WebStorm.",
       "Interpreter: An interpreter is responsible for executing JavaScript code. It takes the source code and interprets it line by line, executing the code in real-time. Web browsers have built-in JavaScript engines that act as interpreters, executing JavaScript code directly in the browser. Examples include V8 in Chrome, SpiderMonkey in Firefox, and JavaScriptCore in Safari."
     ],
     "correct": 2,
@@ -107,9 +140,9 @@
       "Transforming the individual commands of the source code into the target form.",
       "Creating a runtime environment for the program.",
       "Verifying the correctness of the program source code (syntax).",
-      "Transforming all program code into target code before execution. Answers The task of the interpreter does not include transforming all program code into target code before execution. Interpreters work by executing the program code line by line, transforming each individual command from the source code into executable instructions as it encounters them. The interpreter takes care of executing these instructions directly without prior transformation of the entire program into target code. This is in contrast to compilers, which typically transform the entire program into target code before execution. The other tasks mentioned are typically associated with interpreters: Transforming the individual commands of the source code into the target form: Interpreters translate each command or statement in the source code into executable instructions or bytecode as they encounter them during runtime.",
+      "Transforming all program code into target code before execution.\n\n\n\n\nAnswers \nThe task of the interpreter does not include transforming all program code into target code before execution.\n\nInterpreters work by executing the program code line by line, transforming each individual command from the source code into executable instructions as it encounters them. The interpreter takes care of executing these instructions directly without prior transformation of the entire program into target code. This is in contrast to compilers, which typically transform the entire program into target code before execution.\n\nThe other tasks mentioned are typically associated with interpreters:\n\n\nTransforming the individual commands of the source code into the target form: Interpreters translate each command or statement in the source code into executable instructions or bytecode as they encounter them during runtime.",
       "Creating a runtime environment for the program: Interpreters set up the necessary runtime environment, including allocating memory, managing variables and objects, handling input and output, and providing the necessary runtime libraries or APIs for program execution.",
-      "Verifying the correctness of the program source code (syntax): Interpreters perform syntax checking to ensure that the program adheres to the language’s syntax rules. They identify and report syntax errors in the source code before executing it."
+      "Verifying the correctness of the program source code (syntax): Interpreters perform syntax checking to ensure that the program adheres to the language's syntax rules. They identify and report syntax errors in the source code before executing it."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -120,7 +153,7 @@
       "dog{age} = 6;",
       "age of dog = 6;",
       "dog.age = 6;",
-      "dog[age] = 6; Answers To change the value of the age field to 6 in the given object, you would use the syntax: dog.age = 6; This will update the age field of the dog object to 6."
+      "dog[age] = 6;\n\n\n\n\nAnswers \nTo change the value of the age field to 6 in the given object, you would use the syntax:\n\n\ndog.age = 6;\n\n\n\n\n\n\n\nThis will update the age field of the dog object to 6."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -131,18 +164,18 @@
       "names.length",
       "names.count",
       "length of names;",
-      "names.length(); Answers To check the number of elements in the array stored in the names variable, you would use the syntax: names.length This will return the length or number of elements in the names array."
+      "names.length();\n\n\n\n\nAnswers \nTo check the number of elements in the array stored in the names variable, you would use the syntax:\n\n\nnames.length\n\n\n\n\n\n\n\nThis will return the length or number of elements in the names array."
     ],
     "correct": 0,
     "explanation": "& Hints:"
   },
   {
-    "question": "We need to come up with a name for a variable where we will store the age of a user . All of the following variable names are formally correct, but one of them is the most readable, indicate which one:",
+    "question": "We need to come up with a name for a variable where we will store the age of a user. All of the following variable names are formally correct, but one of them is the most readable, indicate which one:",
     "options": [
       "userAge",
       "ua",
       "user",
-      "age Answers The most readable variable name among the options provided is userAge . This name clearly indicates that it stores the age of a user, making it more understandable and self-explanatory compared to the other options."
+      "age\n\n\n\n\nAnswers \nThe most readable variable name among the options provided is userAge.\n\nThis name clearly indicates that it stores the age of a user, making it more understandable and self-explanatory compared to the other options."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -153,7 +186,7 @@
       "let x = \"0x21\"",
       "let x = 33;",
       "let x = 17;",
-      "let x = 21; Answers The replacement for the declaration let x = 0x21; can be: let x = 33; The hexadecimal value 0x21 represents the decimal value 33, so assigning x to 33 achieves the same result as the original declaration."
+      "let x = 21;\n\n\n\n\nAnswers \nThe replacement for the declaration let x = 0x21; can be:\n\n\nlet x = 33;\nThe hexadecimal value 0x21 represents the decimal value 33, so assigning x to 33 achieves the same result as the original declaration."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -164,7 +197,7 @@
       "reverse daysOfWeek;",
       "daysOfWeek.invert();",
       "invert(daysOfWeek);",
-      "daysOfWeek.reverse(); Answers To reverse the order of the array elements stored in the daysOfWeek variable, you should call: daysOfWeek.reverse(); The reverse() method is used to reverse the order of elements in an array in JavaScript. By calling daysOfWeek.reverse() , the elements in the daysOfWeek array will be reversed."
+      "daysOfWeek.reverse();\n\n\n\n\nAnswers \nTo reverse the order of the array elements stored in the daysOfWeek variable, you should call:\n\ndaysOfWeek.reverse();\nThe reverse() method is used to reverse the order of elements in an array in JavaScript. By calling daysOfWeek.reverse(), the elements in the daysOfWeek array will be reversed."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -175,18 +208,18 @@
       "perform all writes to variables in a block of code delimited by braces.",
       "place the \"use strict\"; directive before each write we want to protect.",
       "place the \"use strict\"; directive at the beginning of the script.",
-      "place the \"prevent undeclared variables\"; directive at the beginning of the script. Answers To treat writing to an undeclared variable as an error in JavaScript, you would need to place the \"use strict\"; directive at the beginning of the script. So the correct option is: place the \"use strict\"; directive at the beginning of the script. By using the \"use strict\"; directive, you enable strict mode in JavaScript, which helps catch common mistakes and enforces stricter rules for variable declaration and usage. It will treat writing to an undeclared variable as an error instead of implicitly declaring it."
+      "place the \"prevent undeclared variables\"; directive at the beginning of the script.\n\n\n\n\nAnswers \nTo treat writing to an undeclared variable as an error in JavaScript, you would need to place the \"use strict\"; directive at the beginning of the script.\n\nSo the correct option is:\n\nplace the \"use strict\"; directive at the beginning of the script.\nBy using the \"use strict\"; directive, you enable strict mode in JavaScript, which helps catch common mistakes and enforces stricter rules for variable declaration and usage. It will treat writing to an undeclared variable as an error instead of implicitly declaring it."
     ],
     "correct": 2,
     "explanation": "& Hints:"
   },
   {
-    "question": "If a variable stores the value false , then the variable:",
+    "question": "If a variable stores the value false, then the variable:",
     "options": [
       "is of the Logical type.",
       "is of the Math type.",
       "is of the Boolean type.",
-      "will no longer be used in the program. Answers If a variable stores the value false , then the variable is of the Boolean type. The Boolean type in JavaScript represents a logical value that can have two possible states: true or false . Therefore, when a variable stores the value false , it is considered a Boolean variable. The variable can still be used in the program and can hold other Boolean values or be reassigned to different values as needed."
+      "will no longer be used in the program.\n\n\n\n\nAnswers \nIf a variable stores the value false, then the variable is of the Boolean type.\n\nThe Boolean type in JavaScript represents a logical value that can have two possible states: true or false. Therefore, when a variable stores the value false, it is considered a Boolean variable. The variable can still be used in the program and can hold other Boolean values or be reassigned to different values as needed."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -197,7 +230,7 @@
       "msg.chars",
       "msg.charsAt()",
       "msg.length",
-      "msg.length() Answers To obtain information about the number of characters in a string stored in the msg variable, you can use the following syntax: msg.length The length property is used to retrieve the number of characters in a string in JavaScript. By calling msg.length , you will get the length or number of characters in the msg string. Note that msg.chars , msg.charsAt() , and msg.length() are not valid ways to get the length of a string in JavaScript."
+      "msg.length()\n\n\n\n\nAnswers \nTo obtain information about the number of characters in a string stored in the msg variable, you can use the following syntax:\n\n\nmsg.length\n\nThe length property is used to retrieve the number of characters in a string in JavaScript. By calling msg.length, you will get the length or number of characters in the msg string.\n\nNote that msg.chars, msg.charsAt(), and msg.length() are not valid ways to get the length of a string in JavaScript."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -208,32 +241,32 @@
       "// let counter = 0; user visit counter",
       "let counter = 0; // user visit counter",
       "let counter = 0; /* user visite counter",
-      "let counter = 0; # user visite counter Answers To put a short comment with information about what the counter variable is used for, you can modify the line declaration in the following ways: let counter = 0; // user visit counter or // let counter = 0; user visit counter let counter = 0; Both of these modifications achieve the desired result by adding a comment next to the declaration of the counter variable. It provides information that the variable is used for counting user visits. Note that in JavaScript, single-line comments start with // , and multi-line comments are enclosed between /* and */ . The # symbol is not used for comments in JavaScript."
+      "let counter = 0; # user visite counter\n\n\n\n\nAnswers \nTo put a short comment with information about what the counter variable is used for, you can modify the line declaration in the following ways:\n\nlet counter = 0; // user visit counter\nor\n\n// let counter = 0; user visit counter\r\nlet counter = 0;\nBoth of these modifications achieve the desired result by adding a comment next to the declaration of the counter variable. It provides information that the variable is used for counting user visits.\n\nNote that in JavaScript, single-line comments start with //, and multi-line comments are enclosed between /* and */. The # symbol is not used for comments in JavaScript."
     ],
     "correct": 1,
     "explanation": "& Hints:"
   },
   {
-    "question": "Analyze the code snippet. Identify which variables are local and which are global ;",
+    "question": "Analyze the code snippet. Identify which variables are local and which are global;",
     "options": [
       "name ==> Global",
       "profession ==> Local",
       "age ==> Global",
       "height ==> Local",
-      "weight ==> Local Answers In the given code snippet, the variables can be classified as follows: Global variables: name",
+      "weight ==> Local \n\n\n\n\nAnswers \nIn the given code snippet, the variables can be classified as follows:\n\nGlobal variables:\n\n\nname",
       "age"
     ],
     "correct": 0,
     "explanation": "& Hints:"
   },
   {
-    "question": "We want to convert the string \"1024\" to type Number and store the result in variable n . Point out the correct statement",
+    "question": "We want to convert the string \"1024\" to type Number and store the result in variable n. Point out the correct statement",
     "options": [
       "let n = Number(\"1024\");",
       "let n = String(\"1024\");",
       "let n = StringToNumber(\"1024\");",
       "let n = \"1024\" + 0;",
-      "Answers The correct answer is: let n = Number(\"1024\"); This code converts the string “1024” to a number using the Number() function and stores the result in the variable n ."
+      "Answers \nThe correct answer is:\n\n\nlet n = Number(\"1024\");\n\n\n\n\n\n\n\nThis code converts the string \"1024\" to a number using the Number() function and stores the result in the variable n."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -245,43 +278,43 @@
       "1",
       "True",
       "\"June\"",
-      "Answers The indexOf() method is used to find the index of the first occurrence of a specified element within an array. In this case, it is used to find the index of the string “June” within the summer array. Since arrays in JavaScript are zero-based, meaning the first element has an index of 0, the indexOf() method will return the index of “June” as 0. Therefore, the variable index will have the value 0."
+      "Answers \nThe indexOf() method is used to find the index of the first occurrence of a specified element within an array. In this case, it is used to find the index of the string \"June\" within the summer array.\n\nSince arrays in JavaScript are zero-based, meaning the first element has an index of 0, the indexOf() method will return the index of \"June\" as 0. Therefore, the variable index will have the value 0."
     ],
     "correct": 0,
     "explanation": "& Hints:"
   },
   {
-    "question": "We have declared an array of animals let animals = [\"dog\", \"cat\", \"hamster\"]; . Then we call the method animals.push(\"canary\"); . As a result, the animals array will look like this:",
+    "question": "We have declared an array of animals let animals = [\"dog\", \"cat\", \"hamster\"];. Then we call the method animals.push(\"canary\");. As a result, the animals array will look like this:",
     "options": [
       "[\"dog\", \"cat\", \"hamster\"]",
       "[\"canary\", \"dog\", \"cat\", \"hamster\"]",
       "[\"canary\"]",
       "[\"dog\"], \"cat\", \"hamster\", \"canary\"]",
-      "Answers After calling the method animals.push(\"canary\"); , the animals array will look like this: [“dog”, “cat”, “hamster”, “canary”] The push() method is used to add elements to the end of an array. In this case, it adds the string “canary” to the end of the animals array. Therefore, the resulting array will have the elements “dog”, “cat”, “hamster”, and “canary” in that order."
+      "Answers \nAfter calling the method animals.push(\"canary\");, the animals array will look like this:\n\n[\"dog\", \"cat\", \"hamster\", \"canary\"]\n\nThe push() method is used to add elements to the end of an array. In this case, it adds the string \"canary\" to the end of the animals array. Therefore, the resulting array will have the elements \"dog\", \"cat\", \"hamster\", and \"canary\" in that order."
     ],
     "correct": 3,
     "explanation": "& Hints:"
   },
   {
-    "question": "We perform the operation: let x = \"abcdefg\".slice(2, 4) . As a result, the value:",
+    "question": "We perform the operation: let x = \"abcdefg\".slice(2, 4). As a result, the value:",
     "options": [
       "\"ab\" will be written to the variable x",
       "\"cd\" will be written to the variable x",
       "\"cdef\" will be written to the variable x",
       "\"cdefg\" will be written to the variable x",
-      "Answers The slice() method is used to extract a portion of a string based on the specified starting and ending indices. In this case, \"abcdefg\".slice(2,4) will extract characters starting from index 2 (inclusive) up to index 4 (exclusive). The resulting substring will be “cd”, and it will be assigned to the variable x ."
+      "Answers \nThe slice() method is used to extract a portion of a string based on the specified starting and ending indices. In this case, \"abcdefg\".slice(2,4) will extract characters starting from index 2 (inclusive) up to index 4 (exclusive).\n\nThe resulting substring will be \"cd\", and it will be assigned to the variable x."
     ],
     "correct": 1,
     "explanation": "& Hints:"
   },
   {
-    "question": "We want to declare a distance constant and initialize it with the value 120 . What should such a declaration look like?",
+    "question": "We want to declare a distance constant and initialize it with the value 120. What should such a declaration look like?",
     "options": [
       "const distance = 120;",
       "const distance; distance = 120;",
       "let distance; const distance = 120;",
       "let constant distance = 120;",
-      "Answers In JavaScript, when declaring a constant using the const keyword, you need to provide both the constant name and its initial value in a single statement. Therefore, the correct way to declare and initialize the constant distance with the value of 120 is by using the code snippet above."
+      "Answers \nIn JavaScript, when declaring a constant using the const keyword, you need to provide both the constant name and its initial value in a single statement. Therefore, the correct way to declare and initialize the constant distance with the value of 120 is by using the code snippet above."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -293,19 +326,19 @@
       "it will display 0.1 in the console",
       "it will display \"number\" in the console.",
       "it will display \"fraction\" in the console.",
-      "Answers performs the division operation 10 / 100 and assigns the result to the variable x . In JavaScript, the division operation between two numbers results in a floating-point number. The console.log(typeof(x)) statement outputs the type of the variable x to the console. Since the result of the division is a floating-point number, the typeof operator will return \"number\" . Therefore, executing the code will display \"number\" in the console."
+      "Answers \nperforms the division operation 10 / 100 and assigns the result to the variable x. In JavaScript, the division operation between two numbers results in a floating-point number.\n\nThe console.log(typeof(x)) statement outputs the type of the variable x to the console. Since the result of the division is a floating-point number, the typeof operator will return \"number\". Therefore, executing the code will display \"number\" in the console."
     ],
     "correct": 2,
     "explanation": "& Hints:"
   },
   {
-    "question": "We have declared an array of animals let animals = [\"dog\", \"cat\", \"hamster\"]; . Then we call the method animals.pop(); . As a result, the animals array will look like this:",
+    "question": "We have declared an array of animals let animals = [\"dog\", \"cat\", \"hamster\"];. Then we call the method animals.pop();. As a result, the animals array will look like this:",
     "options": [
       "[\"dog\", \"cat\"]",
       "[\"cat\", \"hamster\"]",
       "[\"hamster\"]",
       "[\"dog\", \"cat\", \"hamster\"]",
-      "Answers After calling the method animals.pop(); , the animals array will look like this: [\"dog\", \"cat\"] The pop() method is used to remove the last element from an array. In this case, it removes the element “hamster” from the end of the animals array. Therefore, the resulting array will have the elements “dog” and “cat” in that order."
+      "Answers \nAfter calling the method animals.pop();, the animals array will look like this:\n\n[\"dog\", \"cat\"]\n\nThe pop() method is used to remove the last element from an array. In this case, it removes the element \"hamster\" from the end of the animals array. Therefore, the resulting array will have the elements \"dog\" and \"cat\" in that order."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -316,7 +349,7 @@
       "in the part marked 1.",
       "throughout the program.",
       "nowhere, as we have no access at all (the variable has not been initialized).",
-      "in the part marked 2 .",
+      "in the part marked 2.",
       "Answers"
     ],
     "correct": 0,
@@ -325,11 +358,11 @@
   {
     "question": "Performing the operation: let x = 20n + 10; will:",
     "options": [
-      "result in the string \"20n10\" being stored in the variable x .",
+      "result in the string \"20n10\" being stored in the variable x.",
       "cause the program to abort due to an error.",
-      "result in a value of 30n being stored in the variable x .",
-      "result in a value of 30 being stored in the variable x .",
-      "Answers Performing the operation in JavaScript will result in an Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions."
+      "result in a value of 30n being stored in the variable x.",
+      "result in a value of 30 being stored in the variable x.",
+      "Answers \n\n\n\n\n\n\n\nPerforming the operation in JavaScript will result in an Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -337,11 +370,11 @@
   {
     "question": "Performing the operation: let x = 100 / 0; will result in",
     "options": [
-      "an Infinity value being stored in the variable x .",
-      "the value NaN being stored in the variable x .",
-      "the value 0 being stored in the variable x .",
+      "an Infinity value being stored in the variable x.",
+      "the value NaN being stored in the variable x.",
       "the value 0 being stored in the variable x.",
-      "Answers In JavaScript, dividing a non-zero number by zero results in a special value called Infinity. Therefore, when performing the operation let x = 100/0; , the value Infinity will be stored in the variable x . It’s important to note that dividing zero by zero ( 0/0 ) results in NaN (Not a Number), but dividing a non-zero number by zero results in Infinity."
+      "the value 0 being stored in the variable x.",
+      "Answers \nIn JavaScript, dividing a non-zero number by zero results in a special value called Infinity. Therefore, when performing the operation let x = 100/0;, the value Infinity will be stored in the variable x.\n\nIt's important to note that dividing zero by zero (0/0) results in NaN (Not a Number), but dividing a non-zero number by zero results in Infinity."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -353,7 +386,7 @@
       "32",
       "error message: \"uncaught ReferenceError: Age is not defined\" .",
       "33",
-      "Answers In the code snippet provided, there is a mismatch in the variable names. The variable age is declared and assigned the value 32 . Then, it is incremented by 1 using age = age + 1; . However, when attempting to console.log(Age); , it refers to a variable Age with a capital “A”, which has not been declared or assigned any value. JavaScript is case-sensitive, so Age and age are considered as separate variables. Since Age is not defined, it will result in an “uncaught ReferenceError” when trying to access it."
+      "Answers \nIn the code snippet provided, there is a mismatch in the variable names. The variable age is declared and assigned the value 32. Then, it is incremented by 1 using age = age + 1;. However, when attempting to console.log(Age);, it refers to a variable Age with a capital \"A\", which has not been declared or assigned any value.\n\nJavaScript is case-sensitive, so Age and age are considered as separate variables. Since Age is not defined, it will result in an \"uncaught ReferenceError\" when trying to access it."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -365,7 +398,7 @@
       "the value NaN of Number type to be stored in the variable x .",
       "the value 15 of Number type to be stored in the variable x .",
       "the value \"Alice10\" of String type to be stored in the variable x .",
-      "Answers In JavaScript, when you use the + operator with a string and a number, the number is implicitly converted to a string, and the concatenation of the two values is performed. In the code snippet let x = \"Alice\" + 10; , the string “Alice” is concatenated with the number 10. The result of this operation is the string “Alice10”, which is then stored in the variable x ."
+      "Answers \nIn JavaScript, when you use the + operator with a string and a number, the number is implicitly converted to a string, and the concatenation of the two values is performed.\n\nIn the code snippet let x = \"Alice\" + 10;, the string \"Alice\" is concatenated with the number 10. The result of this operation is the string \"Alice10\", which is then stored in the variable x."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -377,31 +410,31 @@
       "may consist of multiple elements, of which is of a primitive type.",
       "may consist of multiple elements, each of which may be of a primitive or composite type.",
       "are not used in JavaScript.",
-      "Answers Complex (or composite) data types in JavaScript can consist of multiple elements, and each element can be of a primitive type or another complex data type. Examples of complex data types in JavaScript include arrays, objects, and functions. Primitive types, on the other hand, are not complex data types. They are basic data types that represent simple values, such as numbers, strings, booleans, null, and undefined. Therefore, complex data types can have multiple elements, each of which can be either a primitive type or another complex data type, making them more versatile and flexible in storing and representing data."
+      "Answers \nComplex (or composite) data types in JavaScript can consist of multiple elements, and each element can be of a primitive type or another complex data type. Examples of complex data types in JavaScript include arrays, objects, and functions.\n\nPrimitive types, on the other hand, are not complex data types. They are basic data types that represent simple values, such as numbers, strings, booleans, null, and undefined.\n\nTherefore, complex data types can have multiple elements, each of which can be either a primitive type or another complex data type, making them more versatile and flexible in storing and representing data."
     ],
     "correct": 2,
     "explanation": "& Hints:"
   },
   {
-    "question": "We have declared an array of selected month names let summer = [\"June\", \"July\", \"August\"]; . We want to change the value \"July\" stored in the array to the number 7 :",
+    "question": "We have declared an array of selected month names let summer = [\"June\", \"July\", \"August\"];. We want to change the value \"July\" stored in the array to the number 7:",
     "options": [
       "summer[1] = 7;",
       "We cannot do this (an array can only contain elements of the same type).",
       "summer.July = 7;",
       "summer[0] = 7;",
-      "Answers To change the value “July” stored in the array summer to the number 7, you can use the index notation ( [] ) and assign the new value to the corresponding index. In JavaScript arrays, elements can be of different types, so you can replace an element in the array with a value of a different type. By using summer[1] = 7; , you are accessing the element at index 1 (which is “July”) and assigning the value 7 to it, effectively changing the element to the number 7. Therefore, after executing summer[1] = 7; , the summer array will become [\"June\", 7, \"August\"] , with the element at index 1 being replaced by the number 7."
+      "Answers \nTo change the value \"July\" stored in the array summer to the number 7, you can use the index notation ([]) and assign the new value to the corresponding index.\n\nIn JavaScript arrays, elements can be of different types, so you can replace an element in the array with a value of a different type. By using summer[1] = 7;, you are accessing the element at index 1 (which is \"July\") and assigning the value 7 to it, effectively changing the element to the number 7.\n\nTherefore, after executing summer[1] = 7;, the summer array will become [\"June\", 7, \"August\"], with the element at index 1 being replaced by the number 7."
     ],
     "correct": 0,
     "explanation": "& Hints:"
   },
   {
-    "question": "We have declared an array let animals = [\"dog\", \"cat\", \"hamster\"]; . We want to temporarily comment out the element \"cat\" , and to do this, we can modify the declaration as follows:",
+    "question": "We have declared an array let animals = [\"dog\", \"cat\", \"hamster\"];. We want to temporarily comment out the element \"cat\", and to do this, we can modify the declaration as follows:",
     "options": [
       "let animals = [\"dog\", \"hamster\"];",
       "let animals = [\"dog\", #\"cat\",# \"hamster\"];",
       "let animals = [\"dog\", //\"cat\",// \"hamster\"];",
       "let animals = [\"dog\", /*\"cat\",*/ \"hamster\"];",
-      "Answers In JavaScript, you can use the /* */ syntax for multiline comments. By placing the /* before the element you want to comment out and the */ after it, you effectively turn that part of the code into a comment. Therefore, modifying the declaration of the animals array as shown above will temporarily comment out the element “cat”, resulting in an array with only the elements “dog” and “hamster”."
+      "Answers \nIn JavaScript, you can use the /* */ syntax for multiline comments. By placing the /* before the element you want to comment out and the */ after it, you effectively turn that part of the code into a comment.\n\nTherefore, modifying the declaration of the animals array as shown above will temporarily comment out the element \"cat\", resulting in an array with only the elements \"dog\" and \"hamster\"."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -413,7 +446,7 @@
       "height is variable;",
       "let height;",
       "variable height;",
-      "Answers In JavaScript, variables are typically declared using the let keyword, followed by the variable name. The statement let height; declares a variable named height without assigning it an initial value. Therefore, let height; is the correct syntax for declaring the height variable in JavaScript."
+      "Answers \nIn JavaScript, variables are typically declared using the let keyword, followed by the variable name. The statement let height; declares a variable named height without assigning it an initial value.\n\nTherefore, let height; is the correct syntax for declaring the height variable in JavaScript."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -425,7 +458,7 @@
       "25",
       "20",
       "true",
-      "Answers In JavaScript, the double vertical bar “||” is indeed used as the logical OR operator. The logical OR operator in JavaScript returns the first operand if it is truthy, otherwise, it returns the second operand. In the case of the expression “20 || 5”, both 20 and 5 are considered truthy values in JavaScript. Therefore, the result of the operation would be 20, which is the first truthy value encountered. To illustrate this in code: console.log(20 || 5); // Output: 20 So, the result of the operation “20 || 5” in JavaScript is 20."
+      "Answers \nIn JavaScript, the double vertical bar \"||\" is indeed used as the logical OR operator. The logical OR operator in JavaScript returns the first operand if it is truthy, otherwise, it returns the second operand.\n\nIn the case of the expression \"20 || 5\", both 20 and 5 are considered truthy values in JavaScript. Therefore, the result of the operation would be 20, which is the first truthy value encountered.\n\nTo illustrate this in code:\n\nconsole.log(20 || 5); // Output: 20\n\n\n\n\n\n\nSo, the result of the operation \"20 || 5\" in JavaScript is 20."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -437,7 +470,7 @@
       "\"false\"",
       "false",
       "true",
-      "Answers The result of the operation false || \"false\" in JavaScript is indeed false . The logical OR operator ( || ) returns the first truthy value it encounters or the last operand if all operands are falsy. In this case, the first operand is false , which is falsy. The second operand is the string \"false\" , which is also truthy. Since the logical OR operator did not encounter a truthy value in the operands before reaching the last operand, it returns the last operand, which is false . Therefore, the correct answer is false ."
+      "Answers \nThe result of the operation false || \"false\" in JavaScript is indeed false.\n\nThe logical OR operator (||) returns the first truthy value it encounters or the last operand if all operands are falsy. In this case, the first operand is false, which is falsy. The second operand is the string \"false\", which is also truthy. Since the logical OR operator did not encounter a truthy value in the operands before reaching the last operand, it returns the last operand, which is false.\n\nTherefore, the correct answer is false."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -449,7 +482,7 @@
       "false",
       "true",
       "-14",
-      "Answers To evaluate the expression “3 * 4 > 20 – 15,” let’s break it down: First, we calculate the values on both sides of the comparison: 3 * 4 = 12 20 – 15 = 5 Now we can compare the two values: 12 > 5 Since 12 is indeed greater than 5, the result of the comparison is true. Therefore, the correct answer is true."
+      "Answers \nTo evaluate the expression \"3 * 4 > 20 – 15,\" let's break it down:\n\nFirst, we calculate the values on both sides of the comparison:\n\n3 * 4 = 12 20 – 15 = 5\n\nNow we can compare the two values:\n\n12 > 5\n\nSince 12 is indeed greater than 5, the result of the comparison is true.\n\nTherefore, the correct answer is true."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -461,10 +494,10 @@
       "===",
       "==",
       "!==",
-      "Answers To check if two variables store the same values of exactly the same type in JavaScript, you would use the strict equality operator, which is “===”. Here’s an “===” (strict equality operator): It compares two values for equality without performing any type coercion. It returns true if the values are equal in value and type.",
-      "“==” (loose equality operator): It also compares two values for equality, but it allows for type coercion. JavaScript will try to convert the operands to the same type before making the comparison. This operator can lead to unexpected results due to the type coercion rules, so it’s generally recommended to use the strict equality operator (===) instead.",
-      "“!=” (loose inequality operator): It checks if two values are not equal after performing type coercion.",
-      "“!==” (strict inequality operator): It checks if two values are not equal without performing any type coercion."
+      "Answers \nTo check if two variables store the same values of exactly the same type in JavaScript, you would use the strict equality operator, which is \"===\".\n\nHere's an \n\n\"===\" (strict equality operator): It compares two values for equality without performing any type coercion. It returns true if the values are equal in value and type.",
+      "\"==\" (loose equality operator): It also compares two values for equality, but it allows for type coercion. JavaScript will try to convert the operands to the same type before making the comparison. This operator can lead to unexpected results due to the type coercion rules, so it's generally recommended to use the strict equality operator (===) instead.",
+      "\"!=\" (loose inequality operator): It checks if two values are not equal after performing type coercion.",
+      "\"!==\" (strict inequality operator): It checks if two values are not equal without performing any type coercion."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -476,9 +509,9 @@
       "false",
       "1",
       "true",
-      "Answers The result of the operation “!(true && false || true)” will be “false”. To evaluate this expression, let’s break it down step by step: The innermost part of the expression is the logical AND operation “true && false”, which evaluates to “false”. This is because both operands need to be true for the logical AND to return true.",
-      "Next, we have the logical OR operation “false || true”, which evaluates to “true”. This is because at least one of the operands needs to be true for the logical OR to return true.",
-      "Finally, we have the logical NOT operation “!true”, which negates the result and returns the opposite. Since the result of the previous step is “true”, the logical NOT operation returns “false”."
+      "Answers \nThe result of the operation \"!(true && false || true)\" will be \"false\".\n\nTo evaluate this expression, let's break it down step by step:\n\n\nThe innermost part of the expression is the logical AND operation \"true && false\", which evaluates to \"false\". This is because both operands need to be true for the logical AND to return true.",
+      "Next, we have the logical OR operation \"false || true\", which evaluates to \"true\". This is because at least one of the operands needs to be true for the logical OR to return true.",
+      "Finally, we have the logical NOT operation \"!true\", which negates the result and returns the opposite. Since the result of the previous step is \"true\", the logical NOT operation returns \"false\"."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -490,22 +523,22 @@
       "\"Hello\"",
       "\"OK\"",
       "\"World\"",
-      "Answers If, after running the code let test = prompt(\"Hello\", \"World\"); , you immediately press the “OK” button on the dialog without modifying the input, the test variable will have the value “World”. The prompt function in JavaScript displays a dialog box with an optional message and a default value. In this case, the message is “Hello” and the default value is “World”. When the dialog appears, if you click “OK” without modifying the input, the default value (“World”) will be assigned to the test variable. Here’s an example of what the code could look like and the outcome: let test = prompt(\"Hello\", \"World\"); console.log(test); Scenario: User presses “OK” without modifying the input: Dialog box appears with the default input “World”.",
-      "User presses “OK” without modifying the input.",
-      "The default value (“World”) will be assigned to the test variable.",
-      "The output will be “World”."
+      "Answers \nIf, after running the code let test = prompt(\"Hello\", \"World\");, you immediately press the \"OK\" button on the dialog without modifying the input, the test variable will have the value \"World\".\n\nThe prompt function in JavaScript displays a dialog box with an optional message and a default value. In this case, the message is \"Hello\" and the default value is \"World\".\n\nWhen the dialog appears, if you click \"OK\" without modifying the input, the default value (\"World\") will be assigned to the test variable.\n\nHere's an example of what the code could look like and the outcome:\n\nlet test = prompt(\"Hello\", \"World\");\r\nconsole.log(test);\nScenario: User presses \"OK\" without modifying the input:\n\n\nDialog box appears with the default input \"World\".",
+      "User presses \"OK\" without modifying the input.",
+      "The default value (\"World\") will be assigned to the test variable.",
+      "The output will be \"World\"."
     ],
     "correct": 3,
     "explanation": "& Hints:"
   },
   {
-    "question": "The number 2 is stored in the variable n (let n = 2;) . The command n = n*n*n is then called. This last command can be replaced by:",
+    "question": "The number 2 is stored in the variable n (let n = 2;). The command n = n*n*n is then called. This last command can be replaced by:",
     "options": [
       "n **= n;",
       "n **= 3;",
       "n *= 3;",
       "n ***= n;",
-      "Answers The command n = n * n * n can be replaced by n **= 3 . In JavaScript, the **= operator is the exponentiation assignment operator. It raises the left-hand side operand to the power of the right-hand side operand and assigns the result back to the left-hand side variable. So, when n = n * n * n is replaced with n **= 3 , it means n will be raised to the power of 3 and the result will be assigned back to n . It is equivalent to performing n = n ** 3 . Here’s an example to illustrate this: let n = 2; n **= 3; console.log(n); // Output: 8 In this case, the value of n is initially 2. After executing n **= 3 , n is raised to the power of 3, resulting in 8. Therefore, the output will be 8. To summarize, the command n = n * n * n can be replaced by n **= 3 to achieve the same result."
+      "Answers \nThe command n = n * n * n can be replaced by n **= 3.\n\nIn JavaScript, the **= operator is the exponentiation assignment operator. It raises the left-hand side operand to the power of the right-hand side operand and assigns the result back to the left-hand side variable.\n\nSo, when n = n * n * n is replaced with n **= 3, it means n will be raised to the power of 3 and the result will be assigned back to n. It is equivalent to performing n = n ** 3.\n\nHere's an example to illustrate this:\n\nlet n = 2;\r\nn **= 3;\r\nconsole.log(n); // Output: 8\nIn this case, the value of n is initially 2. After executing n **= 3, n is raised to the power of 3, resulting in 8. Therefore, the output will be 8.\n\nTo summarize, the command n = n * n * n can be replaced by n **= 3 to achieve the same result."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -517,7 +550,7 @@
       "36",
       "215",
       "53",
-      "Answers The result stored in the variable n after executing the code snippet let n = 2 * 3 ** 3 - 1; is 53. Let’s break down the code snippet step by step: 3 ** 3 is an exponentiation operation where 3 is raised to the power of 3. This results in 27.",
+      "Answers \nThe result stored in the variable n after executing the code snippet let n = 2 * 3 ** 3 - 1; is 53.\n\nLet's break down the code snippet step by step:\n\n\n3 ** 3 is an exponentiation operation where 3 is raised to the power of 3. This results in 27.",
       "Next, 2 * 27 is multiplied, which gives 54.",
       "Finally, 54 - 1 is subtracted, resulting in 53."
     ],
@@ -531,19 +564,19 @@
       "true",
       "false",
       "1",
-      "Answers The result of the comparison \"abcd\" > \"Abcd\" will be true . When comparing strings in JavaScript using the greater-than operator ( > ), the comparison is made based on lexicographic order, which follows the Unicode values of the characters. In this case, comparing the strings “abcd” and “Abcd” character by character, the first differing characters are “a” and “A”. In Unicode, the lowercase letters have higher values than uppercase letters. Therefore, “a” is greater than “A” in lexicographic order. Since the first differing character (“a”) in the first string is greater than the corresponding character (“A”) in the second string, the comparison evaluates to true . To illustrate this in code: console.log(\"abcd\" > \"Abcd\"); // Output: true So, the correct answer is true ."
+      "Answers \nThe result of the comparison \"abcd\" > \"Abcd\" will be true.\n\nWhen comparing strings in JavaScript using the greater-than operator (>), the comparison is made based on lexicographic order, which follows the Unicode values of the characters.\n\nIn this case, comparing the strings \"abcd\" and \"Abcd\" character by character, the first differing characters are \"a\" and \"A\". In Unicode, the lowercase letters have higher values than uppercase letters. Therefore, \"a\" is greater than \"A\" in lexicographic order.\n\nSince the first differing character (\"a\") in the first string is greater than the corresponding character (\"A\") in the second string, the comparison evaluates to true.\n\nTo illustrate this in code:\n\nconsole.log(\"abcd\" > \"Abcd\"); // Output: true\n\n\n\n\n\n\nSo, the correct answer is true."
     ],
     "correct": 1,
     "explanation": "& Hints:"
   },
   {
-    "question": "Its execution will result in the following values in the variables n and m :",
+    "question": "Its execution will result in the following values in the variables n and m:",
     "options": [
-      "n: 11 , m: 10",
-      "n: 10 , m: 11",
-      "n: 11 , m: 11",
-      "n: 10 , m: 10",
-      "Answers The execution of the code snippet let n = 10; let m = ++n; will result in the following values in the variables n and m : n will have a value of 11.",
+      "n: 11, m: 10",
+      "n: 10, m: 11",
+      "n: 11, m: 11",
+      "n: 10, m:10",
+      "Answers \nThe execution of the code snippet let n = 10; let m = ++n; will result in the following values in the variables n and m:\n\n\nn will have a value of 11.",
       "m will also have a value of 11."
     ],
     "correct": 2,
@@ -552,53 +585,53 @@
   {
     "question": "The confirm method allows you to create a dialog box. What value does this method return when the user closes the window?",
     "options": [
-      "Always true .",
-      "Always false .",
+      "Always true.",
+      "Always false.",
       "The string entered by the user.",
       "It depends on the option selected by the user.",
-      "Answers The confirm method in JavaScript allows you to create a dialog box with an OK and Cancel button. When the user interacts with the dialog box, the method returns a boolean value that indicates the user’s choice. Specifically, when the user closes the window or clicks on either the OK or Cancel button in the dialog box, the confirm method will return true if the user clicked on OK, and false if the user clicked on Cancel or closed the window. So, the correct answer is: It depends on the option selected by the user. Here’s an example to demonstrate the usage of the confirm method: let result = confirm(\"Are you sure you want to proceed?\"); console.log(result); In this example, a confirm dialog box with the message “Are you sure you want to proceed?” is displayed. If the user clicks on OK, the value of result will be true . If the user clicks on Cancel or closes the window, the value of result will be false . The output will reflect the user’s choice. Therefore, the return value of the confirm method depends on the option selected by the user."
+      "Answers \nThe confirm method in JavaScript allows you to create a dialog box with an OK and Cancel button. When the user interacts with the dialog box, the method returns a boolean value that indicates the user's choice.\n\nSpecifically, when the user closes the window or clicks on either the OK or Cancel button in the dialog box, the confirm method will return true if the user clicked on OK, and false if the user clicked on Cancel or closed the window.\n\nSo, the correct answer is: It depends on the option selected by the user.\n\nHere's an example to demonstrate the usage of the confirm method:\n\nlet result = confirm(\"Are you sure you want to proceed?\");\r\nconsole.log(result);\nIn this example, a confirm dialog box with the message \"Are you sure you want to proceed?\" is displayed. If the user clicks on OK, the value of result will be true. If the user clicks on Cancel or closes the window, the value of result will be false. The output will reflect the user's choice.\n\nTherefore, the return value of the confirm method depends on the option selected by the user."
     ],
     "correct": 3,
     "explanation": "& Hints:"
   },
   {
-    "question": "The string \"12\" has been written into the str variable: ( let str = \"12\";) . Then the operations str = +str is performed. As a result, the variable str will contain:",
+    "question": "The string \"12\" has been written into the str variable: (let str = \"12\";). Then the operations str = +str is performed. As a result, the variable str will contain:",
     "options": [
       "NaN",
       "12",
       "\"+12\"",
       "\"12\"",
-      "Answers The variable str will contain the number 12 as a result of the operation str = +str . Let’s break down the code step by step: Initially, the string “12” is assigned to the variable str using let str = \"12\"; .",
-      "The unary plus operator ( + ) is used to convert the string value to a number. When applied to a string, the unary plus operator attempts to convert the string to a numeric value.",
-      "In this case, the unary plus operator is applied to the string “12”, resulting in the number 12.",
-      "The result of the conversion is then assigned back to the variable str using str = +str . Since the conversion is successful, the variable str now holds the number 12."
+      "Answers \nThe variable str will contain the number 12 as a result of the operation str = +str.\n\nLet's break down the code step by step:\n\n\nInitially, the string \"12\" is assigned to the variable str using let str = \"12\";.",
+      "The unary plus operator (+) is used to convert the string value to a number. When applied to a string, the unary plus operator attempts to convert the string to a numeric value.",
+      "In this case, the unary plus operator is applied to the string \"12\", resulting in the number 12.",
+      "The result of the conversion is then assigned back to the variable str using str = +str. Since the conversion is successful, the variable str now holds the number 12."
     ],
     "correct": 1,
     "explanation": "& Hints:"
   },
   {
-    "question": "After its execution, the variables x , y , and z will have the values:",
+    "question": "After its execution, the variables x, y, and z will have the values:",
     "options": [
-      "x: false , y: true , z: 1",
-      "x: null , y: null , z: 1",
-      "x: true , y: false , z: 1",
-      "x: 1 , y: 1 , z: 1",
-      "Answers After executing the code snippet: let nr = \"1\"; let x = (nr === 1); let y = (nr == 1); let z = (nr = 1); The variables x , y , and z will have the following values: x will have a value of false .",
-      "y will have a value of true .",
-      "z will have a value of 1 ."
+      "x: false, y: true, z: 1",
+      "x: null, y: null, z: 1",
+      "x: true, y: false, z:1",
+      "x: 1, y: 1, z: 1",
+      "Answers \nAfter executing the code snippet:\n\n\nlet nr = \"1\";\r\nlet x = (nr === 1);\r\nlet y = (nr == 1);\r\nlet z = (nr = 1);\n\nThe variables x, y, and z will have the following values:\n\n\nx will have a value of false.",
+      "y will have a value of true.",
+      "z will have a value of 1."
     ],
     "correct": 0,
     "explanation": "& Hints:"
   },
   {
-    "question": "The methods window.altert , window.confirm , and window.prompt are methods of the window object. Which of the following is not true ?",
+    "question": "The methods window.altert, window.confirm, and window.prompt are methods of the window object. Which of the following is not true?",
     "options": [
-      "The alert , confrim , and prompt methods require an argument specifying the position of the dialog in which the information will be displayed.",
-      "The alert , confirm , and prompt methods display information in modal windows that block access to the page until they are closed.",
-      "You can call window methods, such as window.alert , without including the name window, so calling alert(\"abc\") would be correct.",
+      "The alert, confrim, and prompt methods require an argument specifying the position of the dialog in which the information will be displayed.",
+      "The alert, confirm, and prompt methods display information in modal windows that block access to the page until they are closed.",
+      "You can call window methods, such as window.alert, without including the name window, so calling alert(\"abc\") would be correct.",
       "The window object represents the window in which the HTML document containing the JavaScript code currently being executed is open.",
-      "Answers The statement “The alert, confirm, and prompt methods require an argument specifying the position of the dialog in which the information will be displayed” is not true. The position of the dialog in which the information will be displayed is not specified as an argument when using the alert , confirm , or prompt methods. These methods display modal dialog boxes that are centered on the user’s screen by default. The position of the dialog is handled by the browser itself, and the methods do not provide a way to control or specify the position explicitly. The correct information regarding the given options is as follows: The alert , confirm , and prompt methods display information in modal windows that block access to the page until they are closed. This means that the user needs to interact with the dialog before continuing to use the page.",
-      "You can call window methods, such as window.alert , without including the name window . For example, calling alert(\"abc\") directly is correct. This is because these methods are part of the window object, and they can be accessed globally without explicitly referencing the window object.",
+      "Answers \nThe statement \"The alert, confirm, and prompt methods require an argument specifying the position of the dialog in which the information will be displayed\" is not true.\n\nThe position of the dialog in which the information will be displayed is not specified as an argument when using the alert, confirm, or prompt methods. These methods display modal dialog boxes that are centered on the user's screen by default. The position of the dialog is handled by the browser itself, and the methods do not provide a way to control or specify the position explicitly.\n\nThe correct information regarding the given options is as follows:\n\n\nThe alert, confirm, and prompt methods display information in modal windows that block access to the page until they are closed. This means that the user needs to interact with the dialog before continuing to use the page.",
+      "You can call window methods, such as window.alert, without including the name window. For example, calling alert(\"abc\") directly is correct. This is because these methods are part of the window object, and they can be accessed globally without explicitly referencing the window object.",
       "The window object represents the window in which the HTML document containing the JavaScript code is open. It provides access to various properties and methods related to the window and the document within it."
     ],
     "correct": 0,
@@ -609,8 +642,8 @@
     "options": [
       "if (a > 0 || a == 0);",
       "if (a > 0 && a == 0);",
-      "if (0",
-      "if (!(a > 0 && a == 0)); The condition if( a >= 0 ) can be replaced by the condition: if (a > 0 || a == 0); The replacement condition checks if “a” is greater than 0 or equal to 0. This is equivalent to the original condition a >= 0 because if “a” is greater than or equal to 0, it satisfies the condition a > 0 || a == 0."
+      "if (0 < a);",
+      "if (!(a > 0 && a == 0));\n\n\n\n\n\nThe condition if( a >= 0 ) can be replaced by the condition: if (a > 0 || a == 0);\n\nThe replacement condition checks if \"a\" is greater than 0 or equal to 0. This is equivalent to the original condition a >= 0 because if \"a\" is greater than or equal to 0, it satisfies the condition a > 0 || a == 0."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -622,7 +655,7 @@
       "if (!!a);",
       "if (a === false);",
       "if (a == false);",
-      "The condition if (!a) in JavaScript can be replaced by the condition if (a == false) . In JavaScript, the ! operator is the logical NOT operator and negates the truthiness of a value. It converts the value to its boolean opposite."
+      "The condition if (!a) in JavaScript can be replaced by the condition if (a == false). In JavaScript, the ! operator is the logical NOT operator and negates the truthiness of a value. It converts the value to its boolean opposite."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -630,11 +663,11 @@
   {
     "question": "Which notation is correct?",
     "options": [
-      "let name = test : \"Alice\" ? \"Bob\";",
+      "let name = test : \"Alice\" ? \"Bob\";",
       "let name = test ? \"Alice\" : \"Bob\";",
-      "let name = if test ? \"Alice\" : \"Bob\";",
+      "let name = if test ? \"Alice\" : \"Bob\";",
       "let name = (test)(\"Alice\")(\"Bob\");",
-      "In the conditional (ternary) operator, the condition test is evaluated. If test is truthy, the expression before the ? (in this case, “Alice” ) is assigned to name . If test is falsy, the expression after the : (in this case, “Bob” ) is assigned to name . By using the conditional operator, you can simplify the if-else statement into a single line. The value assigned to name depends on the condition test , resulting in the same outcome as the original if-else statement."
+      "In the conditional (ternary) operator, the condition test is evaluated. If test is truthy, the expression before the ? (in this case, \"Alice\") is assigned to name. If test is falsy, the expression after the : (in this case, \"Bob\") is assigned to name. By using the conditional operator, you can simplify the if-else statement into a single line. The value assigned to name depends on the condition test, resulting in the same outcome as the original if-else statement."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -642,10 +675,10 @@
   {
     "question": "Which of the following operators is a ternary one?",
     "options": [
-      "An assignment operator = .",
-      "A conditional operator ? : .",
+      "An assignment operator =.",
+      "A conditional operator ? :.",
       "A typeof operator.",
-      "An increment operator ++ .",
+      "An increment operator ++.",
       "The ternary operator in JavaScript is represented by the ? and : symbols. It is the only ternary operator in JavaScript. The ternary operator takes the following form: condition ? expression1 : expression2 It evaluates the condition and returns expression1 if the condition is truthy, or expression2 if the condition is falsy."
     ],
     "correct": 1,
@@ -658,7 +691,7 @@
       "100",
       "20",
       "false",
-      "Here’s the breakdown of the code: let x = 100; – Declares a variable x and initializes it with the value 100 . if (x – Checks if the value of x is less than 100 . However, since x is equal to 100 , the condition evaluates to false . x = 20; – Inside the if block, assigns the value 20 to x . However, since the condition in the if statement is false , this line of code will not be executed. console.log(x); – Prints the value of x to the console. Since x is still 100 , it will be displayed as 100 in the console. The value of x remains unchanged because the if statement condition is not met, and the assignment x = 20 is not executed."
+      "Here's the breakdown of the code:\n\nlet x = 100; – Declares a variable x and initializes it with the value 100.if (x < 100) – Checks if the value of x is less than 100. However, since x is equal to 100, the condition evaluates to false.\n\nx = 20; – Inside the if block, assigns the value 20 to x. However, since the condition in the if statement is false, this line of code will not be executed.\n\nconsole.log(x); – Prints the value of x to the console. Since x is still 100, it will be displayed as 100 in the console.\n\n\nThe value of x remains unchanged because the if statement condition is not met, and the assignment x = 20 is not executed."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -670,7 +703,7 @@
       "if (false) console.log(1);",
       "if (counter >= 10) console.log(1);",
       "if (counter == 10) console.log(1);",
-      "The given code snippet can be simplified by removing the nested if statement, as it does not have any effect on the logic. In the simplified code, we directly check if the counter variable is equal to 10 using a single if statement. If the condition is met, meaning counter is exactly 10 , then 1 will be logged to the console."
+      "The given code snippet can be simplified by removing the nested if statement, as it does not have any effect on the logic. In the simplified code, we directly check if the counter variable is equal to 10 using a single if statement. If the condition is met, meaning counter is exactly 10, then 1 will be logged to the console."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -678,11 +711,11 @@
   {
     "question": "What values can the counter and show variables have so that the console displays \"test\" as a result of code execution?",
     "options": [
-      "counter: 11 , show: false",
-      "counter: 10 , show: true",
-      "counter: 9 , show: true",
-      "counter: 10 , show: false",
-      "In this case, both conditions are met: counter is equal to 10 (less than or equal to 10 ), and show is false . Therefore, the code block inside the if statement will be executed, and “test” will be logged to the console. It’s important to note that these are just example values, and you can have other valid combinations of counter and show values that satisfy the conditions. As long as counter is less than or equal to 10 and show is false , the code block will be executed and “test” will be logged to the console."
+      "counter: 11, show: false",
+      "counter: 10, show: true",
+      "counter: 9, show: true",
+      "counter: 10, show: false",
+      "In this case, both conditions are met: counter is equal to 10 (less than or equal to 10), and show is false. Therefore, the code block inside the if statement will be executed, and \"test\" will be logged to the console. It's important to note that these are just example values, and you can have other valid combinations of counter and show values that satisfy the conditions. As long as counter is less than or equal to 10 and show is false, the code block will be executed and \"test\" will be logged to the console."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -702,11 +735,11 @@
   {
     "question": "How can we write the same condition using the switch statement?",
     "options": [
-      "case(counter) { switch 10: console.log(\"abc\") };",
-      "switch(counter) { case ? 10 : console.log(\"abc\") };",
-      "switch(counter) { case 10: console.log(\"abc\") };",
-      "switch(counter) case 10: console.log(\"abc\");",
-      "To write the same condition using the switch statement, you can set up a switch statement with a single case that checks if the counter variable is equal to 10 . In this case, the switch statement is set up with the counter variable as the expression to evaluate. The case 10 is defined to match when the value of counter is equal to 10 . Inside the case block, the code console.log(“abc”) is executed. The switch statement provides an alternative way to handle multiple conditions, especially when there are more than two possible values to compare against."
+      "case(counter) {\r\n switch 10:\r\n console.log(\"abc\")\r\n};",
+      "switch(counter) {\r\n case ? 10 :\r\n console.log(\"abc\")\r\n};",
+      "switch(counter) {\r\n case 10:\r\n console.log(\"abc\")\r\n};",
+      "switch(counter) \r\n case 10:\r\n console.log(\"abc\");",
+      "To write the same condition using the switch statement, you can set up a switch statement with a single case that checks if the counter variable is equal to 10. In this case, the switch statement is set up with the counter variable as the expression to evaluate. The case 10 is defined to match when the value of counter is equal to 10. Inside the case block, the code console.log(\"abc\") is executed. The switch statement provides an alternative way to handle multiple conditions, especially when there are more than two possible values to compare against."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -718,7 +751,7 @@
       "if ... else if ...",
       "if ... else if ... else if...",
       "if ... else ... else if ...",
-      "The sequence allows you to evaluate multiple conditions in a cascading manner. The first condition is checked, and if it is true, the corresponding code block is executed. If the first condition is false, the next condition is checked, and so on. If none of the conditions are true, the code block within the else statement is executed. The incorrect sequence “if…else…else if” does not follow the correct syntax and can lead to unexpected behavior or syntax errors in JavaScript."
+      "The sequence allows you to evaluate multiple conditions in a cascading manner. The first condition is checked, and if it is true, the corresponding code block is executed. If the first condition is false, the next condition is checked, and so on. If none of the conditions are true, the code block within the else statement is executed. The incorrect sequence \"if…else…else if\" does not follow the correct syntax and can lead to unexpected behavior or syntax errors in JavaScript."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -730,7 +763,7 @@
       "do ... while",
       "for ... of",
       "if ... else",
-      "The “if … else” statement is not a loop instruction in JavaScript. The “if … else” statement is a conditional statement used to perform different actions based on a condition. It does not involve repetition or looping over a set of values or elements. It allows you to specify different code blocks to be executed based on whether a condition is true or false."
+      "The \"if … else\" statement is not a loop instruction in JavaScript. The \"if … else\" statement is a conditional statement used to perform different actions based on a condition. It does not involve repetition or looping over a set of values or elements. It allows you to specify different code blocks to be executed based on whether a condition is true or false."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -742,7 +775,7 @@
       "if ... else",
       "for ... in",
       "do ... while",
-      "The loop instruction intended only to loop through all the keys of the indicated object is the “for … in” loop. The “for … in” loop in JavaScript is used to iterate over the properties (keys) of an object. It allows you to loop through each enumerable property of an object and execute a block of code for each property. The loop variable represents each key in the object during each iteration."
+      "The loop instruction intended only to loop through all the keys of the indicated object is the \"for … in\" loop. The \"for … in\" loop in JavaScript is used to iterate over the properties (keys) of an object. It allows you to loop through each enumerable property of an object and execute a block of code for each property. The loop variable represents each key in the object during each iteration."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -750,10 +783,10 @@
   {
     "question": "If we want to display all the elements of the days array in reverse order (starting from the last element) then we can do this using the statement:",
     "options": [
-      "for(let i = days.length - 1; i > 0; i--) console.log(days[i]);",
-      "for(let i = days.length; i > 0; i--) console.log(days[i]);",
-      "for(let i = days.length; i > 0; i--) console.log(i);",
-      "for(let i = days.length - 1; i >= 0; i--) console.log(days[i]);",
+      "for(let i = days.length - 1; i > 0; i--)\r\n console.log(days[i]);",
+      "for(let i = days.length; i > 0; i--)\r\n console.log(days[i]);",
+      "for(let i = days.length; i > 0; i--)\r\n console.log(i);",
+      "for(let i = days.length - 1; i >= 0; i--)\r\n console.log(days[i]);",
       "A for loop is used to iterate over the elements of the days array in reverse order. The loop starts from the index of the last element (days.length – 1) and decrements the index (i) by 1 in each iteration until it reaches 0. Inside the loop, console.log(days[i]) is used to display each element of the array. By iterating in reverse order, you can effectively display all the elements of the days array starting from the last element and going towards the first element."
     ],
     "correct": 3,
@@ -762,11 +795,11 @@
   {
     "question": "Which statement can replace the do ... while from the example above?",
     "options": [
-      "while (a > 4) console.log(--a);",
-      "while (a > 2) console.log(--a);",
-      "while (a > 3) console.log(a--);",
-      "while (a >= 3) console.log(a--);",
-      "The while loop has the same condition as the do…while loop, a > 3 . The loop will continue executing as long as the condition is true. The code inside the loop is the same: console.log(a–) , which displays the value of a and then decrements it by 1. The difference between do…while and while loops is that a do…while loop executes the code block at least once, even if the condition is initially false. In contrast, a while loop checks the condition first and only executes the code block if the condition is true. Since the do…while loop in the given code will always execute at least once (as a starts with a value greater than 3), it can be replaced with a while loop without affecting the output."
+      "while (a > 4)\r\n console.log(--a);",
+      "while (a > 2)\r\n console.log(--a);",
+      "while (a > 3)\r\n console.log(a--);",
+      "while (a >= 3)\r\n console.log(a--);",
+      "The while loop has the same condition as the do…while loop, a > 3. The loop will continue executing as long as the condition is true. The code inside the loop is the same: console.log(a–), which displays the value of a and then decrements it by 1. The difference between do…while and while loops is that a do…while loop executes the code block at least once, even if the condition is initially false. In contrast, a while loop checks the condition first and only executes the code block if the condition is true. Since the do…while loop in the given code will always execute at least once (as a starts with a value greater than 3), it can be replaced with a while loop without affecting the output."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -778,7 +811,7 @@
       "9",
       "10",
       "4",
-      "The for loop is initialized with x set to 10. The loop condition is x > 1 , and the loop’s iteration statement is x -= 2 , which subtracts 2 from x in each iteration. The loop will continue executing as long as x is greater than 1. In each iteration, the code console.log(“hello”) is executed, which displays “hello” in the console. The loop starts with x = 10 , and it will execute when x is greater than 1, subtracting 2 from x in each iteration. After the 5th iteration, x becomes 2, and the loop condition x > 1 evaluates to false, causing the loop to terminate."
+      "The for loop is initialized with x set to 10. The loop condition is x > 1, and the loop's iteration statement is x -= 2, which subtracts 2 from x in each iteration. The loop will continue executing as long as x is greater than 1. In each iteration, the code console.log(\"hello\") is executed, which displays \"hello\" in the console. The loop starts with x = 10, and it will execute when x is greater than 1, subtracting 2 from x in each iteration. After the 5th iteration, x becomes 2, and the loop condition x > 1 evaluates to false, causing the loop to terminate."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -786,11 +819,11 @@
   {
     "question": "Which of the following statements will display exactly two names from the array?",
     "options": [
-      "for (let i =3 ; i",
-      "for (let n in animals) console.log(n);",
-      "for (let n of animals) console.log(n);",
-      "for (let i = 0; i",
-      "In this code, the for loop starts at index 3 (the fourth element) of the animals array (i = 3) , and continues iterating as long as i is less than the length of the animals array ( i ). In each iteration, it logs the value at index i of the animals array ( console.log(animals[i]) ). Since the for loop starts at index 3 and continues until the end of the array, it will display exactly two names from the array, assuming there are at least two elements in the array after index 3 ."
+      "for (let i =3 ; i < animals.length; i++)\r\n console.log(animals[i]);",
+      "for (let n in animals)\r\n console.log(n);",
+      "for (let n of animals)\r\n console.log(n);",
+      "for (let i = 0; i < animals.length; i+=2)\r\n console.log(animals[i]);",
+      "In this code, the for loop starts at index 3 (the fourth element) of the animals array (i = 3), and continues iterating as long as i is less than the length of the animals array (i < animals.length). In each iteration, it logs the value at index i of the animals array (console.log(animals[i])). Since the for loop starts at index 3 and continues until the end of the array, it will display exactly two names from the array, assuming there are at least two elements in the array after index 3."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -798,11 +831,11 @@
   {
     "question": "Which statement can replace the for from the example above?",
     "options": [
-      "let a = 1; while (a",
-      "let a = 5; while (a > 1) console.log(a++);",
-      "let a = 6; while (a >= 1) console.log(a--);",
-      "let a = 5; while (a > 1) console.log(a--);",
-      "A while loop is used to achieve the same iteration logic as the for loop. The while loop has the condition a > 1 , which is the same as the for loop’s condition. The loop will continue executing as long as a is greater than 1. Inside the loop, console.log(a–) is used to display the value of a and then decrement it by 1. This is equivalent to the iteration statement in the for loop, which is a– ."
+      "let a = 1; while (a < 5)\r\n console.log(a++);",
+      "let a = 5; while (a > 1)\r\n console.log(a++);",
+      "let a = 6; while (a >= 1)\r\n console.log(a--);",
+      "let a = 5; while (a > 1)\r\n console.log(a--);",
+      "A while loop is used to achieve the same iteration logic as the for loop. The while loop has the condition a > 1, which is the same as the for loop's condition. The loop will continue executing as long as a is greater than 1. Inside the loop, console.log(a–) is used to display the value of a and then decrement it by 1. This is equivalent to the iteration statement in the for loop, which is a–."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -814,7 +847,7 @@
       "4",
       "3",
       "It will not be displayed at all.",
-      "The for loop in the code initializes a with the value of 4 . The loop condition a is evaluated before each iteration. Since a is already equal to 4 , the loop condition is false, and the loop will not execute. Therefore, “test” will not be displayed in the console at all because the loop is not executed."
+      "The for loop in the code initializes a with the value of 4. The loop condition a < 4 is evaluated before each iteration. Since a is already equal to 4, the loop condition is false, and the loop will not execute. Therefore, \"test\" will not be displayed in the console at all because the loop is not executed."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -826,7 +859,7 @@
       "\"make: Citroen\" \"model: DS\"",
       "\"car\"",
       "\"make\"\"model\"",
-      "The code utilizes a for…in loop to iterate over the properties of the car object. In each iteration, the loop variable f represents the current property name being iterated. The console.log(f) statement logs the value of f to the console. Since the car object has two properties, “make” and “model” , the for…in loop will iterate over these properties, and the respective property names will be displayed in the console: “make” and “model” ."
+      "The code utilizes a for…in loop to iterate over the properties of the car object. In each iteration, the loop variable f represents the current property name being iterated. The console.log(f) statement logs the value of f to the console. Since the car object has two properties, \"make\" and \"model\", the for…in loop will iterate over these properties, and the respective property names will be displayed in the console: \"make\" and \"model\"."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -838,73 +871,73 @@
       "ret;",
       "yield;",
       "function;",
-      "To return a calculated value from a function in JavaScript, you would use the return keyword. The return keyword is used within a function to specify the value that should be returned when the function is called. It allows you to pass back a result or data to the caller of the function."
+      "To return a calculated value from a function in JavaScript, you would use the return keyword.\n\nThe return keyword is used within a function to specify the value that should be returned when the function is called. It allows you to pass back a result or data to the caller of the function."
     ],
     "correct": 0,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
-    "question": "How many times will the word “ test ” be displayed in the console?",
+    "question": "How many times will the word \"test\" be displayed in the console?",
     "options": [
       "0",
       "2",
       "4",
       "3",
-      "The code snippet will display the word “test” four times in the console. Let’s go through the code step by step: The function test is defined, which takes a parameter named counter .",
-      "Inside the function, the string “test” is printed to the console using console.log(“test”) .",
+      "The code snippet will display the word \"test\" four times in the console. Let's go through the code step by step:\n\n\nThe function test is defined, which takes a parameter named counter.",
+      "Inside the function, the string \"test\" is printed to the console using console.log(\"test\").",
       "Next, there is an if statement that checks if the counter variable is greater than 0.",
-      "If the counter is greater than 0, the test function is called recursively with the counter decremented by 1 ( –counter ). This recursive call repeats the execution of the function.",
+      "If the counter is greater than 0, the test function is called recursively with the counter decremented by 1 (–counter). This recursive call repeats the execution of the function.",
       "The recursive call in step 4 continues until the counter becomes 0.",
       "When the counter reaches 0, the recursive calls stop, and the function execution completes.",
       "The initial call to test(3) is made.",
-      "Inside test(3) , “test” is printed to the console.",
+      "Inside test(3), \"test\" is printed to the console.",
       "The counter is decremented to 2, and a recursive call test(2) is made.",
-      "Inside test(2) , “test” is printed to the console.",
+      "Inside test(2), \"test\" is printed to the console.",
       "The counter is decremented to 1, and a recursive call test(1) is made.",
-      "Inside test(1) , “test” is printed to the console.",
+      "Inside test(1), \"test\" is printed to the console.",
       "The counter is decremented to 0, and a recursive call test(0) is made.",
-      "Inside test(0) , “test” is printed to the console.",
+      "Inside test(0), \"test\" is printed to the console.",
       "Since the counter is now 0, the recursive calls stop.",
       "The execution of the function completes."
     ],
     "correct": 2,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
     "question": "What could the definition of the corresponding arrow function look like?",
     "options": [
-      "let sum = (a, b) => { a + b; };",
-      "let sum = function (a, b) => { return (a + b); } ;",
+      "let sum = (a, b) => {\r\n a + b;\r\n};",
+      "let sum = function (a, b) => {\r\n return (a + b);\r\n}\r\n;",
       "let sum = (a, b) > a + b;",
       "let sum = (a, b) => a + b;",
-      "The corresponding arrow function definition for the given function expression would look like: let sum = (a, b) => a + b; In arrow functions, the syntax is more concise compared to regular function expressions. The arrow function uses the => (arrow) operator, which separates the function parameters from the function body. In this case, the arrow function takes the parameters a and b and returns their sum without explicitly using the return keyword. The result is obtained by simply expressing the addition as a + b . The arrow function preserves the functionality of the original function expression sum but provides a more concise and expressive syntax."
+      "The corresponding arrow function definition for the given function expression would look like: let sum = (a, b) => a + b;\n\nIn arrow functions, the syntax is more concise compared to regular function expressions. The arrow function uses the => (arrow) operator, which separates the function parameters from the function body. In this case, the arrow function takes the parameters a and b and returns their sum without explicitly using the return keyword. The result is obtained by simply expressing the addition as a + b.\n\nThe arrow function preserves the functionality of the original function expression sum but provides a more concise and expressive syntax."
     ],
     "correct": 3,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
     "question": "How would you rewrite the function without changing what it does? Select the correct definition.",
     "options": [
-      "let multiply = (m, n) => return (m * n);",
-      "let multiply = (m, n) => { m * n; }",
-      "let multiply = (m, n) => { console.log(m * n); }",
-      "let multiply = (m, n) => { return (m * n); }",
-      "To rewrite the given arrow function without changing its functionality you would have to do this: let multiply = (m, n) => {return (m * n);} The multiply variable is declared using the let keyword. It is assigned a function that takes two parameters m and n . Inside the function body, the product of m and n is calculated using the multiplication operator *. The calculated result is returned using the return keyword. The function expression is terminated with a semicolon ;."
+      "let multiply = (m, n) =>\r\n return (m * n);",
+      "let multiply = (m, n) => {\r\n m * n;\r\n}",
+      "let multiply = (m, n) => {\r\n console.log(m * n);\r\n}",
+      "let multiply = (m, n) => {\r\n return (m * n);\r\n}",
+      "To rewrite the given arrow function without changing its functionality you would have to do this:\n\nlet multiply = (m, n) => {return (m * n);}\n\nThe multiply variable is declared using the let keyword.\n\nIt is assigned a function that takes two parameters m and n.\n\nInside the function body, the product of m and n is calculated using the multiplication operator *.\n\nThe calculated result is returned using the return keyword.\n\nThe function expression is terminated with a semicolon ;."
     ],
     "correct": 0,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
-    "question": "We can use the forEach method to pass through the elements of an array. Which of the following code snippets will display all consecutive elements of the animals array in the console?",
+    "question": "We can use the forEach method to pass through the elements of an array.\n\nWhich of the following code snippets will display all consecutive elements of the animals array in the console?",
     "options": [
       "animals.forEach(console.log(animal));",
-      "forEach(animals, a => { console.log(a); })",
+      "forEach(animals, a => {\r\n console.log(a);\r\n})",
       "animals.forEach(a => a);",
-      "animals.forEach(a => { console.log(a); })",
-      "Let’s analyze the code snippets one by one: animals.forEach(console.log(animal)); This code snippet is incorrect. It directly calls console.log(animal) instead of passing a function reference or an arrow function. It will immediately execute console.log(animal) for each element of the animals array, but it won’t display the consecutive elements correctly. animals.forEach(a => a); This code snippet is also incorrect. The arrow function a => a doesn’t perform any action or output anything. It doesn’t contain any code to display the elements of the animals array in the console. animals.forEach(a => { console.log(a); }); This code snippet is correct. It uses the forEach method on the animals array and provides an arrow function as the callback function. Inside the arrow function, console.log(a) is called to display each element of the animals array in the console. This will correctly display all consecutive elements of the animals array. forEach(animals, a => { console.log(a); }); This code snippet is incorrect. It calls an undefined function forEach and tries to pass the animals array as the first argument. The correct usage is to call the forEach method directly on the array, like animals.forEach(…) , as shown in snippet 3."
+      "animals.forEach(a => {\r\n console.log(a);\r\n})",
+      "Let's analyze the code snippets one by one:\n\nanimals.forEach(console.log(animal));\n\nThis code snippet is incorrect. It directly calls console.log(animal) instead of passing a function reference or an arrow function. It will immediately execute console.log(animal) for each element of the animals array, but it won't display the consecutive elements correctly.\n\nanimals.forEach(a => a);\n\nThis code snippet is also incorrect. The arrow function a => a doesn't perform any action or output anything. It doesn't contain any code to display the elements of the animals array in the console.\n\nanimals.forEach(a => { console.log(a); });\n\nThis code snippet is correct. It uses the forEach method on the animals array and provides an arrow function as the callback function. Inside the arrow function, console.log(a) is called to display each element of the animals array in the console. This will correctly display all consecutive elements of the animals array.\n\nforEach(animals, a => { console.log(a); });\n\nThis code snippet is incorrect. It calls an undefined function forEach and tries to pass the animals array as the first argument. The correct usage is to call the forEach method directly on the array, like animals.forEach(…), as shown in snippet 3."
     ],
     "correct": 3,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
     "question": "A callback function is a function that:",
@@ -916,7 +949,7 @@
       "A callback function is a function that is passed as an argument to another function and is invoked or called by that function at a specific point in its execution. The primary purpose of a callback function is to provide a mechanism for executing code asynchronously or to allow behavior customization of a function."
     ],
     "correct": 0,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
     "question": "What happens when you execute it?",
@@ -925,14 +958,14 @@
       "The console to display show after a 2-second delay.",
       "The console to display test after a 2-second delay.",
       "The console to display test 2000 times.",
-      "When you execute the code, the following sequence of events will occur: A variable named show is declared and assigned a function expression. This function has no parameters and contains a single statement that logs the string “test” to the console using console.log(“test”) .",
+      "When you execute the code, the following sequence of events will occur:\n\n\nA variable named show is declared and assigned a function expression. This function has no parameters and contains a single statement that logs the string \"test\" to the console using console.log(\"test\").",
       "The setTimeout function is called with two arguments: the show function and a delay of 2000 milliseconds (2 seconds).",
       "The setTimeout function is a built-in JavaScript function that schedules the execution of a function after a specified delay. In this case, it schedules the execution of the show function after a 2-second delay.",
       "After 2 seconds have elapsed, the JavaScript runtime environment triggers the execution of the show function.",
-      "The show function is executed, and the string “test” is logged to the console using console.log(“test”) ."
+      "The show function is executed, and the string \"test\" is logged to the console using console.log(\"test\")."
     ],
     "correct": 2,
-    "explanation": "& Hint :"
+    "explanation": "& Hint:"
   },
   {
     "question": "Which of the following is a syntax error?",
@@ -940,7 +973,7 @@
       "Attempting to modify the value of a constant.",
       "Missing parenthesis ending a condition in an if statement.",
       "Attempting to call a non-existent function.",
-      "Attempting to read a value from a variable that we have not previously declared. In JavaScript, when using an if statement, the condition must be enclosed in parentheses. If you omit the closing parenthesis, it will result in a syntax error."
+      "Attempting to read a value from a variable that we have not previously declared.\n\n\n\n\n\nIn JavaScript, when using an if statement, the condition must be enclosed in parentheses. If you omit the closing parenthesis, it will result in a syntax error."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -952,7 +985,7 @@
       "The interpreter ignores logical errors, because they do not affect the result of the program in any way.",
       "It results from the default settings of the interpreter, although we can modify these settings so that logical errors are also pointed out.",
       "The interpreter is unable to identify logical errors because they are not related to either the syntax or the semantics of the JavaScript language.",
-      "Logical errors are not indicated by the interpreter because they do not violate the syntax or grammar rules of the programming language. Instead, logical errors occur when the program does not produce the desired or expected output due to incorrect or flawed logic in the code. The role of the interpreter or compiler is to execute the code according to the syntax and rules of the language. It checks for syntax errors and ensures that the code follows the language’s grammar."
+      "Logical errors are not indicated by the interpreter because they do not violate the syntax or grammar rules of the programming language. Instead, logical errors occur when the program does not produce the desired or expected output due to incorrect or flawed logic in the code. The role of the interpreter or compiler is to execute the code according to the syntax and rules of the language. It checks for syntax errors and ensures that the code follows the language's grammar."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -972,11 +1005,11 @@
   {
     "question": "What will happen as a result of its execution?",
     "options": [
-      "The operation of the program will be interrupted and the console will display the default message \"Uncaught ReferenceError: ocnsole is not defined\" .",
-      "The console will display the following words on successive lines error , end .",
-      "The console will display the following words on successive lines: start , error , end .",
-      "The console will display the following words on successive lines: start , end .",
-      "The error message “Uncaught ReferenceError: ocnsole is not defined” in JavaScript indicates that there is a reference to an undefined variable or identifier. In the specific case, the error is caused by the typo in the code where ocnsole.log(“start”); is written instead of console.log(“start”); . JavaScript is treating ocnsole as a variable or identifier, but it has not been defined anywhere in the code. As a result, a ReferenceError is thrown."
+      "The operation of the program will be interrupted and the console will display the default message \"Uncaught ReferenceError: ocnsole is not defined\".",
+      "The console will display the following words on successive lines error, end.",
+      "The console will display the following words on successive lines: start, error, end.",
+      "The console will display the following words on successive lines: start, end.",
+      "The error message \"Uncaught ReferenceError: ocnsole is not defined\" in JavaScript indicates that there is a reference to an undefined variable or identifier. In the specific case, the error is caused by the typo in the code where ocnsole.log(\"start\"); is written instead of console.log(\"start\");. JavaScript is treating ocnsole as a variable or identifier, but it has not been defined anywhere in the code. As a result, a ReferenceError is thrown."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -988,7 +1021,7 @@
       "exitpoint",
       "stoppoint",
       "breakpoint",
-      "A breakpoint is a designated point in the code where the program execution is intentionally paused to allow for debugging, analysis, and inspection of variables, state, and flow of the program. Developers can set breakpoints in their code to halt the execution at specific locations to examine the program’s behavior and troubleshoot issues."
+      "A breakpoint is a designated point in the code where the program execution is intentionally paused to allow for debugging, analysis, and inspection of variables, state, and flow of the program. Developers can set breakpoints in their code to halt the execution at specific locations to examine the program's behavior and troubleshoot issues."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1000,7 +1033,7 @@
       "The program will execute to the end or to the next breakpoint.",
       "The program will be restarted from the first instruction.",
       "Exactly one instruction immediately after the breakpoint will be executed and the program will be paused again.",
-      "Pressing the “Step” button in the debugger allows you to execute the program code one step at a time, progressing through the code line by line. The “Step” operation is useful for debugging and understanding how the code is executing, especially in complex scenarios or when you want to trace the program’s flow."
+      "Pressing the \"Step\" button in the debugger allows you to execute the program code one step at a time, progressing through the code line by line. The \"Step\" operation is useful for debugging and understanding how the code is executing, especially in complex scenarios or when you want to trace the program's flow."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1009,10 +1042,10 @@
     "question": "Where in the debugger can you find the information about the currently called functions in your program?",
     "options": [
       "In the call stack window.",
-      "In the console .",
+      "In the console.",
       "In the watch window.",
       "There is no access to such information.",
-      "In a debugger, you can typically find information about the currently called functions in a panel or window called the “Call Stack” or “Call Stack Trace”. The Call Stack usually displays the names of the functions, along with additional information such as the file and line numbers where the function calls were made. By inspecting the Call Stack, you can track the flow of execution through different function calls and identify which functions are currently active."
+      "In a debugger, you can typically find information about the currently called functions in a panel or window called the \"Call Stack\" or \"Call Stack Trace\". The Call Stack usually displays the names of the functions, along with additional information such as the file and line numbers where the function calls were made. By inspecting the Call Stack, you can track the flow of execution through different function calls and identify which functions are currently active."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -1020,11 +1053,11 @@
   {
     "question": "You want to measure how long a certain piece of code executes. In order to do so, it is enough to precede the code fragment with:",
     "options": [
-      "the command console.time(\"counter\") and end with console.timeEnd(\"counter\") .",
-      "the command console.time(\"start\") and end with console.time(\"end\") .",
-      "the command console.timeStart(\"counter\") and end with console.timeEnd(\"counter\") .",
+      "the command console.time(\"counter\") and end with console.timeEnd(\"counter\").",
+      "the command console.time(\"start\") and end with console.time(\"end\").",
+      "the command console.timeStart(\"counter\") and end with console.timeEnd(\"counter\").",
       "the command timeStart() and end with timeEnd().",
-      "To measure the execution time of a code fragment in JavaScript, you can use the console.time() and console.timeEnd() methods. Precede the code fragment with console.time(“counter”) . End the code fragment with console.timeEnd(“counter”) ."
+      "To measure the execution time of a code fragment in JavaScript, you can use the console.time() and console.timeEnd() methods. Precede the code fragment with console.time(\"counter\"). End the code fragment with console.timeEnd(\"counter\")."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -1035,11 +1068,11 @@
       "1001",
       "101",
       "201",
-      "200 Let’s analyze the code step by step: The variable id is declared and initialized with the string value “100” using the let keyword in the global scope.",
-      "A block of code is defined using curly braces {} . This block creates a new block scope.",
-      "Inside the block, a new variable id is declared and initialized with the value 200 using the let keyword. This creates a new block-scoped variable id that shadows the outer variable id .",
+      "200\n\n\n\n\n\nLet's analyze the code step by step:\n\n\nThe variable id is declared and initialized with the string value \"100\" using the let keyword in the global scope.",
+      "A block of code is defined using curly braces {}. This block creates a new block scope.",
+      "Inside the block, a new variable id is declared and initialized with the value 200 using the let keyword. This creates a new block-scoped variable id that shadows the outer variable id.",
       "The value of the block-scoped id is updated by adding 1 to it using the id = id + 1 statement.",
-      "The resulting value of id , which is 201 , is printed to the console using console.log(id) ."
+      "The resulting value of id, which is 201, is printed to the console using console.log(id)."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -1048,34 +1081,34 @@
     "question": "Select a set of data types, containing only complex types:",
     "options": [
       "Object, String",
-      "Boolean, Number, Bigint",
+      "Boolean, Number, Bigint",
       "Array, Object",
-      "Array, Object, String In JavaScript, complex data types, also known as reference types, include objects, arrays, and functions. Here is a set of complex data types: Object: An object is an unordered collection of key-value pairs, where each value can be of any data type, including other complex types. Objects are created using curly braces {} and can be used to represent more complex data structures.",
+      "Array, Object, String\n\n\n\n\n\nIn JavaScript, complex data types, also known as reference types, include objects, arrays, and functions. Here is a set of complex data types:\n\n\nObject: An object is an unordered collection of key-value pairs, where each value can be of any data type, including other complex types. Objects are created using curly braces {} and can be used to represent more complex data structures.",
       "Array: An array is an ordered list of values. It can hold elements of any data type, including other complex types. Arrays are created using square brackets [] and provide methods for manipulating and accessing their elements.",
-      "Function: A function is a reusable block of code that can be executed when called. Functions are created using the function keyword or by using arrow function syntax ( => ). They can take parameters, perform actions, and return values."
+      "Function: A function is a reusable block of code that can be executed when called. Functions are created using the function keyword or by using arrow function syntax (=>). They can take parameters, perform actions, and return values."
     ],
     "correct": 2,
     "explanation": "& Hint:"
   },
   {
-    "question": "We can replace the declaration let x = 3e-3; with:",
+    "question": "We can replace the declaration let x = 3e-3; with:",
     "options": [
-      "let x = 3000;",
-      "let x = 0.003;",
-      "let x = 0.0003;",
-      "let x = 0.333; The correct replacement for the declaration let x = 3e-3; would be: let x = 0.003;"
+      "let x = 3000;",
+      "let x = 0.003;",
+      "let x = 0.0003;",
+      "let x = 0.333;\n\n\n\n\n\nThe correct replacement for the declaration let x = 3e-3; would be: let x = 0.003;"
     ],
     "correct": 1,
     "explanation": "& Hint:"
   },
   {
-    "question": "Using the string interpolation technique, we can create the string:",
+    "question": "Using the string interpolation technique, we can create the string:",
     "options": [
-      "let means = \"plane\"; let msg = 'I do not like travelling by \\{ means \\}';",
-      "let means = \"plane\"; let msg = \"I do not like travelling by ${ means }\";",
-      "let means = \"plane\"; let msg = `I do not like travelling by ${means}`;",
-      "let means = \"plane\"; let msg = `I do not like travelling by {means}`;",
-      "To create the string “I do not like travelling by plane” using string interpolation and store it in the msg variable, the correct command would be: let means = “plane”; let msg = `I do not like travelling by ${means}`; String interpolation in JavaScript is achieved by using backticks (“`) as the string delimiter. Within the backticks, you can include expressions or variables by wrapping them in ${} . The expression or variable within ${} will be evaluated and its value will be inserted into the resulting string. In this case, the variable means is assigned the value “plane” . The string interpolation syntax ${means} is used within backticks to insert the value of means into the string. Thus, the resulting value of msg will be “I do not like travelling by plane”."
+      "let means = \"plane\";\r\nlet msg = 'I do not like travelling by \\{ means \\}';",
+      "let means = \"plane\";\r\nlet msg = \"I do not like travelling by ${ means }\";",
+      "let means = \"plane\";\r\nlet msg = `I do not like travelling by ${means}`;",
+      "let means = \"plane\";\r\nlet msg = `I do not like travelling by {means}`;",
+      "To create the string \"I do not like travelling by plane\" using string interpolation and store it in the msg variable, the correct command would be:\n\nlet means = \"plane\";\n\nlet msg = `I do not like travelling by ${means}`;\n\nString interpolation in JavaScript is achieved by using backticks (\"`) as the string delimiter. Within the backticks, you can include expressions or variables by wrapping them in ${}. The expression or variable within ${} will be evaluated and its value will be inserted into the resulting string.\n\nIn this case, the variable means is assigned the value \"plane\". The string interpolation syntax ${means} is used within backticks to insert the value of means into the string. Thus, the resulting value of msg will be \"I do not like travelling by plane\"."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -1084,21 +1117,21 @@
     "question": "To change the value of the title field to \"Matrix\" we need to perform:",
     "options": [
       "movie[title] = \"Matrix\";",
-      "movie.title = \"Matrix\";",
+      "movie.title = \"Matrix\";",
       "movie{title} = \"Matrix\";",
-      "title->movie = \"Matrix\"; In JavaScript, you can access and modify object properties using dot notation ( object.property ). In this case, movie.title accesses the title property of the movie object, and the assignment = is used to change its value to “Matrix”. After executing the command, the title field in the movie object will be updated to “Matrix”. movie.title = “Matrix”;"
+      "title->movie = \"Matrix\";\n\n\n\n\n\nIn JavaScript, you can access and modify object properties using dot notation (object.property). In this case, movie.title accesses the title property of the movie object, and the assignment = is used to change its value to \"Matrix\". After executing the command, the title field in the movie object will be updated to \"Matrix\".\n\nmovie.title = \"Matrix\";"
     ],
     "correct": 1,
     "explanation": "& Hint:"
   },
   {
-    "question": "You declare the following array of animals: let animals = [\"canary\", \"dog\", \"cat\"]; . Then, you call the method animals.push(\"hamster\"); . What will the animals array look like after calling the method?",
+    "question": "You declare the following array of animals: let animals = [\"canary\", \"dog\", \"cat\"];. Then, you call the method animals.push(\"hamster\");. What will the animals array look like after calling the method?",
     "options": [
-      "[\"canary\", \"dog\", \"cat\", \"hamster\" ]",
+      "[\"canary\", \"dog\", \"cat\", \"hamster\"]",
       "[\"hamster\"]",
       "[\"hamster\", \"canary\", \"dog\", \"cat\"]",
       "[\"canary\", \"dog\", \"cat\"]",
-      "After calling the animals.push(“hamster”); method, the animals array will look like this: [“canary”, “dog”, “cat”, “hamster”] The push() method in JavaScript is used to add one or more elements to the end of an array. In this case, the method animals.push(“hamster”) adds the string value “hamster” to the end of the animals array. As a result, the array is modified, and “hamster” becomes the last element in the array."
+      "After calling the animals.push(\"hamster\"); method, the animals array will look like this:\n\n[\"canary\", \"dog\", \"cat\", \"hamster\"]\n\nThe push() method in JavaScript is used to add one or more elements to the end of an array. In this case, the method animals.push(\"hamster\") adds the string value \"hamster\" to the end of the animals array. As a result, the array is modified, and \"hamster\" becomes the last element in the array."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -1109,8 +1142,8 @@
       "display on the console information about the progress of the http://somethingNew.org page loading.",
       "cause the page http://somethingNew.org to be loaded into the browser.",
       "send a log with information about the currently executed script to the indicated address http://somethingNew.org.",
-      "display the following message on the console: \"http://somethingNew.org\" .",
-      "When the JavaScript code console.log(“http://somethingNew.org”); is executed, it will print the string “http://somethingNew.org” to the console. The console.log() function in JavaScript is used to output messages to the console. In this case, the code includes console.log(“http://somethingNew.org”) , which specifies the string “http://somethin g New.org” as the argument to be logged. When the code is executed, the specified string will be displayed in the console. It does not perform any other action apart from printing the message to the console output."
+      "display the following message on the console: \"http://somethingNew.org\".",
+      "When the JavaScript code console.log(\"http://somethingNew.org\"); is executed, it will print the string \"http://somethingNew.org\" to the console.\n\nThe console.log() function in JavaScript is used to output messages to the console. In this case, the code includes console.log(\"http://somethingNew.org\"), which specifies the string \"http://somethingNew.org\" as the argument to be logged.\n\nWhen the code is executed, the specified string will be displayed in the console. It does not perform any other action apart from printing the message to the console output."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1122,9 +1155,9 @@
       "2",
       "3",
       "1",
-      "The code snippet let winter = [“December”, “January”, “February”]; let index = winter.indexOf(“February”); will assign the value 2 to the index variable. Here’s a breakdown of the code: An array winter is declared and initialized with three elements: “December” , “January” , and “February” .",
-      "The indexOf() method is called on the winter array with the argument “February” . This method searches the array for the specified element and returns the index of the first occurrence of that element. If the element is not found, it returns -1 .",
-      "Since “February” is present in the winter array, the indexOf() method will find it and return the index 2 , indicating that “February” is located at the third position in the array.",
+      "The code snippet let winter = [\"December\", \"January\", \"February\"]; let index = winter.indexOf(\"February\"); will assign the value 2 to the index variable.\n\nHere's a breakdown of the code:\n\n\nAn array winter is declared and initialized with three elements: \"December\", \"January\", and \"February\".",
+      "The indexOf() method is called on the winter array with the argument \"February\". This method searches the array for the specified element and returns the index of the first occurrence of that element. If the element is not found, it returns -1.",
+      "Since \"February\" is present in the winter array, the indexOf() method will find it and return the index 2, indicating that \"February\" is located at the third position in the array.",
       "The value 2 is assigned to the index variable using the let index = statement."
     ],
     "correct": 1,
@@ -1149,12 +1182,12 @@
       "false false false",
       "false false true",
       "true false false",
-      "Let’s break down the code: The variable x is assigned the value of the logical OR operation between false and true . In a logical OR operation, if any of the operands is true , the result will be true . In this case, since the second operand ( true ) is true , the result of false || true is true , which is assigned to x .",
-      "The variable y is assigned the value of the logical AND operation between the string “true” and the string “false” . In a logical AND operation, if all operands are true , the result will be the last operand. In this case, since both “true” and “false” are considered truthy values, the result of “true” && “false” is “false” , which is assigned to y .",
-      "The variable z is assigned the value of the logical AND operation between false and true . In a logical AND operation, if any of the operands is false , the result will be false . In this case, since the first operand ( false ) is false , the result of false && true is false , which is assigned to z .",
+      "Let's break down the code:\n\n\nThe variable x is assigned the value of the logical OR operation between false and true. In a logical OR operation, if any of the operands is true, the result will be true. In this case, since the second operand (true) is true, the result of false || true is true, which is assigned to x.",
+      "The variable y is assigned the value of the logical AND operation between the string \"true\" and the string \"false\". In a logical AND operation, if all operands are true, the result will be the last operand. In this case, since both \"true\" and \"false\" are considered truthy values, the result of \"true\" && \"false\" is \"false\", which is assigned to y.",
+      "The variable z is assigned the value of the logical AND operation between false and true. In a logical AND operation, if any of the operands is false, the result will be false. In this case, since the first operand (false) is false, the result of false && true is false, which is assigned to z.",
       "The console.log() statement is called to output a value to the console.",
-      "The expression ${x} ${y} ${z} is evaluated and passed as the argument to console.log() . It uses string interpolation to concatenate the values of x , y , and z into a single string with spaces in between.",
-      "As a result, the console will display true false false ."
+      "The expression ${x} ${y} ${z} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of x, y, and z into a single string with spaces in between.",
+      "As a result, the console will display true false false."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1165,8 +1198,8 @@
       "for ... in",
       "while",
       "for",
-      "do ... while",
-      "The “do … while” loop instruction checks the loop continuation condition only after the iteration has been completed. In the “do … while” loop, the code block is executed first, and then the condition is checked. If the condition evaluates to true, the loop continues executing. This guarantees that the code block is executed at least once, regardless of the condition."
+      "do ... while",
+      "The \"do … while\" loop instruction checks the loop continuation condition only after the iteration has been completed. In the \"do … while\" loop, the code block is executed first, and then the condition is checked. If the condition evaluates to true, the loop continues executing. This guarantees that the code block is executed at least once, regardless of the condition."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1175,7 +1208,7 @@
     "question": "What should the declaration of the min variable look like?",
     "options": [
       "let min;",
-      "It’s not necessary, as it will be declared automatically on first use.",
+      "It's not necessary, as it will be declared automatically on first use.",
       "let min = temp[0];",
       "let min = 0;",
       "The code snippet temp.forEach(e => min = min > e ? e : min); uses the forEach method to iterate over the elements of the temp array and update the value of min based on each element. In order to store the minimum temperature, you need to declare the min variable like this let min = 0; before using it in the code."
@@ -1186,11 +1219,11 @@
   {
     "question": "Which statement can replace the for from the example?",
     "options": [
-      "let counter = 1; while (counter++",
-      "let counter = 0; while (counter",
-      "let counter = 0; while (counter++",
-      "let counter = 0; while (counter",
-      "The correct statement that can replace the for loop from the example is: let counter = 0; while (counter"
+      "let counter = 1;\r\nwhile (counter++ < 10) console.log(counter++);",
+      "let counter = 0;\r\nwhile (counter < 9) console.log(counter++);",
+      "let counter = 0;\r\nwhile (counter++ < 10) console.log(counter++);",
+      "let counter = 0;\r\nwhile (counter < 10) console.log(counter++);",
+      "The correct statement that can replace the for loop from the example is:\n\nlet counter = 0;\n\nwhile (counter < 10) console.log(counter++);"
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1198,11 +1231,11 @@
   {
     "question": "What should the mult function declaration look like if the execution of this code results in a value of 20 in the console?",
     "options": [
-      "let mult = function (a) { return function (b) { return a * b; } }",
+      "let mult = function (a) {\r\n return function (b) {\r\n return a * b;\r\n }\r\n}",
       "There is an error in the code and it is not possible to declare such a function correctly.",
-      "let mult = function (a, b) { return a * b; }",
-      "let mult = function (a, b) { return b ? mult(b) : mult(a); }",
-      "The correct declaration for the mult function that would result in the desired output of 20 in the console is: let mult = function (a) { return function (b) { return a * b; } }"
+      "let mult = function (a, b) {\r\n return a * b;\r\n}",
+      "let mult = function (a, b) {\r\n return b ? mult(b) : mult(a);\r\n}",
+      "The correct declaration for the mult function that would result in the desired output of 20 in the console is:\n\nlet mult = function (a) {\n\nreturn function (b) {\n\nreturn a * b;\n\n}\n\n}"
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -1213,7 +1246,7 @@
       "// let counter = 0; user visit counter",
       "let counter = 0; // user visit counter",
       "let counter = 0; ;;user visit counter",
-      "let counter = 0; /* user visit counter In the modified line, the comment // user visit counter provides information about the purpose or usage of the counter variable."
+      "let counter = 0; /* user visit counter\n\n\n\n\n\nIn the modified line, the comment // user visit counter provides information about the purpose or usage of the counter variable."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -1221,21 +1254,21 @@
   {
     "question": "How should the function cmp be declared if, after the code execution, the elements of the array x are sorted in ascending order?",
     "options": [
-      "let cmp = (a, b) => b",
+      "let cmp = (a, b) => b < a;",
       "let cmp = (a, b) => a - b;",
       "let cmp = (a, b) => b > a;",
-      "let cmp = (a, b) => b - a; This comparison function subtracts b from a , which will result in a negative value if a should be placed before b in the sorted order, a positive value if b should be placed before a , and zero if they are considered equal. Here is the code: let cmp = (a, b) => a – b;"
+      "let cmp = (a, b) => b - a;\n\n\n\n\n\nThis comparison function subtracts b from a, which will result in a negative value if a should be placed before b in the sorted order, a positive value if b should be placed before a, and zero if they are considered equal. Here is the code: let cmp = (a, b) => a – b;"
     ],
     "correct": 1,
     "explanation": "& Hint:"
   },
   {
-    "question": "What should the missing line look like if the execution of this code results in the console displaying the values 2 , 1 , and 0 in sequence?",
+    "question": "What should the missing line look like if the execution of this code results in the console displaying the values 2, 1, and 0 in sequence?",
     "options": [
       "if (counter-- >= 0) clearInterval(interval);",
-      "if (counter--",
+      "if (counter-- <= 0) clearInterval(interval);",
       "while (counter-- >= 0) clearInterval(interval);",
-      "clearInterval(interval); This line checks if the value of counter is less than or equal to 0 after decrementing it. If counter becomes 0 or negative, it means the desired sequence of numbers (2, 1, 0) has been displayed. At that point, clearInterval(interval) is called to stop the interval from continuing. The correct line is: if (counter–"
+      "clearInterval(interval);\n\n\n\n\n\nThis line checks if the value of counter is less than or equal to 0 after decrementing it. If counter becomes 0 or negative, it means the desired sequence of numbers (2, 1, 0) has been displayed. At that point, clearInterval(interval) is called to stop the interval from continuing.\n\nThe correct line is: if (counter– <= 0) clearInterval(interval);"
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -1246,7 +1279,7 @@
       "let power = () => a ** b;",
       "let power = 9;",
       "let power = (x,y) => x * y;",
-      "let power = (x, y) => x ** y; To ensure that the execution of the completed code results in the console displaying the value 9, the line defines the power function as an arrow function that calculates the power of x raised to the y exponent using the ** operator."
+      "let power = (x, y) => x ** y;\n\n\n\n\n\nTo ensure that the execution of the completed code results in the console displaying the value 9, the line defines the power function as an arrow function that calculates the power of x raised to the y exponent using the ** operator."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -1254,10 +1287,10 @@
   {
     "question": "Placing a debugger; statement in the program code will:",
     "options": [
-      "stop the program without the ability to continue, as long as the execution environment supports “debugging functionality”.",
-      "pause the program with the ability to continue, as long as the execution environment supports “debugging functionality”.",
+      "stop the program without the ability to continue, as long as the execution environment supports \"debugging functionality\".",
+      "pause the program with the ability to continue, as long as the execution environment supports \"debugging functionality\".",
       "put the interpreter into report mode, which will cause the console to print out all sequentially executed commands.",
-      "cause the console to display the completion status of the statement preceding the debugger. Placing a debugger; statement in the program code will pause the execution of the code at that point and activate the debugger. It allows you to inspect the current state of the program, including variable values, call stack, and execute step-by-step or run in debug mode."
+      "cause the console to display the completion status of the statement preceding the debugger.\n\n\n\n\n\nPlacing a debugger; statement in the program code will pause the execution of the code at that point and activate the debugger. It allows you to inspect the current state of the program, including variable values, call stack, and execute step-by-step or run in debug mode."
     ],
     "correct": 1,
     "explanation": "& Hint:"

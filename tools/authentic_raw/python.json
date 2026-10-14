@@ -22,7 +22,7 @@
     "explanation": ""
   },
   {
-    "question": "Which of the following lines correctly . invoke the function defined below? (Select two answers)",
+    "question": "Which of the following lines correctly. invoke the function defined below? (Select two answers)",
     "options": [
       "fun()",
       "fun(0, 1, 2)",
@@ -38,7 +38,7 @@
       "its position within the argument list",
       "its connection with existing variables",
       "its value",
-      "the argument’s name specified along with its value"
+      "the argument's name specified along with its value"
     ],
     "correct": 0,
     "explanation": ""
@@ -204,12 +204,12 @@
   {
     "question": "Which if the following snippets shows the correct way of handing multiple excepting in a single except clause?",
     "options": [
-      "except TypeError, ValueError, ZeroDivisinError: # Some code.",
-      "except: (TypeError, ValueError, ZeroDivisinError) # Some code.",
-      "except TypeError, ValueError, ZeroDivisinError # Some code.",
-      "except: TypeError, ValueError, ZeroDivisinError # Some code.",
-      "except: (TypeError, ValueError, ZeroDivisinError): # Some code.",
-      "except (TypeError, ValueError, ZeroDivisinError) # Some code."
+      "except TypeError, ValueError, ZeroDivisinError:\n\n# Some code.",
+      "except: (TypeError, ValueError, ZeroDivisinError)\n\n# Some code.",
+      "except TypeError, ValueError, ZeroDivisinError\n\n# Some code.",
+      "except: TypeError, ValueError, ZeroDivisinError\n\n# Some code.",
+      "except: (TypeError, ValueError, ZeroDivisinError):\n\n# Some code.",
+      "except (TypeError, ValueError, ZeroDivisinError)\n\n# Some code."
     ],
     "correct": 4,
     "explanation": ""
@@ -264,7 +264,7 @@
       "Both you and user must have the compiler to run your code",
       "The code is converted directly into machine code executable by the processor",
       "It tends to be faster than interpretation",
-      "It tends to be than interpretation The correct answers are: The code is converted directly into machine code executable by the processor Compilation translates the entire source code into machine code, which is then directly executed by the processor."
+      "It tends to be than interpretation\n\n\n\n\n\nThe correct answers are:\n\n\nThe code is converted directly into machine code executable by the processor\n\nCompilation translates the entire source code into machine code, which is then directly executed by the processor."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -272,11 +272,11 @@
   {
     "question": "What is CPython?",
     "options": [
-      "It’s the default, reference implementation of the C language, written in Python",
-      "It’s a programming language that is a supperset of the Python, designed to produce C-like performance with code written in Python",
-      "It’s the default, reference implementation of Python, written in the C language",
-      "It’s a programming that is a superset of the C language, designed to produce Python-like performance with code written in C",
-      "The correct answer is: It’s the default, reference implementation of Python, written in the C language CPython is the original and most widely used implementation of the Python programming language. It is written in C and serves as the reference implementation that defines the Python language specification."
+      "It's the default, reference implementation of the C language, written in Python",
+      "It's a programming language that is a supperset of the Python, designed to produce C-like performance with code written in Python",
+      "It's the default, reference implementation of Python, written in the C language",
+      "It's a programming that is a superset of the C language, designed to produce Python-like performance with code written in C",
+      "The correct answer is:\n\nIt's the default, reference implementation of Python, written in the C language\n\n\nCPython is the original and most widely used implementation of the Python programming language. It is written in C and serves as the reference implementation that defines the Python language specification."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -288,10 +288,10 @@
       "An alphabet, a lexis, a syntax, and semantics",
       "An alphabet, a lexis, phonetics, and semantics",
       "An alphabet, phonetics, phonology, and semantics",
-      "The correct answer is: An alphabet, a lexis, a syntax, and semantics The four fundamental elements that make up a language are: Alphabet : The set of symbols or characters used to write the language.",
-      "Lexis : The vocabulary or set of words in the language.",
-      "Syntax : The rules for structuring sentences and expressions in the language.",
-      "Semantics : The meaning conveyed by the words and structures in the language."
+      "The correct answer is:\n\nAn alphabet, a lexis, a syntax, and semantics\n\n\nThe four fundamental elements that make up a language are:\n\n\nAlphabet: The set of symbols or characters used to write the language.",
+      "Lexis: The vocabulary or set of words in the language.",
+      "Syntax: The rules for structuring sentences and expressions in the language.",
+      "Semantics: The meaning conveyed by the words and structures in the language."
     ],
     "correct": 1,
     "explanation": "& Hints:"
@@ -303,7 +303,7 @@
       "A code file",
       "A target file",
       "A source file",
-      "The correct answer is: A source file A file containing a program written in a high-level programming language is called a source file because it is the source code that needs to be compiled or interpreted to create an executable or to run the program."
+      "The correct answer is:\n\nA source file\n\n\nA file containing a program written in a high-level programming language is called a source file because it is the source code that needs to be compiled or interpreted to create an executable or to run the program."
     ],
     "correct": 3,
     "explanation": "& Hints:"
@@ -315,19 +315,19 @@
       "A console",
       "A compiler",
       "Jython",
-      "The correct answer is: A console A console is a command-line interpreter that allows you to interact with your operating system and execute Python commands and scripts. It provides an environment for running Python code interactively or running Python scripts directly."
+      "The correct answer is:\n\nA console\n\n\nA console is a command-line interpreter that allows you to interact with your operating system and execute Python commands and scripts. It provides an environment for running Python code interactively or running Python scripts directly."
     ],
     "correct": 1,
     "explanation": "& Hints:"
   },
   {
-    "question": "What is the best definition of a script ?",
+    "question": "What is the best definition of a script?",
     "options": [
-      "It’s an error message generated by the interpreter",
-      "It’s an error message generated by the compiler",
-      "It’s a text file that contains which make up a Python program",
-      "It’s a text file that contains sequences of zeroes and ones",
-      "The correct answer is: It’s a text file that contains which make up a Python program A script is a text file that contains a sequence of instructions written in a programming language like Python. These instructions (code) can be executed by an interpreter to perform specific tasks. Scripts are often used for automating tasks, data processing, or running programs."
+      "It's an error message generated by the interpreter",
+      "It's an error message generated by the compiler",
+      "It's a text file that contains which make up a Python program",
+      "It's a text file that contains sequences of zeroes and ones",
+      "The correct answer is:\n\nIt's a text file that contains which make up a Python program\n\n\nA script is a text file that contains a sequence of instructions written in a programming language like Python. These instructions (code) can be executed by an interpreter to perform specific tasks. Scripts are often used for automating tasks, data processing, or running programs."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -339,7 +339,7 @@
       "A medium-level programming language consisting of the assembly code designed for the computer processor",
       "A low-level programming language consisting of binary digits/bits that the computer reads and understands",
       "A low-level programming language consisting of hexadecimal digits that make up high-level language instructions",
-      "The correct answer is: A low-level programming language consisting of binary digits/bits that the computer reads and understands Machine code is the lowest level of programming language, consisting of binary digits (0s and 1s) that a computer’s processor directly executes. Unlike high-level or assembly languages, machine code is not intended to be human-readable. It represents instructions in a form that the hardware can process directly."
+      "The correct answer is:\n\nA low-level programming language consisting of binary digits/bits that the computer reads and understands\n\n\nMachine code is the lowest level of programming language, consisting of binary digits (0s and 1s) that a computer's processor directly executes. Unlike high-level or assembly languages, machine code is not intended to be human-readable. It represents instructions in a form that the hardware can process directly."
     ],
     "correct": 2,
     "explanation": "& Hints:"
@@ -351,7 +351,7 @@
       "Python 3 is backwards compatible with Python 2",
       "Python is a good choice for low-level programming e.g., when you want to implement an effective driver",
       "Python is free, open-source, and multiplatform",
-      "The correct answers are: Python is a good choice for creating and executing tests for applications Python’s simplicity, readability, and extensive libraries make it an excellent choice for creating and executing tests for various applications."
+      "The correct answers are:\n\n\nPython is a good choice for creating and executing tests for applications\n\nPython's simplicity, readability, and extensive libraries make it an excellent choice for creating and executing tests for various applications."
     ],
     "correct": 0,
     "explanation": "& Hints:"
@@ -362,7 +362,7 @@
       "stop its execution",
       "duplicate the character next to the digragh",
       "break the output line",
-      "output exactly two characters: \\ and n The digraph, called the newline character, causes the current line to end at the point indicated by the digraph, and creates a new line that starts right after it."
+      "output exactly two characters: \\ and n\n\n\n\n\n\nThe digraph, called the newline character, causes the current line to end at the point indicated by the digraph, and creates a new line that starts right after it."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -374,11 +374,11 @@
       "the code will cause a runtime error",
       "4.0",
       "2.0",
-      "Let’s analyze this example: the x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+      "Let's analyze this example:\n\n\nthe x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
       "the y variable is assigned the integer value of 4 (4 is inputted by the user, converted to a string by the input() function, and",
       "then converted to an integer by the int() function)",
       "an operation is performed resulting in the x variable being assigned the value of 0.5 (2 / 4 = 0.5)",
-      "an operation is performed resulting in the y variable being assigned the value of 8.0 (4 / 0.5 = 8.0) the value assigned to the y variable ( 8.0 ) is printed to the screen."
+      "an operation is performed resulting in the y variable being assigned the value of 8.0 (4 / 0.5 = 8.0)\n\nthe value assigned to the y variable (8.0) is printed to the screen."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -395,7 +395,7 @@
     "explanation": "& Hint:"
   },
   {
-    "question": "Which of the following variable names are illegal ? (Select two answers)",
+    "question": "Which of the following variable names are illegal? (Select two answers)",
     "options": [
       "true",
       "and",
@@ -425,19 +425,19 @@
       "20E12.8",
       "20.12E8.0",
       "20.12E8",
-      "Keeping in mind that Python chooses the most efficient format for presenting numbers, and the letter E is used to mean ten to the power of in scientific notation, the correct way of writing the number 20.12 × 10 8 is 20.12E8 ."
+      "Keeping in mind that Python chooses the most efficient format for presenting numbers, and the letter E is used to mean ten to the power of in scientific notation, the correct way of writing the number 20.12 × 108 is 20.12E8."
     ],
     "correct": 3,
     "explanation": "& Hint:"
   },
   {
-    "question": "What is the output of the following snippet if the user enter two lines containing 2 ​​and 4 respectively?",
+    "question": "What is the output of the following snippet if the user enter two lines containing 2​​and 4 respectively?",
     "options": [
       "the code will cause a runtime error",
       "2.0",
       "8.0",
       "4.0",
-      "Let’s analyze this example: the x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
+      "Let's analyze this example:\n\n\nthe x variable is assigned the integer value of 2 (2 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
       "the y variable is assigned the integer value of 4 (4 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
       "an operation is performed resulting in the x variable being assigned the value of 0 (2 // 4=0)",
       "an operation is being performed, but a ZeroDivisionException is raised, because the // operator cannot accept 0 as its right operand. The program is terminated."
@@ -452,7 +452,7 @@
       "any number of arguments (including zero)",
       "any number of arguments (excluding zero)",
       "just one argument",
-      "The print() function can take no arguments at all (e.g. print() ), three arguments (e.g. print(\"one\", \"two\", \"three\" ), or three thousand three hundred thirty three… (though we haven’t actually checked it!)."
+      "The print() function can take no arguments at all (e.g. print()), three arguments (e.g. print(\"one\", \"two\", \"three\"), or three thousand three hundred thirty three… (though we haven't actually checked it!)."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -464,9 +464,9 @@
       "36",
       "18",
       "666",
-      "Let’s analyze this example: the x variable is assigned the value of “3” (3 is inputted by the user and converted to a string by the input() function)",
+      "Let's analyze this example:\n\n\nthe x variable is assigned the value of \"3\" (3 is inputted by the user and converted to a string by the input() function)",
       "the y variable is assigned the value of 6 (6 is inputted by the user, converted to a string by the input() function, and then converted to an integer by the int() function)",
-      "the print() function outputs the result of the following string multiplication: “3” * 6, that is 333333"
+      "the print() function outputs the result of the following string multiplication: \"3\" * 6, that is 333333"
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -484,13 +484,13 @@
     "explanation": "& Hint:"
   },
   {
-    "question": "Which of the following statements are true ? (Select two answers)",
+    "question": "Which of the following statements are true? (Select two answers)",
     "options": [
       "The result of the / operator is always an integer value.",
       "The ** operator uses right-sided binding.",
       "Adding precedes multiplication.",
       "The right argument of the % operator cannot be zero.",
-      "The % operator (modulus) returns the remainder of a division, and because you cannot divide by zero, the right operand must be a non-zero number. Otherwise, a ZeroDivisionException will be raised. The ** operator uses right-sided binding, which means the expression 2**2**3 is evaluated from right to left: 2**3 = 8, and 2**8 = 256."
+      "The % operator (modulus) returns the remainder of a division, and because you cannot divide by zero, the right operand must be a non-zero number. Otherwise, a ZeroDivisionException will be raised.\n\nThe ** operator uses right-sided binding, which means the expression 2**2**3 is evaluated from right to left: 2**3 = 8, and 2**8 = 256."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -499,7 +499,7 @@
     "question": "The meaning of the keyword parameter is determined by:",
     "options": [
       "its value",
-      "the argument’s name specified along with its value",
+      "the argument's name specified along with its value",
       "its connection with existing variables",
       "its position within the argument list",
       "Keyword parameters (also called named parameters) are parameters that have values determined by a keyword name followed by an equals sign (=) and a default value assigned to that keyword name. An example of a keyword argument: def my_function(x=1):."
@@ -519,7 +519,7 @@
     "explanation": ""
   },
   {
-    "question": "How many hashes( # ) will the following snippet send to the console?",
+    "question": "How many hashes(#) will the following snippet send to the console?",
     "options": [
       "zero",
       "three",
@@ -530,7 +530,7 @@
     "explanation": ""
   },
   {
-    "question": "How many stars( # ) will the following snippet send to the console?",
+    "question": "How many stars(#) will the following snippet send to the console?",
     "options": [
       "three",
       "two",
@@ -568,7 +568,7 @@
       "nums and vals are two different lists",
       "vals is longer than nums",
       "nums and vals are of the same length",
-      "nums is longer than vals"
+      "numsis longer than vals"
     ],
     "correct": 0,
     "explanation": ""
@@ -587,7 +587,7 @@
   {
     "question": "The second assignment:",
     "options": [
-      "doesn’t change the list",
+      "doesn't change the list",
       "reverses the list",
       "shortens the list",
       "extends the list"
@@ -629,7 +629,7 @@
     "explanation": ""
   },
   {
-    "question": "Which of the following statement are true ? (Select two answers)",
+    "question": "Which of the following statement are true? (Select two answers)",
     "options": [
       "The None value can be assigned to variables",
       "The None value cannot be used outside functions",

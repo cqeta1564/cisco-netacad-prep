@@ -2,10 +2,10 @@
   {
     "question": "What declaration should precede the statement so that the text Jeep appears in the console as a result of its execution?",
     "options": [
-      "let car = {make: ‘Jeep’, model: ‘Cherokee’};",
-      "let car = [make: ‘Jeep’, model: ‘Cherokee’];",
-      "let car = [make: ‘Jeep’];",
-      "var car = {‘Jeep’};"
+      "let car = {make: 'Jeep', model: 'Cherokee'};",
+      "let car = [make: 'Jeep', model: 'Cherokee'];",
+      "let car = [make: 'Jeep'];",
+      "var car = {'Jeep'};"
     ],
     "correct": 0,
     "explanation": ""
@@ -24,9 +24,9 @@
   {
     "question": "Which of the following is the correct way to refer to this property?",
     "options": [
-      "user[‘full name’]",
+      "user['full name']",
       "user[full name]",
-      "user.’full name’",
+      "user.'full name'",
       "You cannot use a property name consisting of several words."
     ],
     "correct": 0,
@@ -55,12 +55,12 @@
     "explanation": ""
   },
   {
-    "question": "What will be the population of the city stored in “largestCity” after executing this code?",
+    "question": "What will be the population of the city stored in \"largestCity\" after executing this code?",
     "options": [
       "8537673",
       "39776830",
       "124744503",
-      "‘Los Angeles’"
+      "'Los Angeles'"
     ],
     "correct": 1,
     "explanation": ""
@@ -77,7 +77,7 @@
     "explanation": ""
   },
   {
-    "question": "You want to create a setter for the user’s first name, allowing you to set both “_firstName” and “_lastName” when updating the first name. Which line of code should you insert?",
+    "question": "You want to create a setter for the user's first name, allowing you to set both \"_firstName\" and \"_lastName\" when updating the first name. Which line of code should you insert?",
     "options": [
       "set firstName(name) { this._firstName = name; }",
       "_firstName() { this._firstName = name; }",
@@ -121,12 +121,12 @@
     "explanation": ""
   },
   {
-    "question": "Which of the following code snippets correctly demonstrates the creation of an anonymous class for a “Person” object with a constructor that initializes the properties “name” and “age”?",
+    "question": "Which of the following code snippets correctly demonstrates the creation of an anonymous class for a \"Person\" object with a constructor that initializes the properties \"name\" and \"age\"?",
     "options": [
-      "let Person = class { constructor(name, age) { name = this.name; age = this.age; } }",
-      "let Person = class { constructor(name, age) { this.name = name; this.age = age; } }",
-      "let Person = (name, age) => { constructor: { this.name = name; this.age = age; } }",
-      "let Person = function(name, age) { this.name = name; this.age = age; }"
+      "let Person = class {\n\nconstructor(name, age) {\n\nname = this.name;\n\nage = this.age;\n\n}\n\n}",
+      "let Person = class {\n\n constructor(name, age) {\n\n this.name = name;\n\n this.age = age;\n\n }\n\n}",
+      "let Person = (name, age) => {\n\nconstructor: {\n\nthis.name = name;\n\nthis.age = age;\n\n}\n\n}",
+      "let Person = function(name, age) {\n\nthis.name = name;\n\nthis.age = age;\n\n}"
     ],
     "correct": 1,
     "explanation": ""
@@ -134,16 +134,16 @@
   {
     "question": "Which of the following is the correct way to create a mountain object of this class?",
     "options": [
-      "let mountain = new Mountain(‘Manaslu’, 8156);",
-      "let mountain = create Mountain(‘Manaslu’, 8156);",
-      "let mountain = Mountain(‘Manaslu’, 8156);",
-      "Mountain(let mountain, ‘Manaslu’, 8156);"
+      "let mountain = new Mountain('Manaslu', 8156);",
+      "let mountain = create Mountain('Manaslu', 8156);",
+      "let mountain = Mountain('Manaslu', 8156);",
+      "Mountain(let mountain, 'Manaslu', 8156);"
     ],
     "correct": 0,
     "explanation": ""
   },
   {
-    "question": "What properties and methods does an instance of the “Book” class have when created with the following code?",
+    "question": "What properties and methods does an instance of the \"Book\" class have when created with the following code?",
     "options": [
       "Properties: title, author, genre; Methods: setGenre",
       "Properties: title, author; Methods: setGenre, getGenre",
@@ -165,7 +165,7 @@
     "explanation": ""
   },
   {
-    "question": "What should you insert into the “Cat” class so that it properly inherits from the “Animal” class?",
+    "question": "What should you insert into the \"Cat\" class so that it properly inherits from the \"Animal\" class?",
     "options": [
       "class Cat extends Animal {}",
       "class Cat inherits Animal {}",
@@ -180,7 +180,7 @@
     "options": [
       "Mountain.className()",
       "Mountain.className",
-      "mountain [‘static className ‘]()",
+      "mountain ['static className ']()",
       "mountain.className()"
     ],
     "correct": 0,
@@ -198,10 +198,10 @@
     "explanation": ""
   },
   {
-    "question": "Select the correct value so that the executed code results in the following console output: ‘0.01’",
+    "question": "Select the correct value so that the executed code results in the following console output: '0.01'",
     "options": [
-      "’12e-3′",
-      "‘-0x01’",
+      "'12e-3′",
+      "'-0x01'",
       "1",
       "0.01e-2"
     ],
@@ -209,12 +209,12 @@
     "explanation": ""
   },
   {
-    "question": "You have a JavaScript function “processText” that takes a string as input and processes it to return an array of words in reverse order. Fill in the missing line of code:",
+    "question": "You have a JavaScript function \"processText\" that takes a string as input and processes it to return an array of words in reverse order. Fill in the missing line of code:",
     "options": [
-      "return str.split(‘ ‘).reverse();",
-      "return str.join(‘ ‘).reverse();",
-      "return str.reverse().split(‘ ‘);",
-      "return str.join(‘ ‘).split(‘ ‘).reverse();"
+      "return str.split(' ').reverse();",
+      "return str.join(' ').reverse();",
+      "return str.reverse().split(' ');",
+      "return str.join(' ').split(' ').reverse();"
     ],
     "correct": 0,
     "explanation": ""
@@ -255,20 +255,20 @@
   {
     "question": "Which line of code achieves the following output: red,green,purple,pink,orange?",
     "options": [
-      "colors.splice(2, 0, ‘purple’, ‘pink’);",
-      "colors.splice(2, 1, ‘purple’, ‘pink’);",
-      "colors.splice(2, ‘purple’, ‘pink’);",
-      "colors.splice(2, 0, 1, ‘purple’, ‘pink’);"
+      "colors.splice(2, 0, 'purple', 'pink');",
+      "colors.splice(2, 1, 'purple', 'pink');",
+      "colors.splice(2, 'purple', 'pink');",
+      "colors.splice(2, 0, 1, 'purple', 'pink');"
     ],
     "correct": 0,
     "explanation": ""
   },
   {
-    "question": "Considering the following code, what will be the result of accessing fruitColors.get(‘kiwi’)?",
+    "question": "Considering the following code, what will be the result of accessing fruitColors.get('kiwi')?",
     "options": [
-      "‘green’",
-      "‘purple’",
-      "‘yellow’",
+      "'green'",
+      "'purple'",
+      "'yellow'",
       "undefined"
     ],
     "correct": 0,
@@ -302,7 +302,7 @@
       "let r = /.\\.jpg/;",
       "let r = (.\\.jpg);",
       "let r = \\.\\.jpg\\;",
-      "let r = RegExp(‘.\\.jpg’);"
+      "let r = RegExp('.\\.jpg');"
     ],
     "correct": 0,
     "explanation": ""
@@ -310,8 +310,8 @@
   {
     "question": "What will be the result of executing this code?",
     "options": [
-      "Two ‘Custom Method’ messages will appear in the console.",
-      "A single message ‘Custom Method’ will appear in the console (object firstArray does not have the customMethod).",
+      "Two 'Custom Method' messages will appear in the console.",
+      "A single message 'Custom Method' will appear in the console (object firstArray does not have the customMethod).",
       "An error will appear when trying to execute firstArray.customMethod() because the method was added after the creation of the array object firstArray.",
       "An error will appear because the customMethod is bound to the Array class and not to the objects created from it (objects firstArray and secondArray do not have the customMethod)."
     ],
@@ -321,9 +321,9 @@
   {
     "question": "Select the correct missing line so that the executed code results in the following console output: 25",
     "options": [
-      "let bfn = fn.bind({a: 5}, ‘result’);",
-      "let bfn = fn.apply({a: 5}, ‘result’);",
-      "let bfn = fn.call({a: 5}, ‘result’);",
+      "let bfn = fn.bind({a: 5}, 'result');",
+      "let bfn = fn.apply({a: 5}, 'result');",
+      "let bfn = fn.call({a: 5}, 'result');",
       "let bfn = fn.bind({a: 5});"
     ],
     "correct": 0,
@@ -343,27 +343,27 @@
   {
     "question": "Select the correct missing line so that the executed code results in the following console output: a b",
     "options": [
-      "yield* [‘a’, ‘b’, ‘c’, ‘d’];",
-      "return [‘a’, ‘b’];",
-      "yield [‘a’, ‘b’];",
-      "yield [‘a’, ‘b’, ‘c’, ‘d’];"
+      "yield* ['a', 'b', 'c', 'd'];",
+      "return ['a', 'b'];",
+      "yield ['a', 'b'];",
+      "yield ['a', 'b', 'c', 'd'];"
     ],
     "correct": 0,
     "explanation": ""
   },
   {
-    "question": "Select the correct missing line to ensure the console displays ‘Delayed message’ with a delay of 5 seconds:",
+    "question": "Select the correct missing line to ensure the console displays 'Delayed message' with a delay of 5 seconds:",
     "options": [
-      "setTimeout(printText, 2000, ‘Delayed message’);",
-      "setTimeout(printText.bind(this, ‘Delayed message’), 5000);",
-      "printText(‘Delayed message’, 5000);",
-      "setTimeout(() => printText(‘Delayed message’), 5000);"
+      "setTimeout(printText, 2000, 'Delayed message');",
+      "setTimeout(printText.bind(this, 'Delayed message'), 5000);",
+      "printText('Delayed message', 5000);",
+      "setTimeout(() => printText('Delayed message'), 5000);"
     ],
     "correct": 1,
     "explanation": ""
   },
   {
-    "question": "When using XMLHttpRequest (XHR) in JavaScript to make network requests, what is the purpose of the event listener added with the ‘load’ event?",
+    "question": "When using XMLHttpRequest (XHR) in JavaScript to make network requests, what is the purpose of the event listener added with the 'load' event?",
     "options": [
       "To listen for errors that may occur during the request.",
       "To listen for changes in the ready state of the XHR object.",
@@ -380,7 +380,7 @@
       "let user = {name: 'Bob', age: 30};",
       "let user = [name: 'Bob', age: 30];",
       "var user = {'Bob'};",
-      "let user = {name: ‘Bob’, age: 30}; It creates an object user with a property name set to ‘Bob’, and when you log user.name, it will print ‘Bob’ to the console."
+      "let user = {name: 'Bob', age: 30};\n\nIt creates an object user with a property name set to 'Bob', and when you log user.name, it will print 'Bob' to the console."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -404,19 +404,19 @@
       "car.set('model', 'Viper'); car.add('color', 'red');",
       "An empty line – it is not possible to add a new color property to a previously created object.",
       "car = {model: 'Viper', color: 'red'};",
-      "To achieve the desired console output of “Dodge Viper, color: red” after running the whole code, you should use the following line: car.model = ‘Viper’; car.color = ‘red’; This line reassigns the car variable with a new object that has both the model and color properties set to the desired values."
+      "To achieve the desired console output of \"Dodge Viper, color: red\" after running the whole code, you should use the following line:\n\ncar.model = 'Viper'; car.color = 'red';\n\nThis line reassigns the car variable with a new object that has both the model and color properties set to the desired values."
     ],
     "correct": 0,
     "explanation": "& Hint:"
   },
   {
-    "question": "Which of the following will display the value of the circle’s x -coordinate (i.e. 10 ) in the console?",
+    "question": "Which of the following will display the value of the circle's x-coordinate (i.e. 10) in the console?",
     "options": [
       "console.log(circle.centre.x);",
       "console.log(circle.centre);",
       "console.log(centre.x);",
       "console.log(circle.x);",
-      "The correct option to display the value of the circle’s x-coordinate (i.e., 10) in the console is: console.log(circle.centre.x); It accesses the center property of the circle object and then the x property of the center object to display the x-coordinate"
+      "The correct option to display the value of the circle's x-coordinate (i.e., 10) in the console is:\n\nconsole.log(circle.centre.x);\n\nIt accesses the center property of the circle object and then the x property of the center object to display the x-coordinate"
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -428,19 +428,7 @@
       "for(key in user) console.log(key);",
       "console.log(user[name, age]);",
       "Object.keys(user).forEach(key => console.log(user[key]));",
-      "The correct line of code to display the values of all object properties (i.e., “Ian” and 44) is: Object.keys(user).forEach(key => console.log(user[key])); It uses Object.keys() to get an array of the object’s keys (in this case, ‘name’ and ‘age’) and then iterates over them to access the corresponding values and print them to the console."
-    ],
-    "correct": 3,
-    "explanation": "& Hint:"
-  },
-  {
-    "question": "Which of the following comparisons will return true ?",
-    "options": [
-      "user1 === user2",
-      "user1 == user2",
-      "user1 same user2",
-      "(user1.name == user2.name) && (user1.name == user2.name)",
-      "The correct comparison that will return true for these two objects is: (user1.name == user2.name) && (user1.name == user2.name) This comparison checks if the name property of user1 is equal to the name property of user2, and then checks the same condition again. It will return true because both objects have the same name property value, which is ‘Alice’."
+      "The correct line of code to display the values of all object properties (i.e., \"Ian\" and 44) is:\n\nObject.keys(user).forEach(key => console.log(user[key]));\n\nIt uses Object.keys() to get an array of the object's keys (in this case, 'name' and 'age') and then iterates over them to access the corresponding values and print them to the console."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -452,19 +440,19 @@
       "point.show = {console.log(`${this.x} ${this.y}`);}",
       "show: function(this) {console.log(`${this.x} ${this.y}`);}",
       "show: function() {console.log(`${x} ${y}`);}",
-      "The correct missing line of code to achieve the desired console output “100 100” after running the whole code is: show: function() {console.log(`${this.x} ${this.y}`);} It defines a show method within the point object that logs the x and y properties of the object, resulting in the desired console output."
+      "The correct missing line of code to achieve the desired console output \"100 100\" after running the whole code is:\n\nshow: function() {console.log(`${this.x} ${this.y}`);}\n\nIt defines a show method within the point object that logs the x and y properties of the object, resulting in the desired console output."
     ],
     "correct": 0,
     "explanation": "& Hint:"
   },
   {
-    "question": "The default way to call the show method is: point.show() . Select the correct alternative to call this method:",
+    "question": "The default way to call the show method is: point.show(). Select the correct alternative to call this method:",
     "options": [
       "point[show]()",
       "point.show",
       "point[show]",
       "point['show']();",
-      "The correct alternative to call the show method of the point object is: point[‘show’](); This is an acceptable way to call the method using bracket notation, but it’s not the default way. The dot notation point.show() is more commonly used."
+      "The correct alternative to call the show method of the point object is:\n\npoint['show']();\n\nThis is an acceptable way to call the method using bracket notation, but it's not the default way. The dot notation point.show() is more commonly used."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -476,7 +464,7 @@
       "positionX() {this.x = x;}",
       "positionX: set() {this.x = x;}",
       "positionX: this.x = x",
-      "The correct missing line of code to achieve the desired console output “0” after running the whole code is: set positionX(x) {this.x = x;} It defines a setter method positionX that sets the x property of the point object, allowing you to change the x value by assigning a new value to point.positionX."
+      "The correct missing line of code to achieve the desired console output \"0\" after running the whole code is:\n\nset positionX(x) {this.x = x;}\n\nIt defines a setter method positionX that sets the x property of the point object, allowing you to change the x value by assigning a new value to point.positionX."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -488,7 +476,7 @@
       "An empty line",
       "Object.seal(car);",
       "Object.preventExtensions(car);",
-      "The correct missing line of code to achieve the desired console output “Toyota undefined undefined” after running the whole code is: Object.preventExtensions(car); It is used to prevent new properties from being added to an object (car)."
+      "The correct missing line of code to achieve the desired console output \"Toyota undefined undefined\" after running the whole code is:\n\nObject.preventExtensions(car);\n\nIt is used to prevent new properties from being added to an object (car)."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -500,7 +488,7 @@
       "let car = new Car('Dodge', 'Viper');",
       "let car = Car({}, 'Dodge', 'Viper');",
       "let car = Car('Dodge', 'Viper');",
-      "The correct missing line of code to achieve the desired console output “Dodge Viper” after running the whole code is: let car = new Car(‘Dodge’, ‘Viper’); It correctly creates a new instance of the Car constructor function, passing ‘Dodge’ as the make parameter and ‘Viper’ as the model parameter, resulting in the desired output."
+      "The correct missing line of code to achieve the desired console output \"Dodge Viper\" after running the whole code is:\n\nlet car = new Car('Dodge', 'Viper');\n\nIt correctly creates a new instance of the Car constructor function, passing 'Dodge' as the make parameter and 'Viper' as the model parameter, resulting in the desired output."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -509,20 +497,20 @@
     "question": "A class may have a constructor, i.e. a method:",
     "options": [
       "of any name that will be defined first in the class.",
-      "named this .",
-      "of any name preceded by the word constructor .",
-      "named constructor . In JavaScript classes, the constructor is a special method that is automatically called when an instance of the class is created. It must have the name “constructor” (case-sensitive) and is used to initialize object properties and perform any setup needed for instances of the class."
+      "named this.",
+      "of any name preceded by the word constructor.",
+      "named constructor.\n\n\n\n\n\nIn JavaScript classes, the constructor is a special method that is automatically called when an instance of the class is created. It must have the name \"constructor\" (case-sensitive) and is used to initialize object properties and perform any setup needed for instances of the class."
     ],
     "correct": 3,
     "explanation": "& Hint:"
   },
   {
-    "question": "You have defined a class Point whose constructor takes two arguments: x and y . Which of the following is the correct way to create a point object of this class?",
+    "question": "You have defined a class Point whose constructor takes two arguments: x and y. Which of the following is the correct way to create a point object of this class?",
     "options": [
       "let point = Point(100, 200);",
       "let point = create Point(100, 200);",
       "Point(let point, 100, 200);",
-      "let point = new Point(100, 200); The correct way to create a point object of the class Point with a constructor that takes two arguments, x and y, is: let point = new Point(100, 200); This correctly creates a new instance of the Point class with the x and y values set to 100 and 200, respectively."
+      "let point = new Point(100, 200);\n\n\n\n\n\nThe correct way to create a point object of the class Point with a constructor that takes two arguments, x and y, is:\n\nlet point = new Point(100, 200);\n\nThis correctly creates a new instance of the Point class with the x and y values set to 100 and 200, respectively."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -533,18 +521,18 @@
       "constructor function(n) { name = n;}",
       "constructor(n) { this.name = n;}",
       "constructor(n) { name = n;}",
-      "User(n) { this.name = n;} The correct missing line of code to achieve the desired console output “Alice” after running the whole code is: constructor(n) { this.name = n;} It defines the constructor for the User class, which takes a parameter n and assigns it to the name property of instances."
+      "User(n) { this.name = n;}\n\n\n\n\n\nThe correct missing line of code to achieve the desired console output \"Alice\" after running the whole code is:\n\nconstructor(n) { this.name = n;}\n\nIt defines the constructor for the User class, which takes a parameter n and assigns it to the name property of instances."
     ],
     "correct": 1,
     "explanation": "& Hint:"
   },
   {
-    "question": "Select the correct missing line in order to declare a property named test and initialize it with the value 10 :",
+    "question": "Select the correct missing line in order to declare a property named test and initialize it with the value 10:",
     "options": [
       "test = 10;",
       "test: 10;",
       "test: 10",
-      "this.test = 10; The correct missing line of code to declare a property named test and initialize it with the value 10 in the A class is: test = 10; It uses the modern class field syntax to declare and initialize the test property with the value 10 directly within the class definition."
+      "this.test = 10;\n\n\n\n\n\nThe correct missing line of code to declare a property named test and initialize it with the value 10 in the A class is:\n\ntest = 10;\n\nIt uses the modern class field syntax to declare and initialize the test property with the value 10 directly within the class definition."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -552,10 +540,10 @@
   {
     "question": "Analyze the following code:",
     "options": [
-      "has three properties: x , y and color .",
+      "has three properties: x, y and color.",
       "will not be created – setColor references a color property that was not defined in the constructor.",
       "will not be created – the constructor and the setColor method refer to properties that have not been defined in the class body.",
-      "has two properties: x and y (only these are defined in the constructor) The correct answer is: has three properties: x, y, and color The Point class has a constructor that initializes x and y properties, and a setColor method that sets the color property. When you create a new instance of the Point class using let point = new Point(100, 200);, you’re calling the constructor with x and y values, which initializes the x and y properties of the point object. Then, you call the setColor(‘red’) method on the point object, which sets the color property to ‘red’."
+      "has two properties: x and y (only these are defined in the constructor)\n\n\n\n\n\nThe correct answer is:\n\nhas three properties: x, y, and color\n\nThe Point class has a constructor that initializes x and y properties, and a setColor method that sets the color property. When you create a new instance of the Point class using let point = new Point(100, 200);, you're calling the constructor with x and y values, which initializes the x and y properties of the point object. Then, you call the setColor('red') method on the point object, which sets the color property to 'red'."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -566,7 +554,7 @@
       "x y",
       "name",
       "name x y",
-      "name x y color The correct option is: name x y color The name property is defined with a default value of ‘Point’ at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value ‘Point’. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor(‘red’);."
+      "name x y color\n\n\n\n\n\nThe correct option is:\n\nname x y color\n\nThe name property is defined with a default value of 'Point' at the class level using the class field syntax. This means that all instances of the Point class will have a name property with the value 'Point'. The x and y properties are initialized in the constructor, so they will exist on the point object after you create it with new Point(100, 200);. The color property is set using the setColor method, so it will also exist on the point object after you call point.setColor('red');."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -577,7 +565,7 @@
       "name = 'Bob';",
       "private name = 'Bob'",
       "#name = 'Bob';",
-      "this.#name = 'Bob'; The correct missing line of code to insert a private property declaration in the code is: #name = ‘Bob’; It uses the # symbol to declare a private class field named #name and initializes it with the value ‘Bob’."
+      "this.#name = 'Bob';\n\n\n\n\n\nThe correct missing line of code to insert a private property declaration in the code is:\n\n#name = 'Bob';\n\nIt uses the # symbol to declare a private class field named #name and initializes it with the value 'Bob'."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -588,7 +576,7 @@
       "console.log(user.getfullName);",
       "console.log(user.fullName());",
       "console.log(user.fullName);",
-      "console.log(user['get fullName']); The correct command to use in order for the console to show the following string “Bob Marley” after running the whole code is: console.log(user.fullName); It accesses the fullName getter method of the user object, which returns the full name as “Bob Marley”."
+      "console.log(user['get fullName']);\n\n\n\n\n\nThe correct command to use in order for the console to show the following string \"Bob Marley\" after running the whole code is:\n\nconsole.log(user.fullName);\n\nIt accesses the fullName getter method of the user object, which returns the full name as \"Bob Marley\"."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -599,7 +587,7 @@
       "set _name(name) { this._name = name;}",
       "_name set(name) { this._name = name;}",
       "set (name) { this._name = name;}",
-      "set name(val) { this._name = val;} The correct missing line of code to set the name property in the User class and allow the console to show “Bob” after running the whole code is: set name(val) { this._name = val;} It defines a setter for the name property, which sets the private _name property to the provided val."
+      "set name(val) { this._name = val;}\n\n\n\n\n\nThe correct missing line of code to set the name property in the User class and allow the console to show \"Bob\" after running the whole code is:\n\nset name(val) { this._name = val;}\n\nIt defines a setter for the name property, which sets the private _name property to the provided val."
     ],
     "correct": 3,
     "explanation": "& Hint:"
@@ -610,7 +598,7 @@
       "A(val);",
       "this = new A(val);",
       "super(val);",
-      "An empty line The correct missing line of code to make the executed code result in the desired console output “A: 10 B: 10” is: super(val); It calls the constructor of the superclass A with the val argument, ensuring that the A class constructor is executed before the B class constructor."
+      "An empty line\n\n\n\n\n\nThe correct missing line of code to make the executed code result in the desired console output \"A: 10 B: 10\" is:\n\nsuper(val);\n\nIt calls the constructor of the superclass A with the val argument, ensuring that the A class constructor is executed before the B class constructor."
     ],
     "correct": 2,
     "explanation": "& Hint:"
@@ -621,7 +609,7 @@
       "is visible only in the object created from the class, but can only be called by other methods of the object.",
       "is bound to the class only and will not be available in the object created from it.",
       "is visible both in the class and in the object created from it (it can be called in both).",
-      "is visible only in the object created from the class and can be called arbitrarily in that object. The correct answer is: is bound to the class only and will not be available in the object created from it. A static method is associated with the class itself, not with instances (objects) created from the class. It is defined on the class and can be called on the class itself, rather than on instances of the class. Static methods are not available on instances of the class. They are not bound to individual objects and cannot access or modify instance-specific data or properties. Static methods are often used for utility functions or operations that are relevant to the class as a whole, rather than to specific instances."
+      "is visible only in the object created from the class and can be called arbitrarily in that object.\n\n\n\n\n\nThe correct answer is:\n\nis bound to the class only and will not be available in the object created from it.\n\nA static method is associated with the class itself, not with instances (objects) created from the class. It is defined on the class and can be called on the class itself, rather than on instances of the class. Static methods are not available on instances of the class. They are not bound to individual objects and cannot access or modify instance-specific data or properties. Static methods are often used for utility functions or operations that are relevant to the class as a whole, rather than to specific instances."
     ],
     "correct": 1,
     "explanation": "& Hint:"
@@ -632,7 +620,7 @@
       "Test.info()",
       "test['static info']()",
       "test.info()",
-      "Test.info The correct call to make the executed code result in the desired console output “Test” is: Test.info() This is the correct choice. It calls the static method info() on the Test class, which returns ‘Test’."
+      "Test.info\n\n\n\n\n\nThe correct call to make the executed code result in the desired console output \"Test\" is:\n\nTest.info()\n\nThis is the correct choice. It calls the static method info() on the Test class, which returns 'Test'."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -643,18 +631,18 @@
       "false false will be displayed, because B inheriting from A will also be a function.",
       "true true will be displayed, because A will be treated as a constructor during inheritance.",
       "an error will appear because you are trying to inherit in class B from function A and not from another class.",
-      "false true will be displayed, because A is not a class. The correct result of executing the provided code is: true true will be displayed, because A will be treated as a constructor during inheritance. The A function in the code acts as a constructor function, and the B class extends A. This inheritance means that B inherits the prototype chain of A. When you create an instance b of class B with new B();, it is also an instance of the A constructor function because of the inheritance relationship. Therefore, b instanceof A evaluates to true because b is an instance of both A and B. Similarly, b instanceof B evaluates to true because b is also an instance of class B."
+      "false true will be displayed, because A is not a class.\n\n\n\n\n\nThe correct result of executing the provided code is:\n\ntrue true will be displayed, because A will be treated as a constructor during inheritance.\n\nThe A function in the code acts as a constructor function, and the B class extends A. This inheritance means that B inherits the prototype chain of A. When you create an instance b of class B with new B();, it is also an instance of the A constructor function because of the inheritance relationship. Therefore, b instanceof A evaluates to true because b is an instance of both A and B. Similarly, b instanceof B evaluates to true because b is also an instance of class B."
     ],
     "correct": 1,
     "explanation": "& Hint:"
   },
   {
-    "question": "Select the correct missing line so that the executed code results in the following console output: [‘SAMPLE’, ‘STRING’]",
+    "question": "Select the correct missing line so that the executed code results in the following console output: ['SAMPLE', 'STRING']",
     "options": [
-      "let result = str.toUpperCase().split(‘ ‘);",
-      "let result = str.split(‘ ‘).toUpperCase();",
-      "let result = str.toUpperCase(‘ ‘);",
-      "let result = str.toUpperCase(split(‘ ‘));"
+      "let result = str.toUpperCase().split(' ');",
+      "let result = str.split(' ').toUpperCase();",
+      "let result = str.toUpperCase(' ');",
+      "let result = str.toUpperCase(split(' '));"
     ],
     "correct": 0,
     "explanation": ""
@@ -726,7 +714,7 @@
     "explanation": ""
   },
   {
-    "question": "Select the correct missing line so that the executed code results in the following console output: [‘b’, ‘c’, ‘d’]",
+    "question": "Select the correct missing line so that the executed code results in the following console output: ['b', 'c', 'd']",
     "options": [
       "let y = x.slice(1, -1);",
       "let y = x.slice(0, 2);",
@@ -737,12 +725,12 @@
     "explanation": ""
   },
   {
-    "question": "Select the correct missing line so that the executed code results in the following console output: [‘a’, ‘b’, ‘x’, ‘y’, ‘e’]",
+    "question": "Select the correct missing line so that the executed code results in the following console output: ['a', 'b', 'x', 'y', 'e']",
     "options": [
-      "x.splice(2, 0, ‘x’, ‘y’);",
-      "x.splice(2, ‘x’, ‘y’);",
-      "x.splice(2, 2, ‘x’, ‘y’);",
-      "x.splice(2, 0, 2, ‘x’, ‘y’);"
+      "x.splice(2, 0, 'x', 'y');",
+      "x.splice(2, 'x', 'y');",
+      "x.splice(2, 2, 'x', 'y');",
+      "x.splice(2, 0, 2, 'x', 'y');"
     ],
     "correct": 0,
     "explanation": ""
@@ -750,10 +738,10 @@
   {
     "question": "Select the correct missing line so that the executed code results in the following console output: 1 -> 2 -> 30 -> 20",
     "options": [
-      "let str = a.join(‘ -> ‘);",
+      "let str = a.join(' -> ');",
       "let str = a.toString();",
       "let str = a.join();",
-      "let str = String.join(a, ‘ ->’);"
+      "let str = String.join(a, ' ->');"
     ],
     "correct": 0,
     "explanation": ""
@@ -794,11 +782,11 @@
   {
     "question": "Select the correct line so that the executed code results in the following console output: sum: 20",
     "options": [
-      "fn.call({a: 5, b: 15, c: 20}, ‘sum’);",
-      "fn.call({a: 5, b: 15, msg: ‘sum’});",
-      "fn.call(10, 10, ‘sum’);",
-      "fn.call(‘sum’, {a: 10, b: 10});",
-      "To make the code execute and result in the console output ‘sum: 20’, you should use the following line: fn.call({a: 5, b: 15}, ‘sum’); This line uses the call method to invoke the fn function with the specified this context {a: 5, b: 15} and the argument ‘sum’ . It correctly logs ‘sum: 20’ to the console by accessing this.a and this.b."
+      "fn.call({a: 5, b: 15, c: 20}, 'sum');",
+      "fn.call({a: 5, b: 15, msg: 'sum'});",
+      "fn.call(10, 10, 'sum');",
+      "fn.call('sum', {a: 10, b: 10});",
+      "To make the code execute and result in the console output 'sum: 20', you should use the following line:\n\nfn.call({a: 5, b: 15}, 'sum');\n\nThis line uses the call method to invoke the fn function with the specified this context {a: 5, b: 15} and the argument 'sum'. It correctly logs 'sum: 20' to the console by accessing this.a and this.b."
     ],
     "correct": 0,
     "explanation": "& Hint:"
@@ -806,13 +794,13 @@
   {
     "question": "Select the correct line so that the executed code results in the following console output: 200",
     "options": [
-      "request.addEventListener(‘load’, fn);",
+      "request.addEventListener('load', fn);",
       "request.addEventListener(fn);",
-      "request(‘load’, fn);",
+      "request('load', fn);",
       "fn(request);",
-      "To achieve the desired console output of 200 , you should use the following line: request.addEventListener(‘load’, fn); Here’s the You are creating an XMLHttpRequest object request to perform an HTTP request.",
+      "To achieve the desired console output of 200, you should use the following line:\n\nrequest.addEventListener('load', fn);\n\nHere's the \n\nYou are creating an XMLHttpRequest object request to perform an HTTP request.",
       "You define a function fn that will be used as an event handler to log the status property of the request object.",
-      "To listen for the load event of the request , you should use the addEventListener method as shown: request. addEventListener(‘load’, fn); . This registers the fn function to be executed when the load event occurs on the request object."
+      "To listen for the load event of the request, you should use the addEventListener method as shown: request.addEventListener('load', fn);. This registers the fn function to be executed when the load event occurs on the request object."
     ],
     "correct": 0,
     "explanation": "& Hint:"

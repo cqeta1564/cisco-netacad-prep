@@ -2,13 +2,14 @@
   {
     "source_num": 1,
     "options": [
-      "All; First",
-      "First; Second",
-      "All; Second",
-      "Null; Default"
+      "All;\nFirst",
+      "First;\nSecond",
+      "All;\nSecond",
+      "Null;\nDefault"
     ],
     "correct": 0,
-    "question": "In a conditional multi-table insert, you can specify either __________ or __________."
+    "explanation": "",
+    "question": "In a"
   },
   {
     "source_num": 2,
@@ -17,18 +18,21 @@
       "False"
     ],
     "correct": 0,
-    "question": "A multi-table insert statement can insert into more than one table. (True or False?)"
+    "explanation": "",
+    "question": "A"
   },
   {
     "source_num": 5,
     "options": [
-      "INSERT with a WHERE clause",
-      "DELETE with a WHERE clause",
-      "UPDATE with a WHERE clause",
-      "MERGE with a WHERE clause"
+      "INSERT\nwith a WHERE clause",
+      "DELETE\nwith a WHERE clause",
+      "UPDATE\nwith a WHERE clause",
+      "MERGE\nwith a WHERE clause",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 1,
-    "question": "You need to remove a row from the EMPLOYEES table. Which statement would you use?"
+    "explanation": "",
+    "question": "You"
   },
   {
     "source_num": 7,
@@ -37,55 +41,49 @@
       "False"
     ],
     "correct": 0,
-    "question": "DELETE statements can use correlated subqueries? (True or False)"
+    "explanation": "",
+    "question": "DELETE"
   },
   {
     "source_num": 8,
     "options": [
-      "(Choose all correct answers)",
+      "(Choose\nall correct answers)",
       "DELETE",
       "SELECT",
       "UPDATE",
-      "MERGE"
+      "MERGE",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 3,
-    "question": "Which two commands can be used to modify existing data in a database row?"
+    "explanation": "",
+    "question": "Which"
   },
   {
     "source_num": 9,
     "options": [
-      "You CANNOT modify the data type of the EMPLOYEE_ID column, as the table is not empty.",
-      "ALTER employee TABLE",
+      "You\nCANNOT modify the data type of the EMPLOYEE_ID column, as the table is not\nempty.",
+      "ALTER\nemployee TABLE",
       "MODIFY COLUMN (employee_id VARCHAR2(15));",
-      "ALTER TABLE employee",
+      "ALTER\nTABLE employee",
       "MODIFY (employee_id VARCHAR2(9));",
-      "ALTER TABLE employee",
+      "ALTER\nTABLE employee",
       "REPLACE (employee_id VARCHAR2(9));"
     ],
     "correct": 0,
-    "question": "Evaluate the structure of the EMPLOYEE table:\nEMPLOYEE_ID NUMBER(9)\nLAST_NAME VARCHAR2(25)\nFIRST_NAME VARCHAR2(25)\nDEPARTMENT_ID NUMBER(9)\nMANAGER_ID NUMBER(9)\nSALARY NUMBER(7,2)\nThe EMPLOYEE_ID column currently contains 500 employee identification numbers. Business requirements have changed and you need to allow users to include text characters in the identification values. Which statement should you use to change this column's data type?"
-  },
-  {
-    "source_num": 11,
-    "options": [
-      "DROP TABLE",
-      "TRUNCATE TABLE",
-      "ALTER TABLE",
-      "MODIFY"
-    ],
-    "correct": 1,
-    "question": "Which command could you use to quickly remove all data from the rows in a table without deleting the table itself?"
+    "explanation": "",
+    "question": "Evaluate\nEMPLOYEE_ID NUMBER(9)\nLAST_NAME VARCHAR2(25)\nFIRST_NAME VARCHAR2(25)\nDEPARTMENT_ID NUMBER(9)\nMANAGER_ID NUMBER(9)\nSALARY NUMBER(7,2)\nThe EMPLOYEE_ID column currently contains 500 employee\nidentification numbers. Business requirements have changed and you need to\nallow users to include text characters in the identification values. Which\nstatement should you use to change this column's data type?"
   },
   {
     "source_num": 12,
     "options": [
-      "The column named COLOR in the table named PRODUCTS will be created.",
-      "The column named COLOR in the table named PRODUCTS will not be returned in subsequent reads of the table by Oracle, as it has been deleted logically.",
-      "The column named COLOR in the table named PRODUCTS will be assigned default values.",
-      "The column named COLOR in the table named PRODUCTS will be deleted."
+      "The\ncolumn named COLOR in the table named PRODUCTS will be created.",
+      "The\ncolumn named COLOR in the table named PRODUCTS will not be returned in\nsubsequent reads of the table by Oracle, as it has been deleted logically.",
+      "The\ncolumn named COLOR in the table named PRODUCTS will be assigned default values.",
+      "The\ncolumn named COLOR in the table named PRODUCTS will be deleted."
     ],
     "correct": 1,
-    "question": "You want to issue the following command on a database that includes your company's inventory information:\nALTER TABLE products SET UNUSED COLUMN color;\nWhat will be the result of issuing this command?"
+    "explanation": "",
+    "question": "You\nALTER TABLE products SET UNUSED COLUMN color;\nWhat will be the result of issuing this command?"
   },
   {
     "source_num": 13,
@@ -94,29 +92,20 @@
       "False"
     ],
     "correct": 1,
-    "question": "The FLASHBACK QUERY statement can restore data back to a point in time before the last COMMIT. True or False?"
+    "explanation": "",
+    "question": "The"
   },
   {
     "source_num": 14,
     "options": [
-      "You can produce the same results by issuing the 'DROP TABLE employee' statement.",
-      "You can issue this statement to retain the structure of the employees table.",
-      "You can produce the same results by issuing the 'DELETE employees' statement.",
-      "You can reverse this statement by issuing the ROLLBACK statement."
+      "You\ncan produce the same results by issuing the 'DROP TABLE employee' statement.",
+      "You\ncan issue this statement to retain the structure of the employees table.",
+      "You\ncan produce the same results by issuing the 'DELETE employees' statement.",
+      "You\ncan reverse this statement by issuing the ROLLBACK statement."
     ],
     "correct": 1,
-    "question": "Evaluate this statement:"
-  },
-  {
-    "source_num": 15,
-    "options": [
-      "Time to be stored as an interval of years and months.",
-      "Time to be stored as a date with fractional seconds.",
-      "Time to be stored as an interval of days to hours, minutes and seconds.",
-      "None of the above."
-    ],
-    "correct": 1,
-    "question": "The TIMESTAMP data type allows what?"
+    "explanation": "",
+    "question": "Evaluate"
   },
   {
     "source_num": 16,
@@ -127,49 +116,20 @@
       "Six"
     ],
     "correct": 2,
-    "question": "The ELEMENTS column is defined as:\nNUMBER(6,4)\nHow many digits to the right of the decimal point are allowed for the ELEMENTS column?"
+    "explanation": "",
+    "question": "The\nNUMBER(6,4)\nHow many digits to the right of the decimal point are\nallowed for the ELEMENTS column?"
   },
   {
     "source_num": 17,
     "options": [
-      "impossible; no matter what, there can never be two tables with the same name, even if they are in separate schemas.",
-      "impossible; School_Friends is a reserved term in SQL.",
-      "possible; my schema is separate from yours, and it is okay for us to have like-named tables in our separate schemas.",
-      "possible; our data will merge into one table, and we can more easily access our mutual friends information."
+      "impossible;\nno matter what, there can never be two tables with the same name, even if they\nare in separate schemas.",
+      "impossible;\nSchool_Friends is a reserved term in SQL.",
+      "possible;\nmy schema is separate from yours, and it is okay for us to have like-named\ntables in our separate schemas.",
+      "possible;\nour data will merge into one table, and we can more easily access our mutual\nfriends information."
     ],
     "correct": 2,
-    "question": "I have a table named School_Friends in my schema. You want to build a table in your schema named School_Friends. This is ______________, because ____________________________________."
-  },
-  {
-    "source_num": 18,
-    "options": [
-      "1NUMBER",
-      "NUMBER",
-      "NUMBER_1$",
-      "1_NUMBER#"
-    ],
-    "correct": 2,
-    "question": "Which column name is valid?"
-  },
-  {
-    "source_num": 19,
-    "options": [
-      "CREATE TABLE date (date_id NUMBER(9));",
-      "CREATE TABLE time (time_id NUMBER(9));",
-      "CREATE TABLE time_date (time NUMBER(9));",
-      "CREATE TABLE date_1 (date_1 DATE);"
-    ],
-    "correct": 0,
-    "question": "Which CREATE TABLE statement will fail?"
-  },
-  {
-    "source_num": 20,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 1,
-    "question": "A column defined as NOT NULL can have a DEFAULT value of NULL. True or False?"
+    "explanation": "",
+    "question": "I have"
   },
   {
     "source_num": 21,
@@ -178,82 +138,31 @@
       "False"
     ],
     "correct": 1,
-    "question": "A table must have at least one not null constraint and one unique constraint. True or False?"
-  },
-  {
-    "source_num": 22,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 0,
-    "question": "A table can have more than one UNIQUE key constraint. True or False?"
+    "explanation": "",
+    "question": "A table"
   },
   {
     "source_num": 23,
     "options": [
-      "The statement will NOT execute because it contains a syntax error.",
-      "The statement will execute, but will not verify that the existing values are unique.",
-      "The statement will achieve the desired result.",
-      "The statement will execute, but will ensure that the new ID values are unique."
+      "The\nstatement will NOT execute because it contains a syntax error.",
+      "The\nstatement will execute, but will not verify that the existing values are\nunique.",
+      "The\nstatement will achieve the desired result.",
+      "The\nstatement will execute, but will ensure that the new ID values are unique."
     ],
     "correct": 0,
-    "question": "You disabled the EMPLOYEE_ID_PK PRIMARY KEY constraint on the ID column in the EMPLOYEES table and imported 100 records. You need to enable the constraint and verify that the new and existing ID column values do not violate the PRIMARY KEY constraint. Evaluate this statement:\nALTER TABLE employees\nENABLE employee_id_pk;\nWhich statement is true?"
-  },
-  {
-    "source_num": 25,
-    "options": [
-      "Multiple Primary Key",
-      "Composite Primary Key",
-      "Double Key",
-      "Primary Multi-Key",
-      "None of the Above"
-    ],
-    "correct": 1,
-    "question": "A Primary Key that is made up of more than one column is called a:"
-  },
-  {
-    "source_num": 26,
-    "options": [
-      "Child Table",
-      "Mother and Father Table",
-      "Parent Table",
-      "Detail Table"
-    ],
-    "correct": 2,
-    "question": "The table that contains the Primary Key in a Foreign Key Constraint is known as:"
+    "explanation": "",
+    "question": "You\nALTER TABLE employees\nENABLE employee_id_pk;\nWhich statement is true?"
   },
   {
     "source_num": 27,
     "options": [
-      "To provide restricted data access",
-      "To provide data dependence",
-      "To be able to store the same data in more than one place"
+      "To\nprovide restricted data access",
+      "To\nprovide data dependence",
+      "To\nbe able to store the same data in more than one place"
     ],
     "correct": 0,
-    "question": "What is one advantage of using views?"
-  },
-  {
-    "source_num": 28,
-    "options": [
-      "Views allow access to the data because the view displays all of the columns from the table.",
-      "Views are used when you only want to restrict DML operations using a WITH CHECK OPTION.",
-      "Views are not valid unless you have more than one user.",
-      "Views provide data independence for infrequent users and application programs. One view can be used to retrieve data from several tables. Views can be used to provide data security."
-    ],
-    "correct": 3,
-    "question": "Which of the following statements is a valid reason for using a view?"
-  },
-  {
-    "source_num": 29,
-    "options": [
-      "CREATE OR REPLACE VIEW",
-      "MODIFY VIEW",
-      "ALTER VIEW",
-      "ALTER TABLE"
-    ],
-    "correct": 0,
-    "question": "Which statement would you use to alter a view?"
+    "explanation": "",
+    "question": "What is"
   },
   {
     "source_num": 31,
@@ -262,40 +171,21 @@
       "False"
     ],
     "correct": 0,
-    "question": "A Top-N Analysis is capable of ranking a top or bottom set of results. True or False?"
-  },
-  {
-    "source_num": 32,
-    "options": [
-      "To insure that no rows are updated through the view that would prevent those rows from being returned by the view in the future.",
-      "To keep views form being queried by unauthorized persons",
-      "To make sure that the parent table(s) actually exist",
-      "To make sure that data is not duplicated in the view"
-    ],
-    "correct": 0,
-    "question": "What is the purpose of including the WITH CHECK OPTION clause when creating a view?"
-  },
-  {
-    "source_num": 33,
-    "options": [
-      "WITH READ ONLY",
-      "FORCE",
-      "WITH ADMIN OPTION",
-      "NOFORCE"
-    ],
-    "correct": 0,
-    "question": "Which option would you use when creating a view to ensure that no DML operations occur on the view?"
+    "explanation": "",
+    "question": "A Top-N"
   },
   {
     "source_num": 34,
     "options": [
-      "WITH CHECK OPTION",
+      "WITH\nCHECK OPTION",
       "FORCE",
-      "WITH READ ONLY",
-      "WITH CONSTRAINT CHECK"
+      "WITH\nREAD ONLY",
+      "WITH\nCONSTRAINT CHECK",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 0,
-    "question": "If a database administrator wants to ensure that changes performed through a view do not violate existing constraints, which clause should he include when creating the view?"
+    "explanation": "",
+    "question": "If a"
   },
   {
     "source_num": 35,
@@ -303,44 +193,24 @@
       "MINVALUE",
       "CYCLE",
       "NOMAXVALUE",
-      "MAXVALUE"
+      "MAXVALUE",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 0,
-    "question": "When creating a sequence, which keyword or option specifies the minimum sequence value?"
-  },
-  {
-    "source_num": 36,
-    "options": [
-      "DROP SEQUENCE emp_id_seq;",
-      "ALTER SEQUENCE emp_id_seq;",
-      "DELETE SEQUENCE emp_id_seq;",
-      "REMOVE SEQUENCE emp_id_seq;"
-    ],
-    "correct": 0,
-    "question": "Which statement would you use to remove the EMP_ID_SEQ sequence?"
-  },
-  {
-    "source_num": 37,
-    "options": [
-      "CACHE",
-      "NOCACHE",
-      "NOCYCLE",
-      "LOAD",
-      "MEMORY"
-    ],
-    "correct": 0,
-    "question": "When used in a CREATE SEQUENCE statement, which keyword specifies that a range of sequence values will be preloaded into memory?"
+    "explanation": "",
+    "question": "When"
   },
   {
     "source_num": 38,
     "options": [
-      "UNIQUE INDEX",
-      "NONUNIQUE INDEX",
+      "UNIQUE\nINDEX",
+      "NONUNIQUE\nINDEX",
       "INDEX",
-      "Oracle cannot create indexes automatically."
+      "Oracle\ncannot create indexes automatically."
     ],
     "correct": 0,
-    "question": "What kind of INDEX is created by Oracle when you create a primary key?"
+    "explanation": "",
+    "question": "What"
   },
   {
     "source_num": 39,
@@ -349,51 +219,32 @@
       "False"
     ],
     "correct": 0,
-    "question": "Indexes can be used to speed up queries. True or False?"
-  },
-  {
-    "source_num": 40,
-    "options": [
-      "An index",
-      "A PRIMARY KEY constraint",
-      "A FOREIGN KEY constraint",
-      "A CHECK constraint"
-    ],
-    "correct": 0,
-    "question": "Which of the following is created automatically by Oracle when a UNIQUE integrity constraint is created?"
+    "explanation": "",
+    "question": "Indexes"
   },
   {
     "source_num": 41,
     "options": [
-      "A collection of objects, such as tables, views, and sequences.",
-      "Required to manipulate the content of objects in the database.",
-      "Required to gain access to the database.",
-      "Named groups of related privileges given to a user."
+      "A\ncollection of objects, such as tables, views, and sequences.",
+      "Required\nto manipulate the content of objects in the database.",
+      "Required\nto gain access to the database.",
+      "Named\ngroups of related privileges given to a user."
     ],
     "correct": 2,
-    "question": "System privileges are:"
+    "explanation": "",
+    "question": "System"
   },
   {
     "source_num": 42,
     "options": [
-      "A new user JIM is created from user BOB's profile.",
-      "The user BOB is assigned the same privileges as user JIM.",
-      "The user BOB is renamed and is accessible as user JIM.",
-      "A new password is assigned to user BOB."
+      "A\nnew user JIM is created from user BOB's profile.",
+      "The\nuser BOB is assigned the same privileges as user JIM.",
+      "The\nuser BOB is renamed and is accessible as user JIM.",
+      "A\nnew password is assigned to user BOB."
     ],
     "correct": 3,
-    "question": "Evaluate this statement:\nALTER USER bob IDENTIFIED BY jim;\nWhich statement about the result of executing this statement is true?"
-  },
-  {
-    "source_num": 43,
-    "options": [
-      "REGEXP_SUBSTR",
-      "REGEXP",
-      "REGEXP_REPLACE",
-      "REGEXP_LIKE"
-    ],
-    "correct": 1,
-    "question": "Which of these SQL functions used to manipulate strings is NOT a valid regular expression function ?"
+    "explanation": "",
+    "question": "Evaluate\nALTER USER bob IDENTIFIED BY jim;\nWhich statement about the result of executing this\nstatement is true?"
   },
   {
     "source_num": 44,
@@ -402,16 +253,19 @@
       "False"
     ],
     "correct": 0,
-    "question": "Regular expressions used as check constraints are another way to ensure data is formatted correctly prior to being written into the database table. True or False?"
+    "explanation": "",
+    "question": "Regular"
   },
   {
     "source_num": 45,
     "options": [
       "True",
-      "False"
+      "False",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 0,
-    "question": "A role can be granted to another role. True or False?"
+    "explanation": "",
+    "question": "A role"
   },
   {
     "source_num": 46,
@@ -420,18 +274,8 @@
       "False"
     ],
     "correct": 0,
-    "question": "Scott King owns a table called employees. He issues the following statement:\nGRANT select ON employees TO PUBLIC;\nAllison Plumb has been granted CREATE SESSION by the DBA. She logs into the database and issues the following statement:\nGRANT ﾠ select ON ﾠ scott_king.employees TO jennifer_cho;\nTrue or False: Allison's statement will fail."
-  },
-  {
-    "source_num": 47,
-    "options": [
-      "PUBLIC",
-      "ALL",
-      "ADMIN",
-      "USERS"
-    ],
-    "correct": 0,
-    "question": "Which keyword would you use to grant an object privilege to all database users?"
+    "explanation": "",
+    "question": "Scott\nGRANT select ON employees TO PUBLIC;\nAllison Plumb has been granted CREATE SESSION by the DBA.\nShe logs into the database and issues the following statement:\nGRANT ﾠselect ON ﾠscott_king.employees\nTO jennifer_cho;\nTrue or False: Allison's statement will fail."
   },
   {
     "source_num": 48,
@@ -440,58 +284,20 @@
       "False"
     ],
     "correct": 0,
-    "question": "If Oracle crashes, your changes are automatically rolled back. True or False?"
-  },
-  {
-    "source_num": 49,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 1,
-    "question": "When you logout of Oracle, your data changes are automatically rolled back. True or False?"
-  },
-  {
-    "source_num": 50,
-    "options": [
-      "Documentation",
-      "Unit testing",
-      "Software engineering",
-      "Production"
-    ],
-    "correct": 1,
-    "question": "A software verification and validation method."
-  },
-  {
-    "source_num": 1,
-    "options": [
-      "Joining",
-      "Selection",
-      "Projection",
-      "Manipulation"
-    ],
-    "correct": 3,
-    "question": "The SELECT statement retrieves information from the database. In a SELECT statement, you can do all of the following EXCEPT:"
+    "explanation": "",
+    "question": "If Oracle"
   },
   {
     "source_num": 2,
     "options": [
-      "Multiplications and Divisions are at the same level and would be evaluated first based on left to right order",
-      "Subtractions and Additions are at the same level and would be evaluated first based on left to right order",
-      "Divisions and Subtractions are at the same level and would be evaluated first based on left to right order",
-      "Additions and Multiplications are at the same level and would be evaluated first based on left to right order"
+      "Multiplications\nand Divisions are at the same level and would be evaluated first based on left\nto right order",
+      "Subtractions\nand Additions are at the same level and would be evaluated first based on left\nto right order",
+      "Divisions\nand Subtractions are at the same level and would be evaluated first based on\nleft to right order",
+      "Additions\nand Multiplications are at the same level and would be evaluated first based on\nleft to right order"
     ],
     "correct": 0,
-    "question": "In the default order of precedence, which operator would be evaluated first?"
-  },
-  {
-    "source_num": 3,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 1,
-    "question": "You cannot use computers unless you completely understand exactly how they work. True or False?"
+    "explanation": "",
+    "question": "In the"
   },
   {
     "source_num": 4,
@@ -500,16 +306,19 @@
       "False"
     ],
     "correct": 1,
-    "question": "There is only one kind of software used by all computers. True or False?"
+    "explanation": "",
+    "question": "There"
   },
   {
     "source_num": 5,
     "options": [
       "True",
-      "False"
+      "False",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 0,
-    "question": "Databases are used in most countries and by most governments. Life, as we know it, would change drastically if we no longer had access to databases. True or False?"
+    "explanation": "",
+    "question": "Databases"
   },
   {
     "source_num": 7,
@@ -518,126 +327,69 @@
       "False"
     ],
     "correct": 0,
-    "question": "When using the \"LIKE\" operator, the % and _ symbols can be used to do a pattern-matching, wild card search. True or False?"
-  },
-  {
-    "source_num": 8,
-    "options": [
-      "SELECT manager_id, department_id FROM employees;",
-      "SELECT manager_id, DISTINCT department_id FROM employees;",
-      "SELECT manager_id, department_id DISTINCT FROM employees;",
-      "SELECT DISTINCT manager_id, department_id FROM employees;"
-    ],
-    "correct": 0,
-    "question": "Which SELECT statement will display both unique and non-unique combinations of the MANAGER_ID and DEPARTMENT_ID values from the EMPLOYEES table?"
-  },
-  {
-    "source_num": 9,
-    "options": [
-      "BETWEEN",
-      "AND",
-      "IN",
-      "LIKE"
-    ],
-    "correct": 3,
-    "question": "You want to retrieve a list of customers whose last names begin with the letters 'Fr' . Which keyword should you include in the WHERE clause of your SELECT statement to achieve the desired result?"
-  },
-  {
-    "source_num": 10,
-    "options": [
-      "A constant",
-      "A column name",
-      "A column alias",
-      "A comparison condition"
-    ],
-    "correct": 2,
-    "question": "Which of the following elements cannot be included in a WHERE clause?"
-  },
-  {
-    "source_num": 11,
-    "options": [
-      "\"=>\"",
-      ">",
-      "!=",
-      ">="
-    ],
-    "correct": 3,
-    "question": "You need to display employees with salaries that are at least 30000 or higher. Which comparison operator should you use?"
+    "explanation": "",
+    "question": "When using"
   },
   {
     "source_num": 12,
     "options": [
-      "200, 201, 202, 203, 204, 205, 206",
-      "100, 101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149",
+      "200,\n201, 202, 203, 204, 205, 206",
+      "100,\n101, 102, 103, 104, 107, 124, 141, 142, 143, 144, 149",
       "19",
-      "No rows will be returned"
+      "No\nrows will be returned"
     ],
     "correct": 1,
-    "question": "What value will the following SQL statement return?\nSELECT employee_id\nFROM employees\nWHERE employee_id BETWEEN 100 AND 150\nOR employee_id IN(119, 175, 205)\nAND (employee_id BETWEEN 150 AND 200);"
-  },
-  {
-    "source_num": 14,
-    "options": [
-      "ORDER BY",
-      "WHERE",
-      "HAVING",
-      "FROM"
-    ],
-    "correct": 0,
-    "question": "Which clause would you include in a SELECT statement to sort the rows returned by the LAST_NAME column?"
+    "explanation": "",
+    "question": "What\nSELECT employee_id\nFROM employees\nWHERE employee_id BETWEEN 100 AND 150\nOR employee_id\nIN(119, 175, 205)\nAND (employee_id\nBETWEEN 150 AND 200);"
   },
   {
     "source_num": 15,
     "options": [
-      "Yes, it will return the highest salary from each employee.",
-      "Yes, it will return the average salary from the employees table.",
-      "Yes, it will return the highest salary, the lowest salary, and the average salary from all employees.",
-      "No, it is illegal. You cannot use more than one multi-row function in a SELECT statement."
+      "Yes,\nit will return the highest salary from each employee.",
+      "Yes,\nit will return the average salary from the employees table.",
+      "Yes,\nit will return the highest salary, the lowest salary, and the average salary\nfrom all employees.",
+      "No,\nit is illegal. You cannot use more than one multi-row function in a SELECT\nstatement.",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 2,
-    "question": "Will the following statement return one row?\nSELECT MAX(salary), MIN(Salary), AVG(SALARY)\nFROM employees;"
+    "explanation": "",
+    "question": "Will\nSELECT MAX(salary), MIN(Salary), AVG(SALARY)\nFROM employees;"
   },
   {
     "source_num": 16,
     "options": [
-      "Dates and numbers",
-      "Dates and characters",
-      "Numbers and characters",
-      "None of the above"
+      "Dates\nand numbers",
+      "Dates\nand characters",
+      "Numbers\nand characters",
+      "None\nof the above"
     ],
     "correct": 0,
-    "question": "ROUND and TRUNC functions can be used with which of the following Datatypes?"
+    "explanation": "",
+    "question": "ROUND"
   },
   {
     "source_num": 19,
     "options": [
-      "LOWER, CONCAT, SUBSTR",
-      "CONCAT, SUBSTR, LOWER",
-      "LOWER, SUBSTR, CONCAT",
-      "SUBSTR, CONCAT, LOWER"
+      "LOWER,\nCONCAT, SUBSTR",
+      "CONCAT,\nSUBSTR, LOWER",
+      "LOWER,\nSUBSTR, CONCAT",
+      "SUBSTR,\nCONCAT, LOWER",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 1,
-    "question": "You query the database with this SQL statement:\nSELECT LOWER(SUBSTR(CONCAT(last_name, first_name)), 1, 5) \"ID\"\nFROM employee;\nIn which order are the functions evaluated?"
+    "explanation": "",
+    "question": "You\nSELECT LOWER(SUBSTR(CONCAT(last_name, first_name)), 1, 5)\n\"ID\"\nFROM employee;\nIn which order are the functions evaluated?"
   },
   {
     "source_num": 20,
     "options": [
       "True",
-      "False"
+      "False",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 0,
-    "question": "CASE and DECODE evaluate expressions in a similar way to IF-THEN-ELSE logic. However, DECODE is specific to Oracle syntax. True or False?"
-  },
-  {
-    "source_num": 22,
-    "options": [
-      "TO_CHAR and NULLIF",
-      "TO_NUMBER and NULLIF",
-      "TO_CHAR and NVL",
-      "TO_CHAR and NULL"
-    ],
-    "correct": 2,
-    "question": "You need to replace null values in the DEPT_ID column with the text N/A. Which functions should you use?"
+    "explanation": "",
+    "question": "CASE"
   },
   {
     "source_num": 23,
@@ -648,18 +400,8 @@
       "2001"
     ],
     "correct": 2,
-    "question": "If you use the RR format when writing a query using the date 27-Oct-17 and the year is 2001, what year would be the result?"
-  },
-  {
-    "source_num": 25,
-    "options": [
-      "The TO_CHAR function can be used to remove text from column data that will be returned by the database.",
-      "The TO_CHAR function can be used to display dates and numbers according to formatting conventions that are supported by Oracle.",
-      "The TO_CHAR function can be used to specify meaningful column names in an SQL statement's result set.",
-      "The TO_CHAR function can only be used on Date columns."
-    ],
-    "correct": 1,
-    "question": "Which best describes the TO_CHAR function?"
+    "explanation": "",
+    "question": "If you"
   },
   {
     "source_num": 27,
@@ -668,141 +410,85 @@
       "False"
     ],
     "correct": 1,
-    "question": "Hierarchical queries MUST use the LEVEL pseudo column. True or False?"
-  },
-  {
-    "source_num": 29,
-    "options": [
-      "A cross join",
-      "An inner join",
-      "An equijoin",
-      "A full outer join"
-    ],
-    "correct": 0,
-    "question": "You need to join all the rows in the EMPLOYEES table to all the rows in the EMP_REFERENCE table. Which type of join should you create?"
-  },
-  {
-    "source_num": 30,
-    "options": [
-      "If it selects rows from the two tables that have equal values in all matched columns.",
-      "When you attempt to write it as an equijoin.",
-      "If the columns having the same names have different data types, then an error is returned.",
-      "When the NATURAL JOIN clause is based on all columns in the two tables that have the same name."
-    ],
-    "correct": 2,
-    "question": "Which of the following conditions will cause an error on a NATURAL JOIN?"
-  },
-  {
-    "source_num": 31,
-    "options": [
-      "Equijoin",
-      "Outer Join",
-      "Self Join",
-      "Nonequijoin"
-    ],
-    "correct": 0,
-    "question": "What is another name for a simple join or an inner join?"
+    "explanation": "",
+    "question": "Hierarchical"
   },
   {
     "source_num": 32,
     "options": [
       "Equijoin",
-      "Outer Join",
-      "Inner Join",
-      "Optimal Join"
+      "Outer\nJoin",
+      "Inner\nJoin",
+      "Optimal\nJoin",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 1,
-    "question": "The following statement is an example of what kind of join?\nSELECT car.vehicle_id, driver.name\nFROM car\nLEFT OUTER JOIN driver ON (driver_id) ;"
+    "explanation": "",
+    "question": "The\nSELECT car.vehicle_id, driver.name\nFROM car\nLEFT OUTER JOIN driver ON (driver_id) ;"
   },
   {
     "source_num": 33,
     "options": [
-      "No, Oracle will not allow joins in the WHERE clause",
-      "Yes, Oracle will resolve which department_id colum comes from which table.",
-      "No, Oracle will return a Column Ambiguously Defined error.",
-      "Yes, there are no syntax errors in that statement"
+      "No,\nOracle will not allow joins in the WHERE clause",
+      "Yes,\nOracle will resolve which department_id colum comes from which table.",
+      "No,\nOracle will return a Column Ambiguously Defined error.",
+      "Yes,\nthere are no syntax errors in that statement"
     ],
     "correct": 2,
-    "question": "Will the following statement work?\nSELECT department_name, last_name\nFROM employees, departments\nWHERE department_id = department_id;"
-  },
-  {
-    "source_num": 34,
-    "options": [
-      "3",
-      "0",
-      "2",
-      "1"
-    ],
-    "correct": 2,
-    "question": "When joining 3 tables in a SELECT statement, how many join conditions are needed in the WHERE clause?"
+    "explanation": "",
+    "question": "Will\nSELECT department_name, last_name\nFROM employees, departments\nWHERE department_id = department_id;"
   },
   {
     "source_num": 35,
     "options": [
-      "The join between the player table and the team table on TEAM_ID",
-      "The join between the player table and the team table on MANAGER_ID",
-      "The join between the player table and the team table on PLAYER_ID",
-      "The self-join of the player table"
+      "The\njoin between the player table and the team table on TEAM_ID",
+      "The\njoin between the player table and the team table on MANAGER_ID",
+      "The\njoin between the player table and the team table on PLAYER_ID",
+      "The\nself-join of the player table",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 3,
-    "question": "Evaluate this SELECT statement:\nSELECT p.player_id, m.last_name, m.first_name, t.team_name\nFROM player p\nLEFT OUTER JOIN player m ON (p.manager_id = m.player_id)\nLEFT OUTER JOIN team t ON (p.team_id = t.team_id);\nWhich join is evaluated first?"
+    "explanation": "",
+    "question": "Evaluate\nSELECT p.player_id, m.last_name, m.first_name,\nt.team_name\nFROM player p\nLEFT OUTER JOIN player m ON (p.manager_id = m.player_id)\nLEFT OUTER JOIN team t ON (p.team_id = t.team_id);\nWhich join is evaluated first?"
   },
   {
     "source_num": 36,
     "options": [
-      "The number of unique PRODUCT_IDs in the table is displayed.",
-      "An error occurs due to an error in the SELECT clause.",
-      "The number of rows in the table is displayed.",
-      "An error occurs because no WHERE clause is included in the SELECT statement."
+      "The\nnumber of unique PRODUCT_IDs in the table is displayed.",
+      "An\nerror occurs due to an error in the SELECT clause.",
+      "The\nnumber of rows in the table is displayed.",
+      "An\nerror occurs because no WHERE clause is included in the SELECT statement."
     ],
     "correct": 2,
-    "question": "Evaluate this SELECT statement:\nSELECT COUNT(*)\nFROM products;\nWhich statement is true?"
+    "explanation": "",
+    "question": "Evaluate\nSELECT COUNT(*)\nFROM products;\nWhich statement is true?"
   },
   {
     "source_num": 37,
     "options": [
-      "(Choose all correct answers)",
-      "SELECT SUM(order_dt)",
-      "SELECT MIN(AVG(order_amount))",
-      "WHERE MAX(order_dt) = order_dt",
-      "FROM MAX(order_dt)",
-      "SELECT SUM(order_amount)"
+      "(Choose\nall correct answers)",
+      "SELECT\nSUM(order_dt)",
+      "SELECT\nMIN(AVG(order_amount))",
+      "WHERE\nMAX(order_dt) = order_dt",
+      "FROM\nMAX(order_dt)",
+      "SELECT\nSUM(order_amount)"
     ],
     "correct": 2,
-    "question": "The VENDORS table contains these columns:\nVENDOR_ID NUMBER Primary Key\nNAME VARCHAR2(30)\nLOCATION_ID NUMBER\nORDER_DT DATE\nORDER_AMOUNT NUMBER(8,2)\nWhich two clauses represent valid uses of aggregate functions for this table?"
-  },
-  {
-    "source_num": 38,
-    "options": [
-      "COUNT",
-      "MIN",
-      "MAX",
-      "AVG"
-    ],
-    "correct": 2,
-    "question": "Which group function would you use to display the highest salary value in the EMPLOYEES table?"
-  },
-  {
-    "source_num": 39,
-    "options": [
-      "UNION will remove duplicates; UNION ALL returns all rows from all queries including the duplicates.",
-      "UNION is a synomym for UNION ALL.",
-      "UNION ALL is more like a NATURAL JOIN.",
-      "There is no difference; you get exactly the same result from both."
-    ],
-    "correct": 0,
-    "question": "The difference between UNION and UNION ALL is"
+    "explanation": "",
+    "question": "The\nVENDOR_ID NUMBER Primary Key\nNAME VARCHAR2(30)\nLOCATION_ID NUMBER\nORDER_DT DATE\nORDER_AMOUNT NUMBER(8,2)\nWhich two clauses represent valid uses of aggregate\nfunctions for this table?"
   },
   {
     "source_num": 40,
     "options": [
-      "GROUP BY GROUPING SETS (department_id, salary), (department_id, job_id), (department_id, manager_id)",
-      "GROUP BY GROUPING SETS ((department_id, manager_id), (department_id, SUM(salary), (manager_id, job_id))",
-      "GROUP BY GROUPING SETS (department_id, AVG(salary)), (department_id, job_id), (department_id, manager_id)",
-      "GROUP BY GROUPING SETS ((department_id, manager_id), (department_id, job_id), (manager_id, job_id))"
+      "GROUP\nBY GROUPING SETS (department_id, salary), (department_id, job_id),\n(department_id, manager_id)",
+      "GROUP\nBY GROUPING SETS ((department_id, manager_id), (department_id, SUM(salary),\n(manager_id, job_id))",
+      "GROUP\nBY GROUPING SETS (department_id, AVG(salary)), (department_id, job_id),\n(department_id, manager_id)",
+      "GROUP\nBY GROUPING SETS ((department_id, manager_id), (department_id, job_id),\n(manager_id, job_id))",
+      "(Answer\nall questions in this section)"
     ],
     "correct": 3,
-    "question": "Examine the following statement:\nSELECT department_id, manager_id, job_id, SUM(salary)\nFROM employees\nGROUP BY GROUPING SETS(.......);\nSelect the correct GROUP BY GROUPING SETS clause from the following list:"
+    "explanation": "",
+    "question": "Examine\nSELECT department_id, manager_id, job_id, SUM(salary)\nFROM employees\nGROUP BY GROUPING SETS(.......);\nSelect the correct GROUP BY GROUPING SETS clause from the\nfollowing list:"
   },
   {
     "source_num": 41,
@@ -811,95 +497,56 @@
       "False"
     ],
     "correct": 0,
-    "question": "CUBE can be applied to all aggregate functions including AVG, SUM, MIN, MAX, and COUNT. True or False?"
+    "explanation": "",
+    "question": "CUBE"
   },
   {
     "source_num": 42,
     "options": [
-      "Group functions cannot be nested.",
+      "Group\nfunctions cannot be nested.",
       "Two",
       "Three",
       "Four"
     ],
     "correct": 1,
-    "question": "Group functions can be nested to a depth of?"
+    "explanation": "",
+    "question": "Group functions"
   },
   {
     "source_num": 43,
     "options": [
-      "The latest hire date in the EMPLOYEES table",
-      "The earliest hire date in the EMPLOYEES table",
-      "The earliest hire date in each department",
-      "The hire dates in the EMPLOYEES table that contain NULL values"
+      "The\nlatest hire date in the EMPLOYEES table",
+      "The\nearliest hire date in the EMPLOYEES table",
+      "The\nearliest hire date in each department",
+      "The\nhire dates in the EMPLOYEES table that contain NULL values"
     ],
     "correct": 2,
-    "question": "Evaluate this SELECT statement:\nSELECT MIN(hire_date), department_id\nFROM employees\nGROUP BY department_id;\nWhich values are displayed?"
-  },
-  {
-    "source_num": 44,
-    "options": [
-      "By default, rows are not sorted when a GROUP BY clause is used.",
-      "To exclude rows before dividing them into groups using the GROUP BY clause, you should use a WHERE clause.",
-      "You must use the HAVING clause with the GROUP BY clause.",
-      "You can use a column alias in a GROUP BY clause."
-    ],
-    "correct": 1,
-    "question": "Which statement about the GROUP BY clause is true?"
-  },
-  {
-    "source_num": 45,
-    "options": [
-      "Equal to any member in the list",
-      "Compare value to each value returned by the subquery",
-      "Equal to each value in the list",
-      "Compare value to the first value returned by the subquery"
-    ],
-    "correct": 1,
-    "question": "Which of the following best describes the meaning of the ANY operator?"
+    "explanation": "",
+    "question": "Evaluate\nSELECT MIN(hire_date), department_id\nFROM employees\nGROUP BY department_id;\nWhich values are displayed?"
   },
   {
     "source_num": 46,
     "options": [
-      "The ANY operator can be used with the DISTINCT keyword.",
-      "The ANY operator can be used with the LIKE and IN operators.",
-      "The ANY operator is a synonym for the ALL operator.",
-      "The ANY operator compares every value returned by the subquery."
+      "The\nANY operator can be used with the DISTINCT keyword.",
+      "The\nANY operator can be used with the LIKE and IN operators.",
+      "The\nANY operator is a synonym for the ALL operator.",
+      "The\nANY operator compares every value returned by the subquery."
     ],
     "correct": 3,
-    "question": "Which statement about the ANY operator, when used with a multiple-row subquery, is true?"
+    "explanation": "",
+    "question": "Which statement"
   },
   {
     "source_num": 47,
     "options": [
-      "No rows would be returned by the outer query.",
-      "A syntax error in the inner query would be returned.",
-      "A syntax error in the outer query would be returned.",
-      "All the rows in the PLAYER table would be returned by the outer query."
+      "No\nrows would be returned by the outer query.",
+      "A\nsyntax error in the inner query would be returned.",
+      "A\nsyntax error in the outer query would be returned.",
+      "All\nthe rows in the PLAYER table would be returned by the outer query."
     ],
     "correct": 0,
-    "question": "Evaluate this SELECT statement:\nSELECT player_id, name\nFROM players\nWHERE team_id IN\n(SELECT team_id\nFROM teams\nWHERE team_id > 300 AND salary_cap > 400000);\nWhat would happen if the inner query returned a NULL value?"
-  },
-  {
-    "source_num": 48,
-    "options": [
-      "ALL",
-      "ANY",
-      "<>",
-      "IN"
-    ],
-    "correct": 2,
-    "question": "Which comparison operator can only be used with a single-row subquery?"
-  },
-  {
-    "source_num": 49,
-    "options": [
-      "IN",
-      "<>",
-      "=",
-      "LIKE"
-    ],
-    "correct": 0,
-    "question": "Which operator can be used with a multiple-row subquery?"
+    "explanation": "",
+    "question": "Evaluate\nSELECT player_id, name\nFROM players\nWHERE team_id IN\n(SELECT team_id\nFROM teams\nWHERE team_id\n> 300 AND salary_cap > 400000);\nWhat would happen if the inner query returned a NULL\nvalue?"
   },
   {
     "source_num": 50,
@@ -908,7 +555,8 @@
       "False"
     ],
     "correct": 1,
-    "question": "Table aliases must be used when you are writing correlated subqueries. (True or false?)"
+    "explanation": "",
+    "question": "Table"
   },
   {
     "source_num": 1,
@@ -919,7 +567,8 @@
       "48000"
     ],
     "correct": 3,
-    "question": "Steven King's row in the EMPLOYEES table has EMPLOYEE_ID = 100 and SALARY = 24000. A user issues the following statements in the order shown:\nUPDATE employees\nSET salary = salary * 2\nWHERE employee_id = 100;\nCOMMIT;\nUPDATE employees\nSET salary = 30000\nWHERE employee_id = 100;\nThe user's database session now ends abnormally. What is now King's salary in the table?"
+    "explanation": "",
+    "question": "Steven King's row in the EMPLOYEES table\nUPDATE\nemployees\nSET\nsalary = salary * 2\nWHERE\nemployee_id = 100;\nCOMMIT;\nUPDATE\nemployees\nSET\nsalary = 30000\nWHERE\nemployee_id = 100;\nThe\nuser's database session now ends abnormally. What is now King's salary in the\ntable?"
   },
   {
     "source_num": 2,
@@ -930,7 +579,18 @@
       "None of the above"
     ],
     "correct": 1,
-    "question": "Table MYTAB contains only one column of datatype CHAR(1). A user executes the following statements in the order shown.\nINSERT INTO mytab VALUES ('A');\nINSERT INTO mytab VALUES ('B');\nCOMMIT;\nINSERT INTO mytab VALUES ('C');\nROLLBACK;\nWhich rows does the table now contain?"
+    "explanation": "",
+    "question": "Table MYTAB contains only one column of\nINSERT\nINTO mytab VALUES ('A');\nINSERT\nINTO mytab VALUES ('B');\nCOMMIT;\nINSERT\nINTO mytab VALUES ('C');\nROLLBACK;\nWhich\nrows does the table now contain?"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "If Oracle crashes, your changes are"
   },
   {
     "source_num": 4,
@@ -939,10 +599,11 @@
       "ROLLBACK TO SAVEPOINT upd1_done;",
       "ROLLBACK TO SAVEPOINT upd2_done;",
       "ROLLBACK TO SAVE upd1_done;",
-      "There is nothing you can do; either all changes must be rolled back, or none of them can be rolled back."
+      "There is nothing you can do; either\nall changes must be rolled back, or none of them can be rolled back."
     ],
     "correct": 1,
-    "question": "Examine the following statements:\nUPDATE employees SET salary = 15000;\nSAVEPOINT upd1_done;\nUPDATE employees SET salary = 22000;\nSAVEPOINT upd2_done;\nDELETE FROM employees;\nYou want to retain all the employees with a salary of 15000; What statement would you execute next?"
+    "explanation": "",
+    "question": "Examine the following statements:\nUPDATE\nemployees SET salary = 15000;\nSAVEPOINT\nupd1_done;\nUPDATE\nemployees SET salary = 22000;\nSAVEPOINT\nupd2_done;\nDELETE\nFROM employees;\nYou\nwant to retain all the employees with a salary of 15000; What statement would\nyou execute next?"
   },
   {
     "source_num": 5,
@@ -951,7 +612,8 @@
       "False"
     ],
     "correct": 0,
-    "question": "COMMIT saves all outstanding data changes? True or False?"
+    "explanation": "",
+    "question": "COMMIT saves all outstanding data"
   },
   {
     "source_num": 6,
@@ -962,18 +624,20 @@
       "ROLLBACK UPDATE;"
     ],
     "correct": 0,
-    "question": "Examine the following statements:\nINSERT INTO emps SELECT * FROM employees; -- 107 rows inserted.\nSAVEPOINT Ins_Done;\nDELETE employees; -- 107 rows deleted\nSAVEPOINT Del_Done;\nUPDATE emps SET last_name = 'Smith';\nHow would you undo the last Update only?"
+    "explanation": "",
+    "question": "Examine the following statements:\nINSERT\nINTO emps SELECT * FROM employees; -- 107 rows inserted.\nSAVEPOINT\nIns_Done;\nDELETE\nemployees; -- 107 rows deleted\nSAVEPOINT\nDel_Done;\nUPDATE\nemps SET last_name = 'Smith';\nHow\nwould you undo the last Update only?"
   },
   {
     "source_num": 7,
     "options": [
-      "The update of last_name is undone, but the insert was committed by the CREATE INDEX statement.",
-      "Both the UPDATE and the INSERT will be rolled back.",
-      "The INSERT is undone but the UPDATE is committed.",
+      "The update of last_name is undone,\nbut the insert was committed by the CREATE INDEX statement.",
+      "Both the UPDATE and the INSERT will\nbe rolled back.",
+      "The INSERT is undone but the UPDATE\nis committed.",
       "Nothing happens."
     ],
     "correct": 0,
-    "question": "Examine the following statements:\nINSERT INTO emps SELECT * FROM employees; -- 107 rows inserted.\nSAVEPOINT Ins_Done;\nCREATE INDEX emp_lname_idx ON employees(last_name);\nUPDATE emps SET last_name = 'Smith';\nWhat happens if you issue a Rollback statement?"
+    "explanation": "",
+    "question": "Examine the following statements:\nINSERT\nINTO emps SELECT * FROM employees; -- 107 rows inserted.\nSAVEPOINT\nIns_Done;\nCREATE\nINDEX emp_lname_idx ON employees(last_name);\nUPDATE\nemps SET last_name = 'Smith';\nWhat\nhappens if you issue a Rollback statement?"
   },
   {
     "source_num": 8,
@@ -984,7 +648,8 @@
       "UNDO;"
     ],
     "correct": 2,
-    "question": "Which SQL statement is used to remove all the changes made by an uncommitted transaction?"
+    "explanation": "",
+    "question": "Which SQL statement is used to remove"
   },
   {
     "source_num": 9,
@@ -993,41 +658,20 @@
       "False"
     ],
     "correct": 1,
-    "question": "You need not worry about controlling your transactions. Oracle does it all for you. True or False?"
+    "explanation": "",
+    "question": "You need not worry about controlling"
   },
   {
     "source_num": 11,
     "options": [
       "22",
       "20",
-      "JANE will receive an error message because she is not allowed to query the table while BOB is updating it.",
+      "JANE will receive an error message\nbecause she is not allowed to query the table while BOB is updating it.",
       "2"
     ],
     "correct": 1,
-    "question": "User BOB's CUSTOMERS table contains 20 rows. BOB inserts two more rows into the table but does not COMMIT his changes. User JANE now executes:\nSELECT COUNT(*) FROM bob.customers;\nWhat result will JANE see?"
-  },
-  {
-    "source_num": 12,
-    "options": [
-      "It prevents other users from querying a table while updates are being executed on it",
-      "It prevents other users from seeing changes to a table until those changes have been committed",
-      "It prevents users from querying tables on which they have not been granted SELECT privilege",
-      "It ensures that all changes to a table are automatically committed"
-    ],
-    "correct": 1,
-    "question": "Which of the following best describes the term \"read consistency\"?"
-  },
-  {
-    "source_num": 13,
-    "options": [
-      "An object privilege",
-      "An update statement",
-      "A savepoint",
-      "A sequence",
-      "A database link"
-    ],
-    "correct": 2,
-    "question": "A transaction makes several successive changes to a table. If required, you want to be able to rollback the later changes while keeping the earlier changes. What must you include in your code to do this?"
+    "explanation": "",
+    "question": "User\nSELECT\nCOUNT(*) FROM bob.customers;\nWhat\nresult will JANE see?"
   },
   {
     "source_num": 14,
@@ -1036,16 +680,95 @@
       "False"
     ],
     "correct": 0,
-    "question": "If a database crashes, all uncommitted changes are automatically rolled back. True or False?"
+    "explanation": "",
+    "question": "If"
   },
   {
-    "source_num": 15,
+    "source_num": 2,
     "options": [
       "True",
       "False"
     ],
     "correct": 1,
-    "question": "If UserB has privileges to see the data in a table, as soon as UserA has entered data into that table, UserB can see that data. True or False?"
+    "explanation": "",
+    "question": "If UserB has privileges to see the data"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "JANE will receive an error message\nbecause she is not allowed to query the table while BOB is updating it.",
+      "2",
+      "20",
+      "22"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "question": "User BOB's CUSTOMERS table contains 20\nSELECT\nCOUNT(*) FROM bob.customers;\nWhat\nresult will JANE see?"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "When you logout of Oracle, your data"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "It prevents users from querying\ntables on which they have not been granted SELECT privilege",
+      "It prevents other users from\nquerying a table while updates are being executed on it",
+      "It prevents other users from seeing\nchanges to a table until those changes have been committed",
+      "It ensures that all changes to a\ntable are automatically committed"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "question": "Which of the following best describes"
+  },
+  {
+    "source_num": 9,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "If a database crashes, all uncommitted"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "COMMIT"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "ROLLBACK;",
+      "ROLLBACK TO SAVEPOINT upd1_done;",
+      "ROLLBACK TO SAVEPOINT upd2_done;",
+      "ROLLBACK TO SAVE upd1_done;",
+      "There is nothing you can do; either\nall changes must be rolled back, or none of them can be rolled back."
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Examine\nUPDATE\nemployees SET salary = 15000;\nSAVEPOINT\nupd1_done;\nUPDATE\nemployees SET salary = 22000;\nSAVEPOINT\nupd2_done;\nDELETE\nFROM employees;\nYou\nwant to retain all the employees with a salary of 15000; What statement would\nyou execute next?"
+  },
+  {
+    "source_num": 1,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "Regular expressions used as check"
   },
   {
     "source_num": 2,
@@ -1054,7 +777,8 @@
       "False"
     ],
     "correct": 0,
-    "question": "Regular expressions are a method of describing both simple and complex patterns for searching and manipulating. True or False?"
+    "explanation": "",
+    "question": "Regular expressions are a method of"
   },
   {
     "source_num": 3,
@@ -1063,7 +787,18 @@
       "False"
     ],
     "correct": 0,
-    "question": "REGULAR EXPRESSIONS can be used as part of a contraint definition. (True or False?)"
+    "explanation": "",
+    "question": "REGULAR EXPRESSIONS can be used as part"
+  },
+  {
+    "source_num": 4,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "A role can be granted to another role."
   },
   {
     "source_num": 5,
@@ -1074,18 +809,32 @@
       "A view"
     ],
     "correct": 0,
-    "question": "Which of the following simplifies the administration of privileges?"
+    "explanation": "",
+    "question": "Which of the following simplifies the"
+  },
+  {
+    "source_num": 6,
+    "options": [
+      "ADMIN",
+      "PUBLIC",
+      "ALL",
+      "USERS"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Which keyword would you use to grant an"
   },
   {
     "source_num": 7,
     "options": [
-      "He is not required to take any action because, by default, all database users can automatically access views.",
-      "He must grant each user the SELECT privilege on both the INVENTORY table and INVENTORY_V view.",
-      "He should assign the SELECT privilege to all database users for INVENTORY_V view.",
-      "He should assign the SELECT privilege to all database users for the INVENTORY table."
+      "He is not required to take any\naction because, by default, all database users can automatically access views.",
+      "He must grant each user the SELECT\nprivilege on both the INVENTORY table and INVENTORY_V view.",
+      "He should assign the SELECT\nprivilege to all database users for INVENTORY_V view.",
+      "He should assign the SELECT\nprivilege to all database users for the INVENTORY table."
     ],
     "correct": 2,
-    "question": "User CRAIG creates a view named INVENTORY_V, which is based on the INVENTORY table. CRAIG wants to make this view available for querying to all database users. Which of the following actions should CRAIG perform?"
+    "explanation": "",
+    "question": "User CRAIG creates a view named"
   },
   {
     "source_num": 8,
@@ -1094,7 +843,8 @@
       "False"
     ],
     "correct": 1,
-    "question": "If you are granted privileges to your friend's object, by default you may also grant access to this same object to other users. True or False?"
+    "explanation": "",
+    "question": "If you are granted privileges to your"
   },
   {
     "source_num": 9,
@@ -1105,82 +855,68 @@
       "USER_SYSTEM_PRIVILEGES"
     ],
     "correct": 2,
-    "question": "Which data dictionary view shows which system privileges have been granted to a user?"
-  },
-  {
-    "source_num": 10,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 0,
-    "question": "A Schema is a collection of Objects such as Tables, Views, and Sequences. True or False?"
-  },
-  {
-    "source_num": 11,
-    "options": [
-      "CREATE OBJECT",
-      "CREATE ANY TABLE",
-      "CREATE TABLE",
-      "SELECT"
-    ],
-    "correct": 2,
-    "question": "The database administrator wants to allow user Marco to create new tables in his own schema. Which privilege should be granted to Marco?"
-  },
-  {
-    "source_num": 13,
-    "options": [
-      "INSERT",
-      "DELETE",
-      "UPDATE",
-      "SELECT"
-    ],
-    "correct": 3,
-    "question": "Which Object Privilege (other than Alter) can be granted to a Sequence?"
+    "explanation": "",
+    "question": "Which data dictionary view shows which"
   },
   {
     "source_num": 14,
     "options": [
-      "Required to gain access to the database.",
-      "Required to manipulate the content of objects in the database.",
-      "Named groups of related privileges given to a user.",
-      "A collection of objects, such as tables, views, and sequences."
+      "Required to gain access to the\ndatabase.",
+      "Required to manipulate the content\nof objects in the database.",
+      "Named groups of related privileges\ngiven to a user.",
+      "A collection of objects, such as\ntables, views, and sequences."
     ],
     "correct": 1,
-    "question": "Object privileges are:"
+    "explanation": "",
+    "question": "Object"
   },
   {
     "source_num": 15,
     "options": [
-      "user_tab_privs_recd (lists object privileges granted to the user)",
-      "role_sys_privs (lists system privileges granted to roles)",
-      "role_tab_privs (lists table privileges granted to roles)",
-      "user_sys_privs (lists system privileges granted to the user)"
+      "user_tab_privs_recd (lists object\nprivileges granted to the user)",
+      "role_sys_privs (lists system\nprivileges granted to roles)",
+      "role_tab_privs (lists table\nprivileges granted to roles)",
+      "user_sys_privs (lists system\nprivileges granted to the user)"
     ],
     "correct": 3,
-    "question": "The following table shows some of the output from one of the data dictionary views. Which view is being queried?\nUSERNAME PRIVILEGE ADMIN_OPTION\nUSCA_ORACLE_SQL01_S08 CREATE VIEW NO\nUSCA_ORACLE_SQL01_S08 CREATE TABLE NO\nUSCA_ORACLE_SQL01_S08 CREATE SYNONYM NO\nUSCA_ORACLE_SQL01_S08 CREATE TRIGGER NO\nUSCA_ORACLE_SQL01_S08 CREATE SEQUENCE NO\nUSCA_ORACLE_SQL01_S08 CREATE DATABASE NO"
+    "explanation": "",
+    "question": "The\nUSERNAME PRIVILEGE ADMIN_OPTION\nUSCA_ORACLE_SQL01_S08 CREATE VIEW NO\nUSCA_ORACLE_SQL01_S08 CREATE TABLE NO\nUSCA_ORACLE_SQL01_S08 CREATE SYNONYM NO\nUSCA_ORACLE_SQL01_S08 CREATE TRIGGER NO\nUSCA_ORACLE_SQL01_S08 CREATE SEQUENCE NO\nUSCA_ORACLE_SQL01_S08 CREATE DATABASE NO"
   },
   {
     "source_num": 1,
     "options": [
-      "A role is a type of system privilege.",
-      "A role is a name for a group of privileges.",
-      "A role is the part that a user plays in querying the database.",
-      "A role is an object privilege which allows a user to update a table."
+      "A role is a type of system\nprivilege.",
+      "A role is a name for a group of\nprivileges.",
+      "A role is the part that a user plays\nin querying the database.",
+      "A role is an object privilege which\nallows a user to update a table."
     ],
     "correct": 1,
-    "question": "Which of the following best describes a role in an Oracle database?"
+    "explanation": "",
+    "question": "Which of the following best describes a"
   },
   {
     "source_num": 2,
     "options": [
-      "A named group of related privileges given to a user.",
-      "A collection of objects, such as tables, views, and sequences.",
-      "Required to gain access to the database.",
-      "Required to manipulate the content of objects in the database."
+      "A named group of related privileges\ngiven to a user.",
+      "A collection of objects, such as\ntables, views, and sequences.",
+      "Required to gain access to the\ndatabase.",
+      "Required to manipulate the content\nof objects in the database."
     ],
     "correct": 1,
+    "explanation": "",
     "question": "A schema is:"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "Required to manipulate the content\nof objects in the database.",
+      "Named groups of related privileges\ngiven to a user.",
+      "Required to gain access to the\ndatabase.",
+      "A collection of objects, such as\ntables, views, and sequences."
+    ],
+    "correct": 2,
+    "explanation": "",
+    "question": "System privileges are:"
   },
   {
     "source_num": 4,
@@ -1191,29 +927,32 @@
       "A system privilege"
     ],
     "correct": 3,
-    "question": "You grant user AMY the CREATE SESSION privilege. Which type of privilege have you granted to AMY?"
+    "explanation": "",
+    "question": "You grant user AMY the CREATE SESSION"
   },
   {
     "source_num": 5,
     "options": [
-      "One or more object privileges have been REVOKEd from Adam.",
-      "ADAM's user account has been removed from the database.",
-      "ADAM's CREATE USER privilege has been revoked.",
-      "ADAM's CREATE SESSION privilege has been revoked."
+      "One or more object privileges have\nbeen REVOKEd from Adam.",
+      "ADAM's user account has been removed\nfrom the database.",
+      "ADAM's CREATE USER privilege has\nbeen revoked.",
+      "ADAM's CREATE SESSION privilege has\nbeen revoked."
     ],
     "correct": 3,
-    "question": "User ADAM has successfully logged on to the database in the past, but today he receives an error message stating that (although he has entered his password correctly) he cannot log on. What is the most likely cause of the problem?"
+    "explanation": "",
+    "question": "User ADAM has successfully logged on to"
   },
   {
     "source_num": 6,
     "options": [
-      "(Choose all correct answers)",
+      "(Choose all\ncorrect answers)",
       "INDEX",
       "UPDATE",
       "CREATE TABLE",
       "CREATE SYNONYM"
     ],
     "correct": 3,
+    "explanation": "",
     "question": "Which of the following are system privileges?"
   },
   {
@@ -1225,7 +964,8 @@
       "Meta characters"
     ],
     "correct": 3,
-    "question": "_________________ are special characters that have a special meaning, such as a wildcard character, a repeating character, a non-matching character, or a range of characters. You can use several of these symbols in pattern matching."
+    "explanation": "",
+    "question": "_________________ are special characters"
   },
   {
     "source_num": 9,
@@ -1234,72 +974,34 @@
       "False"
     ],
     "correct": 1,
-    "question": "REGULAR EXPRESSIONS does exactly the same as LIKE--no more and no less. (True or False?)"
+    "explanation": "",
+    "question": "REGULAR EXPRESSIONS does exactly the"
   },
   {
-    "source_num": 11,
+    "source_num": 2,
     "options": [
-      "It allows the user to create new tables which contain the same data as the referenced table.",
-      "It allows a user's session to read from the table but only so that foreign key constraints can be checked.",
-      "It allows a user to refer to the table in a SELECT statement.",
-      "It allows a user to create foreign key constraints on the table."
-    ],
-    "correct": 3,
-    "question": "Which of the following best describes the purpose of the REFERENCES object privilege on a table?"
-  },
-  {
-    "source_num": 12,
-    "options": [
-      "True",
-      "False"
+      "(Choose all\ncorrect answers)",
+      "CREATE SYNONYM",
+      "UPDATE",
+      "CREATE TABLE",
+      "INDEX"
     ],
     "correct": 1,
-    "question": "When a user is logged into one database, he is restricted to working with objects found in that database. True or False?"
-  },
-  {
-    "source_num": 13,
-    "options": [
-      "Object",
-      "Data dictionary",
-      "Role",
-      "Schema"
-    ],
-    "correct": 2,
-    "question": "What Oracle feature simplifies the process of granting and revoking privileges?"
-  },
-  {
-    "source_num": 14,
-    "options": [
-      "Object privileges can only be granted through roles.",
-      "An object owner can grant any object privilege on the object to any other user or role of the database.",
-      "To grant privileges on an object, the object must be in your own schema, or you must have been granted the object privileges WITH GRANT OPTION.",
-      "The owner of an object automatically acquires all object privileges on that object."
-    ],
-    "correct": 0,
-    "question": "Which of the following statements about granting object privileges is false?"
-  },
-  {
-    "source_num": 15,
-    "options": [
-      "WITH GRANT OPTION",
-      "WITH ADMIN OPTION",
-      "PUBLIC",
-      "FORCE"
-    ],
-    "correct": 0,
-    "question": "When granting an object privilege, which option would you include to allow the grantee to grant the privilege to another user?"
+    "explanation": "",
+    "question": "Which of the following are system"
   },
   {
     "source_num": 4,
     "options": [
-      "(Choose all correct answers)",
+      "(Choose all\ncorrect answers)",
       "CREATE TABLE",
       "INSERT",
       "SELECT",
       "DROP TABLE"
     ],
     "correct": 2,
-    "question": "Which of the following are object privileges? (Choose two)"
+    "explanation": "",
+    "question": "Which of the following are object"
   },
   {
     "source_num": 5,
@@ -1308,18 +1010,20 @@
       "False"
     ],
     "correct": 0,
-    "question": "By Controlling User Access with Oracle Database Security, you can give access to specific Objects in the Database. True or False?"
+    "explanation": "",
+    "question": "By Controlling User Access with Oracle"
   },
   {
     "source_num": 6,
     "options": [
-      "CREATE PUBLIC SYNONYM customers FOR james.customers;",
+      "CREATE PUBLIC SYNONYM customers FOR\njames.customers;",
       "GRANT SELECT ON customers TO ALL;",
       "GRANT SELECT ON customers TO PUBLIC;",
       "GRANT customers(SELECT) TO PUBLIC;"
     ],
     "correct": 2,
-    "question": "User JAMES has created a CUSTOMERS table and wants to allow all other users to SELECT from it. Which command should JAMES use to do this?"
+    "explanation": "",
+    "question": "User JAMES has created a CUSTOMERS table"
   },
   {
     "source_num": 7,
@@ -1328,7 +1032,8 @@
       "False"
     ],
     "correct": 1,
-    "question": "Parentheses are not used to identify the sub expressions within the expression. True or False?"
+    "explanation": "",
+    "question": "Parentheses are not used to identify the"
   },
   {
     "source_num": 8,
@@ -1337,64 +1042,58 @@
       "False"
     ],
     "correct": 0,
-    "question": "REGULAR EXPRESSIONS can be used on CHAR, CLOB, and VARCHAR2 datatypes? (True or False)"
+    "explanation": "",
+    "question": "REGULAR EXPRESSIONS can be used on CHAR,"
   },
   {
     "source_num": 10,
     "options": [
-      "Required to gain access to the database.",
-      "Named groups of related privileges given to a user or another role.",
-      "A collection of objects, such as tables, views, and sequences.",
-      "Required to manipulate the content of objects in the database."
+      "Required to gain access to the\ndatabase.",
+      "Named groups of related privileges\ngiven to a user or another role.",
+      "A collection of objects, such as\ntables, views, and sequences.",
+      "Required to manipulate the content\nof objects in the database."
     ],
     "correct": 1,
-    "question": "Roles are:"
-  },
-  {
-    "source_num": 12,
-    "options": [
-      "ALTER USER",
-      "REMOVE",
-      "DROP",
-      "REVOKE"
-    ],
-    "correct": 3,
-    "question": "Which statement would you use to remove an object privilege granted to a user?"
-  },
-  {
-    "source_num": 13,
-    "options": [
-      "GRANT SELECT ON employees TO bob;",
-      "GRANT SELECT ON employees TO bob WITH ADMIN OPTION;",
-      "GRANT SELECT ON employees TO bob WITH GRANT OPTION;",
-      "GRANT SELECT ON employees TO PUBLIC WITH GRANT OPTION;"
-    ],
-    "correct": 2,
-    "question": "You need to grant user BOB SELECT privileges on the EMPLOYEES table. You want to allow BOB to grant this privileges to other users. Which statement should you use?"
+    "explanation": "",
+    "question": "Roles"
   },
   {
     "source_num": 15,
     "options": [
-      "(Choose all correct answers)",
+      "(Choose all\ncorrect answers)",
       "DROP TABLE bob.employees;",
-      "GRANT SELECT ON bob.employees TO PUBLIC;",
-      "REVOKE SELECT ON bob.employees FROM bob;",
+      "GRANT SELECT ON bob.employees TO\nPUBLIC;",
+      "REVOKE SELECT ON bob.employees FROM\nbob;",
       "SELECT FROM bob.employees;"
     ],
     "correct": 2,
-    "question": "User BOB's schema contains an EMPLOYEES table. BOB executes the following statement:\nGRANT SELECT ON employees TO mary WITH GRANT OPTION;\nWhich of the following statements can MARY now execute successfully? (Choose two)"
+    "explanation": "",
+    "question": "User\nGRANT\nSELECT ON employees TO mary WITH GRANT OPTION;\nWhich\nof the following statements can MARY now execute successfully? (Choose two)"
   },
   {
     "source_num": 2,
     "options": [
-      "(Choose all correct answers)",
+      "(Choose all\ncorrect answers)",
       "REGEXP_INSTR, REGEXP_SUBSTR",
       "REGEXP_LIKE, REGEXP_NEAR",
       "REGEXP_LIKE, REGEXP_REPLACE",
       "REGEXP_REPLACE, REGEXP_REFORM"
     ],
     "correct": 1,
-    "question": "Select the correct REGULAR EXPRESSION functions: (Choose two)"
+    "explanation": "",
+    "question": "Select the correct REGULAR EXPRESSION"
+  },
+  {
+    "source_num": 3,
+    "options": [
+      "REGEXP_LIKE",
+      "REGEXP",
+      "REGEXP_REPLACE",
+      "REGEXP_SUBSTR"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Which of these SQL functions used to"
   },
   {
     "source_num": 5,
@@ -1405,7 +1104,8 @@
       "Object privileges"
     ],
     "correct": 3,
-    "question": "You want to grant privileges to user CHAN that will allow CHAN to update the data in the EMPLOYEES table. Which type of privileges will you grant to CHAN?"
+    "explanation": "",
+    "question": "You want to grant privileges to user"
   },
   {
     "source_num": 6,
@@ -1416,76 +1116,93 @@
       "RESTRICTED SESSION"
     ],
     "correct": 2,
-    "question": "Which of the following privileges must be assigned to a user account in order for that user to connect to an Oracle database?"
+    "explanation": "",
+    "question": "Which of the following privileges must"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "user_sys_privs (lists system\nprivileges granted to the user)",
+      "role_tab_privs (lists table\nprivileges granted to roles)",
+      "user_tab_privs_recd (lists object\nprivileges granted to the user)",
+      "role_sys_privs (lists system\nprivileges granted to roles)"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "The following table shows some of the\nUSERNAME PRIVILEGE ADMIN_OPTION\nUSCA_ORACLE_SQL01_S08 CREATE VIEW NO\nUSCA_ORACLE_SQL01_S08 CREATE TABLE NO\nUSCA_ORACLE_SQL01_S08 CREATE SYNONYM NO\nUSCA_ORACLE_SQL01_S08 CREATE TRIGGER NO\nUSCA_ORACLE_SQL01_S08 CREATE SEQUENCE NO\nUSCA_ORACLE_SQL01_S08 CREATE DATABASE NO"
   },
   {
     "source_num": 9,
     "options": [
-      "GRANT SELECT ON employees AND employees_view TO audrey;",
-      "GRANT SELECT ON employees_view TO public;",
-      "GRANT SELECT ON employees_view TO audrey;",
-      "Do nothing. As a database user, Audrey's user account has automatically been granted the SELECT privilege for all database objects."
+      "GRANT SELECT ON employees AND\nemployees_view TO audrey;",
+      "GRANT SELECT ON employees_view TO\npublic;",
+      "GRANT SELECT ON employees_view TO\naudrey;",
+      "Do nothing. As a database user,\nAudrey's user account has automatically been granted the SELECT privilege for\nall database objects."
     ],
     "correct": 2,
-    "question": "You create a view named EMPLOYEES_VIEW on a subset of the EMPLOYEES table. User AUDREY needs to use this view to create reports. Only you and Audrey should have access to this view. Which of the following actions should you perform?"
+    "explanation": "",
+    "question": "You create a view named EMPLOYEES_VIEW"
   },
   {
-    "source_num": 4,
+    "source_num": 10,
     "options": [
-      "CREATE LOGIN",
-      "CREATE SESSION",
-      "CREATE LOGON",
-      "No special privilege is needed; if your username exists in the database, you can login."
+      "He should assign the SELECT\nprivilege to all database users for the INVENTORY table.",
+      "He should assign the SELECT\nprivilege to all database users for INVENTORY_V view.",
+      "He is not required to take any\naction because, by default, all database users can automatically access views.",
+      "He must grant each user the SELECT\nprivilege on both the INVENTORY table and INVENTORY_V view."
     ],
     "correct": 1,
-    "question": "What system privilege must be held in order to login to an Oracle database?"
+    "explanation": "",
+    "question": "User"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "Scott\nGRANT\nselect ON employees TO PUBLIC;\nAllison\nPlumb has been granted CREATE SESSION by the DBA. She logs into the database\nand issues the following statement:\nGRANT\nﾠselect\nON ﾠscott_king.employees\nTO jennifer_cho;\nTrue\nor False: Allison's statement will fail."
   },
   {
     "source_num": 6,
     "options": [
-      "(Choose all correct answers)",
+      "(Choose all\ncorrect answers)",
       "Delete",
       "Select",
       "Update",
       "References"
     ],
     "correct": 3,
-    "question": "Which of the following Object Privileges can be granted on an individual column on a table? (Choose two)"
-  },
-  {
-    "source_num": 15,
-    "options": [
-      "ASSIGN",
-      "ALTER USER",
-      "CREATE USER",
-      "GRANT"
-    ],
-    "correct": 3,
-    "question": "Which statement would you use to grant a role to users?"
+    "explanation": "",
+    "question": "Which of the following Object Privileges"
   },
   {
     "source_num": 1,
     "options": [
-      "(Choose all correct answers)",
-      "Generate a range of numbers and optionally cycle through them again",
-      "Set a fixed interval between successively generated numbers.",
-      "Ensure primary key values will be unique and consecutive",
-      "Guarantee that no primary key values are unused",
-      "Ensure primary key values will be unique even though gaps may exist"
+      "(Choose all\ncorrect answers)",
+      "Generate a range of numbers and\noptionally cycle through them again",
+      "Set a fixed interval between\nsuccessively generated numbers.",
+      "Ensure primary key values will be\nunique and consecutive",
+      "Guarantee that no primary key values\nare unused",
+      "Ensure primary key values will be\nunique even though gaps may exist"
     ],
     "correct": 1,
+    "explanation": "",
     "question": "Sequences can be used to: (Choose three)"
   },
   {
     "source_num": 2,
     "options": [
-      "The statement will not execute successfully.",
-      "The minimum value of the LINE_ITEM_ID_SEQ will be the smallest possible integer value.",
-      "The starting value of the LINE_ITEM_ID_SEQ sequence will by -1.",
-      "The sequence will generate sequential descending values."
+      "The statement will not execute\nsuccessfully.",
+      "The minimum value of the\nLINE_ITEM_ID_SEQ will be the smallest possible integer value.",
+      "The starting value of the\nLINE_ITEM_ID_SEQ sequence will by -1.",
+      "The sequence will generate\nsequential descending values."
     ],
     "correct": 3,
-    "question": "Evaluate this CREATE SEQUENCE statement:\nCREATE SEQUENCE line_item_id_seq INCREMENT BY -1;\nWhich statement is true?"
+    "explanation": "",
+    "question": "Evaluate this CREATE SEQUENCE statement:\nCREATE\nSEQUENCE line_item_id_seq INCREMENT BY -1;\nWhich\nstatement is true?"
   },
   {
     "source_num": 3,
@@ -1496,18 +1213,20 @@
       "100010011002"
     ],
     "correct": 1,
-    "question": "Examine the code for creating this sequence:\nCREATE SEQUENCE track_id_seq\nINCREMENT BY 10\nSTART WITH 1000 MAXVALUE 10000\nWhat are the first three values that would be generated by the sequence?"
+    "explanation": "",
+    "question": "Examine the code for creating this\nCREATE\nSEQUENCE track_id_seq\nINCREMENT\nBY 10\nSTART\nWITH 1000 MAXVALUE 10000\nWhat\nare the first three values that would be generated by the sequence?"
   },
   {
     "source_num": 4,
     "options": [
-      "Do nothing. Oracle automatically generates unique values for columns that are defined as primary keys.",
-      "Specify a UNIQUE constraint on the CUSTOMER_ID column.",
+      "Do nothing. Oracle automatically\ngenerates unique values for columns that are defined as primary keys.",
+      "Specify a UNIQUE constraint on the\nCUSTOMER_ID column.",
       "Create a synonym.",
       "Create a sequence."
     ],
     "correct": 3,
-    "question": "You create a CUSTOMERS table in which CUSTOMER_ID is designated as a primary key. You want the values that are entered into the CUSTOMER_ID column to be generated automatically. Which of the following actions should you perform?"
+    "explanation": "",
+    "question": "You create a CUSTOMERS table in which"
   },
   {
     "source_num": 5,
@@ -1518,7 +1237,8 @@
       "sales_idx"
     ],
     "correct": 1,
-    "question": "You need to retrieve the next available value for the SALES_IDX sequence."
+    "explanation": "",
+    "question": "You need to retrieve the next available"
   },
   {
     "source_num": 6,
@@ -1526,52 +1246,56 @@
       "ALTER SEQUENCE emp_id_seq;",
       "ALTER TABLE employees ;",
       "CREATE SEQUENCE emp_id_seq;",
-      "ALTER SEQUENCE emp_id_seq.employee_id;"
+      "ALTER SEQUENCE\nemp_id_seq.employee_id;"
     ],
     "correct": 0,
-    "question": "Which statement would you use to modify the EMP_ID_SEQ sequence used to populate the EMPLOYEE_ID column in the EMPLOYEES table?"
+    "explanation": "",
+    "question": "Which statement would you use to modify"
   },
   {
     "source_num": 7,
     "options": [
       "A rollback is executed",
       "The system crashes",
-      "The sequence is used in another table",
+      "The sequence is used in another\ntable",
       "All of the above"
     ],
     "correct": 3,
+    "explanation": "",
     "question": "Why do gaps in sequences occur?"
   },
   {
     "source_num": 8,
     "options": [
-      "(Choose all correct answers)",
-      "The sequence will not cache a range of numbers in memory.",
-      "MAXVALUE is 10^27 for an ascending sequence.",
-      "When the sequence exceeds its maximum value it will continue to generate numbers starting with MINVALUE.",
+      "(Choose all\ncorrect answers)",
+      "The sequence will not cache a range\nof numbers in memory.",
+      "MAXVALUE is 10^27 for an ascending\nsequence.",
+      "When the sequence exceeds its\nmaximum value it will continue to generate numbers starting with MINVALUE.",
       "MINVALUE is equal to 1."
     ],
     "correct": 2,
-    "question": "You create a sequence with the following statement:\nCREATE SEQUENCE my_emp_seq;\nWhich of the following statements about this sequence are true? (Choose two)"
+    "explanation": "",
+    "question": "You create a sequence with the following\nCREATE\nSEQUENCE my_emp_seq;\nWhich\nof the following statements about this sequence are true? (Choose two)"
   },
   {
     "source_num": 9,
     "options": [
       "ALTER INDEX ln_idx ON employees(first_name);",
-      "ALTER INDEX ln_idx TO employees(first_name);",
-      "ALTER INDEX ln_idx TO fn_idx ON employees(first_name);",
-      "None of the above; you cannot ALTER an index.",
-      "‘;10. User Mary's schema contains an EMP table. Mary has Database Administrator privileges and executes the following statement:",
-      "CREATE PUBLIC SYNONYM emp FOR mary.emp;",
-      "User Susan now needs to SELECT from Mary's EMP table. Which of the following SQL statements can she use? (Choose two)",
-      "(Choose all correct answers)",
+      "ALTER INDEX ln_idx TO\nemployees(first_name);",
+      "ALTER INDEX ln_idx TO fn_idx ON\nemployees(first_name);",
+      "None of the above; you cannot ALTER\nan index.",
+      "';10. User\nMary's schema contains an EMP table. Mary has Database Administrator privileges\nand executes the following statement:",
+      "CREATE\nPUBLIC SYNONYM emp FOR mary.emp;",
+      "User\nSusan now needs to SELECT from Mary's EMP table. Which of the following SQL\nstatements can she use? (Choose two)",
+      "(Choose all\ncorrect answers)",
       "SELECT * FROM emp;",
       "SELECT * FROM mary.emp;",
-      "CREATE SYNONYM marys_emp FOR mary(emp);",
+      "CREATE SYNONYM marys_emp FOR\nmary(emp);",
       "SELECT * FROM emp.mary;"
     ],
     "correct": 3,
-    "question": "The EMPLOYEES table has an index named LN_IDX on the LAST_NAME column. You want to change this index so that it is on the FIRST_NAME column instead. Which SQL statement will do this?"
+    "explanation": "",
+    "question": "The EMPLOYEES table has an index named"
   },
   {
     "source_num": 11,
@@ -1582,18 +1306,8 @@
       "A schema"
     ],
     "correct": 1,
-    "question": "Barry creates a table named INVENTORY. Pam must be able to query the same table. Barry wants to enable Pam to query the table without being required to specify the table's schema. Which of the following should Barry create?"
-  },
-  {
-    "source_num": 12,
-    "options": [
-      "USER_OBJECTS",
-      "USER_INDEXES",
-      "USER_IND_COLUMNS",
-      "USER_TABLES"
-    ],
-    "correct": 2,
-    "question": "You need to determine the table name and column name(s) on which the SALES_IDX index is defined. Which data dictionary view would you query?"
+    "explanation": "",
+    "question": "Barry"
   },
   {
     "source_num": 13,
@@ -1605,7 +1319,8 @@
       "All Indexes"
     ],
     "correct": 4,
-    "question": "The following indexes exist on the EMPLOYEES table:\nA unique index on the EMPLOYEE_ID primary key column\nA non-unique index on the JOB_ID column\nA composite index on the FIRST_NAME and LAST_NAME columns.\nIf the EMPLOYEES table is dropped, which indexes are automatically dropped at the same time?"
+    "explanation": "",
+    "question": "The\nA\nunique index on the EMPLOYEE_ID primary key column\nA\nnon-unique index on the JOB_ID column\nA\ncomposite index on the FIRST_NAME and LAST_NAME columns.\nIf\nthe EMPLOYEES table is dropped, which indexes are automatically dropped at the\nsame time?"
   },
   {
     "source_num": 14,
@@ -1616,7 +1331,8 @@
       "PRIMARY KEY and FOREIGN KEY"
     ],
     "correct": 1,
-    "question": "Unique indexes are automatically created on columns that have which two types of constraints?"
+    "explanation": "",
+    "question": "Unique"
   },
   {
     "source_num": 15,
@@ -1628,18 +1344,20 @@
       "SALARY"
     ],
     "correct": 2,
-    "question": "The EMPLOYEES table contains these columns:\nEMPLOYEE_ID NUMBER NOT NULL, Primary Key\nLAST_NAME VARCHAR2 (20)\nFIRST_NAME VARCHAR2 (20)\nDEPARTMENT_ID NUMBER Foreign Key to PRODUCT_ID column of the PRODUCT table\nHIRE_DATE DATE DEFAULT SYSDATE\nSALARY NUMBER (8,2) NOT NULL\nOn which column is an index automatically created for the EMPLOYEES table?"
+    "explanation": "",
+    "question": "The\nEMPLOYEE_ID\nNUMBER NOT NULL, Primary Key\nLAST_NAME\nVARCHAR2 (20)\nFIRST_NAME\nVARCHAR2 (20)\nDEPARTMENT_ID\nNUMBER Foreign Key to PRODUCT_ID column of the PRODUCT table\nHIRE_DATE\nDATE DEFAULT SYSDATE\nSALARY\nNUMBER (8,2) NOT NULL\nOn\nwhich column is an index automatically created for the EMPLOYEES table?"
   },
   {
     "source_num": 1,
     "options": [
       "The sequence will start with 1.",
-      "The sequence preallocates values and retains them in memory.",
+      "The sequence preallocates values and\nretains them in memory.",
       "The sequence has no maximum value.",
-      "The sequence will continue to generate values after reaching its maximum value."
+      "The sequence will continue to\ngenerate values after reaching its maximum value."
     ],
     "correct": 0,
-    "question": "Evaluate this CREATE SEQUENCE statement:\nCREATE SEQUENCE order_id_seq NOCYCLE NOCACHE;\nWhich statement is true?"
+    "explanation": "",
+    "question": "Evaluate this CREATE SEQUENCE statement:\nCREATE\nSEQUENCE order_id_seq NOCYCLE NOCACHE;\nWhich\nstatement is true?"
   },
   {
     "source_num": 2,
@@ -1649,29 +1367,32 @@
       "NOCACHE"
     ],
     "correct": 2,
-    "question": "In order to be able to generate primary key values that are not likely to contain gaps, which phrase should be included in the sequence creation statement?"
+    "explanation": "",
+    "question": "In order to be able to generate primary"
   },
   {
     "source_num": 4,
     "options": [
-      "The sequence will generate sequence numbers starting with 101, but will not reuse numbers.",
-      "The statement fails because no INCREMENT BY value is specified.",
-      "The sequence will generate decrementing sequence numbers starting at 101.",
-      "The sequence will reuse numbers and will start with 101."
+      "The sequence will generate sequence\nnumbers starting with 101, but will not reuse numbers.",
+      "The statement fails because no\nINCREMENT BY value is specified.",
+      "The sequence will generate\ndecrementing sequence numbers starting at 101.",
+      "The sequence will reuse numbers and\nwill start with 101."
     ],
     "correct": 3,
-    "question": "Evaluate this statement:\nCREATE SEQUENCE sales_item_id_seq\nSTART WITH 101 MAXVALUE 9000090 CYCLE;\nWhich statement about this CREATE SEQUENCE statement is true?"
+    "explanation": "",
+    "question": "Evaluate this statement:\nCREATE\nSEQUENCE sales_item_id_seq\nSTART\nWITH 101 MAXVALUE 9000090 CYCLE;\nWhich\nstatement about this CREATE SEQUENCE statement is true?"
   },
   {
     "source_num": 5,
     "options": [
       "The sequence is unchanged.",
-      "The current value of the sequence is reset to zero.",
-      "The sequence is deleted and must be recreated.",
-      "The current value of the sequence is reset to the sequence's START WITH value."
+      "The current value of the sequence is\nreset to zero.",
+      "The sequence is deleted and must be\nrecreated.",
+      "The current value of the sequence is\nreset to the sequence's START WITH value."
     ],
     "correct": 0,
-    "question": "You created the LOCATION_ID_SEQ sequence to generate sequential values for the LOCATION_ID column in the MANUFACTURERS table. You issue this statement:\nALTER TABLE manufacturers\nMODIFY (location_id NUMBER(6));\nWhich statement about the LOCATION_ID_SEQ sequence is true?"
+    "explanation": "",
+    "question": "You created the LOCATION_ID_SEQ sequence\nALTER\nTABLE manufacturers\nMODIFY\n(location_id NUMBER(6));\nWhich\nstatement about the LOCATION_ID_SEQ sequence is true?"
   },
   {
     "source_num": 6,
@@ -1682,7 +1403,8 @@
       "USER_OBJECTS"
     ],
     "correct": 2,
-    "question": "Which dictionary view would you query to display the number most recently generated by a sequence?"
+    "explanation": "",
+    "question": "Which dictionary view would you query to"
   },
   {
     "source_num": 8,
@@ -1691,19 +1413,20 @@
       "False"
     ],
     "correct": 1,
-    "question": "Nextval and Currval are known as column aliases. True or False?"
+    "explanation": "",
+    "question": "Nextval and Currval are known as column"
   },
   {
-    "source_num": 10,
+    "source_num": 9,
     "options": [
-      "DROP INDEX last_name_idx(last_name);",
-      "ALTER TABLE employees",
-      "DROP INDEX last_name_idx;",
-      "DROP INDEX last_name_idx(employees.last_name);",
-      "DROP INDEX last_name_idx;"
+      "A PRIMARY KEY constraint",
+      "A FOREIGN KEY constraint",
+      "An index",
+      "A CHECK constraint"
     ],
-    "correct": 4,
-    "question": "Which statement would you use to remove the LAST_NAME_IDX index on the LAST_NAME column of the EMPLOYEES table?"
+    "correct": 2,
+    "explanation": "",
+    "question": "Which of the following is created"
   },
   {
     "source_num": 12,
@@ -1712,121 +1435,146 @@
       "False"
     ],
     "correct": 1,
-    "question": "All tables must have indexes on them otherwise they cannot be queried. True or False?"
-  },
-  {
-    "source_num": 13,
-    "options": [
-      "CREATE UNRESTRICTED SYNONYM emp FOR EMPLOYEES",
-      "CREATE PUBLIC SYNONYM emp FOR EMPLOYEES",
-      "CREATE SHARED SYNONYM emp FOR EMPLOYEES",
-      "CREATE SYNONYM emp FOR EMPLOYEES"
-    ],
-    "correct": 1,
-    "question": "Which of the following SQL statements shows a correct syntax example of creating a synonym accessible to all users of a database?"
-  },
-  {
-    "source_num": 14,
-    "options": [
-      "CREATE index_name INDEX ON table_name.column_name;",
-      "CREATE INDEX ON table_name(column_name);",
-      "CREATE OR REPLACE INDEX index_name ON table_name(column_name);",
-      "CREATE INDEX index_name ON table_name(column_name);"
-    ],
-    "correct": 3,
-    "question": "What is the correct syntax for creating an index?"
+    "explanation": "",
+    "question": "All"
   },
   {
     "source_num": 1,
     "options": [
       "CREATE d_sum SYNONYM",
-      "FOR dept_sum_vu;",
+      "FOR\ndept_sum_vu;",
       "CREATE SYNONYM d_sum",
-      "FOR dept_sum_vu;",
+      "FOR\ndept_sum_vu;",
       "CREATE SYNONYM d_sum",
-      "ON dept_sum_vu;",
+      "ON\ndept_sum_vu;",
       "UPDATE dept_sum_vu",
-      "ON SYNONYM d_sum;"
+      "ON\nSYNONYM d_sum;"
     ],
     "correct": 3,
-    "question": "What is the correct syntax for creating a private synonym d_sum for the view DEPT_SUM_VU?"
+    "explanation": "",
+    "question": "What is the correct syntax for creating"
   },
   {
-    "source_num": 4,
+    "source_num": 2,
     "options": [
-      "(Choose all correct answers)",
-      "You should create an index if one or more columns are frequently used together in a join condition.",
-      "You should create an index if the table is large and most queries are expected to retrieve less than 2 to 4 percent of the rows.",
-      "You should create an index if the table is very small.",
-      "You should always create an index on tables that are frequently updated."
+      "UNIQUE INDEX",
+      "NONUNIQUE INDEX",
+      "INDEX",
+      "Oracle cannot create indexes\nautomatically."
     ],
-    "correct": 1,
-    "question": "When creating an index on one or more columns of a table, which of the following statements are true?"
+    "correct": 0,
+    "explanation": "",
+    "question": "What kind of INDEX is created by Oracle"
   },
   {
-    "source_num": 5,
-    "options": [
-      "CREATE PUBLIC SYNONYM cust ON mary.customers;",
-      "CREATE PUBLIC SYNONYM cust FOR mary.customers;",
-      "CREATE SYNONYM cust ON mary.customers FOR PUBLIC;",
-      "CREATE SYNONYM cust ON mary.customers;",
-      "GRANT SELECT ON cust TO PUBLIC;"
-    ],
-    "correct": 1,
-    "question": "The CUSTOMERS table exists in user Mary's schema. Which statement should you use to create a synonym for all database users on the CUSTOMERS table?"
-  },
-  {
-    "source_num": 6,
-    "options": [
-      "An index can run statement blocks when DML actions occur against a table.",
-      "An index can reduce the time required to grant multiple privileges to users.",
-      "An index can prevent users from viewing certain data in a table.",
-      "An index can increase the performance of SQL queries that search large tables."
-    ],
-    "correct": 3,
-    "question": "Which of the following best describes the function of an index?"
-  },
-  {
-    "source_num": 9,
-    "options": [
-      "Change the maximum value to a lower number than was last used",
-      "Change the amount a sequence increments each time a number is generated",
-      "Change the START WITH value of a sequence",
-      "Change the name of the sequence"
-    ],
-    "correct": 1,
-    "question": "The ALTER SEQUENCE statement can be used to:"
-  },
-  {
-    "source_num": 10,
+    "source_num": 3,
     "options": [
       "True",
       "False"
     ],
     "correct": 0,
-    "question": "A sequence is a database object. True or False?"
+    "explanation": "",
+    "question": "Indexes can be used to speed up queries."
+  },
+  {
+    "source_num": 4,
+    "options": [
+      "(Choose all\ncorrect answers)",
+      "You should create an index if one or\nmore columns are frequently used together in a join condition.",
+      "You should create an index if the\ntable is large and most queries are expected to retrieve less than 2 to 4\npercent of the rows.",
+      "You should create an index if the\ntable is very small.",
+      "You should always create an index on\ntables that are frequently updated."
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "When creating an index on one or more"
+  },
+  {
+    "source_num": 5,
+    "options": [
+      "CREATE PUBLIC SYNONYM cust ON\nmary.customers;",
+      "CREATE PUBLIC SYNONYM cust FOR\nmary.customers;",
+      "CREATE SYNONYM cust ON\nmary.customers FOR PUBLIC;",
+      "CREATE SYNONYM cust ON\nmary.customers;",
+      "GRANT\nSELECT ON cust TO PUBLIC;"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "The CUSTOMERS table exists in user"
+  },
+  {
+    "source_num": 9,
+    "options": [
+      "Change the maximum value to a lower\nnumber than was last used",
+      "Change the amount a sequence\nincrements each time a number is generated",
+      "Change the START WITH value of a\nsequence",
+      "Change the name of the sequence"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "The ALTER SEQUENCE statement can be used"
   },
   {
     "source_num": 11,
     "options": [
       "Sequence numbers will be cached.",
-      "Future sequence numbers generated will increase by 2 each time a number is generated.",
-      "If the PO_SEQUENCE sequence does not exist, it will be created.",
-      "The statement fails if the current value of the sequence is greater than the START WITH value."
+      "Future sequence numbers generated\nwill increase by 2 each time a number is generated.",
+      "If the PO_SEQUENCE sequence does not\nexist, it will be created.",
+      "The statement fails if the current\nvalue of the sequence is greater than the START WITH value."
     ],
     "correct": 1,
-    "question": "You issue this statement:\nALTER SEQUENCE po_sequence INCREMENT BY 2;\nWhich statement is true?"
+    "explanation": "",
+    "question": "You\nALTER\nSEQUENCE po_sequence INCREMENT BY 2;\nWhich\nstatement is true?"
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "(Choose all\ncorrect answers)",
+      "Generate a range of numbers and\noptionally cycle through them again",
+      "Guarantee that no primary key values\nare unused",
+      "Set a fixed interval between\nsuccessively generated numbers.",
+      "Ensure primary key values will be\nunique even though gaps may exist",
+      "Ensure primary key values will be\nunique and consecutive"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Sequences"
   },
   {
     "source_num": 13,
     "options": [
-      "The sequence cannot be used with more than one table.",
-      "The sequence preallocates values and retains them in memory.",
-      "The sequence cannot generate additional values after reaching its maximum value.",
-      "The sequence will continue to generate values after the maximum sequence value has been generated."
+      "The sequence cannot be used with\nmore than one table.",
+      "The sequence preallocates values and\nretains them in memory.",
+      "The sequence cannot generate\nadditional values after reaching its maximum value.",
+      "The sequence will continue to\ngenerate values after the maximum sequence value has been generated."
     ],
     "correct": 3,
-    "question": "Evaluate this CREATE SEQUENCE statement:\nCREATE SEQUENCE line_item_id_seq CYCLE;\nWhich statement is true?"
+    "explanation": "",
+    "question": "Evaluate\nCREATE\nSEQUENCE line_item_id_seq CYCLE;\nWhich\nstatement is true?"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "The sequence will start with 1.",
+      "The sequence will continue to\ngenerate values after reaching its maximum value.",
+      "The sequence has no maximum value.",
+      "The sequence preallocates values and\nretains them in memory."
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "Evaluate\nCREATE\nSEQUENCE order_id_seq NOCYCLE NOCACHE;\nWhich\nstatement is true?"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "The current value of the sequence is\nreset to the sequence's START WITH value.",
+      "The sequence is deleted and must be\nrecreated.",
+      "The current value of the sequence is\nreset to zero.",
+      "The sequence is unchanged."
+    ],
+    "correct": 3,
+    "explanation": "",
+    "question": "You\nALTER\nTABLE manufacturers\nMODIFY\n(location_id NUMBER(6));\nWhich\nstatement about the LOCATION_ID_SEQ sequence is true?"
   },
   {
     "source_num": 1,
@@ -1835,18 +1583,21 @@
       "False"
     ],
     "correct": 1,
-    "question": "Creating a sequence with NOCACHE ensures that all numbers in the sequence's range will be used successfully. True or False?"
+    "explanation": "",
+    "question": "Creating a sequence with NOCACHE ensures"
   },
   {
-    "source_num": 2,
+    "source_num": 5,
     "options": [
-      "The NEXTVAL virtual column displays the order in which Oracle retrieves row data from a table.",
-      "The NEXTVAL virtual column returns the integer that was most recently supplied by the sequence.",
-      "The NEXTVAL virtual column increments a sequence by a predetermined value.",
-      "The NEXTVAL virtual column displays only the physical locations of the rows in a table."
+      "LOAD",
+      "NOCYCLE",
+      "NOCACHE",
+      "CACHE",
+      "MEMORY"
     ],
-    "correct": 2,
-    "question": "Which of the following best describes the function of the NEXTVAL virtual column?"
+    "correct": 3,
+    "explanation": "",
+    "question": "When used in a CREATE SEQUENCE"
   },
   {
     "source_num": 6,
@@ -1857,124 +1608,126 @@
       "CURRVAL"
     ],
     "correct": 3,
-    "question": "Which pseudocolumn returns the latest value supplied by a sequence?"
+    "explanation": "",
+    "question": "Which pseudocolumn returns the latest"
+  },
+  {
+    "source_num": 7,
+    "options": [
+      "ALTER SEQUENCE emp_id_seq;",
+      "DROP SEQUENCE emp_id_seq;",
+      "REMOVE SEQUENCE emp_id_seq;",
+      "DELETE SEQUENCE emp_id_seq;"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Which statement would you use to remove"
   },
   {
     "source_num": 8,
     "options": [
       "130120110100130",
-      "The fifth number cannot be generated.",
+      "The fifth number cannot be\ngenerated.",
       "100110120130100",
-      "The CREATE SEQUENCE statement will fail because a START WITH value was not specified."
+      "The CREATE SEQUENCE statement will\nfail because a START WITH value was not specified."
     ],
     "correct": 3,
-    "question": "Evaluate this statement:\nCREATE SEQUENCE line_item_id_seq\nMINVALUE 100 MAXVALUE 130 INCREMENT BY -10 CYCLE;\nWhat will be the first five numbers generated by this sequence?"
+    "explanation": "",
+    "question": "Evaluate this statement:\nCREATE\nSEQUENCE line_item_id_seq\nMINVALUE\n100 MAXVALUE 130 INCREMENT BY -10 CYCLE;\nWhat\nwill be the first five numbers generated by this sequence?"
   },
   {
     "source_num": 9,
     "options": [
-      "An index named CLIENTS is created on the CITY and STATE columns.",
-      "An index named CLIENTS_INDEX is created on the CLIENTS table.",
-      "An error message is produced, and no index is created.",
-      "An index named ADDRESS_INDEX is created on the CITY and STATE columns."
+      "An index named CLIENTS is created on\nthe CITY and STATE columns.",
+      "An index named CLIENTS_INDEX is\ncreated on the CLIENTS table.",
+      "An error message is produced, and no\nindex is created.",
+      "An index named ADDRESS_INDEX is\ncreated on the CITY and STATE columns."
     ],
     "correct": 2,
-    "question": "The CLIENTS table contains these columns:\nCLIENT_ID NUMBER(4) NOT NULL PRIMARY KEY\nLAST_NAME VARCHAR2(15)\nFIRST_NAME VARCHAR2(10)\nCITY VARCHAR2(15)\nSTATE VARCHAR2(2)\nYou want to create an index named ADDRESS_INDEX on the CITY and STATE columns of the CLIENTS table. You execute this statement:\nCREATE INDEX clients\nON address_index (city, state);\nWhich result does this statement accomplish?"
+    "explanation": "",
+    "question": "The CLIENTS table contains these\nCLIENT_ID\nNUMBER(4) NOT NULL PRIMARY KEY\nLAST_NAME\nVARCHAR2(15)\nFIRST_NAME\nVARCHAR2(10)\nCITY\nVARCHAR2(15)\nSTATE\nVARCHAR2(2)\nYou\nwant to create an index named ADDRESS_INDEX on the CITY and STATE columns of\nthe CLIENTS table. You execute this statement:\nCREATE\nINDEX clients\nON\naddress_index (city, state);\nWhich\nresult does this statement accomplish?"
   },
   {
     "source_num": 10,
     "options": [
-      "A table with the same number of columns as another table",
-      "A table with the same name as another view",
-      "A different name for a table, view, or other database object",
-      "A table that must be qualified with a username"
+      "A table with the same number of\ncolumns as another table",
+      "A table with the same name as\nanother view",
+      "A different name for a table, view,\nor other database object",
+      "A table that must be qualified with\na username"
     ],
     "correct": 2,
-    "question": "In SQL what is a synonym?"
+    "explanation": "",
+    "question": "In"
   },
   {
     "source_num": 15,
     "options": [
       "Create an index on (salary).",
-      "Create a function_based index on ((salary * 12) > 100000).",
-      "Create a composite index on (salary,12).",
-      "Create a function-based index on (salary * 12)."
+      "Create a function_based index on\n((salary * 12) > 100000).",
+      "Create a composite index on\n(salary,12).",
+      "Create a function-based index on\n(salary * 12)."
     ],
     "correct": 3,
-    "question": "You want to speed up the following query by creating an index:\nSELECT * FROM employees WHERE (salary * 12) > 100000;\nWhich of the following will achieve this?"
+    "explanation": "",
+    "question": "You\nSELECT\n* FROM employees WHERE (salary * 12) > 100000;\nWhich\nof the following will achieve this?"
   },
   {
     "source_num": 4,
     "options": [
-      "You created a public synonym on the EMPLOYEES table owned by user Sam.",
-      "You created a public synonym on the EMP table owned by user Sam.",
-      "You created a private synonym on the EMPLOYEES table that you own.",
-      "You created a private synonym on the EMPLOYEES table owned by user Sam."
+      "You created a public synonym on the\nEMPLOYEES table owned by user Sam.",
+      "You created a public synonym on the\nEMP table owned by user Sam.",
+      "You created a private synonym on the\nEMPLOYEES table that you own.",
+      "You created a private synonym on the\nEMPLOYEES table owned by user Sam."
     ],
     "correct": 3,
-    "question": "As user Julie, you issue this statement:\nCREATE SYNONYM emp FOR sam.employees;\nWhich task was accomplished by this statement?"
+    "explanation": "",
+    "question": "As user Julie, you issue this statement:\nCREATE\nSYNONYM emp FOR sam.employees;\nWhich\ntask was accomplished by this statement?"
   },
   {
     "source_num": 5,
     "options": [
       "A column that is updated frequently",
-      "A column that is infrequently used as a query search condition",
-      "A column which has only 4 distinct values.",
-      "A column with a large number of null values"
+      "A column that is infrequently used\nas a query search condition",
+      "A column which has only 4 distinct\nvalues.",
+      "A column with a large number of null\nvalues"
     ],
     "correct": 3,
-    "question": "For which column would you create an index?"
+    "explanation": "",
+    "question": "For which column would you create an"
   },
   {
-    "source_num": 14,
+    "source_num": 8,
     "options": [
-      "True",
-      "False"
+      "CYCLE",
+      "MINVALUE",
+      "MAXVALUE",
+      "NOMAXVALUE"
     ],
-    "correct": 0,
-    "question": "When you alter a sequence, a new increased MAXVALUE can be entered without changing the existing number order. True or False?"
-  },
-  {
-    "source_num": 15,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 0,
-    "question": "CURRVAL is a pseudocolumn used to refer to a sequence number that the current user has just generated by referencing NEXTVAL. True or False?"
+    "correct": 1,
+    "explanation": "",
+    "question": "When creating a sequence, which keyword"
   },
   {
     "source_num": 10,
     "options": [
-      "Alter",
-      "Update",
-      "Change",
-      "Create"
+      "The sequence will generate sequence\nnumbers starting with 101, but will not reuse numbers.",
+      "The sequence will reuse numbers and\nwill start with 101.",
+      "The statement fails because no\nINCREMENT BY value is specified.",
+      "The sequence will generate\ndecrementing sequence numbers starting at 101."
     ],
-    "correct": 0,
-    "question": "Which keyword is used to modify a sequence?"
+    "correct": 1,
+    "explanation": "",
+    "question": "Evaluate\nCREATE\nSEQUENCE sales_item_id_seq\nSTART\nWITH 101 MAXVALUE 9000090 CYCLE;\nWhich\nstatement about this CREATE SEQUENCE statement is true?"
   },
   {
     "source_num": 11,
     "options": [
-      "It displays the current value of the PO_ITEM_ID_SEQ sequence.",
-      "It displays the next available value of the PO_ITEM_ID_SEQ sequence.",
-      "It resets the current value of the PO_ITEM_ID_SEQ sequence.",
-      "It sets the current value of the PO_ITEM_ID_SEQ sequence to the value of the PO_ITEMID column."
+      "True",
+      "False"
     ],
-    "correct": 0,
-    "question": "Evaluate this statement:\nSELECT po_itemid_seq.CURRVAL\nFROM dual;\nWhat does this statement accomplish?"
-  },
-  {
-    "source_num": 12,
-    "options": [
-      "Maxval",
-      "Max_value",
-      "Maxvalue",
-      "Maximumvalue"
-    ],
-    "correct": 2,
-    "question": "Which is the correct syntax for specifying a maximum value in a sequence?"
+    "correct": 1,
+    "explanation": "",
+    "question": "Creating"
   },
   {
     "source_num": 15,
@@ -1983,29 +1736,54 @@
       "False"
     ],
     "correct": 0,
-    "question": "A gap can occur in a sequence because a user generated a number from the sequence and then rolled back the transaction. True or False?"
+    "explanation": "",
+    "question": "CURRVAL"
   },
   {
     "source_num": 1,
     "options": [
-      "You cannot update data in the EMPLOYEES table using the EMP_VIEW view.",
-      "You can update any data in the EMPLOYEES table using the EMP_VIEW view.",
-      "You can update only the SALARY column in the EMPLOYEES table using the EMP_VIEW view.",
-      "You can delete records from the EMPLOYEES table using the EMP_VIEW view."
+      "USER_INDEXES",
+      "USER_OBJECTS",
+      "USER_TABLES",
+      "USER_IND_COLUMNS"
     ],
-    "correct": 0,
-    "question": "Evaluate this CREATE VIEW statement:\nCREATE VIEW emp_view\nAS SELECT SUM(salary)\nFROM employees;\nWhich statement is true?"
+    "correct": 3,
+    "explanation": "",
+    "question": "You need to determine the table name and"
   },
   {
-    "source_num": 2,
+    "source_num": 4,
     "options": [
-      "FORCE",
-      "WITH READ ONLY",
-      "NOFORCE",
-      "OR REPLACE"
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "All tables must have indexes on them"
+  },
+  {
+    "source_num": 11,
+    "options": [
+      "It displays the current value of the\nPO_ITEM_ID_SEQ sequence.",
+      "It displays the next available value\nof the PO_ITEM_ID_SEQ sequence.",
+      "It resets the current value of the\nPO_ITEM_ID_SEQ sequence.",
+      "It sets the current value of the\nPO_ITEM_ID_SEQ sequence to the value of the PO_ITEMID column."
     ],
     "correct": 0,
-    "question": "Which keyword(s) would you include in a CREATE VIEW statement to create the view whether or not the base table exists?"
+    "explanation": "",
+    "question": "Evaluate\nSELECT\npo_itemid_seq.CURRVAL\nFROM\ndual;\nWhat\ndoes this statement accomplish?"
+  },
+  {
+    "source_num": 1,
+    "options": [
+      "You\ncannot update data in the EMPLOYEES table using the EMP_VIEW view.",
+      "You\ncan update any data in the EMPLOYEES table using the EMP_VIEW view.",
+      "You\ncan update only the SALARY column in the EMPLOYEES table using the EMP_VIEW\nview.",
+      "You\ncan delete records from the EMPLOYEES table using the EMP_VIEW view."
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "Evaluate\nCREATE VIEW emp_view\nAS SELECT SUM(salary)\nFROM employees;\nWhich statement is true?"
   },
   {
     "source_num": 3,
@@ -2014,7 +1792,8 @@
       "False"
     ],
     "correct": 1,
-    "question": "Views must be used to select data from a table. As soon as a view is created on a table, you can no longer select directly from the table. True or False?"
+    "explanation": "",
+    "question": "Views"
   },
   {
     "source_num": 4,
@@ -2023,18 +1802,8 @@
       "False"
     ],
     "correct": 1,
-    "question": "A view can be used to keep a history record of old data from the underlying tables, so even if a row is deleted from a table, you can still select the row through the view. True or False?"
-  },
-  {
-    "source_num": 5,
-    "options": [
-      "You can never see all the rows in the table through the view.",
-      "You can retrieve data from a view as you would from any table.",
-      "The tables you are selecting from can be empty, yet the view still returns the original data from those tables.",
-      "Use special VIEW SELECT keywords."
-    ],
-    "correct": 1,
-    "question": "In order to query a database using a view, which of the following statements applies?"
+    "explanation": "",
+    "question": "A view"
   },
   {
     "source_num": 8,
@@ -2043,102 +1812,44 @@
       "False"
     ],
     "correct": 1,
-    "question": "Only one type of view exists. True or False?"
+    "explanation": "",
+    "question": "Only"
   },
   {
     "source_num": 9,
     "options": [
-      "Prohibits changing rows not returned by the subquery in the view definition.",
-      "The view will allow the user to check it against the data dictionary",
-      "Prohibits DML actions without administrator CHECK approval",
-      "Allows for DELETES from other tables, including ones not listed in subquery"
+      "Prohibits\nchanging rows not returned by the subquery in the view definition.",
+      "The\nview will allow the user to check it against the data dictionary",
+      "Prohibits\nDML actions without administrator CHECK approval",
+      "Allows\nfor DELETES from other tables, including ones not listed in subquery"
     ],
     "correct": 0,
-    "question": "For a View created using the WITH CHECK OPTION keywords, which of the following statements are true?"
-  },
-  {
-    "source_num": 10,
-    "options": [
-      "A join",
-      "A WHERE clause",
-      "A column alias",
-      "A GROUP BY clause"
-    ],
-    "correct": 3,
-    "question": "You cannot insert data through a view if the view includes ______."
-  },
-  {
-    "source_num": 11,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 1,
-    "question": "When you drop a view, the data it contains is also deleted. True or False?"
+    "explanation": "",
+    "question": "For a"
   },
   {
     "source_num": 12,
     "options": [
-      "You can modify data in the SALES table using the SALES_VIEW view.",
-      "You can only insert records into the SALES table using the SALES_VIEW view.",
-      "The CREATE VIEW statement generates an error.",
-      "You cannot modify data in the SALES table using the SALES_VIEW view."
+      "You\ncan modify data in the SALES table using the SALES_VIEW view.",
+      "You\ncan only insert records into the SALES table using the SALES_VIEW view.",
+      "The\nCREATE VIEW statement generates an error.",
+      "You\ncannot modify data in the SALES table using the SALES_VIEW view."
     ],
     "correct": 3,
-    "question": "Evaluate this CREATE VIEW statement:\nCREATE VIEW sales_view\nAS SELECT customer_id, region, SUM(sales_amount)\nFROM sales\nWHERE region IN (10, 20, 30, 40)\nGROUP BY region, customer_id;\nWhich statement is true?"
-  },
-  {
-    "source_num": 13,
-    "options": [
-      "The AS keyword",
-      "A GROUP BY clause",
-      "A WHERE clause",
-      "The IN keyword"
-    ],
-    "correct": 1,
-    "question": "You want to create a view based on the SALESREP table. You plan to grant access to this view to members of the Sales department. You want Sales employees to be able to update the SALESREP table through the view, which you plan to name SALESREP_VIEW. What should not be specified in your CREATE VIEW statement?"
+    "explanation": "",
+    "question": "Evaluate\nCREATE VIEW sales_view\nAS SELECT customer_id, region, SUM(sales_amount)\nFROM sales\nWHERE region IN (10, 20, 30, 40)\nGROUP BY region, customer_id;\nWhich statement is true?"
   },
   {
     "source_num": 14,
     "options": [
-      "DELETE VIEW view_name",
-      "REMOVE VIEW view_name",
-      "DROP VIEW view_name",
-      "You cannot remove a view"
+      "DELETE\nVIEW view_name",
+      "REMOVE\nVIEW view_name",
+      "DROP\nVIEW view_name",
+      "You\ncannot remove a view"
     ],
     "correct": 2,
-    "question": "How do you remove a view?"
-  },
-  {
-    "source_num": 15,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 1,
-    "question": "When you drop a table referenced by a view, the view is automatically dropped as well. True or False?"
-  },
-  {
-    "source_num": 1,
-    "options": [
-      "An inline view is a complex view.",
-      "An inline view is a subquery in the FROM clause, often named with an alias.",
-      "An inline view is a schema object.",
-      "An inline view can be used to perform DML operations."
-    ],
-    "correct": 1,
-    "question": "Which statement about an inline view is true?"
-  },
-  {
-    "source_num": 3,
-    "options": [
-      "Number",
-      "Rowid",
-      "Rownum",
-      "Sequence"
-    ],
-    "correct": 2,
-    "question": "Which of these Keywords is typically used with a Top-N Analysis?"
+    "explanation": "",
+    "question": "How do"
   },
   {
     "source_num": 4,
@@ -2149,18 +1860,20 @@
       "INSERT"
     ],
     "correct": 0,
-    "question": "You must create a view that will display the name, customer identification number, new balance, finance charge, and credit limit of all customers.\nYou issue this statement:\nCREATE OR REPLACE VIEW CUST_CREDIT_V\nAS SELECT c.last_name, c.customer_id, a.new_balance, a.finance_charge, a.credit_limit\nFROM customers c, accounts a\nWHERE c.account_id = a.account_id WITH READ ONLY;\nWhich type of SQL command can be issued on the CUST_CREDIT_V view?"
+    "explanation": "",
+    "question": "You\nYou issue this statement:\nCREATE OR REPLACE VIEW CUST_CREDIT_V\nAS SELECT c.last_name, c.customer_id, a.new_balance,\na.finance_charge, a.credit_limit\nFROM customers c, accounts a\nWHERE c.account_id = a.account_id WITH READ ONLY;\nWhich type of SQL command can be issued on the\nCUST_CREDIT_V view?"
   },
   {
-    "source_num": 9,
+    "source_num": 10,
     "options": [
-      "You can perform DML operations on a view that contains columns defined by expressions, such as COST + 1.",
-      "You can perform DML operations on simple views.",
-      "You can perform DML operations on a view that contains the WITH READ ONLY option.",
-      "You cannot perform DML operations on a view that contains the WITH CHECK OPTION clause."
+      "NOFORCE",
+      "FORCE",
+      "WITH\nADMIN OPTION",
+      "WITH\nREAD ONLY"
     ],
-    "correct": 1,
-    "question": "Which statement about performing DML operations on a view is true?"
+    "correct": 3,
+    "explanation": "",
+    "question": "Which option would you use when creating"
   },
   {
     "source_num": 11,
@@ -2169,58 +1882,88 @@
       "False"
     ],
     "correct": 0,
-    "question": "Unlike tables, views contain no data of their own. True or False?"
-  },
-  {
-    "source_num": 15,
-    "options": [
-      "You can create the table and the view at the same time using the FORCE option.",
-      "You must create the SALES table before creating the view.",
-      "You can use the FORCE option to create the view before the SALES table has been created.",
-      "By default, the view will be created even if the SALES table does not exist."
-    ],
-    "correct": 2,
-    "question": "You need to create a view on the SALES table, but the SALES table has not yet been created. Which statement is true?"
-  },
-  {
-    "source_num": 1,
-    "options": [
-      "HAVING",
-      "WHERE",
-      "ORDER BY",
-      "They are all valid keywords when creating views."
-    ],
-    "correct": 2,
-    "question": "Which of the following keywords cannot be used when creating a view?"
-  },
-  {
-    "source_num": 2,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 0,
-    "question": "A view can contain a select statement with a subquery. True or False?"
-  },
-  {
-    "source_num": 7,
-    "options": [
-      "True",
-      "False"
-    ],
-    "correct": 0,
-    "question": "You can create a view if the view subquery contains an inline view. True or False?"
+    "explanation": "",
+    "question": "Unlike tables, views contain no data of"
   },
   {
     "source_num": 12,
     "options": [
-      "A top-N query returns a limited result set, returning data based on highest or lowest criteria.",
-      "A top-N query returns a result set that is sorted according to the specified column values.",
-      "A top-N query returns the top 15 records from the specified table.",
-      "A top-N query returns the bottom 15 records from the specified table."
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Views must be used to select data from a"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "A view can be used to keep a history"
+  },
+  {
+    "source_num": 14,
+    "options": [
+      "Views\nare used when you only want to restrict DML operations using a WITH CHECK\nOPTION.",
+      "Views\nprovide data independence for infrequent users and application programs. One\nview can be used to retrieve data from several tables. Views can be used to\nprovide data security.",
+      "Views\nare not valid unless you have more than one user.",
+      "Views\nallow access to the data because the view displays all of the columns from the\ntable."
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "Which of the following statements is a"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "You\ncan create the table and the view at the same time using the FORCE option.",
+      "You\nmust create the SALES table before creating the view.",
+      "You\ncan use the FORCE option to create the view before the SALES table has been\ncreated.",
+      "By\ndefault, the view will be created even if the SALES table does not exist."
+    ],
+    "correct": 2,
+    "explanation": "",
+    "question": "You need to create a view on the SALES"
+  },
+  {
+    "source_num": 10,
+    "options": [
+      "To\nmake sure that data is not duplicated in the view",
+      "To\ninsure that no rows are updated through the view that would prevent those rows\nfrom being returned by the view in the future.",
+      "To\nkeep views form being queried by unauthorized persons",
+      "To\nmake sure that the parent table(s) actually exist"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "question": "What is the purpose of including the"
+  },
+  {
+    "source_num": 12,
+    "options": [
+      "A\ntop-N query returns a limited result set, returning data based on highest or\nlowest criteria.",
+      "A\ntop-N query returns a result set that is sorted according to the specified\ncolumn values.",
+      "A\ntop-N query returns the top 15 records from the specified table.",
+      "A\ntop-N query returns the bottom 15 records from the specified table."
     ],
     "correct": 0,
-    "question": "Which of the following describes a top-N query?"
+    "explanation": "",
+    "question": "Which of the following describes a top-N"
+  },
+  {
+    "source_num": 13,
+    "options": [
+      "An\ninline view is a subquery in the FROM clause, often named with an alias.",
+      "An\ninline view can be used to perform DML operations.",
+      "An\ninline view is a complex view.",
+      "An\ninline view is a schema object."
+    ],
+    "correct": 0,
+    "explanation": "",
+    "question": "Which statement about an inline view is"
   },
   {
     "source_num": 14,
@@ -2231,6 +1974,19 @@
       "ONLINE"
     ],
     "correct": 3,
-    "question": "Which of these is not a valid type of View?"
+    "explanation": "",
+    "question": "Which of these is not a valid type of"
+  },
+  {
+    "source_num": 15,
+    "options": [
+      "UPDATE",
+      "INSERT",
+      "DELETE",
+      "SELECT"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "question": "You must create a view that will display\nYou issue this statement:\nCREATE OR REPLACE VIEW CUST_CREDIT_V\nAS SELECT c.last_name, c.customer_id, a.new_balance,\na.finance_charge, a.credit_limit\nFROM customers c, accounts a\nWHERE c.account_id = a.account_id WITH READ ONLY;\nWhich type of SQL command can be issued on the\nCUST_CREDIT_V view?"
   }
 ]
