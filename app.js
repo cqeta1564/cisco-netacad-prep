@@ -85,7 +85,9 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(err => {
+        navigator.serviceWorker.register('./sw.js?v=3').then(reg => {
+          if (reg) reg.update();
+        }).catch(err => {
           console.log('SW registration note:', err);
         });
       });
@@ -992,12 +994,14 @@ class NetAcadApp {
         fbStatusText.textContent = isCorrect ? 'Správná odpověď!' : 'Chybná odpověď!';
         fbStatusText.style.color = isCorrect ? '#10b981' : '#ef4444';
       }
+      expBox.classList.remove('correct', 'incorrect');
+      expBox.classList.add(isCorrect ? 'correct' : 'incorrect');
       expBox.classList.add('show');
       setTimeout(() => {
         expBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 50);
     } else {
-      expBox.classList.remove('show');
+      expBox.classList.remove('show', 'correct', 'incorrect');
     }
 
     // Prev / Next button state

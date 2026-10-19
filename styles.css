@@ -691,7 +691,7 @@ body {
 /* Instant Practice Feedback */
 .feedback-card {
   display: none;
-  background: var(--bg-body);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-left: 4px solid var(--cisco-green);
   border-radius: 8px;
@@ -704,6 +704,16 @@ body {
   box-sizing: border-box;
 }
 
+.feedback-card.correct {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.feedback-card.incorrect {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
 .feedback-card.show {
   display: block;
 }
@@ -712,18 +722,26 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.98rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: var(--cisco-green);
+}
+
+.feedback-card.correct .feedback-verdict {
+  color: #10b981;
+}
+
+.feedback-card.incorrect .feedback-verdict {
+  color: #ef4444;
 }
 
 .feedback-text {
   font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  line-height: 1.65;
+  color: var(--text-primary);
   overflow-wrap: break-word;
   word-break: break-word;
+  white-space: pre-line;
 }
 
 @keyframes fadeIn {
