@@ -1,84 +1,63 @@
-# IT Certifications Prep - Cisco NetAcad & Oracle Academy
+# Cisco NetAcad Prep – Příprava na certifikační zkoušky
 
-Interaktivní webová aplikace pro přípravu a trénování na oficiální certifikace z **Cisco Networking Academy** (Skills for All / OpenEDG) a **Oracle Academy**, rozdělené do 4 oborových kategorií:
-
-### 🌐 Webové aplikace
-1. **Cisco Networking Academy: HTML Essentials** (příprava na certifikaci WDE™)
-2. **Cisco Networking Academy: CSS Essentials** (příprava na certifikaci WDA™)
-3. **Cisco Networking Academy: JavaScript Essentials 1** (příprava na certifikaci JSE-40-01)
-4. **Cisco Networking Academy: JavaScript Essentials 2** (příprava na certifikaci JSA-40-02)
-
-### 🗄️ Databázové systémy
-5. **Oracle Academy: Database Design** (návrh databází, ERD, normalizace 1NF–3NF)
-6. **Oracle Academy: Database Programming With SQL** (ANSI SQL, SELECT, JOIN, DDL/DML, transakce)
-
-### 🖥️ Počítačové systémy a sítě
-7. **Cisco Networking Academy: NDG Linux Essentials** (příprava na certifikaci LPI 010-160)
-8. **Cisco Networking Academy: CCNA: Introduction to Networks** (CCNA ITN v7 / CCNA 200-301)
-9. **Cisco Networking Academy: CCNA: Switching, Routing, and Wireless Essentials** (CCNA SRWE v7 / CCNA 200-301)
-
-### 💻 Programové vybavení
-10. **Cisco Networking Academy: Python Essentials 1** (příprava na certifikaci PCEP-30-02)
+Moderní, interaktivní a plně responzivní webová aplikace pro procvičování a přípravu na certifikační zkoušky z **Cisco Networking Academy** (Skills for All / OpenEDG / LPI).
 
 🌐 **Online aplikace na GitHub Pages**: [https://cqeta1564.github.io/cisco-netacad-prep/](https://cqeta1564.github.io/cisco-netacad-prep/)
 
 ---
 
-## 🌟 Funkce aplikace
+## 📚 Podporované certifikační kurzy
 
-- **550 autentických otázek z reálných zkoušek**:
-  - 50 otázek pro HTML Essentials (test: 35 otázek, 45 min)
-  - 50 otázek pro CSS Essentials (test: 35 otázek, 45 min)
-  - 50 otázek pro JavaScript Essentials 1 (test: 35 otázek, 45 min)
-  - 50 otázek pro JavaScript Essentials 2 (test: 35 otázek, 45 min)
-  - 65 otázek pro Oracle Database Design (oficiální ostrý test: **50 otázek**, 60 min)
-  - 65 otázek pro Oracle Database Programming With SQL (oficiální ostrý test: **50 otázek**, 60 min)
-  - 50 otázek pro Cisco Python Essentials 1 (test: 35 otázek, 45 min)
-  - 50 otázek pro Cisco NDG Linux Essentials (test: 40 otázek, 60 min)
-  - 60 otázek pro Cisco CCNA: Switching, Routing, and Wireless Essentials (test: 50 otázek, 75 min)
-  - 60 otázek pro Cisco CCNA: Introduction to Networks (test: 50 otázek, 75 min)
-  - Všechny otázky jsou 100% autentické a převzaté z oficiálních zkouškových testů a bank (Oracle Academy iLearning, Cisco Networking Academy, OpenEDG, LPI). Obsahují originální anglickou textaci z ostrých testů, kódové ukázky, přesné možnosti a detailní vysvětlení pravidel v češtině.
-- **4 studijní módy**:
-  1. 🎓 **Zkouškový simulátor (Exam Simulator)**:
-     - Realistické podmínky (časový limit 45–75 minut, přesný oficiální počet otázek: např. **50 otázek pro Oracle Database Design**, hranice úspěšnosti 70 %).
-     - Možnost označit otázku k revizi (Flag for review).
-     - Mřížka všech otázek pro rychlý přehled.
-     - Závěrečné podrobné vyhodnocení s procentuální úspěšností, časem a kompletním rozborem chyb.
-  2. 📖 **Trénink & Vysvětlení (Practice Mode)**:
-     - Okamžitá zpětná vazba po kliknutí na možnost (zelená/červená indikace).
-     - Podrobné vysvětlení správné odpovědi a souvisejících pravidel.
-     - Filtrování podle modulů / kapitol.
-     - Možnost "Procvičit jen chybné otázky".
-  3. ⚡ **Bleskové kartičky (Flashcards)**:
-     - 3D oboustranné kartičky pro rychlé opakování a zapamatování klíčových pojmů a chytáků.
-  4. 📋 **Oficiální tahák & pravidla (Cheatsheets)**:
-     - Přehledné tabulky pro každý certifikát (typy v JS, CSS Box Model, HTML sémantika, Python operátory, SQL JOINy, Linux FHS/práva, CCNA ITN OSI/IPv4/IPv6/TCP/UDP, CCNA SRWE VLANy/STP/EtherChannel/WLAN).
-  5. 📊 **Moje statistiky (User Profile & Statistics)**:
-     - Sledování úspěšnosti a postupu na základě cookies a volitelné přezdívky (bez nutnosti registrace a přihlašování).
-     - Přehled pokrytí celé banky otázek (0 / 550), celková přesnost a zápisník chyb k cílenému doprocvičení.
-     - Kompletní historie zkoušek s časy, procenty a přímým filtrem nesložených pokusů.
-     - 🛡️ **Statistiky návštěvnosti webu (Admin Dashboard)**: Při zadání administrátorské přezdívky `cqeta1564` se v profilu automaticky odemkne živý přehled návštěvnosti webu (celkový počet zobrazení, unikátní návštěvníci, dnešní aktivita, 7denní trend a telemetrie). Pro běžné uživatele zůstává sekce zcela skrytá.
-- **Moderní UI & Audio efekty**:
-  - Tmavý (Dark) i světlý (Light) režim s plynulým přepínáním.
-  - Generované audio efekty (Web Audio API – není potřeba stahovat žádné zvukové soubory).
-  - Plně responzivní design pro počítač, tablet i mobil.
+1. **Cisco Networking Academy: HTML Essentials** (WDE™) – 40 autentických testových otázek
+2. **Cisco Networking Academy: CSS Essentials** (WDA™) – 50 otázek
+3. **Cisco Networking Academy: JavaScript Essentials 1** (JSE-40-01) – 50 otázek
+4. **Cisco Networking Academy: JavaScript Essentials 2** (JSA-40-02) – 50 otázek
+5. **Cisco DevNet Associate** (DEVASC 200-901) – 60 otázek
+6. **Cisco CCNA: Introduction to Networks** (CCNA ITN v7 / 200-301) – 60 otázek
+7. **Cisco Networking Academy: NDG Linux Essentials** (LPI 010-160) – 50 otázek
 
 ---
 
-## 🚀 Jak aplikaci spustit
+## 🌟 Hlavní funkce aplikace
 
-Aplikace je kompletně samostatná bez nutnosti instalovat jakékoliv npm balíčky nebo backend:
+### 🎓 1. Zkouškový simulátor (Exam Simulator)
+- **Reálné podmínky**: Oficiální časový limit (45–75 minut), autentická skladba otázek a hranice úspěšnosti 70 %.
+- **Označení otázek (Flag)**: Možnost označit otázky k pozdější revizi před odevzdáním.
+- **Rychlý přehledový pás otázek**: Okamžitý skok na libovolnou otázku a vizuální kontrola zodpovězených / nezodpovězených položek.
+- **Podrobné vyhodnocení**: Skóre v procentech, reálný čas, status PASSED/FAILED a kompletní rozbor všech chyb včetně oficiálního zdůvodnění.
 
-### Možnost 1: Dvojklikem (nejrychlejší)
-Stačí dvakrát kliknout na soubor `index.html` v tomto adresáři a otevře se ve vašem výchozím webovém prohlížeči (Chrome, Edge, Firefox, Brave).
+### 💡 2. Trénink & Vysvětlení (Practice Mode)
+- **Okamžitá zpětná vazba**: Okamžité zobrazení správnosti odpovědi (zelená/červená indikace).
+- **Oficiální vysvětlení**: Detailní zdůvodnění správného řešení z materiálů Cisco NetAcad.
+- **Cílené procvičování**: Možnost filtrovat pouze chybné otázky z předchozích pokusů nebo ještě neprojité otázky.
 
-### Možnost 2: Přes lokální server
-Pokud chcete aplikaci spouštět přes lokální HTTP server, můžete v tomto adresáři spustit:
-```powershell
-# Pomocí Pythonu:
-python -m http.server 8080
+### 📋 3. Oficiální studijní tahák (Cheatsheet)
+- **Přehled syntaxe a pravidel**: Klíčové tagy, atributy, sémantika, protokoly, příkazy a chytáky pro každý kurz.
+- **🔍 Živé vyhledávání**: Okamžité filtrování pojmů a řádků tabulky během psaní (např. `form`, `doctype`, `img`, `meta`).
+- **🖨️ Tiskový režim & Export do PDF**: Optimalizovaný styl pro tisk na A4 (`Ctrl+P` nebo tlačítko v liště) v čistém černobílém formátu bez zbytečných ovládacích prvků.
 
-# Nebo pomocí Node.js:
-npx serve .
-```
-A následně otevřít v prohlížeči adresu `http://localhost:8080`.
+### ⚙️ 4. Předvolby a vylepšení pro studium
+- **🔀 Náhodné míchání otázek a odpovědí (Shuffle)**: Volitelné zamíchání otázek a možností (A, B, C, D) s automatickým přepočtem správné odpovědi.
+- **⌨️ Klávesové zkratky**:
+  - `A`, `B`, `C`, `D` nebo `1`, `2`, `3`, `4`: Rychlá volba odpovědi
+  - `←` / `→` (nebo `Enter`): Navigace mezi otázkami
+  - `F`: Označení / odznačení otázky
+- **🔊 Zvukové efekty (Web Audio API)**: Decentní audio zpětná vazba bez nutnosti stahovat externí zvukové soubory.
+- **🌓 Tmavý a světlý režim**: Plná podpora obou barevných schémat podle preferencí uživatele.
+
+### 📱 5. PWA & 100% Offline podpora
+- **Instalace na plochu**: Možnost nainstalovat web jako samostatnou aplikaci na mobil (Android, iPhone) i počítač (Chrome, Edge, Brave).
+- **Provoz bez internetu**: Díky Service Workeru běží aplikace kdekoliv na cestách, ve škole i bez připojení k síti.
+
+### 📊 6. Uživatelský profil & Historie
+- Ukládání výsledků a pokusů lokálně v prohlížeči (žádné přihlašování, žádné sledování soukromí).
+- Možnost volby vlastní přezdívky a přehledné KPI statistiky úspěšnosti.
+
+---
+
+## 🚀 Spuštění aplikace
+
+Aplikace je čistě statická a nevyžaduje žádný backend ani instalaci balíčků:
+
+1. **GitHub Pages (online)**: [https://cqeta1564.github.io/cisco-netacad-prep/](https://cqeta1564.github.io/cisco-netacad-prep/)
+2. **Lokálně**: Dvakrát klikněte na soubor `index.html` v prohlížeči.

@@ -1,5 +1,5 @@
 /**
- * Cisco NetAcad Certification Prep - Core Application Engine
+ * Cisco Certifications Prep - Modern Clean Engine
  */
 
 class SoundFX {
@@ -64,22 +64,32 @@ class NetAcadApp {
   constructor() {
     this.sound = new SoundFX();
     this.activeCert = 'html';
-    this.activeCategory = 'all';
-    this.activeMode = 'simulator'; // 'simulator', 'practice', 'flashcards', 'cheatsheet'
+    this.activeMode = 'simulator'; // 'simulator', 'practice', 'cheatsheet', 'stats'
     
     this.currentQuestions = [];
     this.currentIndex = 0;
     this.userAnswers = {}; // { questionId: selectedIndex }
     this.flagged = new Set();
+    this.visited = new Set();
     
     // Exam timer
     this.timerSeconds = 0;
     this.timerInterval = null;
     this.examStartTime = null;
 
-    // Flashcards
-    this.fcIndex = 0;
-    this.fcFlipped = false;
+    // Study & App Preferences
+    this.prefShuffleQ = localStorage.getItem('pref_shuffle_q') === 'true';
+    this.prefShuffleOpt = localStorage.getItem('pref_shuffle_opt') === 'true';
+    this.prefShortcuts = localStorage.getItem('pref_shortcuts') !== 'false';
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.log('SW registration note:', err);
+        });
+      });
+    }
 
     // Cheatsheets
     this.initCheatsheets();
@@ -91,30 +101,148 @@ class NetAcadApp {
     this.bindEvents();
     this.applyTheme(localStorage.getItem('app_theme') || 'dark');
     this.updateSoundIcon();
+    this.updateShortcutsHintUI();
 
     // Init with active cert
     this.loadCertificate(this.activeCert);
+  }
 
-    // Track page visit in background
-    this.trackPageVisit();
+  applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('app_theme', theme);
+    const btn = document.getElementById('themeToggleBtn');
+    if (btn) {
+      btn.innerHTML = theme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    }
+  }
+
+  updateSoundIcon() {
+    const btn = document.getElementById('soundToggleBtn');
+    if (btn) {
+      btn.innerHTML = this.sound.enabled ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
+      btn.classList.toggle('muted', !this.sound.enabled);
+    }
   }
 
   bindEvents() {
     // Theme toggle
-    document.getElementById('themeToggleBtn').addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      this.applyTheme(next);
-      this.sound.click();
-    });
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        this.applyTheme(next);
+        this.sound.click();
+      });
+    }
 
     // Sound toggle
-    document.getElementById('soundToggleBtn').addEventListener('click', () => {
-      this.sound.enabled = !this.sound.enabled;
-      localStorage.setItem('sound_enabled', this.sound.enabled);
-      this.updateSoundIcon();
-      if (this.sound.enabled) this.sound.click();
+    const soundBtn = document.getElementById('soundToggleBtn');
+    if (soundBtn) {
+      soundBtn.addEventListener('click', () => {
+        this.sound.enabled = !this.sound.enabled;
+        localStorage.setItem('sound_enabled', this.sound.enabled);
+        this.updateSoundIcon();
+        if (this.sound.enabled) this.sound.click();
+      });
+    }
+
+    // Course Select Dropdown
+    const courseSelect = document.getElementById('courseSelectDropdown');
+    if (courseSelect) {
+      courseSelect.addEventListener('change', (e) => {
+        this.sound.click();
+        this.loadCertificate(e.target.value);
+      });
+    }
+
+    // Mode Navigation Tabs
+    document.querySelectorAll('.mode-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        this.sound.click();
+        this.switchView(mode);
+      });
     });
+
+    // Navigation buttons
+    const prevBtn = document.getElementById('canvasPrevBtn');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (this.currentIndex > 0) {
+          this.sound.click();
+          this.currentIndex--;
+          this.renderQuestion();
+        }
+      });
+    }
+
+    const nextBtn = document.getElementById('canvasNextBtn');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (this.currentIndex < this.currentQuestions.length - 1) {
+          this.sound.click();
+          this.currentIndex++;
+          this.renderQuestion();
+        }
+      });
+    }
+
+    // Skip Button
+    const skipBtn = document.getElementById('skipQuestionBtn');
+    if (skipBtn) {
+      skipBtn.addEventListener('click', () => {
+        this.sound.click();
+        if (this.currentIndex < this.currentQuestions.length - 1) {
+          this.currentIndex++;
+          this.renderQuestion();
+        }
+      });
+    }
+
+    // Flag Question Button
+    const flagBtn = document.getElementById('flagQuestionBtn');
+    if (flagBtn) {
+      flagBtn.addEventListener('click', () => {
+        this.sound.click();
+        if (!this.currentQuestions.length) return;
+        const q = this.currentQuestions[this.currentIndex];
+        if (this.flagged.has(q.id)) {
+          this.flagged.delete(q.id);
+        } else {
+          this.flagged.add(q.id);
+        }
+        this.updateFlagUI();
+        this.renderQuestionStrip();
+      });
+    }
+
+    // Toggle Grid Matrix Button
+    const toggleGridBtn = document.getElementById('toggleGridBtn');
+    const gridBar = document.getElementById('questionGridBar');
+    if (toggleGridBtn && gridBar) {
+      toggleGridBtn.addEventListener('click', () => {
+        this.sound.click();
+        gridBar.style.display = (gridBar.style.display === 'none') ? 'block' : 'none';
+      });
+    }
+
+    // Submit / Finish Exam Button
+    const submitBtn = document.getElementById('finishExamBtn');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        this.confirmFinishExam();
+      });
+    }
+
+    // Practice Filter Select
+    const modSelect = document.getElementById('practiceFilterSelect');
+    if (modSelect) {
+      modSelect.addEventListener('change', (e) => {
+        this.sound.click();
+        this.startPractice(e.target.value);
+      });
+    }
 
     // User Profile Pill in Navbar
     const userPill = document.getElementById('userPillBtn');
@@ -130,22 +258,18 @@ class NetAcadApp {
     if (editNickBtn) {
       editNickBtn.addEventListener('click', () => this.openNicknameModal());
     }
-
     const closeNickBtn = document.getElementById('closeNicknameModalBtn');
     if (closeNickBtn) {
       closeNickBtn.addEventListener('click', () => this.closeNicknameModal());
     }
-
     const cancelNickBtn = document.getElementById('cancelNicknameBtn');
     if (cancelNickBtn) {
       cancelNickBtn.addEventListener('click', () => this.closeNicknameModal());
     }
-
     const saveNickBtn = document.getElementById('saveNicknameBtn');
     if (saveNickBtn) {
       saveNickBtn.addEventListener('click', () => this.saveNicknameFromModal());
     }
-
     const nickInput = document.getElementById('nicknameInput');
     if (nickInput) {
       nickInput.addEventListener('keydown', (e) => {
@@ -155,203 +279,326 @@ class NetAcadApp {
         }
       });
     }
-
     const nickModal = document.getElementById('nicknameModal');
     if (nickModal) {
       nickModal.addEventListener('click', (e) => {
-        if (e.target === nickModal) {
-          this.closeNicknameModal();
-        }
+        if (e.target === nickModal) this.closeNicknameModal();
       });
     }
 
-    // Reset stats button
+    // Reset stats modal triggers
     const resetStatsBtn = document.getElementById('resetStatsBtn');
     if (resetStatsBtn) {
-      resetStatsBtn.addEventListener('click', () => this.resetUserStats());
-    }
-
-    // Stats Sub-tabs
-    document.querySelectorAll('.stats-tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const subtab = btn.dataset.subtab;
-        this.switchStatsSubtab(subtab);
-        this.sound.click();
-      });
-    });
-
-    // Refresh traffic button
-    const refreshTrafficBtn = document.getElementById('refreshTrafficBtn');
-    if (refreshTrafficBtn) {
-      refreshTrafficBtn.addEventListener('click', () => {
-        this.sound.click();
-        this.loadTrafficData(true);
+      resetStatsBtn.addEventListener('click', () => {
+        document.getElementById('resetModal').style.display = 'flex';
       });
     }
-
-    // Category filter pills
-    document.querySelectorAll('.cat-pill-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const cat = btn.dataset.cat;
-        this.sound.click();
-        this.filterCategory(cat);
+    const closeResetBtn = document.getElementById('closeResetModalBtn');
+    const cancelResetBtn = document.getElementById('cancelResetBtn');
+    const confirmResetBtn = document.getElementById('confirmResetBtn');
+    if (closeResetBtn) {
+      closeResetBtn.addEventListener('click', () => {
+        document.getElementById('resetModal').style.display = 'none';
       });
-    });
+    }
+    if (cancelResetBtn) {
+      cancelResetBtn.addEventListener('click', () => {
+        document.getElementById('resetModal').style.display = 'none';
+      });
+    }
+    if (confirmResetBtn) {
+      confirmResetBtn.addEventListener('click', () => {
+        this.resetUserStats();
+        document.getElementById('resetModal').style.display = 'none';
+      });
+    }
 
-    // Cert card tabs
-    document.querySelectorAll('.cert-card-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        const certId = tab.dataset.cert;
-        if (certId !== this.activeCert) {
-          this.sound.click();
-          this.loadCertificate(certId);
+    // Settings modal triggers
+    const settingsBtn = document.getElementById('settingsToggleBtn');
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', () => this.openSettingsModal());
+    }
+    const closeSettingsBtn = document.getElementById('closeSettingsModalBtn');
+    if (closeSettingsBtn) {
+      closeSettingsBtn.addEventListener('click', () => this.closeSettingsModal());
+    }
+    const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+    if (saveSettingsBtn) {
+      saveSettingsBtn.addEventListener('click', () => this.saveSettings());
+    }
+    const settingsModal = document.getElementById('settingsModal');
+    if (settingsModal) {
+      settingsModal.addEventListener('click', (e) => {
+        if (e.target === settingsModal) this.closeSettingsModal();
+      });
+    }
+
+    // Cheatsheet live search & print
+    const cheatSearch = document.getElementById('cheatsheetSearchInput');
+    if (cheatSearch) {
+      cheatSearch.addEventListener('input', (e) => {
+        this.filterCheatsheet(e.target.value);
+      });
+    }
+    const clearSearchBtn = document.getElementById('clearCheatSearchBtn');
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        if (cheatSearch) {
+          cheatSearch.value = '';
+          this.filterCheatsheet('');
+          cheatSearch.focus();
         }
       });
-    });
-
-    // Mode tabs
-    document.querySelectorAll('.mode-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const mode = btn.dataset.mode;
-        this.sound.click();
-        this.switchView(mode);
+    }
+    const printCheatBtn = document.getElementById('printCheatsheetBtn');
+    if (printCheatBtn) {
+      printCheatBtn.addEventListener('click', () => {
+        window.print();
       });
+    }
+
+    // Global keyboard shortcuts
+    window.addEventListener('keydown', (e) => this.handleKeyboardShortcut(e));
+  }
+
+  /* ----------------------------------------------------
+     APP & STUDY SETTINGS
+     ---------------------------------------------------- */
+  openSettingsModal() {
+    const modal = document.getElementById('settingsModal');
+    if (!modal) return;
+    const qToggle = document.getElementById('shuffleQuestionsToggle');
+    const optToggle = document.getElementById('shuffleOptionsToggle');
+    const scToggle = document.getElementById('keyboardShortcutsToggle');
+    const sndToggle = document.getElementById('soundEffectsToggle');
+
+    if (qToggle) qToggle.checked = this.prefShuffleQ;
+    if (optToggle) optToggle.checked = this.prefShuffleOpt;
+    if (scToggle) scToggle.checked = this.prefShortcuts;
+    if (sndToggle) sndToggle.checked = this.sound.enabled;
+
+    modal.style.display = 'flex';
+  }
+
+  closeSettingsModal() {
+    const modal = document.getElementById('settingsModal');
+    if (modal) modal.style.display = 'none';
+  }
+
+  saveSettings() {
+    const qToggle = document.getElementById('shuffleQuestionsToggle');
+    const optToggle = document.getElementById('shuffleOptionsToggle');
+    const scToggle = document.getElementById('keyboardShortcutsToggle');
+    const sndToggle = document.getElementById('soundEffectsToggle');
+
+    if (qToggle) {
+      this.prefShuffleQ = qToggle.checked;
+      localStorage.setItem('pref_shuffle_q', this.prefShuffleQ);
+    }
+    if (optToggle) {
+      this.prefShuffleOpt = optToggle.checked;
+      localStorage.setItem('pref_shuffle_opt', this.prefShuffleOpt);
+    }
+    if (scToggle) {
+      this.prefShortcuts = scToggle.checked;
+      localStorage.setItem('pref_shortcuts', this.prefShortcuts);
+      this.updateShortcutsHintUI();
+    }
+    if (sndToggle) {
+      this.sound.enabled = sndToggle.checked;
+      localStorage.setItem('sound_enabled', this.sound.enabled);
+      this.updateSoundIcon();
+    }
+
+    this.closeSettingsModal();
+    this.sound.click();
+  }
+
+  updateShortcutsHintUI() {
+    const hint = document.getElementById('shortcutsHintLabel');
+    if (hint) {
+      hint.style.display = this.prefShortcuts ? 'inline-flex' : 'none';
+    }
+  }
+
+  /* ----------------------------------------------------
+     QUESTION SHUFFLE HELPER
+     ---------------------------------------------------- */
+  prepareQuestions(rawList, shuffleQ = false, shuffleOpt = false) {
+    if (!rawList || !rawList.length) return [];
+
+    let list = rawList.map(orig => {
+      const q = {
+        ...orig,
+        options: [...orig.options]
+      };
+
+      if (shuffleOpt && q.options && q.options.length > 1) {
+        const paired = q.options.map((optText, origIdx) => ({
+          text: optText,
+          isCorrect: origIdx === q.correct
+        }));
+
+        for (let i = paired.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [paired[i], paired[j]] = [paired[j], paired[i]];
+        }
+
+        q.options = paired.map(p => p.text);
+        q.correct = paired.findIndex(p => p.isCorrect);
+      }
+      return q;
     });
 
-    // Navigation buttons
-    document.getElementById('prevBtn').addEventListener('click', () => {
+    if (shuffleQ && list.length > 1) {
+      for (let i = list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [list[i], list[j]] = [list[j], list[i]];
+      }
+    }
+
+    return list;
+  }
+
+  /* ----------------------------------------------------
+     KEYBOARD SHORTCUTS HANDLER
+     ---------------------------------------------------- */
+  handleKeyboardShortcut(e) {
+    if (!this.prefShortcuts) return;
+
+    // Do not trigger shortcuts when typing in form inputs or editable elements
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    if (e.target.isContentEditable) return;
+
+    // Do not trigger if any modal overlay is visible
+    const nickModal = document.getElementById('nicknameModal');
+    const resetModal = document.getElementById('resetModal');
+    const settingsModal = document.getElementById('settingsModal');
+    if ((nickModal && nickModal.style.display === 'flex') ||
+        (resetModal && resetModal.style.display === 'flex') ||
+        (settingsModal && settingsModal.style.display === 'flex')) {
+      return;
+    }
+
+    // Only active when quiz view is open and questions are loaded
+    const quizView = document.getElementById('quizView');
+    if (!quizView || !quizView.classList.contains('active')) return;
+    if (!this.currentQuestions || !this.currentQuestions.length) return;
+
+    const q = this.currentQuestions[this.currentIndex];
+    if (!q) return;
+
+    const key = e.key.toLowerCase();
+
+    // Option selection keys: 1-4, A-D (or 5 / E if 5 options exist)
+    const keyMap = {
+      '1': 0, 'a': 0,
+      '2': 1, 'b': 1,
+      '3': 2, 'c': 2,
+      '4': 3, 'd': 3,
+      '5': 4, 'e': 4
+    };
+
+    if (Object.prototype.hasOwnProperty.call(keyMap, key)) {
+      const optIdx = keyMap[key];
+      if (optIdx < q.options.length) {
+        e.preventDefault();
+        this.selectOption(optIdx);
+        return;
+      }
+    }
+
+    // Navigation: Left arrow (Previous question)
+    if (e.key === 'ArrowLeft') {
       if (this.currentIndex > 0) {
+        e.preventDefault();
         this.sound.click();
         this.currentIndex--;
         this.renderQuestion();
       }
-    });
+      return;
+    }
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
+    // Navigation: Right arrow or Enter (Next question)
+    if (e.key === 'ArrowRight' || e.key === 'Enter') {
       if (this.currentIndex < this.currentQuestions.length - 1) {
+        e.preventDefault();
         this.sound.click();
         this.currentIndex++;
         this.renderQuestion();
       }
-    });
+      return;
+    }
 
-    // Flag question button
-    document.getElementById('flagQuestionBtn').addEventListener('click', () => {
+    // Flag / Unflag question: 'F' or 'f'
+    if (key === 'f') {
+      e.preventDefault();
       this.sound.click();
-      const q = this.currentQuestions[this.currentIndex];
       if (this.flagged.has(q.id)) {
         this.flagged.delete(q.id);
       } else {
         this.flagged.add(q.id);
       }
       this.updateFlagUI();
-      this.renderGridMatrix();
-    });
-
-    // Finish Exam button
-    document.getElementById('finishExamBtn').addEventListener('click', () => {
-      this.confirmFinishExam();
-    });
-
-    // Toggle Matrix Drawer
-    document.getElementById('toggleGridBtn').addEventListener('click', () => {
-      this.sound.click();
-      const drawer = document.getElementById('gridDrawer');
-      drawer.style.display = drawer.style.display === 'none' ? 'block' : 'none';
-    });
-
-    // Module filter in practice mode
-    document.getElementById('moduleFilterSelect').addEventListener('change', (e) => {
-      this.sound.click();
-      this.filterPracticeByModule(e.target.value);
-    });
-  }
-
-  applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('app_theme', theme);
-    const icon = document.querySelector('#themeToggleBtn i');
-    if (icon) {
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      this.renderQuestionStrip();
+      return;
     }
   }
 
-  updateSoundIcon() {
-    const icon = document.querySelector('#soundToggleBtn i');
-    if (icon) {
-      icon.className = this.sound.enabled ? 'fas fa-volume-up' : 'fas fa-volume-mute';
-    }
-  }
-
-  filterCategory(cat) {
-    this.activeCategory = cat;
-
-    // Update active pill button
-    document.querySelectorAll('.cat-pill-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.cat === cat);
-    });
-
-    // Toggle category groups visibility
-    const groups = document.querySelectorAll('.cert-cat-group');
-    groups.forEach(group => {
-      if (cat === 'all' || group.dataset.cat === cat) {
-        group.classList.remove('hidden');
-      } else {
-        group.classList.add('hidden');
-      }
-    });
-
-    // If currently active cert is hidden by filter, switch to first visible cert in category
-    if (cat !== 'all') {
-      const activeCertInfo = CERTIFICATES_DATA[this.activeCert];
-      if (activeCertInfo && activeCertInfo.category !== cat) {
-        const firstCertInCat = CERTIFICATE_CATEGORIES[cat]?.certs[0];
-        if (firstCertInCat) {
-          this.loadCertificate(firstCertInCat);
-        }
-      }
-    }
-  }
-
+  /* ----------------------------------------------------
+     CERTIFICATE SETUP
+     ---------------------------------------------------- */
   loadCertificate(certId) {
     this.activeCert = certId;
     const cert = CERTIFICATES_DATA[certId];
 
-    // Update active tab style
-    document.querySelectorAll('.cert-card-tab').forEach(t => {
-      t.classList.toggle('active', t.dataset.cert === certId);
-    });
+    // Update Dropdown
+    const select = document.getElementById('courseSelectDropdown');
+    if (select && select.value !== certId) {
+      select.value = certId;
+    }
 
-    // Update current cert badge
-    const badge = document.getElementById('currentCertBadge');
-    badge.innerHTML = `<i class="${cert.icon}"></i> ${cert.badge} <span style="font-size: 0.78rem; opacity: 0.75; font-weight: normal; margin-left: 6px;">[${cert.categoryName}]</span>`;
-    badge.style.color = cert.color;
+    // Update Course Badge
+    const badge = document.getElementById('activeCourseBadge');
+    if (badge) {
+      badge.textContent = cert.badge;
+    }
 
-    // Populate practice filters & live stats
+    // Update Practice Filter Dropdown & Live Stats
     this.updatePracticeFilterDropdown();
     this.updatePracticeLiveStats();
 
-    // Reset and start according to current mode
+    // Switch view / start
     this.switchView(this.activeMode, true);
   }
 
+  /* ----------------------------------------------------
+     MODE SWITCHING
+     ---------------------------------------------------- */
   switchView(mode, forceReset = false) {
     this.activeMode = mode;
 
-    // Update buttons
-    document.querySelectorAll('.mode-btn').forEach(btn => {
+    // Update navigation buttons
+    document.querySelectorAll('.mode-tab').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.mode === mode);
     });
 
     // Hide all view panels
     document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
 
-    // Handle each mode
+    const timerBox = document.getElementById('examTimerBox');
+    const practiceFilter = document.getElementById('practiceFilterWrap');
+    const submitBtn = document.getElementById('finishExamBtn');
+    const skipBtn = document.getElementById('skipQuestionBtn');
+
     if (mode === 'simulator') {
       document.getElementById('quizView').classList.add('active');
-      document.getElementById('practiceModuleFilterWrap').style.display = 'none';
-      document.getElementById('examTimerBox').style.display = 'flex';
-      document.getElementById('finishExamBtn').style.display = 'inline-flex';
+      if (timerBox) timerBox.style.display = 'flex';
+      if (practiceFilter) practiceFilter.style.display = 'none';
+      if (submitBtn) submitBtn.style.display = 'inline-flex';
+      if (skipBtn) skipBtn.style.display = 'inline-flex';
+
       if (forceReset || !this.currentQuestions.length) {
         this.startSimulator();
       } else {
@@ -359,21 +606,20 @@ class NetAcadApp {
       }
     } else if (mode === 'practice') {
       document.getElementById('quizView').classList.add('active');
-      document.getElementById('practiceModuleFilterWrap').style.display = 'block';
-      document.getElementById('examTimerBox').style.display = 'none';
-      document.getElementById('finishExamBtn').style.display = 'none';
+      if (timerBox) timerBox.style.display = 'none';
+      if (practiceFilter) practiceFilter.style.display = 'flex';
+      if (submitBtn) submitBtn.style.display = 'none';
+      if (skipBtn) skipBtn.style.display = 'inline-flex';
+
       this.stopTimer();
       this.updatePracticeFilterDropdown();
       this.updatePracticeLiveStats();
+
       if (forceReset || !this.currentQuestions.length) {
         this.startPractice();
       } else {
         this.renderQuestion();
       }
-    } else if (mode === 'flashcards') {
-      document.getElementById('flashcardsView').classList.add('active');
-      this.stopTimer();
-      this.initFlashcards();
     } else if (mode === 'cheatsheet') {
       document.getElementById('cheatsheetView').classList.add('active');
       this.stopTimer();
@@ -392,19 +638,23 @@ class NetAcadApp {
     this.stopTimer();
     const cert = CERTIFICATES_DATA[this.activeCert];
 
-    // Pick questions according to official certification exam length (e.g. 50 questions for Oracle & CCNA)
-    const all = [...cert.questions];
-    this.shuffleArray(all);
-    const targetCount = cert.examQuestionCount || Math.min(50, all.length);
-    const count = Math.min(targetCount, all.length);
-    this.currentQuestions = all.slice(0, count);
+    const all = cert?.questions ? [...cert.questions] : [];
+    if (!all.length) {
+      this.currentQuestions = [];
+      this.currentIndex = 0;
+      this.renderQuestion();
+      return;
+    }
 
+    this.currentQuestions = this.prepareQuestions(all, this.prefShuffleQ, this.prefShuffleOpt);
     this.currentIndex = 0;
     this.userAnswers = {};
     this.flagged.clear();
+    this.visited.clear();
+    this.visited.add(0);
 
     // Timer setup
-    this.timerSeconds = cert.timeLimit * 60;
+    this.timerSeconds = (cert.timeLimit || 45) * 60;
     this.examStartTime = Date.now();
     this.startTimer();
 
@@ -423,7 +673,7 @@ class NetAcadApp {
 
       if (this.timerSeconds <= 0) {
         this.stopTimer();
-        alert('Časový limit zkoušky vypršel! Vaše odpovědi budou nyní vyhodnoceny.');
+        alert('Časový limit testu vypršel! Vaše odpovědi budou nyní vyhodnoceny.');
         this.finishExam();
       }
     }, 1000);
@@ -445,7 +695,7 @@ class NetAcadApp {
     if (el) el.textContent = str;
 
     if (box) {
-      if (this.timerSeconds < 300) { // < 5 mins
+      if (this.timerSeconds < 300) {
         box.classList.add('warning');
       } else {
         box.classList.remove('warning');
@@ -458,9 +708,9 @@ class NetAcadApp {
     const total = this.currentQuestions.length;
     const unanswered = total - answeredCount;
 
-    let msg = 'Opravdu chcete odevzdat zkoušku?';
+    let msg = 'Opravdu chcete odevzdat test?';
     if (unanswered > 0) {
-      msg = `Upozornění: Ještě jste nezodpověděli ${unanswered} z ${total} otázek!\n\nOpravdu chcete zkoušku ukončit a vyhodnotit?`;
+      msg = `Upozornění: Zbývá ještě ${unanswered} nezodpovězených otázek z ${total}!\n\nOpravdu chcete test ukončit a vyhodnotit?`;
     }
 
     if (confirm(msg)) {
@@ -472,7 +722,6 @@ class NetAcadApp {
   finishExam() {
     this.stopTimer();
 
-    // Calculate score
     let correctCount = 0;
     this.currentQuestions.forEach(q => {
       if (this.userAnswers[q.id] === q.correct) {
@@ -481,9 +730,9 @@ class NetAcadApp {
     });
 
     const total = this.currentQuestions.length;
-    const scorePct = Math.round((correctCount / total) * 100);
+    const scorePct = total ? Math.round((correctCount / total) * 100) : 0;
     const cert = CERTIFICATES_DATA[this.activeCert];
-    const passed = scorePct >= cert.passScore;
+    const passed = scorePct >= (cert.passScore || 70);
 
     if (passed) {
       this.sound.fanfare();
@@ -497,24 +746,23 @@ class NetAcadApp {
 
     // Populate Results Screen
     const badgeWrap = document.getElementById('resultBadge');
-    badgeWrap.className = `result-badge-wrap ${passed ? 'pass' : 'fail'}`;
-    badgeWrap.innerHTML = passed ? '<i class="fas fa-award"></i>' : '<i class="fas fa-circle-xmark"></i>';
+    badgeWrap.className = `result-badge-circle ${passed ? 'pass' : 'fail'}`;
+    badgeWrap.innerHTML = passed ? '<i class="fas fa-award"></i>' : '<i class="fas fa-times-circle"></i>';
 
     const title = document.getElementById('resultTitle');
     const subtitle = document.getElementById('resultSubtitle');
     if (passed) {
-      title.textContent = 'Gratulujeme! Zkouška složena!';
-      subtitle.textContent = `Úspěšně jste splnili certifikační kritéria pro ${cert.title} (hranice ${cert.passScore} %).`;
+      title.textContent = 'Gratulujeme! Test úspěšně složen!';
+      subtitle.textContent = `Úspěšně jste splnili certifikační kritéria pro ${cert.title} (hranice ${cert.passScore || 70} %).`;
     } else {
-      title.textContent = 'Zkouška nebyla úspěšně složena';
-      subtitle.textContent = `K úspěšnému absolvování je nutné dosáhnout alespoň ${cert.passScore} %. Projděte si níže své chyby a zkuste to znovu!`;
+      title.textContent = 'Test nebyl úspěšně složen';
+      subtitle.textContent = `K úspěšnému absolvování je nutné dosáhnout alespoň ${cert.passScore || 70} %. Projděte si níže své chyby a zkuste to znovu!`;
     }
 
     document.getElementById('resScoreVal').textContent = `${scorePct} %`;
     document.getElementById('resCorrectVal').textContent = `${correctCount} / ${total}`;
 
-    // Calculate time taken
-    const elapsedSeconds = (cert.timeLimit * 60) - this.timerSeconds;
+    const elapsedSeconds = ((cert.timeLimit || 45) * 60) - this.timerSeconds;
     const elMin = Math.floor(elapsedSeconds / 60);
     const elSec = elapsedSeconds % 60;
     document.getElementById('resTimeVal').textContent = `${elMin}m ${elSec}s`;
@@ -532,6 +780,7 @@ class NetAcadApp {
 
   renderReviewList() {
     const list = document.getElementById('reviewList');
+    if (!list) return;
     list.innerHTML = '';
 
     this.currentQuestions.forEach((q, idx) => {
@@ -541,7 +790,7 @@ class NetAcadApp {
       const item = document.createElement('div');
       item.className = `review-item ${isCorrect ? 'review-correct' : 'review-incorrect'}`;
 
-      let codeHtml = q.code ? `<div class="code-block" style="margin: 8px 0; font-size: 0.85rem;">${this.escapeHtml(q.code)}</div>` : '';
+      let codeHtml = q.code ? `<div class="code-box" style="margin: 8px 0; font-size: 0.85rem;">${this.escapeHtml(q.code)}</div>` : '';
 
       const userText = userPick !== undefined ? this.escapeHtml(q.options[userPick]) : '<em>Nezodpovězeno</em>';
       const correctText = this.escapeHtml(q.options[q.correct]);
@@ -553,16 +802,15 @@ class NetAcadApp {
           <span style="font-weight: 700; font-size: 0.9rem; color: ${isCorrect ? '#10b981' : '#ef4444'};">
             Otázka ${idx + 1} &bull; ${isCorrect ? '<i class="fas fa-check"></i> Správně' : '<i class="fas fa-times"></i> Špatně'}
           </span>
-          <span style="font-size: 0.75rem; color: var(--text-muted);">${this.escapeHtml(this.getModuleName(q.module))}</span>
         </div>
         <p style="font-weight: 600; margin-bottom: 8px; font-size: 0.95rem;">${questionText}</p>
         ${codeHtml}
         <div style="font-size: 0.88rem; margin-bottom: 8px; line-height: 1.6;">
-          <div><strong>Vaše odpověď:</strong> <span style="color: ${isCorrect ? '#10b981' : '#ef4444'}; font-family: monospace; background: rgba(0,0,0,0.25); padding: 2px 6px; border-radius: 4px;">${userText}</span></div>
+          <div><strong>Vaše odpověď:</strong> <span style="color: ${isCorrect ? '#10b981' : '#ef4444'}; font-family: monospace; background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px;">${userText}</span></div>
           ${!isCorrect ? `<div style="margin-top: 4px;"><strong>Správná odpověď:</strong> <span style="color: #10b981; font-family: monospace; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">${correctText}</span></div>` : ''}
         </div>
-        <div style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(0,0,0,0.2); padding: 10px 14px; border-radius: 6px; line-height: 1.55; border-left: 3px solid #38bdf8;">
-          <strong style="color: #38bdf8;">Vysvětlení:</strong> ${explanationText}
+        <div style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(0,0,0,0.1); padding: 10px 14px; border-radius: 6px; line-height: 1.55; border-left: 3px solid #10b981;">
+          <strong style="color: #10b981;">Vysvětlení:</strong> ${explanationText}
         </div>
       `;
 
@@ -573,13 +821,15 @@ class NetAcadApp {
   reviewMistakesOnly() {
     const mistakes = this.currentQuestions.filter(q => this.userAnswers[q.id] !== q.correct);
     if (!mistakes.length) {
-      alert('V této zkoušce jste neměli žádnou chybu! Skvělá práce!');
+      alert('V tomto testu jste neměli žádnou chybu! Skvělá práce!');
       return;
     }
     this.currentQuestions = mistakes;
     this.currentIndex = 0;
     this.userAnswers = {};
     this.flagged.clear();
+    this.visited.clear();
+    this.visited.add(0);
     this.switchView('practice');
   }
 
@@ -589,58 +839,96 @@ class NetAcadApp {
   startPractice(filterMode = 'all') {
     const cert = CERTIFICATES_DATA[this.activeCert];
     let list = [...cert.questions];
-    const stats = this.getUserStats();
-    const pQuestions = stats.practice?.questions || {};
 
     if (filterMode === 'mistakes') {
-      list = list.filter(q => pQuestions[q.id] && pQuestions[q.id].lastResult === false);
-      if (!list.length) {
-        alert('V tomto certifikátu nemáte žádné evidované chybné otázky!');
-        filterMode = 'all';
-        list = [...cert.questions];
-      }
+      const stats = this.getUserStats();
+      const pMap = stats.practice?.questions || {};
+      list = list.filter(q => pMap[q.id]?.lastResult === false);
     } else if (filterMode === 'unseen') {
-      list = list.filter(q => !pQuestions[q.id]);
-      if (!list.length) {
-        alert('V tomto certifikátu jste již procvičili všechny otázky!');
-        filterMode = 'all';
-        list = [...cert.questions];
-      }
-    } else if (filterMode !== 'all') {
-      list = list.filter(q => q.module === filterMode);
+      const stats = this.getUserStats();
+      const pMap = stats.practice?.questions || {};
+      list = list.filter(q => !pMap[q.id]);
     }
 
     this.practiceFilterMode = filterMode;
-    this.currentQuestions = list;
+    const baseList = list.length ? list : (cert?.questions ? [...cert.questions] : []);
+    this.currentQuestions = this.prepareQuestions(baseList, this.prefShuffleQ, this.prefShuffleOpt);
     this.currentIndex = 0;
     this.userAnswers = {};
     this.flagged.clear();
+    this.visited.clear();
+    this.visited.add(0);
+
+    const modSelect = document.getElementById('practiceFilterSelect');
+    if (modSelect && modSelect.value !== filterMode) {
+      modSelect.value = filterMode;
+    }
+
     this.updatePracticeLiveStats();
     this.renderQuestion();
   }
 
-  filterPracticeByModule(filterMode) {
-    this.startPractice(filterMode);
+  updatePracticeLiveStats() {
+    const stats = this.getUserStats();
+    const pData = stats.practice?.certs?.[this.activeCert] || { correct: 0, total: 0 };
+    const rate = pData.total > 0 ? Math.round((pData.correct / pData.total) * 100) : 0;
+
+    const elCor = document.getElementById('plsCorrectVal');
+    const elWrn = document.getElementById('plsWrongVal');
+    const elRt = document.getElementById('plsRateVal');
+
+    if (elCor) elCor.textContent = pData.correct;
+    if (elWrn) elWrn.textContent = (pData.total - pData.correct);
+    if (elRt) elRt.textContent = `${rate} %`;
   }
 
   /* ----------------------------------------------------
-     QUESTION RENDERING ENGINE
+     QUESTION RENDERING
      ---------------------------------------------------- */
   renderQuestion() {
-    if (!this.currentQuestions.length) return;
-    const q = this.currentQuestions[this.currentIndex];
+    const container = document.getElementById('optionsContainer');
 
-    // Counter & Progress
+    if (!this.currentQuestions.length) {
+      document.getElementById('qNumberTitle').textContent = 'Žádné otázky';
+      document.getElementById('qCounterDisplay').textContent = '0 z 0 otázek';
+      document.getElementById('qCountText').textContent = '0 / 0';
+      document.getElementById('examProgressBar').style.width = '0%';
+      
+      document.getElementById('qText').innerHTML = `
+        <div style="text-align: center; padding: 2.5rem 1rem;">
+          <i class="fas fa-folder-open" style="font-size: 3rem; color: #64748b; margin-bottom: 1rem; display: block;"></i>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Pro tento kurz zatím nebyly nahrány otázky</h3>
+          <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto; line-height: 1.6; font-size: 0.92rem;">
+            Závěrečný test pro <strong>HTML Essentials</strong> má k dispozici všech 40 autentických testových otázek.
+          </p>
+          <button class="btn-primary" style="margin: 0 auto;" onclick="app.loadCertificate('html')">
+            <i class="fab fa-html5"></i> Přepnout na HTML Essentials (40 otázek)
+          </button>
+        </div>
+      `;
+      document.getElementById('qCodeBlock').style.display = 'none';
+      if (container) container.innerHTML = '';
+      document.getElementById('explanationBox').classList.remove('show');
+      this.renderQuestionStrip();
+      return;
+    }
+
+    const q = this.currentQuestions[this.currentIndex];
     const total = this.currentQuestions.length;
-    document.getElementById('qCounterDisplay').textContent = `Otázka ${this.currentIndex + 1} / ${total}`;
+
+    this.visited.add(this.currentIndex);
+
+    // Number & Title
+    document.getElementById('qNumberTitle').textContent = `Otázka ${this.currentIndex + 1}`;
+    document.getElementById('qCounterDisplay').textContent = `${this.currentIndex + 1} z ${total} otázek`;
+    document.getElementById('qCountText').textContent = `${this.currentIndex + 1} / ${total}`;
+    
     const pct = Math.round(((this.currentIndex + 1) / total) * 100);
     document.getElementById('examProgressBar').style.width = `${pct}%`;
 
-    // Module badge
-    document.getElementById('qModuleBadge').textContent = this.getModuleName(q.module);
-
-    // Text & code
     document.getElementById('qText').textContent = q.question;
+
+    // Code Block
     const codeBlock = document.getElementById('qCodeBlock');
     if (q.code) {
       codeBlock.textContent = q.code;
@@ -649,106 +937,96 @@ class NetAcadApp {
       codeBlock.style.display = 'none';
     }
 
-    // Flag UI
+    // Update Flag UI
     this.updateFlagUI();
 
-    // Options
-    const container = document.getElementById('optionsContainer');
+    // Render Option Cards
     container.innerHTML = '';
-
     const isPractice = this.activeMode === 'practice';
     const hasAnswered = this.userAnswers[q.id] !== undefined;
 
+    const optLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
+
     q.options.forEach((optText, optIdx) => {
-      const optEl = document.createElement('div');
-      optEl.className = 'option-item';
+      const optCard = document.createElement('div');
+      optCard.className = 'option-card';
 
       if (this.userAnswers[q.id] === optIdx) {
-        optEl.classList.add('selected');
+        optCard.classList.add('selected');
       }
 
-      // If in practice mode and answered, reveal right/wrong classes
       if (isPractice && hasAnswered) {
-        optEl.classList.add('locked');
         if (optIdx === q.correct) {
-          optEl.classList.add('correct');
+          optCard.classList.add('correct');
         } else if (optIdx === this.userAnswers[q.id]) {
-          optEl.classList.add('incorrect');
+          optCard.classList.add('incorrect');
         }
       }
 
-      optEl.innerHTML = `
-        <div class="option-radio"></div>
-        <div class="option-text">${this.escapeHtml(optText)}</div>
+      optCard.innerHTML = `
+        <div class="opt-badge">${optLetters[optIdx] || optIdx + 1}</div>
+        <div class="opt-text">${this.escapeHtml(optText)}</div>
       `;
 
-      optEl.addEventListener('click', () => {
+      optCard.addEventListener('click', () => {
         this.selectOption(optIdx);
       });
 
-      container.appendChild(optEl);
+      container.appendChild(optCard);
     });
 
-    // Explanation Box (Shown in practice mode if answered)
+    // Explanation Box (In Practice Mode)
     const expBox = document.getElementById('explanationBox');
     const expText = document.getElementById('explanationText');
+    const fbIcon = document.getElementById('fbStatusIcon');
+    const fbStatusText = document.getElementById('fbStatusText');
+
     if (isPractice && hasAnswered) {
+      const isCorrect = this.userAnswers[q.id] === q.correct;
       expText.textContent = q.explanation;
+      if (fbIcon) {
+        fbIcon.className = isCorrect ? 'fas fa-check-circle' : 'fas fa-times-circle';
+        fbIcon.style.color = isCorrect ? '#10b981' : '#ef4444';
+      }
+      if (fbStatusText) {
+        fbStatusText.textContent = isCorrect ? 'Správná odpověď!' : 'Chybná odpověď!';
+        fbStatusText.style.color = isCorrect ? '#10b981' : '#ef4444';
+      }
       expBox.classList.add('show');
+      setTimeout(() => {
+        expBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 50);
     } else {
       expBox.classList.remove('show');
     }
 
-    // Nav buttons enable/disable
-    document.getElementById('prevBtn').disabled = (this.currentIndex === 0);
-    document.getElementById('nextBtn').disabled = (this.currentIndex === total - 1);
+    // Prev / Next button state
+    const prevBtn = document.getElementById('canvasPrevBtn');
+    const nextBtn = document.getElementById('canvasNextBtn');
+    if (prevBtn) prevBtn.disabled = (this.currentIndex === 0);
+    if (nextBtn) nextBtn.disabled = (this.currentIndex === total - 1);
 
-    // Render matrix
-    this.renderGridMatrix();
+    // Render Question Strip
+    this.renderQuestionStrip();
   }
 
   selectOption(optIdx) {
     const q = this.currentQuestions[this.currentIndex];
+    const isPractice = this.activeMode === 'practice';
 
-    // In practice mode, don't allow changing answer once answered
-    if (this.activeMode === 'practice' && this.userAnswers[q.id] !== undefined) {
-      return;
-    }
+    if (isPractice && this.userAnswers[q.id] !== undefined) return;
 
     this.userAnswers[q.id] = optIdx;
+    const isCorrect = optIdx === q.correct;
 
-    if (this.activeMode === 'practice') {
-      const isCorrect = (optIdx === q.correct);
-      const stats = this.getUserStats();
-      
-      if (!stats.practice) {
-        stats.practice = { totalAnswered: 0, totalCorrect: 0, questions: {} };
-      }
-      if (!stats.practice.questions) {
-        stats.practice.questions = {};
-      }
-
-      stats.practice.totalAnswered = (stats.practice.totalAnswered || 0) + 1;
+    if (isPractice) {
       if (isCorrect) {
-        stats.practice.totalCorrect = (stats.practice.totalCorrect || 0) + 1;
         this.sound.correct();
       } else {
         this.sound.wrong();
       }
-
-      const prev = stats.practice.questions[q.id] || { answered: 0, correct: 0 };
-      stats.practice.questions[q.id] = {
-        certId: this.activeCert,
-        moduleId: q.module,
-        answered: prev.answered + 1,
-        correct: prev.correct + (isCorrect ? 1 : 0),
-        lastResult: isCorrect,
-        lastDate: new Date().toISOString()
-      };
-
-      this.saveUserStats(stats);
+      this.recordPracticeResult(this.activeCert, q.id, isCorrect);
       this.updatePracticeLiveStats();
-      this.updatePracticeFilterDropdown();
     } else {
       this.sound.click();
     }
@@ -756,111 +1034,78 @@ class NetAcadApp {
     this.renderQuestion();
   }
 
-  updateFlagUI() {
-    const q = this.currentQuestions[this.currentIndex];
-    const btn = document.getElementById('flagQuestionBtn');
-    const text = document.getElementById('flagBtnText');
-    const isFlagged = this.flagged.has(q.id);
+  renderQuestionStrip() {
+    const strip = document.getElementById('ciscoQuestionStrip');
+    if (!strip) return;
 
-    btn.classList.toggle('flagged', isFlagged);
-    text.textContent = isFlagged ? 'Označeno' : 'Označit';
-    btn.querySelector('i').className = isFlagged ? 'fas fa-flag' : 'far fa-flag';
-  }
-
-  renderGridMatrix() {
-    const matrix = document.getElementById('gridMatrix');
-    matrix.innerHTML = '';
-
+    strip.innerHTML = '';
     this.currentQuestions.forEach((q, idx) => {
-      const cell = document.createElement('div');
-      cell.className = 'grid-cell';
-      cell.textContent = idx + 1;
+      const pill = document.createElement('div');
+      pill.className = 'q-btn';
+      pill.textContent = `${idx + 1}`;
+      pill.title = `Otázka ${idx + 1}`;
 
       if (idx === this.currentIndex) {
-        cell.classList.add('current');
+        pill.classList.add('active');
+      } else if (this.userAnswers[q.id] !== undefined) {
+        pill.classList.add('answered');
+      } else if (this.flagged.has(q.id)) {
+        pill.classList.add('flagged');
       }
 
-      if (this.userAnswers[q.id] !== undefined) {
-        cell.classList.add('answered');
-      }
-
-      if (this.flagged.has(q.id)) {
-        cell.classList.add('flagged');
-      }
-
-      cell.addEventListener('click', () => {
+      pill.addEventListener('click', () => {
         this.sound.click();
         this.currentIndex = idx;
         this.renderQuestion();
       });
 
-      matrix.appendChild(cell);
+      strip.appendChild(pill);
     });
-  }
 
-  /* ----------------------------------------------------
-     FLASHCARDS MODE
-     ---------------------------------------------------- */
-  initFlashcards() {
-    const cert = CERTIFICATES_DATA[this.activeCert];
-    this.currentQuestions = [...cert.questions];
-    this.shuffleArray(this.currentQuestions);
-    this.fcIndex = 0;
-    this.fcFlipped = false;
-    this.renderFlashcard();
-  }
-
-  flipFlashcard() {
-    this.sound.click();
-    const card = document.getElementById('flashcardElement');
-    this.fcFlipped = !this.fcFlipped;
-    card.classList.toggle('flipped', this.fcFlipped);
-  }
-
-  renderFlashcard() {
-    const card = document.getElementById('flashcardElement');
-    this.fcFlipped = false;
-    card.classList.remove('flipped');
-
-    const q = this.currentQuestions[this.fcIndex];
-    const total = this.currentQuestions.length;
-
-    document.getElementById('fcCounter').textContent = `${this.fcIndex + 1} / ${total}`;
-    document.getElementById('fcModuleBadge').textContent = this.getModuleName(q.module);
-    document.getElementById('fcQuestionText').textContent = q.question;
-
-    const codeBlock = document.getElementById('fcCodeBlock');
-    if (q.code) {
-      codeBlock.textContent = q.code;
-      codeBlock.style.display = 'block';
-    } else {
-      codeBlock.style.display = 'none';
-    }
-
-    document.getElementById('fcAnswerText').textContent = q.options[q.correct];
-    document.getElementById('fcExplanationText').textContent = q.explanation;
-  }
-
-  nextFlashcard() {
-    if (this.fcIndex < this.currentQuestions.length - 1) {
-      this.sound.click();
-      this.fcIndex++;
-      this.renderFlashcard();
+    const activePill = strip.children[this.currentIndex];
+    if (activePill) {
+      activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
   }
 
-  prevFlashcard() {
-    if (this.fcIndex > 0) {
-      this.sound.click();
-      this.fcIndex--;
-      this.renderFlashcard();
+  updateFlagUI() {
+    const btn = document.getElementById('flagQuestionBtn');
+    const text = document.getElementById('flagBtnText');
+    if (!btn) return;
+
+    if (!this.currentQuestions.length) {
+      btn.classList.remove('flagged');
+      return;
+    }
+
+    const q = this.currentQuestions[this.currentIndex];
+    const isFlagged = this.flagged.has(q.id);
+
+    btn.classList.toggle('flagged', isFlagged);
+    if (text) text.textContent = isFlagged ? 'Označeno' : 'Označit';
+  }
+
+  escapeHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
   }
 
   /* ----------------------------------------------------
-     CHEATSHEET MODE
+     CHEATSHEETS DATA
      ---------------------------------------------------- */
-  initCheatsheets() {
+initCheatsheets() {
     this.cheats = {
       html: [
         {
@@ -1273,6 +1518,63 @@ class NetAcadApp {
         }
       ],
 
+      devnet: [
+        {
+          title: "REST API, HTTP Metody & Stavové kódy",
+          rows: [
+            ["GET", "Čtení dat z API (Idempotentní, bezpečné, tělo se neposílá)"],
+            ["POST", "Vytvoření nového zdroje (Neidempotentní, vrací 201 Created s Location)"],
+            ["PUT", "Kompletní nahrazení / přepsání zdroje (Idempotentní)"],
+            ["PATCH", "Dílčí / částečná úprava existujícího zdroje"],
+            ["DELETE", "Smazání zdroje ze serveru (204 No Content nebo 200 OK)"],
+            ["200 OK / 201 Created", "Úspěšný požadavek / Úspěšně vytvořený zdroj"],
+            ["400 Bad Request", "Chybná syntaxe, nevalidní JSON nebo chybějící parametr"],
+            ["401 vs 403", "401 Unauthorized = chybí/neplatný token; 403 Forbidden = identita známa, ale nemá práva"],
+            ["404 Not Found", "Cílové URI neexistuje; 429 Too Many Requests = překročen rate limit"]
+          ]
+        },
+        {
+          title: "Formáty dat (JSON, YAML, XML) & Python Knihovny",
+          rows: [
+            ["JSON syntax", "Objekty v {}, pole v [], klíče VŽDY ve dvojitých uvozovkách \"key\": \"val\""],
+            ["YAML syntax", "Hierarchie pomocí mezer (nikdy tabulátory!), seznamy začínají pomlčkou '-'"],
+            ["json.loads() vs json.dumps()", "loads = parsování JSON stringu na Python dict; dumps = serializace dict do stringu"],
+            ["requests knihovna", "requests.get(url, headers={'Authorization': 'Bearer ...'}, params=...)"],
+            ["response.json()", "Převede JSON odpověď ze serveru přímo na Python slovník"]
+          ]
+        },
+        {
+          title: "Verzování kódu (Git) & CI/CD",
+          rows: [
+            ["git clone <url>", "Stáhne vzdálený repozitář na lokální disk"],
+            ["git checkout -b <branch>", "Vytvoří novou větev a okamžitě se do ní přepne"],
+            ["git add . & commit -m", "Přenese změny do staging area a vytvoří lokální commit"],
+            ["git merge <branch>", "Sloučí specifikovanou větev do aktuální aktivní větve"],
+            ["CI/CD Pipeline", "Continuous Integration (automatické testy/linty), Continuous Delivery / Deployment (nasazení)"]
+          ]
+        },
+        {
+          title: "Kontejnery (Docker) & Zabezpečení aplikací",
+          rows: [
+            ["Dockerfile instrukce", "FROM (bázový image), RUN (instalace balíčků), COPY (přenos souborů), CMD (spouštěcí příkaz)"],
+            ["docker build -t app:1.0 .", "Sestaví kontejnerový image s tagem z aktuálního adresáře"],
+            ["docker run -d -p 8080:80", "Spustí kontejner na pozadí (-d) s mapováním portu hostitele 8080 na 80 kontejneru"],
+            ["OWASP Top 10", "SQL Injection (ošetření: parametrizované dotazy), XSS, CSRF (ochrana: CSRF tokeny)"],
+            ["OAuth 2.0 flow", "Získání Access Tokenu (Bearer token) bez předávání hesel třetím stranám"]
+          ]
+        },
+        {
+          title: "Programovatelnost sítě, NETCONF, RESTCONF & YANG",
+          rows: [
+            ["YANG datový model", "Definuje strukturu dat (list, container, leaf, leaf-list), stavová i konfigurační data"],
+            ["NETCONF (RFC 6241)", "Výměna XML zpráv přes SSH na portu 830; operace <get>, <get-config>, <edit-config>"],
+            ["RESTCONF (RFC 8040)", "RESTful rozhraní pro YANG modely přes HTTPS (JSON nebo XML) na portu 443"],
+            ["RESTCONF kořenové URI", "https://<ip>/restconf/data/... (data) nebo /operations/... (RPCs)"],
+            ["Ansible Playbook", "Deklarativní YAML soubor spouštěný přes SSH bez nutnosti agenta (Agentless)"],
+            ["Cisco Platforms", "Cisco Catalyst Center (DNA-C), Meraki Dashboard API, Webex API, Cisco ACI"]
+          ]
+        }
+      ],
       ccna_itn: [
         {
           title: "Modely OSI & TCP/IP a Základní Cisco IOS",
@@ -1319,45 +1621,127 @@ class NetAcadApp {
   }
 
   renderCheatsheet() {
-    const cert = CERTIFICATES_DATA[this.activeCert];
-    document.getElementById('cheatsheetTitle').textContent = `Oficiální tahák: ${cert.title}`;
-
     const container = document.getElementById('cheatsheetContainer');
+    const title = document.getElementById('cheatsheetTitle');
+    const cert = CERTIFICATES_DATA[this.activeCert];
+
+    if (title && cert) {
+      title.textContent = `Oficiální tahák: ${cert.title}`;
+    }
+
+    // Reset search inputs on full render
+    const sInput = document.getElementById('cheatsheetSearchInput');
+    const clearBtn = document.getElementById('clearCheatSearchBtn');
+    const emptyState = document.getElementById('cheatEmptySearch');
+    if (sInput) sInput.value = '';
+    if (clearBtn) clearBtn.style.display = 'none';
+    if (emptyState) emptyState.style.display = 'none';
+
+    if (!container) return;
     container.innerHTML = '';
 
-    const tables = this.cheats[this.activeCert] || [];
-    tables.forEach(t => {
-      const card = document.createElement('div');
-      card.className = 'cheat-card';
+    const cards = this.cheats[this.activeCert] || [];
+    if (!cards.length) {
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--text-muted);">
+          <i class="fas fa-book" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+          Pro tento kurz zatím není k dispozici žádný specifický tahák.
+        </div>
+      `;
+      return;
+    }
 
-      let rowsHtml = t.rows.map(([c1, c2]) => `
-        <tr>
-          <td><code>${this.escapeHtml(c1)}</code></td>
-          <td>${this.escapeHtml(c2)}</td>
-        </tr>
-      `).join('');
+    cards.forEach(c => {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'cheat-card';
+      
+      let rowsHtml = '';
+      if (c.rows) {
+        rowsHtml = `
+          <table class="cheat-table">
+            ${c.rows.map(r => `
+              <tr>
+                <td>${this.escapeHtml(r[0])}</td>
+                <td>${this.escapeHtml(r[1])}</td>
+              </tr>
+            `).join('')}
+          </table>
+        `;
+      } else if (c.code) {
+        rowsHtml = `<div class="cheat-code-block">${this.escapeHtml(c.code)}</div>`;
+      }
 
-      card.innerHTML = `
-        <h4><i class="fas fa-bookmark"></i> ${t.title}</h4>
-        <table class="cheat-table">
-          <thead>
-            <tr>
-              <th>Syntaxe / Kód</th>
-              <th>Pravidlo / Význam</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rowsHtml}
-          </tbody>
-        </table>
+      cardEl.innerHTML = `
+        <h4><i class="fas fa-bookmark" style="color: var(--cisco-cyan);"></i> ${this.escapeHtml(c.title)}</h4>
+        ${c.desc ? `<p>${this.escapeHtml(c.desc)}</p>` : ''}
+        ${rowsHtml}
       `;
 
-      container.appendChild(card);
+      container.appendChild(cardEl);
     });
   }
 
+  filterCheatsheet(query) {
+    const container = document.getElementById('cheatsheetContainer');
+    const emptyState = document.getElementById('cheatEmptySearch');
+    const clearBtn = document.getElementById('clearCheatSearchBtn');
+    if (!container) return;
+
+    const cards = container.querySelectorAll('.cheat-card');
+    const cleanQ = (query || '').trim().toLowerCase();
+
+    if (clearBtn) {
+      clearBtn.style.display = cleanQ ? 'block' : 'none';
+    }
+
+    if (!cleanQ) {
+      cards.forEach(card => {
+        card.style.display = '';
+        card.querySelectorAll('tr').forEach(tr => tr.style.display = '');
+      });
+      if (emptyState) emptyState.style.display = 'none';
+      return;
+    }
+
+    let visibleCardsCount = 0;
+
+    cards.forEach(card => {
+      const cardTitle = (card.querySelector('h4')?.textContent || '').toLowerCase();
+      const cardDesc = (card.querySelector('p')?.textContent || '').toLowerCase();
+      const cardMatchesHeader = cardTitle.includes(cleanQ) || cardDesc.includes(cleanQ);
+
+      const rows = card.querySelectorAll('tr');
+      let matchingRowsCount = 0;
+
+      if (rows.length > 0) {
+        rows.forEach(tr => {
+          const rowText = tr.textContent.toLowerCase();
+          if (cardMatchesHeader || rowText.includes(cleanQ)) {
+            tr.style.display = '';
+            matchingRowsCount++;
+          } else {
+            tr.style.display = 'none';
+          }
+        });
+
+        const showCard = cardMatchesHeader || matchingRowsCount > 0;
+        card.style.display = showCard ? '' : 'none';
+        if (showCard) visibleCardsCount++;
+      } else {
+        const fullText = card.textContent.toLowerCase();
+        const showCard = fullText.includes(cleanQ);
+        card.style.display = showCard ? '' : 'none';
+        if (showCard) visibleCardsCount++;
+      }
+    });
+
+    if (emptyState) {
+      emptyState.style.display = visibleCardsCount === 0 ? 'block' : 'none';
+    }
+  }
+
   /* ----------------------------------------------------
-     USER PROFILE, COOKIES & STATISTICS
+     USER PROFILE & STATISTICS
      ---------------------------------------------------- */
   getCookie(name) {
     const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
@@ -1485,6 +1869,26 @@ class NetAcadApp {
     }
   }
 
+  recordPracticeResult(certId, qId, isCorrect) {
+    const stats = this.getUserStats();
+    if (!stats.practice) stats.practice = { questions: {} };
+    if (!stats.practice.questions) stats.practice.questions = {};
+
+    const existing = stats.practice.questions[qId] || { attempts: 0, correct: 0, wrong: 0 };
+    existing.attempts = (existing.attempts || 0) + 1;
+    if (isCorrect) {
+      existing.correct = (existing.correct || 0) + 1;
+    } else {
+      existing.wrong = (existing.wrong || 0) + 1;
+    }
+    existing.lastResult = isCorrect;
+    existing.lastAttempt = Date.now();
+    existing.certId = certId;
+
+    stats.practice.questions[qId] = existing;
+    this.saveUserStats(stats);
+  }
+
   recordExamResult(scorePct, correctCount, total, elapsedSeconds, passed) {
     const stats = this.getUserStats();
     stats.exams.push({
@@ -1504,36 +1908,9 @@ class NetAcadApp {
     if (banner) banner.textContent = this.nickname;
   }
 
-  isAdmin() {
-    return (this.nickname || '').trim().toLowerCase() === 'cqeta1564';
-  }
-
   updateUserNavbar() {
     const navEl = document.getElementById('navNickname');
     if (navEl) navEl.textContent = this.nickname;
-
-    const navAdminBadge = document.getElementById('navAdminBadge');
-    if (navAdminBadge) {
-      navAdminBadge.style.display = this.isAdmin() ? 'inline-flex' : 'none';
-    }
-
-    const trafficTabBtn = document.getElementById('statsTrafficTabBtn');
-    if (trafficTabBtn) {
-      trafficTabBtn.style.display = this.isAdmin() ? 'inline-flex' : 'none';
-    }
-
-    const statsAdminBadge = document.getElementById('statsAdminBadge');
-    if (statsAdminBadge) {
-      statsAdminBadge.style.display = this.isAdmin() ? 'inline-flex' : 'none';
-    }
-
-    // If active subtab was traffic and user is not admin, redirect to overview
-    if (!this.isAdmin()) {
-      const trafficPanel = document.getElementById('subtabTraffic');
-      if (trafficPanel && trafficPanel.style.display !== 'none') {
-        this.switchStatsSubtab('overview');
-      }
-    }
   }
 
   updatePracticeLiveStats() {
@@ -1570,7 +1947,7 @@ class NetAcadApp {
 
   updatePracticeFilterDropdown() {
     const cert = CERTIFICATES_DATA[this.activeCert];
-    const select = document.getElementById('moduleFilterSelect');
+    const select = document.getElementById('practiceFilterSelect');
     if (!select || !cert) return;
 
     const stats = this.getUserStats();
@@ -1594,17 +1971,6 @@ class NetAcadApp {
       ${certMistakes > 0 ? `<option value="mistakes">⚠️ Pouze chybné otázky (${certMistakes})</option>` : ''}
       ${certUnseen > 0 ? `<option value="unseen">🆕 Pouze neprocvičené (${certUnseen})</option>` : ''}
     `;
-
-    const grp = document.createElement('optgroup');
-    grp.label = "Podle modulů a témat:";
-    cert.modules.forEach(m => {
-      const opt = document.createElement('option');
-      opt.value = m.id;
-      const count = cert.questions.filter(q => q.module === m.id).length;
-      opt.textContent = `${m.name} (${count})`;
-      grp.appendChild(opt);
-    });
-    select.appendChild(grp);
 
     if (Array.from(select.options).some(o => o.value === currentVal)) {
       select.value = currentVal;
@@ -1937,14 +2303,13 @@ class NetAcadApp {
     mistakes.forEach(({ certId, cert, q }) => {
       const card = document.createElement('div');
       card.className = 'mistake-card';
-      const modName = cert.modules.find(m => m.id === q.module)?.name || q.module;
 
       let codeHtml = q.code ? `<div class="code-block" style="margin: 6px 0; font-size: 0.82rem;">${this.escapeHtml(q.code)}</div>` : '';
 
       card.innerHTML = `
         <div class="mistake-header">
           <span style="font-size: 0.78rem; font-weight: 700; color: ${cert.color}; display: flex; align-items: center; gap: 6px;">
-            <i class="${cert.icon}"></i> ${this.escapeHtml(cert.title)} &bull; ${this.escapeHtml(modName)}
+            <i class="${cert.icon}"></i> ${this.escapeHtml(cert.title)}
           </span>
           <button class="btn btn-sm btn-secondary" onclick="app.practiceSingleQuestion('${certId}', '${q.id}')">
             <i class="fas fa-play"></i> Znovu procvičit
@@ -1969,7 +2334,7 @@ class NetAcadApp {
     this.loadCertificate(certId);
     this.switchView('practice');
     this.startPractice(filterMode);
-    const select = document.getElementById('moduleFilterSelect');
+    const select = document.getElementById('practiceFilterSelect');
     if (select) select.value = filterMode;
   }
 
@@ -1977,7 +2342,7 @@ class NetAcadApp {
     this.sound.click();
     this.switchView('practice');
     this.startPractice('mistakes');
-    const select = document.getElementById('moduleFilterSelect');
+    const select = document.getElementById('practiceFilterSelect');
     if (select) select.value = 'mistakes';
   }
 
@@ -2078,12 +2443,6 @@ class NetAcadApp {
   /* ----------------------------------------------------
      HELPERS
      ---------------------------------------------------- */
-  getModuleName(modId) {
-    const cert = CERTIFICATES_DATA[this.activeCert];
-    const m = cert.modules.find(x => x.id === modId);
-    return m ? m.name : modId;
-  }
-
   shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -2091,218 +2450,11 @@ class NetAcadApp {
     }
     return arr;
   }
-
-  escapeHtml(str) {
-    if (!str) return '';
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  /* ========================================================
-     TRAFFIC TRACKING & ADMIN ANALYTICS (cqeta1564 ONLY)
-  ======================================================== */
-  async trackPageVisit() {
-    try {
-      const todayStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-      const sessionKey = 'cqeta_session_tracked_' + todayStr;
-      const isNewSession = !sessionStorage.getItem(sessionKey);
-
-      // Total Pageviews increment
-      fetch('https://countapi.mileshilliard.com/api/v1/hit/cqeta1564_cisco_netacad_prep_views')
-        .catch(() => {});
-
-      // Unique Visitor / Session increment
-      if (isNewSession) {
-        sessionStorage.setItem(sessionKey, '1');
-        
-        fetch('https://countapi.mileshilliard.com/api/v1/hit/cqeta1564_cisco_netacad_prep_uniques')
-          .catch(() => {});
-          
-        fetch(`https://countapi.mileshilliard.com/api/v1/hit/cqeta1564_cisco_netacad_prep_date_${todayStr}`)
-          .catch(() => {});
-      }
-
-      // Redundant hit trigger to hits.sh
-      if (typeof Image !== 'undefined') {
-        const pingImg = new Image();
-        pingImg.src = 'https://hits.sh/cqeta1564.github.io/cisco-netacad-prep.svg?t=' + Date.now();
-      }
-
-      // Record local telemetry log
-      this.saveLocalVisitLog();
-    } catch (e) {
-      // Non-blocking silently ignored
-    }
-  }
-
-  saveLocalVisitLog() {
-    try {
-      const now = new Date();
-      const log = {
-        time: now.toLocaleString('cs-CZ'),
-        timestamp: now.getTime(),
-        cert: this.activeCert,
-        mode: this.activeMode,
-        userAgent: navigator.userAgent,
-        screen: `${window.screen.width}x${window.screen.height}`,
-        lang: navigator.language || 'cs-CZ',
-        theme: document.documentElement.getAttribute('data-theme') || 'dark'
-      };
-      const existing = JSON.parse(localStorage.getItem('cqeta_local_traffic_log') || '[]');
-      existing.unshift(log);
-      if (existing.length > 50) existing.length = 50;
-      localStorage.setItem('cqeta_local_traffic_log', JSON.stringify(existing));
-    } catch (e) {}
-  }
-
-  async loadTrafficData(forceRefresh = false) {
-    if (!this.isAdmin()) return;
-
-    const refreshIcon = document.getElementById('refreshTrafficIcon');
-    if (refreshIcon) refreshIcon.classList.add('spinning');
-
-    const totalViewsEl = document.getElementById('trafficTotalViews');
-    const uniquesEl = document.getElementById('trafficUniqueVisitors');
-    const todayEl = document.getElementById('trafficTodayViews');
-    const ratioEl = document.getElementById('trafficPagesPerVisitor');
-    const chartEl = document.getElementById('trafficDaysChart');
-    const telemetryEl = document.getElementById('clientTelemetryList');
-
-    // Build last 7 days keys
-    const days = [];
-    for (let i = 6; i >= 0; i--) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
-      const str = d.toISOString().slice(0, 10).replace(/-/g, '');
-      const label = d.toLocaleDateString('cs-CZ', { weekday: 'short', day: 'numeric', month: 'numeric' });
-      days.push({ str, label, isToday: i === 0 });
-    }
-
-    try {
-      const todayStr = days[days.length - 1].str;
-
-      // Parallel fetch from CountAPI and hits.sh
-      const [viewsRes, uniquesRes, todayRes, hitsShRes, ...daysRes] = await Promise.allSettled([
-        fetch('https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_views').then(r => r.json()),
-        fetch('https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_uniques').then(r => r.json()),
-        fetch(`https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_date_${todayStr}`).then(r => r.json()),
-        fetch('https://hits.sh/cqeta1564.github.io/cisco-netacad-prep.svg').then(r => r.text()),
-        ...days.map(d => fetch(`https://countapi.mileshilliard.com/api/v1/get/cqeta1564_cisco_netacad_prep_date_${d.str}`).then(r => r.json()))
-      ]);
-
-      // Parse hits.sh fallback count
-      let hitsShCount = 0;
-      if (hitsShRes.status === 'fulfilled' && typeof hitsShRes.value === 'string') {
-        const m = hitsShRes.value.match(/<title>hits:\s*(\d+)<\/title>/i) || hitsShRes.value.match(/aria-label="hits:\s*(\d+)"/i);
-        if (m) hitsShCount = parseInt(m[1], 10) || 0;
-      }
-
-      let totalViews = (viewsRes.status === 'fulfilled' && viewsRes.value && typeof viewsRes.value.value === 'number')
-        ? viewsRes.value.value
-        : (hitsShCount || 1);
-
-      let uniques = (uniquesRes.status === 'fulfilled' && uniquesRes.value && typeof uniquesRes.value.value === 'number')
-        ? uniquesRes.value.value
-        : Math.max(1, Math.round(totalViews * 0.7));
-
-      let todayViews = (todayRes.status === 'fulfilled' && todayRes.value && typeof todayRes.value.value === 'number')
-        ? todayRes.value.value
-        : 1;
-
-      // Extract day counts
-      const dayCounts = days.map((d, idx) => {
-        const item = daysRes[idx];
-        const val = (item && item.status === 'fulfilled' && item.value && typeof item.value.value === 'number')
-          ? item.value.value
-          : 0;
-        return { ...d, count: d.isToday ? Math.max(val, todayViews) : val };
-      });
-
-      // Update KPI widgets
-      if (totalViewsEl) totalViewsEl.textContent = totalViews.toLocaleString('cs-CZ');
-      if (uniquesEl) uniquesEl.textContent = uniques.toLocaleString('cs-CZ');
-      if (todayEl) todayEl.textContent = todayViews.toLocaleString('cs-CZ');
-      if (ratioEl) ratioEl.textContent = (totalViews / Math.max(1, uniques)).toFixed(1);
-
-      // Render 7-day chart
-      if (chartEl) {
-        chartEl.innerHTML = '';
-        const maxVal = Math.max(1, ...dayCounts.map(d => d.count));
-
-        dayCounts.forEach(d => {
-          const pct = Math.max(8, Math.round((d.count / maxVal) * 100));
-          const col = document.createElement('div');
-          col.className = 'traffic-bar-col' + (d.isToday ? ' today' : '');
-          col.innerHTML = `
-            <span class="traffic-bar-val">${d.count}</span>
-            <div class="traffic-bar-fill" style="height: ${pct}%;"></div>
-            <span class="traffic-bar-date">${this.escapeHtml(d.label)}</span>
-          `;
-          chartEl.appendChild(col);
-        });
-      }
-
-    } catch (e) {
-      console.warn('Could not fetch traffic API:', e);
-      if (totalViewsEl) totalViewsEl.textContent = '1';
-      if (uniquesEl) uniquesEl.textContent = '1';
-      if (todayEl) todayEl.textContent = '1';
-      if (ratioEl) ratioEl.textContent = '1.0';
-    } finally {
-      if (refreshIcon) {
-        setTimeout(() => refreshIcon.classList.remove('spinning'), 400);
-      }
-    }
-
-    // Render Client Telemetry
-    if (telemetryEl) {
-      const ua = navigator.userAgent;
-      let os = 'Neznámý OS';
-      if (ua.includes('Win')) os = 'Windows';
-      else if (ua.includes('Mac')) os = 'macOS';
-      else if (ua.includes('Linux')) os = 'Linux';
-      else if (ua.includes('Android')) os = 'Android';
-      else if (ua.includes('iPhone') || ua.includes('iPad')) os = 'iOS';
-
-      let browser = 'Moderní prohlížeč';
-      if (ua.includes('Edg/')) browser = 'Microsoft Edge';
-      else if (ua.includes('Chrome/')) browser = 'Google Chrome';
-      else if (ua.includes('Firefox/')) browser = 'Mozilla Firefox';
-      else if (ua.includes('Safari/') && !ua.includes('Chrome')) browser = 'Apple Safari';
-      else if (ua.includes('OPR/') || ua.includes('Opera/')) browser = 'Opera';
-
-      telemetryEl.innerHTML = `
-        <div class="tech-spec-item">
-          <span class="tech-spec-label"><i class="fas fa-desktop"></i> Operační systém</span>
-          <span class="tech-spec-value">${os}</span>
-        </div>
-        <div class="tech-spec-item">
-          <span class="tech-spec-label"><i class="fas fa-window-maximize"></i> Webový prohlížeč</span>
-          <span class="tech-spec-value">${browser}</span>
-        </div>
-        <div class="tech-spec-item">
-          <span class="tech-spec-label"><i class="fas fa-expand"></i> Rozlišení displeje</span>
-          <span class="tech-spec-value">${window.screen.width} × ${window.screen.height} (${window.screen.colorDepth || 24} bit)</span>
-        </div>
-        <div class="tech-spec-item">
-          <span class="tech-spec-label"><i class="fas fa-language"></i> Jazyk prohlížeče</span>
-          <span class="tech-spec-value">${navigator.language || 'cs-CZ'}</span>
-        </div>
-        <div class="tech-spec-item">
-          <span class="tech-spec-label"><i class="fas fa-wifi"></i> Stav připojení</span>
-          <span class="tech-spec-value" style="color: #10b981;"><i class="fas fa-check-circle"></i> Online (Aktivní)</span>
-        </div>
-      `;
-    }
-  }
 }
 
-// Global instance initialization on load
-let app = null;
-window.addEventListener('DOMContentLoaded', () => {
+// Initialize Application when DOM is ready
+let app;
+document.addEventListener('DOMContentLoaded', () => {
   app = new NetAcadApp();
+  window.app = app;
 });

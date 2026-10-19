@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT Certifications Prep | Cisco NetAcad &amp; Oracle Academy</title>
+  <title>Cisco Certifications Prep | HTML, CSS, JS, DevNet, Linux, CCNA</title>
   
   <!-- Google Fonts: Inter & Fira Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,846 +13,488 @@
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- PWA & Mobile Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0284c7">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="brand" onclick="app.switchView('simulator')">
-      <div class="brand-logo">
-        <i class="fas fa-graduation-cap"></i>
+  <!-- ==============================================
+       HEADER (CLEAN & MODERN)
+       ============================================== -->
+  <header class="app-header">
+    <div class="header-left">
+      <!-- Cisco Brand Bridge -->
+      <div class="app-brand" onclick="app.switchView('simulator')">
+        <div class="cisco-bridge" title="Cisco Certifications">
+          <span class="bar b1"></span>
+          <span class="bar b2"></span>
+          <span class="bar b3"></span>
+          <span class="bar b4"></span>
+          <span class="bar b5"></span>
+          <span class="bar b6"></span>
+          <span class="bar b7"></span>
+          <span class="bar b8"></span>
+          <span class="bar b9"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Cisco Prep</span>
+          <span class="brand-sub">Zkoušky &amp; Trénink</span>
+        </div>
       </div>
-      <div class="brand-text">
-        <h1>IT Certifications Prep</h1>
-        <span>Cisco NetAcad &amp; Oracle Academy</span>
+
+      <!-- Course Switcher Pills / Dropdown -->
+      <div class="course-dropdown-wrap">
+        <i class="fas fa-graduation-cap" style="color: #38bdf8;"></i>
+        <select id="courseSelectDropdown" class="course-select" title="Vyberte certifikační kurz">
+          <option value="html" selected>HTML Essentials (40 otázek)</option>
+          <option value="css">CSS Essentials</option>
+          <option value="js">JavaScript Essentials 1</option>
+          <option value="js2">JavaScript Essentials 2</option>
+          <option value="devnet">Cisco DevNet Associate</option>
+          <option value="linux">NDG Linux Essentials</option>
+          <option value="ccna_itn">CCNA: Introduction to Networks</option>
+        </select>
       </div>
     </div>
-    
-    <div class="nav-actions">
-      <div class="user-pill" id="userPillBtn" title="Uživatelský profil a statistiky (klikněte pro zobrazení nebo změnu přezdívky)">
+
+    <!-- Mode Navigation Tabs -->
+    <nav class="mode-nav">
+      <button class="mode-tab active" data-mode="simulator" id="modeBtnSimulator" title="Simulátor ostré zkoušky s časovačem">
+        <i class="fas fa-file-signature"></i>
+        <span>Zkouška</span>
+      </button>
+      <button class="mode-tab" data-mode="practice" id="modeBtnPractice" title="Trénink s okamžitým vysvětlením odpovědí">
+        <i class="fas fa-lightbulb"></i>
+        <span>Trénink</span>
+      </button>
+      <button class="mode-tab" data-mode="cheatsheet" id="modeBtnCheatsheet" title="Tahák a syntaktická pravidla">
+        <i class="fas fa-book-bookmark"></i>
+        <span>Tahák</span>
+      </button>
+      <button class="mode-tab" data-mode="stats" id="modeBtnStats" title="Statistiky a historie pokusů">
+        <i class="fas fa-chart-line"></i>
+        <span>Statistiky</span>
+      </button>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-right">
+      <div class="user-chip" id="userPillBtn" title="Uživatelský profil (klikněte pro změnu přezdívky)">
         <i class="fas fa-user-circle"></i>
-        <span class="user-nickname" id="navNickname">Student</span>
-        <span id="navAdminBadge" class="nav-admin-badge" style="display: none;" title="Ověřený správce webu (cqeta1564)">
-          <i class="fas fa-shield-alt"></i>
-        </span>
+        <span id="navNickname">Student</span>
       </div>
-      <button class="btn-icon" id="soundToggleBtn" title="Zvuky (Ztlumit/Zapnout)">
+      <button class="icon-btn" id="settingsToggleBtn" title="Předvolby a nastavení testu (míchání otázek, zkratky)">
+        <i class="fas fa-sliders"></i>
+      </button>
+      <button class="icon-btn" id="soundToggleBtn" title="Zvukové efekty (Zapnout/Vypnout)">
         <i class="fas fa-volume-up"></i>
       </button>
-      <button class="btn-icon" id="themeToggleBtn" title="Přepnout tmavý/světlý motiv">
+      <button class="icon-btn" id="themeToggleBtn" title="Přepnout tmavý / světlý režim">
         <i class="fas fa-moon"></i>
       </button>
     </div>
   </header>
 
-  <main class="container">
-    
-    <!-- CERTIFICATE SELECTOR CARDS -->
-    <!-- CATEGORY FILTER PILLS -->
-    <nav class="category-nav" id="categoryNav">
-      <button class="cat-pill-btn active" data-cat="all">
-        <i class="fas fa-layer-group"></i>
-        <span>Všechny obory</span>
-        <span class="cat-count-badge">10</span>
-      </button>
-      <button class="cat-pill-btn" data-cat="web">
-        <i class="fas fa-globe" style="color: #38bdf8;"></i>
-        <span>Webové aplikace</span>
-        <span class="cat-count-badge">4</span>
-      </button>
-      <button class="cat-pill-btn" data-cat="db">
-        <i class="fas fa-database" style="color: #f87171;"></i>
-        <span>Databázové systémy</span>
-        <span class="cat-count-badge">2</span>
-      </button>
-      <button class="cat-pill-btn" data-cat="systems">
-        <i class="fas fa-network-wired" style="color: #00bceb;"></i>
-        <span>Počítačové systémy a sítě</span>
-        <span class="cat-count-badge">3</span>
-      </button>
-      <button class="cat-pill-btn" data-cat="software">
-        <i class="fab fa-python" style="color: #3776ab;"></i>
-        <span>Programové vybavení</span>
-        <span class="cat-count-badge">1</span>
-      </button>
-    </nav>
-
-    <!-- CERTIFICATE SELECTOR (GROUPED BY CATEGORY) -->
-    <section class="cert-tabs" id="certTabs">
-
-      <!-- KATEGORIE 1: Webové aplikace -->
-      <div class="cert-cat-group" data-cat="web">
-        <div class="cert-cat-header">
-          <div class="cert-cat-title">
-            <i class="fas fa-globe" style="color: #38bdf8;"></i>
-            <h3>Webové aplikace</h3>
-          </div>
-          <span class="cert-cat-badge">4 certifikace</span>
-        </div>
-        <div class="cert-cat-grid">
-          <!-- HTML Essentials -->
-          <div class="cert-card-tab active" data-cert="html" data-cat="web" style="--cert-color: #E44D26;">
-            <div class="cert-tab-icon" style="background: rgba(228, 77, 38, 0.15); color: #E44D26;">
-              <i class="fab fa-html5"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>HTML Essentials</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-
-          <!-- CSS Essentials -->
-          <div class="cert-card-tab" data-cert="css" data-cat="web" style="--cert-color: #264DE4;">
-            <div class="cert-tab-icon" style="background: rgba(38, 77, 228, 0.15); color: #264DE4;">
-              <i class="fab fa-css3-alt"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>CSS Essentials</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-
-          <!-- JavaScript Essentials 1 -->
-          <div class="cert-card-tab" data-cert="js" data-cat="web" style="--cert-color: #F7DF1E;">
-            <div class="cert-tab-icon" style="background: rgba(247, 223, 30, 0.15); color: #F7DF1E;">
-              <i class="fab fa-js-square"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>JavaScript Essentials 1</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-
-          <!-- JavaScript Essentials 2 -->
-          <div class="cert-card-tab" data-cert="js2" data-cat="web" style="--cert-color: #E5A91E;">
-            <div class="cert-tab-icon" style="background: rgba(229, 169, 30, 0.15); color: #E5A91E;">
-              <i class="fab fa-js"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>JavaScript Essentials 2</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- KATEGORIE 2: Databázové systémy -->
-      <div class="cert-cat-group" data-cat="db">
-        <div class="cert-cat-header">
-          <div class="cert-cat-title">
-            <i class="fas fa-database" style="color: #f87171;"></i>
-            <h3>Databázové systémy</h3>
-          </div>
-          <span class="cert-cat-badge">2 certifikace</span>
-        </div>
-        <div class="cert-cat-grid">
-          <!-- Oracle Database Design -->
-          <div class="cert-card-tab" data-cert="oracle_dd" data-cat="db" style="--cert-color: #F80000;">
-            <div class="cert-tab-icon" style="background: rgba(248, 0, 0, 0.15); color: #F80000;">
-              <i class="fas fa-project-diagram"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>Database Design</h3>
-              <p>Oracle Academy</p>
-            </div>
-          </div>
-
-          <!-- Oracle Database Programming With SQL -->
-          <div class="cert-card-tab" data-cert="oracle_sql" data-cat="db" style="--cert-color: #C74634;">
-            <div class="cert-tab-icon" style="background: rgba(199, 70, 52, 0.15); color: #C74634;">
-              <i class="fas fa-database"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>Database SQL</h3>
-              <p>Oracle Academy</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- KATEGORIE 3: Počítačové systémy a sítě -->
-      <div class="cert-cat-group" data-cat="systems">
-        <div class="cert-cat-header">
-          <div class="cert-cat-title">
-            <i class="fas fa-network-wired" style="color: #00bceb;"></i>
-            <h3>Počítačové systémy a sítě</h3>
-          </div>
-          <span class="cert-cat-badge">3 certifikace</span>
-        </div>
-        <div class="cert-cat-grid">
-          <!-- Cisco NDG Linux Essentials -->
-          <div class="cert-card-tab" data-cert="linux" data-cat="systems" style="--cert-color: #EAA01A;">
-            <div class="cert-tab-icon" style="background: rgba(234, 160, 26, 0.15); color: #EAA01A;">
-              <i class="fab fa-linux"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>NDG Linux Essentials</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-
-          <!-- Cisco CCNA: Introduction to Networks -->
-          <div class="cert-card-tab" data-cert="ccna_itn" data-cat="systems" style="--cert-color: #049FD9;">
-            <div class="cert-tab-icon" style="background: rgba(4, 159, 217, 0.15); color: #049FD9;">
-              <i class="fas fa-ethernet"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>CCNA: ITN</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-
-          <!-- Cisco CCNA: Switching, Routing, and Wireless Essentials -->
-          <div class="cert-card-tab" data-cert="ccna_srwe" data-cat="systems" style="--cert-color: #00BCEB;">
-            <div class="cert-tab-icon" style="background: rgba(0, 188, 235, 0.15); color: #00BCEB;">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>CCNA: SRWE</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- KATEGORIE 4: Programové vybavení -->
-      <div class="cert-cat-group" data-cat="software">
-        <div class="cert-cat-header">
-          <div class="cert-cat-title">
-            <i class="fab fa-python" style="color: #3776ab;"></i>
-            <h3>Programové vybavení</h3>
-          </div>
-          <span class="cert-cat-badge">1 certifikace</span>
-        </div>
-        <div class="cert-cat-grid">
-          <!-- Cisco Python Essentials 1 -->
-          <div class="cert-card-tab" data-cert="python" data-cat="software" style="--cert-color: #3776AB;">
-            <div class="cert-tab-icon" style="background: rgba(55, 118, 171, 0.15); color: #3776AB;">
-              <i class="fab fa-python"></i>
-            </div>
-            <div class="cert-tab-info">
-              <h3>Python Essentials 1</h3>
-              <p>Cisco NetAcad</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- MODE SELECTOR TABS -->
-    <nav class="mode-bar">
-      <button class="mode-btn active" data-mode="simulator">
-        <i class="fas fa-graduation-cap"></i> Zkouškový simulátor
-      </button>
-      <button class="mode-btn" data-mode="practice">
-        <i class="fas fa-book-open"></i> Trénink & Vysvětlení
-      </button>
-      <button class="mode-btn" data-mode="flashcards">
-        <i class="fas fa-bolt"></i> Bleskové kartičky
-      </button>
-      <button class="mode-btn" data-mode="cheatsheet">
-        <i class="fas fa-list-check"></i> Oficiální tahák & pravidla
-      </button>
-      <button class="mode-btn" data-mode="stats">
-        <i class="fas fa-chart-line"></i> Moje statistiky
-      </button>
-    </nav>
+  <!-- ==============================================
+       MAIN CONTAINER
+       ============================================== -->
+  <main class="main-wrapper">
 
     <!-- ==============================================
-         VIEW 1: QUESTION VIEW (SIMULATOR & PRACTICE)
+         VIEW 1: ASSESSMENT & PRACTICE PLAYER
          ============================================== -->
     <section class="view-panel active" id="quizView">
       
-      <!-- STATUS & TIMER BAR -->
-      <div class="exam-status-bar">
-        <div class="exam-meta">
-          <span class="exam-tag" id="currentCertBadge">
-            <i class="fas fa-certificate"></i> HTML Essentials
-          </span>
-          <span class="question-number" id="qCounterDisplay">Otázka 1</span>
+      <!-- Top Meta Bar (Question number, Timer, Module filter, Flag) -->
+      <div class="player-top-bar">
+        <div class="bar-left">
+          <span class="badge-course" id="activeCourseBadge">HTML Essentials</span>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <!-- Practice filter & Live Score (shown only in practice mode) -->
-          <div id="practiceModuleFilterWrap" style="display: none;">
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <select class="select-custom" id="moduleFilterSelect">
-                <option value="all">Všechny otázky</option>
-              </select>
-              <div class="practice-live-stats" id="practiceLiveStats" title="Statistika tréninku v tomto certifikátu">
-                <span class="pls-item pls-correct"><i class="fas fa-check"></i> <strong id="plsCorrectVal">0</strong></span>
-                <span class="pls-item pls-wrong"><i class="fas fa-times"></i> <strong id="plsWrongVal">0</strong></span>
-                <span class="pls-item pls-rate"><i class="fas fa-bullseye"></i> <strong id="plsRateVal">0 %</strong></span>
-              </div>
+        <div class="bar-center">
+          <!-- Practice filter (shown only in practice mode) -->
+          <div id="practiceFilterWrap" style="display: none; align-items: center; gap: 8px;">
+            <select class="filter-select" id="practiceFilterSelect">
+              <option value="all">Všechny otázky</option>
+            </select>
+            <div class="practice-score-chip" id="practiceLiveStats" title="Úspěšnost v tréninku">
+              <span class="ps-cor"><i class="fas fa-check"></i> <strong id="plsCorrectVal">0</strong></span>
+              <span class="ps-wrn"><i class="fas fa-times"></i> <strong id="plsWrongVal">0</strong></span>
+              <span class="ps-rate"><i class="fas fa-bullseye"></i> <strong id="plsRateVal">0 %</strong></span>
             </div>
           </div>
 
           <!-- Timer (shown only in simulator mode) -->
-          <div class="timer-box" id="examTimerBox">
+          <div class="timer-pill" id="examTimerBox">
             <i class="far fa-clock"></i>
             <span id="timerDisplay">45:00</span>
           </div>
+        </div>
 
-          <button class="btn btn-flag" id="flagQuestionBtn" title="Označit otázku pro pozdější kontrolu">
+        <div class="bar-right">
+          <button class="btn-flag" id="flagQuestionBtn" title="Označit otázku pro kontrolu">
             <i class="far fa-flag"></i> <span id="flagBtnText">Označit</span>
           </button>
-        </div>
-
-        <div class="exam-progress-wrap">
-          <div class="progress-track">
-            <div class="progress-fill" id="examProgressBar"></div>
-          </div>
+          <button class="btn-grid-toggle" id="toggleGridBtn" title="Zobrazit přehled všech otázek">
+            <i class="fas fa-th"></i> <span id="qCountText">1 / 40</span>
+          </button>
         </div>
       </div>
 
-      <!-- MAIN QUESTION CARD -->
-      <article class="question-card" id="questionCard">
-        <div class="question-header">
-          <span class="question-module-badge" id="qModuleBadge">Modul 1</span>
-          <span style="font-size: 0.8rem; color: var(--text-muted);" id="qTypeHint">Jedna správná odpověď</span>
+      <!-- Quick Question Grid Matrix (collapsible / compact) -->
+      <div class="question-grid-bar" id="questionGridBar">
+        <div class="grid-scroll" id="ciscoQuestionStrip">
+          <!-- Dynamically populated Q1, Q2 ... Q40 buttons -->
+        </div>
+      </div>
+
+      <!-- Question Card Container -->
+      <article class="question-container" id="questionCard">
+        
+        <div class="question-header-row">
+          <h2 class="question-heading" id="qNumberTitle">Otázka 1</h2>
+          <span class="question-type-hint" id="qTypeHint">Jedna správná odpověď</span>
         </div>
 
-        <h2 class="question-text" id="qText">Načítání otázky...</h2>
+        <p class="question-prompt" id="qText">Načítání otázky...</p>
 
-        <!-- Optional Code Block -->
-        <div class="code-block" id="qCodeBlock" style="display: none;"></div>
+        <!-- Optional Code Snippet Block -->
+        <div class="code-box" id="qCodeBlock" style="display: none;"></div>
 
-        <!-- Options Container -->
-        <div class="options-list" id="optionsContainer">
-          <!-- Dynamically populated options -->
+        <!-- Options List -->
+        <div class="options-container" id="optionsContainer">
+          <!-- Dynamically populated option cards -->
         </div>
 
-        <!-- Explanation Box (Practice mode or after answer) -->
-        <div class="explanation-box" id="explanationBox">
-          <div class="explanation-title">
-            <i class="fas fa-circle-check"></i> Oficiální vysvětlení Cisco NetAcad:
+        <!-- Instant Practice Feedback -->
+        <div class="feedback-card" id="explanationBox">
+          <div class="feedback-verdict" id="feedbackVerdict">
+            <i class="fas fa-check-circle" id="fbStatusIcon"></i>
+            <span id="fbStatusText">Správná odpověď!</span>
           </div>
-          <p class="explanation-text" id="explanationText"></p>
+          <div class="feedback-text" id="explanationText"></div>
         </div>
+
       </article>
 
-      <!-- NAVIGATION CONTROLS -->
-      <div class="quiz-nav-bar">
-        <button class="btn btn-secondary" id="prevBtn">
-          <i class="fas fa-arrow-left"></i> Předchozí
-        </button>
-
-        <div style="display: flex; gap: 8px;">
-          <button class="btn btn-secondary" id="toggleGridBtn">
-            <i class="fas fa-th"></i> Přehled otázek
-          </button>
-          <button class="btn btn-submit" id="finishExamBtn">
-            <i class="fas fa-check-circle"></i> Odevzdat zkoušku
+      <!-- Bottom Navigation Footer -->
+      <footer class="player-footer">
+        <div class="footer-left">
+          <button class="btn-nav" id="canvasPrevBtn">
+            <i class="fas fa-arrow-left"></i> Předchozí
           </button>
         </div>
 
-        <button class="btn btn-primary" id="nextBtn">
-          Další <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
-
-      <!-- QUESTION MATRIX DRAWER -->
-      <div class="question-grid-drawer" id="gridDrawer" style="display: none;">
-        <div class="drawer-header">
-          <h4>Přehled všech otázek</h4>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">
-            Kliknutím na číslo přejdete přímo k otázce
+        <div class="footer-center">
+          <div class="progress-container">
+            <div class="progress-bar-fill" id="examProgressBar"></div>
+          </div>
+          <span class="progress-label" id="qCounterDisplay">1 z 40 otázek</span>
+          <span class="shortcuts-hint" id="shortcutsHintLabel" title="Klávesové zkratky jsou aktivní">
+            <i class="fas fa-keyboard"></i> 1–4 / A–D &bull; ← / → &bull; F
           </span>
         </div>
-        <div class="grid-matrix" id="gridMatrix">
-          <!-- Dynamically populated cells -->
+
+        <div class="footer-right">
+          <button class="btn-nav btn-skip" id="skipQuestionBtn" title="Přeskočit tuto otázku a pokračovat dál">
+            Přeskočit
+          </button>
+          <button class="btn-nav btn-next" id="canvasNextBtn">
+            Další <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn-submit" id="finishExamBtn">
+            <i class="fas fa-check-circle"></i> Odevzdat test
+          </button>
         </div>
-      </div>
+      </footer>
 
     </section>
 
     <!-- ==============================================
-         VIEW 2: RESULTS VIEW
+         VIEW 2: FINAL TEST RESULTS & EVALUATION
          ============================================== -->
     <section class="view-panel" id="resultsView">
       <div class="results-card">
-        <div class="result-badge-wrap pass" id="resultBadge">
+        
+        <div class="result-badge-circle pass" id="resultBadge">
           <i class="fas fa-award"></i>
         </div>
-        <h2 class="result-title" id="resultTitle">Zkouška úspěšně složena!</h2>
-        <p class="result-subtitle" id="resultSubtitle">
-          Dosáhli jste požadované hranice 70 % a splnili jste certifikační kritéria.
+        <h2 class="result-headline" id="resultTitle">Test úspěšně složen!</h2>
+        <p class="result-subtext" id="resultSubtitle">
+          Dosáhli jste požadovaného certifikačního limitu.
         </p>
 
-        <div class="result-stats-grid">
-          <div class="stat-box">
-            <div class="stat-val" id="resScoreVal">85 %</div>
-            <div class="stat-lbl">Výsledek</div>
+        <div class="score-grid">
+          <div class="score-card">
+            <span class="s-val" id="resScoreVal">85 %</span>
+            <span class="s-lbl">Výsledek</span>
           </div>
-          <div class="stat-box">
-            <div class="stat-val" id="resCorrectVal">26 / 30</div>
-            <div class="stat-lbl">Správně</div>
+          <div class="score-card">
+            <span class="s-val" id="resCorrectVal">34 / 40</span>
+            <span class="s-lbl">Správné odpovědi</span>
           </div>
-          <div class="stat-box">
-            <div class="stat-val" id="resTimeVal">18:42</div>
-            <div class="stat-lbl">Využitý čas</div>
+          <div class="score-card">
+            <span class="s-val" id="resTimeVal">22m 14s</span>
+            <span class="s-lbl">Využitý čas</span>
           </div>
-          <div class="stat-box">
-            <div class="stat-val" id="resStatusVal" style="color: #10b981;">PASSED</div>
-            <div class="stat-lbl">Certifikace</div>
+          <div class="score-card">
+            <span class="s-val" id="resStatusVal" style="color: #10b981;">PASSED</span>
+            <span class="s-lbl">Status</span>
           </div>
         </div>
 
-        <!-- Result Saved to Profile Notice -->
-        <div class="result-saved-banner" id="resultSavedBanner">
-          <i class="fas fa-check-circle"></i> Výsledek byl automaticky uložen k profilu: <strong id="savedProfileName">Student</strong>
+        <div class="saved-profile-banner">
+          <i class="fas fa-check-circle"></i> Výsledek byl uložen k profilu: <strong id="savedProfileName">Student</strong>
         </div>
 
-        <div class="result-actions">
-          <button class="btn btn-primary" onclick="app.restartSimulator()">
+        <div class="results-actions">
+          <button class="btn-primary" onclick="app.restartSimulator()">
             <i class="fas fa-redo"></i> Spustit nový test
           </button>
-          <button class="btn btn-secondary" onclick="app.switchView('stats')">
-            <i class="fas fa-chart-line"></i> Zobrazit moje statistiky
+          <button class="btn-secondary" onclick="app.reviewMistakesOnly()" id="filterMistakesBtn">
+            <i class="fas fa-triangle-exclamation"></i> Procvičit chyby v tréninku
           </button>
-          <button class="btn btn-secondary" id="filterMistakesBtn" onclick="app.reviewMistakesOnly()">
-            <i class="fas fa-triangle-exclamation"></i> Procvičit jen chybné otázky
-          </button>
-          <button class="btn btn-secondary" onclick="app.switchView('practice')">
-            <i class="fas fa-book-open"></i> Přejít do tréninkového módu
+          <button class="btn-secondary" onclick="app.switchView('stats')">
+            <i class="fas fa-chart-line"></i> Zobrazit statistiky
           </button>
         </div>
 
-        <!-- DETAILED ACCORDION OF QUESTIONS -->
-        <div class="review-section">
-          <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Podrobný rozbor otázek:</h3>
+        <!-- Detailed Question-by-Question Review -->
+        <div class="review-wrapper">
+          <h3 class="review-heading">Podrobný rozbor otázek:</h3>
           <div id="reviewList">
             <!-- Dynamically populated review items -->
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ==============================================
-         VIEW 3: FLASHCARDS VIEW
+         VIEW 3: CHEATSHEET & RESOURCES
          ============================================== -->
-    <section class="view-panel" id="flashcardsView">
-      <div class="flashcards-container">
-        <div style="text-align: center; margin-bottom: 0.5rem;">
-          <h2 style="font-size: 1.3rem; margin-bottom: 4px;">Bleskové kartičky</h2>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">
-            Klikněte na kartičku pro otočení a odhalení správné odpovědi a principu.
-          </p>
-        </div>
-
-        <div class="flashcard" id="flashcardElement" onclick="app.flipFlashcard()">
-          <div class="flashcard-inner">
-            <div class="flashcard-front">
-              <span class="question-module-badge" id="fcModuleBadge">Modul</span>
-              <h3 style="font-size: 1.25rem; margin: 1.5rem 0;" id="fcQuestionText">Otázka</h3>
-              <div class="code-block" id="fcCodeBlock" style="display: none; width: 100%; text-align: left;"></div>
-              <div class="flashcard-hint">
-                <i class="fas fa-rotate"></i> Klikněte pro otočení
-              </div>
-            </div>
-            <div class="flashcard-back">
-              <span style="font-size: 0.8rem; color: #38bdf8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Správná odpověď & Pravidlo</span>
-              <h3 style="font-size: 1.25rem; color: #10b981; margin: 1.25rem 0;" id="fcAnswerText">Odpověď</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;" id="fcExplanationText">Vysvětlení</p>
-              <div class="flashcard-hint">
-                <i class="fas fa-rotate"></i> Klikněte pro návrat k zadání
-              </div>
-            </div>
+    <section class="view-panel" id="cheatsheetView">
+      <div class="cheatsheet-header">
+        <div class="ch-title-wrap">
+          <i class="fas fa-book-bookmark" style="color: #38bdf8; font-size: 1.8rem;"></i>
+          <div>
+            <h2 id="cheatsheetTitle">Oficiální studijní tahák</h2>
+            <p>Přehled klíčové syntaxe, pravidel a chytáků z oficiálních materiálů Cisco.</p>
           </div>
         </div>
 
-        <div class="flashcard-controls">
-          <button class="btn btn-secondary" onclick="app.prevFlashcard()">
-            <i class="fas fa-arrow-left"></i> Předchozí
-          </button>
-          <span style="font-weight: 600; color: var(--text-muted); font-size: 0.9rem;" id="fcCounter">
-            1
-          </span>
-          <button class="btn btn-secondary" onclick="app.nextFlashcard()">
-            Další <i class="fas fa-arrow-right"></i>
+        <div class="ch-toolbar">
+          <div class="ch-search-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" id="cheatsheetSearchInput" class="ch-search-input" placeholder="Hledat v taháku (např. doctype, form, img)..." autocomplete="off" spellcheck="false">
+            <button class="ch-clear-search-btn" id="clearCheatSearchBtn" style="display: none;" title="Vymazat hledání">&times;</button>
+          </div>
+          <button class="btn-print-cheatsheet" id="printCheatsheetBtn" title="Vytisknout tahák nebo uložit jako PDF">
+            <i class="fas fa-print"></i>
+            <span>Tisk / PDF</span>
           </button>
         </div>
       </div>
-    </section>
 
-    <!-- ==============================================
-         VIEW 4: CHEATSHEET VIEW
-         ============================================== -->
-    <section class="view-panel" id="cheatsheetView">
-      <div style="margin-bottom: 1.5rem;">
-        <h2 style="font-size: 1.3rem; margin-bottom: 4px;" id="cheatsheetTitle">Oficiální tahák & Klíčová pravidla</h2>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Shrnutí nejdůležitějších témat, syntaxe a chytáků z oficiálních materiálů Cisco Networking Academy.
-        </p>
+      <div class="empty-search-state" id="cheatEmptySearch" style="display: none;">
+        <i class="fas fa-search"></i>
+        <p>Žádná syntaktická pravidla v taháku neodpovídají zadanému filtru.</p>
       </div>
 
       <div class="cheatsheet-grid" id="cheatsheetContainer">
-        <!-- Dynamically rendered according to current active certificate -->
+        <!-- Dynamically rendered cheat cards -->
       </div>
     </section>
 
     <!-- ==============================================
-         VIEW 5: USER STATISTICS VIEW
+         VIEW 4: USER STATISTICS & GRADEBOOK
          ============================================== -->
     <section class="view-panel" id="statsView">
-      <div class="stats-header-bar">
-        <div class="stats-user-hero">
-          <div class="stats-avatar">
-            <i class="fas fa-user-astronaut"></i>
+      <div class="stats-top-card">
+        <div class="student-profile-row">
+          <div class="student-avatar">
+            <i class="fas fa-user-graduate"></i>
           </div>
-          <div class="stats-user-details">
-            <div class="stats-user-name-row">
+          <div class="student-meta">
+            <div class="student-name-box">
               <h2 id="statsUserNameDisplay">Student</h2>
-              <span id="statsAdminBadge" class="admin-hero-badge" style="display: none;" title="Přihlášen jako vlastník a správce">
-                <i class="fas fa-shield-alt"></i> Správce (Admin)
-              </span>
-              <button class="btn btn-sm btn-secondary" id="editNicknameBtn" title="Změnit přezdívku">
+              <button class="btn-sm-edit" id="editNicknameBtn" title="Změnit přezdívku">
                 <i class="fas fa-pen"></i> Změnit přezdívku
               </button>
             </div>
-            <p class="stats-subtext">
-              <i class="fas fa-cookie-bite"></i> Profil a výsledky jsou uloženy v cookies a paměti prohlížeče (bez nutnosti registrace).
+            <p class="student-hint">
+              <i class="fas fa-database"></i> Vaše výsledky a historie jsou uloženy v paměti prohlížeče.
             </p>
           </div>
         </div>
 
-        <div class="stats-quick-actions">
-          <button class="btn btn-sm btn-outline-danger" id="resetStatsBtn" title="Vymazat historii a statistiky aktuálního profilu">
-            <i class="fas fa-trash-alt"></i> Resetovat data
-          </button>
-        </div>
-      </div>
-
-      <!-- STATS SUB-NAVIGATION TABS -->
-      <div class="stats-tab-bar" id="statsSubTabBar">
-        <button class="stats-tab-btn active" data-subtab="overview">
-          <i class="fas fa-chart-pie"></i> Celkový přehled
-        </button>
-        <button class="stats-tab-btn" data-subtab="practice">
-          <i class="fas fa-book-open"></i> Trénink &amp; Vysvětlení
-        </button>
-        <button class="stats-tab-btn" data-subtab="exams">
-          <i class="fas fa-graduation-cap"></i> Zkouškový simulátor
-        </button>
-        <button class="stats-tab-btn admin-only-tab" id="statsTrafficTabBtn" data-subtab="traffic" style="display: none;" title="Statistiky návštěvnosti webu (pouze pro @cqeta1564)">
-          <i class="fas fa-chart-line"></i> Návštěvnost webu <span class="admin-badge-pill">Admin</span>
+        <button class="btn-reset-data" id="resetStatsBtn" title="Vymazat data a historii testů">
+          <i class="fas fa-trash-alt"></i> Resetovat historii
         </button>
       </div>
 
-      <!-- SUBPANEL 1: OVERVIEW -->
-      <div class="stats-subpanel active" id="subtabOverview">
-        <!-- KPI SUMMARY GRID -->
-        <div class="stats-kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(0, 188, 235, 0.15); color: #00bceb;">
-              <i class="fas fa-file-signature"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="kpiTotalExams">0</span>
-              <span class="kpi-label">Vyplněných testů</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="kpiPassRate">0 %</span>
-              <span class="kpi-label">Úspěšnost zkoušek</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
-              <i class="fas fa-book-open"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="kpiPracticeTotal">0</span>
-              <span class="kpi-label">Procvičeno v tréninku</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
-              <i class="fas fa-bullseye"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="kpiPracticeAccuracy">0 %</span>
-              <span class="kpi-label">Přesnost tréninku</span>
-            </div>
+      <!-- KPI Summary Row -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon blue"><i class="fas fa-file-signature"></i></div>
+          <div class="kpi-info">
+            <span class="kpi-val" id="kpiTotalExams">0</span>
+            <span class="kpi-lbl">Vyplněných testů</span>
           </div>
         </div>
-
-        <!-- PER CERTIFICATE OVERVIEW CARDS -->
-        <div class="stats-section-box">
-          <div class="section-title-row">
-            <h3><i class="fas fa-layer-group"></i> Výsledky podle certifikátů (Zkoušky &amp; Trénink)</h3>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">5 certifikačních zkoušek</span>
+        <div class="kpi-card">
+          <div class="kpi-icon green"><i class="fas fa-trophy"></i></div>
+          <div class="kpi-info">
+            <span class="kpi-val" id="kpiPassRate">0 %</span>
+            <span class="kpi-lbl">Úspěšnost zkoušek</span>
           </div>
-          <div class="cert-stats-grid" id="certStatsGrid">
-            <!-- Dynamically populated per-certificate cards -->
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon amber"><i class="fas fa-brain"></i></div>
+          <div class="kpi-info">
+            <span class="kpi-val" id="kpiPracticeTotal">0</span>
+            <span class="kpi-lbl">Otázek v tréninku</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon purple"><i class="fas fa-bullseye"></i></div>
+          <div class="kpi-info">
+            <span class="kpi-val" id="kpiPracticeRate">0 %</span>
+            <span class="kpi-lbl">Úspěšnost tréninku</span>
           </div>
         </div>
       </div>
 
-      <!-- SUBPANEL 2: PRACTICE DETAILS & CHYBOVNÍK -->
-      <div class="stats-subpanel" id="subtabPractice" style="display: none;">
-        <!-- PRACTICE KPI GRID -->
-        <div class="stats-kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
-              <i class="fas fa-check-to-slot"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="pkpiAnswered">0</span>
-              <span class="kpi-label">Odpovědí v tréninku</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-              <i class="fas fa-percent"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="pkpiAccuracy">0 %</span>
-              <span class="kpi-label">Úspěšnost odpovědí</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(99, 102, 241, 0.15); color: #6366f1;">
-              <i class="fas fa-database"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="pkpiCoverage">0 / 550</span>
-              <span class="kpi-label">Pokrytí celé banky</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(239, 68, 68, 0.15); color: #ef4444;">
-              <i class="fas fa-triangle-exclamation"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="pkpiMistakes">0</span>
-              <span class="kpi-label">Chyby k doprocvičení</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- PRACTICE PER-CERTIFICATE BREAKDOWN -->
-        <div class="stats-section-box">
-          <div class="section-title-row">
-            <h3><i class="fas fa-dumbbell"></i> Pokrok v tréninku podle certifikátů</h3>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">Pokrytí otázek a přesnost</span>
-          </div>
-          <div class="practice-cert-grid" id="practiceCertGrid">
-            <!-- Dynamically populated cards with module details -->
-          </div>
-        </div>
-
-        <!-- PRACTICE MISTAKES LIST -->
-        <div class="stats-section-box">
-          <div class="section-title-row">
-            <div>
-              <h3 style="margin: 0;"><i class="fas fa-spell-check"></i> Tréninkový chybovník (Otázky s chybou)</h3>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
-                Otázky, ve kterých jste v tréninku naposledy chybovali. Zde si můžete projít správná řešení a vysvětlení nebo je znovu procvičit.
-              </p>
-            </div>
-            <button class="btn btn-primary btn-sm" id="practiceAllMistakesBtn" onclick="app.practiceActiveCertMistakes()" style="display: none;">
-              <i class="fas fa-play"></i> Procvičit chyby
-            </button>
-          </div>
-          <div id="practiceMistakesList">
-            <!-- Dynamically populated list of mistake questions or all clear state -->
-          </div>
+      <!-- History Table -->
+      <div class="history-section">
+        <h3 class="history-title"><i class="fas fa-history"></i> Historie zkouškových pokusů</h3>
+        <div class="table-card">
+          <table class="data-table" id="examHistoryTable">
+            <thead>
+              <tr>
+                <th>Datum a čas</th>
+                <th>Kurz</th>
+                <th>Výsledek</th>
+                <th>Správně</th>
+                <th>Čas</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="examHistoryBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <!-- SUBPANEL 3: EXAM SIMULATIONS -->
-      <div class="stats-subpanel" id="subtabExams" style="display: none;">
-        <!-- EXAM ATTEMPTS HISTORY -->
-        <div class="stats-section-box">
-          <div class="section-title-row">
-            <h3><i class="fas fa-history"></i> Historie absolvovaných zkoušek</h3>
-            <span style="font-size: 0.85rem; color: var(--text-muted);" id="examHistoryCount">0 záznamů</span>
-          </div>
-          <div class="history-table-wrap" id="historyTableWrap">
-            <!-- Dynamically populated history table or empty message -->
-          </div>
-        </div>
-      </div>
-
-      <!-- SUBPANEL 4: TRAFFIC & VISITOR ANALYTICS (ADMIN ONLY: cqeta1564) -->
-      <div class="stats-subpanel" id="subtabTraffic" style="display: none;">
-        
-        <!-- TRAFFIC HERO STATUS -->
-        <div class="stats-section-box traffic-hero-box">
-          <div class="traffic-header-content">
-            <div class="traffic-title-wrap">
-              <div class="traffic-icon-box">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div>
-                <div class="traffic-live-indicator">
-                  <span class="pulse-dot"></span>
-                  <span class="live-label">Živé globální statistiky • Autorizováno pro @cqeta1564</span>
-                </div>
-                <h3 style="margin: 0; font-size: 1.15rem;">Statistiky návštěvnosti webu</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 4px 0 0 0;">
-                  Reálný provoz, počet unikátních návštěvníků a denní trendy hostované na GitHub Pages.
-                </p>
-              </div>
-            </div>
-            <div class="traffic-header-actions">
-              <button class="btn btn-sm btn-secondary" id="refreshTrafficBtn" title="Aktualizovat data z počítadla">
-                <i class="fas fa-sync-alt" id="refreshTrafficIcon"></i> Obnovit data
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- TRAFFIC KPI SUMMARY -->
-        <div class="stats-kpi-grid traffic-kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="trafficTotalViews">--</span>
-              <span class="kpi-label">Celkem zobrazení stránek</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="trafficUniqueVisitors">--</span>
-              <span class="kpi-label">Unikátních návštěvníků</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
-              <i class="fas fa-calendar-day"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="trafficTodayViews">--</span>
-              <span class="kpi-label">Dnešní návštěvy</span>
-            </div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <div class="kpi-info">
-              <span class="kpi-value" id="trafficPagesPerVisitor">--</span>
-              <span class="kpi-label">Zobrazení / návštěvník</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7-DAY TRAFFIC TREND -->
-        <div class="stats-section-box">
-          <div class="section-title-row">
-            <div>
-              <h3 style="margin: 0;"><i class="fas fa-chart-bar"></i> Trend návštěvnosti za posledních 7 dní</h3>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
-                Historie denních přístupů z CountAPI přehledně v grafu.
-              </p>
-            </div>
-            <span class="traffic-badge-source"><i class="fas fa-cloud"></i> CountAPI Cloud Sync</span>
-          </div>
-          <div class="traffic-days-chart" id="trafficDaysChart">
-            <!-- Dynamically populated 7-day bar chart -->
-          </div>
-        </div>
-
-        <!-- TECHNICAL & CLIENT SPECS -->
-        <div class="stats-two-col">
-          <div class="stats-section-box">
-            <div class="section-title-row">
-              <h3><i class="fas fa-server"></i> Infrastruktura &amp; Hosting</h3>
-            </div>
-            <div class="tech-spec-list">
-              <div class="tech-spec-item">
-                <span class="tech-spec-label"><i class="fab fa-github"></i> Poskytovatel hostingu</span>
-                <span class="tech-spec-value">GitHub Pages (CDN Fastly)</span>
-              </div>
-              <div class="tech-spec-item">
-                <span class="tech-spec-label"><i class="fas fa-link"></i> Produkční URL</span>
-                <span class="tech-spec-value"><a href="https://cqeta1564.github.io/cisco-netacad-prep/" target="_blank" rel="noopener">cqeta1564.github.io/...</a></span>
-              </div>
-              <div class="tech-spec-item">
-                <span class="tech-spec-label"><i class="fas fa-lock"></i> Šifrování &amp; Protokol</span>
-                <span class="tech-spec-value">HTTPS / TLS 1.3, HTTP/2</span>
-              </div>
-              <div class="tech-spec-item">
-                <span class="tech-spec-label"><i class="fas fa-database"></i> Databáze certifikací</span>
-                <span class="tech-spec-value">10 certifikátů, 4 obory</span>
-              </div>
-              <div class="tech-spec-item">
-                <span class="tech-spec-label"><i class="fas fa-cookie"></i> Ukládání profilu</span>
-                <span class="tech-spec-value">Cookies (SameSite=Lax) + LocalStorage</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stats-section-box">
-            <div class="section-title-row">
-              <h3><i class="fas fa-laptop-code"></i> Telemetrie aktuálního klienta</h3>
-            </div>
-            <div class="tech-spec-list" id="clientTelemetryList">
-              <!-- Dynamically populated client details -->
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section>
 
   </main>
 
-  <!-- NICKNAME MODAL DIALOG -->
-  <div class="modal-backdrop" id="nicknameModal" style="display: none;">
+  <!-- ==============================================
+       MODALS: NICKNAME & RESET
+       ============================================== -->
+  <div class="modal-overlay" id="nicknameModal" style="display: none;">
     <div class="modal-box">
-      <div class="modal-header">
-        <h3><i class="fas fa-user-circle"></i> Uživatelský profil</h3>
-        <button class="modal-close-btn" id="closeNicknameModalBtn" aria-label="Zavřít">&times;</button>
+      <div class="modal-head">
+        <h3><i class="fas fa-user-edit"></i> Nastavení přezdívky</h3>
+        <button class="modal-x" id="closeNicknameModalBtn">&times;</button>
       </div>
-      <div class="modal-body">
-        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.5;">
-          Zadejte svou přezdívku. Všechny vaše výsledky, statistiky a historie testů budou přiřazeny k tomuto profilu a uloženy v cookies a paměti prohlížeče bez nutnosti přihlašování.
-        </p>
-        <div class="form-group">
-          <label for="nicknameInput" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-muted);">Přezdívka (max. 20 znaků):</label>
-          <input type="text" id="nicknameInput" class="input-custom" maxlength="20" placeholder="např. Student, Karel_DEV...">
-        </div>
+      <div class="modal-content">
+        <label for="nicknameInput">Zadejte své jméno nebo přezdívku:</label>
+        <input type="text" id="nicknameInput" class="modal-input" placeholder="např. Student..." maxlength="25">
+        <p class="modal-note">Přezdívka se zobrazuje v certifikačním přehledu a v historii pokusů.</p>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" id="cancelNicknameBtn">Zrušit</button>
-        <button class="btn btn-primary" id="saveNicknameBtn">
-          <i class="fas fa-save"></i> Uložit přezdívku
-        </button>
+      <div class="modal-foot">
+        <button class="btn-secondary" id="cancelNicknameBtn">Zrušit</button>
+        <button class="btn-primary" id="saveNicknameBtn">Uložit přezdívku</button>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>
-      IT Certifications Prep &bull; Autentické certifikační otázky Cisco Networking Academy &amp; Oracle Academy &bull; Offline podpora v prohlížeči.
-    </p>
-  </footer>
+  <div class="modal-overlay" id="resetModal" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3><i class="fas fa-triangle-exclamation" style="color: #ef4444;"></i> Resetovat data?</h3>
+        <button class="modal-x" id="closeResetModalBtn">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p>Opravdu chcete vymazat veškerou historii pokusů a statistiky tréninku pro aktuální profil? Tuto akci nelze vrátit zpět.</p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn-secondary" id="cancelResetBtn">Zrušit</button>
+        <button class="btn-danger" id="confirmResetBtn">Vymazat data</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- Scripts -->
+  <div class="modal-overlay" id="settingsModal" style="display: none;">
+    <div class="modal-box" style="max-width: 480px;">
+      <div class="modal-head">
+        <h3><i class="fas fa-sliders" style="color: var(--cisco-cyan);"></i> Předvolby a nastavení</h3>
+        <button class="modal-x" id="closeSettingsModalBtn">&times;</button>
+      </div>
+      <div class="modal-content" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="setting-item">
+          <div class="setting-text">
+            <strong><i class="fas fa-shuffle"></i> Zamíchat pořadí otázek</strong>
+            <p>Při každém novém spuštění testu se otázky náhodně promíchají.</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="shuffleQuestionsToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-text">
+            <strong><i class="fas fa-random"></i> Zamíchat možnosti (A, B, C, D)</strong>
+            <p>Náhodně promíchá pořadí odpovědí pro věrnou simulaci ostrého Cisco testu.</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="shuffleOptionsToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-text">
+            <strong><i class="fas fa-keyboard"></i> Klávesové zkratky</strong>
+            <p>Rychlé volení odpovědí (1–4 / A–D), šipky (← / →) a označení (F).</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="keyboardShortcutsToggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-text">
+            <strong><i class="fas fa-volume-up"></i> Zvukové efekty</strong>
+            <p>Jemná zvuková odezva při kliknutí, správné či chybné odpovědi.</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="soundEffectsToggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn-primary" id="saveSettingsBtn" style="width: 100%; justify-content: center;">Uložit předvolby</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION SCRIPTS -->
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
