@@ -68,7 +68,8 @@ class NetAcadApp {
     
     this.currentQuestions = [];
     this.currentIndex = 0;
-    this.userAnswers = {}; // { questionId: selectedIndex }
+    this.userAnswers = {}; // { questionId: selectedIndex | selectedIndices[] }
+    this.practiceEvaluated = {}; // { questionId: boolean }
     this.flagged = new Set();
     this.visited = new Set();
     
@@ -85,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=3').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=4').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);
@@ -432,13 +433,15 @@ class NetAcadApp {
     let list = rawList.map(orig => {
       const q = {
         ...orig,
-        options: [...orig.options]
+        options: [...orig.options],
+        correct: Array.isArray(orig.correct) ? [...orig.correct] : orig.correct
       };
 
       if (shuffleOpt && q.options && q.options.length > 1) {
+        const isArr = Array.isArray(q.correct);
         const paired = q.options.map((optText, origIdx) => ({
           text: optText,
-          isCorrect: origIdx === q.correct
+          isCorrect: isArr ? q.correct.includes(origIdx) : origIdx === q.correct
         }));
 
         for (let i = paired.length - 1; i > 0; i--) {
@@ -447,7 +450,16 @@ class NetAcadApp {
         }
 
         q.options = paired.map(p => p.text);
-        q.correct = paired.findIndex(p => p.isCorrect);
+        if (isArr) {
+          const newCorrect = [];
+          paired.forEach((p, idx) => {
+            if (p.isCorrect) newCorrect.push(idx);
+          });
+          newCorrect.sort((a, b) => a - b);
+          q.correct = newCorrect;
+        } else {
+          q.correct = paired.findIndex(p => p.isCorrect);
+        }
       }
       return q;
     });
@@ -493,13 +505,14 @@ class NetAcadApp {
 
     const key = e.key.toLowerCase();
 
-    // Option selection keys: 1-4, A-D (or 5 / E if 5 options exist)
+    // Option selection keys: 1-6, A-E
     const keyMap = {
       '1': 0, 'a': 0,
       '2': 1, 'b': 1,
       '3': 2, 'c': 2,
       '4': 3, 'd': 3,
-      '5': 4, 'e': 4
+      '5': 4, 'e': 4,
+      '6': 5
     };
 
     if (Object.prototype.hasOwnProperty.call(keyMap, key)) {
@@ -522,8 +535,29 @@ class NetAcadApp {
       return;
     }
 
-    // Navigation: Right arrow or Enter (Next question)
-    if (e.key === 'ArrowRight' || e.key === 'Enter') {
+    // Confirmation or Navigation: Enter
+    if (e.key === 'Enter') {
+      const isPractice = this.activeMode === 'practice';
+      const isMulti = Array.isArray(q.correct);
+      if (isPractice && isMulti && !this.practiceEvaluated[q.id]) {
+        const current = Array.isArray(this.userAnswers[q.id]) ? this.userAnswers[q.id] : [];
+        if (current.length === q.correct.length) {
+          e.preventDefault();
+          this.confirmPracticeAnswer();
+          return;
+        }
+      }
+      if (this.currentIndex < this.currentQuestions.length - 1) {
+        e.preventDefault();
+        this.sound.click();
+        this.currentIndex++;
+        this.renderQuestion();
+      }
+      return;
+    }
+
+    // Navigation: Right arrow (Next question)
+    if (e.key === 'ArrowRight') {
       if (this.currentIndex < this.currentQuestions.length - 1) {
         e.preventDefault();
         this.sound.click();
@@ -634,6 +668,47 @@ class NetAcadApp {
   }
 
   /* ----------------------------------------------------
+     QUESTION ANSWER EVALUATION HELPERS
+     ---------------------------------------------------- */
+  isAnswerCorrect(q, userPick) {
+    if (userPick === undefined || userPick === null) return false;
+    if (Array.isArray(q.correct)) {
+      if (!Array.isArray(userPick)) return false;
+      if (userPick.length !== q.correct.length) return false;
+      const sortedUser = [...userPick].sort((a, b) => a - b);
+      const sortedCorrect = [...q.correct].sort((a, b) => a - b);
+      return sortedCorrect.every((val, i) => val === sortedUser[i]);
+    }
+    return userPick === q.correct;
+  }
+
+  isQuestionAnswered(q, userPick) {
+    if (userPick === undefined || userPick === null) return false;
+    if (Array.isArray(q.correct)) {
+      return Array.isArray(userPick) && userPick.length === q.correct.length;
+    }
+    return true;
+  }
+
+  getCorrectAnswerText(q) {
+    if (!q || !q.options) return '';
+    if (Array.isArray(q.correct)) {
+      return q.correct.map(idx => this.escapeHtml(q.options[idx])).join('; ');
+    }
+    return this.escapeHtml(q.options[q.correct]);
+  }
+
+  getUserAnswerText(q, userPick) {
+    if (userPick === undefined || (Array.isArray(userPick) && userPick.length === 0)) {
+      return '<em>Nezodpovězeno</em>';
+    }
+    if (Array.isArray(userPick)) {
+      return userPick.map(idx => this.escapeHtml(q.options[idx])).join('; ');
+    }
+    return this.escapeHtml(q.options[userPick]);
+  }
+
+  /* ----------------------------------------------------
      SIMULATOR MODE
      ---------------------------------------------------- */
   startSimulator() {
@@ -651,6 +726,7 @@ class NetAcadApp {
     this.currentQuestions = this.prepareQuestions(all, this.prefShuffleQ, this.prefShuffleOpt);
     this.currentIndex = 0;
     this.userAnswers = {};
+    this.practiceEvaluated = {};
     this.flagged.clear();
     this.visited.clear();
     this.visited.add(0);
@@ -706,7 +782,12 @@ class NetAcadApp {
   }
 
   confirmFinishExam() {
-    const answeredCount = Object.keys(this.userAnswers).length;
+    let answeredCount = 0;
+    this.currentQuestions.forEach(q => {
+      if (this.isQuestionAnswered(q, this.userAnswers[q.id])) {
+        answeredCount++;
+      }
+    });
     const total = this.currentQuestions.length;
     const unanswered = total - answeredCount;
 
@@ -726,7 +807,7 @@ class NetAcadApp {
 
     let correctCount = 0;
     this.currentQuestions.forEach(q => {
-      if (this.userAnswers[q.id] === q.correct) {
+      if (this.isAnswerCorrect(q, this.userAnswers[q.id])) {
         correctCount++;
       }
     });
@@ -787,29 +868,35 @@ class NetAcadApp {
 
     this.currentQuestions.forEach((q, idx) => {
       const userPick = this.userAnswers[q.id];
-      const isCorrect = userPick === q.correct;
+      const isCorrect = this.isAnswerCorrect(q, userPick);
 
       const item = document.createElement('div');
       item.className = `review-item ${isCorrect ? 'review-correct' : 'review-incorrect'}`;
 
       let codeHtml = q.code ? `<div class="code-box" style="margin: 8px 0; font-size: 0.85rem;">${this.escapeHtml(q.code)}</div>` : '';
 
-      const userText = userPick !== undefined ? this.escapeHtml(q.options[userPick]) : '<em>Nezodpovězeno</em>';
-      const correctText = this.escapeHtml(q.options[q.correct]);
+      const userText = this.getUserAnswerText(q, userPick);
+      const correctText = this.getCorrectAnswerText(q);
       const questionText = this.escapeHtml(q.question);
       const explanationText = this.escapeHtml(q.explanation);
+
+      const isMulti = Array.isArray(q.correct);
+      const multiBadge = isMulti
+        ? `<span style="font-size: 0.75rem; background: rgba(4,159,217,0.15); color: #049fd9; padding: 2px 7px; border-radius: 4px; font-weight: 700;">Vícečetná volba (${q.correct.length})</span>`
+        : '';
 
       item.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
           <span style="font-weight: 700; font-size: 0.9rem; color: ${isCorrect ? '#10b981' : '#ef4444'};">
             Otázka ${idx + 1} &bull; ${isCorrect ? '<i class="fas fa-check"></i> Správně' : '<i class="fas fa-times"></i> Špatně'}
           </span>
+          ${multiBadge}
         </div>
         <p style="font-weight: 600; margin-bottom: 8px; font-size: 0.95rem;">${questionText}</p>
         ${codeHtml}
         <div style="font-size: 0.88rem; margin-bottom: 8px; line-height: 1.6;">
-          <div><strong>Vaše odpověď:</strong> <span style="color: ${isCorrect ? '#10b981' : '#ef4444'}; font-family: monospace; background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px;">${userText}</span></div>
-          ${!isCorrect ? `<div style="margin-top: 4px;"><strong>Správná odpověď:</strong> <span style="color: #10b981; font-family: monospace; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">${correctText}</span></div>` : ''}
+          <div><strong>Vaše odpověď:</strong> <span style="color: ${isCorrect ? '#10b981' : '#ef4444'}; font-family: inherit; background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px;">${userText}</span></div>
+          ${!isCorrect ? `<div style="margin-top: 4px;"><strong>Správná odpověď:</strong> <span style="color: #10b981; font-family: inherit; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">${correctText}</span></div>` : ''}
         </div>
         <div style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(0,0,0,0.1); padding: 10px 14px; border-radius: 6px; line-height: 1.55; border-left: 3px solid #10b981;">
           <strong style="color: #10b981;">Vysvětlení:</strong> ${explanationText}
@@ -821,7 +908,7 @@ class NetAcadApp {
   }
 
   reviewMistakesOnly() {
-    const mistakes = this.currentQuestions.filter(q => this.userAnswers[q.id] !== q.correct);
+    const mistakes = this.currentQuestions.filter(q => !this.isAnswerCorrect(q, this.userAnswers[q.id]));
     if (!mistakes.length) {
       alert('V tomto testu jste neměli žádnou chybu! Skvělá práce!');
       return;
@@ -829,6 +916,7 @@ class NetAcadApp {
     this.currentQuestions = mistakes;
     this.currentIndex = 0;
     this.userAnswers = {};
+    this.practiceEvaluated = {};
     this.flagged.clear();
     this.visited.clear();
     this.visited.add(0);
@@ -857,6 +945,7 @@ class NetAcadApp {
     this.currentQuestions = this.prepareQuestions(baseList, this.prefShuffleQ, this.prefShuffleOpt);
     this.currentIndex = 0;
     this.userAnswers = {};
+    this.practiceEvaluated = {};
     this.flagged.clear();
     this.visited.clear();
     this.visited.add(0);
@@ -889,6 +978,7 @@ class NetAcadApp {
      ---------------------------------------------------- */
   renderQuestion() {
     const container = document.getElementById('optionsContainer');
+    const confirmWrap = document.getElementById('multiConfirmWrap');
 
     if (!this.currentQuestions.length) {
       document.getElementById('qNumberTitle').textContent = 'Žádné otázky';
@@ -910,6 +1000,7 @@ class NetAcadApp {
       `;
       document.getElementById('qCodeBlock').style.display = 'none';
       if (container) container.innerHTML = '';
+      if (confirmWrap) { confirmWrap.style.display = 'none'; confirmWrap.innerHTML = ''; }
       document.getElementById('explanationBox').classList.remove('show');
       this.renderQuestionStrip();
       return;
@@ -930,6 +1021,24 @@ class NetAcadApp {
 
     document.getElementById('qText').textContent = q.question;
 
+    // Question Type Hint
+    const isMulti = Array.isArray(q.correct);
+    const reqCount = isMulti ? q.correct.length : 1;
+    const qHintEl = document.getElementById('qTypeHint');
+    const userPick = this.userAnswers[q.id];
+
+    if (qHintEl) {
+      if (isMulti) {
+        let hintLabel = reqCount >= 5 ? `Vyberte ${reqCount} odpovědí` : `Vyberte ${reqCount} odpovědi`;
+        const currentCount = Array.isArray(userPick) ? userPick.length : 0;
+        qHintEl.innerHTML = `<i class="fas fa-check-square"></i> ${hintLabel} <span class="q-selection-count">(${currentCount}/${reqCount})</span>`;
+        qHintEl.classList.add('multi');
+      } else {
+        qHintEl.innerHTML = `<i class="far fa-dot-circle"></i> Jedna správná odpověď`;
+        qHintEl.classList.remove('multi');
+      }
+    }
+
     // Code Block
     const codeBlock = document.getElementById('qCodeBlock');
     if (q.code) {
@@ -945,29 +1054,48 @@ class NetAcadApp {
     // Render Option Cards
     container.innerHTML = '';
     const isPractice = this.activeMode === 'practice';
-    const hasAnswered = this.userAnswers[q.id] !== undefined;
+    const isEvaluated = isPractice ? Boolean(this.practiceEvaluated[q.id]) : false;
 
-    const optLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const optLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
     q.options.forEach((optText, optIdx) => {
       const optCard = document.createElement('div');
       optCard.className = 'option-card';
+      if (isMulti) optCard.classList.add('multi-choice');
 
-      if (this.userAnswers[q.id] === optIdx) {
+      const isSelected = isMulti
+        ? (Array.isArray(userPick) && userPick.includes(optIdx))
+        : (userPick === optIdx);
+
+      if (isSelected) {
         optCard.classList.add('selected');
       }
 
-      if (isPractice && hasAnswered) {
-        if (optIdx === q.correct) {
+      let badgeContent = optLetters[optIdx] || (optIdx + 1);
+      let missedTag = '';
+
+      if (isPractice && isEvaluated) {
+        const isOptCorrect = isMulti ? q.correct.includes(optIdx) : (optIdx === q.correct);
+
+        if (isOptCorrect && isSelected) {
           optCard.classList.add('correct');
-        } else if (optIdx === this.userAnswers[q.id]) {
+          badgeContent = '<i class="fas fa-check"></i>';
+        } else if (isSelected && !isOptCorrect) {
           optCard.classList.add('incorrect');
+          badgeContent = '<i class="fas fa-times"></i>';
+        } else if (isOptCorrect && !isSelected) {
+          optCard.classList.add('correct', 'correct-missed');
+          badgeContent = '<i class="fas fa-check"></i>';
+          missedTag = `<span class="badge-missed"><i class="fas fa-info-circle"></i> Chybějící správná volba</span>`;
         }
+      } else if (isSelected && isMulti) {
+        badgeContent = '<i class="fas fa-check"></i>';
       }
 
       optCard.innerHTML = `
-        <div class="opt-badge">${optLetters[optIdx] || optIdx + 1}</div>
+        <div class="opt-badge ${isMulti ? 'square' : 'round'}">${badgeContent}</div>
         <div class="opt-text">${this.escapeHtml(optText)}</div>
+        ${missedTag}
       `;
 
       optCard.addEventListener('click', () => {
@@ -977,14 +1105,48 @@ class NetAcadApp {
       container.appendChild(optCard);
     });
 
+    // Practice Multi-Answer Confirm Button
+    if (confirmWrap) {
+      if (isPractice && isMulti && !isEvaluated) {
+        confirmWrap.style.display = 'flex';
+        const currentPicks = Array.isArray(userPick) ? userPick : [];
+        const diff = reqCount - currentPicks.length;
+        const canConfirm = currentPicks.length === reqCount;
+
+        let btnLabel = '';
+        if (canConfirm) {
+          btnLabel = `<i class="fas fa-check-double"></i> Zkontrolovat odpověď (vybráno ${currentPicks.length} z ${reqCount})`;
+        } else {
+          const word = diff === 1 ? 'odpověď' : (diff < 5 ? 'odpovědi' : 'odpovědí');
+          btnLabel = `<i class="fas fa-hand-pointer"></i> Vyberte ještě ${diff} ${word}`;
+        }
+
+        confirmWrap.innerHTML = `
+          <button class="btn-check-multi ${canConfirm ? 'active' : ''}" id="btnConfirmMulti" ${canConfirm ? '' : 'disabled'}>
+            ${btnLabel}
+          </button>
+        `;
+
+        const btn = document.getElementById('btnConfirmMulti');
+        if (btn && canConfirm) {
+          btn.addEventListener('click', () => {
+            this.confirmPracticeAnswer();
+          });
+        }
+      } else {
+        confirmWrap.style.display = 'none';
+        confirmWrap.innerHTML = '';
+      }
+    }
+
     // Explanation Box (In Practice Mode)
     const expBox = document.getElementById('explanationBox');
     const expText = document.getElementById('explanationText');
     const fbIcon = document.getElementById('fbStatusIcon');
     const fbStatusText = document.getElementById('fbStatusText');
 
-    if (isPractice && hasAnswered) {
-      const isCorrect = this.userAnswers[q.id] === q.correct;
+    if (isPractice && isEvaluated) {
+      const isCorrect = this.isAnswerCorrect(q, userPick);
       expText.textContent = q.explanation;
       if (fbIcon) {
         fbIcon.className = isCorrect ? 'fas fa-check-circle' : 'fas fa-times-circle';
@@ -998,7 +1160,9 @@ class NetAcadApp {
       expBox.classList.add(isCorrect ? 'correct' : 'incorrect');
       expBox.classList.add('show');
       setTimeout(() => {
-        expBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (expBox.scrollIntoView) {
+          expBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }, 50);
     } else {
       expBox.classList.remove('show', 'correct', 'incorrect');
@@ -1016,25 +1180,73 @@ class NetAcadApp {
 
   selectOption(optIdx) {
     const q = this.currentQuestions[this.currentIndex];
+    if (!q) return;
+
     const isPractice = this.activeMode === 'practice';
+    const isMulti = Array.isArray(q.correct);
+    const reqCount = isMulti ? q.correct.length : 1;
 
-    if (isPractice && this.userAnswers[q.id] !== undefined) return;
+    if (isPractice && this.practiceEvaluated[q.id]) {
+      return;
+    }
 
-    this.userAnswers[q.id] = optIdx;
-    const isCorrect = optIdx === q.correct;
-
-    if (isPractice) {
-      if (isCorrect) {
-        this.sound.correct();
+    if (!isMulti) {
+      this.userAnswers[q.id] = optIdx;
+      if (isPractice) {
+        this.practiceEvaluated[q.id] = true;
+        const isCorrect = optIdx === q.correct;
+        if (isCorrect) {
+          this.sound.correct();
+        } else {
+          this.sound.wrong();
+        }
+        this.recordPracticeResult(this.activeCert, q.id, isCorrect);
+        this.updatePracticeLiveStats();
       } else {
-        this.sound.wrong();
+        this.sound.click();
       }
-      this.recordPracticeResult(this.activeCert, q.id, isCorrect);
-      this.updatePracticeLiveStats();
     } else {
+      let current = Array.isArray(this.userAnswers[q.id]) ? [...this.userAnswers[q.id]] : [];
+      const existsIdx = current.indexOf(optIdx);
+
+      if (existsIdx >= 0) {
+        current.splice(existsIdx, 1);
+      } else {
+        if (current.length < reqCount) {
+          current.push(optIdx);
+        } else {
+          current.shift();
+          current.push(optIdx);
+        }
+      }
+      current.sort((a, b) => a - b);
+      this.userAnswers[q.id] = current;
       this.sound.click();
     }
 
+    this.renderQuestion();
+  }
+
+  confirmPracticeAnswer() {
+    const q = this.currentQuestions[this.currentIndex];
+    if (!q) return;
+    const isMulti = Array.isArray(q.correct);
+    const reqCount = isMulti ? q.correct.length : 1;
+    const current = Array.isArray(this.userAnswers[q.id]) ? this.userAnswers[q.id] : [];
+
+    if (isMulti && current.length !== reqCount) return;
+
+    this.practiceEvaluated[q.id] = true;
+    const isCorrect = this.isAnswerCorrect(q, this.userAnswers[q.id]);
+
+    if (isCorrect) {
+      this.sound.correct();
+    } else {
+      this.sound.wrong();
+    }
+
+    this.recordPracticeResult(this.activeCert, q.id, isCorrect);
+    this.updatePracticeLiveStats();
     this.renderQuestion();
   }
 
@@ -1049,9 +1261,11 @@ class NetAcadApp {
       pill.textContent = `${idx + 1}`;
       pill.title = `Otázka ${idx + 1}`;
 
+      const isAnswered = this.isQuestionAnswered(q, this.userAnswers[q.id]);
+
       if (idx === this.currentIndex) {
         pill.classList.add('active');
-      } else if (this.userAnswers[q.id] !== undefined) {
+      } else if (isAnswered) {
         pill.classList.add('answered');
       } else if (this.flagged.has(q.id)) {
         pill.classList.add('flagged');
@@ -1067,7 +1281,7 @@ class NetAcadApp {
     });
 
     const activePill = strip.children[this.currentIndex];
-    if (activePill) {
+    if (activePill && activePill.scrollIntoView) {
       activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
   }
@@ -2322,7 +2536,7 @@ initCheatsheets() {
         <div class="mistake-qtext">${this.escapeHtml(q.question)}</div>
         ${codeHtml}
         <div class="mistake-correct-box">
-          <strong style="color: #10b981;"><i class="fas fa-check"></i> Správné řešení:</strong> ${this.escapeHtml(q.options[q.correct])}
+          <strong style="color: #10b981;"><i class="fas fa-check"></i> Správné řešení:</strong> ${this.getCorrectAnswerText(q)}
         </div>
         <div class="mistake-explanation">
           <strong style="color: #38bdf8;">Vysvětlení:</strong> ${this.escapeHtml(q.explanation)}
@@ -2359,6 +2573,7 @@ initCheatsheets() {
     this.currentQuestions = [...cert.questions];
     this.currentIndex = targetIdx >= 0 ? targetIdx : 0;
     this.userAnswers = {};
+    this.practiceEvaluated = {};
     this.flagged.clear();
     this.updatePracticeLiveStats();
     this.renderQuestion();

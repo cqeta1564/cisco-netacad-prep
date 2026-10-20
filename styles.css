@@ -560,6 +560,25 @@ body {
   color: var(--text-muted);
   font-weight: 600;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.question-type-hint.multi {
+  color: var(--cisco-blue);
+  background: rgba(4, 159, 217, 0.12);
+  border: 1px solid rgba(4, 159, 217, 0.25);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.q-selection-count {
+  font-weight: 800;
+  color: var(--cisco-blue);
+  margin-left: 2px;
 }
 
 .question-prompt {
@@ -628,10 +647,21 @@ body {
   box-shadow: 0 0 0 1px var(--border-selected);
 }
 
+.option-card.multi-choice {
+  border-left: 4px solid var(--border-color);
+}
+
+.option-card.multi-choice:hover {
+  border-left-color: var(--cisco-blue);
+}
+
+.option-card.multi-choice.selected {
+  border-left-color: var(--cisco-blue) !important;
+}
+
 .opt-badge {
   width: 28px;
   height: 28px;
-  border-radius: 6px;
   background: var(--bg-card);
   border: 1.5px solid var(--border-color);
   color: var(--text-secondary);
@@ -642,6 +672,14 @@ body {
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.18s ease;
+}
+
+.opt-badge.round {
+  border-radius: 50%;
+}
+
+.opt-badge.square {
+  border-radius: 6px;
 }
 
 .option-card:hover .opt-badge {
@@ -671,6 +709,11 @@ body {
   background-color: rgba(16, 185, 129, 0.12) !important;
 }
 
+.option-card.correct.correct-missed {
+  border: 1.5px dashed #10b981 !important;
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
 .option-card.correct .opt-badge {
   background: #10b981;
   border-color: #10b981;
@@ -686,6 +729,59 @@ body {
   background: #ef4444;
   border-color: #ef4444;
   color: #ffffff;
+}
+
+.badge-missed {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* Multi-answer Confirmation Action (Practice Mode) */
+.multi-confirm-wrap {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-check-multi {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--cisco-blue, #049fd9);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(4, 159, 217, 0.25);
+}
+
+.btn-check-multi.active:hover {
+  background: #0284c7;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(4, 159, 217, 0.35);
+}
+
+.btn-check-multi:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  box-shadow: none;
 }
 
 /* Instant Practice Feedback */

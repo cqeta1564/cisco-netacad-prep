@@ -817,7 +817,10 @@ const CERTIFICATES_DATA = {
           "display: hidden;",
           "display: invisible;"
         ],
-        "correct": 3,
+        "correct": [
+          1,
+          3
+        ],
         "explanation": "Vlastnost visibility: hidden; skryje element z obrazovky, ale zachová jeho místo v layoutu stránky. Podobně funguje visibility: collapse; (používané zejména pro řádky a sloupce tabulek). Naproti tomu display: none; prvek z layoutu zcela odstraní, takže žádné místo nezabírá. Ostatní možnosti (display: hidden, display: invisible, visibility: no-show) představují v CSS neplatnou syntaxi."
       },
       {
@@ -1098,7 +1101,10 @@ const CERTIFICATES_DATA = {
           "card-shadow-sm",
           "card-shadow-lg"
         ],
-        "correct": 1,
+        "correct": [
+          1,
+          2
+        ],
         "explanation": "V Bootstrapu 5 se pro vytvoření komponenty karty používá třída `card` a pro stíny slouží samostatné utility třídy jako `shadow-sm`, `shadow` nebo `shadow-lg`. Správnou kombinací dvou tříd oddělených mezerou je zde `card shadow-sm` (karta s jemným stínem). Ostatní možnosti spojené pomlčkou jako `card-shadow`, `card-shadow-sm` nebo `card-shadow-lg` v Bootstrapu vůbec neexistují. Oficiální test Cisco v doprovodném vysvětlení uvádí jako jedinou správnou možnost `card shadow-sm`, zatímco tvary `card shadow` a `card-shadow` označuje za neodpovídající standardním konvencím testovaných tříd."
       },
       {
@@ -2433,7 +2439,900 @@ const CERTIFICATES_DATA = {
         "name": "Modul 6: Network Fundamentals"
       }
     ],
-    "questions": []
+    "questions": [
+      {
+        "id": "devnet_q01",
+        "module": "devnet_m4",
+        "question": "A pharmaceutical company wants to contract the services of a cloud provider to store employee data and company-specific applications with strict access security. Which type of cloud would be the most appropriate for this scenario?",
+        "code": null,
+        "options": [
+          "community cloud",
+          "public cloud",
+          "hybrid cloud",
+          "private cloud"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q02",
+        "module": "devnet_m5",
+        "question": "What is a function provided by an implementation of a read-only automation solution?",
+        "code": null,
+        "options": [
+          "the ability to reduce risk by implementing security policies across the network infrastructure via automated changes",
+          "the ability to use GET and SET requests to retrieve and send data across the network infrastructure",
+          "the ability to use an automated request to audit configurations and manually deploy changes in order to implement compliance",
+          "the ability to implement network infrastructure that receives a configuration from a specific centralized server"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q03",
+        "module": "devnet_m6",
+        "question": "Data is being sent from a source PC to a destination server. Which three statements correctly describe the function of TCP or UDP in this situation? (Choose three.)",
+        "code": null,
+        "options": [
+          "The TCP process running on the PC randomly selects the destination port when establishing a session with the server.",
+          "UDP segments are encapsulated within IP packets for transport across the network",
+          "The TCP source port number identifies the sending host on the network",
+          "The UDP destination port number identifies the application or service on the server which will handle the data.",
+          "The source port field identifies the running application or service that will handle data returning to the PC",
+          "TCP is the preferred protocol when a function requires lower network overhead"
+        ],
+        "correct": [
+          1,
+          3,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q04",
+        "module": "devnet_m2",
+        "question": "What type of attack targets an SQL database using the input field of a user?",
+        "code": null,
+        "options": [
+          "buffer overflow",
+          "SQL injection",
+          "Cross site scripting",
+          "XML injection"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q05",
+        "module": "devnet_m2",
+        "question": "Which command can be used on Linux and MAC hosts to get IP addressing information?",
+        "code": null,
+        "options": [
+          "ipconfig",
+          "ip address",
+          "ifconfig",
+          "networksetup -getinfo"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q06",
+        "module": "devnet_m6",
+        "question": "What are two reasons a network administrator would segment a network with a Layer 2 switch? (Choose two.)",
+        "code": null,
+        "options": [
+          "to create fewer collision domains",
+          "to create more broadcast domains",
+          "to enhance user bandwidth",
+          "to isolale ARP request messages from the rest of the network",
+          "to eliminate virtual circuits",
+          "to isolate traffic between segments"
+        ],
+        "correct": [
+          2,
+          5
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q07",
+        "module": "devnet_m4",
+        "question": "Which tool might a developer use as part of a Continuous Integration pipeline in order to build and test source code?",
+        "code": null,
+        "options": [
+          "SQL",
+          "REST",
+          "Docker",
+          "Jenkins"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q08",
+        "module": "devnet_m1",
+        "question": "A packet is received by a server. The packet has a destination port number of 8008. What protocol or service is requested?",
+        "code": null,
+        "options": [
+          "Telnet over SSH",
+          "RESTCONF",
+          "HTTP",
+          "NETCONF"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q09",
+        "module": "devnet_m6",
+        "question": "A network contains multiple VLANs spanning multiple switches. What happens when a device in VLAN 20 sends a broadcast Ethernet frame?",
+        "code": null,
+        "options": [
+          "Devices in VLAN 20 and the management VLAN see the frame.",
+          "All devices in all VLANs see the frame",
+          "Only devices that are connected to the local switch see the frame",
+          "Only devices in VLAN 20 see the frame."
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q10",
+        "module": "devnet_m1",
+        "question": "Which piece of software is responsible for creating and managing virtual machines, including allocating system resources to each virtual machine as needed?",
+        "code": null,
+        "options": [
+          "supervisor",
+          "hypervisor",
+          "host operating system",
+          "hosted operating system"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q11",
+        "module": "devnet_m6",
+        "question": "How is an Ethernet MAC address constructed?",
+        "code": null,
+        "options": [
+          "The first 3 bytes represent the network upon which the host resides, and the last 3 bytes uniquely identify the host.",
+          "The first 3 bytes represent the vendor OUI, and the last 3 bytes are assigned uniquely by the vendor",
+          "The first 3 bytes are uniquely assigned by LANA, and the last 3 bytes represent the serial number of the host",
+          "The first 3 byles represent the vendor OUI, and the last 3 byles are assigned randorily by the operating system."
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q12",
+        "module": "devnet_m3",
+        "question": "Which Cisco SDK works with ACI?",
+        "code": null,
+        "options": [
+          "Cobra",
+          "IMC",
+          "UCS",
+          "Instant Connect"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q13",
+        "module": "devnet_m3",
+        "question": "What platforms are provided by DevNet for community members to share solutions, tool kits, and other resources with each other?",
+        "code": null,
+        "options": [
+          "communities",
+          "forums",
+          "sandboxes",
+          "exchanges"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q14",
+        "module": "devnet_m2",
+        "question": "Which two data formats can RESTCON use when requesting data or responding with data? (Choose two.)",
+        "code": null,
+        "options": [
+          "JSON",
+          "XML",
+          "YAML",
+          "YANG",
+          "HTML"
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q15",
+        "module": "devnet_m3",
+        "question": "Which DevNet resource would a developer use to look for a Python library that supports APIs for a specific Cisco product?",
+        "code": null,
+        "options": [
+          "DevNet Learning Labs",
+          "Devlet Support",
+          "Code Exchange",
+          "DevNet Sandbox"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q16",
+        "module": "devnet_m5",
+        "question": "A component was created with the intent of combining the disciplines and skills of Dev and Ops. This component created a new job role and implemented a best-practices playbook for doing Ops with software methods. Which component matches this description?",
+        "code": null,
+        "options": [
+          "Agile Infrastructure and Operations",
+          "the SRE approach",
+          "automated infrastructure",
+          "shared Version control"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q17",
+        "module": "devnet_m5",
+        "question": "Match the DevNet exhange type with the decription.\n\nDevNet Associate (Version 1.0) - DevNet Associate 1.0 Final exam\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nautomation exchange\na collection of network automation use cases with different solutions and toolkits\n\n\necosystem\nprovides solutions across different technologies, industries, and geographies to jump start solution design and development\n\n\ncode\nuses the GitHub API and human moderators to categorize and display related repositories\n\n\n\n18. Refer to the exhibit. A user is working on Ansible on the local NMS to manage remote network devices. Which file is the user creating?\n\n\n\n\nservice\nplaybook\nvariable\nhosts\n\nExplanation: Ansible uses an inventory file called hosts that contains device information used by Ansible playbooks. The hosts file begins with an alias for the remote. After the alias, the hosts file specifies three variables that will be used by the Ansible playbook to access the device. These are the SSH credentials Ansible needs to securely access the remote host.\n\n19. Which DevNet resource would a developer use in order to test custom code in a production-like environment?",
+        "code": null,
+        "options": [
+          "Devlet Support",
+          "DevNet Learning Labs",
+          "Code Exchange",
+          "DevNet Sandbox"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q18",
+        "module": "devnet_m4",
+        "question": "In which situation would a company implement a reverse proxy as a security solution?",
+        "code": null,
+        "options": [
+          "when the company has a database and needs to point to a DNS server that uses different IP addresses for development resources",
+          "when the company wants all responses to clients to look like they came from the same server instead of individual ones",
+          "when a hash is created based on the IP address of the request to a particular protected server",
+          "when responses frorri servers need to be sent over different paths to ensure quality response time to the client devices making the requests"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q19",
+        "module": "devnet_m1",
+        "question": "A software development company specializes in being able to use whatever software development method their customer wants to use. One customer company wants to use the Agile method. What is a characteristic of this method?",
+        "code": null,
+        "options": [
+          "a software development process where the highest priority is to satisfy the customer through early and continuous delivery of valuable software",
+          "a process that eliminates anything that does not add value to the project including meetings and documentation",
+          "a software development process that has the results of one phase feed into the next phase",
+          "a more traditional software development process as they have used this process in past projects"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q20",
+        "module": "devnet_m4",
+        "question": "A network engineer is creating a Docker container using the docker build command. If the engineer does not specify a tag, which tag will be used by default?",
+        "code": null,
+        "options": [
+          "tag",
+          "latest",
+          "(a blank space)",
+          "default"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q21",
+        "module": "devnet_m5",
+        "question": "Which component in the pyATS ecology handles bundling and running jobs?",
+        "code": null,
+        "options": [
+          "AEtest",
+          "Clover",
+          "Genie",
+          "EasyPy"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q22",
+        "module": "devnet_m3",
+        "question": "Which three avenues are available within DevNet for developers who need help with specific developer scenario questions concerning Cisco products? (Choose three.)",
+        "code": null,
+        "options": [
+          "logging a ticket",
+          "posting to the DevNet zone",
+          "posting to a news group",
+          "posting to a community forum",
+          "posting to a Webex Teams space",
+          "posting on the Cisco Learning Network"
+        ],
+        "correct": [
+          0,
+          3,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q23",
+        "module": "devnet_m3",
+        "question": "A student who is interested in network programmability approaches an instructor for advice on learning more about the subject. The student is a kinesthetic learner who learns by doing. Which DevNet resource should the instructor consider telling the student about?",
+        "code": null,
+        "options": [
+          "DevNet Create",
+          "DevNet Learning Labs",
+          "DevNet Express",
+          "DevNet Zone"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q24",
+        "module": "devnet_m1",
+        "question": "What is the default shell commonly used on macOS and Linux?",
+        "code": null,
+        "options": [
+          "tcsh",
+          "csh",
+          "Bourne",
+          "Bash"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q25",
+        "module": "devnet_m1",
+        "question": "What is immutable infrastructure in DevOps?",
+        "code": null,
+        "options": [
+          "infrastructure that is deployed with all component versions locked except for the ability to perform manual configuration changes",
+          "infrastructure that is only deployed and maintained in containers",
+          "infrastructure that is entirely maintained and deployed in code and never subjected to manual changes",
+          "virtualized infrastructure that is deployed as golden images"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q26",
+        "module": "devnet_m1",
+        "question": "What is the most common cause of IT outages?",
+        "code": null,
+        "options": [
+          "an engineer misconfiguring a device or network with manual changes",
+          "an experienced engineer using an open source product",
+          "an experienced engineer implementing a configuration using automation",
+          "a threat actor largeting the enterprise equipment"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q27",
+        "module": "devnet_m1",
+        "question": "Which string of characters is used to identify the beginning of a new separate document when multiple documents are in a single YAML file?",
+        "code": null,
+        "options": [
+          "three slashes \"///\"",
+          "three dots \"...\"",
+          "three pound signs \"###\"",
+          "three dashes \"---\""
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q28",
+        "module": "devnet_m1",
+        "question": "What is the difference between functions and methods in the Python programming structure?",
+        "code": null,
+        "options": [
+          "Functions can use global variables whereas methods can only use local variables.",
+          "Functions are called by a referencing object whereas methods are called by the names.",
+          "Functions can pass arguments whereas methods can pass only predefined keywords.",
+          "Functions are standalone code blocks whereas methods are code blocks associated with an object."
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q29",
+        "module": "devnet_m6",
+        "question": "Which command is used to create a new Git repository?",
+        "code": null,
+        "options": [
+          "git init",
+          "git add",
+          "git commit",
+          "git clone"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q30",
+        "module": "devnet_m1",
+        "question": "Which stakeholder determines the useful value of software product features in the Lean process?",
+        "code": null,
+        "options": [
+          "the customer",
+          "the Scrum master",
+          "the reviewer",
+          "the programmer"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q31",
+        "module": "devnet_m1",
+        "question": "Match the SDLC phase with its description. (Not all options are used.)\n\nMatch the SDLC phase with its description. (Not all options are used.)\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\ndeployment\nsoftware is installed into the production environment\n\n\nimplmentation\ncode is developed according to low level and high level design documents\n\n\nrequirements & anaylsis\nthe product owner and qualified team members gather the requirements for the software to be built\n\n\n\n34. What is a principle of the Lean software development model?",
+        "code": null,
+        "options": [
+          "adding additional product features that the customer did not ask for so that the customer is getting more than expected",
+          "assigning resources to multiple projects so that effort can be divided on more than one task at a time",
+          "making decisions as late as possible in the process so that more facts and details are available",
+          "ordering workers to do tasks they may not want to do to ensure they get done"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q32",
+        "module": "devnet_m1",
+        "question": "What character is used to separate the key and value pairs in YAML?",
+        "code": null,
+        "options": [
+          "colon :",
+          "semi colon ;",
+          "underscore _",
+          "forward slash /"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q33",
+        "module": "devnet_m1",
+        "question": "Which git command is used to compare changes between files?",
+        "code": null,
+        "options": [
+          "git diff",
+          "git merge",
+          "git checkout",
+          "git status"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q34",
+        "module": "devnet_m4",
+        "question": "Refer to the exhibit. Match the missing components of the Python script for authenticating to the Cisco Network Services Orchestrator and obtaining a list of network devices using the username of \"superadmin\" and password of \"soverysecure!\". (Not all options are used.)\n\n\n\n\n\n38. What is an example of a use supported by Cisco UCS Director and UCS Manager?",
+        "code": null,
+        "options": [
+          "bare metal server provisioning and monitoring of virtual environments",
+          "call center and call management over IP networks",
+          "underlying central system workflow management and migration",
+          "telemetry data collection and analysis"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q35",
+        "module": "devnet_m3",
+        "question": "How can a Webex Teams administrator retrieve additional details about a user through an API call?",
+        "code": null,
+        "options": [
+          "by using the value of the organization name in the API call",
+          "by using the value of a Webex Teams registered email address in the API call",
+          "by using the value of the person id key in the API call",
+          "by using the value of orgld in the API call"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q36",
+        "module": "devnet_m5",
+        "question": "Which library is the most commonly used Python library for connecting NETCONF clients with a NETCONF server?",
+        "code": null,
+        "options": [
+          "posix",
+          "pyclient",
+          "ncclient",
+          "pypi"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q37",
+        "module": "devnet_m3",
+        "question": "Which two APIs allow for Cisco Meraki device provisioning and real-time notifications? (Choose two.)",
+        "code": null,
+        "options": [
+          "Webhook API",
+          "Investigation API",
+          "Dashboard API",
+          "Enforcement API",
+          "Reporting API"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explanation": "Webhook API – This is a real-time notification system for network alerts, covering events and network health."
+      },
+      {
+        "id": "devnet_q38",
+        "module": "devnet_m1",
+        "question": "A packet is received by a server. The packet has a destination port number of 443. What protocol or service is requested?",
+        "code": null,
+        "options": [
+          "HTTP",
+          "NTP",
+          "DHCP",
+          "HTTPS"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q39",
+        "module": "devnet_m1",
+        "question": "When thinking about the functional planes of a network, what is unique about the data plane?",
+        "code": null,
+        "options": [
+          "It includes protocols used to remotely access network devices.",
+          "It includes the SSH protocol.",
+          "It manipulates data and outputs it in the XML format.",
+          "It is responsible for the switching of packets in hardware."
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q40",
+        "module": "devnet_m4",
+        "question": "Which Docker component defines the steps needed to create an image that can be deployed in a variety of environments?",
+        "code": null,
+        "options": [
+          "UnionFS",
+          "Dockerfile",
+          "cross-site script",
+          "namespaces"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q41",
+        "module": "devnet_m1",
+        "question": "Which three statements describe characteristics of a virtual machine? (Choose three.)",
+        "code": null,
+        "options": [
+          "It is created and deployed using the Docker format.",
+          "It includes a guest operating system.",
+          "It runs on top of a hypervisor",
+          "It shares the operating system of the host computer.",
+          "It is completely self-contained with its own emulated storage, memory, and network interfaces.",
+          "It requires Windows as the host operating system."
+        ],
+        "correct": [
+          1,
+          2,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q42",
+        "module": "devnet_m3",
+        "question": "Match the use cases of a load balancer to the description. (Not all options are used.)\n\nDevNet Associate (Version 1.0) - DevNet Associate 1.0 Final exam\n\nPlace the options in the following order:\n\n\n\n\ncanary\ndiverts a small amount of traffic to a new production environment that is changed\n\n\nblue-green\nsends traffic to a new environment, but keeps the old environment ready in case of issues\n\n\nround robin\nsends requests to the next server on the list\n\n\n\n50. What are two characteristics of the staging environment of the four-tier deployment environment structure? (Choose two.)",
+        "code": null,
+        "options": [
+          "It is the point where code has been tested multiple times and is error free.",
+          "It is structured as close as possible to the actual production environment.",
+          "It is where the code undergoes final acceptance testing in a realistic environment.",
+          "It is where end users will interact with the code.",
+          "It often includes automated testing tools such as Jenkins, CircleCl, or Travis Cl."
+        ],
+        "correct": [
+          1,
+          2
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q43",
+        "module": "devnet_m4",
+        "question": "Refer to the exhibit. A network engineer has created a Jenkins pipeline. Which menu option would the engineer use to run the pipeline?\n\n\n\n\nConfigure\nChanges\nBuild Now\nWorkspace\n\n52. A network engineer is configuring a Jenkins job and finishing with the following script in order to trigger the build:\n\n\n\nWhat is the purpose of the preparation stage?",
+        "code": null,
+        "options": [
+          "It makes sure that any previous instances of a particular Docker container are stopped and removed.",
+          "It catches and removes any errors.",
+          "It runs the SUCCESS Docker container.",
+          "It places a log of any errors in the SUCCESS file."
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q44",
+        "module": "devnet_m4",
+        "question": "Which technique is used to make the output of password hashing nondeterministic?",
+        "code": null,
+        "options": [
+          "password length and complexity",
+          "multifactor authentication",
+          "password salting",
+          "password strength validation tools"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q45",
+        "module": "devnet_m1",
+        "question": "What does self-service refer to in the context of enterprise IT?",
+        "code": null,
+        "options": [
+          "imaging frequently used server configurations for rapid deployment",
+          "distributing and implementing broad access to public cloud infrastructure-as-a-service services",
+          "mainstreamed processes that promote a lower IT headcount by implementing automation",
+          "automated tools and methods that deliver preconfigured developer platforms on demand"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q46",
+        "module": "devnet_m5",
+        "question": "Which statement describes the term orchestration in IT automation?",
+        "code": null,
+        "options": [
+          "Orchestration is aimed at managing workload lifecycles and reacting dynamically to changing conditions in order to optimize processes.",
+          "Orchestration is the process of preparing a server through the installation of libraries or daemons.",
+          "Orchestration is the building, arranging, integration, and preparation of multi-component applications across multiple nodes.",
+          "Orchestration is the obtaining and provisioning of compute, storage, and network infrastructure."
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q47",
+        "module": "devnet_m5",
+        "question": "What is an example of a read-only automation solution?",
+        "code": null,
+        "options": [
+          "streamlining the management of L3 firewall rules in Cisco Meraki networks",
+          "gathering SD-WAN inventory data using Python and recording the values in a database",
+          "simplifying the automation of network device authentication, configuration, and consistency",
+          "gathering the current list of ACL entries on an IOS XE router and enforcing consistency"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q48",
+        "module": "devnet_m4",
+        "question": "A student is setting up the CSR1000v VM in VirtualBox that is already installed on the local computer. The VM is imported to the VirtualBox and starts successfully. The student tries to verify communications to the CSR1000v VM by opening the Firefox web browser on the local computer and enters the URL https://192.168.56.101. A security message \"Warning: Potential Security Risk Ahead\" appears. What is the security issue that results in this message?",
+        "code": null,
+        "options": [
+          "The SSL/TLS certificate uses a public key size of less than 1024 bits.",
+          "The SSL/TLS certificate is self-signed by the router.",
+          "The CA for the SSL/TLS certificate cannot be reached.",
+          "The traffic to the VM is not encrypted."
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q49",
+        "module": "devnet_m2",
+        "question": "How do APIs affect traditional IT tasks?",
+        "code": null,
+        "options": [
+          "They are used to replace network infrastructure and implement network virtualization.",
+          "They are used to eliminate repetitive manual tasks and replace them with automation.",
+          "They are used to increase computer processing speed and lower power consumption.",
+          "They are used to increase hardware speed and lower power consumption."
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q50",
+        "module": "devnet_m6",
+        "question": "Refer to the exhibit. PC1 needs to resolve the host name of the web server into an IP address by using DNS. What destination IP address and destination port number will PC1 assign to the DNS query packet?\n\n\n\n\n192.168.20.2 port 80\n192.168.20.3 port 53\n192.168.20.3 port 80\n192.168.10.1 port 53\n\nExplanation: ____\n\n60. Which two statements are true about NTP servers in an enterprise network? (Choose two.)",
+        "code": null,
+        "options": [
+          "There can only be one NTP server on an enterprise network",
+          "All NTP servers synchronize directly to a stratum 1 time source.",
+          "NTP servers at stratum 1 are directly connected to an authoritative time source.",
+          "NTP servers ensure an accurate time stamp on logging and debugging information.",
+          "NTP servers control the mean time between failures (MTBF) for key network devices."
+        ],
+        "correct": [
+          2,
+          3
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q51",
+        "module": "devnet_m6",
+        "question": "Match the steps with the actions that are involved when an internal host with IP address 192.168.10.10 attempts to send a packet to an external server at the IP address 209.165.200.254 across a router R1 that is running dynamic NAT. (Not all options are used.)\n\n\n\nPlace the options in the following order:\n\n\n\n\nstep 1\nThe host sends packets that request a connection to the server at the address 209.165.200.254.\n\n\nstep 2\nR1 checks the NAT configuration to determine if this packet should be translated.\n\n\nstep 3\nIf there is no translation entry for this IP address, R1 determines that the source address 192.168.10.10 must be translated.\n\n\nstep 4\nR1 selects an available global address from the dynamic address pool.\n\n\nstep 5\nR1 replaces the address 192.168.10.10 with a translated inside global address.\n\n\n\nExplanation: The translation of the IP addresses from 209.65.200.254 to 192.168.10.10 will take place when the reply comes back from the server.\n\n62. A network administrator can successfully ping the server at www.cisco.com, but cannot ping the company web server located at an ISP in another city. Which tool or command would help identify the specific router where the packet was lost or delayed?",
+        "code": null,
+        "options": [
+          "traceroute",
+          "ipconfig",
+          "telnet",
+          "netstat"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q52",
+        "module": "devnet_m2",
+        "question": "Which two HTTP functions correspond to the UPDATE function in CRUD? (Choose two.)",
+        "code": null,
+        "options": [
+          "POST",
+          "DELETE",
+          "PATCH",
+          "PUT",
+          "GET"
+        ],
+        "correct": [
+          1,
+          2
+        ],
+        "explanation": "GET -> READ\n\nPOST -> CREATE\n\nPUT/PATCH -> UPDATE\n\nDELETE -> DELETE"
+      },
+      {
+        "id": "devnet_q53",
+        "module": "devnet_m2",
+        "question": "Match the term to the RESTAPI request http://example.com/update/person?id=42&email=person%40example.com. (Not all options are used.)\n\n\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nscheme\nhttp\n\n\npath\nupdate/person\n\n\nauthority\nexample.com\n\n\nquery\nid=42&email=person%40example.com\n\n\n\n65. Which HTTP status code category is used in the response to indicate that a REST API request contains an error on the client side?",
+        "code": null,
+        "options": [
+          "1xx",
+          "2xx",
+          "3xx",
+          "4xx",
+          "5xx"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q54",
+        "module": "devnet_m2",
+        "question": "Refer to the exhibit. A network administrator is using a Python script to test a REST API request. The traceback message indicates that there is an error in the URI. What is the error?\n\n\n\n\nThe protocol is wrong.\nThe resource path is wrong.\nThe SSL certificate is invalid.\nThe destination web host address is invalid.\n\n67. What are two requirements for an application to communicate with a webhook provider? (Choose two.)",
+        "code": null,
+        "options": [
+          "The application must support JSON.",
+          "The application must always be running.",
+          "The application must register a URL with the webhook provider.",
+          "The host where the application is running must have an SSH client installed.",
+          "The host where the application is running must have an SSH server running."
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explanation": "The application must be running at all times to receive HTTP POST requests.\n\nThe application must register a URI on the webhook provider so that the provider knows where to send a notification when target events occur."
+      },
+      {
+        "id": "devnet_q55",
+        "module": "devnet_m5",
+        "question": "A student is learning network automation by using a REST API. The student sends a request to a network device and receives a response with the status code of 202. What does this status code mean?",
+        "code": null,
+        "options": [
+          "The request was understood but has been rejected by the server.",
+          "The request was successful and typically includes a payload.",
+          "The request has been accepted for processing, but the processing has not been completed.",
+          "Because of a server error, the request cannot be fulfilled."
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q56",
+        "module": "devnet_m1",
+        "question": "What are two characteristics of stateless applications? (Choose two.)",
+        "code": null,
+        "options": [
+          "They must run on container orchestrators like Kubernetes.",
+          "They can be freely scaled across available capacity without disrupting ongoing customer connections.",
+          "They can be scaled only by redeploying them and destroying the data that users or operators previously needed.",
+          "They maintain the user state within the local user machine so that automation can work non-destructively.",
+          "They can store a user state in an accessible database separate from application servers and other components."
+        ],
+        "correct": [
+          1,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q57",
+        "module": "devnet_m4",
+        "question": "What is a characteristic of the continuous integration component of the CI/CD philosophy for software development?",
+        "code": null,
+        "options": [
+          "Code changes are continually merged with the main branch of the application, so change sets are small.",
+          "Code changes are tested and integrated with the main branch then tested again before they are deployed into production.",
+          "Code is constantly deployed into production where users serve as the final testers.",
+          "Application development is performed in short sprints so that enough code is always in a deployable state."
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q58",
+        "module": "devnet_m1",
+        "question": "A software development company specializes in being able to use whatever software development method their customer wants to use. One customer company wants to use the Waterfall method. What is a characteristic of this method?",
+        "code": null,
+        "options": [
+          "a process that amplifies learning as well as delivers as quickly as possible",
+          "a software development process where the highest priority is to satisfy the customer through early and continuous delivery of valuable software",
+          "a software development process where a particular phase depends on the results of the previous phase",
+          "a process that eliminates anything that does not add value to the project including meetings and documentation"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "devnet_q59",
+        "module": "devnet_m1",
+        "question": "In which SDLC phase is the software product installed into the production environment to decide if it is ready for release?",
+        "code": null,
+        "options": [
+          "implementation",
+          "deployment",
+          "design",
+          "testing"
+        ],
+        "correct": 1,
+        "explanation": "At the end of the deployment phase, the final piece of software is released to customers and other end users."
+      },
+      {
+        "id": "devnet_q60",
+        "module": "devnet_m1",
+        "question": "Which convention is used in Python to indicate that methods and variables in a class are private and not to be used outside of the class?",
+        "code": null,
+        "options": [
+          "by using a single preceding underscore ( _ ) for a method or variable",
+          "by using the command class private classname() : to start the class definition",
+          "by using two preceding hyphens ( — ) for a method or variable",
+          "by declaring a private method or variable in the beginning of the class definition"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
   },
   "linux": {
     "id": "linux",
@@ -2465,7 +3364,731 @@ const CERTIFICATES_DATA = {
       }
     ],
     "examQuestionCount": 40,
-    "questions": []
+    "questions": [
+      {
+        "id": "linux_q01",
+        "module": "linux_m1",
+        "question": "Embedded Systems means:",
+        "code": null,
+        "options": [
+          "Businesses cannot charge anything for the software, only the hardware",
+          "Systems designed to do a specific task on hardware optimized for only that purpose",
+          "Users must support the systems themselves",
+          "You can view the software's source code",
+          "Companies must share their changes"
+        ],
+        "correct": 1,
+        "explanation": "Vestavěné (embedded) systémy jsou navrženy k provádění konkrétní specializované úlohy na optimalizovaném jednoúčelovém hardwaru. Správná odpověď: Systems designed to do a specific task on hardware optimized for only that purpose."
+      },
+      {
+        "id": "linux_q02",
+        "module": "linux_m1",
+        "question": "Linux originally only ran on:",
+        "code": null,
+        "options": [
+          "Specialized processor chips",
+          "Raspberry Pi computers",
+          "Xerox copy machines",
+          "Intel 386 PCs",
+          "Macintosh"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Intel 386 PCs'."
+      },
+      {
+        "id": "linux_q03",
+        "module": "linux_m2",
+        "question": "Bundling utilities, management tools, and application software with a Linux kernel is called a:",
+        "code": null,
+        "options": [
+          "A text editor",
+          "A type of hardware",
+          "A distribution of Linux",
+          "A trademark"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'A distribution of Linux'."
+      },
+      {
+        "id": "linux_q04",
+        "module": "linux_m1",
+        "question": "A software release cycle describes:",
+        "code": null,
+        "options": [
+          "How often the software's memory is released back to the operating system",
+          "How often the computer must be rebooted",
+          "How often upgrades come out for software",
+          "How often security fixes are implemented",
+          "How often the computer must be upgraded to support new software"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'How often upgrades come out for software'."
+      },
+      {
+        "id": "linux_q05",
+        "module": "linux_m1",
+        "question": "(choose three)",
+        "code": null,
+        "options": [
+          "Tightly integrated with Apple hardware",
+          "A fully certified UNIX distribution",
+          "Primarily used to manage network services",
+          "Able to natively run Windows binaries",
+          "Derived from Linux",
+          "Partially based on code from the FreeBSD project"
+        ],
+        "correct": [
+          0,
+          1,
+          5
+        ],
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Tightly integrated with Apple hardware'."
+      },
+      {
+        "id": "linux_q06",
+        "module": "linux_m1",
+        "question": "(choose two)",
+        "code": null,
+        "options": [
+          "Takes fewer resources to run than a compiled language",
+          "Requires a compilation step but no linking step",
+          "Tends to offer more features than compiled languages",
+          "Is converted into machine specific instructions as the program runs",
+          "Requires a linking step but no compilation step"
+        ],
+        "correct": [
+          2,
+          3
+        ],
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Tends to offer more features than compiled languages'."
+      },
+      {
+        "id": "linux_q07",
+        "module": "linux_m1",
+        "question": "Cloud computing is:",
+        "code": null,
+        "options": [
+          "Is made possible by faster internet speeds",
+          "Is useful for both business and home users",
+          "All are correct",
+          "Requires fewer resources because systems are shared among many users",
+          "Allows users in different geographical regions to work together in real time"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'All are correct'."
+      },
+      {
+        "id": "linux_q08",
+        "module": "linux_m1",
+        "question": "A license where you don't have access to the source code is called:",
+        "code": null,
+        "options": [
+          "Closed source",
+          "Sourceless",
+          "Impaired source",
+          "Open source"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Closed source'."
+      },
+      {
+        "id": "linux_q09",
+        "module": "linux_m1",
+        "question": "A copyleft provision in a software license means:",
+        "code": null,
+        "options": [
+          "You must provide support for your modifications",
+          "You must provide free copies of the software if you use it",
+          "You may not link against third party closed source software",
+          "You give up your copyright to the software",
+          "If you redistribute the software, you must distribute the source to any changes you make"
+        ],
+        "correct": 4,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'If you redistribute the software, you must distribute the source to any changes you make'."
+      },
+      {
+        "id": "linux_q10",
+        "module": "linux_m1",
+        "question": "What does it mean when a work is placed in the public domain?",
+        "code": null,
+        "options": [
+          "The author has relinquished the copyright on the work",
+          "The author has died",
+          "You must redistribute changes to the software",
+          "You may not use the work for commercial purposes",
+          "The work was done by a government agency"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'The author has relinquished the copyright on the work'."
+      },
+      {
+        "id": "linux_q11",
+        "module": "linux_m2",
+        "question": "True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'True'."
+      },
+      {
+        "id": "linux_q12",
+        "module": "linux_m1",
+        "question": "To be able to output messages to the screen, use the _______ command:",
+        "code": null,
+        "options": [
+          "type",
+          "print",
+          "display",
+          "echo"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'echo'."
+      },
+      {
+        "id": "linux_q13",
+        "module": "linux_m3",
+        "question": "The _______ command will print a list of the commands that you've previously executed.",
+        "code": null,
+        "options": [
+          "history",
+          "exec",
+          "eval",
+          "list"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'history'."
+      },
+      {
+        "id": "linux_q14",
+        "module": "linux_m1",
+        "question": "HOME is an example of _________.",
+        "code": null,
+        "options": [
+          "An internal command",
+          "An alias",
+          "A path variable",
+          "A local variable",
+          "An environment variable"
+        ],
+        "correct": 4,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'An environment variable'."
+      },
+      {
+        "id": "linux_q15",
+        "module": "linux_m2",
+        "question": "The directory where additional documentation for software packages most likely can be found is:",
+        "code": null,
+        "options": [
+          "/usr/share/doc",
+          "/var/share/doc",
+          "/var/lib/doc",
+          "/usr/software/doc"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/usr/share/doc'."
+      },
+      {
+        "id": "linux_q16",
+        "module": "linux_m1",
+        "question": "To start searching a man page, the first key you press is:",
+        "code": null,
+        "options": [
+          "s",
+          "!",
+          "/",
+          "f"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/'."
+      },
+      {
+        "id": "linux_q17",
+        "module": "linux_m2",
+        "question": "The _____ command can be used to find any file, not just commands or man pages.",
+        "code": null,
+        "options": [
+          "whatis",
+          "whereis",
+          "apropos",
+          "locate"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'locate'."
+      },
+      {
+        "id": "linux_q18",
+        "module": "linux_m2",
+        "question": "Hidden files are files that begin with what character?",
+        "code": null,
+        "options": [
+          "A dash (-)",
+          "A plus (+)",
+          "A period (.)",
+          "An asterisk (*)"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'A period (.)'."
+      },
+      {
+        "id": "linux_q19",
+        "module": "linux_m4",
+        "question": "The top-level directory on a Linux system is represented as:",
+        "code": null,
+        "options": [
+          "C:",
+          "/home",
+          "/",
+          "/root"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/'."
+      },
+      {
+        "id": "linux_q20",
+        "module": "linux_m2",
+        "question": "The ls command without options or arguments…",
+        "code": null,
+        "options": [
+          "…lists the contents of the current directory.",
+          "…prompts for a directory to list.",
+          "…generates an error as this command requires arguments.",
+          "…lists the contents of a user's home directory."
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '…lists the contents of the current directory.'."
+      },
+      {
+        "id": "linux_q21",
+        "module": "linux_m3",
+        "question": "The command ls -S will sort files:",
+        "code": null,
+        "options": [
+          "By size, smallest to largest",
+          "By size, largest to smallest",
+          "By number of symlinks, largest to smallest",
+          "By modification date, newest to oldest"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'By size, largest to smallest'."
+      },
+      {
+        "id": "linux_q22",
+        "module": "linux_m2",
+        "question": "Which option can be used with the rm command to prompt before deleting?",
+        "code": null,
+        "options": [
+          "l",
+          "-i",
+          "A",
+          "-P"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '-i'."
+      },
+      {
+        "id": "linux_q23",
+        "module": "linux_m2",
+        "question": "Which command would list files that do not begin with a T or a W?",
+        "code": null,
+        "options": [
+          "echo /etc/*[TW!]",
+          "echo /etc/[!TW]",
+          "echo /etc/!TW",
+          "echo /etc/[*TW]!"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'echo /etc/[!TW]'."
+      },
+      {
+        "id": "linux_q24",
+        "module": "linux_m1",
+        "question": "In general, for which of the following would you want to use lossless compression?",
+        "code": null,
+        "options": [
+          "An mp3 audio file",
+          "A movie",
+          "A JPEG image",
+          "A log file",
+          "An encrypted email"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'A log file'."
+      },
+      {
+        "id": "linux_q25",
+        "module": "linux_m1",
+        "question": "Which command will show what is inside the compressed tarball with a name of foo.tar.gz?",
+        "code": null,
+        "options": [
+          "tar –tf foo.tar.gz",
+          "tar –lf foo.tar.gz",
+          "tar –tzf foo.tar.gz",
+          "tar –tjf foo.tar.gz",
+          "tar –xf foo.tar.gz"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'tar –tzf foo.tar.gz'."
+      },
+      {
+        "id": "linux_q26",
+        "module": "linux_m1",
+        "question": "Error messages generated by commands are sent where by default?",
+        "code": null,
+        "options": [
+          "STDOUT",
+          "Log files",
+          "STDERR",
+          "STDIN"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'STDERR'."
+      },
+      {
+        "id": "linux_q27",
+        "module": "linux_m1",
+        "question": "Which of the following commands will display only lines that begin with test?",
+        "code": null,
+        "options": [
+          "grep $test* file.txt",
+          "grep ^test file.txt",
+          "grep &test file.txt",
+          "grep *test file.txt"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'grep ^test file.txt'."
+      },
+      {
+        "id": "linux_q28",
+        "module": "linux_m1",
+        "question": "Which of the following commands will display lines that contain either start or end?",
+        "code": null,
+        "options": [
+          "egrep start end file.txt",
+          "egrep (start|end) file.txt",
+          "egrep start&end file.txt",
+          "egrep 'start|end' file.txt"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'egrep 'start|end' file.txt'."
+      },
+      {
+        "id": "linux_q29",
+        "module": "linux_m2",
+        "question": "A file begins with #!/bin/csh. This means:",
+        "code": null,
+        "options": [
+          "Nothing, this is a comment",
+          "This is a Perl script",
+          "Running the script will invoke /bin/csh to interpret the rest of the file",
+          "The operator should not be using /bin/csh",
+          "C Shell compatibility mode is enabled"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Running the script will invoke /bin/csh to interpret the rest of the file'."
+      },
+      {
+        "id": "linux_q30",
+        "module": "linux_m2",
+        "question": "Most of nano's commands take the form of:",
+        "code": null,
+        "options": [
+          "Alt and another character",
+          "Control and another character",
+          "The F1 through F12 function keys",
+          "Mouse clicks",
+          "Escape followed by another character"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Control and another character'."
+      },
+      {
+        "id": "linux_q31",
+        "module": "linux_m1",
+        "question": "The if command looks for what exit code to consider a condition to be true?",
+        "code": null,
+        "options": [
+          "0",
+          "10",
+          "255",
+          "2",
+          "1"
+        ],
+        "correct": 0,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '0'."
+      },
+      {
+        "id": "linux_q32",
+        "module": "linux_m1",
+        "question": "The number of users logged in is in a variable called USERS. How would you test to see if there are 5 users logged in?",
+        "code": null,
+        "options": [
+          "test –f USERS=5",
+          "test $USERS –eq 5",
+          "test $USERS = 5",
+          "test $USERS –a 5",
+          "test $USERS,5"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'test $USERS –eq 5'."
+      },
+      {
+        "id": "linux_q33",
+        "module": "linux_m4",
+        "question": "Software that allows hardware devices to communicate with the installed operating system is called?",
+        "code": null,
+        "options": [
+          "Packages",
+          "Drivers",
+          "Instructions",
+          "Programs"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Drivers'."
+      },
+      {
+        "id": "linux_q34",
+        "module": "linux_m1",
+        "question": "Which of the following commands will check hard disk GPT partitions?(choose three)",
+        "code": null,
+        "options": [
+          "gdisk",
+          "sfdisk",
+          "gfdisk",
+          "sgdisk",
+          "cgdisk"
+        ],
+        "correct": [
+          0,
+          3,
+          4
+        ],
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'gdisk'."
+      },
+      {
+        "id": "linux_q35",
+        "module": "linux_m1",
+        "question": "The free command outputs statistics about:",
+        "code": null,
+        "options": [
+          "Disk usage",
+          "Memory usage",
+          "Software usage",
+          "CPU usage"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'Memory usage'."
+      },
+      {
+        "id": "linux_q36",
+        "module": "linux_m2",
+        "question": "Which file contains the information passed to the kernel at boot time?",
+        "code": null,
+        "options": [
+          "/proc/kernel",
+          "/proc/kargs",
+          "/proc/kopts",
+          "/proc/cmdline"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/proc/cmdline'."
+      },
+      {
+        "id": "linux_q37",
+        "module": "linux_m2",
+        "question": "To make changes permanent for kernel parameter files found under /proc/sys, the following file can have entries added to it:",
+        "code": null,
+        "options": [
+          "/etc/sysinfo.conf",
+          "/etc/sysctl.conf",
+          "/etc/procctl.conf",
+          "/etc/procsys.conf"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/etc/sysctl.conf'."
+      },
+      {
+        "id": "linux_q38",
+        "module": "linux_m4",
+        "question": "Which of the following commands will display the IP address on a Linux system?",
+        "code": null,
+        "options": [
+          "dig",
+          "ifconfig",
+          "route",
+          "ipconfig"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'ifconfig'."
+      },
+      {
+        "id": "linux_q39",
+        "module": "linux_m4",
+        "question": "When issuing the service network restart command, which of the following occurs?",
+        "code": null,
+        "options": [
+          "…the networking for the system is stopped and then started back up.",
+          "…brings up all network interfaces, re-reads all related configuration files and then the networking for the system is restarted.",
+          "…takes down all network interfaces, re-reads all related configuration files and then the networking for the system is restarted."
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '…takes down all network interfaces, re-reads all related configuration files and then the networking for the system is restarted.'."
+      },
+      {
+        "id": "linux_q40",
+        "module": "linux_m1",
+        "question": "Which of the following commands can be used to display socket statistics, and supports all major packet and socket types?",
+        "code": null,
+        "options": [
+          "route",
+          "ss",
+          "top",
+          "ifconfig"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'ss'."
+      },
+      {
+        "id": "linux_q41",
+        "module": "linux_m1",
+        "question": "Which of the following commands will display the groups that the user bob belongs to?",
+        "code": null,
+        "options": [
+          "groups -a",
+          "group bob",
+          "all bob",
+          "id bob"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'id bob'."
+      },
+      {
+        "id": "linux_q42",
+        "module": "linux_m1",
+        "question": "Traditional UNIX systems allowed users to belong to how many groups?",
+        "code": null,
+        "options": [
+          "256",
+          "65,000",
+          "1",
+          "10,000",
+          "16"
+        ],
+        "correct": 4,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '16'."
+      },
+      {
+        "id": "linux_q43",
+        "module": "linux_m1",
+        "question": "The first line of this command displays how long the system has been running since being rebooted.",
+        "code": null,
+        "options": [
+          "getent",
+          "id",
+          "w",
+          "su",
+          "who"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'w'."
+      },
+      {
+        "id": "linux_q44",
+        "module": "linux_m1",
+        "question": "Which of the following files contains user IDs?",
+        "code": null,
+        "options": [
+          "/etc/usr",
+          "/etc/shadow",
+          "/etc/group",
+          "/etc/passwd"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/etc/passwd'."
+      },
+      {
+        "id": "linux_q45",
+        "module": "linux_m1",
+        "question": "Which of the following commands, run as root, will prevent the user bob from logging in?",
+        "code": null,
+        "options": [
+          "usermod -D bob",
+          "usermod -d bob",
+          "usermod -L bob",
+          "usermod -l bob"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'usermod -L bob'."
+      },
+      {
+        "id": "linux_q46",
+        "module": "linux_m1",
+        "question": "What directory contains a user's home directory?",
+        "code": null,
+        "options": [
+          "/rootfs",
+          "/",
+          "/home",
+          "/user"
+        ],
+        "correct": 2,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: '/home'."
+      },
+      {
+        "id": "linux_q47",
+        "module": "linux_m1",
+        "question": "GIDs under 500 (or 1000) are usually reserved for what kind of groups?",
+        "code": null,
+        "options": [
+          "Administrators",
+          "System use",
+          "User private groups (UPG)",
+          "Are not used for groups, but for user accounts"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'System use'."
+      },
+      {
+        "id": "linux_q48",
+        "module": "linux_m1",
+        "question": "A user cannot delete a file if they do not own it. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'False'."
+      },
+      {
+        "id": "linux_q49",
+        "module": "linux_m1",
+        "question": "The chown command permits changing group ownership done by root only. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'False'."
+      },
+      {
+        "id": "linux_q50",
+        "module": "linux_m4",
+        "question": "Which of the following commands will list hidden files as well as their ownership?",
+        "code": null,
+        "options": [
+          "ls -l",
+          "ls -z",
+          "ls -a",
+          "ls -la"
+        ],
+        "correct": 3,
+        "explanation": "Podle oficiálních osnov certifikace LPI Linux Essentials je správnou odpovědí: 'ls -la'."
+      }
+    ]
   },
   "ccna_itn": {
     "id": "ccna_itn",
@@ -2497,6 +4120,936 @@ const CERTIFICATES_DATA = {
       }
     ],
     "examQuestionCount": 50,
-    "questions": []
+    "questions": [
+      {
+        "id": "itn_q01",
+        "module": "itn_m4",
+        "question": "Which two traffic types use the Real-Time Transport Protocol (RTP)? (Choose two.)",
+        "code": null,
+        "options": [
+          "video",
+          "web",
+          "file transfer",
+          "voice",
+          "peer to peer"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explanation": "Protokol RTP (Real-Time Transport Protocol) běží nad UDP a slouží pro přenos médií v reálném čase, zejména hlasu (voice) a videa (video). Správná odpověď: video."
+      },
+      {
+        "id": "itn_q02",
+        "module": "itn_m1",
+        "question": "Which wireless technology has low-power and data rate requirements making it popular in home automation applications?",
+        "code": null,
+        "options": [
+          "ZigBee",
+          "LoRaWAN",
+          "5G",
+          "Wi-Fi"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explanation": "ZigBee je nízkoenergetická bezdrátová technologie s nízkou přenosovou rychlostí ideální pro domácí automatizaci a IoT senzory. Správná odpověď: ZigBee."
+      },
+      {
+        "id": "itn_q03",
+        "module": "itn_m4",
+        "question": "Which layer of the TCP/IP model provides a route to forward messages through an internetwork?",
+        "code": null,
+        "options": [
+          "application",
+          "network access",
+          "internet",
+          "transport"
+        ],
+        "correct": 2,
+        "explanation": "V TCP/IP modelu odpovídá síťové vrstvě vrstva Internet (zajišťuje směrování paketů přes sítě pomocí IP adres). Správná odpověď: internet."
+      },
+      {
+        "id": "itn_q04",
+        "module": "itn_m1",
+        "question": "Which type of server relies on record types such as A, NS, AAAA, and MX in order to provide services?",
+        "code": null,
+        "options": [
+          "DNS",
+          "email",
+          "file",
+          "web"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q05",
+        "module": "itn_m1",
+        "question": "What are proprietary protocols?",
+        "code": null,
+        "options": [
+          "protocols developed by private organizations to operate on any vendor hardware",
+          "protocols that can be freely used by any organization or vendor",
+          "protocols developed by organizations who have control over their definition and operation",
+          "a collection of protocols known as the TCP/IP protocol suite"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q06",
+        "module": "itn_m1",
+        "question": "What service is provided by DNS?",
+        "code": null,
+        "options": [
+          "Resolves domain names, such as cisco.com, into IP addresses.",
+          "A basic set of rules for exchanging text, graphic images, sound, video, and other multimedia files on the web.",
+          "Allows for data transfers between a client and a file server.",
+          "Uses encryption to secure the exchange of text, graphic images, sound, and video on the web."
+        ],
+        "correct": 0,
+        "explanation": "Služba DNS (Domain Name System, port 53 UDP/TCP) překládá doménová jména na IP adresy (záznamy A, AAAA, MX, NS). Správná odpověď: Resolves domain names, such as cisco.com, into IP addresses.."
+      },
+      {
+        "id": "itn_q07",
+        "module": "itn_m4",
+        "question": "A client packet is received by a server. The packet has a destination port number of 110. What service is the client requesting?",
+        "code": null,
+        "options": [
+          "DNS",
+          "DHCP",
+          "SMTP",
+          "POP3"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q08",
+        "module": "itn_m3",
+        "question": "What command can be used on a Windows PC to see the IP configuration of that computer?",
+        "code": null,
+        "options": [
+          "show ip interface brief",
+          "ping",
+          "show interfaces",
+          "ipconfig"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q09",
+        "module": "itn_m1",
+        "question": "A wired laser printer is attached to a home computer. That printer has been shared so that other computers on the home network can also use the printer. What networking model is in use?",
+        "code": null,
+        "options": [
+          "client-based",
+          "master-slave",
+          "point-to-point",
+          "peer-to-peer (P2P)"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q10",
+        "module": "itn_m1",
+        "question": "What characteristic describes a virus?",
+        "code": null,
+        "options": [
+          "a network device that filters access and traffic coming into a network",
+          "the use of stolen credentials to access private data",
+          "an attack that slows or crashes a device or network service",
+          "malicious software or code running on an end device"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q11",
+        "module": "itn_m4",
+        "question": "Three bank employees are using the corporate network. The first employee uses a web browser to view a company web page in order to read some announcements. The second employee accesses the corporate database to perform some financial transactions. The third employee participates in an important live audio conference with other corporate managers in branch offices. If QoS is implemented on this network, what will be the priorities from highest to lowest of the different data types?",
+        "code": null,
+        "options": [
+          "financial transactions, web page, audio conference",
+          "audio conference, financial transactions, web page",
+          "financial transactions, audio conference, web page",
+          "audio conference, web page, financial transactions"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q12",
+        "module": "itn_m1",
+        "question": "A host is trying to send a packet to a device on a remote LAN segment, but there are currently no mappings in its ARP cache. How will the device obtain a destination MAC address?\n\n(A host is trying to send a packet to a device on a remote LAN segment, but there are currently no mappings in the ARP cache. How will the device obtain a destination MAC address?)\n\n\nIt will send the frame and use its own MAC address as the destination.\nIt will send an ARP request for the MAC address of the destination device.\nIt will send the frame with a broadcast MAC address.\nIt will send a request to the DNS server for the destination MAC address.\nIt will send an ARP request for the MAC address of the default gateway.\n\nExplanation: Topic 9.2.5\n\nWhen a source host identifies that a destination IP address resides on a remote network segment, it must forward the packet to its default gateway (the local router) to reach that destination. Because Layer 2 Ethernet frames are designed for local delivery within the same segment, the host requires the physical MAC address of the gateway's interface to encapsulate the IP packet. If the ARP cache does not contain a mapping for the gateway's IP address, the host initiates an ARP request specifically for the default gateway's MAC address. The host does not request the MAC address of the final destination device, as that device is not on the local segment and cannot respond to local Layer 2 broadcast requests. Once the gateway's MAC address is resolved and stored in the cache, the host can successfully transmit the frame to the router for further delivery across the internetwork.\n\n\n\n22. A client packet is received by a server. The packet has a destination port number of 53. What service is the client requesting?",
+        "code": null,
+        "options": [
+          "DNS",
+          "NetBIOS (NetBT)",
+          "POP3",
+          "IMAP"
+        ],
+        "correct": 0,
+        "explanation": "Ethernetový rámec na linkové vrstvě (L2) obsahuje zdrojovou a cílovou MAC adresu (48 bitů). Minimální velikost rámce je 64 bajtů. Správná odpověď: DNS."
+      },
+      {
+        "id": "itn_q13",
+        "module": "itn_m4",
+        "question": "A network administrator is adding a new LAN to a branch office. The new LAN must support 25 connected devices. What is the smallest network mask that the network administrator can use for the new network?",
+        "code": null,
+        "options": [
+          "255.255.255.128",
+          "255.255.255.192",
+          "255.255.255.224",
+          "255.255.255.240"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q14",
+        "module": "itn_m1",
+        "question": "What characteristic describes a Trojan horse?",
+        "code": null,
+        "options": [
+          "malicious software or code running on an end device",
+          "an attack that slows or crashes a device or network service",
+          "the use of stolen credentials to access private data",
+          "a network device that filters access and traffic coming into a network"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q15",
+        "module": "itn_m1",
+        "question": "What service is provided by HTTPS?",
+        "code": null,
+        "options": [
+          "Uses encryption to provide secure remote access to network devices and servers.",
+          "Resolves domain names, such as cisco.com, into IP addresses.",
+          "Uses encryption to secure the exchange of text, graphic images, sound, and video on the web.",
+          "Allows remote access to network devices and servers."
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q16",
+        "module": "itn_m1",
+        "question": "A technician with a PC is using multiple applications while connected to the Internet. How is the PC able to keep track of the data flow between multiple application sessions and have each application receive the correct packet flows?",
+        "code": null,
+        "options": [
+          "The data flow is being tracked based on the destination MAC address of the technician PC.",
+          "The data flow is being tracked based on the source port number that is used by each application.",
+          "The data flow is being tracked based on the source IP address that is used by the PC of the technician.",
+          "The data flow is being tracked based on the destination IP address that is used by the PC of the technician."
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q17",
+        "module": "itn_m4",
+        "question": "A network administrator is adding a new LAN to a branch office. The new LAN must support 61 connected devices. What is the smallest network mask that the network administrator can use for the new network?",
+        "code": null,
+        "options": [
+          "255.255.255.240",
+          "255.255.255.224",
+          "255.255.255.192",
+          "255.255.255.128"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q18",
+        "module": "itn_m1",
+        "question": "Match the application protocols to the correct transport protocols.\n\n\n\nExplanation: Topic 14.4.3\n\n\n\n31. What service is provided by SMTP?",
+        "code": null,
+        "options": [
+          "Allows clients to send email to a mail server and the servers to send email to other servers.",
+          "Allows remote access to network devices and servers.",
+          "Uses encryption to provide secure remote access to network devices and servers.",
+          "An application that allows real-time chatting among remote users."
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q19",
+        "module": "itn_m4",
+        "question": "Which scenario describes a function provided by the transport layer?",
+        "code": null,
+        "options": [
+          "A student is using a classroom VoIP phone to call home. The unique identifier burned into the phone is a transport layer address used to contact another network device on the same network.",
+          "A student is playing a short web-based movie with sound. The movie and sound are encoded within the transport layer header.",
+          "A student has two web browser windows open in order to access two web sites. The transport layer ensures the correct web page is delivered to the correct browser window.",
+          "A corporate worker is accessing a web server located on a corporate network. The transport layer formats the screen so the web page appears properly no matter what device is being used to view the web site."
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q20",
+        "module": "itn_m1",
+        "question": "A company has a file server that shares a folder named Public. The network security policy specifies that the Public folder is assigned Read-Only rights to anyone who can log into the server while the Edit rights are assigned only to the network admin group. Which component is addressed in the AAA network service framework?",
+        "code": null,
+        "options": [
+          "automation",
+          "accounting",
+          "authentication",
+          "authorization"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q21",
+        "module": "itn_m1",
+        "question": "What three requirements are defined by the protocols used in network communcations to allow message transmission across a network? (Choose three.)",
+        "code": null,
+        "options": [
+          "message size",
+          "message encoding",
+          "connector specifications",
+          "media selection",
+          "delivery options",
+          "end-device installation"
+        ],
+        "correct": [
+          0,
+          1,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q22",
+        "module": "itn_m3",
+        "question": "What are two characteristics of IP? (Choose two.)",
+        "code": null,
+        "options": [
+          "does not require a dedicated end-to-end connection",
+          "operates independently of the network media",
+          "retransmits packets if errors occur",
+          "re-assembles out of order packets into the correct order at the receiver end",
+          "guarantees delivery of packets"
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q23",
+        "module": "itn_m4",
+        "question": "An employee of a large corporation remotely logs into the company using the appropriate username and password. The employee is attending an important video conference with a customer concerning a large sale. It is important for the video quality to be excellent during the meeting. The employee is unaware that after a successful login, the connection to the company ISP failed. The secondary connection, however, activated within seconds. The disruption was not noticed by the employee or other employees.\n\nWhat three network characteristics are described in this scenario? (Choose three.)",
+        "code": null,
+        "options": [
+          "security",
+          "quality of service",
+          "scalability",
+          "powerline networking",
+          "integrity",
+          "fault tolerance"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q24",
+        "module": "itn_m2",
+        "question": "What are two common causes of signal degradation when using UTP cabling? (Choose two.)",
+        "code": null,
+        "options": [
+          "improper termination",
+          "low-quality shielding in cable",
+          "installing cables in conduit",
+          "low-quality cable or connectors",
+          "loss of light over long distances"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q25",
+        "module": "itn_m3",
+        "question": "Which subnet would include the address 192.168.1.96 as a usable host address?",
+        "code": null,
+        "options": [
+          "192.168.1.64/26",
+          "192.168.1.32/27",
+          "192.168.1.32/28",
+          "192.168.1.64/29"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q26",
+        "module": "itn_m3",
+        "question": "What is the consequence of configuring a router with the ipv6 unicast-routing global configuration command?​",
+        "code": null,
+        "options": [
+          "All router interfaces will be automatically activated.",
+          "The IPv6 enabled router interfaces begin sending ICMPv6 Router Advertisement messages.",
+          "Each router interface will generate an IPv6 link-local address.​",
+          "It statically creates a global unicast address on this router.​"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q27",
+        "module": "itn_m1",
+        "question": "Which three layers of the OSI model map to the application layer of the TCP/IP model? (Choose three.)",
+        "code": null,
+        "options": [
+          "application",
+          "network",
+          "data link",
+          "session",
+          "presentation",
+          "transport"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q28",
+        "module": "itn_m1",
+        "question": "What are two features of ARP? (Choose two.)",
+        "code": null,
+        "options": [
+          "When a host is encapsulating a packet into a frame, it refers to the MAC address table to determine the mapping of IP addresses to MAC addresses.",
+          "An ARP request is sent to all devices on the Ethernet LAN and contains the IP address of the destination host and its multicast MAC address.",
+          "If a host is ready to send a packet to a local destination device and it has the IP address but not the MAC address of the destination, it generates an ARP broadcast.",
+          "If no device responds to the ARP request, then the originating node will broadcast the data packet to all devices on the network segment.",
+          "If a device receiving an ARP request has the destination IPv4 address, it responds with an ARP reply."
+        ],
+        "correct": [
+          0,
+          3
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q29",
+        "module": "itn_m4",
+        "question": "A network administrator is adding a new LAN to a branch office. The new LAN must support 90 connected devices. What is the smallest network mask that the network administrator can use for the new network?",
+        "code": null,
+        "options": [
+          "255.255.255.128",
+          "255.255.255.240",
+          "255.255.255.248",
+          "255.255.255.224"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q30",
+        "module": "itn_m3",
+        "question": "What are two ICMPv6 messages that are not present in ICMP for IPv4? (Choose two.)",
+        "code": null,
+        "options": [
+          "Neighbor Solicitation",
+          "Destination Unreachable",
+          "Host Confirmation",
+          "Time Exceeded",
+          "Router Advertisement",
+          "Route Redirection"
+        ],
+        "correct": [
+          0,
+          3
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q31",
+        "module": "itn_m4",
+        "question": "A client packet is received by a server. The packet has a destination port number of 80. What service is the client requesting?",
+        "code": null,
+        "options": [
+          "DHCP",
+          "SMTP",
+          "DNS",
+          "HTTP"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q32",
+        "module": "itn_m1",
+        "question": "What is an advantage for small organizations of adopting IMAP instead of POP?",
+        "code": null,
+        "options": [
+          "POP only allows the client to store messages in a centralized way, while IMAP allows distributed storage.",
+          "Messages are kept in the mail servers until they are manually deleted from the email client.",
+          "When the user connects to a POP server, copies of the messages are kept in the mail server for a short time, but IMAP keeps them for a long time.",
+          "IMAP sends and retrieves email, but POP only retrieves email."
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q33",
+        "module": "itn_m3",
+        "question": "A technician can ping the IP address of the web server of a remote company but cannot successfully ping the URL address of the same web server. Which software utility can the technician use to diagnose the problem?",
+        "code": null,
+        "options": [
+          "tracert",
+          "ipconfig",
+          "netstat",
+          "nslookup"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q34",
+        "module": "itn_m2",
+        "question": "Which two functions are performed at the LLC sublayer of the OSI Data Link Layer to facilitate Ethernet communication? (Choose two.)",
+        "code": null,
+        "options": [
+          "implements CSMA/CD over legacy shared half-duplex media",
+          "enables IPv4 and IPv6 to utilize the same physical medium",
+          "integrates Layer 2 flows between 10 Gigabit Ethernet over fiber and 1 Gigabit Ethernet over copper",
+          "implements a process to delimit fields within an Ethernet 2 frame",
+          "places information in the Ethernet frame that identifies which network layer protocol is being encapsulated by the frame"
+        ],
+        "correct": [
+          1,
+          4
+        ],
+        "explanation": "Ethernetový rámec na linkové vrstvě (L2) obsahuje zdrojovou a cílovou MAC adresu (48 bitů). Minimální velikost rámce je 64 bajtů. Správná odpověď: enables IPv4 and IPv6 to utilize the same physical medium."
+      },
+      {
+        "id": "itn_q35",
+        "module": "itn_m3",
+        "question": "The global configuration command ip default-gateway 172.16.100.1 is applied to a switch. What is the effect of this command?",
+        "code": null,
+        "options": [
+          "The switch can communicate with other hosts on the 172.16.100.0 network.",
+          "The switch can be remotely managed from a host on another network.",
+          "The switch is limited to sending and receiving frames to and from the gateway 172.16.100.1.",
+          "The switch will have a management interface with the address 172.16.100.1."
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q36",
+        "module": "itn_m1",
+        "question": "What happens when the transport input ssh command is entered on the switch vty lines?",
+        "code": null,
+        "options": [
+          "The SSH client on the switch is enabled.",
+          "The switch requires a username/password combination for remote access.",
+          "Communication between the switch and remote users is encrypted.",
+          "The switch requires remote connections via a proprietary client software."
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q37",
+        "module": "itn_m4",
+        "question": "Match the type of threat with the cause. (Not all options are used.)\n\n\n\n\n\n\nelectrical threats\nvoltage spikes, insufficient supply voltage (brownouts), unconditioned power (noise), and total power loss\n\n\nhardware threats\nphysical damage to servers, routers, switches, cabling plant, and workstations\n\n\nenvironmental threats\ntemperature extremes (too hot or too cold) or humidity extremes (too wet or too dry)\n\n\nmaintenance threats\npoor handling of key electrical components (electrostatic discharge), lack of critical spare parts, poor cabling, and poor labeling\n\n\n\nExplanation: Topic 16.1.3\n\n\n\n59. A disgruntled employee is using some free wireless networking tools to determine information about the enterprise wireless networks. This person is planning on using this information to hack the wireless network. What type of attack is this?",
+        "code": null,
+        "options": [
+          "DoS",
+          "access",
+          "reconnaissance",
+          "Trojan horse"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q38",
+        "module": "itn_m1",
+        "question": "What service is provided by HTTP?",
+        "code": null,
+        "options": [
+          "Uses encryption to secure the exchange of text, graphic images, sound, and video on the web.",
+          "Allows for data transfers between a client and a file server.",
+          "An application that allows real-time chatting among remote users.",
+          "A basic set of rules for exchanging text, graphic images, sound, video, and other multimedia files on the web."
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q39",
+        "module": "itn_m4",
+        "question": "A client packet is received by a server. The packet has a destination port number of 67. What service is the client requesting?",
+        "code": null,
+        "options": [
+          "FTP",
+          "DHCP",
+          "Telnet",
+          "SSH"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q40",
+        "module": "itn_m1",
+        "question": "What are two problems that can be caused by a large number of ARP request and reply messages? (Choose two.)",
+        "code": null,
+        "options": [
+          "Switches become overloaded because they concentrate all the traffic from the attached subnets.",
+          "The ARP request is sent as a broadcast, and will flood the entire subnet.",
+          "The network may become overloaded because ARP reply messages have a very large payload due to the 48-bit MAC address and 32-bit IP address that they contain.",
+          "A large number of ARP request and reply messages may slow down the switching process, leading the switch to make many changes in its MAC table.",
+          "All ARP request messages must be processed by all nodes on the local network."
+        ],
+        "correct": [
+          1,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q41",
+        "module": "itn_m1",
+        "question": "A group of Windows PCs in a new subnet has been added to an Ethernet network. When testing the connectivity, a technician finds that these PCs can access local network resources but not the Internet resources. To troubleshoot the problem, the technician wants to initially confirm the IP address and DNS configurations on the PCs, and also verify connectivity to the local router. Which three Windows CLI commands and utilities will provide the necessary information? (Choose three.)",
+        "code": null,
+        "options": [
+          "netsh interface ipv6 show neighbor",
+          "arp -a",
+          "tracert",
+          "ping",
+          "ipconfig",
+          "nslookup",
+          "telnet"
+        ],
+        "correct": [
+          3,
+          4,
+          5
+        ],
+        "explanation": "Ethernetový rámec na linkové vrstvě (L2) obsahuje zdrojovou a cílovou MAC adresu (48 bitů). Minimální velikost rámce je 64 bajtů. Správná odpověď: ping."
+      },
+      {
+        "id": "itn_q42",
+        "module": "itn_m3",
+        "question": "During the process of forwarding traffic, what will the router do immediately after matching the destination IP address to a network on a directly connected routing table entry?",
+        "code": null,
+        "options": [
+          "analyze the destination IP address",
+          "switch the packet to the directly connected interface",
+          "look up the next-hop address for the packet",
+          "discard the traffic after consulting the route table"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q43",
+        "module": "itn_m1",
+        "question": "What characteristic describes antispyware?",
+        "code": null,
+        "options": [
+          "applications that protect end devices from becoming infected with malicious software",
+          "a network device that filters access and traffic coming into a network",
+          "software on a router that filters traffic based on IP addresses or applications",
+          "a tunneling protocol that provides remote users with secure access into the network of an organization"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q44",
+        "module": "itn_m2",
+        "question": "A network administrator needs to keep the user ID, password, and session contents private when establishing remote CLI connectivity with a switch to manage it. Which access method should be chosen?",
+        "code": null,
+        "options": [
+          "Telnet",
+          "AUX",
+          "SSH",
+          "Console"
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q45",
+        "module": "itn_m1",
+        "question": "What are the two most effective ways to defend against malware? (Choose two.)",
+        "code": null,
+        "options": [
+          "Implement a VPN.",
+          "Implement network firewalls.",
+          "Implement RAID.",
+          "Implement strong passwords.",
+          "Update the operating system and other application software.",
+          "Install and update antivirus software."
+        ],
+        "correct": [
+          4,
+          5
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q46",
+        "module": "itn_m1",
+        "question": "Which type of security threat would be responsible if a spreadsheet add-on disables the local software firewall?",
+        "code": null,
+        "options": [
+          "brute-force attack",
+          "Trojan horse",
+          "DoS",
+          "buffer overflow"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q47",
+        "module": "itn_m2",
+        "question": "Which frame field is created by a source node and used by a destination node to ensure that a transmitted data signal has not been altered by interference, distortion, or signal loss?",
+        "code": null,
+        "options": [
+          "User Datagram Protocol field",
+          "transport layer error check field",
+          "flow control field",
+          "frame check sequence field",
+          "error correction process field"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q48",
+        "module": "itn_m4",
+        "question": "A network administrator is adding a new LAN to a branch office. The new LAN must support 4 connected devices. What is the smallest network mask that the network administrator can use for the new network?",
+        "code": null,
+        "options": [
+          "255.255.255.248",
+          "255.255.255.0",
+          "255.255.255.128",
+          "255.255.255.192"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q49",
+        "module": "itn_m1",
+        "question": "What service is provided by POP3?",
+        "code": null,
+        "options": [
+          "Retrieves email from the server by downloading the email to the local mail application of the client.",
+          "An application that allows real-time chatting among remote users.",
+          "Allows remote access to network devices and servers.",
+          "Uses encryption to provide secure remote access to network devices and servers."
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q50",
+        "module": "itn_m1",
+        "question": "What two security solutions are most likely to be used only in a corporate environment? (Choose two.)",
+        "code": null,
+        "options": [
+          "antispyware",
+          "virtual private networks",
+          "intrusion prevention systems",
+          "strong passwords",
+          "antivirus software"
+        ],
+        "correct": [
+          1,
+          2
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q51",
+        "module": "itn_m1",
+        "question": "What characteristic describes antivirus software?",
+        "code": null,
+        "options": [
+          "applications that protect end devices from becoming infected with malicious software",
+          "a network device that filters access and traffic coming into a network",
+          "a tunneling protocol that provides remote users with secure access into the network of an organization",
+          "software on a router that filters traffic based on IP addresses or applications"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q52",
+        "module": "itn_m4",
+        "question": "What mechanism is used by a router to prevent a received IPv4 packet from traveling endlessly on a network?",
+        "code": null,
+        "options": [
+          "It checks the value of the TTL field and if it is 0, it discards the packet and sends a Destination Unreachable message to the source host.",
+          "It checks the value of the TTL field and if it is 100, it discards the packet and sends a Destination Unreachable message to the source host.",
+          "It decrements the value of the TTL field by 1 and if the result is 0, it discards the packet and sends a Time Exceeded message to the source host.",
+          "It increments the value of the TTL field by 1 and if the result is 100, it discards the packet and sends a Parameter Problem message to the source host."
+        ],
+        "correct": 2,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q53",
+        "module": "itn_m4",
+        "question": "A client packet is received by a server. The packet has a destination port number of 69. What service is the client requesting?",
+        "code": null,
+        "options": [
+          "DNS",
+          "DHCP",
+          "SMTP",
+          "TFTP"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q54",
+        "module": "itn_m1",
+        "question": "An administrator defined a local user account with a secret password on router R1 for use with SSH. Which three additional steps are required to configure R1 to accept only encrypted SSH connections? (Choose three.)",
+        "code": null,
+        "options": [
+          "Configure DNS on the router.",
+          "Generate two-way pre-shared keys.",
+          "Configure the IP domain name on the router.",
+          "Generate the SSH keys.",
+          "Enable inbound vty SSH sessions.",
+          "Enable inbound vty Telnet sessions."
+        ],
+        "correct": [
+          2,
+          3,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q55",
+        "module": "itn_m2",
+        "question": "Which two functions are performed at the MAC sublayer of the OSI Data Link Layer to facilitate Ethernet communication? (Choose two.)",
+        "code": null,
+        "options": [
+          "handles communication between upper layer networking software and Ethernet NIC hardware",
+          "implements trailer with frame check sequence for error detection",
+          "places information in the Ethernet frame that identifies which network layer protocol is being encapsulated by the frame",
+          "implements a process to delimit fields within an Ethernet 2 frame",
+          "adds Ethernet control information to network protocol data"
+        ],
+        "correct": [
+          1,
+          3
+        ],
+        "explanation": "Ethernetový rámec na linkové vrstvě (L2) obsahuje zdrojovou a cílovou MAC adresu (48 bitů). Minimální velikost rámce je 64 bajtů. Správná odpověď: implements trailer with frame check sequence for error detection."
+      },
+      {
+        "id": "itn_q56",
+        "module": "itn_m4",
+        "question": "An IPv6 enabled device sends a data packet with the destination address of FF02::2. What is the target of this packet?​",
+        "code": null,
+        "options": [
+          "all IPv6 enabled devices on the local link​",
+          "all IPv6 DHCP servers​",
+          "all IPv6 enabled devices across the network​",
+          "all IPv6 configured routers on the local link​"
+        ],
+        "correct": 3,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q57",
+        "module": "itn_m3",
+        "question": "What are the three parts of an IPv6 global unicast address? (Choose three.)",
+        "code": null,
+        "options": [
+          "subnet ID",
+          "subnet mask",
+          "broadcast address",
+          "global routing prefix",
+          "interface ID"
+        ],
+        "correct": [
+          0,
+          3,
+          4
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q58",
+        "module": "itn_m1",
+        "question": "A network administrator is designing the layout of a new wireless network. Which three areas of concern should be accounted for when building a wireless network? (Choose three.)",
+        "code": null,
+        "options": [
+          "extensive cabling",
+          "mobility options",
+          "packet collision",
+          "interference",
+          "security",
+          "coverage area"
+        ],
+        "correct": [
+          3,
+          4,
+          5
+        ],
+        "explanation": ""
+      },
+      {
+        "id": "itn_q59",
+        "module": "itn_m1",
+        "question": "A new network administrator has been asked to enter a banner message on a Cisco device. What is the fastest way a network administrator could test whether the banner is properly configured?",
+        "code": null,
+        "options": [
+          "Enter CTRL-Z at the privileged mode prompt.",
+          "Exit global configuration mode.",
+          "Power cycle the device.",
+          "Reboot the device.",
+          "Exit privileged EXEC mode and press Enter ."
+        ],
+        "correct": 4,
+        "explanation": ""
+      },
+      {
+        "id": "itn_q60",
+        "module": "itn_m1",
+        "question": "What method is used to manage contention-based access on a wireless network?",
+        "code": null,
+        "options": [
+          "token passing",
+          "CSMA/CA",
+          "priority ordering",
+          "CSMA/CD"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
   }
 };
