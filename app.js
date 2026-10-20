@@ -86,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=4').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=5').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);
@@ -928,20 +928,46 @@ class NetAcadApp {
      ---------------------------------------------------- */
   startPractice(filterMode = 'all') {
     const cert = CERTIFICATES_DATA[this.activeCert];
+    if (!cert) return;
+
+    this.activeMode = 'practice';
+    this.practiceFilterMode = filterMode;
+    const stats = this.getUserStats();
+    const pMap = stats.practice?.questions || {};
+
     let list = [...cert.questions];
 
     if (filterMode === 'mistakes') {
-      const stats = this.getUserStats();
-      const pMap = stats.practice?.questions || {};
       list = list.filter(q => pMap[q.id]?.lastResult === false);
+      if (!list.length) {
+        this.currentQuestions = [];
+        this.currentIndex = 0;
+        this.userAnswers = {};
+        this.practiceEvaluated = {};
+        this.flagged.clear();
+        this.visited.clear();
+        this.updatePracticeLiveStats();
+        this.updatePracticeFilterDropdown();
+        this.renderNoMistakesState();
+        return;
+      }
     } else if (filterMode === 'unseen') {
-      const stats = this.getUserStats();
-      const pMap = stats.practice?.questions || {};
       list = list.filter(q => !pMap[q.id]);
+      if (!list.length) {
+        this.currentQuestions = [];
+        this.currentIndex = 0;
+        this.userAnswers = {};
+        this.practiceEvaluated = {};
+        this.flagged.clear();
+        this.visited.clear();
+        this.updatePracticeLiveStats();
+        this.updatePracticeFilterDropdown();
+        this.renderAllSeenState();
+        return;
+      }
     }
 
-    this.practiceFilterMode = filterMode;
-    const baseList = list.length ? list : (cert?.questions ? [...cert.questions] : []);
+    const baseList = list.length ? list : [...cert.questions];
     this.currentQuestions = this.prepareQuestions(baseList, this.prefShuffleQ, this.prefShuffleOpt);
     this.currentIndex = 0;
     this.userAnswers = {};
@@ -950,27 +976,95 @@ class NetAcadApp {
     this.visited.clear();
     this.visited.add(0);
 
-    const modSelect = document.getElementById('practiceFilterSelect');
-    if (modSelect && modSelect.value !== filterMode) {
-      modSelect.value = filterMode;
-    }
-
     this.updatePracticeLiveStats();
+    this.updatePracticeFilterDropdown();
     this.renderQuestion();
   }
 
-  updatePracticeLiveStats() {
-    const stats = this.getUserStats();
-    const pData = stats.practice?.certs?.[this.activeCert] || { correct: 0, total: 0 };
-    const rate = pData.total > 0 ? Math.round((pData.correct / pData.total) * 100) : 0;
+  renderNoMistakesState() {
+    const cert = CERTIFICATES_DATA[this.activeCert];
+    const heading = document.getElementById('qNumberTitle');
+    const counter = document.getElementById('qCounterDisplay');
+    const countText = document.getElementById('qCountText');
+    const bar = document.getElementById('examProgressBar');
+    const hint = document.getElementById('qTypeHint');
+    const codeBlock = document.getElementById('qCodeBlock');
+    const prompt = document.getElementById('qText');
+    const container = document.getElementById('optionsContainer');
+    const confirmWrap = document.getElementById('multiConfirmWrap');
+    const expBox = document.getElementById('explanationBox');
 
-    const elCor = document.getElementById('plsCorrectVal');
-    const elWrn = document.getElementById('plsWrongVal');
-    const elRt = document.getElementById('plsRateVal');
+    if (heading) heading.textContent = 'Žádné chybné otázky';
+    if (counter) counter.textContent = '0 z 0 chyb';
+    if (countText) countText.textContent = '0 / 0';
+    if (bar) bar.style.width = '100%';
+    if (hint) {
+      hint.innerHTML = '<i class="fas fa-check-circle" style="color: #10b981;"></i> 100 % úspěšnost';
+      hint.classList.remove('multi');
+    }
+    if (codeBlock) codeBlock.style.display = 'none';
+    if (prompt) prompt.textContent = '';
+    
+    if (container) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 2.5rem 1rem;">
+          <i class="fas fa-circle-check" style="font-size: 3.5rem; color: #10b981; margin-bottom: 1rem; display: block;"></i>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: #10b981;">Skvělá práce! Nemáte žádné aktivní chyby</h3>
+          <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto; line-height: 1.6; font-size: 0.92rem;">
+            V kurzu <strong>${this.escapeHtml(cert.title)}</strong> máte všechny dosud procvičené otázky zodpovězené správně.
+          </p>
+          <button class="btn-primary" style="margin: 0 auto;" onclick="app.startPractice('all')">
+            <i class="fas fa-play"></i> Procvičovat všechny otázky (${cert.questions.length})
+          </button>
+        </div>
+      `;
+    }
+    if (confirmWrap) { confirmWrap.style.display = 'none'; confirmWrap.innerHTML = ''; }
+    if (expBox) expBox.classList.remove('show');
+    this.renderQuestionStrip();
+  }
 
-    if (elCor) elCor.textContent = pData.correct;
-    if (elWrn) elWrn.textContent = (pData.total - pData.correct);
-    if (elRt) elRt.textContent = `${rate} %`;
+  renderAllSeenState() {
+    const cert = CERTIFICATES_DATA[this.activeCert];
+    const heading = document.getElementById('qNumberTitle');
+    const counter = document.getElementById('qCounterDisplay');
+    const countText = document.getElementById('qCountText');
+    const bar = document.getElementById('examProgressBar');
+    const hint = document.getElementById('qTypeHint');
+    const codeBlock = document.getElementById('qCodeBlock');
+    const prompt = document.getElementById('qText');
+    const container = document.getElementById('optionsContainer');
+    const confirmWrap = document.getElementById('multiConfirmWrap');
+    const expBox = document.getElementById('explanationBox');
+
+    if (heading) heading.textContent = 'Všechny otázky procvičeny';
+    if (counter) counter.textContent = `${cert.questions.length} z ${cert.questions.length}`;
+    if (countText) countText.textContent = `${cert.questions.length} / ${cert.questions.length}`;
+    if (bar) bar.style.width = '100%';
+    if (hint) {
+      hint.innerHTML = '<i class="fas fa-award" style="color: #f59e0b;"></i> 100 % pokrytí';
+      hint.classList.remove('multi');
+    }
+    if (codeBlock) codeBlock.style.display = 'none';
+    if (prompt) prompt.textContent = '';
+    
+    if (container) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 2.5rem 1rem;">
+          <i class="fas fa-award" style="font-size: 3.5rem; color: #f59e0b; margin-bottom: 1rem; display: block;"></i>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: #f59e0b;">Všechny otázky již byly alespoň jednou procvičeny!</h3>
+          <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto; line-height: 1.6; font-size: 0.92rem;">
+            V kurzu <strong>${this.escapeHtml(cert.title)}</strong> jste prošli všechny dostupné otázky.
+          </p>
+          <button class="btn-primary" style="margin: 0 auto;" onclick="app.startPractice('all')">
+            <i class="fas fa-redo"></i> Spustit kompletní trénink (${cert.questions.length})
+          </button>
+        </div>
+      `;
+    }
+    if (confirmWrap) { confirmWrap.style.display = 'none'; confirmWrap.innerHTML = ''; }
+    if (expBox) expBox.classList.remove('show');
+    this.renderQuestionStrip();
   }
 
   /* ----------------------------------------------------
@@ -1202,6 +1296,7 @@ class NetAcadApp {
         }
         this.recordPracticeResult(this.activeCert, q.id, isCorrect);
         this.updatePracticeLiveStats();
+        this.updatePracticeFilterDropdown();
       } else {
         this.sound.click();
       }
@@ -1247,6 +1342,7 @@ class NetAcadApp {
 
     this.recordPracticeResult(this.activeCert, q.id, isCorrect);
     this.updatePracticeLiveStats();
+    this.updatePracticeFilterDropdown();
     this.renderQuestion();
   }
 
@@ -2182,16 +2278,23 @@ initCheatsheets() {
       }
     });
 
-    const currentVal = select.value || 'all';
+    const activeFilter = this.practiceFilterMode || select.value || 'all';
 
-    select.innerHTML = `
-      <option value="all">Všechny otázky (${cert.questions.length})</option>
-      ${certMistakes > 0 ? `<option value="mistakes">⚠️ Pouze chybné otázky (${certMistakes})</option>` : ''}
-      ${certUnseen > 0 ? `<option value="unseen">🆕 Pouze neprocvičené (${certUnseen})</option>` : ''}
-    `;
+    let optionsHtml = `<option value="all">Všechny otázky (${cert.questions.length})</option>`;
+    if (certMistakes > 0 || activeFilter === 'mistakes') {
+      optionsHtml += `<option value="mistakes">⚠️ Pouze chybné otázky (${certMistakes})</option>`;
+    }
+    if (certUnseen > 0 || activeFilter === 'unseen') {
+      optionsHtml += `<option value="unseen">🆕 Pouze neprocvičené (${certUnseen})</option>`;
+    }
 
-    if (Array.from(select.options).some(o => o.value === currentVal)) {
-      select.value = currentVal;
+    select.innerHTML = optionsHtml;
+
+    if (Array.from(select.options).some(o => o.value === activeFilter)) {
+      select.value = activeFilter;
+    } else {
+      select.value = 'all';
+      this.practiceFilterMode = 'all';
     }
   }
 
@@ -2404,7 +2507,7 @@ initCheatsheets() {
           if (rec) {
             practicedCount++;
             correctCount += (rec.correct || 0);
-            wrongCount += ((rec.answered || 0) - (rec.correct || 0));
+            wrongCount += (rec.wrong || 0);
             if (rec.lastResult === false) {
               activeMistakes++;
             }
@@ -2549,19 +2652,20 @@ initCheatsheets() {
 
   launchPractice(certId, filterMode = 'all') {
     this.sound.click();
-    this.loadCertificate(certId);
+    this.activeCert = certId;
+    const cert = CERTIFICATES_DATA[certId];
+    const select = document.getElementById('courseSelectDropdown');
+    if (select && select.value !== certId) select.value = certId;
+    const badge = document.getElementById('activeCourseBadge');
+    if (badge) badge.textContent = cert.badge;
     this.switchView('practice');
     this.startPractice(filterMode);
-    const select = document.getElementById('practiceFilterSelect');
-    if (select) select.value = filterMode;
   }
 
   practiceActiveCertMistakes() {
     this.sound.click();
     this.switchView('practice');
     this.startPractice('mistakes');
-    const select = document.getElementById('practiceFilterSelect');
-    if (select) select.value = 'mistakes';
   }
 
   practiceSingleQuestion(certId, qId) {

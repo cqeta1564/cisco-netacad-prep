@@ -2,7 +2,7 @@
  * Cisco Certifications Prep - Service Worker (PWA Offline Support)
  */
 
-const CACHE_NAME = 'cisco-prep-v4';
+const CACHE_NAME = 'cisco-prep-v5';
 const CORE_ASSETS = [
   './',
   './index.html',
