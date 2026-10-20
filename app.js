@@ -86,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=5').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=6').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);
@@ -1088,7 +1088,7 @@ class NetAcadApp {
             Závěrečný test pro <strong>HTML Essentials</strong> má k dispozici všech 40 autentických testových otázek.
           </p>
           <button class="btn-primary" style="margin: 0 auto;" onclick="app.loadCertificate('html')">
-            <i class="fab fa-html5"></i> Přepnout na HTML Essentials (40 otázek)
+            <i class="fab fa-html5"></i> Přepnout na HTML Essentials
           </button>
         </div>
       `;
