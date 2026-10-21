@@ -517,9 +517,50 @@ body {
   background: rgba(16, 185, 129, 0.08);
 }
 
+/* Practice mode evaluation: Correct = Green, Wrong = Red */
+.q-btn.correct {
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+}
+
+.q-btn.wrong {
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+}
+
+.q-btn.active.correct {
+  background-color: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.45) !important;
+}
+
+.q-btn.active.wrong {
+  background-color: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.45) !important;
+}
+
 .q-btn.flagged {
   border-color: var(--cisco-amber);
+}
+
+.q-btn.flagged:not(.correct):not(.wrong):not(.active) {
   color: var(--cisco-amber);
+}
+
+.q-btn.flagged::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cisco-amber);
 }
 
 /* ==========================================================================
@@ -539,6 +580,15 @@ body {
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-break: break-word;
+  transition: border-color 0.25s ease;
+}
+
+.question-container.eval-correct {
+  border-color: rgba(16, 185, 129, 0.45);
+}
+
+.question-container.eval-wrong {
+  border-color: rgba(239, 68, 68, 0.45);
 }
 
 .question-header-row {
@@ -553,6 +603,35 @@ body {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.q-state-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.q-state-badge.state-correct {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.q-state-badge.state-wrong {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
 .question-type-hint {

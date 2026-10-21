@@ -86,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=7').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=8').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);
@@ -1035,6 +1035,8 @@ class NetAcadApp {
     }
     if (confirmWrap) { confirmWrap.style.display = 'none'; confirmWrap.innerHTML = ''; }
     if (expBox) expBox.classList.remove('show');
+    const qCard = document.getElementById('questionCard');
+    if (qCard) qCard.classList.remove('eval-correct', 'eval-wrong');
     this.renderQuestionStrip();
   }
 
@@ -1078,6 +1080,8 @@ class NetAcadApp {
     }
     if (confirmWrap) { confirmWrap.style.display = 'none'; confirmWrap.innerHTML = ''; }
     if (expBox) expBox.classList.remove('show');
+    const qCard = document.getElementById('questionCard');
+    if (qCard) qCard.classList.remove('eval-correct', 'eval-wrong');
     this.renderQuestionStrip();
   }
 
@@ -1121,6 +1125,8 @@ class NetAcadApp {
       if (container) container.innerHTML = '';
       if (confirmWrap) { confirmWrap.style.display = 'none'; confirmWrap.innerHTML = ''; }
       document.getElementById('explanationBox').classList.remove('show');
+      const qCard = document.getElementById('questionCard');
+      if (qCard) qCard.classList.remove('eval-correct', 'eval-wrong');
       this.renderQuestionStrip();
       return;
     }
@@ -1131,7 +1137,30 @@ class NetAcadApp {
     this.visited.add(this.currentIndex);
 
     // Number & Title
-    document.getElementById('qNumberTitle').textContent = `Otázka ${this.currentIndex + 1}`;
+    const isPractice = this.activeMode === 'practice';
+    const isEvaluated = isPractice ? Boolean(this.practiceEvaluated[q.id]) : false;
+    const userPick = this.userAnswers[q.id];
+    const qNumTitle = document.getElementById('qNumberTitle');
+    const qCard = document.getElementById('questionCard');
+
+    if (isPractice && isEvaluated) {
+      const isCorrect = this.isAnswerCorrect(q, userPick);
+      if (qNumTitle) {
+        qNumTitle.innerHTML = `Otázka ${this.currentIndex + 1} <span class="q-state-badge ${isCorrect ? 'state-correct' : 'state-wrong'}"><i class="fas ${isCorrect ? 'fa-check-circle' : 'fa-times-circle'}"></i> ${isCorrect ? 'Správně' : 'Chybně'}</span>`;
+      }
+      if (qCard) {
+        qCard.classList.remove('eval-correct', 'eval-wrong');
+        qCard.classList.add(isCorrect ? 'eval-correct' : 'eval-wrong');
+      }
+    } else {
+      if (qNumTitle) {
+        qNumTitle.textContent = `Otázka ${this.currentIndex + 1}`;
+      }
+      if (qCard) {
+        qCard.classList.remove('eval-correct', 'eval-wrong');
+      }
+    }
+
     document.getElementById('qCounterDisplay').textContent = `${this.currentIndex + 1} z ${total} otázek`;
     document.getElementById('qCountText').textContent = `${this.currentIndex + 1} / ${total}`;
     
@@ -1144,7 +1173,6 @@ class NetAcadApp {
     const isMulti = Array.isArray(q.correct);
     const reqCount = isMulti ? q.correct.length : 1;
     const qHintEl = document.getElementById('qTypeHint');
-    const userPick = this.userAnswers[q.id];
 
     if (qHintEl) {
       if (isMulti) {
@@ -1172,8 +1200,6 @@ class NetAcadApp {
 
     // Render Option Cards
     container.innerHTML = '';
-    const isPractice = this.activeMode === 'practice';
-    const isEvaluated = isPractice ? Boolean(this.practiceEvaluated[q.id]) : false;
 
     const optLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
@@ -1376,6 +1402,8 @@ class NetAcadApp {
     if (!strip) return;
 
     strip.innerHTML = '';
+    const isPractice = this.activeMode === 'practice';
+
     this.currentQuestions.forEach((q, idx) => {
       const pill = document.createElement('div');
       pill.className = 'q-btn';
@@ -1383,12 +1411,29 @@ class NetAcadApp {
       pill.title = `Otázka ${idx + 1}`;
 
       const isAnswered = this.isQuestionAnswered(q, this.userAnswers[q.id]);
+      const isEvaluated = isPractice && Boolean(this.practiceEvaluated[q.id]);
+      const isActive = idx === this.currentIndex;
 
-      if (idx === this.currentIndex) {
+      if (isActive) {
         pill.classList.add('active');
-      } else if (isAnswered) {
-        pill.classList.add('answered');
-      } else if (this.flagged.has(q.id)) {
+      }
+
+      if (isPractice) {
+        if (isEvaluated) {
+          const isCorrect = this.isAnswerCorrect(q, this.userAnswers[q.id]);
+          if (isCorrect) {
+            pill.classList.add('correct');
+          } else {
+            pill.classList.add('wrong');
+          }
+        }
+      } else {
+        if (isAnswered && !isActive) {
+          pill.classList.add('answered');
+        }
+      }
+
+      if (this.flagged.has(q.id)) {
         pill.classList.add('flagged');
       }
 
