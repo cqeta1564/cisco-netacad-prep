@@ -86,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=6').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=7').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);
@@ -932,6 +932,20 @@ class NetAcadApp {
 
     this.activeMode = 'practice';
     this.practiceFilterMode = filterMode;
+
+    if (!cert.questions || !cert.questions.length) {
+      this.currentQuestions = [];
+      this.currentIndex = 0;
+      this.userAnswers = {};
+      this.practiceEvaluated = {};
+      this.flagged.clear();
+      this.visited.clear();
+      this.updatePracticeLiveStats();
+      this.updatePracticeFilterDropdown();
+      this.renderQuestion();
+      return;
+    }
+
     const stats = this.getUserStats();
     const pMap = stats.practice?.questions || {};
 
@@ -1083,13 +1097,24 @@ class NetAcadApp {
       document.getElementById('qText').innerHTML = `
         <div style="text-align: center; padding: 2.5rem 1rem;">
           <i class="fas fa-folder-open" style="font-size: 3rem; color: #64748b; margin-bottom: 1rem; display: block;"></i>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Pro tento kurz zatím nebyly nahrány otázky</h3>
-          <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto; line-height: 1.6; font-size: 0.92rem;">
-            Závěrečný test pro <strong>HTML Essentials</strong> má k dispozici všech 40 autentických testových otázek.
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Pro tento kurz zatím nebyly nahrány autentické otázky</h3>
+          <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto 1.5rem auto; line-height: 1.6; font-size: 0.92rem;">
+            V aplikaci jsou nahrané kompletní oficiální otázky z reálných testů pro kurzy <strong>HTML Essentials</strong> (40), <strong>CSS Essentials</strong> (50), <strong>JavaScript Essentials 1</strong> (30) a <strong>JavaScript Essentials 2</strong> (40).
           </p>
-          <button class="btn-primary" style="margin: 0 auto;" onclick="app.loadCertificate('html')">
-            <i class="fab fa-html5"></i> Přepnout na HTML Essentials
-          </button>
+          <div style="display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-sm" onclick="app.loadCertificate('html')">
+              <i class="fab fa-html5"></i> HTML Essentials (40)
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="app.loadCertificate('css')">
+              <i class="fab fa-css3-alt"></i> CSS Essentials (50)
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="app.loadCertificate('js')">
+              <i class="fab fa-js"></i> JS Essentials 1 (30)
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="app.loadCertificate('js2')">
+              <i class="fab fa-node-js"></i> JS Essentials 2 (40)
+            </button>
+          </div>
         </div>
       `;
       document.getElementById('qCodeBlock').style.display = 'none';
@@ -2264,6 +2289,13 @@ initCheatsheets() {
     const select = document.getElementById('practiceFilterSelect');
     if (!select || !cert) return;
 
+    if (!cert.questions || !cert.questions.length) {
+      select.innerHTML = '<option value="all">Zatím bez otázek (0)</option>';
+      select.value = 'all';
+      this.practiceFilterMode = 'all';
+      return;
+    }
+
     const stats = this.getUserStats();
     const pMap = stats.practice?.questions || {};
 
@@ -2402,7 +2434,8 @@ initCheatsheets() {
       cert.questions.forEach(q => {
         if (pMap[q.id]) practicedInCert++;
       });
-      const practicePct = Math.round((practicedInCert / cert.questions.length) * 100);
+      const totalQ = cert.questions ? cert.questions.length : 0;
+      const practicePct = totalQ > 0 ? Math.round((practicedInCert / totalQ) * 100) : 0;
 
       let statusHtml = '';
       if (hasPassed) {
@@ -2514,8 +2547,8 @@ initCheatsheets() {
           }
         });
 
-        const totalQuestions = cert.questions.length;
-        const coveragePct = Math.round((practicedCount / totalQuestions) * 100);
+        const totalQuestions = cert.questions ? cert.questions.length : 0;
+        const coveragePct = totalQuestions > 0 ? Math.round((practicedCount / totalQuestions) * 100) : 0;
         const totalAnswers = correctCount + wrongCount;
         const accuracyPct = totalAnswers > 0 ? Math.round((correctCount / totalAnswers) * 100) : 0;
 
