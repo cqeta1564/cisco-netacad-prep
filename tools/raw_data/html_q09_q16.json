@@ -1,0 +1,114 @@
+[
+  {
+    "id": "html_q09",
+    "module": "html_m2",
+    "question": "Which HTML code snippet demonstrates the correct use of line breaks for addresses and paragraph tags for separating ideas?",
+    "code": null,
+    "options": [
+      "<p>123 Anywhere St. Springfield</p><br><p>Welcome to our website.</p>",
+      "<p>123 Anywhere St.<br>Springfield</p><p>Welcome to our website.</p>",
+      "<address>123 Anywhere St., Springfield</address><p>Welcome to our website.</p>",
+      "<p>123 Anywhere St.</p><p>Springfield</p><p>Welcome to our website.</p>"
+    ],
+    "correct": 1,
+    "explanation": "Tag `<br>` slouží k zalomení řádku v rámci jednoho textového bloku (např. jednotlivé řádky adresy), kde není žádoucí vytvářet nový odstavec. Naopak samostatné myšlenky a odstavce textu mají být uzavřeny v samostatných párových elementech `<p>`. Vkládání `<br>` mezi odstavce `<p>` je nesprávné (pro mezery se používá CSS), stejně jako rozdělení jednotlivých řádků adresy do samostatných `<p>` odstavců."
+  },
+  {
+    "id": "html_q10",
+    "module": "html_m2",
+    "question": "Which HTML code correctly creates a nested list with ordered and unordered lists?",
+    "code": null,
+    "options": [
+      "<ul><li>Item One</li><ul><li>Subitem A</li></ul><li>Item Two</li></ul>",
+      "<ul><li>Item One<ol><li>Subitem 1</li></ol></li><li>Item Two</li></ul>",
+      "<ol><li>Item One<li>Subitem A</li></li><li>Item Two</li></ol>",
+      "<ol><li>Item One<ul><li>Subitem A</li></ul><li>Item Two</li></ol>"
+    ],
+    "correct": 1,
+    "explanation": "V HTML musí být vnořený seznam (ať už `<ol>` nebo `<ul>`) vždy umístěn uvnitř položky `<li>` nadřazeného seznamu, nikoliv přímo jako potomek vnějšího seznamu. Zápis `<ul><li>Item One<ol><li>Subitem 1</li></ol></li><li>Item Two</li></ul>` správně kombinuje nečíslovaný seznam (`<ul>`) s vnořeným číslovaným seznamem (`<ol>`), přičemž vnořený `<ol>` je korektně vložen uvnitř prvního `<li>` před jeho uzavíracím tagem `</li>`."
+  },
+  {
+    "id": "html_q11",
+    "module": "html_m4",
+    "question": "Given the need to create a table with headers on both the top and the left, which snippet correctly uses <th> elements?",
+    "code": null,
+    "options": [
+      "<<th>table><tr><td>Header 1</td></tr><tr><td>Row 1</td><td>Data 1</td></tr></th></table>",
+      "<table><tr><th></th><th>Header 1</th></tr><tr><th>Row 1</th><td>Data 1</td></tr></table>",
+      "<table><tr><th>Header 1</th><th>Row 1</th></tr><tr><td>Data 1</td></tr></table>",
+      "<table><th>Header 1</th><tr><th>Row 1</th><td>Data 1</td></tr></table>"
+    ],
+    "correct": 1,
+    "explanation": "Při tvorbě tabulky se záhlavím jak nahoře (sloupce), tak vlevo (řádky), obsahuje první řádek prázdnou buňku pro levý horní roh `<th></th>` a záhlaví sloupců `<th>Header 1</th>`. Následující datové řádky začínají buňkou záhlaví řádku `<th>Row 1</th>`, za kterou následují standardní datové buňky `<td>Data 1</td>`. Všechny buňky musí být korektně umístěny uvnitř řádků `<tr>`."
+  },
+  {
+    "id": "html_q12",
+    "module": "html_m4",
+    "question": "How do you merge two cells vertically in a table?",
+    "code": null,
+    "options": [
+      "Merge cells using CSS by applying cell-merge: vertical;",
+      "Use colspan=\"2\" in the first cell you want to extend.",
+      "HTML tables do not support vertical cell merging.",
+      "Use rowspan=\"2\" in the first cell you want to extend."
+    ],
+    "correct": 3,
+    "explanation": "Pro sloučení buněk přes více svislých řádků (vertikálně) slouží HTML atribut `rowspan` (např. `rowspan=\"2\"` roztáhne buňku přes dva řádky). Atribut `colspan` se naopak používá pro horizontální sloučení buněk přes sloupce."
+  },
+  {
+    "id": "html_q13",
+    "module": "html_m2",
+    "question": "What is the characteristic of the text within the <pre> tag in this HTML snippet?",
+    "code": "<pre>\nDear User,\n\nThank you for your email.\n\nBest,\nThe XYZ Team\n</pre>",
+    "options": [
+      "It preserves font size, weight, and family.",
+      "It preserves line breaks and puts it in bold.",
+      "It is highlighted and preserves spaces.",
+      "It preserves both spaces and line breaks."
+    ],
+    "correct": 3,
+    "explanation": "Element `<pre>` (preformatted text) zachovává veškeré bílé znaky přesně tak, jak jsou zapsány ve zdrojovém HTML kódu – tedy jak vícenásobné mezery, tak odřádkování (line breaks). Text uvnitř `<pre>` se obvykle vykresluje neproporcionálním (monospace) písmem a prohlížeč v něm neslučuje mezery jako u běžného textu."
+  },
+  {
+    "id": "html_q14",
+    "module": "html_m3",
+    "question": "What is the purpose of the srcset attribute in this <img> tag?",
+    "code": "<img src=\"image-1.jpg\" srcset=\"image-2.jpg 1000w, image-3.jpg 2000w\" alt=\"A beautiful landscape\">",
+    "options": [
+      "To specify different images to be displayed on hover.",
+      "To provide a fallback image if the original fails to load.",
+      "To set multiple sources for the same image to load faster.",
+      "To define multiple image sources for different viewport widths."
+    ],
+    "correct": 3,
+    "explanation": "Atribut `srcset` umožňuje definovat sadu alternativních zdrojů obrázků spolu s deskriptory šířky (např. `1000w`, `2000w`) nebo hustoty pixelů. Prohlížeč na základě aktuální šířky viewportu a rozlišení obrazovky zařízení automaticky vybere a stáhne nejvhodnější verzi obrázku, což optimalizuje rychlost načítání na responzivních webech."
+  },
+  {
+    "id": "html_q15",
+    "module": "html_m3",
+    "question": "How does this code snippet facilitate navigation to a specific part of a webpage?",
+    "code": "<a href=\"#section2\">Go to Section 2</a>\n...\n<h2 id=\"section2\">Section 2</h2>",
+    "options": [
+      "By creating a popup that links to Section 2.",
+      "By refreshing the page when \"Go to Section 2\" is clicked.",
+      "By scrolling the page to where <h2 id=\"section2\"> is located.",
+      "By redirecting to a new page named \"Section 2\""
+    ],
+    "correct": 2,
+    "explanation": "Odkaz s hodnotou `href` začínající mřížkou a ID elementu (`href=\"#section2\"`) funguje jako interní záložka (kotevní odkaz). Po kliknutí prohlížeč automaticky posune (odscroluje) stránku na element se shodným `id=\"section2\"` na téže stránce."
+  },
+  {
+    "id": "html_q16",
+    "module": "html_m3",
+    "question": "Which attribute will make the video loop indefinitely?",
+    "code": null,
+    "options": [
+      "loop",
+      "src=\"loop\"",
+      "repeat=\"true\"",
+      "controls=\"loop\""
+    ],
+    "correct": 0,
+    "explanation": "V HTML5 je u elementů `<video>` a `<audio>` atribut `loop` logickým (boolean) atributem. Pokud je přítomen (např. `<video loop ...>`), přehrávání média se po dosažení konce automaticky vrátí na začátek a pokračuje ve smyčce donekonečna."
+  }
+]

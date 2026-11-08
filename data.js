@@ -1,9 +1,765 @@
 /**
  * Authentic Question Banks & Explanations
- * Official Cisco NetAcad, Skills for All, OpenEDG & LPI
+ * Official Oracle Academy, Cisco NetAcad, Skills for All, OpenEDG & LPI
  */
 
+const CERTIFICATE_CATEGORIES = {
+  "database": {
+    "id": "database",
+    "name": "Databázové systémy",
+    "shortName": "Databáze",
+    "icon": "fas fa-database",
+    "color": "#ea580c",
+    "description": "Oracle Academy: Database Design (DD S1–S11) – Konceptuální modelování, ERD, normalizace",
+    "certs": [
+      "dd"
+    ]
+  },
+  "web": {
+    "id": "web",
+    "name": "Webové aplikace",
+    "shortName": "Web",
+    "icon": "fas fa-globe",
+    "color": "#38bdf8",
+    "description": "HTML5, CSS3 a moderní JavaScript (JSE 1 & 2)",
+    "certs": [
+      "html",
+      "css",
+      "js",
+      "js2"
+    ]
+  },
+  "automation": {
+    "id": "automation",
+    "name": "DevNet & Automatizace",
+    "shortName": "DevNet",
+    "icon": "fas fa-code-branch",
+    "color": "#00bceb",
+    "description": "Cisco DevNet Associate (DEVASC 200-901) – REST API, Docker, CI/CD, Ansible",
+    "certs": [
+      "devnet"
+    ]
+  },
+  "systems": {
+    "id": "systems",
+    "name": "Počítačové systémy a sítě",
+    "shortName": "Sítě & Linux",
+    "icon": "fas fa-network-wired",
+    "color": "#10b981",
+    "description": "Cisco CCNA: Introduction to Networks & NDG Linux Essentials",
+    "certs": [
+      "ccna_itn",
+      "linux"
+    ]
+  }
+};
+
 const CERTIFICATES_DATA = {
+  "dd": {
+    "id": "dd",
+    "category": "database",
+    "categoryName": "Databáze",
+    "title": "Oracle Academy: Database Design",
+    "subtitle": "Příprava na zkoušku DD Cumulative Final Exam (S1–S11)",
+    "badge": "Oracle Database Design",
+    "icon": "fas fa-database",
+    "color": "#ea580c",
+    "passScore": 70,
+    "timeLimit": 60,
+    "modules": [
+      {
+        "id": "dd_m1",
+        "name": "Sekce 1–2: Úvod do databázového návrhu, entity a atributy"
+      },
+      {
+        "id": "dd_m2",
+        "name": "Sekce 3–4: Vztahy, kardinalita a ERD diagramy"
+      },
+      {
+        "id": "dd_m3",
+        "name": "Sekce 5–6: Supertypy, subtypy a integritní pravidla"
+      },
+      {
+        "id": "dd_m4",
+        "name": "Sekce 7–8: Normalizace databáze (1NF, 2NF, 3NF)"
+      },
+      {
+        "id": "dd_m5",
+        "name": "Sekce 9–11: Oblouky, historická data a relační mapování"
+      }
+    ],
+    "examQuestionCount": 50,
+    "questions": [
+      {
+        "id": "dd_q01",
+        "module": "dd_m3",
+        "question": "A subtype is shown on an ERD as an entity with a one to many relationship to the supertype. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). V ERD modelování podle metodiky Oracle Academy (Barkerova notace) se podtyp (subtype) nekreslí jako samostatná entita spojená vztahem 1:N k nadtypu (supertype). Místo toho se podtypy znázorňují jako vnořené obdélníky přímo uvnitř obdélníku nadtypu (supertype). Podtyp automaticky dědí všechny atributy a vztahy svého nadtypu a mezi nadtypem a podtypem neexistuje žádná spojovací čára vztahu."
+      },
+      {
+        "id": "dd_q02",
+        "module": "dd_m4",
+        "question": "Examine the following Entity and decide which rule of Normal Form is being violated:",
+        "code": "ENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nORDER ID\nSTREET",
+        "options": [
+          "1st Normal Form.",
+          "2nd Normal Form.",
+          "3rd Normal Form.",
+          "None of the above, the entity is fully normalised."
+        ],
+        "correct": 0,
+        "explanation": "Entita porušuje pravidlo 1. normální formy (1st Normal Form). První normální forma vyžaduje, aby všechny atributy byly atomické a neobsahovaly vícehodnotové atributy ani opakující se skupiny. V entitě CLIENT atribut ORDER ID představuje vícehodnotový atribut (klient může mít v průběhu času více objednávek), což v jedné instanci klienta vede k neatomicitě nebo opakování dat. Správným návrhem je vyčlenit objednávky do samostatné entity ORDER a propojit ji s CLIENT vztahem 1:N. Druhá a třetí normální forma nemohou být splněny, dokud entita nesplňuje 1NF."
+      },
+      {
+        "id": "dd_q03",
+        "module": "dd_m2",
+        "question": "In an ERD, High Volume Entities usually have very few relationships to other entities. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Entity s vysokým objemem dat (High Volume Entities), jako jsou transakční entity (např. ORDERS, TRANSACTIONS, PAYMENTS), obvykle zaznamenávají klíčové události a transakce v systému. Z tohoto důvodu mají naopak mnoho vztahů k ostatním entitám (např. k zákazníkům, produktům, zaměstnancům a pobočkám), aby bylo možné zachytit všechny související obchodní kontexty."
+      },
+      {
+        "id": "dd_q04",
+        "module": "dd_m1",
+        "question": "The purpose of an ERD is to document the proposed system and facilitate discussion and understanding of the requirements captured by the developer. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Tvrzení je pravdivé (True). Hlavním účelem ERD (Entity Relationship Diagram) je zdokumentovat navrhovaný systém na konceptuální úrovni a sloužit jako společný vizuální komunikační nástroj mezi vývojáři, analytiky a zástupci zadavatele (byznysu). Usnadňuje diskuzi a zajišťuje, že všichni správně pochopili požadavky na data ještě před zahájením fyzické implementace."
+      },
+      {
+        "id": "dd_q05",
+        "module": "dd_m4",
+        "question": "To convert an entity with a multi valued attribute to 1st Normal Form, we create an additional entity and relate it to the original entity with a 1:1 relationship. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Při převodu entity s vícehodnotovým atributem do 1. normální formy (1NF) se pro daný atribut vytvoří nová entita, která je s původní entitou propojena vztahem 1:N (jedna ku mnoha), nikoli 1:1. Důvodem je, že jedna instance původní entity může mít pro tento vícehodnotový atribut více hodnot (instancí v nové entitě)."
+      },
+      {
+        "id": "dd_q06",
+        "module": "dd_m3",
+        "question": "Business rules are important to data modelers because:",
+        "code": null,
+        "options": [
+          "A. They capture all of the needs, processes, and required functionality of the business.",
+          "B. All Business rules are easily implemented in the ERD diagram.",
+          "C. The data modeler must focus on structural rules, because they are easily represented diagrammatically and eliminate other rules that involve extra procedures or programming.",
+          "D. Both A and C are true."
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je A. Obchodní pravidla (Business rules) jsou zásadní, protože přesně zachycují veškeré potřeby, procesy a požadovanou funkcionalitu podniku. Možnost B je nesprávná, protože zdaleka ne všechna pravidla lze vyjádřit v ERD (procesní a procedurální pravidla se implementují až pomocí aplikační logiky nebo triggerů). Možnost C je nesprávná, protože datový modelář nesmí ignorovat ani eliminovat procedurální pravidla – musí je zdokumentovat pro vývojáře."
+      },
+      {
+        "id": "dd_q07",
+        "module": "dd_m2",
+        "question": "The many end of a Relationship is called:",
+        "code": null,
+        "options": [
+          "Gulls Foot",
+          "Crows Foot",
+          "Crows Ear",
+          "Pigs Ear"
+        ],
+        "correct": 1,
+        "explanation": "Správná odpověď je Crows Foot (vraní nožka). V Barkerově notaci ERD, kterou vyučuje Oracle Academy, je konec čáry vztahu reprezentující kardinalitu 'mnoho' (many) zakončen třemi rozbíhajícími se čarami připomínajícími ptačí nožku, odtud název 'Crow's Foot'."
+      },
+      {
+        "id": "dd_q08",
+        "module": "dd_m4",
+        "question": "If an intersection entity is formed that contains no attributes of its own, its uniqueness may be modeled by",
+        "code": null,
+        "options": [
+          "Creating new attributes.",
+          "Barring the relationships to the original entities.",
+          "Placing the UID attributes from the original entities into the intersection entity.",
+          "None of the above."
+        ],
+        "correct": 1,
+        "explanation": "Správná odpověď je přeškrtnutím vztahů k původním entitám (Barring the relationships to the original entities). V Oracle ERD notaci značí přeškrtnutí vztahu (bar / barred relationship) identifikační vztah, což znamená, že vztah je součástí unikátního identifikátoru (UID) dané entity. Pokud vazební entita nemá žádné vlastní atributy, její unikátnost je zajištěna složeným UID tvořeným přeškrtnutými vztahy k oběma nadřazeným entitám. Možnost vložení UID atributů je chybná, protože v konceptuálním ERD se cizí klíče jako explicitní atributy nezapisují."
+      },
+      {
+        "id": "dd_q09",
+        "module": "dd_m4",
+        "question": "When is an entity in 2nd Normal Form?",
+        "code": null,
+        "options": [
+          "When all non-UID attributes are dependent upon the entire UID.",
+          "When attributes with repeating or multi-values are present.",
+          "When no attritibutes are mutually independent and all are fully dependent on the primary key.",
+          "None of the Above."
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je 'When all non-UID attributes are dependent upon the entire UID.' (Když jsou všechny ne-UID atributy závislé na celém UID). Entita je ve 2. normální formě (2NF), pokud je v 1NF a žádný ne-UID atribut není částečně závislý na podmnožině složeného UID. Všechny neklíčové atributy musí záviset na celém klíči ('the whole key')."
+      },
+      {
+        "id": "dd_q10",
+        "module": "dd_m1",
+        "question": "SQL became the most commonly used query language in the 1980s. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Tvrzení je pravdivé (True). Jazyk SQL byl vyvinut v IBM v 70. letech, ale právě během 80. let 20. století zaznamenal obrovský komerční nástup (první komerční relační databázi s SQL uvedla společnost Oracle v roce 1979/1980 a standardy ANSI a ISO byly přijaty v roce 1986), čímž se SQL stal nejrozšířenějším jazykem pro relační databáze."
+      },
+      {
+        "id": "dd_q11",
+        "module": "dd_m4",
+        "question": "What do you call the entity created when you resolve a M:M relationship?",
+        "code": null,
+        "options": [
+          "Inclusion entity",
+          "Recursive entity",
+          "M:M entity",
+          "Intersection entity"
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je Intersection entity (vazební či průniková entita). Při řešení vztahu M:M (Many-to-Many) v relačním modelování se vazba rozdělí na dva vztahy 1:N pomocí nově vložené entity, která se v kurzu Oracle Academy nazývá 'Intersection entity' (v obecné teorii také asociativní entita)."
+      },
+      {
+        "id": "dd_q12",
+        "module": "dd_m5",
+        "question": "All systems must include functionality to provide logging or journaling in conceptual data models. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Zda musí systém podporovat logování (logging), žurnálování (journaling) nebo sledování historických dat, závisí výhradně na konkrétních obchodních požadavcích (business requirements) daného systému. Ne pro každý systém je nutné historii či žurnál evidovat a zbytečně by to zvyšovalo složitost a nároky na úložiště."
+      },
+      {
+        "id": "dd_q13",
+        "module": "dd_m1",
+        "question": "Which of the following statements about Entities are true? (Choose Three)",
+        "code": null,
+        "options": [
+          "“Something” of significance to the business about which data must be known.",
+          "They never have Instances",
+          "They are usually a noun.",
+          "A name for a set of similar \"things\""
+        ],
+        "correct": [
+          0,
+          2,
+          3
+        ],
+        "explanation": "Správné jsou možnosti 1., 3. a 4. (indexy 0, 2 a 3). Entita je v Oracle Academy definována jako 'něco významného pro podnik, o čem je nutné uchovávat data', její název je obvykle podstatné jméno v jednotném čísle a označuje množinu podobných prvků/věcí. Tvrzení 'They never have Instances' je naopak nepravdivé, protože každá entita má své instance (např. konkrétní student či objednávka)."
+      },
+      {
+        "id": "dd_q14",
+        "module": "dd_m1",
+        "question": "Systems are always just rolled out as soon as the programming phase is finished. No further work is required once the development is finished. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). V životním cyklu vývoje systémů (SDLC) po ukončení fáze programování následují nezbytné kroky: testování (integrační, akceptační), příprava produkčního prostředí, migrace dat, zaškolení uživatelů, samotné nasazení (rollout) a následná dlouhodobá správa a údržba systému."
+      },
+      {
+        "id": "dd_q15",
+        "module": "dd_m5",
+        "question": "In a payroll system, it is desirable to have an entity called DAY with a holiday attribute when you want to track special holiday dates. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Tvrzení je pravdivé (True). V systémech pro zpracování mezd a docházky (payroll) je pro správný výpočet odpracovaných hodin, mzdových příplatků a fondu pracovní doby vhodné mít kalendářní entitu DAY s atributem holiday (svátek), která umožňuje explicitně evidovat státní svátky a dny pracovního klidu."
+      },
+      {
+        "id": "dd_q16",
+        "module": "dd_m4",
+        "question": "When data is only stored in one place in a database, the database conforms to the rules of ___________.",
+        "code": null,
+        "options": [
+          "Multiplication",
+          "Reduction",
+          "Normality",
+          "Normalization"
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je Normalization (normalizace). Cílem normalizace v relačních databázích je navrhnout strukturu tabulek tak, aby každý údaj byl uložen právě na jednom místě, čímž se předchází redundanci dat, anomáliím při vkládání, úpravách a mazání a zajišťuje se integrita dat."
+      },
+      {
+        "id": "dd_q17",
+        "module": "dd_m1",
+        "question": "A candidate UID that is not chosen to be the Primary UID is called:",
+        "code": null,
+        "options": [
+          "Composite",
+          "Artificial",
+          "Simple",
+          "Secondary"
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je Secondary UID (sekundární UID). Každá entita může mít jeden nebo více kandidátních identifikátorů (Candidate UIDs). Ten, který je vybrán jako hlavní pro jednoznačnou identifikaci instancí, je Primary UID; všechny ostatní kandidátní identifikátory, které nebyly vybrány, se nazývají Secondary UIDs (sekundární identifikátory)."
+      },
+      {
+        "id": "dd_q18",
+        "module": "dd_m1",
+        "question": "In the grid computing model, resources are pooled together for efficiency. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je True. V modelu grid computingu (mřížkového počítání) jsou různé hardwarové a softwarové výpočetní zdroje (servery, úložné kapacity, sítě) sdružovány do společného virtuálního fondu (resource pooling), což umožňuje jejich vysoce efektivní sdílení a dynamické vytěžování podle aktuální potřeby podniku. Volba False je nesprávná, protože sdružování prostředků za účelem efektivity je přímo základním principem grid computingu."
+      },
+      {
+        "id": "dd_q19",
+        "module": "dd_m1",
+        "question": "Data modeling is performed for the following reasons: (Choose Two)",
+        "code": null,
+        "options": [
+          "It helps discussions and reviews.",
+          "The ERD becomes a blueprint for designing the actual system.",
+          "We draw an ERD solely to please the users; once completed, the ERD is never referred to again as it serves no purpose in the real world.",
+          "We do not need datamodels; we can just start coding right away."
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explanation": "Správné odpovědi jsou 'It helps discussions and reviews.' a 'The ERD becomes a blueprint for designing the actual system.'. Datový model a ER diagram slouží jako srozumitelný komunikační nástroj pro diskuse a revize se zákazníky a analytiky a zároveň funguje jako architektonický plán (blueprint) pro následnou implementaci fyzické databáze a aplikačních systémů. Možnost tvrdící, že ERD slouží pouze pro potěšení uživatelů a už se k němu nikdo nevrací, je nepravdivá, stejně jako tvrzení, že modely nejsou potřeba a lze rovnou začít programovat, což je zásadní metodická chyba."
+      },
+      {
+        "id": "dd_q20",
+        "module": "dd_m1",
+        "question": "Once you have learned how to write programs and build systems, you no longer need any input or involvement from any users as you are perfectly capable of delivering the systems that businesses need and want.",
+        "code": null,
+        "options": [
+          "True. The only requirement for creating a perfect system is a perfect programmer.",
+          "True. Users never know what they want anyway, so building systems is best left to the professionals.",
+          "True. Users delay the delivery of a system by changing their minds and adding new requirements.",
+          "False. Business requirements can and will change. For instance new legal requirements may arise."
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je 'False. Business requirements can and will change. For instance new legal requirements may arise.'. Vývoj informačních systémů vyžaduje nepřetržitou spolupráci s byznys uživateli, protože podnikové prostředí a požadavky se neustále vyvíjejí – například kvůli novým zákonům, daňovým předpisům nebo změnám na trhu. Žádný programátor nedokáže úspěšně dodat systém bez hlubokého porozumění byznysu a průběžné validace s uživateli. Všechny možnosti s 'True' reprezentují arogantní a mylné přístupy ignorující reálné potřeby zadavatele."
+      },
+      {
+        "id": "dd_q21",
+        "module": "dd_m2",
+        "question": "If the same relationship is represented twice in an Entity Relationship Model, it is said to be:",
+        "code": null,
+        "options": [
+          "Replicated",
+          "Removable",
+          "Resourceful",
+          "Redundant"
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je 'Redundant' (redundantní / nadbytečný). Pokud je stejný vztah mezi entitami zachycen v ER modelu vícekrát, nebo pokud lze vazbu plně a jednoznačně odvodit přes jinou existující cestu vztahů, jedná se o redundantní vztah. Redundance v modelu komplikuje údržbu a hrozí vznikem nekonzistencí dat. Výrazy Replicated, Removable ani Resourceful nejsou oficiálními termíny Oracle Academy pro tento jev."
+      },
+      {
+        "id": "dd_q22",
+        "module": "dd_m5",
+        "question": "An \"Arc Implementation\" can be done just like any other Relationship - you simply add the required Foreign Keys. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Správná odpověď je False. Oblouk (Arc) modeluje exkluzivní vztah (XOR), kdy instance entity může mít vazbu pouze na jednu z několika cílových entit (vylučující se vztahy). Pouhé přidání cizích klíčů nestačí, protože standardní cizí klíče v relační databázi nedokáží samy o sobě vynutit vzájemnou výlučnost (umožnily by vyplnit oba cizí klíče současně nebo naopak nevyplnit žádný). Implementace oblouku proto vyžaduje dodatečné integritní omezení typu CHECK constraint nebo databázový trigger, který zajistí, že je v daném okamžiku platný právě jeden vztah."
+      },
+      {
+        "id": "dd_q23",
+        "module": "dd_m5",
+        "question": "In a physical data model, an entity becomes a __________.",
+        "code": null,
+        "options": [
+          "Constraint",
+          "Column",
+          "Table",
+          "Attribute"
+        ],
+        "correct": 2,
+        "explanation": "Správná odpověď je 'Table'. Při transformaci konceptuálního/logického modelu do fyzického relačního modelu se entita (Entity) mapuje na tabulku (Table). Atribut se mapuje na sloupec (Column), jedinečný identifikátor (UID) se stává primárním klíčem (Primary Key) a vztah (Relationship) se implementuje pomocí cizího klíče (Foreign Key)."
+      },
+      {
+        "id": "dd_q24",
+        "module": "dd_m3",
+        "question": "The explanation below is an example of which constraint type?\nA column must contain only values consistent with the defined data format of the column.",
+        "code": null,
+        "options": [
+          "Column integrity",
+          "Referential integrity",
+          "User-defined integrity",
+          "Entity integrity"
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je 'Column integrity' (integrita sloupce, nazývaná též doménová integrita). Integrita sloupce zajišťuje, že všechny hodnoty uložené v daném sloupci plně odpovídají definovanému datovému typu, formátu a povolenému rozsahu hodnot. 'Entity integrity' zajišťuje unikátnost a ne-nulovost primárního klíče, 'Referential integrity' vynucuje platnost cizích klíčů vůči primárním klíčům a 'User-defined integrity' slouží k vynucení specifických byznys pravidel."
+      },
+      {
+        "id": "dd_q25",
+        "module": "dd_m2",
+        "question": "One Relationship can be mandatory in one direction and optional in the other direction. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je True. V ER modelování má vztah dvě strany a každá z nich má svou vlastní volitelnost (optionality). Vztah může být z jedné strany plně povinný (mandatory – zobrazený plnou čarou) a ze strany druhé volitelný (optional – zobrazený čárkovanou čarou). Například: Každý ZAMĚSTNANEC musí patřit do jednoho ODDĚLENÍ (povinné), ale ODDĚLENÍ může zaměstnávat jednoho či více ZAMĚSTNANCŮ (volitelné, oddělení může vzniknout i bez zaměstnanců)."
+      },
+      {
+        "id": "dd_q26",
+        "module": "dd_m1",
+        "question": "Information which was gained from data is the same as: (Choose Two)",
+        "code": null,
+        "options": [
+          "Intelligence",
+          "Raw Materials",
+          "There is no difference between data and information.",
+          "Knowledge"
+        ],
+        "correct": [
+          0,
+          3
+        ],
+        "explanation": "Správné odpovědi jsou 'Intelligence' a 'Knowledge'. V terminologii Oracle Academy jsou data považována za surový materiál (Raw Materials). Zpracováním a zasazením dat do kontextu vzniká informace, ze které uživatelé a organizace získávají znalosti ('Knowledge') a byznysové porozumění / inteligenci ('Intelligence'). 'Raw Materials' označuje samotná nezpracovaná data, nikoli informaci z nich vytvořenou, a tvrzení, že mezi daty a informacemi není rozdíl, je v informatice zásadně chybné."
+      },
+      {
+        "id": "dd_q27",
+        "module": "dd_m3",
+        "question": "A business rule such as \"We only ship goods after customers have completely paid any outstanding balances on their account\" is best enforced by:",
+        "code": null,
+        "options": [
+          "Making the payment attribute optional.",
+          "We need to trust our customers, and we know they will pay some day.",
+          "Making the payment attribute null.",
+          "Creating additional programming code to verify no goods are shipped until the account has been settled in full."
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je 'Creating additional programming code to verify no goods are shipped until the account has been settled in full.'. Jedná se o procedurální byznysové pravidlo (procedural business rule), které se váže na workflow a dynamický stav účtu zákazníka. Taková pravidla nelze vyjádřit pouhou strukturou ERD ani jednoduchým deklarativním omezením sloupce; vyžadují procedurální programový kód (triggery, uložené procedury v databázi nebo aplikační logiku). Nastavení atributu platby na volitelný či null situaci nijak neřeší a slepá důvěra zákazníkům pravidlo nevymáhá vůbec."
+      },
+      {
+        "id": "dd_q28",
+        "module": "dd_m1",
+        "question": "Unique Identifiers...",
+        "code": null,
+        "options": [
+          "Distinguish nothing",
+          "Distinguish one entity from another",
+          "Distinguish all entities in a database",
+          "Distinguish one instance of an entity from all other instances of that entity"
+        ],
+        "correct": 3,
+        "explanation": "Správná odpověď je 'Distinguish one instance of an entity from all other instances of that entity'. Jedinečný identifikátor (UID) slouží výhradně k tomu, aby jednoznačně odlišil jednu konkrétní instanci entity od všech ostatních instancí téže entity (např. unikátní číslo zákazníka odliší jednoho zákazníka od ostatních zákazníků). Neodlišuje entity mezi sebou (k tomu slouží název entity) ani nerozlišuje všechny entity v databázi globálně."
+      },
+      {
+        "id": "dd_q29",
+        "module": "dd_m2",
+        "question": "Matrix Diagrams show Optionality and Cardinality of the ERDs they document. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Správná odpověď je False. Matice vztahů (Matrix Diagram) je předběžná analytická tabulka, která eviduje pouze to, zda mezi dvěma entitami existuje nějaký vztah. Volitelnost (optionality – must be / may be) a kardinalita (cardinality – one / many) se v matici nezobrazují; tyto podrobnosti jsou zachyceny a dokumentovány až v plnohodnotném diagramu entit a vztahů (ERD)."
+      },
+      {
+        "id": "dd_q30",
+        "module": "dd_m1",
+        "question": "A well structured ERD will show only some parts of the finished data model. You should never try to model the entire system in one diagram, no matter how small the diagram might be. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Správná odpověď je False. Účelem dobře strukturovaného ER diagramu je poskytnout úplný a konzistentní model celého systému v rozsahu zadaných požadavků. Tvrzení, že by se člověk nikdy neměl snažit namodelovat celý systém v jednom diagramu bez ohledu na to, jak je systém malý, je chybné. Zejména u malých a středních systémů je žádoucí mít celý model v jednom diagramu pro celkový přehled o všech entitách a vazbách."
+      },
+      {
+        "id": "dd_q31",
+        "module": "dd_m2",
+        "question": "When reading the relationships in an ERD, you are said to be speaking:",
+        "code": null,
+        "options": [
+          "ERDish",
+          "Relationship-ish",
+          "Gibberish",
+          "Entity-ish"
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je 'ERDish'. V kurzu Oracle Academy se formalizovaný způsob čtení vztahů z ER diagramu označuje termínem 'ERDish'. Má přesnou strukturu věty: 'EACH [entita 1] MUST BE / MAY BE [jméno vztahu] ONE AND ONLY ONE / ONE OR MORE [entita 2]'. Ostatní názvy jsou smyšlené distraktory."
+      },
+      {
+        "id": "dd_q32",
+        "module": "dd_m2",
+        "question": "Every ERD must have at least one non-transferable relationship. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Správná odpověď je False. Vztahy v ER diagramu jsou ve výchozím stavu převoditelné (transferable). Nepřevoditelný vztah (non-transferable, označený kosočtvercem) se používá pouze tehdy, když specifické byznysové pravidlo zakazuje změnu navázané instance (např. vydaný účetní doklad nelze převést na jiného zákazníka). Neexistuje žádný požadavek, aby každý ERD musel obsahovat alespoň jeden nepřevoditelný vztah; mnoho korektních modelů žádný takový vztah neobsahuje."
+      },
+      {
+        "id": "dd_q33",
+        "module": "dd_m2",
+        "question": "Relationships can be Redundant. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je True. Vztahy mohou být redundantní (nadbytečné), pokud vyjadřují vazbu mezi entitami, kterou lze již spolehlivě odvodit prostřednictvím jiných existujících vztahů bez přidání jakékoliv nové byznysové hodnoty. Analýza a odstranění redundantních vztahů je důležitým krokem pro zjednodušení datového modelu a prevenci anomálií."
+      },
+      {
+        "id": "dd_q34",
+        "module": "dd_m5",
+        "question": "An arc can often be modeled as Supertype and Subtypes. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Správná odpověď je True. Oblouk (Arc) vyjadřuje vzájemnou výlučnost mezi dvěma nebo více vztahy (exkluzivní vztah). Ve většině případů lze situaci řešenou obloukem efektivněji a čistěji namodelovat pomocí nadtypu a podtypů (Supertype / Subtypes) – např. zobecněním cílových entit do společného nadtypu, nebo rozpadem zdrojové entity na specializované podtypy, které dědí společné atributy. Oracle Academy tuto transformaci výslovně probírá v kapitole věnované obloukům (Section 9)."
+      },
+      {
+        "id": "dd_q35",
+        "module": "dd_m4",
+        "question": "A transitive dependency exists when any attribute in an entity is dependent on any other non-UID attribute in that entity. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Tvrzení je pravdivé (True). Tranzitivní závislost (transitive dependency) nastává tehdy, když neklíčový atribut (atribut, který není součástí unikátního identifikátoru – UID) závisí na jiném neklíčovém atributu v rámci stejné entity (např. atribut B závisí na UID a atribut C závisí na atributu B, čímž atribut C tranzitivně závisí na UID). Právě odstranění všech tranzitivních závislostí vyčleněním závislých atributů do nové samostatné entity je klíčovým požadavkem 3. normální formy (3NF – „každý neklíčový atribut musí záviset na klíči, celém klíči a ničem jiném než klíči“)."
+      },
+      {
+        "id": "dd_q36",
+        "module": "dd_m5",
+        "question": "The transformation from an ER diagram to a physical design involves changing terminology. Entities in the ER diagram become _________ :",
+        "code": null,
+        "options": [
+          "Tables",
+          "Columns",
+          "Unique Keys",
+          "Foreign Keys"
+        ],
+        "correct": 0,
+        "explanation": "Při transformaci z konceptuálního/logického ER diagramu do fyzického databázového návrhu dochází ke změně terminologie: entita (Entity) se stává tabulkou (Table), atribut (Attribute) se stává sloupcem (Column), instance entity odpovídá řádku (Row), primární UID se stává primárním klíčem (Primary Key), sekundární UID unikátním klíčem (Unique Key) a vztahy se transformují na cizí klíče (Foreign Keys). Možnosti Columns, Unique Keys a Foreign Keys reprezentují jiné konstrukty a neodpovídají entitě."
+      },
+      {
+        "id": "dd_q37",
+        "module": "dd_m1",
+        "question": "Where an entity has more than one attribute suitable to be the Primary UID, these are known as _________ UIDs.",
+        "code": null,
+        "options": [
+          "Secondary",
+          "Composite",
+          "Candidate",
+          "Simple"
+        ],
+        "correct": 2,
+        "explanation": "Pokud má entita více atributů (či kombinací atributů), které jsou vhodné a schopné jednoznačně identifikovat každou instanci entity, nazývají se kandidátní identifikátory (Candidate UIDs). Z nich návrhář zvolí jeden za primární UID (Primary UID) a veškeré zbývající nezvolené kandidátní identifikátory se označují jako sekundární identifikátory (Secondary UIDs). Kompozitní UID (Composite UID) je tvořeno kombinací více atributů či vztahů a jednoduché UID (Simple UID) se skládá z jediného atributu."
+      },
+      {
+        "id": "dd_q38",
+        "module": "dd_m5",
+        "question": "A foreign key cannot refer to a primary key in the same table. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Cizí klíč může odkazovat na primární klíč v téže tabulce. Tento mechanismus se v relačních databázích nazývá rekurzivní vztah (self-referencing relationship nebo recursive foreign key). Typickým příkladem v Oracle Academy je hierarchie zaměstnanců v tabulce EMPLOYEES, kde sloupec manager_id (cizí klíč) odkazuje na sloupec employee_id (primární klíč) stejné tabulky."
+      },
+      {
+        "id": "dd_q39",
+        "module": "dd_m5",
+        "question": "Relationships on an ERD can only be transformed into UIDs in the physical model. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Vztahy z ER diagramu se ve fyzickém návrhu transformují na cizí klíče (Foreign Keys), nikoliv výhradně na UID. Navíc UID je koncept logického modelu, zatímco ve fyzickém modelu se používá pojem Primary Key a Unique Key. Pouze v případě identifikačních vztahů (barred relationships) se cizí klíč stává součástí složeného primárního klíče podřízené tabulky, ale ani v takovém případě nelze říci, že by se vztahy transformovaly „pouze na UID“."
+      },
+      {
+        "id": "dd_q40",
+        "module": "dd_m3",
+        "question": "A Supertype can have only one subtype. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Podle základních pravidel modelování v Oracle Academy musí mít každý nadtyp (Supertype) alespoň dva podtypy (Subtypes). Podtypy musí být vzájemně se vylučující (mutually exclusive) a úplné (collectively exhaustive). Existence jediného podtypu postrádá logický smysl, neboť by byl zcela totožný se samotným nadtypem a neposkytoval by žádnou kategorizaci."
+      },
+      {
+        "id": "dd_q41",
+        "module": "dd_m4",
+        "question": "Examine the following entity and decide which attribute breaks the 2nd Normal Form rule:",
+        "code": "ENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION\nDATE",
+        "options": [
+          "STORE LOCATION",
+          "CUSTOMER ID",
+          "STORE ID",
+          "DATE"
+        ],
+        "correct": 0,
+        "explanation": "Druhá normální forma (2NF) vyžaduje, aby entita byla v 1NF a aby všechny neklíčové atributy byly plně funkčně závislé na celém unikátním identifikátoru (UID), nikoliv pouze na jeho části (nesmí existovat částečná funkční závislost). Zde má entita RECEIPT složený UID ze dvou atributů (#CUSTOMER ID a #STORE ID). Atribut STORE LOCATION závisí výhradně na STORE ID (adresa obchodu je určena samotným obchodem bez vazby na zákazníka), což porušuje pravidlo 2NF. Atribut DATE závisí na celé transakci zákazníka v daném obchodě a atributy CUSTOMER ID a STORE ID tvoří samotný UID."
+      },
+      {
+        "id": "dd_q42",
+        "module": "dd_m5",
+        "question": "Which of the following scenarios should be modeled so that historical data is kept? (Choose Two)",
+        "code": null,
+        "options": [
+          "CUSTOMER and PAYMENTS",
+          "BABY and AGE",
+          "CUSTOMER and ORDERS",
+          "TEACHER and AGE"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explanation": "Správné odpovědi jsou CUSTOMER and PAYMENTS a CUSTOMER and ORDERS. Transakční procesy jako platby (PAYMENTS) a objednávky (ORDERS) vyžadují evidenci historie v čase – podnik potřebuje mít trvalý auditní záznam o každé uskutečněné platbě i objednávce zákazníka včetně časových razítek. Naopak atribut AGE (věk) u učitele či dítěte se v databázi jako historická data nemodeluje; jde o odvoditelný údaj, u něhož se ukládá neměnné datum narození (birth date) a aktuální věk se dynamicky dopočítává."
+      },
+      {
+        "id": "dd_q43",
+        "module": "dd_m5",
+        "question": "It is possible to implement non-transferability via a simple Foreign Key Relationship. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Nepřevoditelný vztah (non-transferable relationship) definuje pravidlo, že po přiřazení podřízeného záznamu k nadřízenému již toto propojení nelze nikdy změnit (převést na jiného rodiče). Běžné omezení cizího klíče (Foreign Key) v relační databázi kontroluje pouze referenční integritu (zda rodičovský záznam existuje), ale nezabraňuje operacím UPDATE na sloupci cizího klíče. Pro vynucení nepřevoditelnosti ve fyzické databázi je nutné použít dodatečný mechanismus, typicky databázový trigger (např. BEFORE UPDATE v PL/SQL, který vyvolá výjimku při pokusu o změnu hodnoty FK)."
+      },
+      {
+        "id": "dd_q44",
+        "module": "dd_m5",
+        "question": "Which of the following is a valid reason for considering a Subtype Implementation?",
+        "code": null,
+        "options": [
+          "The common access paths for the supertypes are different.",
+          "The resulting table will reside in a single database and be used by just ONE user.",
+          "Business functionality, business rules, access paths, and frequency of access are all very different between the subtypes.",
+          "Most of the relationships are at the supertype level."
+        ],
+        "correct": 2,
+        "explanation": "Při transformaci hierarchie nadtyp/podtypy do fyzického schématu se implementace podtypů (Subtype Implementation – vytvoření samostatné tabulky pro každý podtyp) volí tehdy, pokud se obchodní funkcionalita, integritní pravidla, přístupové cesty a frekvence přístupu mezi jednotlivými podtypy výrazně liší. Pokud by naopak většina vztahů a atributů byla společná na úrovni nadtypu a přístupové vzory byly jednotné, preferuje se implementace nadtypu do jediné společné tabulky (Supertype Implementation)."
+      },
+      {
+        "id": "dd_q45",
+        "module": "dd_m1",
+        "question": "Entities are usually verbs. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Entity v ER modelování představují objekty, osoby, místa, koncepty nebo události, o nichž organizace potřebuje ukládat data, a proto jsou zásadně pojmenovávány podstatnými jmény (nouns) v jednotném čísle (např. EMPLOYEE, ORDER, PRODUCT, DEPARTMENT). Slovesa (verbs) se naopak používají k pojmenování vztahů (relationships), které popisují interakce mezi entitami (např. 'places', 'contains', 'assigned to')."
+      },
+      {
+        "id": "dd_q46",
+        "module": "dd_m5",
+        "question": "A Hierarchical relationship is a series of relationships that reflect entities organized into successive levels. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 0,
+        "explanation": "Tvrzení je pravdivé (True). Hierarchický vztah představuje sérii vztahů, které vyjadřují uspořádání entit do postupných (sukcesivních) úrovní, kde každá nižší úroveň závisí na úrovni bezprostředně nad ní. Příkladem v databázovém modelování je geografická hierarchie (KONTINENT -> ZEMĚ -> KRAJ -> MĚSTO) nebo víceúrovňová organizační struktura."
+      },
+      {
+        "id": "dd_q47",
+        "module": "dd_m1",
+        "question": "Which symbol is used to show that a particular attribute is mandatory?",
+        "code": null,
+        "options": [
+          "&",
+          "*",
+          "o",
+          "#"
+        ],
+        "correct": 1,
+        "explanation": "V Barkerově notaci ER diagramů používané v materiálech Oracle Academy se povinný (mandatory) atribut značí hvězdičkou (*). Kroužek (o) značí nepovinný (optional) atribut, mřížka (#) značí atribut, který je součástí unikátního identifikátoru (UID), a ampersand (&) nemá v Barkerově notaci žádný význam."
+      },
+      {
+        "id": "dd_q48",
+        "module": "dd_m5",
+        "question": "Cascading UIDs are a feature often found in what type of Relationship?",
+        "code": null,
+        "options": [
+          "Heirarchical Relationship",
+          "Recursive Relationship",
+          "Invalid Relationship",
+          "General Relationship"
+        ],
+        "correct": 0,
+        "explanation": "Kaskádové identifikátory (Cascading UIDs) jsou typickým rysem hierarchických vztahů (Hierarchical Relationship) modelovaných pomocí identifikačních (barred) vztahů. V takové hierarchii (např. BUDOVA -> POSCHODÍ -> MÍSTNOST) přebírá každá podřízená entita do svého primárního identifikátoru celý identifikátor své nadřazené entity. Identifikátory se tak postupně kaskádovitě skládají a propagují směrem dolů hierarchií."
+      },
+      {
+        "id": "dd_q49",
+        "module": "dd_m2",
+        "question": "Which of the following are used to show Cardinality on an ERD? (Choose Two)",
+        "code": null,
+        "options": [
+          "Single toe.",
+          "Dashed line.",
+          "Crow's foot.",
+          "Solid line."
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explanation": "Správné odpovědi jsou 'Single toe.' a 'Crow's foot.'. V Barkerově notaci ER diagramů určuje kardinalitu (kolik instancí se může účastnit vztahu) zakončení linky: 'Single toe' (rovné zakončení čáry bez větvení) značí kardinalitu 'jeden' (one and only one), zatímco 'Crow's foot' (vraní nožka / rozvětvení) značí kardinalitu 'mnoho' (one or more). Plná čára (Solid line) a čárkovaná čára (Dashed line) slouží k vyjádření volitelnosti vztahu (Optionality – povinný vs. nepovinný), nikoli kardinality."
+      },
+      {
+        "id": "dd_q50",
+        "module": "dd_m2",
+        "question": "Relationship names are not shown on an ERD. True or False?",
+        "code": null,
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct": 1,
+        "explanation": "Tvrzení je nepravdivé (False). Názvy vztahů (relationship labels) se na ER diagramu v Barkerově notaci explicitně zobrazují na obou koncích linky vztahu. Tyto popisky umožňují číst vztahy v obou směrech jako celistvé gramatické věty (např. 'Each EMPLOYEE must be assigned to one and only one DEPARTMENT' a 'Each DEPARTMENT may be responsible for one or more EMPLOYEES')."
+      }
+    ]
+  },
   "html": {
     "id": "html",
     "category": "web",
@@ -1386,426 +2142,426 @@ const CERTIFICATES_DATA = {
     ],
     "examQuestionCount": 30,
     "questions": [
-      {
-        "id": "js_q01",
-        "module": "js_m1",
-        "question": "Entering about:blank in the address bar of your browser will:",
-        "code": null,
-        "options": [
-          "generate a page with information about the browser's status.",
-          "generate and load a minimal blank HTML page into the current tab.",
-          "clear all inputs on the current page.",
-          "open a tab with information about your browser."
-        ],
-        "correct": 1,
-        "explanation": "Entering \"about:blank\" in the address bar of your browser will load a blank page. The \"about:blank\" URL is a special URL that represents an empty or blank page. When you navigate to \"about:blank\", the browser will display a blank page with no content."
-      },
-      {
-        "id": "js_q02",
-        "module": "js_m2",
-        "question": "Analyze the following code:\n\nWhat will appear to the console as a result?",
-        "code": "let id = \"100\";\n{\n  let id = 200;\n  id = id + 1;\n  console.log(id);\n}",
-        "options": [
-          "101",
-          "201",
-          "200",
-          "1001"
-        ],
-        "correct": 1,
-        "explanation": "Let's analyze the code step by step:\n1. The variable id is declared and initialized with the string value \"100\" using the let keyword in the global scope.\n2. A block of code is defined using curly braces {}. This block creates a new block scope.\n3. Inside the block, a new variable id is declared and initialized with the value 200 using the let keyword. This creates a new block-scoped variable id that shadows the outer variable id.\n4. The value of the block-scoped id is updated by adding 1 to it using the id = id + 1 statement.\n5. The resulting value of id, which is 201, is printed to the console using console.log(id).\nSince the console.log(id) statement is inside the block, it refers to the block-scoped variable id, which has a value of 201 after adding 1 to 200. Therefore, when the code is executed, 201 will appear in the console."
-      },
-      {
-        "id": "js_q03",
-        "module": "js_m2",
-        "question": "Select a set of data types, containing only complex types:",
-        "code": null,
-        "options": [
-          "Array, Object",
-          "Object, String",
-          "Array, Object, String",
-          "Boolean, Number, Bigint"
-        ],
-        "correct": 0,
-        "explanation": "In JavaScript, complex data types, also known as reference types, include objects, arrays, and functions. Here is a set of complex data types:\n1. Object: An object is an unordered collection of key-value pairs, where each value can be of any data type, including other complex types. Objects are created using curly braces {} and can be used to represent more complex data structures.\n2. Array: An array is an ordered list of values. It can hold elements of any data type, including other complex types. Arrays are created using square brackets [] and provide methods for manipulating and accessing their elements.\n3. Function: A function is a reusable block of code that can be executed when called. Functions are created using the function keyword or by using arrow function syntax (=>). They can take parameters, perform actions, and return values."
-      },
-      {
-        "id": "js_q04",
-        "module": "js_m2",
-        "question": "We can replace the declaration let x = 3e-3; with:",
-        "code": null,
-        "options": [
-          "let x = 3000;",
-          "let x = 0.0003;",
-          "let x = 0.003;",
-          "let x = 0.333;"
-        ],
-        "correct": 2,
-        "explanation": "The correct replacement for the declaration let x = 3e-3; would be: let x = 0.003;"
-      },
-      {
-        "id": "js_q05",
-        "module": "js_m2",
-        "question": "Using the string interpolation technique, we can create the string:\n\nand store it in the msg variable using the command:",
-        "code": "\"I do not like travelling by plane\"",
-        "options": [
-          "let means = \"plane\";\nlet msg = \"I do not like travelling by ${ means }\";",
-          "let means = \"plane\";\nlet msg = 'I do not like travelling by \\{ means \\}';",
-          "let means = \"plane\";\nlet msg = `I do not like travelling by {means}`;",
-          "let means = \"plane\";\nlet msg = `I do not like travelling by ${means}`;"
-        ],
-        "correct": 3,
-        "explanation": "To create the string \"I do not like travelling by plane\" using string interpolation and store it in the msg variable, the correct command would be:\nlet means = \"plane\";\nlet msg = `I do not like travelling by ${means}`;\nString interpolation in JavaScript is achieved by using backticks (```) as the string delimiter. Within the backticks, you can include expressions or variables by wrapping them in ${}. The expression or variable within ${} will be evaluated and its value will be inserted into the resulting string.\nIn this case, the variable means is assigned the value \"plane\". The string interpolation syntax ${means} is used within backticks to insert the value of means into the string. Thus, the resulting value of msg will be \"I do not like travelling by plane\"."
-      },
-      {
-        "id": "js_q06",
-        "module": "js_m4",
-        "question": "We declare a movie object, with two fields: title and year:\n\nTo change the value of the title field to \"Matrix\" we need to perform:",
-        "code": "let movie = {\n  title: \"Life\",\n  year: 1999",
-        "options": [
-          "movie.title = \"Matrix\";",
-          "movie{title} = \"Matrix\";",
-          "movie[title] = \"Matrix\";",
-          "title->movie = \"Matrix\";"
-        ],
-        "correct": 0,
-        "explanation": "In JavaScript, you can access and modify object properties using dot notation (object.property). In this case, movie.title accesses the title property of the movie object, and the assignment = is used to change its value to \"Matrix\". After executing the command, the title field in the movie object will be updated to \"Matrix\".\nmovie.title = \"Matrix\";"
-      },
-      {
-        "id": "js_q07",
-        "module": "js_m4",
-        "question": "You declare the following array of animals: let animals = [\"canary\", \"dog\", \"cat\"]; . Then, you call the method animals.push(\"hamster\"); . What will the animals array look like after calling the method?",
-        "code": null,
-        "options": [
-          "[\"hamster\", \"canary\", \"dog\", \"cat\"]",
-          "[\"canary\", \"dog\", \"cat\"]",
-          "[\"hamster\"]",
-          "[\"canary\", \"dog\", \"cat\", \"hamster\"]"
-        ],
-        "correct": 3,
-        "explanation": "After calling the animals.push(\"hamster\"); method, the animals array will look like this:\n[\"canary\", \"dog\", \"cat\", \"hamster\"]\nThe push() method in JavaScript is used to add one or more elements to the end of an array. In this case, the method animals.push(\"hamster\") adds the string value \"hamster\" to the end of the animals array. As a result, the array is modified, and \"hamster\" becomes the last element in the array."
-      },
-      {
-        "id": "js_q08",
-        "module": "js_m1",
-        "question": "A JavaScript code includes the console.log(\"http://somethingNew.org\"); command. Its execution will:",
-        "code": null,
-        "options": [
-          "send a log with information about the currently executed script to the indicated address http://somethingNew.org.",
-          "display on the console information about the progress of the http://somethingNew.org page loading.",
-          "display the following message on the console: \"http://somethingNew.org\" .",
-          "cause the page http://somethingNew.org to be loaded into the browser."
-        ],
-        "correct": 2,
-        "explanation": "When the JavaScript code console.log(\"http://somethingNew.org\"); is executed, it will print the string \"http://somethingNew.org\" to the console.\nThe console.log() function in JavaScript is used to output messages to the console. In this case, the code includes console.log(\"http://somethingNew.org\"), which specifies the string \"http://somethingNew.org\" as the argument to be logged. When the code is executed, the specified string will be displayed in the console. It does not perform any other action apart from printing the message to the console output."
-      },
-      {
-        "id": "js_q09",
-        "module": "js_m4",
-        "question": "Analyze the code snippet:\n\nWhat value will the index variable have?",
-        "code": "let winter = [\"December\", \"January\", \"February\"]; let index = winter.indexOf(\"February\");",
-        "options": [
-          "3",
-          "\"February\"",
-          "2",
-          "1"
-        ],
-        "correct": 2,
-        "explanation": "The code snippet let winter = [\"December\", \"January\", \"February\"]; let index = winter.indexOf(\"February\"); will assign the value 2 to the index variable.\nHere's a breakdown of the code:\n1. An array winter is declared and initialized with three elements: \"December\", \"January\", and \"February\".\n2. The indexOf() method is called on the winter array with the argument \"February\". This method searches the array for the specified element and returns the index of the first occurrence of that element. If the element is not found, it returns -1.\n3. Since \"February\" is present in the winter array, the indexOf() method will find it and return the index 2, indicating that \"February\" is located at the third position in the array.\n4. The value 2 is assigned to the index variable using the let index = statement.\nTherefore, after executing the code, the index variable will have the value 2."
-      },
-      {
-        "id": "js_q10",
-        "module": "js_m4",
-        "question": "In the daysOfWeek variable, you place an array with the names of the days of the week. Which method will you call to reverse the order of the array elements.",
-        "code": null,
-        "options": [
-          "daysOfWeek.reverse();",
-          "daysOfWeek.order(-1);",
-          "daysOfWeek = reverse(daysOfWeek);",
-          "daysOfWeek.invert();"
-        ],
-        "correct": 0,
-        "explanation": "To reverse the order of the elements in the daysOfWeek array, you can call the reverse() method."
-      },
-      {
-        "id": "js_q11",
-        "module": "js_m3",
-        "question": "Review the following code:\n\nWhat will appear on the console as a result?",
-        "code": "let msg1 = 'hello';\nlet msg2 = msg1.slice(-1);\nconsole.log(msg2 ? msg2 : msg2 + msg1);",
-        "options": [
-          "ohello",
-          "hello",
-          "h",
-          "o"
-        ],
-        "correct": 3,
-        "explanation": "The code snippet will display the letter \"o\" on the console as a result.\nLet's break down the code:\n1. The variable msg1 is declared and assigned the string value 'hello'.\n2. The variable msg2 is assigned the result of msg1.slice(-1). The slice() method is used to extract a portion of a string. In this case, -1 as the parameter means to extract the last character of msg1, which is 'o'.\n3. The console.log() statement is called, which outputs a value to the console.\n4. The expression msg2 ? msg2 : msg2 + msg1 is evaluated and passed as the argument to console.log().\n5. In this expression, msg2 is truthy since it contains the letter 'o'. Therefore, the result of the expression will be the value of msg2, which is 'o'.\n6. As a result, the letter 'o' will be displayed on the console.\nSo, when the code is executed, the console will display the letter 'o'."
-      },
-      {
-        "id": "js_q12",
-        "module": "js_m3",
-        "question": "Analyze the following code:\n\nWhat value will the test variable have if, after running the code, we immediately press the OK button on the newly created dialog?",
-        "code": "let test = prompt(\"Run\", \"code\");",
-        "options": [
-          "code",
-          "true",
-          "Run",
-          "OK"
-        ],
-        "correct": 0,
-        "explanation": "The value of the test variable will depend on the user's input when the prompt dialog appears. If the user clicks the OK button, the test variable will be assigned the string (\"code\"). Since it is defined in the code. Therefore, the test variable will have the value \"code\"."
-      },
-      {
-        "id": "js_q13",
-        "module": "js_m3",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of its execution?",
-        "code": "let x = false || true;\nlet y = \"true\" && \"false\";\nlet z = false && true;\nconsole.log(`${x} ${y} ${z}`);",
-        "options": [
-          "false false true",
-          "false true true",
-          "false false false",
-          "true false false"
-        ],
-        "correct": 3,
-        "explanation": "Let's break down the code:\n• The variable x is assigned the value of the logical OR operation between false and true. In a logical OR operation, if any of the operands is true, the result will be true. In this case, since the second operand (true) is true, the result of false || true is true, which is assigned to x.\n• The variable y is assigned the value of the logical AND operation between the string \"true\" and the string \"false\". In a logical AND operation, if all operands are true, the result will be the last operand. In this case, since both \"true\" and \"false\" are considered truthy values, the result of \"true\" && \"false\" is \"false\", which is assigned to y.\n• The variable z is assigned the value of the logical AND operation between false and true. In a logical AND operation, if any of the operands is false, the result will be false. In this case, since the first operand (false) is false, the result of false && true is false, which is assigned to z.\n• The console.log() statement is called to output a value to the console.\n• The expression ${x} ${y} ${z} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of x, y, and z into a single string with spaces in between.\n• As a result, the console will display true false false."
-      },
-      {
-        "id": "js_q14",
-        "module": "js_m3",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of its execution?",
-        "code": "let a = true && 20;\nlet b = 0 || 20\nlet c = 0 && 20;\nconsole.log(`${a} ${b} ${c}`);",
-        "options": [
-          "20 20 0",
-          "true true false",
-          "true 20 0",
-          "1 1 0"
-        ],
-        "correct": 0,
-        "explanation": "Let's break down the code:\n1. The variable a is assigned the value of the logical AND operation between true and 20. In a logical AND operation, if all operands are true, the result will be the last operand. In this case, both true and 20 are considered truthy values, so the result of true && 20 is 20, which is assigned to a.\n2. The variable b is assigned the value of the logical OR operation between 0 and 20. In a logical OR operation, if any of the operands is true, the result will be the first truthy operand encountered. In this case, 0 is considered a falsy value, so the result of 0 || 20 is 20, which is assigned to b.\n3. The variable c is assigned the value of the logical AND operation between 0 and 20. In a logical AND operation, if any of the operands is false, the result will be false. In this case, 0 is considered a falsy value, so the result of 0 && 20 is 0, which is assigned to c.\n4. The console.log() statement is called to output a value to the console.\n5. The expression ${a} ${b} ${c} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of a, b, and c into a single string with spaces in between.\n6. As a result, the console will display 20 20 0."
-      },
-      {
-        "id": "js_q15",
-        "module": "js_m3",
-        "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
-        "code": "let a = 20 + \"10\";\nlet b = 20 + +\"10\";\nlet c = 20 + -\"10\" + \"10\";\nlet d = \"10\" - \"10\" + \"100\";\nlet e = \"A\" - \"B\" + 0xA;\nconsole.log(`${a}, ${b}, ${c}, ${d}, ${e}`);",
-        "options": [
-          "2010, 2010, 20-1010, 0100, NaN",
-          "30, 30, 20, 100, 2",
-          "30, 31, 39, 100, NaN",
-          "2010, 30, 1010, 0100, NaN"
-        ],
-        "correct": 3,
-        "explanation": "Let's break down the code:\n1. The variable a is assigned the result of the concatenation between the string \"20\" and the string \"10\". When the + operator is used with a string, it performs string concatenation. So, \"20\" + \"10\" results in the string \"2010\", which is assigned to a.\n2. The variable b is assigned the result of the addition between the number 20 and the numeric conversion of the string \"10\". The unary + operator before \"10\" converts it into a number, resulting in 20 + 10, which is 30, assigned to b.\n3. The variable c is assigned the result of the addition between the number 20 and the negated numeric conversion of the string \"10\", followed by the concatenation with the string \"10\". The unary - operator before \"10\" converts it into a number and negates it, resulting in -10. Then, 20 + (-10) is 10, which is concatenated with the string \"10\", resulting in \"1010\", assigned to c.\n4. The variable d is assigned the result of the subtraction between the numeric conversions of the strings \"10\" and \"10\", followed by the concatenation with the string \"100\". Both \"10\" and \"10\" are converted into numbers, resulting in 10 - 10, which is 0. Then, \"0\" + \"100\" is \"0100\", assigned to d.\n5. The variable e is assigned the result of the subtraction between the numeric conversions of the strings \"A\" and \"B\", followed by the addition of 0xA (which is 10 in hexadecimal). Both \"A\" and \"B\" cannot be converted into valid numbers, so the result is NaN. Then, NaN + 10 is still NaN, assigned to e.\n6. The console.log() statement is called to output the values to the console.\n7. The expression ${a}, ${b}, ${c}, ${d}, ${e} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of a, b, c, d, and e into a single string separated by commas.\n8. As a result, the console will display \"2010, 30, 1010, 0100, NaN\"."
-      },
-      {
-        "id": "js_q16",
-        "module": "js_m5",
-        "question": "Which of the following loop instructions checks the loop continuation condition only after the iteration has been completed?",
-        "code": null,
-        "options": [
-          "for ... in",
-          "for",
-          "while",
-          "do ... while"
-        ],
-        "correct": 3,
-        "explanation": "The \"do ... while\" loop instruction checks the loop continuation condition only after the iteration has been completed. In the \"do ... while\" loop, the code block is executed first, and then the condition is checked. If the condition evaluates to true, the loop continues executing. This guarantees that the code block is executed at least once, regardless of the condition."
-      },
-      {
-        "id": "js_q17",
-        "module": "js_m6",
-        "question": "The following function using a function expression has been defined:\n\nWhat could the definition of the corresponding arrow function look like?",
-        "code": "let sum = function (a, b) {\n    return (a + b);\n}",
-        "options": [
-          "let sum = (a, b) => { a + b; };",
-          "let sum = function (a, b) => {\n    return (a + b); }",
-          "let sum = (a, b)-- > a + b;",
-          "let sum = (a, b) => a + b;"
-        ],
-        "correct": 3,
-        "explanation": "In arrow function syntax, the parameters are specified within parentheses (a, b), followed by the arrow =>, and then the expression a + b representing the function body. If the function body is a single expression, you can omit the curly braces {} and the return keyword."
-      },
-      {
-        "id": "js_q18",
-        "module": "js_m6",
-        "question": "The temp array contains air temperature data measured over a period of time. You want to display the minimal temperature using the following code:\n\nWhat should the declaration of the min variable look like?",
-        "code": "temp.forEach(e => min = min > e ? e : min);\nconsole.log(min);",
-        "options": [
-          "It’s not necessary, as it will be declared automatically on first use.",
-          "let min = 0;",
-          "let min = temp[0];",
-          "let min;"
-        ],
-        "correct": 1,
-        "explanation": "The code snippet temp.forEach(e => min = min > e ? e : min); uses the forEach method to iterate over the elements of the temp array and update the value of min based on each element. In order to store the minimum temperature, you need to declare the min variable like this let min = 0; before using it in the code."
-      },
-      {
-        "id": "js_q19",
-        "module": "js_m4",
-        "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
-        "code": "let x = [10, 20, 30, 40];\nlet y = [50, 60];\nx.reverse().push(y);\nconsole.log(x.length);",
-        "options": [
-          "6",
-          "4",
-          "2",
-          "5"
-        ],
-        "correct": 3,
-        "explanation": "The code will output 5 in the console."
-      },
-      {
-        "id": "js_q20",
-        "module": "js_m5",
-        "question": "Analyze the following code:\n\nWhich statement can replace the for from the example?",
-        "code": "for(let a=1; a<10; a+=2) {\n    console.log(a);\n};",
-        "options": [
-          "let counter = 0;\nwhile (counter++ < 10) console.log(counter++);",
-          "let counter = 0;\nwhile (counter < 9) console.log(counter++);",
-          "let counter = 1;\nwhile (counter++ < 10) console.log(counter++);",
-          "let counter = 0;\nwhile (counter < 10) console.log(counter++);"
-        ],
-        "correct": 3,
-        "explanation": "The correct statement that can replace the for loop from the example is:\nlet counter = 0;\nwhile (counter < 10) console.log(counter++);"
-      },
-      {
-        "id": "js_q21",
-        "module": "js_m5",
-        "question": "Analyze the following code:\n\nWhat will appear on the console as a result?",
-        "code": "let colors = ['red', 'green', 'blue'];\nfor (let c of colors) console.log(c);",
-        "options": [
-          "['red', 'green', 'blue']",
-          "0\n1\n2",
-          "3",
-          "red\ngreen\nblue"
-        ],
-        "correct": 3,
-        "explanation": "The code is using a for...of loop to iterate over the elements of the colors array. In each iteration, the loop assigns the current element to the variable c, and then console.log(c) prints the value of c to the console. Since the colors array contains three elements ('red', 'green', and 'blue'), the loop will iterate three times, printing each element on a separate line in the console."
-      },
-      {
-        "id": "js_q22",
-        "module": "js_m5",
-        "question": "Analyze the following code:\n\nWhat will appear on the console as a result?",
-        "code": "let route = {distance: 131, elevation: 1.4};\nfor (let k in route) console.log(k);",
-        "options": [
-          "131\n1.4",
-          "distance\nelevation",
-          "distance",
-          "2"
-        ],
-        "correct": 1,
-        "explanation": "The code is using a for...in loop to iterate over the properties of the route object. In each iteration, the loop assigns the current property name to the variable k, and then console.log(k) prints the value of k to the console. The route object has two properties: distance and elevation. Therefore, the loop will iterate twice, printing each property name on a separate line in the console."
-      },
-      {
-        "id": "js_q23",
-        "module": "js_m6",
-        "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
-        "code": "let a = (n) => {\n    return n > 2 ? n * a(n - 1) : 2\n}\nconsole.log(a(6));",
-        "options": [
-          "120",
-          "720",
-          "4",
-          "6"
-        ],
-        "correct": 1,
-        "explanation": "The code defines an arrow function a that takes a parameter n. Inside the function, there is a ternary operator that checks if n is greater than 2. If it is, the function recursively calls itself with the argument (n - 1) and multiplies the result by n. This recursion continues until n reaches 2, at which point the function returns 2. In the console.log(a(6)) statement, the function a is called with the argument 6. The function recursively calculates the factorial of 6 (6 * 5 * 4 * 3 * 2), which results in 720. This value is then printed to the console using console.log."
-      },
-      {
-        "id": "js_q24",
-        "module": "js_m6",
-        "question": "Examine the following code:\n\nWhat should the mult function declaration look like if the execution of this code results in a value of 20 in the console?",
-        "code": "let x = mult(2)(10);\nconsole.log(x); // -> 20",
-        "options": [
-          "let mult = function (a, b) {\n    return a * b;\n}",
-          "There is an error in the code and it is not possible to declare such a function correctly.",
-          "let mult = function (a) {\n    return function (b) {\n        return a * b;\n    }\n}",
-          "let mult = function (a, b) {\n    return b ? mult(b) : mult(a);\n}"
-        ],
-        "correct": 2,
-        "explanation": "The correct declaration for the mult function that would result in the desired output of 20 in the console is:\nlet mult = function (a) {\n    return function (b) {\n        return a * b;\n    }\n}"
-      },
-      {
-        "id": "js_q25",
-        "module": "js_m2",
-        "question": "Analyze the code snippet:\n\nAfter declaring the counter variable, we want to add a short comment with information about what the variable is used for. To do this, we modify the line with the declaration to the form:",
-        "code": "let counter = 0;\nlet userName = \"John\";",
-        "options": [
-          "let counter = 0; ;;user visit counter",
-          "// let counter = 0; user visit counter",
-          "let counter = 0; /* user visit counter",
-          "let counter = 0; // user visit counter"
-        ],
-        "correct": 3,
-        "explanation": "In the modified line, the comment // user visit counter provides information about the purpose or usage of the counter variable."
-      },
-      {
-        "id": "js_q26",
-        "module": "js_m6",
-        "question": "Examine the following code:\n\nHow should the function cmp be declared if, after the code execution, the elements of the array x are sorted in ascending order?",
-        "code": "x = [40, 10, 30, 20, 50];\nx.sort(cmp);",
-        "options": [
-          "let cmp = (a, b) => a - b;",
-          "let cmp = (a, b) => b - a;",
-          "let cmp = (a, b) => b < a;",
-          "let cmp = (a, b) => b > a;"
-        ],
-        "correct": 0,
-        "explanation": "This comparison function subtracts b from a, which will result in a negative value if a should be placed before b in the sorted order, a positive value if b should be placed before a, and zero if they are considered equal. Here is the code: let cmp = (a, b) => a - b;"
-      },
-      {
-        "id": "js_q27",
-        "module": "js_m6",
-        "question": "Analyze the following code, which is missing one line:\n\nWhat should the missing line look like if the execution of this code results in the console displaying the values 2, 1, and 0 in sequence?",
-        "code": "let counter = 2;\nlet interval = setInterval(() => {\n    console.log(counter);\n    // Insert missing line here.\n}, 1000);",
-        "options": [
-          "while (counter-- >= 0) clearInterval(interval);",
-          "if (counter-- >= 0) clearInterval(interval);",
-          "clearInterval(interval);",
-          "if (counter-- <= 0) clearInterval(interval);"
-        ],
-        "correct": 3,
-        "explanation": "This line checks if the value of counter is less than or equal to 0 after decrementing it. If counter becomes 0 or negative, it means the desired sequence of numbers (2, 1, 0) has been displayed. At that point, clearInterval(interval) is called to stop the interval from continuing. The correct line is: if (counter-- <= 0) clearInterval(interval);"
-      },
-      {
-        "id": "js_q28",
-        "module": "js_m6",
-        "question": "Analyze the following code:\n\nBefore declaring the function, we should add one more line of code. Which one, if the execution of the completed code will result in the console displaying the value 9?",
-        "code": "function execute(todo, a, b) {\n    return todo(a, b);\n}\nconsole.log(execute(power, 3, 2));",
-        "options": [
-          "let power = (x,y) => x * y;",
-          "let power = () => a ** b;",
-          "let power = (x, y) => x ** y;",
-          "let power = 9;"
-        ],
-        "correct": 2,
-        "explanation": "To ensure that the execution of the completed code results in the console displaying the value 9, the line defines the power function as an arrow function that calculates the power of x raised to the y exponent using the ** operator."
-      },
-      {
-        "id": "js_q29",
-        "module": "js_m6",
-        "question": "Analyze the following code:\n\nWhat will happen as a result of its execution?",
-        "code": "const a = \"hello\";\n    console.log(a.toUpperCase());\n}\n} catch (error) {\n    console.log(a)\n} finally {\n    console.log(a);\n}",
-        "options": [
-          "The following words will appear in the console on subsequent lines: HELLO and hello.",
-          "The following words will appear in the console on subsequent lines: hello and hello.",
-          "The following words will appear in the console on subsequent lines: HELLO, hello, and hello.",
-          "The following word will appear in the console: HELLO."
-        ],
-        "correct": 0,
-        "explanation": "The line console.log(a.toUpperCase()); will print \"HELLO\" to the console. It uses the toUpperCase() method to convert the string a to uppercase. The try block does not have any code, so it won't execute any specific statements. The catch block will not be triggered because there is no error thrown in the preceding code. The finally block will execute regardless of whether there was an error or not. In this case, it will print \"hello\" to the console, as it references the a variable outside the try-catch block, which is not affected by the toUpperCase() call."
-      },
-      {
-        "id": "js_q30",
-        "module": "js_m6",
-        "question": "Placing a debugger; statement in the program code will:",
-        "code": null,
-        "options": [
-          "put the interpreter into report mode, which will cause the console to print out all sequentially executed commands.",
-          "cause the console to display the completion status of the statement preceding the debugger.",
-          "pause the program with the ability to continue, as long as the execution environment supports \"debugging functionality\".",
-          "stop the program without the ability to continue, as long as the execution environment supports \"debugging functionality\"."
-        ],
-        "correct": 2,
-        "explanation": "Placing a debugger; statement in the program code will pause the execution of the code at that point and activate the debugger. It allows you to inspect the current state of the program, including variable values, call stack, and execute step-by-step or run in debug mode."
-      }
+          {
+                "id": "js_q01",
+                "module": "js_m1",
+                "question": "Entering about:blank in the address bar of your browser will:",
+                "code": null,
+                "options": [
+                      "open a tab with information about your browser.",
+                      "clear all inputs on the current page.",
+                      "generate a page with information about the browser’s status.",
+                      "generate and load a minimal blank HTML page into the current tab."
+                ],
+                "correct": 3,
+                "explanation": "Entering “about:blank” in the address bar of your browser will load a blank page. The “about:blank” URL is a special URL that represents an empty or blank page. When you navigate to “about:blank”, the browser will display a blank page with no content."
+          },
+          {
+                "id": "js_q02",
+                "module": "js_m2",
+                "question": "Analyze the following code:\n\nWhat will appear to the console as a result?",
+                "code": "let id = \"100\";\n{\n  let id = 200;\n  id = id + 1;\n  console.log(id);\n}",
+                "options": [
+                      "1001",
+                      "101",
+                      "201",
+                      "200"
+                ],
+                "correct": 2,
+                "explanation": "Let’s analyze the code step by step:\n\n• The variable id is declared and initialized with the string value “100” using the let keyword in the global scope.\n\n• A block of code is defined using curly braces {}. This block creates a new block scope.\n\n• Inside the block, a new variable id is declared and initialized with the value 200 using the let keyword. This creates a new block-scoped variable id that shadows the outer variable id.\n\n• The value of the block-scoped id is updated by adding 1 to it using the id = id + 1 statement.\n\n• The resulting value of id, which is 201, is printed to the console using console.log(id).\n\nSince the console.log(id) statement is inside the block, it refers to the block-scoped variable id, which has a value of 201 after adding 1 to 200. Therefore, when the code is executed, 201 will appear in the console."
+          },
+          {
+                "id": "js_q03",
+                "module": "js_m2",
+                "question": "Select a set of data types, containing only complex types:",
+                "code": null,
+                "options": [
+                      "Object, String",
+                      "Boolean, Number, Bigint",
+                      "Array, Object",
+                      "Array, Object, String"
+                ],
+                "correct": 2,
+                "explanation": "In JavaScript, complex data types, also known as reference types, include objects, arrays, and functions. Here is a set of complex data types:\n\n• Object: An object is an unordered collection of key-value pairs, where each value can be of any data type, including other complex types. Objects are created using curly braces {} and can be used to represent more complex data structures.\n\n• Array: An array is an ordered list of values. It can hold elements of any data type, including other complex types. Arrays are created using square brackets [] and provide methods for manipulating and accessing their elements.\n\n• Function: A function is a reusable block of code that can be executed when called. Functions are created using the function keyword or by using arrow function syntax (=>). They can take parameters, perform actions, and return values."
+          },
+          {
+                "id": "js_q04",
+                "module": "js_m2",
+                "question": "We can replace the declaration let x = 3e-3; with:",
+                "code": null,
+                "options": [
+                      "let x = 3000;",
+                      "let x = 0.003;",
+                      "let x = 0.0003;",
+                      "let x = 0.333;"
+                ],
+                "correct": 1,
+                "explanation": "The correct replacement for the declaration let x = 3e-3; would be: let x = 0.003;"
+          },
+          {
+                "id": "js_q05",
+                "module": "js_m2",
+                "question": "Using the string interpolation technique, we can create the string:",
+                "code": "\"I do not like travelling by plane\"",
+                "options": [
+                      "let means = \"plane\";\nlet msg = 'I do not like travelling by \\{ means \\}';",
+                      "let means = \"plane\";\nlet msg = \"I do not like travelling by ${ means }\";",
+                      "let means = \"plane\";\nlet msg = `I do not like travelling by ${means}`;",
+                      "let means = \"plane\";\nlet msg = `I do not like travelling by {means}`;"
+                ],
+                "correct": 2,
+                "explanation": "To create the string “I do not like travelling by plane” using string interpolation and store it in the msg variable, the correct command would be:\n\nlet means = “plane”;\n\nlet msg = `I do not like travelling by ${means}`;\n\nString interpolation in JavaScript is achieved by using backticks (“`) as the string delimiter. Within the backticks, you can include expressions or variables by wrapping them in ${}. The expression or variable within ${} will be evaluated and its value will be inserted into the resulting string.\n\nIn this case, the variable means is assigned the value “plane”. The string interpolation syntax ${means} is used within backticks to insert the value of means into the string. Thus, the resulting value of msg will be “I do not like travelling by plane”."
+          },
+          {
+                "id": "js_q06",
+                "module": "js_m4",
+                "question": "We declare a movie object, with two fields: title and year:\n\nTo change the value of the title field to \"Matrix\" we need to perform:",
+                "code": "let movie = {\n  title: \"Life\",\n  year: 1999\n};",
+                "options": [
+                      "movie[title] = \"Matrix\";",
+                      "movie.title = \"Matrix\";",
+                      "movie{title} = \"Matrix\";",
+                      "title->movie = \"Matrix\";"
+                ],
+                "correct": 1,
+                "explanation": "In JavaScript, you can access and modify object properties using dot notation (object.property). In this case, movie.title accesses the title property of the movie object, and the assignment = is used to change its value to “Matrix”. After executing the command, the title field in the movie object will be updated to “Matrix”.\n\nmovie.title = “Matrix”;"
+          },
+          {
+                "id": "js_q07",
+                "module": "js_m4",
+                "question": "You declare the following array of animals: let animals = [\"canary\", \"dog\", \"cat\"];. Then, you call the method animals.push(\"hamster\");. What will the animals array look like after calling the method?",
+                "code": null,
+                "options": [
+                      "[\"canary\", \"dog\", \"cat\", \"hamster\"]",
+                      "[\"hamster\"]",
+                      "[\"hamster\", \"canary\", \"dog\", \"cat\"]",
+                      "[\"canary\", \"dog\", \"cat\"]"
+                ],
+                "correct": 0,
+                "explanation": "After calling the animals.push(“hamster”); method, the animals array will look like this:\n\n[“canary”, “dog”, “cat”, “hamster”]\n\nThe push() method in JavaScript is used to add one or more elements to the end of an array. In this case, the method animals.push(“hamster”) adds the string value “hamster” to the end of the animals array. As a result, the array is modified, and “hamster” becomes the last element in the array."
+          },
+          {
+                "id": "js_q08",
+                "module": "js_m1",
+                "question": "A JavaScript code includes the console.log(\"http://somethingNew.org\"); command. Its execution will:",
+                "code": null,
+                "options": [
+                      "display on the console information about the progress of the http://somethingNew.org page loading.",
+                      "cause the page http://somethingNew.org to be loaded into the browser.",
+                      "send a log with information about the currently executed script to the indicated address http://somethingNew.org.",
+                      "display the following message on the console: \"http://somethingNew.org\"."
+                ],
+                "correct": 3,
+                "explanation": "When the JavaScript code console.log(“http://somethingNew.org”); is executed, it will print the string “http://somethingNew.org” to the console.\n\nThe console.log() function in JavaScript is used to output messages to the console. In this case, the code includes console.log(“http://somethingNew.org”), which specifies the string “http://somethingNew.org” as the argument to be logged.\n\nWhen the code is executed, the specified string will be displayed in the console. It does not perform any other action apart from printing the message to the console output."
+          },
+          {
+                "id": "js_q09",
+                "module": "js_m4",
+                "question": "Analyze the code snippet:\n\nWhat value will the index variable have?",
+                "code": "let winter = [\"December\", \"January\", \"February\"];\nlet index = winter.indexOf(\"February\");",
+                "options": [
+                      "\"February\"",
+                      "2",
+                      "3",
+                      "1"
+                ],
+                "correct": 1,
+                "explanation": "The code snippet let winter = [“December”, “January”, “February”]; let index = winter.indexOf(“February”); will assign the value 2 to the index variable.\n\nHere’s a breakdown of the code:\n\n• An array winter is declared and initialized with three elements: “December”, “January”, and “February”.\n\n• The indexOf() method is called on the winter array with the argument “February”. This method searches the array for the specified element and returns the index of the first occurrence of that element. If the element is not found, it returns -1.\n\n• Since “February” is present in the winter array, the indexOf() method will find it and return the index 2, indicating that “February” is located at the third position in the array.\n\n• The value 2 is assigned to the index variable using the let index = statement.\n\nTherefore, after executing the code, the index variable will have the value 2."
+          },
+          {
+                "id": "js_q10",
+                "module": "js_m4",
+                "question": "In the daysOfWeek variable, you place an array with the names of the days of the week. Which method will you call to reverse the order of the array elements.",
+                "code": null,
+                "options": [
+                      "daysOfWeek.invert();",
+                      "daysOfWeek = reverse(daysOfWeek);",
+                      "daysOfWeek.reverse();",
+                      "daysOfWeek.order(-1);"
+                ],
+                "correct": 2,
+                "explanation": "To reverse the order of the elements in the daysOfWeek array, you can call the reverse() method."
+          },
+          {
+                "id": "js_q11",
+                "module": "js_m3",
+                "question": "Review the following code:\n\nWhat will appear on the console as a result?",
+                "code": "let msg1 = 'hello';\nlet msg2 = msg1.slice(-1);\nconsole.log(msg2 ? msg2 : msg2 + msg1);",
+                "options": [
+                      "o",
+                      "ohello",
+                      "hello",
+                      "h"
+                ],
+                "correct": 0,
+                "explanation": "The code snippet will display the letter “o” on the console as a result.\n\nLet’s break down the code:\n\n• The variable msg1 is declared and assigned the string value ‘hello’.\n\n• The variable msg2 is assigned the result of msg1.slice(-1). The slice() method is used to extract a portion of a string. In this case, -1 as the parameter means to extract the last character of msg1, which is ‘o’.\n\n• The console.log() statement is called, which outputs a value to the console.\n\n• The expression msg2 ? msg2 : msg2 + msg1 is evaluated and passed as the argument to console.log().\n\n• In this expression, msg2 is truthy since it contains the letter ‘o’. Therefore, the result of the expression will be the value of msg2, which is ‘o’.\n\n• As a result, the letter ‘o’ will be displayed on the console.\n\n \n\nSo, when the code is executed, the console will display the letter ‘o’."
+          },
+          {
+                "id": "js_q12",
+                "module": "js_m3",
+                "question": "Analyze the following code:\n\nWhat value will the test variable have if, after running the code, we immediately press the OK button on the newly created dialog?",
+                "code": "let test = prompt(\"Run\", \"code\");",
+                "options": [
+                      "true",
+                      "OK",
+                      "code",
+                      "Run"
+                ],
+                "correct": 2,
+                "explanation": "The value of the test variable will depend on the user’s input when the prompt dialog appears. If the user clicks the OK button, the test variable will be assigned the string (“code”). Since it is defined in the code. Therefore, the test variable will have the value “code”."
+          },
+          {
+                "id": "js_q13",
+                "module": "js_m3",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of its execution?",
+                "code": "let x = false || true;\nlet y = \"true\" && \"false\";\nlet z = false && true;\nconsole.log(`${x} ${y} ${z}`);",
+                "options": [
+                      "false true true",
+                      "false false false",
+                      "false false true",
+                      "true false false"
+                ],
+                "correct": 3,
+                "explanation": "Let’s break down the code:\n\n• The variable x is assigned the value of the logical OR operation between false and true. In a logical OR operation, if any of the operands is true, the result will be true. In this case, since the second operand (true) is true, the result of false || true is true, which is assigned to x.\n\n• The variable y is assigned the value of the logical AND operation between the string “true” and the string “false”. In a logical AND operation, if all operands are true, the result will be the last operand. In this case, since both “true” and “false” are considered truthy values, the result of “true” && “false” is “false”, which is assigned to y.\n\n• The variable z is assigned the value of the logical AND operation between false and true. In a logical AND operation, if any of the operands is false, the result will be false. In this case, since the first operand (false) is false, the result of false && true is false, which is assigned to z.\n\n• The console.log() statement is called to output a value to the console.\n\n• The expression ${x} ${y} ${z} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of x, y, and z into a single string with spaces in between.\n\n• As a result, the console will display true false false."
+          },
+          {
+                "id": "js_q14",
+                "module": "js_m3",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of its execution?",
+                "code": "let a = true && 20;\nlet b = 0 || 20;\nlet c = 0 && 20;\nconsole.log(`${a} ${b} ${c}`);",
+                "options": [
+                      "true 20 0",
+                      "1 1 0",
+                      "true true false",
+                      "20 20 0"
+                ],
+                "correct": 3,
+                "explanation": "Let’s break down the code:\n\n• The variable a is assigned the value of the logical AND operation between true and 20. In a logical AND operation, if all operands are true, the result will be the last operand. In this case, both true and 20 are considered truthy values, so the result of true && 20 is 20, which is assigned to a.\n\n• The variable b is assigned the value of the logical OR operation between 0 and 20. In a logical OR operation, if any of the operands is true, the result will be the first truthy operand encountered. In this case, 0 is considered a falsy value, so the result of 0 || 20 is 20, which is assigned to b.\n\n• The variable c is assigned the value of the logical AND operation between 0 and 20. In a logical AND operation, if any of the operands is false, the result will be false. In this case, 0 is considered a falsy value, so the result of 0 && 20 is 0, which is assigned to c.\n\n• The console.log() statement is called to output a value to the console.\n\n• The expression ${a} ${b} ${c} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of a, b, and c into a single string with spaces in between.\n\n• As a result, the console will display 20 20 0."
+          },
+          {
+                "id": "js_q15",
+                "module": "js_m3",
+                "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
+                "code": "let a = 20 + \"10\";\nlet b = 20 + +\"10\";\nlet c = 20 + -\"10\" + \"10\";\nlet d = \"10\" - \"10\" + \"100\";\nlet e = \"A\" - \"B\" + 0xA;\nconsole.log(`${a}, ${b}, ${c}, ${d}, ${e}`);",
+                "options": [
+                      "30, 30, 20, 100, 2",
+                      "30, 31, 39, 100, NaN",
+                      "2010, 2010, 20-1010, 0100, NaN",
+                      "2010, 30, 1010, 0100, NaN"
+                ],
+                "correct": 3,
+                "explanation": "Let’s break down the code:\n\n• The variable a is assigned the result of the concatenation between the string “20” and the string “10”. When the + operator is used with a string, it performs string concatenation. So, “20” + “10” results in the string “2010”, which is assigned to a.\n\n• The variable b is assigned the result of the addition between the number 20 and the numeric conversion of the string “10”. The unary + operator before “10” converts it into a number, resulting in 20 + 10, which is 30, assigned to b.\n\n• The variable c is assigned the result of the addition between the number 20 and the negated numeric conversion of the string “10”, followed by the concatenation with the string “10”. The unary – operator before “10” converts it into a number and negates it, resulting in -10. Then, 20 + (-10) is 10, which is concatenated with the string “10”, resulting in “1010”, assigned\n\nto c.\n\n• The variable d is assigned the result of the subtraction between the numeric conversions of the strings “10” and “10”, followed by the concatenation with the string “100”. Both “10” and “10” are converted into numbers, resulting in 10 – 10, which is 0. Then, “0” + “100” is “0100”, assigned to d.\n\n• The variable e is assigned the result of the subtraction between the numeric conversions of the strings “A” and “B”, followed by the addition of 0xA (which is 10 in hexadecimal). Both “A” and “B” cannot be converted into valid numbers, so the result is NaN. Then, NaN + 10 is still NaN, assigned to e.\n\n• The console.log() statement is called to output the values to the console.\n\n• The expression ${a}, ${b}, ${c}, ${d}, ${e} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of a, b, c, d, and e into a single string separated by commas.\n\n• As a result, the console will display “2010, 30, 1010, 0100, NaN”."
+          },
+          {
+                "id": "js_q16",
+                "module": "js_m5",
+                "question": "Which of the following loop instructions checks the loop continuation condition only after the iteration has been completed?",
+                "code": null,
+                "options": [
+                      "for ... in",
+                      "while",
+                      "for",
+                      "do ... while"
+                ],
+                "correct": 3,
+                "explanation": "The “do … while” loop instruction checks the loop continuation condition only after the iteration has been completed. In the “do … while” loop, the code block is executed first, and then the condition is checked. If the condition evaluates to true, the loop continues executing. This guarantees that the code block is executed at least once, regardless of the condition."
+          },
+          {
+                "id": "js_q17",
+                "module": "js_m6",
+                "question": "The following function using a function expression has been defined:\n\nWhat could the definition of the corresponding arrow function look like?",
+                "code": "let sum = function (a, b) {\n    return (a + b);\n}",
+                "options": [
+                      "let sum = function (a, b) => {\n     return (a + b); }",
+                      "let sum = (a, b) => a + b;",
+                      "let sum = (a, b) => { a + b; };",
+                      "let sum = (a, b)-- > a + b;"
+                ],
+                "correct": 1,
+                "explanation": "In arrow function syntax, the parameters are specified within parentheses (a, b), followed by the arrow =>, and then the expression\n\na + b representing the function body. If the function body is a single expression, you can omit the curly braces {} and the return keyword."
+          },
+          {
+                "id": "js_q18",
+                "module": "js_m6",
+                "question": "The temp array contains air temperature data measured over a period of time. You want to display the minimal temperature using the following code:\n\nWhat should the declaration of the min variable look like?",
+                "code": "temp.forEach(e => min = min > e ? e : min);\nconsole.log(min);",
+                "options": [
+                      "let min;",
+                      "It’s not necessary, as it will be declared automatically on first use.",
+                      "let min = temp[0];",
+                      "let min = 0;"
+                ],
+                "correct": 2,
+                "explanation": "The code snippet temp.forEach(e => min = min > e ? e : min); uses the forEach method to iterate over the elements of the temp array and update the value of min based on each element. In order to store the minimum temperature, you need to declare the min variable like this let min = 0; before using it in the code."
+          },
+          {
+                "id": "js_q19",
+                "module": "js_m4",
+                "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
+                "code": "let x = [10, 20, 30, 40];\nlet y = [50, 60];\nx.reverse().push(y);\nconsole.log(x.length);",
+                "options": [
+                      "6",
+                      "4",
+                      "5",
+                      "2"
+                ],
+                "correct": 2,
+                "explanation": "The code will output 5 in the console."
+          },
+          {
+                "id": "js_q20",
+                "module": "js_m5",
+                "question": "Analyze the following code:\n\nWhich statement can replace the for from the example?",
+                "code": "for(let a=1; a<10; a+=2) {\n    console.log(a);\n};",
+                "options": [
+                      "let counter = 1;\nwhile (counter++ < 10) console.log(counter++);",
+                      "let counter = 0;\nwhile (counter < 9) console.log(counter++);",
+                      "let counter = 0;\nwhile (counter++ < 10) console.log(counter++);",
+                      "let counter = 0;\nwhile (counter < 10) console.log(counter++);"
+                ],
+                "correct": 3,
+                "explanation": "The correct statement that can replace the for loop from the example is:\n\nlet counter = 0;\n\nwhile (counter < 10) console.log(counter++);"
+          },
+          {
+                "id": "js_q21",
+                "module": "js_m5",
+                "question": "Analyze the following code:\n\nWhat will appear on the console as a result?",
+                "code": "let colors = ['red', 'green', 'blue'];\nfor (let c of colors) console.log(c);",
+                "options": [
+                      "['red', 'green', 'blue']",
+                      "red\ngreen\nblue",
+                      "0\n1\n2",
+                      "3"
+                ],
+                "correct": 1,
+                "explanation": "The code is using a for…of loop to iterate over the elements of the colors array. In each iteration, the loop assigns the current element to the variable c, and then console.log(c) prints the value of c to the console. Since the colors array contains three elements (‘red’, ‘green’, and ‘blue’), the loop will iterate three times, printing each element on a separate line in the console."
+          },
+          {
+                "id": "js_q22",
+                "module": "js_m5",
+                "question": "Analyze the following code:\n\nWhat will appear on the console as a result?",
+                "code": "let route = {distance: 131, elevation: 1.4};\nfor (let k in route) console.log(k);",
+                "options": [
+                      "131\n1.4",
+                      "distance",
+                      "distance\nelevation",
+                      "2"
+                ],
+                "correct": 2,
+                "explanation": "The code is using a for…in loop to iterate over the properties of the route object. In each iteration, the loop assigns the current property name to the variable k, and then console.log(k) prints the value of k to the console. The route object has two properties: distance and elevation. Therefore, the loop will iterate twice, printing each property name on a separate line in the console."
+          },
+          {
+                "id": "js_q23",
+                "module": "js_m6",
+                "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
+                "code": "let a = (n) => {\n    return n > 2 ? n * a(n - 1) : 2\n}\nconsole.log(a(6));",
+                "options": [
+                      "120",
+                      "720",
+                      "6",
+                      "4"
+                ],
+                "correct": 1,
+                "explanation": "The code defines an arrow function a that takes a parameter n. Inside the function, there is a ternary operator that checks if n is greater than 2. If it is, the function recursively calls itself with the argument (n – 1) and multiplies the result by n. This recursion continues until n reaches 2, at which point the function returns 2. In the console.log(a(6)) statement, the function a is called with the argument 6. The function recursively calculates the factorial of 6 (6 * 5 * 4 * 3 * 2), which results in 720. This value is then printed to the console using console.log."
+          },
+          {
+                "id": "js_q24",
+                "module": "js_m6",
+                "question": "Examine the following code:\n\nWhat should the mult function declaration look like if the execution of this code results in a value of 20 in the console?",
+                "code": "let x = mult(2)(10);\nconsole.log(x); // -> 20",
+                "options": [
+                      "let mult = function (a) {\n    return function (b) {\n        return a * b;\n   }\n}",
+                      "There is an error in the code and it is not possible to declare such a function correctly.",
+                      "let mult = function (a, b) {\n    return a * b;\n}",
+                      "let mult = function (a, b) {\n     return b ? mult(b) : mult(a);\n}"
+                ],
+                "correct": 0,
+                "explanation": "The correct declaration for the mult function that would result in the desired output of 20 in the console is:\n\nlet mult = function (a) {\n\nreturn function (b) {\n\nreturn a * b;\n\n}\n\n}"
+          },
+          {
+                "id": "js_q25",
+                "module": "js_m2",
+                "question": "Analyze the code snippet:\n\nAfter declaring the counter variable, we want to add a short comment with information about what the variable is used for. To do this, we modify the line with the declaration to the form:",
+                "code": "let counter = 0;\nlet userName = \"John\";",
+                "options": [
+                      "// let counter = 0; user visit counter",
+                      "let counter = 0; // user visit counter",
+                      "let counter = 0; ;;user visit counter",
+                      "let counter = 0; /* user visit counter"
+                ],
+                "correct": 1,
+                "explanation": "In the modified line, the comment // user visit counter provides information about the purpose or usage of the counter variable."
+          },
+          {
+                "id": "js_q26",
+                "module": "js_m6",
+                "question": "Examine the following code:\n\nHow should the function cmp be declared if, after the code execution, the elements of the array x are sorted in ascending order?",
+                "code": "x = [40, 10, 30, 20, 50];\nx.sort(cmp);",
+                "options": [
+                      "let cmp = (a, b) => b < a;",
+                      "let cmp = (a, b) => a - b;",
+                      "let cmp = (a, b) => b > a;",
+                      "let cmp = (a, b) => b - a;"
+                ],
+                "correct": 1,
+                "explanation": "This comparison function subtracts b from a, which will result in a negative value if a should be placed before b in the sorted order, a positive value if b should be placed before a, and zero if they are considered equal. Here is the code: let cmp = (a, b) => a – b;"
+          },
+          {
+                "id": "js_q27",
+                "module": "js_m6",
+                "question": "Analyze the following code, which is missing one line:\n\nWhat should the missing line look like if the execution of this code results in the console displaying the values 2, 1, and 0 in sequence?",
+                "code": "let counter = 2;\nlet interval = setInterval(() => {\n    console.log(counter);\n    // Insert missing line here.\n}, 1000);",
+                "options": [
+                      "if (counter-- >= 0) clearInterval(interval);",
+                      "if (counter-- <= 0) clearInterval(interval);",
+                      "while (counter-- >= 0) clearInterval(interval);",
+                      "clearInterval(interval);"
+                ],
+                "correct": 1,
+                "explanation": "This line checks if the value of counter is less than or equal to 0 after decrementing it. If counter becomes 0 or negative, it means the desired sequence of numbers (2, 1, 0) has been displayed. At that point, clearInterval(interval) is called to stop the interval from continuing.\n\nThe correct line is: if (counter– <= 0) clearInterval(interval);"
+          },
+          {
+                "id": "js_q28",
+                "module": "js_m6",
+                "question": "Analyze the following code:\n\nBefore declaring the function, we should add one more line of code. Which one, if the execution of the completed code will result in the console displaying the value 9?",
+                "code": "function execute(todo, a, b) {\n    return todo(a, b);\n}\nconsole.log(execute(power, 3, 2));",
+                "options": [
+                      "let power = () => a ** b;",
+                      "let power = 9;",
+                      "let power = (x,y) => x * y;",
+                      "let power = (x, y) => x ** y;"
+                ],
+                "correct": 3,
+                "explanation": "To ensure that the execution of the completed code results in the console displaying the value 9, the line defines the power function as an arrow function that calculates the power of x raised to the y exponent using the ** operator."
+          },
+          {
+                "id": "js_q29",
+                "module": "js_m6",
+                "question": "Analyze the following code:\n\nWhat will happen as a result of its execution?",
+                "code": "const a = \"hello\";\n    console.log(a.toUpperCase());\n}\n} catch (error) {\n    console.log(a)\n} finally {\n    console.log(a);\n}",
+                "options": [
+                      "The following words will appear in the console on subsequent lines: HELLO, hello, and hello.",
+                      "The following words will appear in the console on subsequent lines: HELLO and hello.",
+                      "The following words will appear in the console on subsequent lines: hello and hello.",
+                      "The following word will appear in the console: HELLO."
+                ],
+                "correct": 1,
+                "explanation": "The line console.log(a.toUpperCase()); will print “HELLO” to the console. It uses the toUpperCase() method to convert the string a to uppercase. The try block does not have any code, so it won’t execute any specific statements. The catch block will not be triggered because there is no error thrown in the preceding code. The finally block will execute regardless of whether there was an error or not. In this case, it will print “hello” to the console, as it references the a variable outside the try-catch block, which is not affected by the toUpperCase() call."
+          },
+          {
+                "id": "js_q30",
+                "module": "js_m6",
+                "question": "Placing a debugger; statement in the program code will:",
+                "code": null,
+                "options": [
+                      "stop the program without the ability to continue, as long as the execution environment supports “debugging functionality”.",
+                      "pause the program with the ability to continue, as long as the execution environment supports “debugging functionality”.",
+                      "put the interpreter into report mode, which will cause the console to print out all sequentially executed commands.",
+                      "cause the console to display the completion status of the statement preceding the debugger."
+                ],
+                "correct": 1,
+                "explanation": "Placing a debugger; statement in the program code will pause the execution of the code at that point and activate the debugger. It allows you to inspect the current state of the program, including variable values, call stack, and execute step-by-step or run in debug mode."
+          }
     ]
   },
   "js2": {

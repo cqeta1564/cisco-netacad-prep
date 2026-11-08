@@ -1,0 +1,2258 @@
+[
+  {
+    "id": "devnet_q01",
+    "module": "devnet_m4",
+    "question": "A pharmaceutical company wants to contract the services of a cloud provider to store employee data and company-specific applications with strict access security. Which type of cloud would be the most appropriate for this scenario?",
+    "code": null,
+    "options": [
+      "community cloud",
+      "public cloud",
+      "hybrid cloud",
+      "private cloud"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: private cloud. Oficiální vysvětlení Cisco: Explanation: Private clouds – Cloud-based applications and services offered in a private cloud are intended for a specific organization or entity, such as the government. A private cloud can be set up using the organization's private network, though this can be expensive to build and maintain. A private cloud can also be managed by an outside organization with strict access security."
+  },
+  {
+    "id": "devnet_q02",
+    "module": "devnet_m5",
+    "question": "What is a function provided by an implementation of a read-only automation solution?",
+    "code": null,
+    "options": [
+      "the ability to reduce risk by implementing security policies across the network infrastructure via automated changes",
+      "the ability to use GET and SET requests to retrieve and send data across the network infrastructure",
+      "the ability to use an automated request to audit configurations and manually deploy changes in order to implement compliance",
+      "the ability to implement network infrastructure that receives a configuration from a specific centralized server"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: the ability to use an automated request to audit configurations and manually deploy changes in order to implement compliance. Oficiální vysvětlení Cisco: Explanation: You can use a read scenario to audit configurations and do the next natural step, which is to put the configuration back into compliance"
+  },
+  {
+    "id": "devnet_q03",
+    "module": "devnet_m6",
+    "question": "Data is being sent from a source PC to a destination server. Which three statements correctly describe the function of TCP or UDP in this situation? (Choose three.)",
+    "code": null,
+    "options": [
+      "The TCP process running on the PC randomly selects the destination port when establishing a session with the server.",
+      "UDP segments are encapsulated within IP packets for transport across the network",
+      "The TCP source port number identifies the sending host on the network",
+      "The UDP destination port number identifies the application or service on the server which will handle the data.",
+      "The source port field identifies the running application or service that will handle data returning to the PC",
+      "TCP is the preferred protocol when a function requires lower network overhead"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: UDP segments are encapsulated within IP packets for transport across the network. Oficiální vysvětlení Cisco: Explanation: Layer 4 port numbers identify the application or service which will handle the data. The source port number is added by the sending device and will be the destination port number when the requested information is returned. Layer 4 segments are encapsulated within IP packets. UDP, not TCP, is used when low overhead is needed. A source IP address, not a TCP source port number, identifies the sending host on the network. Destination port numbers are specific ports that a server application or service monitors for requests."
+  },
+  {
+    "id": "devnet_q04",
+    "module": "devnet_m2",
+    "question": "What type of attack targets an SQL database using the input field of a user?",
+    "code": null,
+    "options": [
+      "buffer overflow",
+      "SQL injection",
+      "Cross site scripting",
+      "XML injection"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: SQL injection. Oficiální vysvětlení Cisco: Explanation: A criminal can insert a malicious SQL statement in an entry field on a website where the system does not filter the user input correctly."
+  },
+  {
+    "id": "devnet_q05",
+    "module": "devnet_m2",
+    "question": "Which command can be used on Linux and MAC hosts to get IP addressing information?",
+    "code": null,
+    "options": [
+      "ipconfig",
+      "ip address",
+      "ifconfig",
+      "networksetup -getinfo"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: ifconfig. Oficiální vysvětlení Cisco: Explanation: Network administrators typically view the IP addressing information on Windows hosts by issuing the ipconfig command, and on Linux and Mac hosts by issuing the ifconfig command. The networksetup -getinfo command is used on Mac hosts to verify IP settings. The ip address command is used on Linux hosts to display IP addresses and properties."
+  },
+  {
+    "id": "devnet_q06",
+    "module": "devnet_m6",
+    "question": "What are two reasons a network administrator would segment a network with a Layer 2 switch? (Choose two.)",
+    "code": null,
+    "options": [
+      "to create fewer collision domains",
+      "to create more broadcast domains",
+      "to enhance user bandwidth",
+      "to isolale ARP request messages from the rest of the network",
+      "to eliminate virtual circuits",
+      "to isolate traffic between segments"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: to enhance user bandwidth. Oficiální vysvětlení Cisco: Explanation: A switch has the ability of creating temporary point-to-point connections between the directly-attached transmitting and receiving network devices. The two devices have full-bandwidth full-duplex connectivity during the transmission."
+  },
+  {
+    "id": "devnet_q07",
+    "module": "devnet_m4",
+    "question": "Which tool might a developer use as part of a Continuous Integration pipeline in order to build and test source code?",
+    "code": null,
+    "options": [
+      "SQL",
+      "REST",
+      "Docker",
+      "Jenkins"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Jenkins. Oficiální vysvětlení Cisco: Explanation: The testing environment often includes automated testing tools such as Jenkins, CircleCI, or Travis CI, as well as integration with a version control system."
+  },
+  {
+    "id": "devnet_q08",
+    "module": "devnet_m1",
+    "question": "A packet is received by a server. The packet has a destination port number of 8008. What protocol or service is requested?",
+    "code": null,
+    "options": [
+      "Telnet over SSH",
+      "RESTCONF",
+      "HTTP",
+      "NETCONF"
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'RESTCONF'."
+  },
+  {
+    "id": "devnet_q09",
+    "module": "devnet_m6",
+    "question": "A network contains multiple VLANs spanning multiple switches. What happens when a device in VLAN 20 sends a broadcast Ethernet frame?",
+    "code": null,
+    "options": [
+      "Devices in VLAN 20 and the management VLAN see the frame.",
+      "All devices in all VLANs see the frame",
+      "Only devices that are connected to the local switch see the frame",
+      "Only devices in VLAN 20 see the frame."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Only devices in VLAN 20 see the frame.. Oficiální vysvětlení Cisco: Explanation: VLANs create logical broadcast domains that can span multiple VLAN segments. Ethernet frames that are sent by a device on a specific VLAN can only be seen by other devices in the same VLAN."
+  },
+  {
+    "id": "devnet_q10",
+    "module": "devnet_m1",
+    "question": "Which piece of software is responsible for creating and managing virtual machines, including allocating system resources to each virtual machine as needed?",
+    "code": null,
+    "options": [
+      "supervisor",
+      "hypervisor",
+      "host operating system",
+      "hosted operating system"
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'hypervisor'."
+  },
+  {
+    "id": "devnet_q11",
+    "module": "devnet_m6",
+    "question": "How is an Ethernet MAC address constructed?",
+    "code": null,
+    "options": [
+      "The first 3 bytes represent the network upon which the host resides, and the last 3 bytes uniquely identify the host.",
+      "The first 3 bytes represent the vendor OUI, and the last 3 bytes are assigned uniquely by the vendor",
+      "The first 3 bytes are uniquely assigned by LANA, and the last 3 bytes represent the serial number of the host",
+      "The first 3 byles represent the vendor OUI, and the last 3 byles are assigned randorily by the operating system."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'The first 3 bytes represent the vendor OUI, and the last 3 bytes are assigned uniquely by the vendor'."
+  },
+  {
+    "id": "devnet_q12",
+    "module": "devnet_m3",
+    "question": "Which Cisco SDK works with ACI?",
+    "code": null,
+    "options": [
+      "Cobra",
+      "IMC",
+      "UCS",
+      "Instant Connect"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Cobra'."
+  },
+  {
+    "id": "devnet_q13",
+    "module": "devnet_m3",
+    "question": "What platforms are provided by DevNet for community members to share solutions, tool kits, and other resources with each other?",
+    "code": null,
+    "options": [
+      "communities",
+      "forums",
+      "sandboxes",
+      "exchanges"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: exchanges. Oficiální vysvětlení Cisco: Explanation: The Automation Exchange provides a collection of network automation use cases with different solutions and toolkits."
+  },
+  {
+    "id": "devnet_q14",
+    "module": "devnet_m2",
+    "question": "Which two data formats can RESTCON use when requesting data or responding with data? (Choose two.)",
+    "code": null,
+    "options": [
+      "JSON",
+      "XML",
+      "YAML",
+      "YANG",
+      "HTML"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: JSON. Oficiální vysvětlení Cisco: Explanation: RESTCONF can be used to access data. The RESTCONF requests and responses can use either JSON or XML structured data formats."
+  },
+  {
+    "id": "devnet_q15",
+    "module": "devnet_m3",
+    "question": "Which DevNet resource would a developer use to look for a Python library that supports APIs for a specific Cisco product?",
+    "code": null,
+    "options": [
+      "DevNet Learning Labs",
+      "Devlet Support",
+      "Code Exchange",
+      "DevNet Sandbox"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Code Exchange'."
+  },
+  {
+    "id": "devnet_q16",
+    "module": "devnet_m5",
+    "question": "A component was created with the intent of combining the disciplines and skills of Dev and Ops. This component created a new job role and implemented a best-practices playbook for doing Ops with software methods. Which component matches this description?",
+    "code": null,
+    "options": [
+      "Agile Infrastructure and Operations",
+      "the SRE approach",
+      "automated infrastructure",
+      "shared Version control"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: the SRE approach. Oficiální vysvětlení Cisco: Explanation: Google was among the first companies to understand and institutionalize a new kind of hybrid Dev+Ops job description. This was the Site Reliability Engineer (SRE). The role of the SRE is intended to fuse the disciplines and skills of Dev and Ops, creating a new specialty and best-practices playbook for doing Ops with software methods."
+  },
+  {
+    "id": "devnet_q17",
+    "module": "devnet_m5",
+    "question": "Match the DevNet exhange type with the decription.\n\nDevNet Associate (Version 1.0) - DevNet Associate 1.0 Final exam\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nautomation exchange\na collection of network automation use cases with different solutions and toolkits\n\n\necosystem\nprovides solutions across different technologies, industries, and geographies to jump start solution design and development\n\n\ncode\nuses the GitHub API and human moderators to categorize and display related repositories\n\n\n\n18. Refer to the exhibit. A user is working on Ansible on the local NMS to manage remote network devices. Which file is the user creating?\n\n\n\n\nservice\nplaybook\nvariable\nhosts\n\nExplanation: Ansible uses an inventory file called hosts that contains device information used by Ansible playbooks. The hosts file begins with an alias for the remote. After the alias, the hosts file specifies three variables that will be used by the Ansible playbook to access the device. These are the SSH credentials Ansible needs to securely access the remote host.\n\n19. Which DevNet resource would a developer use in order to test custom code in a production-like environment?",
+    "code": null,
+    "options": [
+      "Devlet Support",
+      "DevNet Learning Labs",
+      "Code Exchange",
+      "DevNet Sandbox"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: DevNet Sandbox. Oficiální vysvětlení Cisco: Explanation: When you're developing and testing technology, you want a test bed where you can try out code within a realistic environment without affecting production systems. To do that, go to the DevNet Sandbox offering, where you can try out Cisco hardware and environments."
+  },
+  {
+    "id": "devnet_q18",
+    "module": "devnet_m4",
+    "question": "In which situation would a company implement a reverse proxy as a security solution?",
+    "code": null,
+    "options": [
+      "when the company has a database and needs to point to a DNS server that uses different IP addresses for development resources",
+      "when the company wants all responses to clients to look like they came from the same server instead of individual ones",
+      "when a hash is created based on the IP address of the request to a particular protected server",
+      "when responses frorri servers need to be sent over different paths to ensure quality response time to the client devices making the requests"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: when the company wants all responses to clients to look like they came from the same server instead of individual ones. Oficiální vysvětlení Cisco: Explanation: A reverse proxy is similar to a regular proxy: however, while a regular proxy works to make requests from multiple computers look like they all come from the same client, a reverse proxy works to make sure responses look like they all come from the same server."
+  },
+  {
+    "id": "devnet_q19",
+    "module": "devnet_m1",
+    "question": "A software development company specializes in being able to use whatever software development method their customer wants to use. One customer company wants to use the Agile method. What is a characteristic of this method?",
+    "code": null,
+    "options": [
+      "a software development process where the highest priority is to satisfy the customer through early and continuous delivery of valuable software",
+      "a process that eliminates anything that does not add value to the project including meetings and documentation",
+      "a software development process that has the results of one phase feed into the next phase",
+      "a more traditional software development process as they have used this process in past projects"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'a software development process that has the results of one phase feed into the next phase'."
+  },
+  {
+    "id": "devnet_q20",
+    "module": "devnet_m4",
+    "question": "A network engineer is creating a Docker container using the docker build command. If the engineer does not specify a tag, which tag will be used by default?",
+    "code": null,
+    "options": [
+      "tag",
+      "latest",
+      "(a blank space)",
+      "default"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: latest. Oficiální vysvětlení Cisco: Explanation: The first part, the repository, is usually the username of the account storing the image. Next is the image name, and then finally the optional tag. (Remember, if you do not specify it, it will come up as latest.)"
+  },
+  {
+    "id": "devnet_q21",
+    "module": "devnet_m5",
+    "question": "Which component in the pyATS ecology handles bundling and running jobs?",
+    "code": null,
+    "options": [
+      "AEtest",
+      "Clover",
+      "Genie",
+      "EasyPy"
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'EasyPy'."
+  },
+  {
+    "id": "devnet_q22",
+    "module": "devnet_m3",
+    "question": "Which three avenues are available within DevNet for developers who need help with specific developer scenario questions concerning Cisco products? (Choose three.)",
+    "code": null,
+    "options": [
+      "logging a ticket",
+      "posting to the DevNet zone",
+      "posting to a news group",
+      "posting to a community forum",
+      "posting to a Webex Teams space",
+      "posting on the Cisco Learning Network"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'logging a ticket'."
+  },
+  {
+    "id": "devnet_q23",
+    "module": "devnet_m3",
+    "question": "A student who is interested in network programmability approaches an instructor for advice on learning more about the subject. The student is a kinesthetic learner who learns by doing. Which DevNet resource should the instructor consider telling the student about?",
+    "code": null,
+    "options": [
+      "DevNet Create",
+      "DevNet Learning Labs",
+      "DevNet Express",
+      "DevNet Zone"
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'DevNet Learning Labs'."
+  },
+  {
+    "id": "devnet_q24",
+    "module": "devnet_m1",
+    "question": "What is the default shell commonly used on macOS and Linux?",
+    "code": null,
+    "options": [
+      "tcsh",
+      "csh",
+      "Bourne",
+      "Bash"
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Bash'."
+  },
+  {
+    "id": "devnet_q25",
+    "module": "devnet_m1",
+    "question": "What is immutable infrastructure in DevOps?",
+    "code": null,
+    "options": [
+      "infrastructure that is deployed with all component versions locked except for the ability to perform manual configuration changes",
+      "infrastructure that is only deployed and maintained in containers",
+      "infrastructure that is entirely maintained and deployed in code and never subjected to manual changes",
+      "virtualized infrastructure that is deployed as golden images"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: infrastructure that is entirely maintained and deployed in code and never subjected to manual changes. Oficiální vysvětlení Cisco: Explanation: Immutable infrastructure is infrastructure that can never be changed manually. In DevOps, this type of infrastructure is entirely maintained through the use of code."
+  },
+  {
+    "id": "devnet_q26",
+    "module": "devnet_m1",
+    "question": "What is the most common cause of IT outages?",
+    "code": null,
+    "options": [
+      "an engineer misconfiguring a device or network with manual changes",
+      "an experienced engineer using an open source product",
+      "an experienced engineer implementing a configuration using automation",
+      "a threat actor largeting the enterprise equipment"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: an engineer misconfiguring a device or network with manual changes. Oficiální vysvětlení Cisco: Explanation: Most outages are caused by systems being misconfigured, commonly due to human error as manual changes are being made."
+  },
+  {
+    "id": "devnet_q27",
+    "module": "devnet_m1",
+    "question": "Which string of characters is used to identify the beginning of a new separate document when multiple documents are in a single YAML file?",
+    "code": null,
+    "options": [
+      "three slashes \"///\"",
+      "three dots \"...\"",
+      "three pound signs \"###\"",
+      "three dashes \"---\""
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: three dashes \"---\". Oficiální vysvětlení Cisco: Explanation: YAML files conventionally open with three dashes ( --- alone on a line) and end with three dots ( ... also alone a line). YAML also accommodates the notion of multiple \"documents\" within a single physical file, in this case, separating each document with three dashes on its own line."
+  },
+  {
+    "id": "devnet_q28",
+    "module": "devnet_m1",
+    "question": "What is the difference between functions and methods in the Python programming structure?",
+    "code": null,
+    "options": [
+      "Functions can use global variables whereas methods can only use local variables.",
+      "Functions are called by a referencing object whereas methods are called by the names.",
+      "Functions can pass arguments whereas methods can pass only predefined keywords.",
+      "Functions are standalone code blocks whereas methods are code blocks associated with an object."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Functions are standalone code blocks whereas methods are code blocks associated with an object.. Oficiální vysvětlení Cisco: Explanation: The difference between methods and functions is that functions are standalone code blocks while methods are code blocks associated with an object, typically for object-oriented programming."
+  },
+  {
+    "id": "devnet_q29",
+    "module": "devnet_m6",
+    "question": "Which command is used to create a new Git repository?",
+    "code": null,
+    "options": [
+      "git init",
+      "git add",
+      "git commit",
+      "git clone"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'git init'."
+  },
+  {
+    "id": "devnet_q30",
+    "module": "devnet_m1",
+    "question": "Which stakeholder determines the useful value of software product features in the Lean process?",
+    "code": null,
+    "options": [
+      "the customer",
+      "the Scrum master",
+      "the reviewer",
+      "the programmer"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'the customer'."
+  },
+  {
+    "id": "devnet_q31",
+    "module": "devnet_m1",
+    "question": "Match the SDLC phase with its description. (Not all options are used.)\n\nMatch the SDLC phase with its description. (Not all options are used.)\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\ndeployment\nsoftware is installed into the production environment\n\n\nimplmentation\ncode is developed according to low level and high level design documents\n\n\nrequirements & anaylsis\nthe product owner and qualified team members gather the requirements for the software to be built\n\n\n\n34. What is a principle of the Lean software development model?",
+    "code": null,
+    "options": [
+      "adding additional product features that the customer did not ask for so that the customer is getting more than expected",
+      "assigning resources to multiple projects so that effort can be divided on more than one task at a time",
+      "making decisions as late as possible in the process so that more facts and details are available",
+      "ordering workers to do tasks they may not want to do to ensure they get done"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'making decisions as late as possible in the process so that more facts and details are available'."
+  },
+  {
+    "id": "devnet_q32",
+    "module": "devnet_m1",
+    "question": "What character is used to separate the key and value pairs in YAML?",
+    "code": null,
+    "options": [
+      "colon :",
+      "semi colon ;",
+      "underscore _",
+      "forward slash /"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'colon :'."
+  },
+  {
+    "id": "devnet_q33",
+    "module": "devnet_m1",
+    "question": "Which git command is used to compare changes between files?",
+    "code": null,
+    "options": [
+      "git diff",
+      "git merge",
+      "git checkout",
+      "git status"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'git diff'."
+  },
+  {
+    "id": "devnet_q34",
+    "module": "devnet_m4",
+    "question": "Refer to the exhibit. Match the missing components of the Python script for authenticating to the Cisco Network Services Orchestrator and obtaining a list of network devices using the username of \"superadmin\" and password of \"soverysecure!\". (Not all options are used.)\n\n\n\n\n\n38. What is an example of a use supported by Cisco UCS Director and UCS Manager?",
+    "code": null,
+    "options": [
+      "bare metal server provisioning and monitoring of virtual environments",
+      "call center and call management over IP networks",
+      "underlying central system workflow management and migration",
+      "telemetry data collection and analysis"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'bare metal server provisioning and monitoring of virtual environments'."
+  },
+  {
+    "id": "devnet_q35",
+    "module": "devnet_m3",
+    "question": "How can a Webex Teams administrator retrieve additional details about a user through an API call?",
+    "code": null,
+    "options": [
+      "by using the value of the organization name in the API call",
+      "by using the value of a Webex Teams registered email address in the API call",
+      "by using the value of the person id key in the API call",
+      "by using the value of orgld in the API call"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'by using the value of the person id key in the API call'."
+  },
+  {
+    "id": "devnet_q36",
+    "module": "devnet_m5",
+    "question": "Which library is the most commonly used Python library for connecting NETCONF clients with a NETCONF server?",
+    "code": null,
+    "options": [
+      "posix",
+      "pyclient",
+      "ncclient",
+      "pypi"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'ncclient'."
+  },
+  {
+    "id": "devnet_q37",
+    "module": "devnet_m3",
+    "question": "Which two APIs allow for Cisco Meraki device provisioning and real-time notifications? (Choose two.)",
+    "code": null,
+    "options": [
+      "Webhook API",
+      "Investigation API",
+      "Dashboard API",
+      "Enforcement API",
+      "Reporting API"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Webhook API. Oficiální vysvětlení Cisco: Explanation: Dashboard API - This a RESTful service for device provisioning, management, and monitoring.\n\nWebhook API – This is a real-time notification system for network alerts, covering events and network health."
+  },
+  {
+    "id": "devnet_q38",
+    "module": "devnet_m1",
+    "question": "A packet is received by a server. The packet has a destination port number of 443. What protocol or service is requested?",
+    "code": null,
+    "options": [
+      "HTTP",
+      "NTP",
+      "DHCP",
+      "HTTPS"
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'HTTPS'."
+  },
+  {
+    "id": "devnet_q39",
+    "module": "devnet_m1",
+    "question": "When thinking about the functional planes of a network, what is unique about the data plane?",
+    "code": null,
+    "options": [
+      "It includes protocols used to remotely access network devices.",
+      "It includes the SSH protocol.",
+      "It manipulates data and outputs it in the XML format.",
+      "It is responsible for the switching of packets in hardware."
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'It is responsible for the switching of packets in hardware.'."
+  },
+  {
+    "id": "devnet_q40",
+    "module": "devnet_m4",
+    "question": "Which Docker component defines the steps needed to create an image that can be deployed in a variety of environments?",
+    "code": null,
+    "options": [
+      "UnionFS",
+      "Dockerfile",
+      "cross-site script",
+      "namespaces"
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Dockerfile'."
+  },
+  {
+    "id": "devnet_q41",
+    "module": "devnet_m1",
+    "question": "Which three statements describe characteristics of a virtual machine? (Choose three.)",
+    "code": null,
+    "options": [
+      "It is created and deployed using the Docker format.",
+      "It includes a guest operating system.",
+      "It runs on top of a hypervisor",
+      "It shares the operating system of the host computer.",
+      "It is completely self-contained with its own emulated storage, memory, and network interfaces.",
+      "It requires Windows as the host operating system."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'It includes a guest operating system.'."
+  },
+  {
+    "id": "devnet_q42",
+    "module": "devnet_m3",
+    "question": "Match the use cases of a load balancer to the description. (Not all options are used.)\n\nDevNet Associate (Version 1.0) - DevNet Associate 1.0 Final exam\n\nPlace the options in the following order:\n\n\n\n\ncanary\ndiverts a small amount of traffic to a new production environment that is changed\n\n\nblue-green\nsends traffic to a new environment, but keeps the old environment ready in case of issues\n\n\nround robin\nsends requests to the next server on the list\n\n\n\n50. What are two characteristics of the staging environment of the four-tier deployment environment structure? (Choose two.)",
+    "code": null,
+    "options": [
+      "It is the point where code has been tested multiple times and is error free.",
+      "It is structured as close as possible to the actual production environment.",
+      "It is where the code undergoes final acceptance testing in a realistic environment.",
+      "It is where end users will interact with the code.",
+      "It often includes automated testing tools such as Jenkins, CircleCl, or Travis Cl."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'It is structured as close as possible to the actual production environment.'."
+  },
+  {
+    "id": "devnet_q43",
+    "module": "devnet_m4",
+    "question": "Refer to the exhibit. A network engineer has created a Jenkins pipeline. Which menu option would the engineer use to run the pipeline?\n\n\n\n\nConfigure\nChanges\nBuild Now\nWorkspace\n\n52. A network engineer is configuring a Jenkins job and finishing with the following script in order to trigger the build:\n\n\n\nWhat is the purpose of the preparation stage?",
+    "code": null,
+    "options": [
+      "It makes sure that any previous instances of a particular Docker container are stopped and removed.",
+      "It catches and removes any errors.",
+      "It runs the SUCCESS Docker container.",
+      "It places a log of any errors in the SUCCESS file."
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'It makes sure that any previous instances of a particular Docker container are stopped and removed.'."
+  },
+  {
+    "id": "devnet_q44",
+    "module": "devnet_m4",
+    "question": "Which technique is used to make the output of password hashing nondeterministic?",
+    "code": null,
+    "options": [
+      "password length and complexity",
+      "multifactor authentication",
+      "password salting",
+      "password strength validation tools"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'password salting'."
+  },
+  {
+    "id": "devnet_q45",
+    "module": "devnet_m1",
+    "question": "What does self-service refer to in the context of enterprise IT?",
+    "code": null,
+    "options": [
+      "imaging frequently used server configurations for rapid deployment",
+      "distributing and implementing broad access to public cloud infrastructure-as-a-service services",
+      "mainstreamed processes that promote a lower IT headcount by implementing automation",
+      "automated tools and methods that deliver preconfigured developer platforms on demand"
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'automated tools and methods that deliver preconfigured developer platforms on demand'."
+  },
+  {
+    "id": "devnet_q46",
+    "module": "devnet_m5",
+    "question": "Which statement describes the term orchestration in IT automation?",
+    "code": null,
+    "options": [
+      "Orchestration is aimed at managing workload lifecycles and reacting dynamically to changing conditions in order to optimize processes.",
+      "Orchestration is the process of preparing a server through the installation of libraries or daemons.",
+      "Orchestration is the building, arranging, integration, and preparation of multi-component applications across multiple nodes.",
+      "Orchestration is the obtaining and provisioning of compute, storage, and network infrastructure."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Orchestration is aimed at managing workload lifecycles and reacting dynamically to changing conditions in order to optimize processes.. Oficiální vysvětlení Cisco: Explanation: Orchestration may refer to several things. When meant concretely, it usually refers to user-built or platform-inherent automation aimed at managing workload lifecycles and reacting dynamically to changing conditions (e.g., by autoscaling or self-healing), particularly in container environments. When meant abstractly, it may refer to processes or workflows that link automation tasks to deliver business benefits, like self-service."
+  },
+  {
+    "id": "devnet_q47",
+    "module": "devnet_m5",
+    "question": "What is an example of a read-only automation solution?",
+    "code": null,
+    "options": [
+      "streamlining the management of L3 firewall rules in Cisco Meraki networks",
+      "gathering SD-WAN inventory data using Python and recording the values in a database",
+      "simplifying the automation of network device authentication, configuration, and consistency",
+      "gathering the current list of ACL entries on an IOS XE router and enforcing consistency"
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'gathering SD-WAN inventory data using Python and recording the values in a database'."
+  },
+  {
+    "id": "devnet_q48",
+    "module": "devnet_m4",
+    "question": "A student is setting up the CSR1000v VM in VirtualBox that is already installed on the local computer. The VM is imported to the VirtualBox and starts successfully. The student tries to verify communications to the CSR1000v VM by opening the Firefox web browser on the local computer and enters the URL https://192.168.56.101. A security message \"Warning: Potential Security Risk Ahead\" appears. What is the security issue that results in this message?",
+    "code": null,
+    "options": [
+      "The SSL/TLS certificate uses a public key size of less than 1024 bits.",
+      "The SSL/TLS certificate is self-signed by the router.",
+      "The CA for the SSL/TLS certificate cannot be reached.",
+      "The traffic to the VM is not encrypted."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'The SSL/TLS certificate is self-signed by the router.'."
+  },
+  {
+    "id": "devnet_q49",
+    "module": "devnet_m2",
+    "question": "How do APIs affect traditional IT tasks?",
+    "code": null,
+    "options": [
+      "They are used to replace network infrastructure and implement network virtualization.",
+      "They are used to eliminate repetitive manual tasks and replace them with automation.",
+      "They are used to increase computer processing speed and lower power consumption.",
+      "They are used to increase hardware speed and lower power consumption."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'They are used to eliminate repetitive manual tasks and replace them with automation.'."
+  },
+  {
+    "id": "devnet_q50",
+    "module": "devnet_m6",
+    "question": "Refer to the exhibit. PC1 needs to resolve the host name of the web server into an IP address by using DNS. What destination IP address and destination port number will PC1 assign to the DNS query packet?\n\n\n\n\n192.168.20.2 port 80\n192.168.20.3 port 53\n192.168.20.3 port 80\n192.168.10.1 port 53\n\nExplanation: ____\n\n60. Which two statements are true about NTP servers in an enterprise network? (Choose two.)",
+    "code": null,
+    "options": [
+      "There can only be one NTP server on an enterprise network",
+      "All NTP servers synchronize directly to a stratum 1 time source.",
+      "NTP servers at stratum 1 are directly connected to an authoritative time source.",
+      "NTP servers ensure an accurate time stamp on logging and debugging information.",
+      "NTP servers control the mean time between failures (MTBF) for key network devices."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: NTP servers at stratum 1 are directly connected to an authoritative time source.. Oficiální vysvětlení Cisco: Explanation: Network Time Protocol (NTP) is used to synchronize the time across all devices on the network to make sure accurate timestamping on devices for managing, securing and troubleshooting. NTP networks use a hierarchical system of time sources. Each level in this hierarchical system is called a stratum. The stratum 1 devices are directly connected to the authoritative time sources."
+  },
+  {
+    "id": "devnet_q51",
+    "module": "devnet_m6",
+    "question": "Match the steps with the actions that are involved when an internal host with IP address 192.168.10.10 attempts to send a packet to an external server at the IP address 209.165.200.254 across a router R1 that is running dynamic NAT. (Not all options are used.)\n\n\n\nPlace the options in the following order:\n\n\n\n\nstep 1\nThe host sends packets that request a connection to the server at the address 209.165.200.254.\n\n\nstep 2\nR1 checks the NAT configuration to determine if this packet should be translated.\n\n\nstep 3\nIf there is no translation entry for this IP address, R1 determines that the source address 192.168.10.10 must be translated.\n\n\nstep 4\nR1 selects an available global address from the dynamic address pool.\n\n\nstep 5\nR1 replaces the address 192.168.10.10 with a translated inside global address.\n\n\n\nExplanation: The translation of the IP addresses from 209.65.200.254 to 192.168.10.10 will take place when the reply comes back from the server.\n\n62. A network administrator can successfully ping the server at www.cisco.com, but cannot ping the company web server located at an ISP in another city. Which tool or command would help identify the specific router where the packet was lost or delayed?",
+    "code": null,
+    "options": [
+      "traceroute",
+      "ipconfig",
+      "telnet",
+      "netstat"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: traceroute. Oficiální vysvětlení Cisco: Explanation: The traceroute command provides connectivity information about the path a packet takes to reach the destination and about every router (hop) along the way. It also indicates how long a packet takes to get from the source to each hop and back."
+  },
+  {
+    "id": "devnet_q52",
+    "module": "devnet_m2",
+    "question": "Which two HTTP functions correspond to the UPDATE function in CRUD? (Choose two.)",
+    "code": null,
+    "options": [
+      "POST",
+      "DELETE",
+      "PATCH",
+      "PUT",
+      "GET"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: PATCH. Oficiální vysvětlení Cisco: Explanation: CRUD is an acronym that stands for CREATE, READ, UPDATE, and DELETE. The HTTP functions that correspond to CRUD functions are as follows:\n\nGET -> READ\n\nPOST -> CREATE\n\nPUT/PATCH -> UPDATE\n\nDELETE -> DELETE"
+  },
+  {
+    "id": "devnet_q53",
+    "module": "devnet_m2",
+    "question": "Match the term to the RESTAPI request http://example.com/update/person?id=42&email=person%40example.com. (Not all options are used.)\n\n\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nscheme\nhttp\n\n\npath\nupdate/person\n\n\nauthority\nexample.com\n\n\nquery\nid=42&email=person%40example.com\n\n\n\n65. Which HTTP status code category is used in the response to indicate that a REST API request contains an error on the client side?",
+    "code": null,
+    "options": [
+      "1xx",
+      "2xx",
+      "3xx",
+      "4xx",
+      "5xx"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: 4xx. Oficiální vysvětlení Cisco: Explanation: 4xx - client error: Responses with a 4xx code means that the request contains an error, such as bad syntax or invalid input, which prevents the request from being completed. The client must take action to fix these issues before resending the request."
+  },
+  {
+    "id": "devnet_q54",
+    "module": "devnet_m2",
+    "question": "Refer to the exhibit. A network administrator is using a Python script to test a REST API request. The traceback message indicates that there is an error in the URI. What is the error?\n\n\n\n\nThe protocol is wrong.\nThe resource path is wrong.\nThe SSL certificate is invalid.\nThe destination web host address is invalid.\n\n67. What are two requirements for an application to communicate with a webhook provider? (Choose two.)",
+    "code": null,
+    "options": [
+      "The application must support JSON.",
+      "The application must always be running.",
+      "The application must register a URL with the webhook provider.",
+      "The host where the application is running must have an SSH client installed.",
+      "The host where the application is running must have an SSH server running."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: The application must always be running.. Oficiální vysvětlení Cisco: Explanation: In order to receive a notification from a webhook provider, the application must meet certain requirements:\n\nThe application must be running at all times to receive HTTP POST requests.\n\nThe application must register a URI on the webhook provider so that the provider knows where to send a notification when target events occur."
+  },
+  {
+    "id": "devnet_q55",
+    "module": "devnet_m5",
+    "question": "A student is learning network automation by using a REST API. The student sends a request to a network device and receives a response with the status code of 202. What does this status code mean?",
+    "code": null,
+    "options": [
+      "The request was understood but has been rejected by the server.",
+      "The request was successful and typically includes a payload.",
+      "The request has been accepted for processing, but the processing has not been completed.",
+      "Because of a server error, the request cannot be fulfilled."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: The request has been accepted for processing, but the processing has not been completed.. Oficiální vysvětlení Cisco: Explanation: Code 202: Request has been accepted for processing and is in process"
+  },
+  {
+    "id": "devnet_q56",
+    "module": "devnet_m1",
+    "question": "What are two characteristics of stateless applications? (Choose two.)",
+    "code": null,
+    "options": [
+      "They must run on container orchestrators like Kubernetes.",
+      "They can be freely scaled across available capacity without disrupting ongoing customer connections.",
+      "They can be scaled only by redeploying them and destroying the data that users or operators previously needed.",
+      "They maintain the user state within the local user machine so that automation can work non-destructively.",
+      "They can store a user state in an accessible database separate from application servers and other components."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'They can be freely scaled across available capacity without disrupting ongoing customer connections.'."
+  },
+  {
+    "id": "devnet_q57",
+    "module": "devnet_m4",
+    "question": "What is a characteristic of the continuous integration component of the CI/CD philosophy for software development?",
+    "code": null,
+    "options": [
+      "Code changes are continually merged with the main branch of the application, so change sets are small.",
+      "Code changes are tested and integrated with the main branch then tested again before they are deployed into production.",
+      "Code is constantly deployed into production where users serve as the final testers.",
+      "Application development is performed in short sprints so that enough code is always in a deployable state."
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Code changes are continually merged with the main branch of the application, so change sets are small.'."
+  },
+  {
+    "id": "devnet_q58",
+    "module": "devnet_m1",
+    "question": "A software development company specializes in being able to use whatever software development method their customer wants to use. One customer company wants to use the Waterfall method. What is a characteristic of this method?",
+    "code": null,
+    "options": [
+      "a process that amplifies learning as well as delivers as quickly as possible",
+      "a software development process where the highest priority is to satisfy the customer through early and continuous delivery of valuable software",
+      "a software development process where a particular phase depends on the results of the previous phase",
+      "a process that eliminates anything that does not add value to the project including meetings and documentation"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'a software development process where a particular phase depends on the results of the previous phase'."
+  },
+  {
+    "id": "devnet_q59",
+    "module": "devnet_m1",
+    "question": "In which SDLC phase is the software product installed into the production environment to decide if it is ready for release?",
+    "code": null,
+    "options": [
+      "implementation",
+      "deployment",
+      "design",
+      "testing"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: deployment. Oficiální vysvětlení Cisco: Explanation: The deployment phase takes the software from the testing phase as input. During the deployment phase, the software is installed into the production environment. If there are no deployment issues, the product manager works with the architects and qualified engineers to decide whether the software is ready to be released.\n\nAt the end of the deployment phase, the final piece of software is released to customers and other end users."
+  },
+  {
+    "id": "devnet_q60",
+    "module": "devnet_m1",
+    "question": "Which convention is used in Python to indicate that methods and variables in a class are private and not to be used outside of the class?",
+    "code": null,
+    "options": [
+      "by using a single preceding underscore ( _ ) for a method or variable",
+      "by using the command class private classname() : to start the class definition",
+      "by using two preceding hyphens ( — ) for a method or variable",
+      "by declaring a private method or variable in the beginning of the class definition"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'by using a single preceding underscore ( _ ) for a method or variable'."
+  },
+  {
+    "id": "devnet_q61",
+    "module": "devnet_m1",
+    "question": "A packet is received by a server. The packet has a destination port number of 80. What protocol or service is requested?",
+    "code": null,
+    "options": [
+      "DHCP",
+      "Telnet over SSH",
+      "HTTP",
+      "RESTCONF"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'HTTP'."
+  },
+  {
+    "id": "devnet_q62",
+    "module": "devnet_m3",
+    "question": "A network administrator is developing an application to control a Webex device through xAPI. Which three protocols can be used to access xAPI? (Choose three.)",
+    "code": null,
+    "options": [
+      "Telnet",
+      "HTTP",
+      "XML",
+      "RS-232",
+      "FTP",
+      "JSON"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Telnet'."
+  },
+  {
+    "id": "devnet_q63",
+    "module": "devnet_m1",
+    "question": "Which statement describes a stateful firewall?",
+    "code": null,
+    "options": [
+      "It can filter packets based on information at Layers 3, 4, 5 and 7 of the OSI reference model.",
+      "It can determine if the connection is in the initiation, data transfer, or termination phase.",
+      "It can only filter packets based on limited Layer 3 and 4 information.",
+      "It can expand the number of IP addresses available and can hide network addressing design."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: It can determine if the connection is in the initiation, data transfer, or termination phase.. Oficiální vysvětlení Cisco: Explanation: Basic packet filtering firewalls can only filter based on Layer 3 and sometimes basic Layer 4 information. An application gateway firewall, or proxy firewall, can filter based on information in the upper layers such as the application layer. A NAT firewall can expand the number of available IP addresses on the network."
+  },
+  {
+    "id": "devnet_q64",
+    "module": "devnet_m1",
+    "question": "A software development company specializes in being able to use whatever software development method their customer wants to use. One customer company wants to use the Lean method. What is a characteristic of this method?",
+    "code": null,
+    "options": [
+      "a process that eliminates inefficient ways of working like expecting coders to multitask",
+      "a software development process that focuses on frequent delivery of working software as well as collaboration between developers and business employees",
+      "a software development process that has the results of one phase feed into the next phase",
+      "a software development process that can only go forward"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'a software development process that has the results of one phase feed into the next phase'."
+  },
+  {
+    "id": "devnet_q65",
+    "module": "devnet_m4",
+    "question": "Refer to the exhibit. Match the Python coding information in the authentication request to the Cisco DNA Center to the location in the script. (Not all options are used.)\n\n\n\n\n\n\n\n\nCategories:\nOptions:\n\n\n\n\n1001001027331\ncode_A\n\n\nurl\ncode_B\n\n\nauth=(\"person1\",\"super2\")\ncode_C\n\n\n\n81. A student is learning REST API application. The student constructs an URI to query the MapQuest API for a route from New York, NY to Boston, MA. What is the valid URI format?\n\nCopyhttps://www.mapquestapi.com/directions/v2/route?key=key&from=New+York+NY&to=Boston+MA\r\n\r\nhttps://www.mapquestapi.com/directions/v2/route?key==key&from==New+York%2C+NY&to==Boston%2C+MA\r\n\r\nhttps://www.mapquestapi.com/directions/v2/route?key:key&from:New+York%2C+NY&to:Boston%2C+MA\r\n\r\nhttps://www.mapquestapi.com/directions/v2/route?key= key&from=New+York%2C+NY&to=Boston%2C+MA\n82. Refer to the exhibit. A student constructs a URI to query the MapQuest API for a route from New Orleans, LA to New York, NY. Match the components to the MapQuest URL. (Not all options are used.)\n\n\n\n\n\n83. Refer to the exhibit. Match the Python code components to the function. (Not all options are used.)\n\n\n\n\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nsys.exit()\nstops the program execution\n\n\nstr(resp.status_code)\nconverts data format\n\n\napi/v1/host\nidentifies API to be called\n\n\nverify = False\ndisables SSL handshake\n\n\n'content-type':'application/json'\nidentifies request data format\n\n\n'X-Auth-Token':ticket\ndefines API authentication\n\n\n\n84. A packet is received by a server. The packet has a destination port number of 123. What protocol or service is requested?",
+    "code": null,
+    "options": [
+      "DNS",
+      "SSH",
+      "NTP",
+      "RESTCONF"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'NTP'."
+  },
+  {
+    "id": "devnet_q66",
+    "module": "devnet_m1",
+    "question": "Which scenario exhibits the \"social proof\" principle of human influence?",
+    "code": null,
+    "options": [
+      "A user receives a phone call from someone claiming to be from the IT department who needs to verify user credentials.",
+      "A user visits a web site offering a free gift if the user provides contact information.",
+      "A user opens an email advertising a free trial on a website that is only available for a few hours.",
+      "A user completes a survey requesting personal information after seeing co-workers completing the survey."
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'A user completes a survey requesting personal information after seeing co-workers completing the survey.'."
+  },
+  {
+    "id": "devnet_q67",
+    "module": "devnet_m4",
+    "question": "Which SQL injection defense method should be used only as a last resort?",
+    "code": null,
+    "options": [
+      "escaping all user-supplied input",
+      "using a database firewall",
+      "implementing whitelist input validation",
+      "using parameterized queries"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'escaping all user-supplied input'."
+  },
+  {
+    "id": "devnet_q68",
+    "module": "devnet_m2",
+    "question": "Which type of ISE node provides network access, posturing, guest access, client provisioning, and profiling services?",
+    "code": null,
+    "options": [
+      "monitoring",
+      "administration",
+      "pxGrid",
+      "policy service"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: policy service. Oficiální vysvětlení Cisco: Explanation: Check the Enable Session Services check box to enable network access, posture, guest, and client provisioning services."
+  },
+  {
+    "id": "devnet_q69",
+    "module": "devnet_m5",
+    "question": "Which communication protocol does Ansible use to connect to remote devices?",
+    "code": null,
+    "options": [
+      "Telnet over VPN",
+      "HTTPS",
+      "Secure FTP",
+      "SSH"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: SSH. Oficiální vysvětlení Cisco: Explanation: Ansible communicates with remote machines over the SSH protocol. By default, Ansible uses native OpenSSH and connects to remote machines using your current user name, just as SSH does."
+  },
+  {
+    "id": "devnet_q70",
+    "module": "devnet_m3",
+    "question": "Refer to the exhibit. Router R2 is configured with static NAT. Place in order the steps that occur when the client accesses the web server through the router. (Not all options are used.)\n\nDevNet Associate (Version 1.0) - DevNet Associate 1.0 Final exam 30\n\n\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nStep 3\nR2 replaces the inside global address with the inside local address of the web server and forwards the packet to the web server.\n\n\nStep 5\nR2 receives the packet from the web server. R2 checks the NAT table, then translates the source address of the web server into an inside global address and forwards the packet.\n\n\nStep 4\nThe web server uses the outside global address of the client as the destination address when responding.\n\n\nStep 2\nR2 receives the packet on its outside interface, then checks and locates the destination address in its NAT table.\n\n\nStep 1\nThe client uses the inside global address of the web server as the destination address to send a packet to the web server.\n\n\n\n90. Refer to the exhibit. What is the function of the identified missing information in regards to the parameter and method contained in the request?\n\n\n\n\nA Webex Teams space will be identified by using a specified title, and additional details will be retrieved.\nIt provides the name for a Webex teams space to be deleted.\nA Webex Teams space will be identified and a message will be posted with the title specified.\nIt provides the name for a new Webex teams space.\n\n91. What is an architectural constraint to which a true RESTful API web service must adhere?",
+    "code": null,
+    "options": [
+      "It must support XML-RPC and JSON-RPC.",
+      "It allows resource caching.",
+      "It should be behind a firewall.",
+      "It operates as a cloud service."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'It allows resource caching.'."
+  },
+  {
+    "id": "devnet_q71",
+    "module": "devnet_m1",
+    "question": "A packet is received by a server. The packet has a destination port number of 53. What protocol or service is requested?",
+    "code": null,
+    "options": [
+      "DNS",
+      "NetBIOS (NetBT)",
+      "POP3",
+      "IMAP"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'DNS'."
+  },
+  {
+    "id": "devnet_q72",
+    "module": "devnet_m1",
+    "question": "Which statement accurately describes dynamic NAT?",
+    "code": null,
+    "options": [
+      "It always maps a private IP address to a public IP address.",
+      "It provides an automated mapping of inside local to inside global IP addresses.",
+      "It provides a mapping of internal host names to IP addresses.",
+      "It dynamically provides IP addressing to internal hosts."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: It provides an automated mapping of inside local to inside global IP addresses.. Oficiální vysvětlení Cisco: Explanation: Dynamic NAT provides a dynamic mapping of inside local to inside global IP addresses. NAT is merely the one-to-one mapping of one address to another address without taking into account whether the address is public or private. DHCP is automatic assignment of IP addresses to hosts. DNS is mapping host names to IP addresses."
+  },
+  {
+    "id": "devnet_q73",
+    "module": "devnet_m1",
+    "question": "A packet is received by a server. The packet has a destination port number of 830. What protocol or service is requested?",
+    "code": null,
+    "options": [
+      "NTP",
+      "DHCP",
+      "NETCONF",
+      "HTTPS"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: NETCONF. Oficiální vysvětlení Cisco: Explanation: By default, the NETCONF server on the device runs on TCP port 830 and uses the SSH process for transport. A NETCONF session can be established by using an SSH client and specifying port 830 when connecting to the device"
+  },
+  {
+    "id": "devnet_q74",
+    "module": "devnet_m3",
+    "question": "Which programming language is supported by the Webex xAPI to develop macros for on-device customization?",
+    "code": null,
+    "options": [
+      "Java",
+      "Python",
+      "JavaScript",
+      "C++"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'JavaScript'."
+  },
+  {
+    "id": "devnet_q75",
+    "module": "devnet_m1",
+    "question": "Which Cisco management system is designed as the solution for Software-Defined Networking and runs on Nexus 9000 hardware?",
+    "code": null,
+    "options": [
+      "Application Centric Infrastructure platform (ACI)",
+      "IOS XE",
+      "Nexus Operating System (NX-OS)",
+      "DNA Center"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'Application Centric Infrastructure platform (ACI)'."
+  },
+  {
+    "id": "devnet_q76",
+    "module": "devnet_m1",
+    "question": "A developer issues a Linux command python3 -m venv devenv. What is the developer trying to achieve?",
+    "code": null,
+    "options": [
+      "to install the devnet tool sets in the Python 3 virtual environment named venv",
+      "to create a Python 3 virtual environment named devenv",
+      "to activate the Python 3 virtual environment named devenv",
+      "to enter the Python 3 virtual environment named venv using the devnet tool sets"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: to create a Python 3 virtual environment named devenv. Oficiální vysvětlení Cisco: Explanation: The syntax for creating a Python 3 virtual environment in a Linux system is python3 -m venv virtual_environment , where venv is the Python 3 module to create a virtual environment and -m is the switch to tell Python 3 the venv module is to be used."
+  },
+  {
+    "id": "devnet_q77",
+    "module": "devnet_m2",
+    "question": "Refer to the exhibit. Match the missing components of the Python script for the APIC-EM REST API request for the user \"secureuser\". (Not all options are used.)\n\n\n\nAnswers:\n\n\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\nsecureuser\nComponent 1\n\n\nrequests\nComponent 2\n\n\nheader\nComponent 3\n\n\n\n99. Two network engineers are discussing the methods used to forward frames through a switch. What is an important concept related to the cut-through method of switching?",
+    "code": null,
+    "options": [
+      "The fragment-free switching offers the lowest level of latency.",
+      "Fast-forward switching can be viewed as a compromise between store-and-forward switching and fragment-free switching.",
+      "Fragment-free switching is the typical cut-through method of switching.",
+      "Packets can be relayed with errors when fast-forward switching is used."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Packets can be relayed with errors when fast-forward switching is used.. Oficiální vysvětlení Cisco: Explanation: Fast-forward switching offers the lowest level of latency and it is the typical cut-through method of switching. Fragment-free switching can be viewed as a compromise between store-and-forward switching and fast-forward switching. Because fast-forward switching starts forwarding before the entire packet has been received, there may be times when packets are relayed with errors."
+  },
+  {
+    "id": "devnet_q78",
+    "module": "devnet_m1",
+    "question": "When thinking about the functional planes of a network, what is unique about the control plane?",
+    "code": null,
+    "options": [
+      "It forwards data through a network device.",
+      "It manipulates data and outputs it in the XML format.",
+      "It includes the SNMP protocol.",
+      "It includes network traffic being processed by EIGRP or OSPF."
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'It includes network traffic being processed by EIGRP or OSPF.'."
+  },
+  {
+    "id": "devnet_q79",
+    "module": "devnet_m4",
+    "question": "Refer to the exhibit. If PC1 is communicating with a web server on the Internet, which two TCP/IP layers are responsible for encapsulating the message that requests data from that particular server and assigning a source port number? (Choose two.)\n\n\n\n\nsession\nnetwork\ntransport\nphysical\napplication\n\n102. A network security administrator is evaluating products that automate threat containment through APIs when a threat is detected. Which Cisco product with the desired capability provides a rule-based engine for enabling policy-based network access to users and devices?",
+    "code": null,
+    "options": [
+      "Identity Services Engine",
+      "Umbrella",
+      "Threat Grid",
+      "Advanced Malware Protection"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Identity Services Engine. Oficiální vysvětlení Cisco: Explanation: ISE (Cisco Identity Services Engine) provides a rule-based engine for enabling policy-based network access to users and devices. It enables you to enforce compliance and streamline user network access operations. With the ISE APIs, you can automate threat containment when a threat is detected. It integrates with existing identity deployments."
+  },
+  {
+    "id": "devnet_q80",
+    "module": "devnet_m3",
+    "question": "Match the purpose with its DHCP message type. (Not all options are used.)\n\n\n\n\n\n\nDHCPREQUEST\nA message that is used to locate any available DHCP server on a network\n\n\nDHCPOFFER\nA message that is used to suggest a lease to a client\n\n\nDHCPDISCOVER\nA message that is used to identify the explicit server and lease offer to accept\n\n\nDHCPNAK\nA message that is used to acknowledge that the lease is successful\n\n\nDHCPACK\nA message is used by a server to finalize a successful lease with a client\n\n\n\n104. Refer to the exhibit. Match the missing components to the Meraki API script to complete the following tasks. (Not all options are used.)\n\nretrieve the organizations\n\nretrieve the networks and the corresponding id\n\nretrieve the devices and corresponding device id\n\n\n\n\n\n105. Refer to the exhibit. A student constructs a URI to query the MapQuest API for a route from New Orleans, LA to New York, NY. Match the components to the MapQuest URI. (Not all options are used.)\n\n\n\n\n\nPlace the options in the following order:\n\n\n\n\nCategories:\nOptions:\n\n\n\n\ndirections/v2/route\ncomponent1\n\n\nkey=get_your_api_key\ncomponent2\n\n\nfrom=New+Orleans%2C+LA\ncomponent3\n\n\nto=New+York%2C+NY\ncomponent4\n\n\n\n106. When thinking about the functional planes of a network, what is unique about the management plane?",
+    "code": null,
+    "options": [
+      "It forwards data based on STP settings.",
+      "It is responsible for the switching of packets in hardware.",
+      "It includes protocols used to monitor network devices.",
+      "It includes applications and protocols used between network devices such as routers."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: It includes protocols used to monitor network devices.. Oficiální vysvětlení Cisco: Explanation: Management Plane - The management plane manages traffic destined for the network device itself. Examples include Secure Shell (SSH) and Simple Network Management Protocol (SNMP)."
+  },
+  {
+    "id": "devnet_q81",
+    "module": "devnet_m5",
+    "question": "Which two data formats can RESTCONF use when requesting data or responding with data? (Choose two.)",
+    "code": null,
+    "options": [
+      "XML",
+      "YANG",
+      "JSON",
+      "YAML",
+      "HTML"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'XML'."
+  },
+  {
+    "id": "devnet_q82",
+    "module": "devnet_m2",
+    "question": "An international manufacturing company is implementing an industrial internet of things plant infrastructure. The design requires that computing resources are located as close to the user as possible. Which cloud model is suitable for this situation?",
+    "code": null,
+    "options": [
+      "public",
+      "edge",
+      "private",
+      "hybrid"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: edge. Oficiální vysvětlení Cisco: Explanation: Edge clouds are located as close to the user as possible. Having computing power at the network edge is a benefit for internet of things devices such as cameras, industrial automation equipment, and autonomous vehicles."
+  },
+  {
+    "id": "devnet_q83",
+    "module": "devnet_m4",
+    "question": "What are three tools used by developers for scanning code to check for well-known security issues? (Choose three.)",
+    "code": null,
+    "options": [
+      "Viptela",
+      "Brakeman",
+      "VisualCodeGrepper",
+      "Docker",
+      "Bandit",
+      "VIRL"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Brakeman. Oficiální vysvětlení Cisco: Explanation: Because most code developers are not security experts, it is not uncommon to have security vulnerabilities inadvertently written into applications. To help mitigate this threat, there are code scanning tools that a developer can use to look for any well-know security issues embedded into the code. Examples of such tools are Bandit, Brakeman, and VisualCodeGrepper."
+  },
+  {
+    "id": "devnet_q84",
+    "module": "devnet_m4",
+    "question": "A network engineer is configuring a Jenkins job and finishing with the following script in order to trigger the build: \n\nCopynode {\r\n stage('Preparation') {\r\n catchError(buildResult: 'SUCCESS') {\r\n sh 'docker stop samplerunning'\r\n sh 'docker rm samplerunning'\r\n }\r\n }\r\n stage('Build') {\r\n build 'BuildAppJob'\r\n }\r\n stage('Results') {\r\n build 'TestAppJob'\r\n }\r\n}\nAfter saving the job, what should the engineer do next?",
+    "code": null,
+    "options": [
+      "Test the script in Docker.",
+      "Run the job.",
+      "Open the Recent Changes option to verify the results of the job.",
+      "Manually run the samplerunning container."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Run the job.. Oficiální vysvětlení Cisco: Explanation: Once a script is created, use the Build Now Jenkins menu option to run the job. If the script is done correctly, then the Stage View should show three green boxes. If errors are found, check the script for errors."
+  },
+  {
+    "id": "devnet_q85",
+    "module": "devnet_m4",
+    "question": "What are three ways to mitigate SQL injection threats? (Choose three.)",
+    "code": null,
+    "options": [
+      "stored procedures configured with the \"db_owner\" rights set as default",
+      "stateless packet-filtering firewalls",
+      "dynamic queries",
+      "database firewalls",
+      "whitelist input validation",
+      "parameterized database queries"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: database firewalls. Oficiální vysvětlení Cisco: Explanation: SQL injection is a basic web application attack technique which, if successful, can delete or change sensitive data or reveal it to the attacker. There are several methods to mitigate the threat of SQL injection such as the use of parameterized database queries, database firewalls, and whitelist input validation."
+  },
+  {
+    "id": "devnet_q86",
+    "module": "devnet_m4",
+    "question": "What is the purpose of adding salt to the password hashing process?",
+    "code": null,
+    "options": [
+      "to decrease password complexity",
+      "to increase the length of a password",
+      "to make hashed passwords deterministic",
+      "to create a unique hash for every password"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: to create a unique hash for every password. Oficiální vysvětlení Cisco: Explanation: Because of the deterministic nature of the hash function, hashed passwords are not unique. The same password always produces the same hash even if the password is created by different users. The salting process adds random data to the input of the hash function to guarantee a unique, nondeterministic output."
+  },
+  {
+    "id": "devnet_q87",
+    "module": "devnet_m4",
+    "question": "Match the CI/CD software development philosophy with a description.\n\n\n\n8. What is an operational characteristic of the local version control system?",
+    "code": null,
+    "options": [
+      "It locks a file once it is checked out by a user to prevent modification by others.",
+      "It pushes a working copy of a file to a main repository after individuals have made changes.",
+      "It allows multiple individuals to edit a working copy of a file at the same time.",
+      "It stores a delta of two versions of a file as opposed to the file itself."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: It stores a delta of two versions of a file as opposed to the file itself.. Oficiální vysvětlení Cisco: Explanation: There are three types of version control systems:\n\n\nLocal version control system\nCentralized version control system\nDistributed version control system\n\nThe local version control system stores the delta between the two versions of the file, as opposed to the file itself. When the user wants to revert to the previous version of the file, the delta is reversed to get to the requested version."
+  },
+  {
+    "id": "devnet_q88",
+    "module": "devnet_m1",
+    "question": "An organization is using the Waterfall methodology for a software development project. In what order are the SDLC phases completed when using this method?",
+    "code": null,
+    "options": [
+      "requirements and analysis, design, testing, implementation, deployment, maintenance",
+      "requirements and analysis, design, implementation, testing, deployment, maintenance",
+      "requirements and analysis, design, implementation, deployment, testing, maintenance",
+      "requirements and analysis, design, deployment, testing, implementation, maintenance"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: requirements and analysis, design, implementation, testing, deployment, maintenance. Oficiální vysvětlení Cisco: Explanation: The Software Development Life Cycle (SDLC) is the process of developing software from concept to final product. The process consists of six phases, with each phase using the results of the previous phase as input. The phases are ordered as follows: (1) requirements & analysis, (2) design, (3) implementation, (4) testing, (5) deployment, and (6) maintenance."
+  },
+  {
+    "id": "devnet_q89",
+    "module": "devnet_m1",
+    "question": "In which phase of the SDLC process does the product development team gather feedback from the potential customer on the desired features for the new software?",
+    "code": null,
+    "options": [
+      "design",
+      "deployment",
+      "implementation",
+      "requirements and analysis"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: requirements and analysis. Oficiální vysvětlení Cisco: Explanation: The first phase of the SDLC is the requirements and analysis phase. In this phase the product owner and qualified team members, using feedback from potential customers, gather the requirements for the software to be built."
+  },
+  {
+    "id": "devnet_q90",
+    "module": "devnet_m2",
+    "question": "Which Git command is used to get an initial copy on an existing Git repository for the first time?",
+    "code": null,
+    "options": [
+      "git add",
+      "git copy",
+      "git clone",
+      "git repo"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: git clone. Oficiální vysvětlení Cisco: Explanation: The command that you would use for the first copy of an existing Git repository is git clone ."
+  },
+  {
+    "id": "devnet_q91",
+    "module": "devnet_m1",
+    "question": "Refer to the exhibit. Which message format is being used? \n\n\n\n\nJSON\nHTML\nYAML\nXML\n\nExplanation: JSON objects are unordered sets of name/value pairs that begin and end with curly braces { }.\n\n13. A student is learning Python using the interactive interpreter mode. The student issues these commands: \n\nCopy>>> class Url():\r\n... def __init__(self, host, prot):\r\n... self.host = host\r\n... self.prot = prot\r\n... self.url = self.prot + \"://\" + self.host\r\n...\r\n>>>\nWhich type of Python structure is created?",
+    "code": null,
+    "options": [
+      "a method",
+      "a class",
+      "a function",
+      "a module"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: a class. Oficiální vysvětlení Cisco: Explanation: In Python, classes are a means of bundling data storage and functionality in a single structure. Each class declaration defines a new object type. A class is defined with the class Class_Name() command."
+  },
+  {
+    "id": "devnet_q92",
+    "module": "devnet_m1",
+    "question": "Match the Git stage with a description.\n\n\n\n15. How does YAML maintain data-structure hierarchy?",
+    "code": null,
+    "options": [
+      "braces",
+      "brackets",
+      "parenthesis",
+      "indentation"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: indentation. Oficiální vysvětlení Cisco: Explanation: In YAML the data-structure hierarchy is maintained by outline indentation."
+  },
+  {
+    "id": "devnet_q93",
+    "module": "devnet_m1",
+    "question": "Which SDLC phase concludes with a high quality, bug-free, working piece of software that is ready for production?",
+    "code": null,
+    "options": [
+      "design",
+      "deployment",
+      "implementation",
+      "testing"
+    ],
+    "correct": 3,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'testing'."
+  },
+  {
+    "id": "devnet_q94",
+    "module": "devnet_m1",
+    "question": "Match the SDLC phase with its description. (Not all options are used.)\n\n\n\n18. Which terminal command can be used to print the Python version number installed on a system?",
+    "code": null,
+    "options": [
+      "python -h",
+      "python -i",
+      "python -V",
+      "which python"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: python -V. Oficiální vysvětlení Cisco: Explanation: The command python -V can be used from a command or terminal window to view the Python version installed on the system."
+  },
+  {
+    "id": "devnet_q95",
+    "module": "devnet_m1",
+    "question": "What are three platforms that the Firepower Management Center can run on in the overall architecture of a large enterprise? (Choose three.)",
+    "code": null,
+    "options": [
+      "on every router",
+      "on a wide range of Cisco devices",
+      "in the Secure Operations Center (SOC)",
+      "on VMWare VSphere",
+      "in an availability zone",
+      "on Amazon Web Services (AWS)"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: on a wide range of Cisco devices. Oficiální vysvětlení Cisco: Explanation: Firepower Management Center can run on VMware vSphere or Amazon Web Services (AWS). It can also run on a range of physical devices including the Cisco FMC series."
+  },
+  {
+    "id": "devnet_q96",
+    "module": "devnet_m2",
+    "question": "Which two types of APIs are supported by Cisco Finesse? (Choose two.)",
+    "code": null,
+    "options": [
+      "AXL",
+      "REST",
+      "JavaScript",
+      "SOAP",
+      "Python SDK"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: REST. Oficiální vysvětlení Cisco: Explanation: Cisco Finesse has REST APIs and JavaScript APIs that can be used to build fully customized agent desktops, integrate contact center functionality into applications, and integrate applications into the Finesse agent and supervisor desktop."
+  },
+  {
+    "id": "devnet_q97",
+    "module": "devnet_m3",
+    "question": "An engineer is learning how to enable RESTful API access for the Cisco Meraki Dashboard. What is the first step that must be taken in order to use API calls with the Meraki enterprise cloud-managed networking infrastructure service?",
+    "code": null,
+    "options": [
+      "The Meraki Dashboard API must first be enabled under Organizations > Settings within the GUI.",
+      "Each cloud-managed organization must specify API access and allow the Meraki Dashboard administrator to employ site-specific APIs.",
+      "The engineer must first generate an API key by going to the My Profile page within the GUI.",
+      "A GET request must be created and include header parameters including authentication credentials and the Meraki API URL."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: The Meraki Dashboard API must first be enabled under Organizations > Settings within the GUI.. Oficiální vysvětlení Cisco: Explanation: In order to provide API access for an organization, API access must first be enabled within the GUI, under Organization > Settings .\n\nAfter the API is enabled, an API key must be generated within the My Profile page."
+  },
+  {
+    "id": "devnet_q98",
+    "module": "devnet_m2",
+    "question": "What does the Intersight REST API enable an application developer to access?",
+    "code": null,
+    "options": [
+      "JavaScript Object Notation",
+      "Management Information Model",
+      "IETF Interface",
+      "Universal Resource Locator"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Management Information Model. Oficiální vysvětlení Cisco: Explanation: The Intersight REST API enables a user to access the Management Information Model. The Intersight API accepts and returns messages that are encapsulated through JavaScript Object Notation (JSON) documents and uses HTTP over TLS as the transport protocol."
+  },
+  {
+    "id": "devnet_q99",
+    "module": "devnet_m3",
+    "question": "A student in the DevNet class is learning SDKS and APIS. What is the difference between an API and an SDK?",
+    "code": null,
+    "options": [
+      "An API is essentially a documented set of URIs, whereas an SDK is a package integrated with code examples and libraries.",
+      "An API contains the components that have been created for a specific purpose, whereas an SDK is commonly an interface for a service.",
+      "An API is a tool box that contains multiple SDKs, whereas each SDK allows the creation of software for a specific hardware platform.",
+      "An API is a software development tool for developing applications, whereas an SDK is a set of protocols for building application software."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: An API is essentially a documented set of URIs, whereas an SDK is a package integrated with code examples and libraries.. Oficiální vysvětlení Cisco: Explanation: Most SDKs are packages that require installation and are integrated with libraries, documents, and code examples. APIs are essentially a documented set of URIs that act as an interface for a service."
+  },
+  {
+    "id": "devnet_q100",
+    "module": "devnet_m1",
+    "question": "Which modeling language is most commonly used for data modeling?",
+    "code": null,
+    "options": [
+      "Python",
+      "YAML",
+      "YANG",
+      "SQL"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: YANG. Oficiální vysvětlení Cisco: Explanation: YANG, an acronym for Yet Another Next Generation, is a data modeling language used to model configuration and state data manipulated by the Network Configuration Protocol (NETCONF), NETCONF remote procedure calls, and NETCONF notifications."
+  },
+  {
+    "id": "devnet_q101",
+    "module": "devnet_m3",
+    "question": "Match the description to the corresponding layer of the OSI model. (Not all options are used.)\n\nDevNet Associate (Version 1.0) - DevNet Associate 1.0 Practice Final exam\n\nExplanation: Place the options in the following order:\n\nApplication\n\nIncludes protocols that provide specific functionality to a variety of end user applications.\n\nProvides the interface between applications and the underlying network.\n\nPresentation\n\nCompresses the data in a way that can be decompressed by the destination device.\n\nEnsures that data from the source device can be interpreted by the appropriate application on the destination device.\n\nSession\n\nRestarts dialogs between source and destination applications when they are disrupted.\n\nHandles the exchange of information to initiate dialogs between source and destination applications.\n\n26. Which field in an 802.1Q Ethernet frame is used by switches to identify VLAN membership of the frame?",
+    "code": null,
+    "options": [
+      "Tag",
+      "Data",
+      "FCS",
+      "Preamble"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Tag. Oficiální vysvětlení Cisco: Explanation: The 12-bit VLAN identifier is part of the 4-byte Tag field of an 802.1Q Ethernet frame."
+  },
+  {
+    "id": "devnet_q102",
+    "module": "devnet_m1",
+    "question": "Which two statements are correct if a configured NTP master on a network cannot reach any clock with a lower stratum number? (Choose two.)",
+    "code": null,
+    "options": [
+      "The NTP master will lower its stratum number.",
+      "The NTP master will be the clock with 1 as its stratum number.",
+      "Other systems will be willing to synchronize to that master using NTP.",
+      "The NTP master will claim to be synchronized at the configured stratum number.",
+      "An NTP server with a higher stratum number will become the master."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: Other systems will be willing to synchronize to that master using NTP.. Oficiální vysvětlení Cisco: Explanation: If the network NTP master cannot reach any clock with a lower stratum number, the system will claim to be synchronized at the configured stratum number, and other systems will be willing to synchronize to it using NTP."
+  },
+  {
+    "id": "devnet_q103",
+    "module": "devnet_m1",
+    "question": "What are three parts of an IPv6 global unicast address? (Choose three.)",
+    "code": null,
+    "options": [
+      "a global routing prefix that is used to identify the network portion of the address that has been provided by an ISP",
+      "a global routing prefix that is used to identify the portion of the network address provided by a local administrator",
+      "an interface ID that is used to identify the local network for a particular host",
+      "an interface ID that is used to identify the local host on the network",
+      "a subnet ID that is used to identify networks inside of the local enterprise site"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: a global routing prefix that is used to identify the network portion of the address that has been provided by an ISP. Oficiální vysvětlení Cisco: Explanation: There are three elements that make up an IPv6 global unicast address. A global routing prefix which is provided by an ISP, a subnet ID which is determined by the organization, and an interface ID which uniquely identifies the interface interface of a host."
+  },
+  {
+    "id": "devnet_q104",
+    "module": "devnet_m6",
+    "question": "Match the IPv6 address to the IPv6 address type. (Not all options are used.)\n\n\n\n30. What attribute of a NIC would place it at the data link layer of the OSI model?",
+    "code": null,
+    "options": [
+      "IP address",
+      "RJ-45 port",
+      "attached Ethernet cable",
+      "MAC address",
+      "TCP/IP protocol stack"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: MAC address. Oficiální vysvětlení Cisco: Explanation: The data link layer describes media access and physical addressing. The encoding of a MAC address on a NIC places it at that layer. Ports and cables are placed at the physical layer of the OSI model. IP addresses are placed at the network layer. The TCP/IP protocol stack describes a different model."
+  },
+  {
+    "id": "devnet_q105",
+    "module": "devnet_m4",
+    "question": "Match the firewall function to the type of threat protection it provides to the network. (Not all options are used.)\n\n\n\n\npacket filtering – prevents access based on IP or MAC address\nURL filtering – prevents access to websites\nnetwork address translator – (none)\nstateful packet inspection – prevents unsolicited incoming sessions\napplication filtering – prevents access by port number\n\nExplanation: Firewall products come packaged in various forms. These products use different techniques for determining what will be permitted or denied access to a network. They include the following:\n\n+ Packet filtering – Prevents or allows access based on IP or MAC addresses\n\n+ Application filtering – Prevents or allows access by specific application types based on port numbers\n\n+ URL filtering – Prevents or allows access to websites based on specific URLs or keywords\n\n+ Stateful packet inspection (SPI) – Incoming packets must be legitimate responses to requests from internal hosts. Unsolicited packets are blocked unless permitted specifically. SPI can also include the capability to recognize and filter out specific types of attacks, such as denial of service (DoS)\n\n32. Which protocol automates assignment of IP addresses on a network, and which port number does it use? (Choose two.)",
+    "code": null,
+    "options": [
+      "DHCP",
+      "DNS",
+      "SMB",
+      "53",
+      "67",
+      "80"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: DHCP. Oficiální vysvětlení Cisco: Explanation: DNS uses port 53 and translates URLs to IP addresses. SMB provides shared access to files and printers and uses port 445. Port 80 is used by HTTP. HTTP is a protocol used to communicate between a web browser and a server."
+  },
+  {
+    "id": "devnet_q106",
+    "module": "devnet_m3",
+    "question": "What are the two types of DevNet Sandboxes? (Choose two.)",
+    "code": null,
+    "options": [
+      "assigned",
+      "always-on",
+      "reserved",
+      "intermal-use only",
+      "exclusive"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: always-on. Oficiální vysvětlení Cisco: Explanation: The two types of DevNet Sandboxes include always-on and reserved. An \"always-on\" sandbox is available to anyone and typically provides read-only access. A reserved Cisco DevNet Sandbox has shared resources with a quota setting and uses a VPN connection so that traffic to and from the sandbox and development environment is protected."
+  },
+  {
+    "id": "devnet_q107",
+    "module": "devnet_m3",
+    "question": "Which fee-based Cisco DevNet developer support option provides a response time of 1 business day?",
+    "code": null,
+    "options": [
+      "knowledge base",
+      "chat with DevNet",
+      "case-based ticket",
+      "community forum"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: case-based ticket. Oficiální vysvětlení Cisco: Explanation: Case-based tickets provide 1-on-1 support for certain Cisco APIs. The response time is commonly 1 business day and the cost varies based on the amount of case-based tickets purchased."
+  },
+  {
+    "id": "devnet_q108",
+    "module": "devnet_m3",
+    "question": "When working with both a live production environment and testing code in a shared developer sandbox, what are two important rules to follow? (Choose two.)",
+    "code": null,
+    "options": [
+      "Never request assistance or share information in community or public environments.",
+      "Never use publicly posted tokens or credentials in a production environment.",
+      "Never provide any identifying information in community or public environments.",
+      "Never use a customized token in the sandbox, but instead use personal tokens that currently exist.",
+      "Never use any personal tokens in the sandbox, but instead use a customized token for development."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Never use publicly posted tokens or credentials in a production environment.. Oficiální vysvětlení Cisco: Explanation: When working in a leaming environment or community-based environment, remember never to use any personal tokens or credentials in the sandbox. Also, do not use tokens or credentials provided in a course or online community in a production environment. It is important to be protective of tokens, passwords, and other identifying information in development environments."
+  },
+  {
+    "id": "devnet_q109",
+    "module": "devnet_m3",
+    "question": "Which DevNet resource would a student use to learn how to make REST API requests?",
+    "code": null,
+    "options": [
+      "DevNet Learning Labs",
+      "DevNet Sandbox",
+      "Code Exchange",
+      "DevNet Support"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: DevNet Learning Labs. Oficiální vysvětlení Cisco: Explanation: DevNet provides a catalog of free, self-paced online tutorials called Learning Labs."
+  },
+  {
+    "id": "devnet_q110",
+    "module": "devnet_m1",
+    "question": "Which two forums are available on the Cisco Developer Community? (Choose two.)",
+    "code": null,
+    "options": [
+      "Developer Automation",
+      "Developer Networking",
+      "Developer Coding",
+      "Developer Support",
+      "Developer Security"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Developer Networking. Oficiální vysvětlení Cisco: Explanation: There are a total of ten developer forums on the Cisco Developer Community:\n\nDeveloper Networking\n\nDeveloper Collaboration\n\nDeveloper Security\n\nDeveloper Data Center\n\nDeveloper Intemet of Things\n\nDeveloper Cloud\n\nDeveloper Services\n\nDeveloper Mobility\n\nDeveloper Analytics and Automation Software\n\nDeveloper DevNet Site"
+  },
+  {
+    "id": "devnet_q111",
+    "module": "devnet_m5",
+    "question": "What are two benefits of using automation for IT infrastructure? (Choose two.)",
+    "code": null,
+    "options": [
+      "increased implementation of specific opinionated companion components",
+      "increased speed in the deployment of technologies and products",
+      "reduced user requisition requests for on-demand infrastructure",
+      "reduced risk while working at scale",
+      "reduced need for IT personnel and operations staff"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: increased speed in the deployment of technologies and products. Oficiální vysvětlení Cisco: Explanation: There are commonly three benefits of infrastructure automation:\n\nSpeed\n\nRepeatability\n\nThe ability to work at scale, with reduced risk"
+  },
+  {
+    "id": "devnet_q112",
+    "module": "devnet_m5",
+    "question": "Which component is required by both Puppet and Chef to be run on hosts?",
+    "code": null,
+    "options": [
+      "agents that query a server to determine their desired state, then converge upon it",
+      "cron jobs that access a server to randomize access times to prevent server overload",
+      "IPtables that enable masquerade tunneling",
+      "certificates for authentication and encryption"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: agents that query a server to determine their desired state, then converge upon it. Oficiální vysvětlení Cisco: Explanation: Puppet and Chef both require the use of an agent, which is used to reterieve information and make desired changes."
+  },
+  {
+    "id": "devnet_q113",
+    "module": "devnet_m1",
+    "question": "What are two processes that can be used to execute remote scripts securely? (Choose two.)",
+    "code": null,
+    "options": [
+      "pipe scripts to a remote machine using cat | telnet and execute them in sequence with other commands, capturing and returning results to a local terminal",
+      "access the built-in rexec command within Bash, target the IP address of the remote machine, and execute the Bash command",
+      "store scripts locally, transmit them to a target machine with scp, log into the remote machine via ssh, and execute the scripts",
+      "store scripts on a webserver, log into the remote machine, and retrieve the scripts using wget via HTTP",
+      "store scripts in a Git repository, install git on the remote machine, clone the repo, check out a branch, and execute the scripts"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: store scripts locally, transmit them to a target machine with scp, log into the remote machine via ssh, and execute the scripts. Oficiální vysvětlení Cisco: Explanation: There are many ways to configure remote systems using scripts. However, scripts should be delivered to a remote system through the use of secured protocols or services or both."
+  },
+  {
+    "id": "devnet_q114",
+    "module": "devnet_m1",
+    "question": "What is an example of an SLI?",
+    "code": null,
+    "options": [
+      "All services provided include data integrity and security and comply with local regulations about where and how data is stored.",
+      "95% of requests will be served within 75 milliseconds.",
+      "All applications being provided will offer a good-enough experience to the user base.",
+      "100% availability will be maintained for any services provided."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: 95% of requests will be served within 75 milliseconds.. Oficiální vysvětlení Cisco: Explanation: A Service Level Indicator or SLI is a real-world benchmark metric used to determine Service-Level Objectives (SLOs)."
+  },
+  {
+    "id": "devnet_q115",
+    "module": "devnet_m1",
+    "question": "Which component of a software-defined infrastructure provides available cloud resources within hours or minutes of needing them?",
+    "code": null,
+    "options": [
+      "repeatability",
+      "observability",
+      "self-service",
+      "platform abstraction"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'self-service'."
+  },
+  {
+    "id": "devnet_q116",
+    "module": "devnet_m2",
+    "question": "A network operator is testing a network management application that uses REST API to communicate with network devices. The operator received an HTTP response code 403 in a test step. What does this response code indicate?",
+    "code": null,
+    "options": [
+      "Client has not authenticated to access the site or API call.",
+      "The page at HTTP URL location does not exist or is hidden.",
+      "Request failed due to a client-side issue.",
+      "Access is not granted based on supplied credentials."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Access is not granted based on supplied credentials.. Oficiální vysvětlení Cisco: Explanation: Most common HTTP status codes include:\n\n200 – OK (using GET or POST to exchange data with an API successfully)\n\n201 – Created (creating resources by using a REST API call successfully)\n\n400 – Bad Request (The request from the client is failed due to client-side issue.)\n\n401 – Unauthorized (The client is not authenticated to access site or API call.)\n\n403 – Forbidden (The access request is not granted based on the supplied credentials.)\n\n404 – Not Found (The page requested at HTTP URL location does not exist or is hidden.)"
+  },
+  {
+    "id": "devnet_q117",
+    "module": "devnet_m1",
+    "question": "Which three characteristics are associated with the SOAP architecture? (Choose three.)",
+    "code": null,
+    "options": [
+      "stateless",
+      "neutral",
+      "extensible",
+      "layered system",
+      "independent",
+      "uniform interface"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: neutral. Oficiální vysvětlení Cisco: Explanation: SOAP architecture has three characteristics:\n\nIndependent - different applications can communicate with one another\n\nExtensible - extensions can be added to SOAP because it is an application of XML\n\nNeutral - SOAP can use a variety of protocols including HTTP, SMTP, TCP, UDP, or JMS"
+  },
+  {
+    "id": "devnet_q118",
+    "module": "devnet_m2",
+    "question": "A client is using an API key to authenticate and access resources on a website through a REST API. The string in the API request is GET http://example.com:8080/v1/books?API_KEY=<key>. Which component in the API request is used to provide this string?",
+    "code": null,
+    "options": [
+      "cookie",
+      "query string",
+      "header",
+      "body data"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: query string. Oficiální vysvětlení Cisco: Explanation: A REST API request can provide an API key in a few different ways including query string, header, body data, and cookie. In this case, the API key is provided through the query string that is preceded with a symbol ? ."
+  },
+  {
+    "id": "devnet_q119",
+    "module": "devnet_m5",
+    "question": "Refer to the exhibit. A student is learning network automation with Python and REST API. The student constructs a small Python script to get information from a local network device. The device is a sandbox located inside the college lab and it is using a self-signed SSL certificate. Which parameter is needed in the Python code (in place of the question mark) to skip the SSL verification? \n\n\n\n\nverify = True\nverify = False\nverify = NO\nverify = YES\n\nExplanation: When the protocol used within the URI is HTTPS, the connection will perform an SSL handshake between the client and the server for secure authentication. This handshake needs to be successful before the REST API request is even sent to the API server. However, because the SSL is self-signed, it would not pass the SSL verification with a CA. In the case of learning and practicing on a local resource, the SSL verification can be turned off by the \"verify = False\" parameter.\n\n48. What are two features of REST APIs? (Choose two.)",
+    "code": null,
+    "options": [
+      "They communicate over HTTP.",
+      "They follow the Representational State Transfer principles.",
+      "Requests always contain data.",
+      "Responses are always in JSON format.",
+      "They maintain session states in communications."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: They communicate over HTTP.. Oficiální vysvětlení Cisco: Explanation: REST APIs are the short name for Representational State Transfer Webservice APIs. They follow the REST architectural style and communicate over HTTP. REST API requests and responses can use many different data formats; it is not mandatory to use JSON. It is also not mandatory for requests or responses to contain data. Data is provided when applicable. Communication using REST APIs is stateless."
+  },
+  {
+    "id": "devnet_q120",
+    "module": "devnet_m2",
+    "question": "What are two advantages of using an APl rate limit? (Choose two.)",
+    "code": null,
+    "options": [
+      "It protects against a DoS attack.",
+      "It reduces the amount of overhead within the API request.",
+      "It allows requests to be processed in a prioritized manner.",
+      "It supports token passing so tha each client gets a turn.",
+      "It provides better quality of service and response time."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: It protects against a DoS attack.. Oficiální vysvětlení Cisco: Explanation: An API rate limit allows a web service to control the number of requests made in a defined amount of time and is a best practice to use for public and unrestricted APIS. Benefits of using rate limits include the following:\n\nAvoids a server overload from too many requests at once\n\nProvides better service and response time to all users\n\nProtects against a denial of service (DoS) attack"
+  },
+  {
+    "id": "devnet_q121",
+    "module": "devnet_m2",
+    "question": "Which three authentication mechanisms are used in REST APIs? (Choose three.)",
+    "code": null,
+    "options": [
+      "basic authentication",
+      "OAuth",
+      "open authentication",
+      "API Key",
+      "bearer authentication",
+      "SSO"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: basic authentication. Oficiální vysvětlení Cisco: Explanation: For security reasons, most REST APIs require authentication to prevent random users from being able to create, update, or delete information incorrectly or maliciously. Basic Authentication, Bearer Authentication, and API Key are authentication mechanisms used by REST APIs. OAuth is an authorization mechanism"
+  },
+  {
+    "id": "devnet_q122",
+    "module": "devnet_m2",
+    "question": "What are two advantages of using an API rate limit? (Choose two.)",
+    "code": null,
+    "options": [
+      "It reduces the amount of overhead within the API request.",
+      "It protects against a DoS attack.",
+      "It allows requests to be processed in a prioritized manner.",
+      "It provides better quality of service and response time.",
+      "It supports token passing so that each client gets a turn."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: It protects against a DoS attack.. Oficiální vysvětlení Cisco: Explanation: An API rate limit allows a web service to control the number of requests made in a defined amount of time and is a best practice to use for public and unrestricted APIs. Benefits of using rate limits include the following:\n\nAvoids a server overload from too many requests at once\n\nProvides better service and response time to all users\n\nProtects against a denial of service (DoS) attack"
+  },
+  {
+    "id": "devnet_q123",
+    "module": "devnet_m4",
+    "question": "What are three characteristics of containers on a host server? (Choose three.)",
+    "code": null,
+    "options": [
+      "They all share the same OS.",
+      "They are isolated from each other.",
+      "They leverage the kernel of the host OS for a quick start.",
+      "They include a guest OS.",
+      "They virtualize a physical server.",
+      "They are resource intensive and require several minutes to start."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: They all share the same OS.. Oficiální vysvětlení Cisco: Explanation: A container is an isolated environment where containerized applications run. It contains the application and all dependencies needed for the application to run. The containers on a physical server all share the same OS, are isolated from each other, and leverage the kernel of the host operating system to allow for quick starts."
+  },
+  {
+    "id": "devnet_q124",
+    "module": "devnet_m1",
+    "question": "Which two statements accurately describe an advantage or a disadvantage when deploying NAT for IPv4 in a network? (Choose two.)",
+    "code": null,
+    "options": [
+      "NAT adds authentication capability to IPv4.",
+      "NAT introduces problems for some applications that require end-to-end connectivity.",
+      "NAT will impact negatively on switch performance.",
+      "NAT provides a solution to slow down the IPv4 address depletion.",
+      "NAT improves packet handling.",
+      "NAT causes routing tables to include more information."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: NAT introduces problems for some applications that require end-to-end connectivity.. Oficiální vysvětlení Cisco: Explanation: Network Address Translation (NAT) is a technology that is implemented within IPv4 networks. One application of NAT is to use private IP addresses inside a network and use NAT to share a few public IP addresses for many internal hosts. In this way it provides a solution to slow down the IPv4 address depletion. However, since NAT hides the actual IP addresses that are used by end devices, it may cause problems for some applications that require end-to-end connectivity."
+  },
+  {
+    "id": "devnet_q125",
+    "module": "devnet_m6",
+    "question": "What is one function of a Layer 2 switch?",
+    "code": null,
+    "options": [
+      "forwards data based on logical addressing",
+      "duplicates the electrical signal of each frame to every port",
+      "learns the port assigned to a host by examining the destination MAC address",
+      "determines which interface is used to forward a frame based on the destination MAC address"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: determines which interface is used to forward a frame based on the destination MAC address. Oficiální vysvětlení Cisco: Explanation: A switch builds a MAC address table of MAC addresses and associated port numbers by examining the source MAC address found in inbound frames. To forward a frame onward, the switch examines the destination MAC address, looks in the MAC address for a port number associated with that destination MAC address, and sends it to the specific port. If the destination MAC address is not in the table, the switch forwards the frame out all ports except the inbound port that originated the frame."
+  },
+  {
+    "id": "devnet_q126",
+    "module": "devnet_m6",
+    "question": "What is the purpose of the subnet mask in conjunction with an IP address?",
+    "code": null,
+    "options": [
+      "to uniquely identify a host on a network",
+      "to identify whether the address is public or private",
+      "to determine the subnet to which the host belongs",
+      "to mask the IP address to outsiders"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: to determine the subnet to which the host belongs. Oficiální vysvětlení Cisco: Explanation: With the IPv4 address, a subnet mask is also necessary. A subnet mask is a special type of IPv4 address that coupled with the IP address determines the subnet of which the device is a member."
+  },
+  {
+    "id": "devnet_q127",
+    "module": "devnet_m4",
+    "question": "Which type of threat defense is provided by Cisco Umbrella?",
+    "code": null,
+    "options": [
+      "blocking requests to malicious Internet destinations",
+      "monitoring and analyzing network traffic for potential network intrusion attacks",
+      "identifying and blocking zero-day threats that manage to infiltrate the network",
+      "blocking hidden malware from both suspicious and legitimate websites"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: blocking requests to malicious Internet destinations. Oficiální vysvětlení Cisco: Explanation: Cisco Umbrella serves as a first line of defense for an organization by blocking requests to malicious internet destinations."
+  },
+  {
+    "id": "devnet_q128",
+    "module": "devnet_m1",
+    "question": "What is a benefit of using a bare metal deployment solution?",
+    "code": null,
+    "options": [
+      "increased processor and memory resource flexibility",
+      "direct access to hardware resources for increased efficiency",
+      "enhanced security",
+      "addition of an extra layer of abstraction"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: direct access to hardware resources for increased efficiency. Oficiální vysvětlení Cisco: Explanation: In a bare metal deployment model, software is installed directly on the host hardware. Because of this, the software has direct access to the host hardware resources, and thus has fewer layers of abstraction and is more efficient."
+  },
+  {
+    "id": "devnet_q129",
+    "module": "devnet_m4",
+    "question": "What are two characteristics of containers that are running on the same host server? (Choose two.)",
+    "code": null,
+    "options": [
+      "They all share the same host operating system.",
+      "They are isolated from each other.",
+      "They each include a guest operating system.",
+      "They each virtualize a different physical server.",
+      "They are resource intensive and require several minutes to start."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: They all share the same host operating system.. Oficiální vysvětlení Cisco: Explanation: A container is an isolated environment where containerized applications run. It contains the application and all dependencies needed for the application to run. The containers on a physical server all share the same OS, are isolated from each other, and leverage the kernel of the host operating system to allow for quick starts."
+  },
+  {
+    "id": "devnet_q130",
+    "module": "devnet_m1",
+    "question": "What type of attack is being attempted if code similar to this is entered in the login field on a web site?\n\nSELECT REPLACE (User_Name, 'administrator', 'hacker') Userlist FROM Credentials;",
+    "code": null,
+    "options": [
+      "DoS",
+      "zero day",
+      "brute force",
+      "SQL injection"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: SQL injection. Oficiální vysvětlení Cisco: Explanation: This item is based on information contained in the presentation.\n\nA DoS (denial of service) attack prevents users from accessing network resources. A brute force attack attempts to guess the password of an account. A zero day attack is the first occurrence of a previously unknown virus or other malware."
+  },
+  {
+    "id": "devnet_q131",
+    "module": "devnet_m2",
+    "question": "A user is testing an application by sending requests to gather information from a network device through a REST API. The user reviews the API responses and notices an HTTP header string of \"Cache-Control: max-age=3600, public\". Which two statements describe the HTTP directive? (Choose two.)",
+    "code": null,
+    "options": [
+      "The response can be saved in cache and the cached content is open to public access.",
+      "The client web browser can save the response in the cache and it will expire in an hour.",
+      "Only responses to requests with the HTTP protocol can be cached.",
+      "The response may be stored by any cache, even if the response is normally noncacheable.",
+      "The response can be saved in cache and the information must be refreshed after 60 minutes"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: The client web browser can save the response in the cache and it will expire in an hour.. Oficiální vysvětlení Cisco: Explanation: The HTTP header string is a cache control directive that indicates that (1) the response content can be saved by any cache and (2) the cached content will expire in 3600 seconds unless it gets refreshed before it expires."
+  },
+  {
+    "id": "devnet_q132",
+    "module": "devnet_m1",
+    "question": "What is Bash?",
+    "code": null,
+    "options": [
+      "a web application framework written in Python",
+      "a code injection technique used to attack data-driven applications",
+      "a Linux script engine that allows commands to be entered on the command line",
+      "a philosophy for software deployment that figures prominently in the field of DevOps"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: a Linux script engine that allows commands to be entered on the command line. Oficiální vysvětlení Cisco: Explanation: Bash is the name of the default script engine that lets you do things from the command line. It is the default shell for most Linux distributions."
+  },
+  {
+    "id": "devnet_q133",
+    "module": "devnet_m2",
+    "question": "Match the principles in the uniform interface constraint of the REST to the description. (Not all options are used.)\n\n\n\n\nmanipulation of resources through representations: The client receives a representation of the resource from the server that must contain enough data for the client to handle the resource.\nhypermedia as the engine of application state: The server must include additional actions and resources available for the client to access supplemental information about the resource.\nindependence of client and server: (Not use)\nnotification of cache capability: (Not use)\nself-descriptive messages: Each message must contain all the information for the recipient to process.\nidentification of resources: A resource must be identified in the request as the individual object.\n\n65. What is a philosophy associated with the test-driven development process?",
+    "code": null,
+    "options": [
+      "Application code is developed at a slower pace to allow for repetitive testing.",
+      "Application code should be written before validating system design and tested for functionality as needed.",
+      "More than enough code is written to support the application.",
+      "Failures are expected to occur in order to limit the application code to only what is needed to pass the test."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Failures are expected to occur in order to limit the application code to only what is needed to pass the test.. Oficiální vysvětlení Cisco: Explanation: With the Test-Driven Development process, testing code is written before application code. The application code is then created with the single purpose of being able to barely pass the testing code."
+  },
+  {
+    "id": "devnet_q134",
+    "module": "devnet_m1",
+    "question": "What process would need to be taken to extract information from XML and convert it into a form that Python could access conveniently?",
+    "code": null,
+    "options": [
+      "decoding",
+      "parsing",
+      "encoding",
+      "serializing"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: parsing. Oficiální vysvětlení Cisco: Explanation: Parsing is the process of analyzing a message, separating it into component parts, and understanding the purpose of it in context."
+  },
+  {
+    "id": "devnet_q135",
+    "module": "devnet_m1",
+    "question": "What is the outcome of performing a Git merge between two branches?",
+    "code": null,
+    "options": [
+      "The changes/commits located within both the source branch and target branch are modified to cause the branches to converge.",
+      "The changes/commits of files within the target branch are analyzed against the changes/commits located within the source branch using a generic comparison tool.",
+      "The changes/commits located within the target branch are modified to mirror the changes/commits stored within the source branch.",
+      "The changes/commits located within the source branch are modified to mirror the changes/commits stored within the target branch."
+    ],
+    "correct": 1,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'The changes/commits of files within the target branch are analyzed against the changes/commits located within the source branch using a generic comparison tool.'."
+  },
+  {
+    "id": "devnet_q136",
+    "module": "devnet_m6",
+    "question": "In which situation would a router be used?",
+    "code": null,
+    "options": [
+      "when performing a formal code review",
+      "when testing an app on a cloud-based server",
+      "when developing an app on a private server located on the same network as the development team",
+      "when authenticating to a REST API service on the local host"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: when testing an app on a cloud-based server. Oficiální vysvětlení Cisco: Explanation: Cloud-based devices are on a remote network and a router is needed to send traffic from the developer (or the source network) toward a destination network (the network on which the server resides)."
+  },
+  {
+    "id": "devnet_q137",
+    "module": "devnet_m1",
+    "question": "A network app developer has configured an app to use a particular DNS server in order to test the application against a test database. The developer suspects a DNS issue. Which command could be used to verify a particular domain name?",
+    "code": null,
+    "options": [
+      "sudo puppet agent -t",
+      "nslookup",
+      "ifconfig",
+      "ssh -p 53"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: nslookup. Oficiální vysvětlení Cisco: Explanation: The nslookup command is used to obtain an IP address for a specific domain name by querying a DNS server. The desired domain name follows the command and optionally the IP address of a particular DNS server."
+  },
+  {
+    "id": "devnet_q138",
+    "module": "devnet_m2",
+    "question": "A user makes some REST API calls to a server and the responses from the server include third-party executable code. The user notices that the responses do not work. Which network device may prevent the third-party code from execution?",
+    "code": null,
+    "options": [
+      "proxy server",
+      "reverse proxy server",
+      "Layer 3 switch",
+      "firewall"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: firewall. Oficiální vysvětlení Cisco: Explanation: Firewalls and other policy-management tools may make third-party code execution (such as JavaScript or links to such code) impossible to use."
+  },
+  {
+    "id": "devnet_q139",
+    "module": "devnet_m6",
+    "question": "What are two reasons a VLAN would be used on a Layer 2 switch? (Choose two.)",
+    "code": null,
+    "options": [
+      "to create separate broadcast domains on a switch",
+      "to filter network traffic based on protocol port numbers",
+      "to allow a router to broadcast traffic between two networks",
+      "to allow multiple networks to be created at Layer 2",
+      "to allow traffic to be sent between two networks"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: to create separate broadcast domains on a switch. Oficiální vysvětlení Cisco: Explanation: A virtual local-area network (VLAN) is a separate Layer 2 network that has its own broadcast domain. A Layer 3 device such as a router or multilayer switch is required to communicate between VLANs."
+  },
+  {
+    "id": "devnet_q140",
+    "module": "devnet_m2",
+    "question": "A user is testing an application by sending requests to gather information from a network device through a REST API. The user expects a very large amount of data to be returned. The user requests that the network device sends the data back with the compression algorithm of gzip. What response header string would indicate that the return data is compressed as requested?",
+    "code": null,
+    "options": [
+      "Accept-Encoding: compress",
+      "Accept-Encoding: gzip",
+      "Content-Encoding: compress; gzip",
+      "Content-Encoding: gzip"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: Content-Encoding: gzip. Oficiální vysvětlení Cisco: Explanation: If a large amount of return data is expected, the client can request that the return data be compressed with a specific compression algorithm. To request a data compression, the request must add the Accept-Encoding field to the API request header. For example, a header string of \"Accept-Encoding: gzip\" tells the server to compress the return data using the gzip algorithm. If the server fulfills the compression, it will send the response back with the compressed data and add the Content-Encoding field to the response header. The value of the Content-Encoding is the type of compression that was used."
+  },
+  {
+    "id": "devnet_q141",
+    "module": "devnet_m4",
+    "question": "Match the protocol to the description. (Not all options are used.)\n\n\n\n\nresolves a host name to an IP address --> DNS\nfacilitates network and device monitoring --> SNMP\nextends the lifetime of IPv4 addresses --> NAT\nprovides IP address configuration information --> DHCP\nprovides accurate clock-related information --> NTP\n\n74. Refer to the exhibit. Match the Python coding components to the location. (Not all options are used.)\n\n\n\nAnswers:\n\n\n\n\nA = Authorization\nB = Content-Type\nC = application/json\nD = max\nE = 100\nF = url\nG = headers=headers\n\n75. Refer to the exhibit. Match the items needed in the Python script. (Not all options are used.)\n\n\n\n\n\nCopyimport requests\r\n\"Item A\"\r\napi_url = \"http://localhost:58000/api/v1/ticket\"\r\nheaders = {\r\n \"content-type\": \"application/json\"\r\n }\r\n\r\nBody = {\r\n\"Item B\"\r\n}\r\n\r\nresp = requests.post(api_url, json.dumps(body), headers=headers, verify=False)\r\n\r\nprint(\"Ticket request status: \",\"Item C\")\r\nresponse1 = \"Item D\"\r\n\r\nserviceTicket = response1[\"response\"][\"Item E\"]\r\nprint(\"The service ticket number is: \", serviceTicket)\nA : import json\n\nB : \"username\":\"cisco\", \"password\":\"cisco123!\"\n\nC : resp.status_code\n\nD : resp.json()\n\nE : serviceTicket\n\n76. A user is developing an application to remotely manage a network device through the API. The features of the API should support the client-server model, JSON or XML data format, and stateless operation. What is an API architecture style that the developer could use?",
+    "code": null,
+    "options": [
+      "webhook",
+      "RPC",
+      "SOAP",
+      "REST"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: REST. Oficiální vysvětlení Cisco: Explanation: RPC, SOAP, and REST are the three most popular types of API architectural styles. They all support the client-server model. RPC and REST can use XML or JSON. SOAP uses XML. REST requires that the communication between the client and the server remains stateless."
+  },
+  {
+    "id": "devnet_q142",
+    "module": "devnet_m1",
+    "question": "Which two statements describe the characteristics of the model-driven programmability implemented on Cisco IOS XE? (Choose two.)",
+    "code": null,
+    "options": [
+      "The configuration command ip http secure-server is required to enable RESTCONF over port 443.",
+      "Both NETCONF and RESTCONF support running and candidate data stores.",
+      "RESTCONF is enabled by the configuration command restconf enable .",
+      "NETCONF connections should be authenticated using AAA credentials.",
+      "NETCONF connections require that a VPN link be established first."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: The configuration command ip http secure-server is required to enable RESTCONF over port 443.. Oficiální vysvětlení Cisco: Explanation: Cisco IOS XE is the next-generation programmable platform. Both NETCONF and RESTCONF are supported. Their connections should be authenticated using AAA credentials. RESTCONF runs over HTTPS which is enabled by the command ip http secure-server . The CLI command to enable RESTCONF is simply restconf . NETCONF uses SSH as a transport. NETCONF supports both running and candidate data stores, whereas RESTCONF supports only a running datastore."
+  },
+  {
+    "id": "devnet_q143",
+    "module": "devnet_m5",
+    "question": "A student is learning network automation using the DevNet site. Which DevNet resource allows users to search and share their programming skills and experiences?",
+    "code": null,
+    "options": [
+      "Code Exchange",
+      "Sandbox",
+      "Learning Labs",
+      "Automation Exchange"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Code Exchange. Oficiální vysvětlení Cisco: Explanation: DevNet provides ways for community members to share with each other. These are called Exchanges. In the Code Exchange site, users can submit a repository that they have found useful for any technology area. Users can search for any keyword in the repository and get a list of results."
+  },
+  {
+    "id": "devnet_q144",
+    "module": "devnet_m3",
+    "question": "A network administrator is evaluating Cisco UCS Manager products to deploy centralized management for the data center. The data center has about 500 physical servers. Which product should the administrator choose?",
+    "code": null,
+    "options": [
+      "UCS Central (UCSC)",
+      "Unified Communications Manager (CUCM)",
+      "UCS Manager (UCSM)",
+      "Integrated Management Controller (CIMC)"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: UCS Central (UCSC). Oficiální vysvětlení Cisco: Explanation: The Cisco UCS Manager products provide scalability by integrating many components of a data center. The different management products directly relate to the number of servers being managed:\n\n\nCisco Integrated Management Controller (CIMC) can manage a single physical server.\nCisco UCS Manager (UCSM) can manage up to 160 physical servers.\nCisco UCS Central (UCSC) can manage up to 10,000 physical servers."
+  },
+  {
+    "id": "devnet_q145",
+    "module": "devnet_m2",
+    "question": "Which REST API supported by Cisco Unified Communications Manager is designed to enable end users to update and configure personal settings.?",
+    "code": null,
+    "options": [
+      "UDS API",
+      "UC Manager Serviceability API",
+      "Telephony API",
+      "AXL API"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: UDS API. Oficiální vysvětlení Cisco: Explanation: User Data Services (UDS) is a REST-based API that provides a mechanism for inserting, retrieving, updating, and removing data from the Unified Communication configuration database. The UDS API is designed to enable end users to update and configure personal settings."
+  },
+  {
+    "id": "devnet_q146",
+    "module": "devnet_m1",
+    "question": "What are two benefits of using a distributed version control system compared to other version control systems? (Choose two.)",
+    "code": null,
+    "options": [
+      "Every user has the ability to work on any file at any time.",
+      "An offline user is not required to make a copy of an important file before editing it further.",
+      "A simple database is used to store the delta between the versions of a single file.",
+      "A corrupt repository can be restored from any client system.",
+      "A single user can lock a file to prevent other users from modifying it until the single user is done editing it."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Every user has the ability to work on any file at any time.. Oficiální vysvětlení Cisco: Explanation: The distributed version control system is a peer-to-peer model that clones the full repository to client systems and allows every individual to work on any file, even at the same time."
+  },
+  {
+    "id": "devnet_q147",
+    "module": "devnet_m5",
+    "question": "Match the Meraki APIs for integration to the description. (Not all options are used.)\n\nDevNet Associate (Version 1.0) - DevNet Associate (200-901) Certification Practice Exam\n\n\nPlace the options in the following order:\n\n\n\n\nDashboard API\na RESTful service for device provisioning, management, and monitoring\n\n\nLocation Streaming API\nan HTTP POST method providing Wi-Fi and Bluetooth client location information\n\n\nWebhook API\na real-time notification system for network alerts, covering events and network health\n\n\nExternal Captive Portal (EXCAP) API\nan API that enables an organization to build out custom engagement models at Wi-Fi access points\n\n\nMV Sense API\na combination of REST APIs and realtime MQTT stream supporting oversight of a physical space\n\n\n\nExplanation: The Meraki enterprise cloud-managed networking infrastructure service has five different APIs for integration:\n\n\nDashboard API: This a RESTful service for device provisioning, management, and monitoring.\nWebhook API: This is a real-time notification system for network alerts, covering events and network health.\nLocation Streaming API: This is an HTTP POST method providing Wi-Fi and Bluetooth client location information (GPS, X/Y coordinates) based on Meraki Access Point (AP) map placement and client signal strength.\nExternal Captive Portal (EXCAP) API: This enables an organization to build out custom engagement models at Wi-Fi access points.\nMV Sense API: This is a combination of REST APIs and real-time MQTT stream supporting oversight of a physical space.\n\n\n\n84. What two components form the Python-based network device test and validation solution of pyATS?",
+    "code": null,
+    "options": [
+      "Python and VIRL",
+      "Python and Genie",
+      "Python and Puppet",
+      "Python and Ansible"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Python and Genie. Oficiální vysvětlení Cisco: Explanation: PyATS uses Python for low-level code, but relies on Genie, a higher-level library system, in order to interact with network devices and perform testing."
+  },
+  {
+    "id": "devnet_q148",
+    "module": "devnet_m2",
+    "question": "Match the Cisco NSO component to the description.\n\n\n\n\nService Manager: maintains device dependencies and provideds a service self start for triggering diagnostic tests\nDevice Manager: deploys configuration changes to multiple devices through the use of distributed transactions\nConfiguration Database: provides an internal API for locating network element configurations and automatic support for upgrade and downgrade of configuration data\n\n86. What are two symptoms that DNS is an issue when developing and testing network scripts? (Choose two.)",
+    "code": null,
+    "options": [
+      "no connection between the app and a remote server",
+      "host IP address showing 169.x.x.x",
+      "403 error code",
+      "authentication failure",
+      "1XX status code"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: no connection between the app and a remote server. Oficiální vysvětlení Cisco: Explanation: Name resolution issues often manifest as lost network connectivity and authentication failures between a network app and a remote server. Common problems include defining the correct DNS server, a missing or incorrect DNS entry, an incorrect hostname, or a configuration issue on the DNS server being used."
+  },
+  {
+    "id": "devnet_q149",
+    "module": "devnet_m6",
+    "question": "Refer to the exhibit. A company uses three servers to support a new network app. The network administrator is looking to include a load balancer as part of the network design to improve the performance of the application response. Where should the load balancer be installed?\n\n\n\n\nattached to the same switch as the servers\nbetween the host and the cloud\nbetween the servers and storage\nwithin the cloud\n\nExplanation: Because server load balancing distributes server requests across multiple servers, the load balancer should be attached to the same switch that the servers are on.\n\n88. What are two functions of MAC addresses in a LAN? (Choose two.)",
+    "code": null,
+    "options": [
+      "to indicate the best path between separate networks",
+      "to determine which host has priority to transfer data",
+      "to associate with a specific network IP address",
+      "to uniquely identify a node on a network",
+      "to allow the transfer of frames from source to destination"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: to uniquely identify a node on a network. Oficiální vysvětlení Cisco: Explanation: All Ethernet network devices have a unique Media Access Control (MAC) address that is burned into the network interface card (NIC). The MAC address is used to direct data from a particular device to a specific network destination."
+  },
+  {
+    "id": "devnet_q150",
+    "module": "devnet_m2",
+    "question": "What is a benefit to an organization of implementing edge computing?",
+    "code": null,
+    "options": [
+      "minimizes high levels of data transfer across the network",
+      "provides low latency and increased bandwidth for remote IoT devices",
+      "consolidates compute resources into a single cloud",
+      "allows all compute resources to be centralized in the data center"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: minimizes high levels of data transfer across the network. Oficiální vysvětlení Cisco: Explanation: The term edge computing refers to the practice of placing computing resources as close to the actual sources of data as possible. Deploying computer resources at the edge, can help to avoid high levels of data transfer across the network for performance or security purposes."
+  },
+  {
+    "id": "devnet_q151",
+    "module": "devnet_m4",
+    "question": "Refer to the exhibit. A student is learning network automation by using an API. The student constructs a Python file to communicate with a Webex Teams server. Which two statements describe characteristics of the script? (Choose two.)\n\n\n\n\nIt is used to obtain an access token from the server.\nIt loads two modules from a Cisco SDK.\nIt is used to retrieve the email addresses associated with the student.\nThe term people in the script is a class object.\nThe access token is set with a WEBEX_TEAMS_ACCESS_TOKEN environment variable.\n\nExplanation: The script uses two classes, WebexTeamsAPI and ApiError, from the Cisco Webex Teams Python SDK webexteamssdk. It calls the people class from the WebexTeamsAPI to get the email information associated with the person identified by the access token. For executing the script, the access token can be set either with a WEBEX_TEAMS_ACCESS_TOKEN environment variable, or pass it as an argument into the function call, which is the case in this script.\n\n91. Which situation illustrates the use of a webhook application",
+    "code": null,
+    "options": [
+      "A user sends a REST API call to a webhook server to poll a predefined data set.",
+      "Triggered by the operation of a user, a mobile application sends a REST API request to get information from a webhook server.",
+      "A network automation application queries a router to get CPU and memory usage over a period of time.",
+      "A developer subscribes to a webhook server for an application so that the application will receive a notification when an event occurs."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: A developer subscribes to a webhook server for an application so that the application will receive a notification when an event occurs.. Oficiální vysvětlení Cisco: Explanation: A webhook is an HTTP callback, or an HTTP POST, to a specified URL that notifies a registered application when an activity or event has occurred in one of the resources on the platform. Webhooks enable applications to get real-time data. With webhooks, applications are more efficient because they no longer need to have a polling mechanism."
+  },
+  {
+    "id": "devnet_q152",
+    "module": "devnet_m4",
+    "question": "Refer to the exhibit. A user is working on Ansible on the local NMS to manage remote network devices. Which file is the user creating?\n\n\n\n\nservice\nplaybook\nvariable\nhosts\n\nExplanation: Ansible uses an inventory file called hosts that contains device information used by Ansible playbooks. The hosts file begins with an alias for the remote. After the alias, the hosts file specifies three variables that will be used by the Ansible playbook to access the device. These are the SSH credentials Ansible needs to securely access the remote host.\n\n93. Refer to the exhibit. A student is learning Python in the interpret mode. The student enters Python statements and after a while, an error message returns. What is a possible cause for the error?\n\n\n\n\nThe student did not provide the authentication credentials.\nThe host domain name cannot be resolved.\nThe parameter of \"verify = False\" should be replaced with \"verify = True\".\nThe resource on the host is not available.\n\nExplanation: The error message indicates that the connection to the host cannot be established. The causes could be an internet connection issue, or the domain name of the host cannot be resolved by DNS servers because it is wrong.\n\n94. The development team in the IT department has decided to implement CI/CD. What are three characteristics of this strategy? (Choose three.)",
+    "code": null,
+    "options": [
+      "Strategies are used to limit the impact of a possible bad build to users.",
+      "CI/CD places a higher priority on satisfying the customer needs than does the development plan.",
+      "The integration and development process goes in one direction and can never go backwards.",
+      "It is modeled after the software development life cycle and is a more traditional implementation method.",
+      "The development process attempts to eliminate the problem of application merge conflicts.",
+      "Automation is part of the creation, verification, and deployment of software."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Strategies are used to limit the impact of a possible bad build to users.. Oficiální vysvětlení Cisco: Explanation: Continuous Integration/Continuous Deployment (CI/CD) is a philosophy for software development that includes automation as part of the process. Continuous integration attempts to eliminate the problem of conflicts that occur when new or updated code is applied to the main application. Even though there is a potential of a bad build being deployed to the users, companies can limit that impact by using a deployment strategy such as a rolling upgrade, canary pipeline, or blue-green deployment."
+  },
+  {
+    "id": "devnet_q153",
+    "module": "devnet_m5",
+    "question": "What are two benefits of model-driven programmability in infrastructure automation? (Choose two.)",
+    "code": null,
+    "options": [
+      "uses human-readable configuration language",
+      "leverages open-source technology",
+      "leverages code that is coupled with transport, protocol, and encoding",
+      "relies on the use of device-specific scripts",
+      "uses device-specific CLIs"
+    ],
+    "correct": 0,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: 'uses human-readable configuration language'."
+  },
+  {
+    "id": "devnet_q154",
+    "module": "devnet_m5",
+    "question": "How does Cisco VIRL benefit the testing and development of code and automation?",
+    "code": null,
+    "options": [
+      "Cisco VIRL can duplicate the performance of SDN software components in optimal production conditions.",
+      "Cisco VIRL can duplicate the same code that runs inside actual Cisco products.",
+      "Cisco VIRL can duplicate the performance of elite hardware components in optimal production conditions.",
+      "Cisco VIRL can duplicate network simulations using a .virl file, which is a JSON file."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Cisco VIRL can duplicate the same code that runs inside actual Cisco products.. Oficiální vysvětlení Cisco: Explanation: Cisco VIRL is used to build network simulations and it can duplicate the same code that runs inside actual Cisco products. The native configuration format is called a.virl file, which is a human-readable YAML file."
+  },
+  {
+    "id": "devnet_q155",
+    "module": "devnet_m2",
+    "question": "Refer to the exhibit. Which portion of the RESTful request specifies the API that is being requested.",
+    "code": null,
+    "options": [
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "correct": 2,
+    "explanation": "Podle oficiálních standardů zkoušky Cisco DevNet Associate (DEVASC 200-901) je správnou odpovědí: '2'."
+  },
+  {
+    "id": "devnet_q156",
+    "module": "devnet_m2",
+    "question": "A user sends a request to add a loopback interface on a Cisco router through the REST API. Which response status code will the user expect to receive that indicates the request is fulfilled?",
+    "code": null,
+    "options": [
+      "200",
+      "201",
+      "202",
+      "203"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: 201. Oficiální vysvětlení Cisco: Explanation: With REST APIs, the response code 201 is with the status message of \"Created\". It indicates that the request was fulfilled, and the requested resource was created."
+  },
+  {
+    "id": "devnet_q157",
+    "module": "devnet_m1",
+    "question": "Which two components of XML code are contained within the XML prologue? (Choose two.)",
+    "code": null,
+    "options": [
+      "the character encoding",
+      "the XML namespaces",
+      "the tag name xml",
+      "the URNs",
+      "the instance objects"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: the character encoding. Oficiální vysvětlení Cisco: Explanation: The XML prologue is placed as the first line in an XML file and contains the tag name xml and attributes that provide the version and the character encoding."
+  }
+]

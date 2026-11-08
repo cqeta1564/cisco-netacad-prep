@@ -1,0 +1,212 @@
+[
+  {
+    "id": "js_q01",
+    "module": "js_m1",
+    "question": "Entering about:blank in the address bar of your browser will:",
+    "code": null,
+    "options": [
+      "open a tab with information about your browser.",
+      "clear all inputs on the current page.",
+      "generate a page with information about the browser’s status.",
+      "generate and load a minimal blank HTML page into the current tab."
+    ],
+    "correct": 3,
+    "explanation": "Entering “about:blank” in the address bar of your browser will load a blank page. The “about:blank” URL is a special URL that represents an empty or blank page. When you navigate to “about:blank”, the browser will display a blank page with no content."
+  },
+  {
+    "id": "js_q02",
+    "module": "js_m2",
+    "question": "Analyze the following code:\n\nWhat will appear to the console as a result?",
+    "code": "let id = \"100\";\n{\n  let id = 200;\n  id = id + 1;\n  console.log(id);\n}",
+    "options": [
+      "1001",
+      "101",
+      "201",
+      "200"
+    ],
+    "correct": 2,
+    "explanation": "Let’s analyze the code step by step:\n\n• The variable id is declared and initialized with the string value “100” using the let keyword in the global scope.\n\n• A block of code is defined using curly braces {}. This block creates a new block scope.\n\n• Inside the block, a new variable id is declared and initialized with the value 200 using the let keyword. This creates a new block-scoped variable id that shadows the outer variable id.\n\n• The value of the block-scoped id is updated by adding 1 to it using the id = id + 1 statement.\n\n• The resulting value of id, which is 201, is printed to the console using console.log(id).\n\nSince the console.log(id) statement is inside the block, it refers to the block-scoped variable id, which has a value of 201 after adding 1 to 200. Therefore, when the code is executed, 201 will appear in the console."
+  },
+  {
+    "id": "js_q03",
+    "module": "js_m2",
+    "question": "Select a set of data types, containing only complex types:",
+    "code": null,
+    "options": [
+      "Object, String",
+      "Boolean, Number, Bigint",
+      "Array, Object",
+      "Array, Object, String"
+    ],
+    "correct": 2,
+    "explanation": "In JavaScript, complex data types, also known as reference types, include objects, arrays, and functions. Here is a set of complex data types:\n\n• Object: An object is an unordered collection of key-value pairs, where each value can be of any data type, including other complex types. Objects are created using curly braces {} and can be used to represent more complex data structures.\n\n• Array: An array is an ordered list of values. It can hold elements of any data type, including other complex types. Arrays are created using square brackets [] and provide methods for manipulating and accessing their elements.\n\n• Function: A function is a reusable block of code that can be executed when called. Functions are created using the function keyword or by using arrow function syntax (=>). They can take parameters, perform actions, and return values."
+  },
+  {
+    "id": "js_q04",
+    "module": "js_m2",
+    "question": "We can replace the declaration let x = 3e-3; with:",
+    "code": null,
+    "options": [
+      "let x = 3000;",
+      "let x = 0.003;",
+      "let x = 0.0003;",
+      "let x = 0.333;"
+    ],
+    "correct": 1,
+    "explanation": "The correct replacement for the declaration let x = 3e-3; would be: let x = 0.003;"
+  },
+  {
+    "id": "js_q05",
+    "module": "js_m2",
+    "question": "Using the string interpolation technique, we can create the string:",
+    "code": "\"I do not like travelling by plane\"",
+    "options": [
+      "let means = \"plane\";\nlet msg = 'I do not like travelling by \\{ means \\}';",
+      "let means = \"plane\";\nlet msg = \"I do not like travelling by ${ means }\";",
+      "let means = \"plane\";\nlet msg = `I do not like travelling by ${means}`;",
+      "let means = \"plane\";\nlet msg = `I do not like travelling by {means}`;"
+    ],
+    "correct": 2,
+    "explanation": "To create the string “I do not like travelling by plane” using string interpolation and store it in the msg variable, the correct command would be:\n\nlet means = “plane”;\n\nlet msg = `I do not like travelling by ${means}`;\n\nString interpolation in JavaScript is achieved by using backticks (“`) as the string delimiter. Within the backticks, you can include expressions or variables by wrapping them in ${}. The expression or variable within ${} will be evaluated and its value will be inserted into the resulting string.\n\nIn this case, the variable means is assigned the value “plane”. The string interpolation syntax ${means} is used within backticks to insert the value of means into the string. Thus, the resulting value of msg will be “I do not like travelling by plane”."
+  },
+  {
+    "id": "js_q06",
+    "module": "js_m4",
+    "question": "We declare a movie object, with two fields: title and year:\n\nTo change the value of the title field to \"Matrix\" we need to perform:",
+    "code": "let movie = {\n  title: \"Life\",\n  year: 1999\n};",
+    "options": [
+      "movie[title] = \"Matrix\";",
+      "movie.title = \"Matrix\";",
+      "movie{title} = \"Matrix\";",
+      "title->movie = \"Matrix\";"
+    ],
+    "correct": 1,
+    "explanation": "In JavaScript, you can access and modify object properties using dot notation (object.property). In this case, movie.title accesses the title property of the movie object, and the assignment = is used to change its value to “Matrix”. After executing the command, the title field in the movie object will be updated to “Matrix”.\n\nmovie.title = “Matrix”;"
+  },
+  {
+    "id": "js_q07",
+    "module": "js_m4",
+    "question": "You declare the following array of animals: let animals = [\"canary\", \"dog\", \"cat\"];. Then, you call the method animals.push(\"hamster\");. What will the animals array look like after calling the method?",
+    "code": null,
+    "options": [
+      "[\"canary\", \"dog\", \"cat\", \"hamster\"]",
+      "[\"hamster\"]",
+      "[\"hamster\", \"canary\", \"dog\", \"cat\"]",
+      "[\"canary\", \"dog\", \"cat\"]"
+    ],
+    "correct": 0,
+    "explanation": "After calling the animals.push(“hamster”); method, the animals array will look like this:\n\n[“canary”, “dog”, “cat”, “hamster”]\n\nThe push() method in JavaScript is used to add one or more elements to the end of an array. In this case, the method animals.push(“hamster”) adds the string value “hamster” to the end of the animals array. As a result, the array is modified, and “hamster” becomes the last element in the array."
+  },
+  {
+    "id": "js_q08",
+    "module": "js_m1",
+    "question": "A JavaScript code includes the console.log(\"http://somethingNew.org\"); command. Its execution will:",
+    "code": null,
+    "options": [
+      "display on the console information about the progress of the http://somethingNew.org page loading.",
+      "cause the page http://somethingNew.org to be loaded into the browser.",
+      "send a log with information about the currently executed script to the indicated address http://somethingNew.org.",
+      "display the following message on the console: \"http://somethingNew.org\"."
+    ],
+    "correct": 3,
+    "explanation": "When the JavaScript code console.log(“http://somethingNew.org”); is executed, it will print the string “http://somethingNew.org” to the console.\n\nThe console.log() function in JavaScript is used to output messages to the console. In this case, the code includes console.log(“http://somethingNew.org”), which specifies the string “http://somethingNew.org” as the argument to be logged.\n\nWhen the code is executed, the specified string will be displayed in the console. It does not perform any other action apart from printing the message to the console output."
+  },
+  {
+    "id": "js_q09",
+    "module": "js_m4",
+    "question": "Analyze the code snippet:\n\nWhat value will the index variable have?",
+    "code": "let winter = [\"December\", \"January\", \"February\"];\nlet index = winter.indexOf(\"February\");",
+    "options": [
+      "\"February\"",
+      "2",
+      "3",
+      "1"
+    ],
+    "correct": 1,
+    "explanation": "The code snippet let winter = [“December”, “January”, “February”]; let index = winter.indexOf(“February”); will assign the value 2 to the index variable.\n\nHere’s a breakdown of the code:\n\n• An array winter is declared and initialized with three elements: “December”, “January”, and “February”.\n\n• The indexOf() method is called on the winter array with the argument “February”. This method searches the array for the specified element and returns the index of the first occurrence of that element. If the element is not found, it returns -1.\n\n• Since “February” is present in the winter array, the indexOf() method will find it and return the index 2, indicating that “February” is located at the third position in the array.\n\n• The value 2 is assigned to the index variable using the let index = statement.\n\nTherefore, after executing the code, the index variable will have the value 2."
+  },
+  {
+    "id": "js_q10",
+    "module": "js_m4",
+    "question": "In the daysOfWeek variable, you place an array with the names of the days of the week. Which method will you call to reverse the order of the array elements.",
+    "code": null,
+    "options": [
+      "daysOfWeek.invert();",
+      "daysOfWeek = reverse(daysOfWeek);",
+      "daysOfWeek.reverse();",
+      "daysOfWeek.order(-1);"
+    ],
+    "correct": 2,
+    "explanation": "To reverse the order of the elements in the daysOfWeek array, you can call the reverse() method."
+  },
+  {
+    "id": "js_q11",
+    "module": "js_m3",
+    "question": "Review the following code:\n\nWhat will appear on the console as a result?",
+    "code": "let msg1 = 'hello';\nlet msg2 = msg1.slice(-1);\nconsole.log(msg2 ? msg2 : msg2 + msg1);",
+    "options": [
+      "o",
+      "ohello",
+      "hello",
+      "h"
+    ],
+    "correct": 0,
+    "explanation": "The code snippet will display the letter “o” on the console as a result.\n\nLet’s break down the code:\n\n• The variable msg1 is declared and assigned the string value ‘hello’.\n\n• The variable msg2 is assigned the result of msg1.slice(-1). The slice() method is used to extract a portion of a string. In this case, -1 as the parameter means to extract the last character of msg1, which is ‘o’.\n\n• The console.log() statement is called, which outputs a value to the console.\n\n• The expression msg2 ? msg2 : msg2 + msg1 is evaluated and passed as the argument to console.log().\n\n• In this expression, msg2 is truthy since it contains the letter ‘o’. Therefore, the result of the expression will be the value of msg2, which is ‘o’.\n\n• As a result, the letter ‘o’ will be displayed on the console.\n\n \n\nSo, when the code is executed, the console will display the letter ‘o’."
+  },
+  {
+    "id": "js_q12",
+    "module": "js_m3",
+    "question": "Analyze the following code:\n\nWhat value will the test variable have if, after running the code, we immediately press the OK button on the newly created dialog?",
+    "code": "let test = prompt(\"Run\", \"code\");",
+    "options": [
+      "true",
+      "OK",
+      "code",
+      "Run"
+    ],
+    "correct": 2,
+    "explanation": "The value of the test variable will depend on the user’s input when the prompt dialog appears. If the user clicks the OK button, the test variable will be assigned the string (“code”). Since it is defined in the code. Therefore, the test variable will have the value “code”."
+  },
+  {
+    "id": "js_q13",
+    "module": "js_m3",
+    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of its execution?",
+    "code": "let x = false || true;\nlet y = \"true\" && \"false\";\nlet z = false && true;\nconsole.log(`${x} ${y} ${z}`);",
+    "options": [
+      "false true true",
+      "false false false",
+      "false false true",
+      "true false false"
+    ],
+    "correct": 3,
+    "explanation": "Let’s break down the code:\n\n• The variable x is assigned the value of the logical OR operation between false and true. In a logical OR operation, if any of the operands is true, the result will be true. In this case, since the second operand (true) is true, the result of false || true is true, which is assigned to x.\n\n• The variable y is assigned the value of the logical AND operation between the string “true” and the string “false”. In a logical AND operation, if all operands are true, the result will be the last operand. In this case, since both “true” and “false” are considered truthy values, the result of “true” && “false” is “false”, which is assigned to y.\n\n• The variable z is assigned the value of the logical AND operation between false and true. In a logical AND operation, if any of the operands is false, the result will be false. In this case, since the first operand (false) is false, the result of false && true is false, which is assigned to z.\n\n• The console.log() statement is called to output a value to the console.\n\n• The expression ${x} ${y} ${z} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of x, y, and z into a single string with spaces in between.\n\n• As a result, the console will display true false false."
+  },
+  {
+    "id": "js_q14",
+    "module": "js_m3",
+    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of its execution?",
+    "code": "let a = true && 20;\nlet b = 0 || 20;\nlet c = 0 && 20;\nconsole.log(`${a} ${b} ${c}`);",
+    "options": [
+      "true 20 0",
+      "1 1 0",
+      "true true false",
+      "20 20 0"
+    ],
+    "correct": 3,
+    "explanation": "Let’s break down the code:\n\n• The variable a is assigned the value of the logical AND operation between true and 20. In a logical AND operation, if all operands are true, the result will be the last operand. In this case, both true and 20 are considered truthy values, so the result of true && 20 is 20, which is assigned to a.\n\n• The variable b is assigned the value of the logical OR operation between 0 and 20. In a logical OR operation, if any of the operands is true, the result will be the first truthy operand encountered. In this case, 0 is considered a falsy value, so the result of 0 || 20 is 20, which is assigned to b.\n\n• The variable c is assigned the value of the logical AND operation between 0 and 20. In a logical AND operation, if any of the operands is false, the result will be false. In this case, 0 is considered a falsy value, so the result of 0 && 20 is 0, which is assigned to c.\n\n• The console.log() statement is called to output a value to the console.\n\n• The expression ${a} ${b} ${c} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of a, b, and c into a single string with spaces in between.\n\n• As a result, the console will display 20 20 0."
+  },
+  {
+    "id": "js_q15",
+    "module": "js_m3",
+    "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
+    "code": "let a = 20 + \"10\";\nlet b = 20 + +\"10\";\nlet c = 20 + -\"10\" + \"10\";\nlet d = \"10\" - \"10\" + \"100\";\nlet e = \"A\" - \"B\" + 0xA;\nconsole.log(`${a}, ${b}, ${c}, ${d}, ${e}`);",
+    "options": [
+      "30, 30, 20, 100, 2",
+      "30, 31, 39, 100, NaN",
+      "2010, 2010, 20-1010, 0100, NaN",
+      "2010, 30, 1010, 0100, NaN"
+    ],
+    "correct": 3,
+    "explanation": "Let’s break down the code:\n\n• The variable a is assigned the result of the concatenation between the string “20” and the string “10”. When the + operator is used with a string, it performs string concatenation. So, “20” + “10” results in the string “2010”, which is assigned to a.\n\n• The variable b is assigned the result of the addition between the number 20 and the numeric conversion of the string “10”. The unary + operator before “10” converts it into a number, resulting in 20 + 10, which is 30, assigned to b.\n\n• The variable c is assigned the result of the addition between the number 20 and the negated numeric conversion of the string “10”, followed by the concatenation with the string “10”. The unary – operator before “10” converts it into a number and negates it, resulting in -10. Then, 20 + (-10) is 10, which is concatenated with the string “10”, resulting in “1010”, assigned\n\nto c.\n\n• The variable d is assigned the result of the subtraction between the numeric conversions of the strings “10” and “10”, followed by the concatenation with the string “100”. Both “10” and “10” are converted into numbers, resulting in 10 – 10, which is 0. Then, “0” + “100” is “0100”, assigned to d.\n\n• The variable e is assigned the result of the subtraction between the numeric conversions of the strings “A” and “B”, followed by the addition of 0xA (which is 10 in hexadecimal). Both “A” and “B” cannot be converted into valid numbers, so the result is NaN. Then, NaN + 10 is still NaN, assigned to e.\n\n• The console.log() statement is called to output the values to the console.\n\n• The expression ${a}, ${b}, ${c}, ${d}, ${e} is evaluated and passed as the argument to console.log(). It uses string interpolation to concatenate the values of a, b, c, d, and e into a single string separated by commas.\n\n• As a result, the console will display “2010, 30, 1010, 0100, NaN”."
+  }
+]

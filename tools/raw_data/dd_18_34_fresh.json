@@ -1,0 +1,230 @@
+[
+  {
+    "id": "dd_q18",
+    "module": "dd_m1",
+    "question": "In the grid computing model, resources are pooled together for efficiency. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je True. V modelu grid computingu (mřížkového počítání) jsou různé hardwarové a softwarové výpočetní zdroje (servery, úložné kapacity, sítě) sdružovány do společného virtuálního fondu (resource pooling), což umožňuje jejich vysoce efektivní sdílení a dynamické vytěžování podle aktuální potřeby podniku. Volba False je nesprávná, protože sdružování prostředků za účelem efektivity je přímo základním principem grid computingu."
+  },
+  {
+    "id": "dd_q19",
+    "module": "dd_m1",
+    "question": "Data modeling is performed for the following reasons: (Choose Two)",
+    "code": null,
+    "options": [
+      "It helps discussions and reviews.",
+      "The ERD becomes a blueprint for designing the actual system.",
+      "We draw an ERD solely to please the users; once completed, the ERD is never referred to again as it serves no purpose in the real world.",
+      "We do not need datamodels; we can just start coding right away."
+    ],
+    "correct": [
+      0,
+      1
+    ],
+    "explanation": "Správné odpovědi jsou 'It helps discussions and reviews.' a 'The ERD becomes a blueprint for designing the actual system.'. Datový model a ER diagram slouží jako srozumitelný komunikační nástroj pro diskuse a revize se zákazníky a analytiky a zároveň funguje jako architektonický plán (blueprint) pro následnou implementaci fyzické databáze a aplikačních systémů. Možnost tvrdící, že ERD slouží pouze pro potěšení uživatelů a už se k němu nikdo nevrací, je nepravdivá, stejně jako tvrzení, že modely nejsou potřeba a lze rovnou začít programovat, což je zásadní metodická chyba."
+  },
+  {
+    "id": "dd_q20",
+    "module": "dd_m1",
+    "question": "Once you have learned how to write programs and build systems, you no longer need any input or involvement from any users as you are perfectly capable of delivering the systems that businesses need and want.",
+    "code": null,
+    "options": [
+      "True. The only requirement for creating a perfect system is a perfect programmer.",
+      "True. Users never know what they want anyway, so building systems is best left to the professionals.",
+      "True. Users delay the delivery of a system by changing their minds and adding new requirements.",
+      "False. Business requirements can and will change. For instance new legal requirements may arise."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je 'False. Business requirements can and will change. For instance new legal requirements may arise.'. Vývoj informačních systémů vyžaduje nepřetržitou spolupráci s byznys uživateli, protože podnikové prostředí a požadavky se neustále vyvíjejí – například kvůli novým zákonům, daňovým předpisům nebo změnám na trhu. Žádný programátor nedokáže úspěšně dodat systém bez hlubokého porozumění byznysu a průběžné validace s uživateli. Všechny možnosti s 'True' reprezentují arogantní a mylné přístupy ignorující reálné potřeby zadavatele."
+  },
+  {
+    "id": "dd_q21",
+    "module": "dd_m2",
+    "question": "If the same relationship is represented twice in an Entity Relationship Model, it is said to be:",
+    "code": null,
+    "options": [
+      "Replicated",
+      "Removable",
+      "Resourceful",
+      "Redundant"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je 'Redundant' (redundantní / nadbytečný). Pokud je stejný vztah mezi entitami zachycen v ER modelu vícekrát, nebo pokud lze vazbu plně a jednoznačně odvodit přes jinou existující cestu vztahů, jedná se o redundantní vztah. Redundance v modelu komplikuje údržbu a hrozí vznikem nekonzistencí dat. Výrazy Replicated, Removable ani Resourceful nejsou oficiálními termíny Oracle Academy pro tento jev."
+  },
+  {
+    "id": "dd_q22",
+    "module": "dd_m5",
+    "question": "An \"Arc Implementation\" can be done just like any other Relationship - you simply add the required Foreign Keys. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď je False. Oblouk (Arc) modeluje exkluzivní vztah (XOR), kdy instance entity může mít vazbu pouze na jednu z několika cílových entit (vylučující se vztahy). Pouhé přidání cizích klíčů nestačí, protože standardní cizí klíče v relační databázi nedokáží samy o sobě vynutit vzájemnou výlučnost (umožnily by vyplnit oba cizí klíče současně nebo naopak nevyplnit žádný). Implementace oblouku proto vyžaduje dodatečné integritní omezení typu CHECK constraint nebo databázový trigger, který zajistí, že je v daném okamžiku platný právě jeden vztah."
+  },
+  {
+    "id": "dd_q23",
+    "module": "dd_m5",
+    "question": "In a physical data model, an entity becomes a __________.",
+    "code": null,
+    "options": [
+      "Constraint",
+      "Column",
+      "Table",
+      "Attribute"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď je 'Table'. Při transformaci konceptuálního/logického modelu do fyzického relačního modelu se entita (Entity) mapuje na tabulku (Table). Atribut se mapuje na sloupec (Column), jedinečný identifikátor (UID) se stává primárním klíčem (Primary Key) a vztah (Relationship) se implementuje pomocí cizího klíče (Foreign Key)."
+  },
+  {
+    "id": "dd_q24",
+    "module": "dd_m3",
+    "question": "The explanation below is an example of which constraint type?\nA column must contain only values consistent with the defined data format of the column.",
+    "code": null,
+    "options": [
+      "Column integrity",
+      "Referential integrity",
+      "User-defined integrity",
+      "Entity integrity"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je 'Column integrity' (integrita sloupce, nazývaná též doménová integrita). Integrita sloupce zajišťuje, že všechny hodnoty uložené v daném sloupci plně odpovídají definovanému datovému typu, formátu a povolenému rozsahu hodnot. 'Entity integrity' zajišťuje unikátnost a ne-nulovost primárního klíče, 'Referential integrity' vynucuje platnost cizích klíčů vůči primárním klíčům a 'User-defined integrity' slouží k vynucení specifických byznys pravidel."
+  },
+  {
+    "id": "dd_q25",
+    "module": "dd_m2",
+    "question": "One Relationship can be mandatory in one direction and optional in the other direction. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je True. V ER modelování má vztah dvě strany a každá z nich má svou vlastní volitelnost (optionality). Vztah může být z jedné strany plně povinný (mandatory – zobrazený plnou čarou) a ze strany druhé volitelný (optional – zobrazený čárkovanou čarou). Například: Každý ZAMĚSTNANEC musí patřit do jednoho ODDĚLENÍ (povinné), ale ODDĚLENÍ může zaměstnávat jednoho či více ZAMĚSTNANCŮ (volitelné, oddělení může vzniknout i bez zaměstnanců)."
+  },
+  {
+    "id": "dd_q26",
+    "module": "dd_m1",
+    "question": "Information which was gained from data is the same as: (Choose Two)",
+    "code": null,
+    "options": [
+      "Intelligence",
+      "Raw Materials",
+      "There is no difference between data and information.",
+      "Knowledge"
+    ],
+    "correct": [
+      0,
+      3
+    ],
+    "explanation": "Správné odpovědi jsou 'Intelligence' a 'Knowledge'. V terminologii Oracle Academy jsou data považována za surový materiál (Raw Materials). Zpracováním a zasazením dat do kontextu vzniká informace, ze které uživatelé a organizace získávají znalosti ('Knowledge') a byznysové porozumění / inteligenci ('Intelligence'). 'Raw Materials' označuje samotná nezpracovaná data, nikoli informaci z nich vytvořenou, a tvrzení, že mezi daty a informacemi není rozdíl, je v informatice zásadně chybné."
+  },
+  {
+    "id": "dd_q27",
+    "module": "dd_m3",
+    "question": "A business rule such as \"We only ship goods after customers have completely paid any outstanding balances on their account\" is best enforced by:",
+    "code": null,
+    "options": [
+      "Making the payment attribute optional.",
+      "We need to trust our customers, and we know they will pay some day.",
+      "Making the payment attribute null.",
+      "Creating additional programming code to verify no goods are shipped until the account has been settled in full."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je 'Creating additional programming code to verify no goods are shipped until the account has been settled in full.'. Jedná se o procedurální byznysové pravidlo (procedural business rule), které se váže na workflow a dynamický stav účtu zákazníka. Taková pravidla nelze vyjádřit pouhou strukturou ERD ani jednoduchým deklarativním omezením sloupce; vyžadují procedurální programový kód (triggery, uložené procedury v databázi nebo aplikační logiku). Nastavení atributu platby na volitelný či null situaci nijak neřeší a slepá důvěra zákazníkům pravidlo nevymáhá vůbec."
+  },
+  {
+    "id": "dd_q28",
+    "module": "dd_m1",
+    "question": "Unique Identifiers...",
+    "code": null,
+    "options": [
+      "Distinguish nothing",
+      "Distinguish one entity from another",
+      "Distinguish all entities in a database",
+      "Distinguish one instance of an entity from all other instances of that entity"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je 'Distinguish one instance of an entity from all other instances of that entity'. Jedinečný identifikátor (UID) slouží výhradně k tomu, aby jednoznačně odlišil jednu konkrétní instanci entity od všech ostatních instancí téže entity (např. unikátní číslo zákazníka odliší jednoho zákazníka od ostatních zákazníků). Neodlišuje entity mezi sebou (k tomu slouží název entity) ani nerozlišuje všechny entity v databázi globálně."
+  },
+  {
+    "id": "dd_q29",
+    "module": "dd_m2",
+    "question": "Matrix Diagrams show Optionality and Cardinality of the ERDs they document. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď je False. Matice vztahů (Matrix Diagram) je předběžná analytická tabulka, která eviduje pouze to, zda mezi dvěma entitami existuje nějaký vztah. Volitelnost (optionality – must be / may be) a kardinalita (cardinality – one / many) se v matici nezobrazují; tyto podrobnosti jsou zachyceny a dokumentovány až v plnohodnotném diagramu entit a vztahů (ERD)."
+  },
+  {
+    "id": "dd_q30",
+    "module": "dd_m1",
+    "question": "A well structured ERD will show only some parts of the finished data model. You should never try to model the entire system in one diagram, no matter how small the diagram might be. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď je False. Účelem dobře strukturovaného ER diagramu je poskytnout úplný a konzistentní model celého systému v rozsahu zadaných požadavků. Tvrzení, že by se člověk nikdy neměl snažit namodelovat celý systém v jednom diagramu bez ohledu na to, jak je systém malý, je chybné. Zejména u malých a středních systémů je žádoucí mít celý model v jednom diagramu pro celkový přehled o všech entitách a vazbách."
+  },
+  {
+    "id": "dd_q31",
+    "module": "dd_m2",
+    "question": "When reading the relationships in an ERD, you are said to be speaking:",
+    "code": null,
+    "options": [
+      "ERDish",
+      "Relationship-ish",
+      "Gibberish",
+      "Entity-ish"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je 'ERDish'. V kurzu Oracle Academy se formalizovaný způsob čtení vztahů z ER diagramu označuje termínem 'ERDish'. Má přesnou strukturu věty: 'EACH [entita 1] MUST BE / MAY BE [jméno vztahu] ONE AND ONLY ONE / ONE OR MORE [entita 2]'. Ostatní názvy jsou smyšlené distraktory."
+  },
+  {
+    "id": "dd_q32",
+    "module": "dd_m2",
+    "question": "Every ERD must have at least one non-transferable relationship. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď je False. Vztahy v ER diagramu jsou ve výchozím stavu převoditelné (transferable). Nepřevoditelný vztah (non-transferable, označený kosočtvercem) se používá pouze tehdy, když specifické byznysové pravidlo zakazuje změnu navázané instance (např. vydaný účetní doklad nelze převést na jiného zákazníka). Neexistuje žádný požadavek, aby každý ERD musel obsahovat alespoň jeden nepřevoditelný vztah; mnoho korektních modelů žádný takový vztah neobsahuje."
+  },
+  {
+    "id": "dd_q33",
+    "module": "dd_m2",
+    "question": "Relationships can be Redundant. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je True. Vztahy mohou být redundantní (nadbytečné), pokud vyjadřují vazbu mezi entitami, kterou lze již spolehlivě odvodit prostřednictvím jiných existujících vztahů bez přidání jakékoliv nové byznysové hodnoty. Analýza a odstranění redundantních vztahů je důležitým krokem pro zjednodušení datového modelu a prevenci anomálií."
+  },
+  {
+    "id": "dd_q34",
+    "module": "dd_m5",
+    "question": "An arc can often be modeled as Supertype and Subtypes. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je True. Oblouk (Arc) vyjadřuje vzájemnou výlučnost mezi dvěma nebo více vztahy (exkluzivní vztah). Ve většině případů lze situaci řešenou obloukem efektivněji a čistěji namodelovat pomocí nadtypu a podtypů (Supertype / Subtypes) – např. zobecněním cílových entit do společného nadtypu, nebo rozpadem zdrojové entity na specializované podtypy, které dědí společné atributy. Oracle Academy tuto transformaci výslovně probírá v kapitole věnované obloukům (Section 9)."
+  }
+]

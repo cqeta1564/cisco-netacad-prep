@@ -1,0 +1,114 @@
+[
+  {
+    "id": "html_q17",
+    "module": "html_m3",
+    "question": "Why is the <label> element used in this form field?",
+    "code": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\">",
+    "options": [
+      "To improve form accessibility by providing a text label.",
+      "To style the input field as the search button.",
+      "To increase the clickable area for the input field.",
+      "To add a \"Search\" button to the form."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: To improve form accessibility by providing a text label.\n\nElement <label> propojený pomocí atributu for s atributem id vstupního pole slouží primárně ke zlepšení přístupnosti (accessibility). Poskytuje srozumitelný textový popisek formulářového prvku pro uživatele i pro asistenční technologie (čtečky obrazovky), které popisek přečtou při zaměření na vstupní pole."
+  },
+  {
+    "id": "html_q18",
+    "module": "html_m3",
+    "question": "Consider the following HTML snippet:\n\nWhat would you change in it to pre-select the \"Canada\" option in a dropdown list?",
+    "code": "<select name=\"country\">\n  <option value=\"usa\">United States</option>\n  <option value=\"canada\">Canada</option>\n  <option value=\"mexico\">Mexico</option>\n</select>",
+    "options": [
+      "Add default to the <select> tag of the \"Canada\" option.",
+      "Set value=\"canada\" in the <select> tag of the \"Canada\" option.",
+      "Use the selected attribute on the \"Canada\" <option>.",
+      "Use JavaScript to select the \"Canada\" option after the page loads."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: Use the selected attribute on the \"Canada\" <option>.\n\nV HTML se pro předvybrání položky v rozbalovacím seznamu <select> používá logický atribut selected přímo na elementu <option> (např. <option value=\"canada\" selected>Canada</option>). Atribut default v HTML neexistuje a atribut value na značce <select> neslouží k určení vybrané položky."
+  },
+  {
+    "id": "html_q19",
+    "module": "html_m3",
+    "question": "Which input field is correctly marked as required?",
+    "code": null,
+    "options": [
+      "<input required=\"true\" type=\"text\" name=\"firstName\">.",
+      "<input type=\"required\" name=\"firstName\">.",
+      "<input type=\"text\" name=\"firstName\" required>.",
+      "<required input type=\"text\">."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: <input type=\"text\" name=\"firstName\" required>.\n\nAtribut required je v HTML5 logický (boolean) atribut. Pro označení pole jako povinného stačí uvést samotný název atributu required uvnitř značky <input>. Není potřeba zapisovat required=\"true\" a required není hodnota atributu type ani samostatný HTML tag."
+  },
+  {
+    "id": "html_q20",
+    "module": "html_m2",
+    "question": "How do you create a link that opens the user's email client to send an email to \"info@example.com\"?",
+    "code": null,
+    "options": [
+      "<a href=\"mailto:info@example.com\">Email Us</a>",
+      "<a email=\"info@example.com\">Email Us</a>",
+      "<a href=\"sendto:info@example.com\">Email Us</a>",
+      "<a href=\"email:info@example.com\">Email Us</a>"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: <a href=\"mailto:info@example.com\">Email Us</a>\n\nK vytvoření hypertextového odkazu, který otevře výchozího e-mailového klienta uživatele, se v atributu href elementu <a> používá URL schéma mailto:, za kterým následuje e-mailová adresa příjemce. Schémata sendto: ani email: v HTML standardu neexistují."
+  },
+  {
+    "id": "html_q21",
+    "module": "html_m3",
+    "question": "Which of the following scenarios is most appropriate for the use of <fieldset> in HTML forms?",
+    "code": null,
+    "options": [
+      "Grouping related form elements, such as multiple choices within a survey that asks for a respondent's preferred leisure activities.",
+      "Encrypting form data to secure sensitive information like passwords and credit card numbers.",
+      "Applying a consistent font style across multiple sections of an HTML form.",
+      "Enhancing the visual design of a form's submit button with custom graphics and animations."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Grouping related form elements, such as multiple choices within a survey that asks for a respondent's preferred leisure activities.\n\nElement <fieldset> slouží k logickému i sémantickému seskupování souvisejících ovládacích prvků a popisků ve formuláři (např. skupiny radio buttonů nebo checkboxů). Společně s prvkem <legend>, který definuje nadpis skupiny, zlepšuje strukturu i přístupnost pro asistenční technologie."
+  },
+  {
+    "id": "html_q22",
+    "module": "html_m4",
+    "question": "Which of the following correctly applies a red color to the text of a paragraph using inline styling?",
+    "code": null,
+    "options": [
+      "<p font=\"red\">This text is red.</p>",
+      "<p style=\"color: red;\">This text is red.</p>",
+      "<p color=\"red\">This text is red.</p>",
+      "<p style=\"text-color: red;\">This text is red.</p>"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: <p style=\"color: red;\">This text is red.</p>\n\nInline stylování se v HTML zapisuje do atributu style. V CSS se barva textu definuje vlastností color (nikoli text-color). Přímé HTML atributy font ani color nejsou na elementu <p> v HTML5 platné."
+  },
+  {
+    "id": "html_q23",
+    "module": "html_m4",
+    "question": "Which snippet correctly changes the background color of all <div> elements to blue using an internal stylesheet?",
+    "code": null,
+    "options": [
+      "div {color: blue;}",
+      "div {background: blue;}",
+      "#div {background-color: blue;}",
+      "div {background-color: blue;}"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: div {background-color: blue;}\n\nPro změnu barvy pozadí všech elementů <div> se používá typový selektor prvku div a specifická CSS vlastnost background-color. Selektor #div by cílil pouze na element s id=\"div\" a vlastnost color nastavuje barvu textu, nikoli pozadí."
+  },
+  {
+    "id": "html_q24",
+    "module": "html_m4",
+    "question": "How do you correctly set the font size to 16 pixels and the font family to Arial in a CSS rule?",
+    "code": null,
+    "options": [
+      "font-size: 16rem; font-family: 'Arial';",
+      "font-size: 16px; font: Arial;",
+      "font-size: 16; font-family: 'Arial';",
+      "font-size: 16px; font-family: Arial;"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: font-size: 16px; font-family: Arial;\n\nVelikost písma v pixelech se nastavuje vlastností font-size: 16px; (zápis bez jednotky 16 je neplatný, 16rem představuje 16násobek základní velikosti). Rodina písma se nastavuje vlastností font-family: Arial;. Vlastnost font je zkratka vyžadující povinně uvést i velikost písma."
+  }
+]

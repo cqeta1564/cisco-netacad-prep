@@ -1,0 +1,114 @@
+[
+  {
+    "id": "html_q01",
+    "module": "html_m1",
+    "question": "What is the first logical step you should take to start writing an HTML document in your development environment? Select the best answer.",
+    "code": null,
+    "options": [
+      "Create a file with the .html extension.",
+      "Declare the document's character encoding.",
+      "Set up a server and load a .css file to it.",
+      "Write the <html> tag and define the html version used in your document."
+    ],
+    "correct": 0,
+    "explanation": "Při zahájení psaní HTML dokumentu ve vývojovém prostředí je prvním logickým krokem vytvoření souboru s příponou .html (např. index.html). Jakmile je soubor vytvořen, textový editor či IDE rozpozná formát a umožní vkládat samotnou strukturu (deklaraci DOCTYPE, značku <html>, hlavičku s kódováním znaků atd.)."
+  },
+  {
+    "id": "html_q02",
+    "module": "html_m1",
+    "question": "Which section of an HTML document typically contains metadata like keywords and descriptions?",
+    "code": null,
+    "options": [
+      "<head>",
+      "<header>",
+      "<body>",
+      "<footer>"
+    ],
+    "correct": 0,
+    "explanation": "Metadata dokumentu, jako jsou klíčová slova, popisy stránek, kódování znaků nebo odkazované styly a skripty, se umisťují do sekce <head>. Elementy jako <header>, <body> a <footer> jsou určeny pro strukturování viditelného obsahu stránky."
+  },
+  {
+    "id": "html_q03",
+    "module": "html_m1",
+    "question": "Which HTML element is used to define the document's character encoding?",
+    "code": null,
+    "options": [
+      "<html>",
+      "<charset>",
+      "<doctype>",
+      "<meta>"
+    ],
+    "correct": 3,
+    "explanation": "Pro nastavení znakové sady se používá značka <meta> s atributem charset (např. <meta charset=\"UTF-8\">). Samostatná značka <charset> v HTML neexistuje."
+  },
+  {
+    "id": "html_q04",
+    "module": "html_m1",
+    "question": "Identify the purpose of the following HTML snippet:",
+    "code": "<!-- section-id=\"101-eng\" -->",
+    "options": [
+      "It provides a note within the code for developers.",
+      "It marks the beginning of a new section in the document.",
+      "It specifies the language used in the document.",
+      "It defines a breakpoint for a new document section."
+    ],
+    "correct": 0,
+    "explanation": "Zápis <!-- ... --> představuje v HTML komentář. Komentáře se v prohlížeči nezobrazují koncovým uživatelům, ale slouží vývojářům k vkládání poznámek, dokumentace či dočasnému skrytí kódu."
+  },
+  {
+    "id": "html_q05",
+    "module": "html_m1",
+    "question": "When discussing HTML semantics, which term is used to describe the combination of an opening tag, its content, and its closing tag?",
+    "code": null,
+    "options": [
+      "Element",
+      "Attribute",
+      "Markup",
+      "Value"
+    ],
+    "correct": 0,
+    "explanation": "V HTML terminologii označuje pojem 'Element' (prvek) celou strukturu tvořenou otevíracím tagem, obsahem mezi nimi a uzavíracím tagem (např. <p>Ahoj světe</p>). Atributy a hodnoty jsou doplňující vlastnosti uvnitř otevíracího tagu."
+  },
+  {
+    "id": "html_q06",
+    "module": "html_m2",
+    "question": "Which of the following is considered a block-level element in HTML5?",
+    "code": null,
+    "options": [
+      "<span>",
+      "<br>",
+      "<img>",
+      "<div>"
+    ],
+    "correct": 3,
+    "explanation": "Značka <div> je standardní blokový prvek (block-level element), který začíná na novém řádku a zabírá celou dostupnou šířku kontejneru. Na rozdíl od něj jsou <span>, <br> i <img> řádkovými (inline) prvky."
+  },
+  {
+    "id": "html_q07",
+    "module": "html_m2",
+    "question": "Which HTML snippet correctly emphasizes text for semantic importance and visual distinction?",
+    "code": null,
+    "options": [
+      "<p>This is <strong>important</strong> text.</p>",
+      "<p>This is <mark>important</mark> text.</p>",
+      "<p>This is <b>important</b> text.</p>",
+      "<p>This is <em>important</em> text.</p>"
+    ],
+    "correct": 0,
+    "explanation": "Značka <strong> v HTML reprezentuje sémantickou důležitost (semantic importance), vážnost či naléhavost textu a ve výchozím nastavení prohlížeče je text vykreslen tučně (visual distinction). Značka <b> poskytuje pouze vizuální tučné zvýraznění bez sémantické důležitosti, <em> vyjadřuje intonační důraz (stress emphasis) a <mark> slouží k označení relevantního textu."
+  },
+  {
+    "id": "html_q08",
+    "module": "html_m2",
+    "question": "How do you properly mark up a block quotation that includes a citation URL?",
+    "code": null,
+    "options": [
+      "<blockquote cite=\"http://example.com\">Quote here</blockquote><cite>http://example.com</cite>",
+      "<blockquote>Quote here<footer>Source: <cite>http://example.com</cite></footer></blockquote>",
+      "<q>Quote here</q><cite>http://example.com</cite>",
+      "<blockquote>Quote here<cite>Source: http://example.com</cite></blockquote>"
+    ],
+    "correct": 0,
+    "explanation": "Pro blokovou citaci se používá tag <blockquote>. Pokud citace zahrnuje zdrojovou URL adresu, definuje se pomocí atributu cite přímo na elementu <blockquote> (např. <blockquote cite=\"URL\">). Samotný odkaz na zdroj lze uvést také pomocí elementu <cite>."
+  }
+]

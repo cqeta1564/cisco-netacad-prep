@@ -1,0 +1,241 @@
+[
+  {
+    "id": "css_q18",
+    "module": "css_m4",
+    "question": "Consider the following HTML and CSS. What will be the layout effect of the .clearfix class?",
+    "code": "HTML :\n<div class=\"clearfix\">\n    <div class=\"float-left\">Left</div>\n    <div class=\"float-right\">Right</div>\n</div>\n\nCSS :\n.float-left {\n    float: left;\n    width: 50%;\n}\n.float-right {\n    float: right;\n    width: 50%;\n}\n.clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table;\n}",
+    "options": [
+      "The .clearfix class will clear the floated elements, ensuring that the container wraps around the static elements.",
+      "The .clearfix class will clear the floats, ensuring that the container wraps around the floated elements.",
+      "The .clearfix class will hide the floated elements.",
+      "The .clearfix class will float the container to the left."
+    ],
+    "correct": 1,
+    "explanation": "Třída `.clearfix` využívá pseudoelement `::after` s vlastnostmi `content: \"\"`, `clear: both` a `display: table`. Plovoucí elementy (`float: left` a `float: right`) jsou vyjmuty z běžného toku dokumentu, což by bez ošetření způsobilo tzv. zhroucení výšky rodičovského kontejneru (`.clearfix` by měl nulovou výšku). Tento klasický trik s clearfixem vytvoří na konci kontejneru skrytý prvek, který vyčistí obtékání (`clear: both`) a donutí rodičovský kontejner správně obalit všechny plovoucí elementy (`wrap around the floated elements`). Možnost tvrdící, že obalí statické elementy, je nepřesná, a volby hovořící o skrytí elementů či plavání samotného kontejneru doleva jsou zcela chybné."
+  },
+  {
+    "id": "css_q19",
+    "module": "css_m5",
+    "question": "Which of the following media query will apply styles to devices with a maximum width of 768px?",
+    "code": null,
+    "options": [
+      "@media (width: 768px) { ... }",
+      "@media (max-device-width: 768px) { ... }",
+      "@media (min-width: 768px) { ... }",
+      "@media (max-width: 768px) { ... }"
+    ],
+    "correct": 3,
+    "explanation": "Pravidlo `@media (max-width: 768px)` aplikuje CSS styly na zařízení/prohlížeče, jejichž šířka viewportu je maximálně 768 pixelů (tedy 768px a méně). Vlastnost `min-width: 768px` by naopak cílila na šířku 768px a více, `width: 768px` cílí výhradně na naprosto přesnou šířku 768px a zastaralá vlastnost `max-device-width` se vztahuje k fyzickému rozlišení displeje zařízení, nikoli k aktuální velikosti okna prohlížeče."
+  },
+  {
+    "id": "css_q20",
+    "module": "css_m5",
+    "question": "Which media query will apply styles specifically for devices in landscape orientation?",
+    "code": null,
+    "options": [
+      "@media (screen: landscape) { ... }",
+      "@media (orientation: portrait) { ... }",
+      "@media (position: landscape) { ... }",
+      "@media (orientation: landscape) { ... }"
+    ],
+    "correct": 3,
+    "explanation": "Media query `@media (orientation: landscape)` se používá k aplikaci stylů specificky pro orientaci na šířku (landscape), tedy v situaci, kdy je šířka viewportu větší než jeho výška. `@media (orientation: portrait)` cílí na orientaci na výšku, zatímco vlastnosti jako `screen: landscape` nebo `position: landscape` jsou v CSS syntakticky neplatné."
+  },
+  {
+    "id": "css_q21",
+    "module": "css_m4",
+    "question": "Which CSS rules will create a simple two-column grid layout using floats?",
+    "code": null,
+    "options": [
+      ".float-container {\n    width: 100%;\n    display: flex;\n}\n.column {\n    flex: 1;\n}",
+      ".float-container {\n    width: 100%;\n    display: block;\n}\n.column {\n    display: inline-block;\n    width: 50%;\n}",
+      ".container {\n    width: 100%;\n    overflow: hidden;\n}\n.column {\n    float: left;\n    width: 50%;\n}",
+      ".container {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n}\n.column {\n    float: left;\n}"
+    ],
+    "correct": 2,
+    "explanation": "Pro vytvoření dvousloupcového rozvržení pomocí floatů je nutné nastavit sloupcům `float: left;` a poloviční šířku `width: 50%;`. Rodičovský kontejner navíc potřebuje vyřešit zhroucení výšky způsobené plovoucími potomky – zde se využívá osvědčená technika `overflow: hidden;`, která vytvoří nový kontext formátování bloku (BFC) a uzavře plovoucí elementy uvnitř kontejneru. Ostatní možnosti využívají modernější Flexbox, CSS Grid nebo inline-block, nikoli čisté řešení postavené na floatech."
+  },
+  {
+    "id": "css_q22",
+    "module": "css_m4",
+    "question": "Which CSS rule will wrap text around an image by floating the image to the left?",
+    "code": null,
+    "options": [
+      "img {\n    float: right;\n    margin: 0 0 10px 10px;\n}",
+      "img {\n    text-align: float;\n    padding: 10px;\n}",
+      "img {\n    float: left;\n    margin: 0 10px 10px 0;\n}",
+      "img {\n    display: float; block;\n    margin: 10px;\n}"
+    ],
+    "correct": 2,
+    "explanation": "Pravidlo `float: left;` umístí obrázek k levému okraji rodičovského kontejneru a umožní okolnímu textu obtékat jej zprava a zespodu. Nastavený vnější okraj `margin: 0 10px 10px 0;` (horní, pravý, dolní, levý) vytvoří potřebný odstup 10px vpravo a dole, aby text nebyl nalepený přímo na obrázek. Volba s `float: right;` by obrázek umístila doprava a zápisy jako `text-align: float;` nebo `display: float; block;` jsou v CSS zcela neplatné."
+  },
+  {
+    "id": "css_q23",
+    "module": "css_m5",
+    "question": "Which CSS rule will evenly distribute space between flex items along the main axis in a flex container?",
+    "code": null,
+    "options": [
+      ".container {\n    display: flex;\n    justify-content: space-between;\n}",
+      ".container {\n    display: flex;\n    align-content: space-around;\n}",
+      ".container {\n    inline-block: flex;\n    justify-content: center;\n}",
+      ".container {\n    display: flex;\n    align-items: center;\n}"
+    ],
+    "correct": 0,
+    "explanation": "Vlastnost `justify-content` řídí zarovnání a distribuci volného prostoru mezi flex položkami podél hlavní osy (main axis – ve výchozím nastavení vodorovně). Hodnota `space-between` umístí první položku na začátek, poslední položku na konec a zbývající volné místo rovnoměrně rozdělí mezi položky. Vlastnosti `align-items` a `align-content` ovlivňují příčnou osu (cross axis) a zápis `inline-block: flex;` je neplatný."
+  },
+  {
+    "id": "css_q24",
+    "module": "css_m5",
+    "question": "Which CSS rule explicitly defines a grid with three flexible and equal columns?",
+    "code": null,
+    "options": [
+      ".container {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n}",
+      ".container {\n    display: grid;\n    grid-template-columns: 100px 100px 100px;\n}",
+      ".container {\n    display: grid;\n    grid-auto-flow: column;\n}",
+      ".container {\n    display: grid;\n    grid-template-rows: 1fr 1fr 1fr;\n}"
+    ],
+    "correct": 0,
+    "explanation": "Vlastnost `grid-template-columns: 1fr 1fr 1fr;` explicitně definuje mřížku se třemi sloupci stejné šířky, kde každý sloupec zabírá stejný podíl (jednu frakční jednotku `1fr`) z dostupného prostoru. Jednotka `fr` zajišťuje plnou flexibilitu a rovnoměrné rozdělení prostoru. Možnost se `100px` vytváří sloupce s pevnou šířkou (nejsou flexibilní), `grid-template-rows` definuje řádky místo sloupců a `grid-auto-flow: column;` pouze určuje směr automatického toku prvků."
+  },
+  {
+    "id": "css_q25",
+    "module": "css_m5",
+    "question": "Given the following CSS and HTML, which Flexbox properties and values will center the items both horizontally and vertically within the container?",
+    "code": "CSS :\n.container {\n    display: flex;\n    height: 200px;\n}\n.item {\n    width: 50px;\n    height: 50px;\n    background-color: tomato;\n}\n\nHTML :\n<div class=\"container\">\n    <div class=\"item\">1</div>\n    <div class=\"item\">2</div>\n    <div class=\"item\">3</div>\n</div>",
+    "options": [
+      ".container {\n    display: flex;\n    justify-content: flex-end;\n    align-items: flex-end;\n}",
+      ".container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}",
+      ".container {\n    display: flex;\n    justify-content: flex-start;\n    align-items: stretch;\n}",
+      ".container {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n}"
+    ],
+    "correct": 1,
+    "explanation": "Ve Flexboxu se pro vycentrování položek v obou směrech kombinuje `justify-content: center;` (které centruje podél hlavní vodorovné osy) a `align-items: center;` (které centruje podél příčné svislé osy). Díky tomu se položky `.item` ocitnou přesně uprostřed kontejneru o výšce 200px. Ostatní varianty položky zarovnávají ke krajům (`flex-end`, `flex-start`, `space-between`) nebo je natahují (`stretch`)."
+  },
+  {
+    "id": "css_q26",
+    "module": "css_m5",
+    "question": "Which CSS rule will allow flex items to wrap onto multiple lines within a flex container?",
+    "code": null,
+    "options": [
+      ".container {\n    display: flex;\n    align-content: stretch;\n}",
+      ".container {\n    display: flex;\n    align-content: wrap;\n}",
+      ".container {\n    display: flex;\n    flex-direction: column;\n}",
+      ".container {\n    display: flex;\n    flex-wrap: wrap;\n}"
+    ],
+    "correct": 3,
+    "explanation": "Ve výchozím nastavení mají flex kontejnery vlastnost `flex-wrap: nowrap;`, což znamená, že se všechny položky snaží vměstnat do jediného řádku (i za cenu zmenšení šířky). Nastavením pravidla `flex-wrap: wrap;` umožníme flex položkám přetékat a zalamovat se do více řádků, pokud se nevejdou do šířky kontejneru. Vlastnost `align-content` neřeší samotné zalomení (a hodnota `wrap` pro ni ani neexistuje) a `flex-direction: column;` pouze mění směr toku na sloupec."
+  },
+  {
+    "id": "css_q27",
+    "module": "css_m5",
+    "question": "Which CSS rule will cause grid items to be placed in rows by default, controlling the automatic flow of items and filling each row before moving to the next?",
+    "code": null,
+    "options": [
+      ".container {\n    display: grid;\n    grid-auto-flow: column;\n}",
+      ".container {\n    display: grid;\n    grid-auto-flow: row;\n}",
+      ".container {\n    display: grid;\n    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));\n}",
+      ".container {\n    display: grid;\n    grid-auto-rows: auto;\n}"
+    ],
+    "correct": 1,
+    "explanation": "Vlastnost `grid-auto-flow` určuje, jakým způsobem algoritmus automatického umisťování v CSS Grid vkládá položky, které nemají explicitně určenou pozici. Hodnota `row` (která je zároveň výchozím chováním mřížky) zajišťuje, že se položky skládají po řádcích – nejprve se zaplní aktuální řádek a až poté se přejde na další. Hodnota `column` by položky umisťovala po sloupcích a vlastnosti `grid-template-rows` či `grid-auto-rows` slouží k definici velikosti řádků, nikoli směru toku prvků."
+  },
+  {
+    "id": "css_q28",
+    "module": "css_m5",
+    "question": "Which CSS property is used to define the keyframes for an animation?",
+    "code": null,
+    "options": [
+      "@transitions",
+      "@keyframes",
+      "@frames",
+      "@animation"
+    ],
+    "correct": 1,
+    "explanation": "At-pravidlo `@keyframes` slouží v CSS k definování klíčových snímků animace. Umožňuje specifikovat změny stylů v jednotlivých fázích animace pomocí procent (např. `0%`, `50%`, `100%`) nebo klíčových slov `from` a `to`. Pravidla jako `@transitions`, `@frames` nebo `@animation` v CSS neexistují (pro přiřazení animace k prvku se používá běžná vlastnost `animation` či `animation-name`, nikoliv at-pravidlo se zavináčem)."
+  },
+  {
+    "id": "css_q29",
+    "module": "css_m5",
+    "question": "Which CSS rule will apply a transition effect to change the background color of an element over 0.5 seconds when hovered?",
+    "code": null,
+    "options": [
+      ".element {\n    transition: background-color;\n}\n.element:hover {\n    background-color: blue;\n}",
+      ".element {\n    transition: background-color 0.5s;\n}\n.element:hover {\n    background-color: blue;\n}",
+      ".element {\n    transition: background-color;\n}\n.element {\n    background-color: blue;\n}",
+      ".element {\n    transition: color 0.5s;\n}\n.element:hover {\n    background-color: blue;\n}"
+    ],
+    "correct": 1,
+    "explanation": "Zkrácený zápis `transition: background-color 0.5s;` definuje animovanou vlastnost (`background-color`) a délku trvání přechodu (`0.5s`). V kombinaci s pseudotřídou `.element:hover`, která nastavuje cílovou barvu `background-color: blue;`, dojde při najetí myši k plynulé změně barvy pozadí trvající půl sekundy. V možnosti 0 chybí doba trvání (výchozí je 0s, k žádnému přechodu nedojde), možnost 2 nepoužívá stav `:hover` a možnost 3 animuje barvu textu `color` namísto `background-color`."
+  },
+  {
+    "id": "css_q30",
+    "module": "css_m5",
+    "question": "Which CSS property is used to trigger an animation on an element?",
+    "code": null,
+    "options": [
+      "animation-play",
+      "animation-trigger",
+      "animation-effect",
+      "animation-name"
+    ],
+    "correct": 3,
+    "explanation": "Vlastnost `animation-name` určuje název pravidla `@keyframes`, které definuje jednotlivé fáze animace. Přiřazením tohoto názvu prvku se animace aktivuje a prováže s příslušnými klíčovými snímky (ve spojení s `animation-duration`). Vlastnosti jako `animation-trigger` nebo `animation-effect` v CSS neexistují a pro stav přehrávání slouží `animation-play-state`, nikoli `animation-play`."
+  },
+  {
+    "id": "css_q31",
+    "module": "css_m5",
+    "question": "Which Bootstrap 5 class creates a responsive grid column that spans 6 out of 12 columns on medium devices and larger?",
+    "code": null,
+    "options": [
+      "col-lg-6",
+      "col-md-6",
+      "col-6",
+      "col-sm-6"
+    ],
+    "correct": 1,
+    "explanation": "V mřížkovém systému Bootstrapu 5 (založeném na 12 sloupcích) představuje zkratka `md` breakpoint pro středně velká zařízení (medium devices, šířka viewportu od 768px). Třída `col-md-6` způsobí, že element zabere 6 z 12 sloupců (tedy polovinu šířky) od velikosti `md` výše. Třída `col-lg-6` cílí až na velká zařízení (`lg` od 992px), `col-sm-6` na malá zařízení (`sm` od 576px) a `col-6` zabírá 6 sloupců univerzálně na všech velikostech bez ohledu na breakpoint."
+  },
+  {
+    "id": "css_q32",
+    "module": "css_m5",
+    "question": "What is the effect of adding the Bootstrap 5 class .container-fluid to a <div> element?",
+    "code": null,
+    "options": [
+      "The element will be centered with a fixed width.",
+      "The element will have a maximum width and will be centered.",
+      "The element will have no padding and margin.",
+      "The element will take up the full width of the viewport."
+    ],
+    "correct": 3,
+    "explanation": "Třída `.container-fluid` v Bootstrapu 5 vytváří plně responzivní kontejner o šířce 100 % napříč všemi velikostmi viewportu (`width: 100%`). Na rozdíl od základní třídy `.container`, která má pro jednotlivé breakpointy definované pevné maximální šířky (`max-width`) a na větších obrazovkách se centruje s bočními okraji, zabírá `.container-fluid` vždy celou dostupnou šířku okna."
+  },
+  {
+    "id": "css_q33",
+    "module": "css_m5",
+    "question": "Which Bootstrap 5 class will create a card component with a shadow? Select all that apply.",
+    "code": null,
+    "options": [
+      "card-shadow",
+      "card shadow-sm",
+      "card shadow",
+      "card-shadow-sm",
+      "card-shadow-lg"
+    ],
+    "correct": 1,
+    "explanation": "V Bootstrapu 5 se pro vytvoření komponenty karty používá třída `card` a pro stíny slouží samostatné utility třídy jako `shadow-sm`, `shadow` nebo `shadow-lg`. Správnou kombinací dvou tříd oddělených mezerou je zde `card shadow-sm` (karta s jemným stínem). Ostatní možnosti spojené pomlčkou jako `card-shadow`, `card-shadow-sm` nebo `card-shadow-lg` v Bootstrapu vůbec neexistují. Oficiální test Cisco v doprovodném vysvětlení uvádí jako jedinou správnou možnost `card shadow-sm`, zatímco tvary `card shadow` a `card-shadow` označuje za neodpovídající standardním konvencím testovaných tříd."
+  },
+  {
+    "id": "css_q34",
+    "module": "css_m5",
+    "question": "Which Bootstrap 5 class will make an element visible only on large devices and larger?",
+    "code": null,
+    "options": [
+      "d-none d-lg-block",
+      "d-block d-lg-none",
+      "d-none d-xl-block",
+      "d-none d-md-block"
+    ],
+    "correct": 0,
+    "explanation": "V Bootstrapu 5 se pro podmíněné zobrazení podle velikosti displeje používá princip mobile-first. Třída `d-none` element ve výchozím stavu zcela skryje (`display: none`) pro nejmenší obrazovky. Přidaná třída `d-lg-block` jej od breakpointu `lg` (992px a více) zobrazí jako blokový prvek (`display: block`). Třída `d-block d-lg-none` dělá pravý opak (zobrazuje na malých a skrývá od `lg`), `d-none d-xl-block` zobrazuje až od extra velkých obrazovek (`xl` od 1200px) a `d-none d-md-block` zobrazuje již od středních obrazovek (`md` od 768px)."
+  }
+]

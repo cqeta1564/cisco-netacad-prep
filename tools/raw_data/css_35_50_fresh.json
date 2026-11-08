@@ -1,0 +1,226 @@
+[
+  {
+    "id": "css_q35",
+    "module": "css_m5",
+    "question": "You have added Bootstrap's CSS and JS files to your project, but the Bootstrap components are not styling correctly. What is the most likely cause of this issue?",
+    "code": null,
+    "options": [
+      "The Bootstrap CSS and JS files are not correctly linked or loaded in your HTML file.",
+      "Bootstrap requires a specific DOCTYPE declaration, and it is missing.",
+      "Your HTML file is missing the meta viewport tag.",
+      "The browser does not support Bootstrap."
+    ],
+    "correct": 0,
+    "explanation": "Pokud se komponenty Bootstrapu nezobrazují se správným stylem, nejpravděpodobnější příčinou je, že soubory CSS a JS nejsou v HTML dokumentu správně propojeny nebo se nenačetly (např. kvůli chybné relativní cestě, chybějícím značkám <link> nebo <script>, případně síťové chybě při stahování z CDN). Ačkoli značka <meta name=\"viewport\"> je nezbytná pro správné responzivní chování na mobilních zařízeních a deklarace DOCTYPE zajišťuje standardní režim vykreslování v prohlížeči, jejich absence přímo nebrání aplikaci základních vizuálních stylů Bootstrapu. Všechny moderní prohlížeče Bootstrap plně podporují, pokud jsou jeho soubory řádně načteny."
+  },
+  {
+    "id": "css_q36",
+    "module": "css_m5",
+    "question": "Which Bootstrap class adds a margin to the top side of an element?",
+    "code": null,
+    "options": [
+      "mb-*",
+      "m-top-*",
+      "mtop-*",
+      "mt-*"
+    ],
+    "correct": 3,
+    "explanation": "V frameworku Bootstrap slouží pro přidání vnějšího horního okraje (margin-top) utility třída ve formátu mt-*, kde hvězdička představuje velikost odsazení (např. mt-0, mt-1, mt-2, mt-3, mt-4, mt-5 nebo mt-auto). Písmeno 'm' zastupuje margin a 't' zastupuje top. Třída mb-* nastavuje spodní okraj (margin-bottom), zatímco formáty m-top-* a mtop-* nejsou v Bootstrapu platnými třídami."
+  },
+  {
+    "id": "css_q37",
+    "module": "css_m5",
+    "question": "Select the correct Bootstrap class to make the following button have a primary color.",
+    "code": "<button class=\"btn\">Click me</button>",
+    "options": [
+      "<button class=\"btn-primary\">Click me</button>",
+      "<button class=\"button-primary\">Click me</button>",
+      "<button class=\"btn btn-primary\">Click me</button>",
+      "<button class=\"btn btn-main\">Click me</button>"
+    ],
+    "correct": 2,
+    "explanation": "V Bootstrapu se tlačítka vytvářejí kombinací základní třídy btn (která definuje rozměry, vnitřní odsazení padding, typografii a základní chování tlačítka) a modifikační třídy, zde btn-primary (která aplikuje primární modrou barvu pozadí a rámečku). Samotná třída btn-primary bez základní btn nevytvoří správně naformátované tlačítko a třídy button-primary či btn-main v Bootstrapu neexistují."
+  },
+  {
+    "id": "css_q38",
+    "module": "css_m5",
+    "question": "How do you define a variable in Sass?",
+    "code": null,
+    "options": [
+      "var primary-color = #333;",
+      "@primary-color: #333;",
+      "$primary-color: #333;",
+      "--primary-color: #333;"
+    ],
+    "correct": 2,
+    "explanation": "V preprocesoru Sass (SCSS) se proměnné definují znakem dolaru ($), za nímž následuje název proměnné, dvojtečka a její hodnota (např. $primary-color: #333;). Symbol @ pro proměnné využívá preprocesor Less, zápis s dvojitou pomlčkou (--) označuje nativní CSS proměnné (Custom Properties) a klíčové slovo var patří do syntaxe JavaScriptu."
+  },
+  {
+    "id": "css_q39",
+    "module": "css_m5",
+    "question": "How do you define a variable in Less?",
+    "code": null,
+    "options": [
+      "--primary-color: #333;",
+      "var primary-color = #333;",
+      "$primary-color: #333;",
+      "@primary-color: #333;"
+    ],
+    "correct": 3,
+    "explanation": "V preprocesoru Less se proměnné uvozují symbolem zavináče (@), za kterým následuje název proměnné, dvojtečka a její hodnota (např. @primary-color: #333;). Znak dolaru ($) se používá v preprocesoru Sass, dvojitá pomlčka (--) reprezentuje nativní CSS proměnné a var je klíčové slovo pro proměnné v jazyce JavaScript."
+  },
+  {
+    "id": "css_q40",
+    "module": "css_m5",
+    "question": "How do you nest CSS selectors in Sass?",
+    "code": null,
+    "options": [
+      "nav > ul {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}",
+      "nav {\n    ul {\n        margin: 0;\n        padding: 0;\n        list-style: none;\n    }\n}",
+      "nav ul {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}",
+      "nav: {\n    ul: {\n        margin: 0;\n        padding: 0;\n        list-style: none;\n    }\n}"
+    ],
+    "correct": 1,
+    "explanation": "V preprocesoru Sass lze selektory zanořovat přímo do těla rodičovského pravidla pomocí složených závorek a odsazení. Pravidlo nav { ul { ... } } přehledně vyjadřuje hierarchii elementů v DOM a při kompilaci do výsledného CSS se automaticky převede na selektor potomka nav ul { ... }. Zápisy nav > ul a nav ul jsou běžné ploché CSS selektory bez zanořování a zápis s dvojtečkami (nav:, ul:) je neplatná syntaxe."
+  },
+  {
+    "id": "css_q41",
+    "module": "css_m5",
+    "question": "Select the correct Sass mixin to add a rounded corner with a radius of 10px to the following element.",
+    "code": "@mixin rounded-corners($radius) {\n    border-radius: $radius;\n}\n\n.box {\n    /* Insert code here */\n}",
+    "options": [
+      ".box {\n    include rounded-corners(10px);\n}",
+      ".box {\n    @extend rounded-corners(10px);\n}",
+      ".box {\n    @include rounded-corners(10px);\n}",
+      ".box {\n    @mixin rounded-corners(10px);\n}"
+    ],
+    "correct": 2,
+    "explanation": "V preprocesoru Sass se pro aplikaci a vložení nadefinovaného mixinu používá direktiva @include, následovaná názvem mixinu a případnými parametry v závorce (@include rounded-corners(10px);). Direktiva @mixin slouží k deklaraci nového mixinu, nikoli k jeho použití. Direktiva @extend se používá pro dědění stylů z jiných selektorů a nepřijímá parametry. Klíčové slovo include bez úvodního zavináče (@) představuje neplatnou syntaxi."
+  },
+  {
+    "id": "css_q42",
+    "module": "css_m5",
+    "question": "Web accessibility aims to make digital content usable and understandable for everyone. Which accessibility feature is specifically beneficial for individuals with motor impairments?",
+    "code": null,
+    "options": [
+      "Keyboard navigation.",
+      "Screen readers.",
+      "Captions for videos.",
+      "Image alt text."
+    ],
+    "correct": 0,
+    "explanation": "Ovládání a navigace pomocí klávesnice (Keyboard navigation) je stěžejním prvkem přístupnosti pro uživatele s motorickým (tělesným) postižením. Umožňuje jim pohybovat se po webové stránce a interagovat s formuláři, odkazy či tlačítky pomocí klávesnice nebo specializovaných asistenčních zařízení (např. spínačů či trackballů), aniž by byli závislí na jemné motorice vyžadované myší či dotykovým displejem. Čtečky obrazovky a alternativní texty obrázků (alt text) slouží primárně nevidomým a zrakově postiženým, zatímco titulky u videí pomáhají osobám se sluchovým postižením."
+  },
+  {
+    "id": "css_q43",
+    "module": "css_m5",
+    "question": "Which statement best describes the Web Content Accessibility Guidelines (WCAG)?",
+    "code": null,
+    "options": [
+      "The WCAG is a guideline for making web content faster and more efficient to load.",
+      "The WCAG is a widely accepted set of guidelines for making web content accessible, organized under four principles: perceivable, operable, understandable, and robust.",
+      "The WCAG is a legally binding international law requiring all websites to be accessible.",
+      "The WCAG is a set of guidelines that only applies to websites in the United States and the European Union."
+    ],
+    "correct": 1,
+    "explanation": "Web Content Accessibility Guidelines (WCAG) jsou mezinárodně uznávaná doporučení a standardy pro tvorbu přístupného webového obsahu pro osoby se zdravotním postižením. Jsou postaveny na čtyřech základních principech (akronym POUR): vnímatelný (perceivable – obsah musí být vnímatelný smysly), ovladatelný (operable – rozhraní musí být ovladatelné např. z klávesnice), srozumitelný (understandable – informace i ovládání musí být jasné) a robustní (robust – obsah musí spolehlivě fungovat napříč různými zařízeními a asistivními technologiemi). WCAG samy o sobě nejsou mezinárodním zákonem (i když z nich legislativy mnoha států vycházejí) a mají celosvětovou platnost, nikoli pouze v USA a EU."
+  },
+  {
+    "id": "css_q44",
+    "module": "css_m3",
+    "question": "Why is using rem units for font sizes considered a good practice for web accessibility?",
+    "code": null,
+    "options": [
+      "Because rem units are only used for setting margins and paddings.",
+      "Because rem units are easier to write than em units.",
+      "Because rem units provide scalability, respect user preferences, and ensure consistency across your website.",
+      "Because rem units are smaller than px units."
+    ],
+    "correct": 2,
+    "explanation": "Používání jednotek rem (root em) pro velikost písma je doporučeným postupem pro přístupnost webu, protože jednotka rem je relativní vůči kořenovému prvku (<html>), jehož velikost se odvíjí od výchozího nastavení prohlížeče uživatele (obvykle 16px). Pokud si uživatel (např. se zrakovým znevýhodněním) v nastavení prohlížeče zvětší výchozí písmo, texty definované v jednotkách rem se automaticky a proporcionálně zvětší (škálují). Tím je zaručeno respektování uživatelských preferencí a zachování konzistentního layoutu napříč různými zařízeními a rozlišeními."
+  },
+  {
+    "id": "css_q45",
+    "module": "css_m5",
+    "question": "Which of the following techniques helps ensure that content is accessible to screen readers while being hidden visually?",
+    "code": null,
+    "options": [
+      "Using CSS to move content off-screen with a class like .screen-reader-text.",
+      "Using the visibility: hidden; property in CSS.",
+      "Using the display: none; property in CSS.",
+      "Using JavaScript to dynamically remove the element from the DOM."
+    ],
+    "correct": 0,
+    "explanation": "Odsunutí obsahu mimo viditelnou plochu obrazovky pomocí CSS (např. prostřednictvím třídy .screen-reader-text s pravidly jako position: absolute; left: -9999px; nebo moderním oříznutím clip-path) je standardní technika, která skryje element z pohledu běžného uživatele, ale ponechá jej ve stromu přístupnosti (accessibility tree). Díky tomu mohou čtečky obrazovky obsah přečíst. Naopak vlastnosti display: none; a visibility: hidden; prvek ze stromu přístupnosti zcela vyřadí, takže jej čtečky ignorují. Odstranění elementu z DOM pomocí JavaScriptu by jej ze stránky odstranilo úplně."
+  },
+  {
+    "id": "css_q46",
+    "module": "css_m5",
+    "question": "What is a recommended naming convention for CSS class names to improve readability and maintainability?",
+    "code": null,
+    "options": [
+      "Use random strings for class names.",
+      "Use single-letter class names.",
+      "Use class names with mixed upper and lower case letters.",
+      "Use BEM (Block Element Modifier) naming convention."
+    ],
+    "correct": 3,
+    "explanation": "Metodika BEM (Block Element Modifier) je populární a široce doporučovaná jmenná konvence pro CSS třídy, která zvyšuje přehlednost a dlouhodobou udržovatelnost kódu. Rozděluje komponenty na samostatné bloky (block), jejich vnitřní elementy (block__element) a modifikátory stavu či variant (block--modifier). Tím jasně definuje hierarchii a účel jednotlivých tříd a eliminuje konflikty ve specificitě. Používání jednopísmenných názvů, náhodných řetězců nebo nekonzistentního míchání velkých a malých písmen kód znepřehledňuje a ztěžuje jeho správu."
+  },
+  {
+    "id": "css_q47",
+    "module": "css_m2",
+    "question": "Which of the following practices helps improve CSS performance?",
+    "code": null,
+    "options": [
+      "Use very specific selectors for all elements.",
+      "Use inline styles for all elements.",
+      "Load all CSS files synchronously.",
+      "Minimize the use of universal selectors."
+    ],
+    "correct": 3,
+    "explanation": "Univerzální selektory (např. * { ... }) aplikují pravidla na úplně každý element na stránce, což může významně zpomalit výkon prohlížeče při vyhodnocování stylů, zejména u rozsáhlých stránek s velkým množstvím DOM uzlů. Minimalizace univerzálních selektorů umožňuje prohlížeči efektivnější párování pravidel. Použití inline stylů u všech prvků se nedoporučuje kvůli redundanci a nemožnosti cachování, synchronní načítání stylů blokuje vykreslení stránky (render-blocking) a přehnaně specifické selektory prodlužují dobu výpočtu stylů."
+  },
+  {
+    "id": "css_q48",
+    "module": "css_m5",
+    "question": "Which of the following is the best practice for creating responsive designs in CSS?",
+    "code": null,
+    "options": [
+      "Use fixed pixel widths for all elements.",
+      "Use table-based layouts.",
+      "Use CSS Grid and Flexbox for layout.",
+      "Use only media queries with fixed breakpoints."
+    ],
+    "correct": 2,
+    "explanation": "CSS Grid a Flexbox jsou moderní systémy rozvržení přímo navržené pro tvorbu responzivních a pružných layoutů. Umožňují prvkům dynamicky přizpůsobovat své rozměry i umístění podle velikosti obrazovky a rodičovského kontejneru. Pevné šířky v pixelech naopak způsobují přetékání a neohebnost na malých displejích, tabulkové rozvržení je zastaralé a neflexibilní a spoléhání se výhradně na pevné breakpointy v media queries bez flexibilních systémů neposkytuje plynulou adaptabilitu."
+  },
+  {
+    "id": "css_q49",
+    "module": "css_m5",
+    "question": "Which practice enhances the maintainability of your CSS code?",
+    "code": null,
+    "options": [
+      "Use !important frequently to override styles.",
+      "Organize CSS into modular components.",
+      "Write all CSS rules in a single large file.",
+      "Use IDs for all styling."
+    ],
+    "correct": 1,
+    "explanation": "Organizace CSS do modulárních komponent (např. pomocí metodiky BEM nebo komponentních CSS modulů) pomáhá rozdělit styly do znovupoužitelných a přehledně oddělených celků. Kód se díky tomu snadněji udržuje, rozšiřuje a aktualizuje bez rizika nechtěných vedlejších vlivů. Psaní všech stylů do jednoho obrovského souboru zhoršuje navigaci a orientaci, zatímco stylování pomocí ID a časté používání !important způsobuje neřešitelné problémy se specificitou pravidel."
+  },
+  {
+    "id": "css_q50",
+    "module": "css_m1",
+    "question": "Why is it recommended to avoid using inline styles in CSS?",
+    "code": null,
+    "options": [
+      "Inline styles are automatically overridden by external stylesheets.",
+      "Inline styles are limited to defining font sizes only.",
+      "Inline styles make it difficult to maintain and update styles across multiple elements.",
+      "Inline styles are not supported by all browsers."
+    ],
+    "correct": 2,
+    "explanation": "Inline styly se aplikují přímo na jednotlivé HTML elementy v atributu style. Pokud je potřeba styl upravit (např. změnit barvu tlačítek napříč celým webem), je nutné provést změnu v každém elementu zvlášť, což vede k redundanci, neúnosné náročnosti údržby a zvětšení velikosti HTML souboru. Externí kaskádové styly naopak umožňují centralizovanou správu vzhledu a oddělení obsahu od prezentace. Inline styly navíc nejsou přebíjeny externími styly (mají vyšší specificitu) a ačkoliv je všechny prohlížeče podporují, jsou z hlediska architektury nevhodné."
+  }
+]

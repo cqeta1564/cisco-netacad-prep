@@ -1,0 +1,228 @@
+[
+  {
+    "id": "dd_q01",
+    "module": "dd_m3",
+    "question": "A subtype is shown on an ERD as an entity with a one to many relationship to the supertype. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). V ERD modelování podle metodiky Oracle Academy (Barkerova notace) se podtyp (subtype) nekreslí jako samostatná entita spojená vztahem 1:N k nadtypu (supertype). Místo toho se podtypy znázorňují jako vnořené obdélníky přímo uvnitř obdélníku nadtypu (supertype). Podtyp automaticky dědí všechny atributy a vztahy svého nadtypu a mezi nadtypem a podtypem neexistuje žádná spojovací čára vztahu."
+  },
+  {
+    "id": "dd_q02",
+    "module": "dd_m4",
+    "question": "Examine the following Entity and decide which rule of Normal Form is being violated:",
+    "code": "ENTITY: CLIENT\nATTRIBUTES:\n# CLIENT ID\nFIRST NAME\nLAST NAME\nORDER ID\nSTREET",
+    "options": [
+      "1st Normal Form.",
+      "2nd Normal Form.",
+      "3rd Normal Form.",
+      "None of the above, the entity is fully normalised."
+    ],
+    "correct": 0,
+    "explanation": "Entita porušuje pravidlo 1. normální formy (1st Normal Form). První normální forma vyžaduje, aby všechny atributy byly atomické a neobsahovaly vícehodnotové atributy ani opakující se skupiny. V entitě CLIENT atribut ORDER ID představuje vícehodnotový atribut (klient může mít v průběhu času více objednávek), což v jedné instanci klienta vede k neatomicitě nebo opakování dat. Správným návrhem je vyčlenit objednávky do samostatné entity ORDER a propojit ji s CLIENT vztahem 1:N. Druhá a třetí normální forma nemohou být splněny, dokud entita nesplňuje 1NF."
+  },
+  {
+    "id": "dd_q03",
+    "module": "dd_m2",
+    "question": "In an ERD, High Volume Entities usually have very few relationships to other entities. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Entity s vysokým objemem dat (High Volume Entities), jako jsou transakční entity (např. ORDERS, TRANSACTIONS, PAYMENTS), obvykle zaznamenávají klíčové události a transakce v systému. Z tohoto důvodu mají naopak mnoho vztahů k ostatním entitám (např. k zákazníkům, produktům, zaměstnancům a pobočkám), aby bylo možné zachytit všechny související obchodní kontexty."
+  },
+  {
+    "id": "dd_q04",
+    "module": "dd_m1",
+    "question": "The purpose of an ERD is to document the proposed system and facilitate discussion and understanding of the requirements captured by the developer. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Tvrzení je pravdivé (True). Hlavním účelem ERD (Entity Relationship Diagram) je zdokumentovat navrhovaný systém na konceptuální úrovni a sloužit jako společný vizuální komunikační nástroj mezi vývojáři, analytiky a zástupci zadavatele (byznysu). Usnadňuje diskuzi a zajišťuje, že všichni správně pochopili požadavky na data ještě před zahájením fyzické implementace."
+  },
+  {
+    "id": "dd_q05",
+    "module": "dd_m4",
+    "question": "To convert an entity with a multi valued attribute to 1st Normal Form, we create an additional entity and relate it to the original entity with a 1:1 relationship. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Při převodu entity s vícehodnotovým atributem do 1. normální formy (1NF) se pro daný atribut vytvoří nová entita, která je s původní entitou propojena vztahem 1:N (jedna ku mnoha), nikoli 1:1. Důvodem je, že jedna instance původní entity může mít pro tento vícehodnotový atribut více hodnot (instancí v nové entitě)."
+  },
+  {
+    "id": "dd_q06",
+    "module": "dd_m3",
+    "question": "Business rules are important to data modelers because:",
+    "code": null,
+    "options": [
+      "A. They capture all of the needs, processes, and required functionality of the business.",
+      "B. All Business rules are easily implemented in the ERD diagram.",
+      "C. The data modeler must focus on structural rules, because they are easily represented diagrammatically and eliminate other rules that involve extra procedures or programming.",
+      "D. Both A and C are true."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je A. Obchodní pravidla (Business rules) jsou zásadní, protože přesně zachycují veškeré potřeby, procesy a požadovanou funkcionalitu podniku. Možnost B je nesprávná, protože zdaleka ne všechna pravidla lze vyjádřit v ERD (procesní a procedurální pravidla se implementují až pomocí aplikační logiky nebo triggerů). Možnost C je nesprávná, protože datový modelář nesmí ignorovat ani eliminovat procedurální pravidla – musí je zdokumentovat pro vývojáře."
+  },
+  {
+    "id": "dd_q07",
+    "module": "dd_m2",
+    "question": "The many end of a Relationship is called:",
+    "code": null,
+    "options": [
+      "Gulls Foot",
+      "Crows Foot",
+      "Crows Ear",
+      "Pigs Ear"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď je Crows Foot (vraní nožka). V Barkerově notaci ERD, kterou vyučuje Oracle Academy, je konec čáry vztahu reprezentující kardinalitu 'mnoho' (many) zakončen třemi rozbíhajícími se čarami připomínajícími ptačí nožku, odtud název 'Crow's Foot'."
+  },
+  {
+    "id": "dd_q08",
+    "module": "dd_m4",
+    "question": "If an intersection entity is formed that contains no attributes of its own, its uniqueness may be modeled by",
+    "code": null,
+    "options": [
+      "Creating new attributes.",
+      "Barring the relationships to the original entities.",
+      "Placing the UID attributes from the original entities into the intersection entity.",
+      "None of the above."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď je přeškrtnutím vztahů k původním entitám (Barring the relationships to the original entities). V Oracle ERD notaci značí přeškrtnutí vztahu (bar / barred relationship) identifikační vztah, což znamená, že vztah je součástí unikátního identifikátoru (UID) dané entity. Pokud vazební entita nemá žádné vlastní atributy, její unikátnost je zajištěna složeným UID tvořeným přeškrtnutými vztahy k oběma nadřazeným entitám. Možnost vložení UID atributů je chybná, protože v konceptuálním ERD se cizí klíče jako explicitní atributy nezapisují."
+  },
+  {
+    "id": "dd_q09",
+    "module": "dd_m4",
+    "question": "When is an entity in 2nd Normal Form?",
+    "code": null,
+    "options": [
+      "When all non-UID attributes are dependent upon the entire UID.",
+      "When attributes with repeating or multi-values are present.",
+      "When no attritibutes are mutually independent and all are fully dependent on the primary key.",
+      "None of the Above."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď je 'When all non-UID attributes are dependent upon the entire UID.' (Když jsou všechny ne-UID atributy závislé na celém UID). Entita je ve 2. normální formě (2NF), pokud je v 1NF a žádný ne-UID atribut není částečně závislý na podmnožině složeného UID. Všechny neklíčové atributy musí záviset na celém klíči ('the whole key')."
+  },
+  {
+    "id": "dd_q10",
+    "module": "dd_m1",
+    "question": "SQL became the most commonly used query language in the 1980s. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Tvrzení je pravdivé (True). Jazyk SQL byl vyvinut v IBM v 70. letech, ale právě během 80. let 20. století zaznamenal obrovský komerční nástup (první komerční relační databázi s SQL uvedla společnost Oracle v roce 1979/1980 a standardy ANSI a ISO byly přijaty v roce 1986), čímž se SQL stal nejrozšířenějším jazykem pro relační databáze."
+  },
+  {
+    "id": "dd_q11",
+    "module": "dd_m4",
+    "question": "What do you call the entity created when you resolve a M:M relationship?",
+    "code": null,
+    "options": [
+      "Inclusion entity",
+      "Recursive entity",
+      "M:M entity",
+      "Intersection entity"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je Intersection entity (vazební či průniková entita). Při řešení vztahu M:M (Many-to-Many) v relačním modelování se vazba rozdělí na dva vztahy 1:N pomocí nově vložené entity, která se v kurzu Oracle Academy nazývá 'Intersection entity' (v obecné teorii také asociativní entita)."
+  },
+  {
+    "id": "dd_q12",
+    "module": "dd_m5",
+    "question": "All systems must include functionality to provide logging or journaling in conceptual data models. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Zda musí systém podporovat logování (logging), žurnálování (journaling) nebo sledování historických dat, závisí výhradně na konkrétních obchodních požadavcích (business requirements) daného systému. Ne pro každý systém je nutné historii či žurnál evidovat a zbytečně by to zvyšovalo složitost a nároky na úložiště."
+  },
+  {
+    "id": "dd_q13",
+    "module": "dd_m1",
+    "question": "Which of the following statements about Entities are true? (Choose Three)",
+    "code": null,
+    "options": [
+      "“Something” of significance to the business about which data must be known.",
+      "They never have Instances",
+      "They are usually a noun.",
+      "A name for a set of similar \"things\""
+    ],
+    "correct": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Správné jsou možnosti 1., 3. a 4. (indexy 0, 2 a 3). Entita je v Oracle Academy definována jako 'něco významného pro podnik, o čem je nutné uchovávat data', její název je obvykle podstatné jméno v jednotném čísle a označuje množinu podobných prvků/věcí. Tvrzení 'They never have Instances' je naopak nepravdivé, protože každá entita má své instance (např. konkrétní student či objednávka)."
+  },
+  {
+    "id": "dd_q14",
+    "module": "dd_m1",
+    "question": "Systems are always just rolled out as soon as the programming phase is finished. No further work is required once the development is finished. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). V životním cyklu vývoje systémů (SDLC) po ukončení fáze programování následují nezbytné kroky: testování (integrační, akceptační), příprava produkčního prostředí, migrace dat, zaškolení uživatelů, samotné nasazení (rollout) a následná dlouhodobá správa a údržba systému."
+  },
+  {
+    "id": "dd_q15",
+    "module": "dd_m5",
+    "question": "In a payroll system, it is desirable to have an entity called DAY with a holiday attribute when you want to track special holiday dates. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Tvrzení je pravdivé (True). V systémech pro zpracování mezd a docházky (payroll) je pro správný výpočet odpracovaných hodin, mzdových příplatků a fondu pracovní doby vhodné mít kalendářní entitu DAY s atributem holiday (svátek), která umožňuje explicitně evidovat státní svátky a dny pracovního klidu."
+  },
+  {
+    "id": "dd_q16",
+    "module": "dd_m4",
+    "question": "When data is only stored in one place in a database, the database conforms to the rules of ___________.",
+    "code": null,
+    "options": [
+      "Multiplication",
+      "Reduction",
+      "Normality",
+      "Normalization"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je Normalization (normalizace). Cílem normalizace v relačních databázích je navrhnout strukturu tabulek tak, aby každý údaj byl uložen právě na jednom místě, čímž se předchází redundanci dat, anomáliím při vkládání, úpravách a mazání a zajišťuje se integrita dat."
+  },
+  {
+    "id": "dd_q17",
+    "module": "dd_m1",
+    "question": "A candidate UID that is not chosen to be the Primary UID is called:",
+    "code": null,
+    "options": [
+      "Composite",
+      "Artificial",
+      "Simple",
+      "Secondary"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď je Secondary UID (sekundární UID). Každá entita může mít jeden nebo více kandidátních identifikátorů (Candidate UIDs). Ten, který je vybrán jako hlavní pro jednoznačnou identifikaci instancí, je Primary UID; všechny ostatní kandidátní identifikátory, které nebyly vybrány, se nazývají Secondary UIDs (sekundární identifikátory)."
+  }
+]

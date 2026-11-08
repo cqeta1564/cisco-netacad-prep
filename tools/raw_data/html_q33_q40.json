@@ -1,0 +1,114 @@
+[
+  {
+    "id": "html_q33",
+    "module": "html_m5",
+    "question": "Which ARIA attribute should be used to indicate the current state of an element that can be expanded or collapsed, such as an accordion panel?",
+    "code": null,
+    "options": [
+      "aria-expanded-collapsed",
+      "aria-checked",
+      "aria-collapsed",
+      "aria-expanded"
+    ],
+    "correct": 3,
+    "explanation": "Atribut aria-expanded slouží v WAI-ARIA k indikaci aktuálního stavu rozbalení (true) či sbalení (false) interaktivních prvků, jako jsou akordeony, rozbalovací menu nebo navigační stromy. Atributy aria-collapsed a aria-expanded-collapsed v ARIA standardu neexistují a aria-checked se používá pro zaškrtávací pole a přepínače."
+  },
+  {
+    "id": "html_q34",
+    "module": "html_m5",
+    "question": "Why is maintaining consistent indentation and formatting important in HTML code?",
+    "code": null,
+    "options": [
+      "It enhances readability and helps identify the structure of HTML elements.",
+      "It prevents browser compatibility issues.",
+      "It improves search engine optimization (SEO).",
+      "It reduces file size and improves page loading speed."
+    ],
+    "correct": 0,
+    "explanation": "Konzistentní odsazování (indentation) a formátování HTML kódu výrazně zvyšuje přehlednost a čitelnost pro vývojáře a usnadňuje orientaci v hierarchické struktuře zanořených elementů. Webové prohlížeče bílé znaky a odsazení při zpracování slučují, takže odsazení nemá vliv na funkčnost, kompatibilitu, SEO ani rychlost načítání."
+  },
+  {
+    "id": "html_q35",
+    "module": "html_m5",
+    "question": "Which attribute should be used to specify the language of the content in an HTML document, enhancing accessibility for users?",
+    "code": null,
+    "options": [
+      "lang",
+      "html-language",
+      "language",
+      "html-lang"
+    ],
+    "correct": 0,
+    "explanation": "Atribut lang (např. v kořenovém tagu <html lang=\"en\">) definuje přirozený jazyk obsahu stránky. Je zásadní pro přístupnost (accessibility), protože umožňuje odečítačům obrazovky (screen readers) zvolit správná pravidla výslovnosti a hlasový profil. Atributy jako html-language, language nebo html-lang nejsou v moderním HTML standardu definovány."
+  },
+  {
+    "id": "html_q36",
+    "module": "html_m1",
+    "question": "Identify the error in the following HTML snippet used to link a favicon:",
+    "code": "<head>\n  <link rel=\"shortcut-icon\" type=\"image/png\" href=\"favicon.png\">\n</head>",
+    "options": [
+      "The href attribute must point to an .ico file, not a .png file for wider browser compatibility.",
+      "The href attribute's path must start with / to ensure it is found regardless of the current page's URL.",
+      "The rel attribute should be icon, not shortcut-icon.",
+      "The MIME type image/png is incorrect for a favicon; it should be image/x-icon."
+    ],
+    "correct": 2,
+    "explanation": "Chyba je v hodnotě atributu rel. Standardní hodnota pro ikonu stránky (favicon) v HTML5 je rel=\"icon\" (případně dříve používaný zápis rel=\"shortcut icon\" oddělený mezerou). Zápis spojený pomlčkou shortcut-icon je neplatný a prohlížeč ikonu nerozpozná. Favicon může být ve formátu PNG i ICO a relativní cesta k souboru je zcela platná."
+  },
+  {
+    "id": "html_q37",
+    "module": "html_m2",
+    "question": "How should the following snippet be corrected to display a less than symbol?",
+    "code": "<p>Our prices are < than ever!</p>",
+    "options": [
+      "Add quotes around <.",
+      "Replace < with &lt;.",
+      "Replace < with \\<.",
+      "Wrap < in <!-- and -->."
+    ],
+    "correct": 1,
+    "explanation": "Znak < (menší než) je v HTML vyhrazený znak, který uvozuje tagy. Pokud jej chceme zobrazit jako běžný text v odstavci, musíme jej nahradit HTML entitou &lt; (less than). Zpětné lomítko \\< v HTML nefunguje jako escape sekvence, uvozovky text neescapují a komentář <!-- --> by znak z vykreslené stránky zcela skryl."
+  },
+  {
+    "id": "html_q38",
+    "module": "html_m1",
+    "question": "What should be added to ensure this emoji is correctly displayed in all browsers?",
+    "code": "<p>I love pizza 🍕</p>",
+    "options": [
+      "Specify a charset of ASCII in the <meta> tag of the document's head.",
+      "Wrap the emoji in a <span> tag.",
+      "Replace the emoji with an HTML entity.",
+      "Specify a charset of UTF-8 in the <meta> tag of the document's head."
+    ],
+    "correct": 3,
+    "explanation": "Emoji znaky (jako 🍕) vyžadují kódování Unicode. Aby byly ve všech prohlížečích správně interpretovány bez chyb zobrazení (tzv. mojibake nebo otazníků), je nutné v hlavičce <head> dokumentu deklarovat kódování UTF-8 pomocí tagu <meta charset=\"UTF-8\">. Kódování ASCII emoji vůbec nepodporuje a obalení tagem <span> problém s kódováním znaků neřeší."
+  },
+  {
+    "id": "html_q39",
+    "module": "html_m3",
+    "question": "Which attribute value should you insert in the following snippet to correctly create an image map named \"workMap\" for an image?",
+    "code": "<img src=\"workplace.jpg\" usemap=\"<!-- Insert value here -->\">\n<map name=\"workMap\">\n  <!-- Map areas here -->\n</map>",
+    "options": [
+      "@workMap",
+      "#workMap",
+      "workmap.jpg",
+      "true"
+    ],
+    "correct": 1,
+    "explanation": "Atribut usemap u elementu <img> propojuje obrázek s klientskou mapou klikatelných oblastí definovanou v elementu <map>. Hodnota atributu usemap musí obsahovat název mapy (hodnotu atributu name daného elementu <map>) s předřazeným znakem mřížky #, tedy #workMap (funguje jako identifikátor fragmentu)."
+  },
+  {
+    "id": "html_q40",
+    "module": "html_m6",
+    "question": "Select the correct fragment of code that needs to be inserted in the following snippet to correctly define a circle with SVG:",
+    "code": "<svg width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"green\" stroke-width=\"4\" fill=\"yellow\" <!-- Insert missing code here -->\n</svg>",
+    "options": [
+      ">{}.",
+      ">.",
+      "></circle>.",
+      "/>."
+    ],
+    "correct": 3,
+    "explanation": "Základní grafické tvary v SVG, jako je element <circle>, které neobsahují žádné vnořené elementy ani text, jsou prázdné elementy zapisované jako samostatně uzavírací tag (self-closing tag) končící lomítkem a pravou lomenou závorkou /> (v testu zobrazeno včetně tečky jako />.). Zápis >{} je syntakticky neplatný a pouhé > by element neuzavřelo."
+  }
+]

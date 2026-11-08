@@ -1,0 +1,282 @@
+[
+  {
+    "id": "html_q21",
+    "module": "html_m4",
+    "question": "Which of the following scenarios is most appropriate for the use of <fieldset> in HTML forms?",
+    "code": null,
+    "options": [
+      "Enhancing the visual design of a form's submit button with custom graphics and animations.",
+      "Grouping related form elements, such as multiple choices within a survey that asks for a respondent's preferred leisure activities.",
+      "Applying a consistent font style across multiple sections of an HTML form.",
+      "Encrypting form data to secure sensitive information like passwords and credit card numbers."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Grouping related form elements, such as multiple choices within a survey that asks for a respondent's preferred leisure activities.\n\nNa snímku obrazovky je otázka: „Which of the following scenarios is most appropriate for the use of <fieldset> in HTML forms?“\n\nOficiální vysvětlení ze zkoušky:\n„The <fieldset> element is used to group related form elements, typically with a <legend> tag to provide a title for the group. This helps organize forms logically and improves accessibility. It is not used for styling, encryption, or customizing buttons.“\n\nPodrobné vysvětlení:\nElement <fieldset> slouží k logickému i sémantickému seskupování souvisejících prvků formuláře (například skupiny checkboxů nebo radio buttonů v dotazníku). Společně s párovým prvkem <legend>, který definuje nadpis skupiny, usnadňuje orientaci uživatelům i asistenčním technologiím (screen readerům).\n- Možnost 1 je správná: seskupení souvisejících prvků dotazníku je přesným účelem <fieldset>.\n- Ostatní možnosti jsou nesprávné: <fieldset> nijak nesouvisí se šifrováním dat (to řeší HTTPS), stylováním písma ani grafickým návrhem tlačítek."
+  },
+  {
+    "id": "html_q22",
+    "module": "html_m4",
+    "question": "Which of the following correctly applies a red color to the text of a paragraph using inline styling?",
+    "code": null,
+    "options": [
+      "<p style=\"text-color: red;\">This text is red.</p>",
+      "<p color=\"red\">This text is red.</p>",
+      "<p style=\"color: red;\">This text is red.</p>",
+      "<p font=\"red\">This text is red.</p>"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: <p style=\"color: red;\">This text is red.</p>\n\nNa snímku obrazovky je otázka: „Which of the following correctly applies a red color to the text of a paragraph using inline styling?“\n\nOficiální vysvětlení ze zkoušky:\n„To apply inline styling, the style attribute is used within the HTML tag. The correct property for changing text color is color, and the value red sets the text color to red. The other options use incorrect attributes or syntax“\n\nPodrobné vysvětlení:\nŘádkové (inline) stylování se v HTML zapisuje prostřednictvím atributu style přímo do otevíracího tagu elementu. Barva textu se v CSS definuje vlastností color, nikoli text-color. Správný zápis je tedy <p style=\"color: red;\">.\n- Možnost 2 je správná.\n- Možnost <p style=\"text-color: red;\"> je chybná, protože vlastnost text-color v CSS neexistuje.\n- Možnosti s atributy color=\"red\" a font=\"red\" přímo na tagu <p> jsou v moderním HTML5 neplatné a zastaralé."
+  },
+  {
+    "id": "html_q23",
+    "module": "html_m4",
+    "question": "Which snippet correctly changes the background color of all <div> elements to blue using an internal stylesheet?",
+    "code": null,
+    "options": [
+      "div {background: blue;}",
+      "div {color: blue;}",
+      "#div {background-color: blue;}",
+      "div {background-color: blue;}"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: div {background-color: blue;}\n\nNa snímku obrazovky je otázka: „Which snippet correctly changes the background color of all <div> elements to blue using an internal stylesheet?“\n\nOficiální vysvětlení ze zkoušky:\n„To change the background color of all <div> elements using an internal stylesheet, you should use the background-color property. The correct syntax is div {background-color: blue;}. The other options are either incorrect (e.g., using color for text color or #div for an ID selector) or do not specifically target the background color properly.“\n\nPodrobné vysvětlení:\nV interním stylu (<style>) se pro výběr všech elementů daného typu používá elementový (typový) selektor, zde div. K nastavení barvy pozadí slouží CSS vlastnost background-color.\n- Možnost 3 (div {background-color: blue;}) je správná.\n- div {color: blue;} nastavuje barvu textu (popředí), nikoli pozadí.\n- #div {background-color: blue;} by cílilo pouze na element s id=\"div\".\n- background-color je přesná a specifická vlastnost vyžadovaná otázkou."
+  },
+  {
+    "id": "html_q24",
+    "module": "html_m4",
+    "question": "How do you correctly set the font size to 16 pixels and the font family to Arial in a CSS rule?",
+    "code": null,
+    "options": [
+      "font-size: 16px; font: Arial;",
+      "font-size: 16; font-family: 'Arial';",
+      "font-size: 16px; font-family: Arial;",
+      "font-size: 16rem; font-family: 'Arial';"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: font-size: 16px; font-family: Arial;\n\nNa snímku obrazovky je otázka: „How do you correctly set the font size to 16 pixels and the font family to Arial in a CSS rule?“\n\nOficiální vysvětlení ze zkoušky:\n„To correctly set the font size to 16 pixels and the font family to Arial, you use the font-size property with the value 16px and the font-family property with the value Arial. The other options either use incorrect units (like rem or font shorthand) or miss the required syntax for proper font styling.“\n\nPodrobné vysvětlení:\nPro velikost písma v pixelech se používá vlastnost font-size s povinnou jednotkou px (zápis bez jednotky 16 je v CSS neplatný, jednotka 16rem by odpovídala 16násobku základní velikosti, tj. cca 256 pixelům). Pro rodinu písma se používá vlastnost font-family. Zkrácená vlastnost font: Arial; je neplatná, protože zkrácený zápis font vyžaduje povinně uvést minimálně velikost i rodinu písma současně.\n- Možnost 2 (font-size: 16px; font-family: Arial;) je správná."
+  },
+  {
+    "id": "html_q25",
+    "module": "html_m2",
+    "question": "Which statement is true regarding the use of <span> and <div>?",
+    "code": null,
+    "options": [
+      "<span> and <div> are interchangeable and have no difference in styling.",
+      "<div> is used to style text, while <span> is for larger sections of HTML.",
+      "<span> is used for block-level content, while <div> is for inline content.",
+      "<div> can contain block-level elements, whereas <span> is used for inline styling."
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: <div> can contain block-level elements, whereas <span> is used for inline styling.\n\nNa snímku obrazovky je otázka: „Which statement is true regarding the use of <span> and <div>?“\n\nOficiální vysvětlení ze zkoušky:\n„The <div> element is a block-level element, meaning it can contain other block-level elements and takes up the full width of its container. The <span> element, on the other hand, is an inline element, used for styling small portions of text or inline content without breaking the flow. The two are not interchangeable as they serve different purposes in terms of layout“\n\nPodrobné vysvětlení:\nElement <div> je blokový kontejner (block-level), který začíná na novém řádku, zabírá celou dostupnou šířku a může obsahovat jak blokové, tak řádkové elementy. Naopak <span> je řádkový element (inline), který se vkládá dovnitř toku textu k označení části řádku (např. pro stylování či skriptování) a nesmí obsahovat blokové prvky.\n- Možnost 3 je správná: <div> může obsahovat blokové prvky, zatímco <span> slouží pro inline stylování.\n- Ostatní možnosti jsou nepravdivé (nejsou vzájemně zaměnitelné a jejich role nejsou obrácené)."
+  },
+  {
+    "id": "html_q26",
+    "module": "html_m4",
+    "question": "How do you select elements with a custom-made class highlight-this in a CSS stylesheet?",
+    "code": null,
+    "options": [
+      "highlight-this { color: yellow; }",
+      ".highlight-this { color: yellow; }",
+      "#highlight-this { color: yellow; }",
+      "> highlight-this { color: yellow; }"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: .highlight-this { color: yellow; }\n\nNa snímku obrazovky je otázka: „How do you select elements with a custom-made class highlight-this in a CSS stylesheet?“\n\nOficiální vysvětlení ze zkoušky:\n„In CSS, a class is selected using a period (.) followed by the class name. Therefore, .highlight-this correctly selects all elements with the class highlight-this and applies the color: yellow; style. The other options are incorrect as they either use an invalid syntax for class selection or reference an ID selector (#) instead of a class.“\n\nPodrobné vysvětlení:\nV CSS se selektor třídy (class) uvozuje tečkou (.), tedy .highlight-this.\n- Možnost 1 (.highlight-this { color: yellow; }) je správná.\n- #highlight-this vybírá element podle ID, nikoli podle třídy.\n- highlight-this bez prefixu by vybíral fiktivní HTML element <highlight-this>.\n- > highlight-this je neplatná syntaxe (znak > je kombinátor potomka vyžadující rodičovský selektor)."
+  },
+  {
+    "id": "html_q27",
+    "module": "html_m4",
+    "question": "What is the main difference between using class and id attributes in HTML?",
+    "code": null,
+    "options": [
+      "The class attribute can be applied to multiple elements, while the id attribute must be unique to a single element.",
+      "The class attribute cannot be used with the <div> element, while the id attribute can.",
+      "The class attribute is used exclusively for styling, while the id attribute is used for both styling and JavaScript.",
+      "The id attribute is used to style elements when classes are not available."
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: The class attribute can be applied to multiple elements, while the id attribute must be unique to a single element.\n\nNa snímku obrazovky je otázka: „What is the main difference between using class and id attributes in HTML?“\n\nOficiální vysvětlení ze zkoušky:\n„The class attribute can be used on multiple elements across a page, allowing you to apply the same styles or JavaScript behavior to several elements. The id attribute, on the other hand, must be unique within a document, meaning it can only be used for a single element.“\n\nPodrobné vysvětlení:\nZákladním rozdílem mezi class a id je jejich kardinalita a unikátnost v rámci DOMu. Atribut id musí mít unikátní hodnotu v celém HTML dokumentu a jednoznačně identifikuje právě jeden konkrétní prvek. Atribut class naopak slouží k zařazení prvků do skupiny a stejnou třídu může sdílet libovolné množství elementů na stránce.\n- Možnost 0 je správná.\n- Ostatní možnosti uvádějí nepravdivá omezení (class lze běžně použít na <div>, oba atributy slouží pro CSS i JS a id není pouhou zálohou pro případ absence tříd)."
+  },
+  {
+    "id": "html_q28",
+    "module": "html_m4",
+    "question": "Which syntax correctly applies two separate classes to a single HTML element?",
+    "code": null,
+    "options": [
+      "<div class=\"class1\" class=\"class2\">Content</div>",
+      "<div class=\"class1, class2\">Content</div>",
+      "<div classes=\"class1 class2\">Content</div>",
+      "<div class=\"class1 class2\">Content</div>"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: <div class=\"class1 class2\">Content</div>\n\nNa snímku obrazovky je otázka: „Which syntax correctly applies two separate classes to a single HTML element?“\n\nOficiální vysvětlení ze zkoušky:\n„To apply multiple classes to a single HTML element, you separate the class names with a space within the class attribute. The other options use incorrect syntax, such as using commas or multiple class attributes, which are not valid in HTML.“\n\nPodrobné vysvětlení:\nPodle specifikace HTML se více tříd přiřazuje elementu v rámci jediného atributu class, kde se jednotlivé názvy tříd oddělují mezerou: class=\"class1 class2\".\n- Možnost 3 je správná.\n- Použití čárek (class=\"class1, class2\") je chybné, protože prohlížeč by čárku považoval za součást názvu třídy.\n- Vícenásobný atribut class na stejném elementu (<div class=\"class1\" class=\"class2\">) je neplatný – duplicitní atributy v HTML nejsou povoleny.\n- Atribut classes neexistuje."
+  },
+  {
+    "id": "html_q29",
+    "module": "html_m2",
+    "question": "What does the title attribute provide when used within an HTML element?",
+    "code": null,
+    "options": [
+      "A structural division for the document.",
+      "A tooltip when the mouse hovers over the element.",
+      "An inline style declaration.",
+      "A unique identifier for CSS and JavaScript."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: A tooltip when the mouse hovers over the element.\n\nNa snímku obrazovky je otázka: „What does the title attribute provide when used within an HTML element?“\n\nOficiální vysvětlení ze zkoušky:\n„The title attribute provides additional information about an element, which is displayed as a tooltip when the user hovers their mouse over the element. It does not serve as a unique identifier, structural division, or inline style declaration.“\n\nPodrobné vysvětlení:\nGlobální atribut title nese poradní doplňkovou informaci k elementu. Většina desktopových prohlížečů tuto informaci zobrazuje jako malou plovoucí nápovědu (tooltip), když uživatel nad prvek najede kurzorem myši.\n- Možnost 1 je správná.\n- Strukturální dělení dokumentu představují elementy jako <div> nebo <section>, unikátní identifikátor poskytuje atribut id a inline styl deklaruje atribut style."
+  },
+  {
+    "id": "html_q30",
+    "module": "html_m4",
+    "question": "How do you correctly add a simple JavaScript alert that says \"Clicked!\" when a button is clicked?",
+    "code": null,
+    "options": [
+      "<button><onclick=\"alert('Clicked!')\">Click me</button>",
+      "<button action=\"alert('Clicked!')\">Click me</button>",
+      "<button on-click=\"alert('Clicked!')\">Click me</button>",
+      "<button onclick=\"alert('Clicked!')\">Click me</button>"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: <button onclick=\"alert('Clicked!')\">Click me</button>\n\nNa snímku obrazovky je otázka: „How do you correctly add a simple JavaScript alert that says \"Clicked!\" when a button is clicked?“\n\nOficiální vysvětlení ze zkoušky:\n„The correct way to trigger a JavaScript alert when a button is clicked is by using the onclick attribute in the button tag and setting it to the JavaScript code alert('Clicked!'). The other options use incorrect attributes or syntax.“\n\nPodrobné vysvětlení:\nUdálost kliknutí myší se v HTML obsluhuje pomocí atributu onclick, který se umísťuje do otevíracího tagu elementu: <button onclick=\"alert('Clicked!')\">.\n- Možnost 3 je správná.\n- Varianta on-click s pomlčkou neexistuje v HTML standardu.\n- Atribut action patří k formuláři (<form>), nikoli k obsluze kliknutí na tlačítko.\n- Konstrukce <button><onclick=\"...\"> je hrubá syntaktická chyba."
+  },
+  {
+    "id": "html_q31",
+    "module": "html_m5",
+    "question": "Which level of conformance does the Web Content Accessibility Guidelines (WCAG) require to meet the needs of most people with disabilities?",
+    "code": null,
+    "options": [
+      "Level AA",
+      "Level A+",
+      "Level A",
+      "Level AAA"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: Level AA\n\nNa snímku obrazovky je otázka: „Which level of conformance does the Web Content Accessibility Guidelines (WCAG) require to meet the needs of most people with disabilities?“\n\nOficiální vysvětlení ze zkoušky:\n„Level AA of the Web Content Accessibility Guidelines (WCAG) is considered the standard level of conformance to meet the needs of most people with disabilities. It addresses a wide range of accessibility issues, including those that affect users with visual, auditory, motor, and cognitive disabilities. Level A addresses the most basic web accessibility requirements, while Level AAA is the highest level, focusing on more advanced accessibility needs.“\n\nPodrobné vysvětlení:\nWCAG definuje tři úrovně shody: A (minimální základ), AA (střední, standardní úroveň vyhovující většině uživatelů se znevýhodněním a vyžadovaná zákony a normami) a AAA (nejvyšší úroveň pro pokročilé potřeby, často nesplnitelná pro celý web).\n- Možnost 0 (Level AA) je správná.\n- Úroveň A+ v normě WCAG vůbec neexistuje.\n- Úroveň A pokrývá jen nejzákladnější bariéry a úroveň AAA je specializovaná a výběrová."
+  },
+  {
+    "id": "html_q32",
+    "module": "html_m5",
+    "question": "Which HTML5 element is used to represent a generic container without any additional semantic meaning?",
+    "code": null,
+    "options": [
+      "<aside>",
+      "<div>",
+      "<main>",
+      "<article>"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: <div>\n\nNa snímku obrazovky je otázka: „Which HTML5 element is used to represent a generic container without any additional semantic meaning?“\n\nOficiální vysvětlení ze zkoušky:\n„The <div> element is a generic container used to group content without any inherent semantic meaning. It is often used for styling or grouping elements together in a layout. The other elements (<article>, <aside>, and <main>) have specific semantic meanings for representing content related to articles, sidebars, or the main content of a page, respectively.“\n\nPodrobné vysvětlení:\nElement <div> (division) je generický nepárový blokový kontejner, který sám o sobě nenese žádný sémantický význam a slouží čistě pro strukturování layoutu a stylování.\n- Možnost 1 (<div>) je správná.\n- Elementy <article>, <aside> a <main> jsou sémantické tagy HTML5, které jasně sdělují význam svého obsahu (samostatný článek, doplňkový postranní obsah, hlavní obsah stránky)."
+  },
+  {
+    "id": "html_q33",
+    "module": "html_m5",
+    "question": "Which ARIA attribute should be used to indicate the current state of an element that can be expanded or collapsed, such as an accordion panel?",
+    "code": null,
+    "options": [
+      "aria-checked",
+      "aria-expanded-collapsed",
+      "aria-collapsed",
+      "aria-expanded"
+    ],
+    "correct": 3,
+    "explanation": "Správná odpověď: aria-expanded\n\nNa snímku obrazovky je otázka: „Which ARIA attribute should be used to indicate the current state of an element that can be expanded or collapsed, such as an accordion panel?“\n\nOficiální vysvětlení ze zkoušky:\n„The aria-expanded attribute is used to indicate whether an element that can be expanded or collapsed (such as an accordion panel) is currently expanded or collapsed. When set to true, it indicates the element is expanded, and when set to false, it indicates the element is collapsed. This attribute helps improve accessibility for users of assistive technologies. The other options are incorrect or do not serve the intended purpose.“\n\nPodrobné vysvětlení:\nAtribut aria-expanded slouží k vyjádření stavu sbalení (false) nebo rozbalení (true) ovládacího prvku akordeonu, rozbalovací nabídky nebo panelu pro asistenční technologie.\n- Možnost 3 (aria-expanded) je správná.\n- Atributy aria-collapsed a aria-expanded-collapsed ve specifikaci W3C WAI-ARIA neexistují.\n- aria-checked indikuje stav zaškrtnutí u přepínačů a zaškrtávacích políček."
+  },
+  {
+    "id": "html_q34",
+    "module": "html_m1",
+    "question": "Why is maintaining consistent indentation and formatting important in HTML code?",
+    "code": null,
+    "options": [
+      "It reduces file size and improves page loading speed.",
+      "It prevents browser compatibility issues.",
+      "It enhances readability and helps identify the structure of HTML elements.",
+      "It improves search engine optimization (SEO)."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: It enhances readability and helps identify the structure of HTML elements.\n\nNa snímku obrazovky je otázka: „Why is maintaining consistent indentation and formatting important in HTML code?“\n\nOficiální vysvětlení ze zkoušky:\n„Consistent indentation and formatting improve the readability of HTML code, making it easier for developers to understand the document structure, locate elements, and maintain the code. It doesn't directly affect browser compatibility, file size, or SEO but plays a crucial role in code maintenance and collaboration. Properly formatted code is essential for debugging and efficient teamwork.“\n\nPodrobné vysvětlení:\nKonzistentní odsazení a úprava kódu pomáhá vývojářům vizuálně sledovat hierarchii vnořených tagů, usnadňuje ladění a týmovou údržbu.\n- Možnost 2 je správná: zvyšuje čitelnost a pomáhá identifikovat strukturu elementů.\n- Webové prohlížeče bílé znaky a odsazení při zpracování slučují (whitespace collapsing), takže odsazení nemá žádný vliv na kompatibilitu prohlížečů, SEO ani na zmenšení souboru (mezery soubor naopak nepatrně zvětšují)."
+  },
+  {
+    "id": "html_q35",
+    "module": "html_m5",
+    "question": "Which attribute should be used to specify the language of the content in an HTML document, enhancing accessibility for users?",
+    "code": null,
+    "options": [
+      "language",
+      "lang",
+      "html-lang",
+      "html-language"
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: lang\n\nNa snímku obrazovky je otázka: „Which attribute should be used to specify the language of the content in an HTML document, enhancing accessibility for users?“\n\nOficiální vysvětlení ze zkoušky:\n„The lang attribute is used to specify the language of the content in an HTML document. It is placed in the <html> tag to inform browsers and assistive technologies (such as screen readers) of the language used on the page, improving accessibility for users. The other options are not valid HTML attributes.“\n\nPodrobné vysvětlení:\nGlobální atribut lang (např. <html lang=\"en\">) definuje primární jazyk obsahu dokumentu. Je klíčový pro přístupnost, protože asistenční technologie (odečítače obrazovky) podle něj volí odpovídající hlasový syntezátor a výslovnostní pravidla.\n- Možnost 1 (lang) je správná.\n- Atributy language, html-lang ani html-language nejsou v moderním HTML platnými atributy pro definici jazyka dokumentu."
+  },
+  {
+    "id": "html_q36",
+    "module": "html_m1",
+    "question": "Identify the error in the following HTML snippet used to link a favicon:",
+    "code": "<head>\n  <link rel=\"shortcut-icon\" type=\"image/png\" href=\"favicon.png\">\n</head>",
+    "options": [
+      "The href attribute must point to an .ico file, not a .png file for wider browser compatibility.",
+      "The rel attribute should be icon, not shortcut-icon.",
+      "The MIME type image/png is incorrect for a favicon; it should be image/x-icon.",
+      "The href attribute's path must start with / to ensure it is found regardless of the current page's URL."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: The rel attribute should be icon, not shortcut-icon.\n\nNa snímku obrazovky je kód:\n<head>\n  <link rel=\"shortcut-icon\" type=\"image/png\" href=\"favicon.png\">\n</head>\nOtázka: „Identify the error in the following HTML snippet used to link a favicon:“\n\nOficiální vysvětlení ze zkoušky:\n„To properly link a favicon, the rel attribute should be set to icon, not shortcut-icon. The type attribute can be image/png for a PNG favicon, and the href attribute can point to either a .ico or .png file, depending on the desired format. While .ico files have better browser support, modern browsers also support .png favicons. The path in the href does not necessarily need to start with / unless you want to specify an absolute path.“\n\nPodrobné vysvětlení:\nV HTML je standardní hodnotou atributu rel pro ikonu stránky hodnota icon (v dřívějších dobách též shortcut icon oddělené mezerou). Spojení s pomlčkou shortcut-icon je neplatné.\n- Možnost 1 je správná: hodnota atributu rel má být icon, nikoli shortcut-icon.\n- Použití formátu PNG (type=\"image/png\") je dnes plně podporované a relativní cesta k souboru je naprosto v pořádku."
+  },
+  {
+    "id": "html_q37",
+    "module": "html_m2",
+    "question": "How should the following snippet be corrected to display a less than symbol?",
+    "code": "<p>Our prices are < than ever!</p>",
+    "options": [
+      "Add quotes around <.",
+      "Replace < with \\<.",
+      "Replace < with &lt; .",
+      "Wrap < in <!-- and -->."
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: Replace < with &lt; .\n\nNa snímku obrazovky je ukázka:\n<p>Our prices are < than ever!</p>\nOtázka: „How should the following snippet be corrected to display a less than symbol?“\n\nOficiální vysvětlení ze zkoušky:\n„In HTML, the less than symbol < is reserved for starting tags, so it must be replaced with the HTML character entity &lt; to display the symbol correctly. The other options are incorrect and would not properly display the less than symbol.“\n\nPodrobné vysvětlení:\nZnak menší než (<) je v HTML vyhrazený (reserved character) pro uvození otevíracích či uzavíracích značek tagů. Pokud se zapíše přímo do textu, parser jej může interpretovat jako začátek tagu a způsobit chybu vykreslování. Pro zobrazení symbolu < v textu se musí použít znaková entita &lt; (less than).\n- Možnost 2 je správná.\n- Escapování zpětným lomítkem \\< v HTML nefunguje, uvozovky nepomáhají a komentář <!-- < --> by znak zcela skryl."
+  },
+  {
+    "id": "html_q38",
+    "module": "html_m1",
+    "question": "What should be added to ensure this emoji is correctly displayed in all browsers?",
+    "code": "<p>I love pizza 🍕</p>",
+    "options": [
+      "Wrap the emoji in a <span> tag.",
+      "Specify a charset of UTF-8 in the <meta> tag of the document's head.",
+      "Specify a charset of ASCII in the <meta> tag of the document's head.",
+      "Replace the emoji with an HTML entity."
+    ],
+    "correct": 1,
+    "explanation": "Správná odpověď: Specify a charset of UTF-8 in the <meta> tag of the document's head.\n\nNa snímku obrazovky je ukázka:\n<p>I love pizza 🍕</p>\nOtázka: „What should be added to ensure this emoji is correctly displayed in all browsers?“\n\nOficiální vysvětlení ze zkoušky:\n„Using an HTML entity could work in some cases, but not all emojis have corresponding HTML entities. The most reliable way to ensure correct emoji rendering is by specifying UTF-8 encoding in the <meta> tag. This allows the browser to interpret and display emojis correctly across different platforms“\n\nPodrobné vysvětlení:\nEmoji znaky spadají do standardu Unicode (vícebajtové kódování). Aby prohlížeč interpretoval tyto znaky správně a nedošlo k jejich zkomolení (tzv. mojibake), je nezbytné v hlavičce <head> deklarovat kódování UTF-8 pomocí <meta charset=\"UTF-8\">.\n- Možnost 1 je správná.\n- Znaková sada ASCII podporuje pouze 128 základních znaků a emoji nepodporuje.\n- Zabalení do <span> problém s kódováním nijak neřeší.\n- Nahrazení HTML entitou nemusí být vždy dostupné pro všechny novější emotikony."
+  },
+  {
+    "id": "html_q39",
+    "module": "html_m3",
+    "question": "Which attribute value should you insert in the following snippet to correctly create an image map named \"workMap\" for an image?",
+    "code": "<img src=\"workplace.jpg\" usemap=\"<!-- Insert value here -->\">\n<map name=\"workMap\">\n  <!-- Map areas here -->\n</map>",
+    "options": [
+      "#workMap",
+      "true",
+      "@workMap",
+      "workmap.jpg"
+    ],
+    "correct": 0,
+    "explanation": "Správná odpověď: #workMap\n\nNa snímku obrazovky je ukázka:\n<img src=\"workplace.jpg\" usemap=\"<!-- Insert value here -->\">\n<map name=\"workMap\">\n  <!-- Map areas here -->\n</map>\nOtázka: „Which attribute value should you insert in the following snippet to correctly create an image map named \"workMap\" for an image?“\n\nOficiální vysvětlení ze zkoušky:\n„To correctly create an image map, the usemap attribute in the <img> tag should refer to the id or name of the <map> element, prefixed with a #. In this case, the image map is named \"workMap,\" so the correct value for the usemap attribute is #workMap. This links the image to the map and allows you to define areas within the image that can be clicked.“\n\nPodrobné vysvětlení:\nAtribut usemap na značce <img> propojuje obrázek s definicí klikatelných oblastí v elementu <map>. Hodnota atributu usemap musí obsahovat název mapy (hodnotu atributu name daného prvku <map>) s předřazeným znakem mřížky # (funguje jako odkaz na interní identifikátor v dokumentu), v tomto případě tedy #workMap.\n- Možnost 0 (#workMap) je správná.\n- Hodnoty @workMap, true ani cesta k souboru workmap.jpg mapu nepropojí."
+  },
+  {
+    "id": "html_q40",
+    "module": "html_m6",
+    "question": "Select the correct fragment of code that needs to be inserted in the following snippet to correctly define a circle with SVG:",
+    "code": "<svg width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"green\" stroke-width=\"4\" fill=\"yellow\" <!-- Insert missing code here -->\n</svg>",
+    "options": [
+      "></circle>.",
+      ">.",
+      "/>.",
+      ">{}"
+    ],
+    "correct": 2,
+    "explanation": "Správná odpověď: />.\n\nNa snímku obrazovky je ukázka:\n<svg width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"green\" stroke-width=\"4\" fill=\"yellow\" <!-- Insert missing code here -->\n</svg>\nOtázka: „Select the correct fragment of code that needs to be inserted in the following snippet to correctly define a circle with SVG:“\n\nOficiální vysvětlení ze zkoušky:\n„In the SVG code, the <circle> element should be self-closed with a /> at the end. This properly closes the circle element within the SVG. The other options (>, </circle>, and {}) are incorrect in this context.“\n\nPodrobné vysvětlení:\nElement <circle> v SVG představuje samostatný geometrický tvar bez vnořeného obsahu, který se zapisuje jako samostatně uzavírací (self-closing) prvek zakončený lomítkem a pravou lomenou závorkou /> (v možnostech zobrazeno s tečkou jako />.).\n- Možnost 2 (/>.) je správná.\n- Samotné > by element neuzavřelo a syntaxe >{} je neplatná.\n- Zápis ></circle> by sice fungoval jako párový, ale v dané pozici za komentářem chybí otevírací uzavření a standardním SVG idiomem je samouzavírací značka />."
+  }
+]

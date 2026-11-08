@@ -1,0 +1,216 @@
+[
+  {
+    "id": "dd_q35",
+    "module": "dd_m4",
+    "question": "A transitive dependency exists when any attribute in an entity is dependent on any other non-UID attribute in that entity. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Tvrzení je pravdivé (True). Tranzitivní závislost (transitive dependency) nastává tehdy, když neklíčový atribut (atribut, který není součástí unikátního identifikátoru – UID) závisí na jiném neklíčovém atributu v rámci stejné entity (např. atribut B závisí na UID a atribut C závisí na atributu B, čímž atribut C tranzitivně závisí na UID). Právě odstranění všech tranzitivních závislostí vyčleněním závislých atributů do nové samostatné entity je klíčovým požadavkem 3. normální formy (3NF – „každý neklíčový atribut musí záviset na klíči, celém klíči a ničem jiném než klíči“)."
+  },
+  {
+    "id": "dd_q36",
+    "module": "dd_m5",
+    "question": "The transformation from an ER diagram to a physical design involves changing terminology. Entities in the ER diagram become _________ :",
+    "code": null,
+    "options": [
+      "Tables",
+      "Columns",
+      "Unique Keys",
+      "Foreign Keys"
+    ],
+    "correct": 0,
+    "explanation": "Při transformaci z konceptuálního/logického ER diagramu do fyzického databázového návrhu dochází ke změně terminologie: entita (Entity) se stává tabulkou (Table), atribut (Attribute) se stává sloupcem (Column), instance entity odpovídá řádku (Row), primární UID se stává primárním klíčem (Primary Key), sekundární UID unikátním klíčem (Unique Key) a vztahy se transformují na cizí klíče (Foreign Keys). Možnosti Columns, Unique Keys a Foreign Keys reprezentují jiné konstrukty a neodpovídají entitě."
+  },
+  {
+    "id": "dd_q37",
+    "module": "dd_m1",
+    "question": "Where an entity has more than one attribute suitable to be the Primary UID, these are known as _________ UIDs.",
+    "code": null,
+    "options": [
+      "Secondary",
+      "Composite",
+      "Candidate",
+      "Simple"
+    ],
+    "correct": 2,
+    "explanation": "Pokud má entita více atributů (či kombinací atributů), které jsou vhodné a schopné jednoznačně identifikovat každou instanci entity, nazývají se kandidátní identifikátory (Candidate UIDs). Z nich návrhář zvolí jeden za primární UID (Primary UID) a veškeré zbývající nezvolené kandidátní identifikátory se označují jako sekundární identifikátory (Secondary UIDs). Kompozitní UID (Composite UID) je tvořeno kombinací více atributů či vztahů a jednoduché UID (Simple UID) se skládá z jediného atributu."
+  },
+  {
+    "id": "dd_q38",
+    "module": "dd_m5",
+    "question": "A foreign key cannot refer to a primary key in the same table. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Cizí klíč může odkazovat na primární klíč v téže tabulce. Tento mechanismus se v relačních databázích nazývá rekurzivní vztah (self-referencing relationship nebo recursive foreign key). Typickým příkladem v Oracle Academy je hierarchie zaměstnanců v tabulce EMPLOYEES, kde sloupec manager_id (cizí klíč) odkazuje na sloupec employee_id (primární klíč) stejné tabulky."
+  },
+  {
+    "id": "dd_q39",
+    "module": "dd_m5",
+    "question": "Relationships on an ERD can only be transformed into UIDs in the physical model. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Vztahy z ER diagramu se ve fyzickém návrhu transformují na cizí klíče (Foreign Keys), nikoliv výhradně na UID. Navíc UID je koncept logického modelu, zatímco ve fyzickém modelu se používá pojem Primary Key a Unique Key. Pouze v případě identifikačních vztahů (barred relationships) se cizí klíč stává součástí složeného primárního klíče podřízené tabulky, ale ani v takovém případě nelze říci, že by se vztahy transformovaly „pouze na UID“."
+  },
+  {
+    "id": "dd_q40",
+    "module": "dd_m3",
+    "question": "A Supertype can have only one subtype. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Podle základních pravidel modelování v Oracle Academy musí mít každý nadtyp (Supertype) alespoň dva podtypy (Subtypes). Podtypy musí být vzájemně se vylučující (mutually exclusive) a úplné (collectively exhaustive). Existence jediného podtypu postrádá logický smysl, neboť by byl zcela totožný se samotným nadtypem a neposkytoval by žádnou kategorizaci."
+  },
+  {
+    "id": "dd_q41",
+    "module": "dd_m4",
+    "question": "Examine the following entity and decide which attribute breaks the 2nd Normal Form rule:",
+    "code": "ENTITY: RECEIPT\nATTRIBUTES:\n#CUSTOMER ID\n#STORE ID\nSTORE LOCATION\nDATE",
+    "options": [
+      "STORE LOCATION",
+      "CUSTOMER ID",
+      "STORE ID",
+      "DATE"
+    ],
+    "correct": 0,
+    "explanation": "Druhá normální forma (2NF) vyžaduje, aby entita byla v 1NF a aby všechny neklíčové atributy byly plně funkčně závislé na celém unikátním identifikátoru (UID), nikoliv pouze na jeho části (nesmí existovat částečná funkční závislost). Zde má entita RECEIPT složený UID ze dvou atributů (#CUSTOMER ID a #STORE ID). Atribut STORE LOCATION závisí výhradně na STORE ID (adresa obchodu je určena samotným obchodem bez vazby na zákazníka), což porušuje pravidlo 2NF. Atribut DATE závisí na celé transakci zákazníka v daném obchodě a atributy CUSTOMER ID a STORE ID tvoří samotný UID."
+  },
+  {
+    "id": "dd_q42",
+    "module": "dd_m5",
+    "question": "Which of the following scenarios should be modeled so that historical data is kept? (Choose Two)",
+    "code": null,
+    "options": [
+      "CUSTOMER and PAYMENTS",
+      "BABY and AGE",
+      "CUSTOMER and ORDERS",
+      "TEACHER and AGE"
+    ],
+    "correct": [
+      0,
+      2
+    ],
+    "explanation": "Správné odpovědi jsou CUSTOMER and PAYMENTS a CUSTOMER and ORDERS. Transakční procesy jako platby (PAYMENTS) a objednávky (ORDERS) vyžadují evidenci historie v čase – podnik potřebuje mít trvalý auditní záznam o každé uskutečněné platbě i objednávce zákazníka včetně časových razítek. Naopak atribut AGE (věk) u učitele či dítěte se v databázi jako historická data nemodeluje; jde o odvoditelný údaj, u něhož se ukládá neměnné datum narození (birth date) a aktuální věk se dynamicky dopočítává."
+  },
+  {
+    "id": "dd_q43",
+    "module": "dd_m5",
+    "question": "It is possible to implement non-transferability via a simple Foreign Key Relationship. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Nepřevoditelný vztah (non-transferable relationship) definuje pravidlo, že po přiřazení podřízeného záznamu k nadřízenému již toto propojení nelze nikdy změnit (převést na jiného rodiče). Běžné omezení cizího klíče (Foreign Key) v relační databázi kontroluje pouze referenční integritu (zda rodičovský záznam existuje), ale nezabraňuje operacím UPDATE na sloupci cizího klíče. Pro vynucení nepřevoditelnosti ve fyzické databázi je nutné použít dodatečný mechanismus, typicky databázový trigger (např. BEFORE UPDATE v PL/SQL, který vyvolá výjimku při pokusu o změnu hodnoty FK)."
+  },
+  {
+    "id": "dd_q44",
+    "module": "dd_m5",
+    "question": "Which of the following is a valid reason for considering a Subtype Implementation?",
+    "code": null,
+    "options": [
+      "The common access paths for the supertypes are different.",
+      "The resulting table will reside in a single database and be used by just ONE user.",
+      "Business functionality, business rules, access paths, and frequency of access are all very different between the subtypes.",
+      "Most of the relationships are at the supertype level."
+    ],
+    "correct": 2,
+    "explanation": "Při transformaci hierarchie nadtyp/podtypy do fyzického schématu se implementace podtypů (Subtype Implementation – vytvoření samostatné tabulky pro každý podtyp) volí tehdy, pokud se obchodní funkcionalita, integritní pravidla, přístupové cesty a frekvence přístupu mezi jednotlivými podtypy výrazně liší. Pokud by naopak většina vztahů a atributů byla společná na úrovni nadtypu a přístupové vzory byly jednotné, preferuje se implementace nadtypu do jediné společné tabulky (Supertype Implementation)."
+  },
+  {
+    "id": "dd_q45",
+    "module": "dd_m1",
+    "question": "Entities are usually verbs. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Entity v ER modelování představují objekty, osoby, místa, koncepty nebo události, o nichž organizace potřebuje ukládat data, a proto jsou zásadně pojmenovávány podstatnými jmény (nouns) v jednotném čísle (např. EMPLOYEE, ORDER, PRODUCT, DEPARTMENT). Slovesa (verbs) se naopak používají k pojmenování vztahů (relationships), které popisují interakce mezi entitami (např. 'places', 'contains', 'assigned to')."
+  },
+  {
+    "id": "dd_q46",
+    "module": "dd_m5",
+    "question": "A Hierarchical relationship is a series of relationships that reflect entities organized into successive levels. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Tvrzení je pravdivé (True). Hierarchický vztah představuje sérii vztahů, které vyjadřují uspořádání entit do postupných (sukcesivních) úrovní, kde každá nižší úroveň závisí na úrovni bezprostředně nad ní. Příkladem v databázovém modelování je geografická hierarchie (KONTINENT -> ZEMĚ -> KRAJ -> MĚSTO) nebo víceúrovňová organizační struktura."
+  },
+  {
+    "id": "dd_q47",
+    "module": "dd_m1",
+    "question": "Which symbol is used to show that a particular attribute is mandatory?",
+    "code": null,
+    "options": [
+      "&",
+      "*",
+      "o",
+      "#"
+    ],
+    "correct": 1,
+    "explanation": "V Barkerově notaci ER diagramů používané v materiálech Oracle Academy se povinný (mandatory) atribut značí hvězdičkou (*). Kroužek (o) značí nepovinný (optional) atribut, mřížka (#) značí atribut, který je součástí unikátního identifikátoru (UID), a ampersand (&) nemá v Barkerově notaci žádný význam."
+  },
+  {
+    "id": "dd_q48",
+    "module": "dd_m5",
+    "question": "Cascading UIDs are a feature often found in what type of Relationship?",
+    "code": null,
+    "options": [
+      "Heirarchical Relationship",
+      "Recursive Relationship",
+      "Invalid Relationship",
+      "General Relationship"
+    ],
+    "correct": 0,
+    "explanation": "Kaskádové identifikátory (Cascading UIDs) jsou typickým rysem hierarchických vztahů (Hierarchical Relationship) modelovaných pomocí identifikačních (barred) vztahů. V takové hierarchii (např. BUDOVA -> POSCHODÍ -> MÍSTNOST) přebírá každá podřízená entita do svého primárního identifikátoru celý identifikátor své nadřazené entity. Identifikátory se tak postupně kaskádovitě skládají a propagují směrem dolů hierarchií."
+  },
+  {
+    "id": "dd_q49",
+    "module": "dd_m2",
+    "question": "Which of the following are used to show Cardinality on an ERD? (Choose Two)",
+    "code": null,
+    "options": [
+      "Single toe.",
+      "Dashed line.",
+      "Crow's foot.",
+      "Solid line."
+    ],
+    "correct": [
+      0,
+      2
+    ],
+    "explanation": "Správné odpovědi jsou 'Single toe.' a 'Crow's foot.'. V Barkerově notaci ER diagramů určuje kardinalitu (kolik instancí se může účastnit vztahu) zakončení linky: 'Single toe' (rovné zakončení čáry bez větvení) značí kardinalitu 'jeden' (one and only one), zatímco 'Crow's foot' (vraní nožka / rozvětvení) značí kardinalitu 'mnoho' (one or more). Plná čára (Solid line) a čárkovaná čára (Dashed line) slouží k vyjádření volitelnosti vztahu (Optionality – povinný vs. nepovinný), nikoli kardinality."
+  },
+  {
+    "id": "dd_q50",
+    "module": "dd_m2",
+    "question": "Relationship names are not shown on an ERD. True or False?",
+    "code": null,
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Tvrzení je nepravdivé (False). Názvy vztahů (relationship labels) se na ER diagramu v Barkerově notaci explicitně zobrazují na obou koncích linky vztahu. Tyto popisky umožňují číst vztahy v obou směrech jako celistvé gramatické věty (např. 'Each EMPLOYEE must be assigned to one and only one DEPARTMENT' a 'Each DEPARTMENT may be responsible for one or more EMPLOYEES')."
+  }
+]

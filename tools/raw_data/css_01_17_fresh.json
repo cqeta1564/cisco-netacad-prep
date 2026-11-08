@@ -1,0 +1,242 @@
+[
+  {
+    "id": "css_q01",
+    "module": "css_m1",
+    "question": "What is the correct syntax for a CSS rule?",
+    "code": null,
+    "options": [
+      "selector {\n  value: property\n}",
+      "property: value {\n  selector\n}",
+      "selector {\n  property: value\n}",
+      "value: property {\n  selector\n}"
+    ],
+    "correct": 2,
+    "explanation": "Správná syntaxe CSS pravidla se skládá ze selektoru a deklaračního bloku ve složených závorkách: selector { property: value; }. Selektor určuje cílový HTML element, vlastnost (property) definuje stylovaný aspekt (např. color) a hodnota (value) nastavuje konkrétní styl (např. red). Ostatní možnosti obracejí pořadí selektoru, vlastností a hodnot."
+  },
+  {
+    "id": "css_q02",
+    "module": "css_m1",
+    "question": "Consider the following CSS code snippet applied to a <div> element:\n\nWhat will be the effect of this CSS on the <div> element?",
+    "code": "div {\n  border: 1px solid orange;\n  width: 200px;\n  height: 100px;\n  background-color: lightblue; /* light blue background */\n  /* border: 2px solid black; */\n  text-align: center; /*\n  text-align: left; */\n  color: white;\n}",
+    "options": [
+      "The div will have a solid orange border and left-aligned white text.",
+      "The div will have a light blue background and solid black border.",
+      "The text inside the div will be orange and centered.",
+      "The div will have a solid orange border and centered white text."
+    ],
+    "correct": 3,
+    "explanation": "V kódu je nastaven oranžový rámeček border: 1px solid orange; (černý rámeček níže je zakomentován). Dále je nastaveno světle modré pozadí (background-color: lightblue;) a bílý text (color: white;). U zarovnání textu je aplikováno text-align: center;, protože víceřádkový komentář začíná až za ním (/* text-align: left; */). Výsledkem je tedy plný oranžový rámeček a na střed zarovnaný bílý text uvnitř divu."
+  },
+  {
+    "id": "css_q03",
+    "module": "css_m2",
+    "question": "Which selector would you use to target all <a> elements with a title attribute?",
+    "code": null,
+    "options": [
+      "a[title]",
+      "a.class=\"title\"",
+      "a:attr(title)",
+      "a#title"
+    ],
+    "correct": 0,
+    "explanation": "Pro zacílení elementů s konkrétním atributem slouží v CSS atributový selektor s hranatými závorkami [attribute]. Zápis a[title] správně vybere všechny elementy <a>, které mají přítomen atribut title. Zápisy jako a.class=\"title\" či a:attr(title) jsou neplatné a a#title vybírá odkaz s ID 'title'."
+  },
+  {
+    "id": "css_q04",
+    "module": "css_m2",
+    "question": "To style elements with the class highlight only when they are hovered over, which selector would you use?",
+    "code": null,
+    "options": [
+      ".highlight:focus",
+      "#highlight:hover",
+      ".highlight::hover",
+      ".highlight:hover"
+    ],
+    "correct": 3,
+    "explanation": "Třída se v CSS uvozuje tečkou (.highlight) a pseudotřída pro najetí myši jednou dvojtečkou (:hover). Správný selektor je proto .highlight:hover. Zápis #highlight:hover by cílil na element s ID 'highlight', .highlight:focus reaguje na fokus (zaměření) a ::hover je neplatná syntaxe (dvě dvojtečky patří pseudoelementům)."
+  },
+  {
+    "id": "css_q05",
+    "module": "css_m2",
+    "question": "Examine the following snippet:",
+    "code": "/* styles.css */\n#element {\n  color: green;\n}\n.element-class {\n  color: yellow;\n}\ndiv {\n  color: orange;\n}\n\n<!-- index.html -->\n<div id=\"element\" class=\"element-class\">Sample Text</div>",
+    "options": [
+      "Either a random color or an error will occur",
+      "Orange",
+      "Green",
+      "Yellow"
+    ],
+    "correct": 2,
+    "explanation": "Tato otázka testuje specificitu (váhu) CSS selektorů. Na element <div> cílí selektor ID (#element s váhou 0-1-0-0), selektor třídy (.element-class s váhou 0-0-1-0) a elementární selektor (div s váhou 0-0-0-1). Protože ID selektor má vyšší specificitu než třídní i typový selektor, uplatní se jeho pravidlo a výsledný text bude mít zelenou barvu (Green)."
+  },
+  {
+    "id": "css_q06",
+    "module": "css_m3",
+    "question": "How would you set a semi-transparent black background with 50% opacity?",
+    "code": null,
+    "options": [
+      "background-color: black; transparent: 0.5;",
+      "background-color: rgba(0, 0, 0, 0.5);",
+      "background-color: #00000050; opacity: 50%;",
+      "background-color: hsl(0, 0%, 0%, 0.5);"
+    ],
+    "correct": 1,
+    "explanation": "Funkce rgba(r, g, b, a) v CSS umožňuje nastavit barevné složky (pro černou 0, 0, 0) a alfa kanál pro průhlednost. Hodnota 0.5 nastaví 50% průhlednost pozadí: background-color: rgba(0, 0, 0, 0.5);. Vlastnost transparent v CSS neexistuje, opacity: 50% by zprůhlednila i text a vnořené elementy, a funkce hsl v tradiční syntaxi nepřijímá 4 parametry."
+  },
+  {
+    "id": "css_q07",
+    "module": "css_m3",
+    "question": "Which of the following CSS properties is a shorthand that correctly sets the list marker type to a square, the position of the marker inside the list item, and a custom image as the list marker?",
+    "code": null,
+    "options": [
+      "list: square inside url('marker.png');",
+      "list-style-type: square; list-style-position: inside; list-style-image: url('marker.png');",
+      "list-style: square inside url('marker.png');",
+      "list-marker: square inside url('marker.png');"
+    ],
+    "correct": 2,
+    "explanation": "Zkrácená (shorthand) vlastnost list-style slouží ke sloučení list-style-type (square), list-style-position (inside) a list-style-image (url('marker.png')) do jediného zápisu: list-style: square inside url('marker.png');. Možnost s rozepsanými jednotlivými vlastnostmi není zkrácený zápis (shorthand), na který se otázka výslovně táže, a názvy vlastností list či list-marker v CSS neexistují."
+  },
+  {
+    "id": "css_q08",
+    "module": "css_m3",
+    "question": "Which of the following CSS rules ensures that an image inside a hyperlink appears without an underline, has no border, and scales properly within the link?",
+    "code": null,
+    "options": [
+      "a img {\n  text-decoration: none;\n  width: auto;\n}",
+      "a {\n  border: 0;\n  max-width: 100%;\n  text-decoration: none;\n  img('image.png')\n}",
+      "a img {\n  border: 0;\n  display: block;\n  max-width: 100%;\n  text-decoration: none;\n}",
+      "a img('image.png') {\n  border: none;\n  display: inline;\n  max-width: 100%;\n  underline: none;\n}"
+    ],
+    "correct": 2,
+    "explanation": "Pravidlo a img cílící na obrázek uvnitř odkazu správně odstraňuje podtržení (text-decoration: none;), ruší ohraničení (border: 0;) a zajišťuje správné responzivní přizpůsobení šířce odkazu (max-width: 100%;). Přidání display: block; navíc brání nechtěným spodním mezerám pod obrázkem. Ostatní možnosti obsahují neplatnou syntaxi (např. img('image.png'), underline: none) nebo chybějící vlastnosti."
+  },
+  {
+    "id": "css_q09",
+    "module": "css_m3",
+    "question": "Which of the following CSS rules sets the font size to 16px, font weight to bold, and font style to italic for a paragraph element?",
+    "code": null,
+    "options": [
+      "p {\n  font-style: bold italic 16px;\n}",
+      "p {\n  font: 16px bold italic;\n}",
+      "p {\n  font-size: 16px;\n  font-weight: bold;\n  font-style: italic;}",
+      "p {\n  font: 16px;\n  font-weight: italic;\n  font-style: bold;\n}"
+    ],
+    "correct": 2,
+    "explanation": "Správný zápis explicitně a korektně nastavuje jednotlivé vlastnosti písma: font-size: 16px;, font-weight: bold; a font-style: italic;. Zkrácená vlastnost font vyžaduje povinné uvedení velikosti i rodiny písma v pevném pořadí (např. font: italic bold 16px sans-serif;), takže nabízené shorthand varianty jsou neplatné."
+  },
+  {
+    "id": "css_q10",
+    "module": "css_m3",
+    "question": "Which CSS rule combines properties to set the text color to blue, center-align the text, set the font family to Arial, and add a line height of 1.5?",
+    "code": null,
+    "options": [
+      "p {\n  text-color: blue;\n  text-align: middle; font-family: Arial, sans-serif;\n  line-spacing: 1.5;\n}",
+      "p {\n  color: blue;\n  text-align: center; font-family: Arial, sans-serif;\n  line-height: 1.5;\n}",
+      "p {\n  color: blue;\n  text-align: center; font-family: Arial, serif;\n  height: 1.5;\n}",
+      "p {\n  color: blue;\n  align-text: center; font-family: Arial, sans-serif;\n  line-height: 1.5;\n}"
+    ],
+    "correct": 1,
+    "explanation": "Pravidlo správně kombinuje vlastnosti CSS: color: blue; (nastavení barvy textu), text-align: center; (zarovnání textu na střed), font-family: Arial, sans-serif; (rodina písma s bezpatkovou zálohou) a line-height: 1.5; (výška řádku / řádkování). Ostatní možnosti obsahují neexistující vlastnosti jako text-color, align-text či line-spacing, případně nesprávné hodnoty (middle pro vodorovné zarovnání)."
+  },
+  {
+    "id": "css_q11",
+    "module": "css_m3",
+    "question": "What is the primary difference between the CSS properties margin and padding?",
+    "code": null,
+    "options": [
+      "margin creates space between the element's content and its border, while padding creates space outside the element's border.",
+      "margin creates space outside the element's border, while padding creates space between the element's content and its border.",
+      "margin and padding both create space between the element's content and its border.",
+      "margin and padding both create space outside the element's border."
+    ],
+    "correct": 1,
+    "explanation": "Základním rozdílem v Box Modelu je, že margin (vnější okraj) vytváří prostor vně ohraničení (border) elementu a odděluje ho od ostatních okolních elementů, zatímco padding (vnitřní výplň) vytváří prostor uvnitř mezi obsahem elementu a jeho ohraničením."
+  },
+  {
+    "id": "css_q12",
+    "module": "css_m3",
+    "question": "Which CSS rule ensures that content inside a <div> element is horizontally centered, and any overflow content is hidden?",
+    "code": null,
+    "options": [
+      "div {\n  text-align: center;\n  overflow: visibility-none;\n}",
+      "div {\n  align-items: center;\n  overflow: none;\n}",
+      "div {\n  align-content: center;\n  overflow: auto;\n}",
+      "div {\n  text-align: center;\n  overflow: hidden;\n}"
+    ],
+    "correct": 3,
+    "explanation": "Vlastnost text-align: center; vodorovně centruje řádkový (inline) obsah uvnitř bloku <div>, zatímco overflow: hidden; zajišťuje, že veškerý obsah přesahující rozměry bloku <div> bude oříznut a skryt. Hodnoty visibility-none či none u vlastnosti overflow v CSS neexistují."
+  },
+  {
+    "id": "css_q13",
+    "module": "css_m4",
+    "question": "Which CSS rules will hide an element but still take up space in the layout? Select two answers.",
+    "code": null,
+    "options": [
+      "display: none;",
+      "visibility: collapse;",
+      "visibility: no-show;",
+      "visibility: hidden;",
+      "display: hidden;",
+      "display: invisible;"
+    ],
+    "correct": 3,
+    "explanation": "Vlastnost visibility: hidden; skryje element z obrazovky, ale zachová jeho místo v layoutu stránky. Podobně funguje visibility: collapse; (používané zejména pro řádky a sloupce tabulek). Naproti tomu display: none; prvek z layoutu zcela odstraní, takže žádné místo nezabírá. Ostatní možnosti (display: hidden, display: invisible, visibility: no-show) představují v CSS neplatnou syntaxi."
+  },
+  {
+    "id": "css_q14",
+    "module": "css_m4",
+    "question": "Given the following CSS and HTML, where will the .box element be positioned?",
+    "code": "/* styles.css */\n.container {\n  position: relative;\n  width: 300px;\n  height: 300px;\n  background-color: lightgray;\n}\n\n.box {\n  position: absolute;\n  top: 20px;\n  left: 30px;\n  width: 100px;\n  height: 100px;\n  background-color: tomato;\n}\n\n<!-- index.html -->\n<div class=\"container\">\n  <div class=\"box\"></div>\n</div>",
+    "options": [
+      "The .box element will be positioned 20px from the top and 30px from the left of the .container element.",
+      "The .box element will remain in its static position inside the .container.",
+      "The .box element will be positioned 20px from the top and 30px from the left of the viewport.",
+      "The .box element will be positioned relative to the nearest statically positioned ancestor."
+    ],
+    "correct": 0,
+    "explanation": "Element .box má nastaveno position: absolute, což znamená, že se pozicuje vůči svému nejbližšímu pozicovanému předkovi (ancestor s position jiným než static). Zde je tímto předkem .container s position: relative. Proto bude .box umístěn 20px odshora a 30px zleva vůči elementu .container. Kdyby předek pozicovaný nebyl, pozicoval by se vůči viewportu."
+  },
+  {
+    "id": "css_q15",
+    "module": "css_m3",
+    "question": "Which CSS rule will style a table with a border, set the spacing between table cells to 0, and apply a background color to alternating rows?",
+    "code": null,
+    "options": [
+      "table {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\ntable tr:nth-child(even) {\n  background-color: #f2f2f2;\n}",
+      "table {\n  border: 1px solid black;\n  border-spacing: 0;\n}\ntable tr:nth-child(odd) {\n  background-color: #f2f2f2;\n}",
+      "table {\n  border: 1px solid black;\n  border-spacing: 5px;\n}\ntable tr:nth-child(odd) {\n  background-color: #f2f2f2;\n}",
+      "table {\n  border: 1px dashed black;\n  border-collapse: separate;\n}\ntable tr:hover {\n  background-color: #f2f2f2;\n}"
+    ],
+    "correct": 0,
+    "explanation": "Pravidlo definuje černý rámeček (border: 1px solid black;), sloučí rámečky buněk a odstraní mezery mezi nimi pomocí border-collapse: collapse; a aplikuje světle šedé pozadí na střídavé (sudé) řádky pomocí pseudotřídy table tr:nth-child(even). Ostatní varianty buď neslučují rámečky nebo používají nevhodný selektor (např. :hover pro přejetí myší)."
+  },
+  {
+    "id": "css_q16",
+    "module": "css_m3",
+    "question": "What is the primary purpose of using fieldset and legend elements in an HTML form?",
+    "code": null,
+    "options": [
+      "The fieldset element is used to style form controls and the legend element is used to add tooltips to the controls.",
+      "The fieldset element is used to create a container for input fields and the legend element is used to submit the form.",
+      "The fieldset element is used to add spacing between form controls and the legend element is used to add a label to each control.",
+      "The fieldset element is used to group related form controls and the legend element provides a caption for the fieldset."
+    ],
+    "correct": 3,
+    "explanation": "Element <fieldset> slouží k logickému seskupení souvisejících formulářových ovládacích prvků do jednoho bloku, což výrazně zlepšuje organizaci a přístupnost formuláře. Element <legend> představuje titulek / popisek pro danou skupinu <fieldset>, který uživateli objasňuje její účel."
+  },
+  {
+    "id": "css_q17",
+    "module": "css_m4",
+    "question": "What is the effect of applying float: left; to an element?",
+    "code": null,
+    "options": [
+      "The element will be removed from the normal document flow, float to the right of its containing block, and allow text and inline elements to wrap around its left side.",
+      "The element will remain in the normal document flow, float to the left, but other elements will be pushed down.",
+      "The element will float to the left of its containing block, but text and inline elements will not wrap around it.",
+      "The element will be removed from the normal document flow, float to the left of its containing block, and allow text and inline elements to wrap around its right side."
+    ],
+    "correct": 3,
+    "explanation": "Vlastnost float: left; vyjme element z běžného toku dokumentu (normal flow) a umístí jej k levému okraji nadřazeného bloku. To umožní okolnímu obsahu (např. textu či inline prvkům), aby tento element obtékal po jeho pravé straně. Element nezůstává v normálním toku a text kolem něj obtéká."
+  }
+]

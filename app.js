@@ -63,7 +63,7 @@ class SoundFX {
 class NetAcadApp {
   constructor() {
     this.sound = new SoundFX();
-    this.activeCert = 'html';
+    this.activeCert = localStorage.getItem('pref_active_cert') || 'js';
     this.activeMode = 'simulator'; // 'simulator', 'practice', 'cheatsheet', 'stats'
     
     this.currentQuestions = [];
@@ -86,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=8').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=9').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);
@@ -587,6 +587,7 @@ class NetAcadApp {
      ---------------------------------------------------- */
   loadCertificate(certId) {
     this.activeCert = certId;
+    try { localStorage.setItem('pref_active_cert', certId); } catch (e) {}
     const cert = CERTIFICATES_DATA[certId];
 
     // Update Dropdown
@@ -1998,6 +1999,47 @@ initCheatsheets() {
             ["EUI-64 proces", "Vloží FFFE doprostřed 48bit MAC a invertuje 7. bit prvního bajtu (Universal/Local bit)"],
             ["TCP 3-Way Handshake", "SYN -> SYN-ACK -> ACK; TCP Window Size reguluje řízení toku (flow control)"],
             ["Klíčové porty", "DNS (53), DHCP (67/68 - DORA proces), HTTP (80), HTTPS (443), SSH (22), Telnet (23)"]
+          ]
+        }
+      ],
+
+      dd: [
+        {
+          title: "ERD komponenty a modelování (Oracle / Barker)",
+          rows: [
+            ["Entita (Entity)", "Podstatné jméno v jednotném čísle (např. EMPLOYEE). Reprezentuje množinu instancí se stejnými vlastnostmi."],
+            ["Atribut (Attribute)", "Jednotlivá vlastnost entity. Symboly: '#' = Unique Identifier (UID), '*' = povinný (mandatory), 'o' = volitelný (optional)."],
+            ["Vztah (Relationship)", "Obousměrné spojení mezi dvěma entitami. Popisuje se slovesem a má kardinalitu a volitelnost."],
+            ["Volitelnost (Optionality)", "Plná čára = povinný vztah (must be), čárkovaná čára = volitelný vztah (may be)."],
+            ["Kardinalita (Cardinality)", "Jednoduché zakončení = One (1), vraní nožka (crow's foot) = Many (N)."]
+          ]
+        },
+        {
+          title: "Normalizace dat (1NF, 2NF, 3NF)",
+          rows: [
+            ["1. Normální forma (1NF)", "Všechny atributy jsou atomické (jednohodnotové). Žádné opakující se skupiny ani vícehodnotové atributy."],
+            ["2. Normální forma (2NF)", "Je v 1NF a žádný neklíčový atribut není částečně závislý na složeném primárním klíči (Full Functional Dependency)."],
+            ["3. Normální forma (3NF)", "Je ve 2NF a žádný neklíčový atribut není tranzitivně závislý na primárním klíči (žádné 'neklíč -> neklíč' závislosti)."],
+            ["Mnoho k mnoha (M:N)", "V relačním modelu se řeší rozpadem na dvě 1:N vazby přes vazební (asociativní / intersection) entitu."]
+          ]
+        },
+        {
+          title: "Supertypy a Subtypy (Dědičnost v ERD)",
+          rows: [
+            ["Supertyp (Supertype)", "Zobecněná nadřazená entita obsahující společné atributy a vztahy pro všechny subtypy."],
+            ["Subtyp (Subtype)", "Specializovaná podentita zobrazená uvnitř rámečku supertypu. Dědí všechny atributy a vztahy supertypu."],
+            ["Disjoint (Exkluzivní)", "Instance může patřit maximálně do jednoho subtypu (vzájemně se vylučují)."],
+            ["Exhaustive (Úplné)", "Každá instance supertypu musí patřit do některého ze subtypů (žádné nezařazené instance)."]
+          ]
+        },
+        {
+          title: "Fyzický návrh a mapování (Mapping ERD to Relational)",
+          rows: [
+            ["Entita -> Tabulka", "Názvy tabulek jsou obvykle v množném čísle (plurál) nebo s prefixem dle konvence (např. EMPLOYEES)."],
+            ["Atribut -> Sloupec", "Povinný atribut (*) se stává sloupcem NOT NULL; volitelný (o) se stává NULL."],
+            ["UID -> Primární klíč (PK)", "Primární UID entity se stává PRIMARY KEY omezením tabulky."],
+            ["Vztah 1:N -> Cizí klíč (FK)", "Na straně 'N' vzniká sloupec cizího klíče (FOREIGN KEY), který referencuje primární klíč strany '1'."],
+            ["Oblouk (Arc)", "Vyjadřuje exkluzivní vztah OR (instance může souviset buď s entitou A, NEBO s entitou B, nikdy s oběma současně)."]
           ]
         }
       ]

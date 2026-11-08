@@ -1,0 +1,282 @@
+[
+  {
+    "id": "html_q01",
+    "module": "html_m1",
+    "question": "What is the first logical step you should take to start writing an HTML document in your development environment? Select the best answer.",
+    "code": null,
+    "options": [
+      "Write the <html> tag and define the html version used in your document.",
+      "Set up a server and load a .css file to it.",
+      "Declare the document's character encoding.",
+      "Create a file with the .html extension."
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je otázka zjišťující první logický krok při vytváření HTML dokumentu ve vývojovém prostředí.\n\nOficiální vysvětlení: \"To begin writing an HTML document, the first logical step is to create a file with the .html extension, as this specifies the file type and allows browsers to interpret it as an HTML document. Other steps, like adding tags or setting character encoding, come after the file is created.\"\n\nPodrobný rozbor:\n- Správná volba: \"Create a file with the .html extension.\" Aby editor i operační systém věděly, jaký soubor se vytváří, je nejprve nutné založit soubor s příponou .html (např. index.html). Tím se aktivuje správné zvýrazňování syntaxe v editoru a soubor lze otevřít v prohlížeči.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"Write the <html> tag and define the html version used in your document.\": Psaní tagů následuje až po vytvoření samotného souboru na disku.\n  - \"Set up a server and load a .css file to it.\": Lokální HTML dokument nevyžaduje žádný server a CSS soubor není pro zahájení psaní HTML nutný.\n  - \"Declare the document's character encoding.\": Deklarace kódování (<meta charset=\"utf-8\">) se provádí uvnitř souboru v elementu <head>, tedy až po založení souboru."
+  },
+  {
+    "id": "html_q02",
+    "module": "html_m1",
+    "question": "Which section of an HTML document typically contains metadata like keywords and descriptions?",
+    "code": null,
+    "options": [
+      "<body>",
+      "<footer>",
+      "<head>",
+      "<header>"
+    ],
+    "correct": 2,
+    "explanation": "Na snímku je otázka na sekci HTML dokumentu určenou pro metadata (jako klíčová slova, popis stránky atd.).\n\nOficiální vysvětlení: \"The <head> section of an HTML document contains metadata such as keywords, descriptions, the document title, and links to stylesheets or scripts. This information is not displayed on the webpage but helps with functionality and SEO.\"\n\nPodrobný rozbor:\n- Správná volba: \"<head>\". Sekce <head> obsahuje strojově čitelná metadata, která se nezobrazují přímo v okně prohlížeče (s výjimkou titulku v záložce), ale slouží prohlížečům, vyhledávačům (SEO) a sociálním sítím.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<body>\": Reprezentuje viditelný obsah stránky určený pro koncového uživatele.\n  - \"<footer>\": Představuje patičku viditelného obsahu (např. copyright, kontakty, odkazy na podmínky).\n  - \"<header>\": Představuje hlavičku viditelné části dokumentu nebo sekce (obvykle obsahuje logo, navigaci, nadpis)."
+  },
+  {
+    "id": "html_q03",
+    "module": "html_m1",
+    "question": "Which HTML element is used to define the document's character encoding?",
+    "code": null,
+    "options": [
+      "<doctype>",
+      "<html>",
+      "<charset>",
+      "<meta>"
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je otázka tázající se na HTML element používaný k definici znakové sady dokumentu.\n\nOficiální vysvětlení: \"The <meta> element is used to define the document's character encoding, typically through the attribute charset (e.g., <meta charset=\"UTF-8\">). This ensures proper rendering of text, including special characters, across different languages.\"\n\nPodrobný rozbor:\n- Správná volba: \"<meta>\". V HTML5 se kódování znaků definuje pomocí nepárového elementu <meta> s atributem charset, typicky <meta charset=\"UTF-8\"> umístěného na začátku sekce <head>.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<doctype>\": Není element pro kódování, nýbrž deklarace typu dokumentu (např. <!DOCTYPE html>), která přepíná prohlížeč do standardního režimu.\n  - \"<html>\": Je kořenový element celého dokumentu, na kterém se definuje např. jazyk (lang=\"cs\"), nikoli znaková sada.\n  - \"<charset>\": V HTML takový element vůbec neexistuje; charset je atribut, nikoli značka."
+  },
+  {
+    "id": "html_q04",
+    "module": "html_m1",
+    "question": "Identify the purpose of the following HTML snippet:",
+    "code": "<!-- section-id=\"101-eng\" -->",
+    "options": [
+      "It specifies the language used in the document.",
+      "It provides a note within the code for developers.",
+      "It defines a breakpoint for a new document section.",
+      "It marks the beginning of a new section in the document."
+    ],
+    "correct": 1,
+    "explanation": "Na snímku je zobrazen kódový rámeček s ukázkou <!-- section-id=\"101-eng\" --> a otázka zjišťující účel tohoto úryvku.\n\nOficiální vysvětlení: \"The snippet <!-- section-id=\"101-eng\" --> is an HTML comment. Comments are ignored by browsers and serve only as notes or explanations for developers to make the code easier to understand or maintain.\"\n\nPodrobný rozbor:\n- Správná volba: \"It provides a note within the code for developers.\" Zápis uvozený <!-- a zakončený --> je v HTML komentář. Prohlížeče komentáře při vykreslování zcela ignorují a slouží výhradně vývojářům pro poznámky, strukturování kódu nebo dočasné vypnutí částí značkování.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"It specifies the language used in the document.\": Jazyk dokumentu se specifikuje atributem lang (např. <html lang=\"en\">).\n  - \"It defines a breakpoint for a new document section.\": V HTML nic jako breakpoint pro sekci v komentáři neexistuje.\n  - \"It marks the beginning of a new section in the document.\": Sekce se v HTML vymezují sémantickými elementy, jako je <section>, nikoliv komentářem."
+  },
+  {
+    "id": "html_q05",
+    "module": "html_m1",
+    "question": "When discussing HTML semantics, which term is used to describe the combination of an opening tag, its content, and its closing tag?",
+    "code": null,
+    "options": [
+      "Attribute",
+      "Element",
+      "Markup",
+      "Value"
+    ],
+    "correct": 1,
+    "explanation": "Na snímku je teoretická otázka na HTML terminologii – jak se nazývá kombinace otevíracího tagu, jeho obsahu a uzavíracího tagu.\n\nOficiální vysvětlení: \"In HTML semantics, an element refers to the combination of an opening tag, its content, and a closing tag (e.g., <p>Content</p>). It defines the structure and meaning of the content within the document.\"\n\nPodrobný rozbor:\n- Správná volba: \"Element\". V terminologii HTML prvek (element) představuje celek skládající se z počáteční značky (<p>), textového či vnořeného obsahu (Content) a koncové značky (</p>).\n- Proč jsou ostatní možnosti nesprávné:\n  - \"Attribute\": Dodatečná vlastnost zapsaná uvnitř otevíracího tagu ve formátu název=\"hodnota\" (např. class, id, href).\n  - \"Markup\": Obecný termín pro značkování celého textu pomocí tagů (HTML = HyperText Markup Language).\n  - \"Value\": Hodnota přiřazená konkrétnímu atributu (např. \"main-heading\" v id=\"main-heading\")."
+  },
+  {
+    "id": "html_q06",
+    "module": "html_m2",
+    "question": "Which of the following is considered a block-level element in HTML5?",
+    "code": null,
+    "options": [
+      "<div>",
+      "<img>",
+      "<span>",
+      "<br>"
+    ],
+    "correct": 0,
+    "explanation": "Na snímku je otázka zjišťující, který z uvedených elementů je v HTML5 blokový (block-level element).\n\nOficiální vysvětlení: \"A block-level element, like <div>, takes up the full width of its parent container and starts on a new line. Other options, such as <img> and <span>, are inline elements, while <br> is used solely for line breaks and does not behave as a block-level element.\"\n\nPodrobný rozbor:\n- Správná volba: \"<div>\". Element <div> je výchozím generickým blokovým prvkem. Vždy začíná na novém řádku a roztahuje se na celou dostupnou šířku svého rodičovského kontejneru.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<img>\": Je inline (resp. inline-block) prvek, umisťuje se do textového toku na stejný řádek.\n  - \"<span>\": Je generický řádkový (inline) element sloužící k označení části textu uvnitř bloku.\n  - \"<br>\": Vkládá zalomení řádku uvnitř inline textu, ale sám o sobě se nechová jako blokový element s vlastními blokovými rozměry."
+  },
+  {
+    "id": "html_q07",
+    "module": "html_m2",
+    "question": "Which HTML snippet correctly emphasizes text for semantic importance and visual distinction?",
+    "code": null,
+    "options": [
+      "<p>This is <b>important</b> text.</p>",
+      "<p>This is <em>important</em> text.</p>",
+      "<p>This is <strong>important</strong> text.</p>",
+      "<p>This is <mark>important</mark> text.</p>"
+    ],
+    "correct": 2,
+    "explanation": "Na snímku je otázka hledající HTML zápis, který správně zvýrazňuje text jak pro sémantickou důležitost (semantic importance), tak pro vizuální odlišení.\n\nOficiální vysvětlení: \"The <strong> tag semantically emphasizes text by marking it as important. While <b> only applies visual bold styling, <em> is for emphasis, and <mark> highlights text without denoting importance. <strong> conveys both importance and typically applies bold styling.\"\n\nPodrobný rozbor:\n- Správná volba: \"<p>This is <strong>important</strong> text.</p>\". Značka <strong> nese sémantický význam vysoké důležitosti, závažnosti či naléhavosti a prohlížeče ji standardně zobrazují tučným písmem (visual distinction).\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<b>\": Slouží pouze pro vizuální tučné zvýraznění bez jakéhokoliv sémantického významu nebo důležitosti.\n  - \"<em>\": Vyjadřuje intonační důraz (stress emphasis), prohlížeče jej zobrazují kurzívou, nikoli významovou důležitost.\n  - \"<mark>\": Slouží k označení/vysvícení relevantního textu (např. výsledku vyhledávání), nikoliv k vyjádření sémantické důležitosti."
+  },
+  {
+    "id": "html_q08",
+    "module": "html_m2",
+    "question": "How do you properly mark up a block quotation that includes a citation URL?",
+    "code": null,
+    "options": [
+      "<blockquote>Quote here<footer>Source: <cite>http://example.com</cite></footer></blockquote>",
+      "<q>Quote here</q><cite>http://example.com</cite>",
+      "<blockquote cite=\"http://example.com\">Quote here</blockquote><cite>http://example.com</cite>",
+      "<blockquote>Quote here<cite>Source: http://example.com</cite></blockquote>"
+    ],
+    "correct": 0,
+    "explanation": "Na snímku je otázka, jak správně sémanticky označit blokovou citaci obsahující citační odkaz/URL.\n\nOficiální vysvětlení: \"The <blockquote> element is used for block-level quotations, and the <footer> element is appropriate for providing the source or citation of the quote. The <cite> tag semantically identifies the source as a citation, ensuring proper markup and accessibility.\"\n\nPodrobný rozbor:\n- Správná volba: \"<blockquote>Quote here<footer>Source: <cite>http://example.com</cite></footer></blockquote>\". Podle specifikace HTML5 se bloková citace zapisuje pomocí <blockquote> a pokud citace obsahuje uvedení zdroje, je doporučenou sémantickou praxí umístit zdroj do vnořeného <footer> společně s elementem <cite>, který označuje název/zdroj citovaného díla.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<q>Quote here</q>...\": Tag <q> je určen pouze pro krátké řádkové (inline) citace, nikoli pro blokové citace (block quotations).\n  - Volby umisťující <cite> vně <blockquote> nebo přímo do <blockquote> bez <footer> nedodržují doporučenou HTML5 strukturu pro přístupnost a sémantiku."
+  },
+  {
+    "id": "html_q09",
+    "module": "html_m2",
+    "question": "Which HTML code snippet demonstrates the correct use of line breaks for addresses and paragraph tags for separating ideas?",
+    "code": null,
+    "options": [
+      "<address>123 Anywhere St., Springfield</address><p>Welcome to our website.</p>",
+      "<p>123 Anywhere St.</p><p>Springfield</p><p>Welcome to our website.</p>",
+      "<p>123 Anywhere St. Springfield</p><br><p>Welcome to our website.</p>",
+      "<p>123 Anywhere St.<br>Springfield</p><p>Welcome to our website.</p>"
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je otázka demonstrující správné použití zalomení řádků (<br>) pro části adresy a odstavců (<p>) pro oddělení různých myšlenek.\n\nOficiální vysvětlení: \"Using <p> tags for separating ideas and <br> for line breaks within the same address block is correct. This ensures semantic clarity, as <br> introduces a break within a single block, while <p> separates distinct ideas or content sections.\"\n\nPodrobný rozbor:\n- Správná volba: \"<p>123 Anywhere St.<br>Springfield</p><p>Welcome to our website.</p>\". Element <br> je určen přesně pro zalomení řádků tam, kde je zalomení přirozenou součástí textu (např. poštovní adresa nebo verše básně uvnitř jednoho odstavce). Oddělená myšlenka (přivítání na webu) pak tvoří samostatný odstavec <p>.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<address>123 Anywhere St., Springfield</address>...\": Neobsahuje žádné zalomení řádku (<br>), takže nesplňuje zadání na zalomení řádků pro adresu.\n  - \"<p>123 Anywhere St.</p><p>Springfield</p>...\": Rozděluje ulici a město do samostatných odstavců, což sémanticky nedává smysl, protože jde o jednu adresu.\n  - \"<p>123 Anywhere St. Springfield</p><br><p>...\": Značka <br> je chybně umístěna mezi blokovými odstavci místo uvnitř adresy."
+  },
+  {
+    "id": "html_q10",
+    "module": "html_m2",
+    "question": "Which HTML code correctly creates a nested list with ordered and unordered lists?",
+    "code": null,
+    "options": [
+      "<ol><li>Item One<ul><li>Subitem A</li></ul></li><li>Item Two</li></ol>",
+      "<ol><li>Item One<li>Subitem A</li></li><li>Item Two</li></ol>",
+      "<ul><li>Item One</li><ul><li>Subitem A</li></ul><li>Item Two</li></ul>",
+      "<ul><li>Item One<ol><li>Subitem 1</li></ol></li><li>Item Two</li></ul>"
+    ],
+    "correct": 0,
+    "explanation": "Na snímku je otázka testující správnou syntaxi vnoření nečíslovaného seznamu do číslovaného seznamu (nested list).\n\nOficiální vysvětlení: \"This code correctly nests an unordered list (<ul>) within an ordered list (<ol>), with proper structure and closure of all tags. Nested lists must be contained within a <li> element of the parent list.\"\n\nPodrobný rozbor:\n- Správná volba: \"<ol><li>Item One<ul><li>Subitem A</li></ul></li><li>Item Two</li></ol>\". Podle specifikace HTML musí být vnořený seznam (<ul>) vždy umístěn uvnitř položky <li> nadřazeného seznamu (<ol>), nikoliv přímo mezi položkami <li>. Zde je <ul> správně uvnitř prvního <li> před jeho uzavírací značkou </li>.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<ol><li>Item One<li>Subitem A</li></li>...\": Chybí značka <ul>, jsou zde jen vnořené <li> bez seznamového obalu.\n  - \"<ul><li>Item One</li><ul><li>Subitem A</li></ul>...\": Seznam <ul> je neplatně vložen přímo do <ul> jako sourozenec <li>, nikoli uvnitř <li>.\n  - Poslední volba má jako vnější seznam <ul> a vnořený <ol>, zatímco zadání a oficiální odpověď demonstrují <ul> vnořený v <ol>."
+  },
+  {
+    "id": "html_q11",
+    "module": "html_m4",
+    "question": "Given the need to create a table with headers on both the top and the left, which snippet correctly uses <th> elements?",
+    "code": null,
+    "options": [
+      "<<th>table><tr><td>Header 1</td></tr><tr><td>Row 1</td><td>Data 1</td></tr></th></table>",
+      "<table><tr><th></th><th>Header 1</th></tr><tr><th>Row 1</th><td>Data 1</td></tr></table>",
+      "<table><th>Header 1</th><tr><th>Row 1</th><td>Data 1</td></tr></table>",
+      "<table><tr><th>Header 1</th><th>Row 1</th></tr><tr><td>Data 1</td></tr></table>"
+    ],
+    "correct": 1,
+    "explanation": "Na snímku je otázka, jak správně vytvořit tabulku, která má záhlaví jak nahoře (sloupce), tak vlevo (řádky), za použití elementů <th>.\n\nOficiální vysvětlení: \"This snippet correctly places an empty <th> in the top-left corner, ensuring that both the top and left headers are <th> elements, making the table more accessible and properly structured.\"\n\nPodrobný rozbor:\n- Správná volba: \"<table><tr><th></th><th>Header 1</th></tr><tr><th>Row 1</th><td>Data 1</td></tr></table>\". U tabulky s dvousměrným záhlavím je v levém horním rohu průsečík, který se reprezentuje prázdnou buňkou <th></th> v prvním řádku. Následuje <th>Header 1</th> pro sloupec a v dalším řádku začíná řádkové záhlaví <th>Row 1</th> následované datovou buňkou <td>Data 1</td>.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<<th>table>...\": Zjevně nevalidní HTML syntaxe s překlepem na začátku.\n  - \"<table><th>Header 1</th><tr>...\": Buňka <th> nesmí být přímým potomkem <table> bez řádku <tr>.\n  - \"<table><tr><th>Header 1</th><th>Row 1</th></tr><tr><td>Data 1</td></tr></table>\": V prvním řádku jsou dvě záhlaví vedle sebe, ale ve druhém řádku je jen jedna buňka bez řádkového záhlaví."
+  },
+  {
+    "id": "html_q12",
+    "module": "html_m4",
+    "question": "How do you merge two cells vertically in a table?",
+    "code": null,
+    "options": [
+      "HTML tables do not support vertical cell merging.",
+      "Merge cells using CSS by applying cell-merge: vertical;.",
+      "Use rowspan=\"2\" in the first cell you want to extend.",
+      "Use colspan=\"2\" in the first cell you want to extend."
+    ],
+    "correct": 2,
+    "explanation": "Na snímku je otázka tázající se, jak svisle sloučit dvě buňky v HTML tabulce.\n\nOficiální vysvětlení: \"The rowspan attribute is used to merge cells vertically in an HTML table. Setting rowspan=\"2\" tells the browser that the cell spans two rows. Similarly, colspan is used for horizontal merging, not vertical. CSS does not have a direct property for merging table cells.\"\n\nPodrobný rozbor:\n- Správná volba: \"Use rowspan=\"2\" in the first cell you want to extend.\" Atribut rowspan na buňce <td> nebo <th> určuje, přes kolik řádků se má buňka svisle roztáhnout.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"HTML tables do not support vertical cell merging.\": HTML tabulky svislé slučování plně podporují pomocí atributu rowspan.\n  - \"Merge cells using CSS by applying cell-merge: vertical;.\": V CSS žádná vlastnost cell-merge neexistuje.\n  - \"Use colspan=\"2\" in the first cell you want to extend.\": Atribut colspan slouží pro vodorovné slučování buněk (přes sloupce), nikoli svislé."
+  },
+  {
+    "id": "html_q13",
+    "module": "html_m2",
+    "question": "What is the characteristic of the text within the <pre> tag in this HTML snippet?",
+    "code": "<pre>\nDear User,\n\nThank you for your email.\n\nBest,\nThe XYZ Team\n</pre>",
+    "options": [
+      "It preserves line breaks and puts it in bold.",
+      "It preserves font size, weight, and family.",
+      "It is highlighted and preserves spaces.",
+      "It preserves both spaces and line breaks."
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je zobrazen kódový rámeček s ukázkou textu dopisu uvnitř značek <pre>...</pre> a otázka zkoumající vlastnosti zobrazení textu v tomto elementu.\n\nOficiální vysvětlení: \"The <pre> tag is used to display preformatted text, which means that it preserves the spaces, tabs, and line breaks exactly as written in the HTML. It does not apply any special styling like bold or highlighting unless explicitly specified via CSS.\"\n\nPodrobný rozbor:\n- Správná volba: \"It preserves both spaces and line breaks.\" Element <pre> (preformatted text) zachovává veškeré bílé znaky – vícenásobné mezery, tabulátory i odřádkování – přesně tak, jak jsou zapsány ve zdrojovém HTML kódu (standardně se vykresluje neproporcionálním písmem).\n- Proč jsou ostatní možnosti nesprávné:\n  - \"It preserves line breaks and puts it in bold.\": Element <pre> text nezvýrazňuje tučně.\n  - \"It preserves font size, weight, and family.\": Styl písma neurčuje zachováním z nadřazených stylů, nýbrž výchozím monospaced fontem.\n  - \"It is highlighted and preserves spaces.\": Text v <pre> není nijak barevně zvýrazněn ani podbarven."
+  },
+  {
+    "id": "html_q14",
+    "module": "html_m3",
+    "question": "What is the purpose of the srcset attribute in this <img> tag?",
+    "code": "<img src=\"image-1.jpg\" srcset=\"image-2.jpg 1000w, image-3.jpg 2000w\" alt=\"A beautiful landscape\">",
+    "options": [
+      "To set multiple sources for the same image to load faster.",
+      "To specify different images to be displayed on hover.",
+      "To provide a fallback image if the original fails to load.",
+      "To define multiple image sources for different viewport widths."
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je kódový rámeček s obrázkem <img src=\"image-1.jpg\" srcset=\"image-2.jpg 1000w, image-3.jpg 2000w\" alt=\"A beautiful landscape\"> a otázka na účel atributu srcset.\n\nOficiální vysvětlení: \"The srcset attribute in an <img> tag allows you to specify multiple image sources and their associated sizes (e.g., 1000w for 1000 pixels wide). This helps the browser select the most appropriate image based on the viewport size and resolution, optimizing performance and visual quality.\"\n\nPodrobný rozbor:\n- Správná volba: \"To define multiple image sources for different viewport widths.\" Atribut srcset definuje seznam alternativních obrazových souborů spolu s deskriptory šířky (např. 1000w, 2000w). Prohlížeč si z nich sám vybere nejvhodnější soubor podle aktuální šířky viewportu a hustoty pixelů displeje zařízení (responzivní obrázky).\n- Proč jsou ostatní možnosti nesprávné:\n  - \"To set multiple sources for the same image to load faster.\": Soubory se nenačítají současně, prohlížeč vybere pouze jeden soubor.\n  - \"To specify different images to be displayed on hover.\": Změna obrázku při najetí myší se řeší pomocí CSS (:hover) nebo JavaScriptu, nikoli atributem srcset.\n  - \"To provide a fallback image if the original fails to load.\": Jako záložní řešení slouží atribut src nebo element <picture>, nikoliv atribut srcset pro šířky viewportu."
+  },
+  {
+    "id": "html_q15",
+    "module": "html_m3",
+    "question": "How does this code snippet facilitate navigation to a specific part of a webpage?",
+    "code": "<a href=\"#section2\">Go to Section 2</a>\n...\n<h2 id=\"section2\">Section 2</h2>",
+    "options": [
+      "By creating a popup that links to Section 2.",
+      "By refreshing the page when \"Go to Section 2\" is clicked.",
+      "By redirecting to a new page named \"Section 2\"",
+      "By scrolling the page to where <h2 id=\"section2\"> is located."
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je ukázka kotevního odkazu <a href=\"#section2\">Go to Section 2</a> a cílového nadpisu <h2 id=\"section2\">Section 2</h2> s otázkou, jak tento kód usnadňuje navigaci na stránce.\n\nOficiální vysvětlení: \"The href=\"#section2\" in the <a> tag creates an anchor link that points to an element with the matching id=\"section2\". When clicked, it scrolls the page to that element, enabling navigation within the same webpage. It does not refresh the page, open a popup, or redirect to a new page.\"\n\nPodrobný rozbor:\n- Správná volba: \"By scrolling the page to where <h2 id=\"section2\"> is located.\" Znak mřížky (#) v atributu href označuje interní odkaz (kotvu / fragment identifier) směřující na element se shodným atributem id na téže stránce. Po kliknutí prohlížeč plynule odskroluje na pozici tohoto nadpisu.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"By creating a popup that links to Section 2.\": Kotva nevytváří vyskakovací okno.\n  - \"By refreshing the page when 'Go to Section 2' is clicked.\": Kliknutí na interní kotvu stránku neobnovuje (nereloaduje).\n  - \"By redirecting to a new page named 'Section 2'\": Nejde o přesměrování na jinou URL adresu nebo soubor, navigace probíhá v rámci aktuální stránky."
+  },
+  {
+    "id": "html_q16",
+    "module": "html_m3",
+    "question": "Which attribute will make the video loop indefinitely?",
+    "code": null,
+    "options": [
+      "controls=\"loop\"",
+      "src=\"loop\"",
+      "repeat=\"true\"",
+      "loop"
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je otázka, který atribut zajistí nekonečné opakované přehrávání videa v elementu <video>.\n\nOficiální vysvětlení: \"The loop attribute in an HTML <video> tag causes the video to replay automatically after it ends. This is a boolean attribute, so simply including it (e.g., <video loop>) is sufficient; no additional values are required. Other options like src=\"loop\" or repeat=\"true\" are invalid.\"\n\nPodrobný rozbor:\n- Správná volba: \"loop\". V HTML5 je atribut loop pro prvky <video> a <audio> logickým atributem (boolean attribute). Jeho pouhá přítomnost v otevíracím tagu (<video loop ...>) způsobí, že po skončení přehrávání se video začne automaticky přehrávat znovu od začátku.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"controls=\"loop\"\": Atribut controls zapíná ovládací prvky přehrávače a nemá hodnotu loop.\n  - \"src=\"loop\"\": Atribut src obsahuje URL adresu video souboru, nikoli příznak smyčky.\n  - \"repeat=\"true\"\": Atribut repeat v HTML pro multimediální elementy neexistuje."
+  },
+  {
+    "id": "html_q17",
+    "module": "html_m4",
+    "question": "Why is the <label> element used in this form field?",
+    "code": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\">",
+    "options": [
+      "To add a \"Search\" button to the form.",
+      "To style the input field as the search button.",
+      "To improve form accessibility by providing a text label.",
+      "To increase the clickable area for the input field."
+    ],
+    "correct": 2,
+    "explanation": "Na snímku je formulářový úryvek <label for=\"search\">Search:</label><input type=\"text\" id=\"search\"> a otázka zkoumající hlavní důvod použití elementu <label>.\n\nOficiální vysvětlení: \"The <label> element links descriptive text to a form control, improving accessibility by helping screen readers associate the label with the input field. The for attribute connects the label to the input using the id of the input element. This makes the form more user-friendly for everyone, including those relying on assistive technologies.\"\n\nPodrobný rozbor:\n- Správná volba: \"To improve form accessibility by providing a text label.\" Element <label> propojuje textový popis s formulářovým prvkem (pomocí atributu for=\"search\" odpovídajícího id=\"search\"). Tento prvek je klíčový pro přístupnost (accessibility), protože asistenční technologie (čtečky obrazovky) přečtou uživateli popisek, jakmile pole získá fokus.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"To add a 'Search' button to the form.\": Element <label> nepřidává žádné tlačítko; pro tlačítka se používá <button> nebo <input type=\"submit\">.\n  - \"To style the input field as the search button.\": <label> neslouží k vizuálnímu stylování pole jako tlačítka.\n  - \"To increase the clickable area for the input field.\": Ačkoliv kliknutí na popisek u některých prvků (např. radio/checkbox) rozšiřuje klikatelnou oblast, primárním sémantickým účelem zde je přístupnost skrze textový popisek."
+  },
+  {
+    "id": "html_q18",
+    "module": "html_m4",
+    "question": "Consider the following HTML snippet:\n\nWhat would you change in it to pre-select the \"Canada\" option in a dropdown list?",
+    "code": "<select name=\"country\">\n  <option value=\"usa\">United States</option>\n  <option value=\"canada\">Canada</option>\n  <option value=\"mexico\">Mexico</option>\n</select>",
+    "options": [
+      "Set value=\"canada\" in the <select> tag of the \"Canada\" option.",
+      "Use JavaScript to select the \"Canada\" option after the page loads.",
+      "Add default to the <select> tag of the \"Canada\" option.",
+      "Use the selected attribute on the \"Canada\" <option>."
+    ],
+    "correct": 3,
+    "explanation": "Na snímku je kódový rámeček s rozbalovacím seznamem <select> obsahujícím tři položky <option> a otázka, jak předvybrat položku \"Canada\".\n\nOficiální vysvětlení: \"To pre-select the \"Canada\" option in the dropdown, you can modify the <option> for Canada like this:\n\n<option value=\"canada\" selected>Canada</option>\n\nThe selected attribute indicates that this option should be the default selection when the page loads.\"\n\nPodrobný rozbor:\n- Správná volba: \"Use the selected attribute on the \"Canada\" <option>.\" Pro přednastavení vybrané volby v HTML rozevíracím seznamu slouží logický atribut selected umístěný přímo na příslušném tagu <option> (např. <option value=\"canada\" selected>Canada</option>).\n- Proč jsou ostatní možnosti nesprávné:\n  - \"Set value=\"canada\" in the <select> tag of the 'Canada' option.\": Atribut value na elementu <select> v HTML neexistuje pro předvybrání.\n  - \"Use JavaScript to select the 'Canada' option after the page loads.\": JavaScript není potřeba, HTML toto přímo podporuje deklarativně atributem selected.\n  - \"Add default to the <select> tag of the 'Canada' option.\": V HTML atribut default pro <select> ani <option> neexistuje."
+  },
+  {
+    "id": "html_q19",
+    "module": "html_m4",
+    "question": "Which input field is correctly marked as required?",
+    "code": null,
+    "options": [
+      "<input type=\"text\" name=\"firstName\" required>.",
+      "<required input type=\"text\">.",
+      "<input type=\"required\" name=\"firstName\">.",
+      "<input required=\"true\" type=\"text\" name=\"firstName\">."
+    ],
+    "correct": 0,
+    "explanation": "Na snímku je otázka zjišťující správný zápis povinného formulářového pole v HTML5.\n\nOficiální vysvětlení: \"The required attribute is used to indicate that an input field must be filled out before submitting the form. The correct syntax is to include the required attribute directly in the <input> tag. The other options either use incorrect syntax or place the required attribute improperly.\"\n\nPodrobný rozbor:\n- Správná volba: \"<input type=\"text\" name=\"firstName\" required>.\". Atribut required je v HTML5 logický (boolean) atribut. Stačí uvést jeho název uvnitř otevíracího tagu <input>, což prohlížeči signalizuje povinnost pole vyplnit před odesláním formuláře.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<required input type=\"text\">.\": Element <required> v HTML neexistuje.\n  - \"<input type=\"required\" name=\"firstName\">.\": required není platný typ vstupního pole (atribut type určuje text, password, email atd.).\n  - \"<input required=\"true\" type=\"text\" name=\"firstName\">.\": U boolean atributů v HTML5 se nezapisuje =\"true\"; hodnota atributu required může být buď prázdná, nebo \"required\", zápis required=\"true\" je nesprávná syntaxe."
+  },
+  {
+    "id": "html_q20",
+    "module": "html_m3",
+    "question": "How do you create a link that opens the user's email client to send an email to \"info@example.com\"?",
+    "code": null,
+    "options": [
+      "<a href=\"mailto:info@example.com\">Email Us</a>",
+      "<a href=\"sendto:info@example.com\">Email Us</a>",
+      "<a email=\"info@example.com\">Email Us</a>",
+      "<a href=\"email:info@example.com\">Email Us</a>"
+    ],
+    "correct": 0,
+    "explanation": "Na snímku je otázka, jak vytvořit hypertextový odkaz otevírající výchozího e-mailového klienta s adresou info@example.com.\n\nOficiální vysvětlení: \"The mailto: scheme in the href attribute is used to create a link that opens the user's default email client with the specified email address. The correct syntax is <a The other options use incorrect schemes or attributes that won't trigger the email client.\"\n\nPodrobný rozbor:\n- Správná volba: \"<a href=\"mailto:info@example.com\">Email Us</a>\". Pro vytvoření e-mailového odkazu se v atributu href elementu <a> používá standardní URI schéma mailto: následované e-mailovou adresou příjemce.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"<a href=\"sendto:info@example.com\">Email Us</a>\": Schéma sendto: není standardní webové URI schéma pro e-mail.\n  - \"<a email=\"info@example.com\">Email Us</a>\": Atribut email na elementu <a> neexistuje a prohlížeč by odkaz nevyhodnotil jako klikatelný odkaz na poštu.\n  - \"<a href=\"email:info@example.com\">Email Us</a>\": Schéma email: není platné URI schéma."
+  }
+]

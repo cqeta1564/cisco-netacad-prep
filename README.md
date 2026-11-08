@@ -8,13 +8,14 @@ Moderní, interaktivní a plně responzivní webová aplikace pro procvičován�
 
 ## 📚 Podporované certifikační kurzy
 
-1. **Cisco Networking Academy: HTML Essentials** (WDE™) – 40 autentických testových otázek
-2. **Cisco Networking Academy: CSS Essentials** (WDA™) – 50 otázek
-3. **Cisco Networking Academy: JavaScript Essentials 1** (JSE-40-01) – 50 otázek
-4. **Cisco Networking Academy: JavaScript Essentials 2** (JSA-40-02) – 50 otázek
-5. **Cisco DevNet Associate** (DEVASC 200-901) – 60 otázek
-6. **Cisco CCNA: Introduction to Networks** (CCNA ITN v7 / 200-301) – 60 otázek
-7. **Cisco Networking Academy: NDG Linux Essentials** (LPI 010-160) – 50 otázek
+1. **Oracle Academy: Database Design** (DD Cumulative Final Exam S1–S11) – 50 autentických testových otázek
+2. **Cisco Networking Academy: HTML Essentials** (WDE™) – 40 autentických testových otázek
+3. **Cisco Networking Academy: CSS Essentials** (WDA™) – 50 otázek
+4. **Cisco Networking Academy: JavaScript Essentials 1** (JSE-40-01) – 30 otázek
+5. **Cisco Networking Academy: JavaScript Essentials 2** (JSA-40-02) – 40 otázek
+6. **Cisco DevNet Associate** (DEVASC 200-901)
+7. **Cisco CCNA: Introduction to Networks** (CCNA ITN v7 / 200-301)
+8. **Cisco Networking Academy: NDG Linux Essentials** (LPI 010-160)
 
 ---
 

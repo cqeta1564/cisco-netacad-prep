@@ -1,0 +1,114 @@
+[
+  {
+    "id": "html_q25",
+    "module": "html_m2",
+    "question": "Which statement is true regarding the use of <span> and <div>?",
+    "code": null,
+    "options": [
+      "<span> and <div> are interchangeable and have no difference in styling.",
+      "<div> can contain block-level elements, whereas <span> is used for inline styling.",
+      "<div> is used to style text, while <span> is for larger sections of HTML.",
+      "<span> is used for block-level content, while <div> is for inline content."
+    ],
+    "correct": 1,
+    "explanation": "Element <div> je blokový prvek (block-level), který vytváří samostatný blok na novém řádku a může obsahovat další blokové i řádkové elementy. Naopak <span> je řádkový element (inline), který se používá k obalení části textu nebo jiných řádkových elementů bez přerušení toku textu, typicky pro účely aplikace specifického CSS stylu či manipulace skriptem."
+  },
+  {
+    "id": "html_q26",
+    "module": "html_m4",
+    "question": "How do you select elements with a custom-made class highlight-this in a CSS stylesheet?",
+    "code": null,
+    "options": [
+      "> highlight-this { color: yellow; }",
+      "highlight-this { color: yellow; }",
+      "#highlight-this { color: yellow; }",
+      ".highlight-this { color: yellow; }"
+    ],
+    "correct": 3,
+    "explanation": "V kaskádových stylech (CSS) se selektory tříd (class) uvozují tečkou (.), tedy .highlight-this. Znak mřížky (#) se používá pro výběr podle ID (#highlight-this), samotný název bez prefixu by cílil na HTML element <highlight-this> a znak > představuje kombinátor přímého potomka (child selector)."
+  },
+  {
+    "id": "html_q27",
+    "module": "html_m4",
+    "question": "What is the main difference between using class and id attributes in HTML?",
+    "code": null,
+    "options": [
+      "The class attribute is used exclusively for styling, while the id attribute is used for both styling and JavaScript.",
+      "The id attribute is used to style elements when classes are not available.",
+      "The class attribute cannot be used with the <div> element, while the id attribute can.",
+      "The class attribute can be applied to multiple elements, while the id attribute must be unique to a single element."
+    ],
+    "correct": 3,
+    "explanation": "Základní rozdíl je v unikátnosti: atribut id musí být v rámci jednoho HTML dokumentu naprosto unikátní (může patřit právě jednomu elementu), zatímco atribut class může být sdílen libovolným počtem elementů na stránce. Oba atributy lze zároveň používat jak pro stylování v CSS, tak pro přístup v JavaScriptu."
+  },
+  {
+    "id": "html_q28",
+    "module": "html_m4",
+    "question": "Which syntax correctly applies two separate classes to a single HTML element?",
+    "code": null,
+    "options": [
+      "<div class=\"class1, class2\">Content</div>",
+      "<div class=\"class1 class2\">Content</div>",
+      "<div classes=\"class1 class2\">Content</div>",
+      "<div class=\"class1\" class=\"class2\">Content</div>"
+    ],
+    "correct": 1,
+    "explanation": "Pokud chceme jednomu HTML elementu přiřadit více tříd, uvádějí se všechny názvy tříd do jediného atributu class a oddělují se mezerou: <div class=\"class1 class2\">Content</div>. Oddělování čárkou, použití neexistujícího atributu classes nebo vícenásobný atribut class je syntakticky chybné."
+  },
+  {
+    "id": "html_q29",
+    "module": "html_m2",
+    "question": "What does the title attribute provide when used within an HTML element?",
+    "code": null,
+    "options": [
+      "A unique identifier for CSS and JavaScript.",
+      "A structural division for the document.",
+      "An inline style declaration.",
+      "A tooltip when the mouse hovers over the element."
+    ],
+    "correct": 3,
+    "explanation": "Globální HTML atribut title slouží k poskytnutí doplňujících poradních informací. Většina desktopových grafických prohlížečů zobrazuje text atributu title jako bublinovou nápovědu (tooltip) ve chvíli, kdy uživatel na element najede ukazatelem myši."
+  },
+  {
+    "id": "html_q30",
+    "module": "html_m3",
+    "question": "How do you correctly add a simple JavaScript alert that says \"Clicked!\" when a button is clicked?",
+    "code": null,
+    "options": [
+      "<button on-click=\"alert('Clicked!')\">Click me</button>",
+      "<button><onclick=\"alert('Clicked!')\">Click me</button>",
+      "<button action=\"alert('Clicked!')\">Click me</button>",
+      "<button onclick=\"alert('Clicked!')\">Click me</button>"
+    ],
+    "correct": 3,
+    "explanation": "Pro přímou obsluhu události kliknutí myší na element se v HTML používá atribut onclick (bez pomlčky a zapsaný uvnitř otevíracího tagu elementu). Správný zápis je tedy <button onclick=\"alert('Clicked!')\">Click me</button>."
+  },
+  {
+    "id": "html_q31",
+    "module": "html_m5",
+    "question": "Which level of conformance does the Web Content Accessibility Guidelines (WCAG) require to meet the needs of most people with disabilities?",
+    "code": null,
+    "options": [
+      "Level A+",
+      "Level AAA",
+      "Level A",
+      "Level AA"
+    ],
+    "correct": 3,
+    "explanation": "WCAG specifikuje tři úrovně přístupnosti: A, AA a AAA. Standardní referenční úrovní, kterou mezinárodní standardy i právní předpisy (např. evropská norma EN 301 549, sekce 508 v USA) vyžadují k naplnění potřeb většiny uživatelů se zdravotním postižením a odstranění hlavních bariér, je Level AA. Úroveň A je pouze minimální základ a úroveň AAA je nejvyšší, často pro celý web nesplnitelná."
+  },
+  {
+    "id": "html_q32",
+    "module": "html_m5",
+    "question": "Which HTML5 element is used to represent a generic container without any additional semantic meaning?",
+    "code": null,
+    "options": [
+      "<aside>",
+      "<div>",
+      "<article>",
+      "<main>"
+    ],
+    "correct": 1,
+    "explanation": "Element <div> je univerzální blokový kontejner bez jakéhokoliv sémantického významu (generic container). Používá se pro seskupování obsahu primárně za účelem stylování nebo skriptování. Na rozdíl od něj jsou elementy <aside>, <article> a <main> sémantické tagy HTML5 nesoucí konkrétní význam o roli obsahu v dokumentu."
+  }
+]

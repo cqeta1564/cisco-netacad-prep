@@ -1,0 +1,212 @@
+[
+  {
+    "id": "js_q16",
+    "module": "js_m5",
+    "question": "Which of the following loop instructions checks the loop continuation condition only after the iteration has been completed?",
+    "code": null,
+    "options": [
+      "for ... in",
+      "while",
+      "for",
+      "do ... while"
+    ],
+    "correct": 3,
+    "explanation": "The “do … while” loop instruction checks the loop continuation condition only after the iteration has been completed. In the “do … while” loop, the code block is executed first, and then the condition is checked. If the condition evaluates to true, the loop continues executing. This guarantees that the code block is executed at least once, regardless of the condition."
+  },
+  {
+    "id": "js_q17",
+    "module": "js_m6",
+    "question": "The following function using a function expression has been defined:\n\nWhat could the definition of the corresponding arrow function look like?",
+    "code": "let sum = function (a, b) {\n    return (a + b);\n}",
+    "options": [
+      "let sum = function (a, b) => {\n     return (a + b); }",
+      "let sum = (a, b) => a + b;",
+      "let sum = (a, b) => { a + b; };",
+      "let sum = (a, b)-- > a + b;"
+    ],
+    "correct": 1,
+    "explanation": "In arrow function syntax, the parameters are specified within parentheses (a, b), followed by the arrow =>, and then the expression\n\na + b representing the function body. If the function body is a single expression, you can omit the curly braces {} and the return keyword."
+  },
+  {
+    "id": "js_q18",
+    "module": "js_m6",
+    "question": "The temp array contains air temperature data measured over a period of time. You want to display the minimal temperature using the following code:\n\nWhat should the declaration of the min variable look like?",
+    "code": "temp.forEach(e => min = min > e ? e : min);\nconsole.log(min);",
+    "options": [
+      "let min;",
+      "It’s not necessary, as it will be declared automatically on first use.",
+      "let min = temp[0];",
+      "let min = 0;"
+    ],
+    "correct": 2,
+    "explanation": "The code snippet temp.forEach(e => min = min > e ? e : min); uses the forEach method to iterate over the elements of the temp array and update the value of min based on each element. In order to store the minimum temperature, you need to declare the min variable like this let min = 0; before using it in the code."
+  },
+  {
+    "id": "js_q19",
+    "module": "js_m4",
+    "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
+    "code": "let x = [10, 20, 30, 40];\nlet y = [50, 60];\nx.reverse().push(y);\nconsole.log(x.length);",
+    "options": [
+      "6",
+      "4",
+      "5",
+      "2"
+    ],
+    "correct": 2,
+    "explanation": "The code will output 5 in the console."
+  },
+  {
+    "id": "js_q20",
+    "module": "js_m5",
+    "question": "Analyze the following code:\n\nWhich statement can replace the for from the example?",
+    "code": "for(let a=1; a<10; a+=2) {\n    console.log(a);\n};",
+    "options": [
+      "let counter = 1;\nwhile (counter++ < 10) console.log(counter++);",
+      "let counter = 0;\nwhile (counter < 9) console.log(counter++);",
+      "let counter = 0;\nwhile (counter++ < 10) console.log(counter++);",
+      "let counter = 0;\nwhile (counter < 10) console.log(counter++);"
+    ],
+    "correct": 3,
+    "explanation": "The correct statement that can replace the for loop from the example is:\n\nlet counter = 0;\n\nwhile (counter < 10) console.log(counter++);"
+  },
+  {
+    "id": "js_q21",
+    "module": "js_m5",
+    "question": "Analyze the following code:\n\nWhat will appear on the console as a result?",
+    "code": "let colors = ['red', 'green', 'blue'];\nfor (let c of colors) console.log(c);",
+    "options": [
+      "['red', 'green', 'blue']",
+      "red\ngreen\nblue",
+      "0\n1\n2",
+      "3"
+    ],
+    "correct": 1,
+    "explanation": "The code is using a for…of loop to iterate over the elements of the colors array. In each iteration, the loop assigns the current element to the variable c, and then console.log(c) prints the value of c to the console. Since the colors array contains three elements (‘red’, ‘green’, and ‘blue’), the loop will iterate three times, printing each element on a separate line in the console."
+  },
+  {
+    "id": "js_q22",
+    "module": "js_m5",
+    "question": "Analyze the following code:\n\nWhat will appear on the console as a result?",
+    "code": "let route = {distance: 131, elevation: 1.4};\nfor (let k in route) console.log(k);",
+    "options": [
+      "131\n1.4",
+      "distance",
+      "distance\nelevation",
+      "2"
+    ],
+    "correct": 2,
+    "explanation": "The code is using a for…in loop to iterate over the properties of the route object. In each iteration, the loop assigns the current property name to the variable k, and then console.log(k) prints the value of k to the console. The route object has two properties: distance and elevation. Therefore, the loop will iterate twice, printing each property name on a separate line in the console."
+  },
+  {
+    "id": "js_q23",
+    "module": "js_m6",
+    "question": "Examine the following code:\n\nWhat will appear on the console as a result?",
+    "code": "let a = (n) => {\n    return n > 2 ? n * a(n - 1) : 2\n}\nconsole.log(a(6));",
+    "options": [
+      "120",
+      "720",
+      "6",
+      "4"
+    ],
+    "correct": 1,
+    "explanation": "The code defines an arrow function a that takes a parameter n. Inside the function, there is a ternary operator that checks if n is greater than 2. If it is, the function recursively calls itself with the argument (n – 1) and multiplies the result by n. This recursion continues until n reaches 2, at which point the function returns 2. In the console.log(a(6)) statement, the function a is called with the argument 6. The function recursively calculates the factorial of 6 (6 * 5 * 4 * 3 * 2), which results in 720. This value is then printed to the console using console.log."
+  },
+  {
+    "id": "js_q24",
+    "module": "js_m6",
+    "question": "Examine the following code:\n\nWhat should the mult function declaration look like if the execution of this code results in a value of 20 in the console?",
+    "code": "let x = mult(2)(10);\nconsole.log(x); // -> 20",
+    "options": [
+      "let mult = function (a) {\n    return function (b) {\n        return a * b;\n   }\n}",
+      "There is an error in the code and it is not possible to declare such a function correctly.",
+      "let mult = function (a, b) {\n    return a * b;\n}",
+      "let mult = function (a, b) {\n     return b ? mult(b) : mult(a);\n}"
+    ],
+    "correct": 0,
+    "explanation": "The correct declaration for the mult function that would result in the desired output of 20 in the console is:\n\nlet mult = function (a) {\n\nreturn function (b) {\n\nreturn a * b;\n\n}\n\n}"
+  },
+  {
+    "id": "js_q25",
+    "module": "js_m2",
+    "question": "Analyze the code snippet:\n\nAfter declaring the counter variable, we want to add a short comment with information about what the variable is used for. To do this, we modify the line with the declaration to the form:",
+    "code": "let counter = 0;\nlet userName = \"John\";",
+    "options": [
+      "// let counter = 0; user visit counter",
+      "let counter = 0; // user visit counter",
+      "let counter = 0; ;;user visit counter",
+      "let counter = 0; /* user visit counter"
+    ],
+    "correct": 1,
+    "explanation": "In the modified line, the comment // user visit counter provides information about the purpose or usage of the counter variable."
+  },
+  {
+    "id": "js_q26",
+    "module": "js_m6",
+    "question": "Examine the following code:\n\nHow should the function cmp be declared if, after the code execution, the elements of the array x are sorted in ascending order?",
+    "code": "x = [40, 10, 30, 20, 50];\nx.sort(cmp);",
+    "options": [
+      "let cmp = (a, b) => b < a;",
+      "let cmp = (a, b) => a - b;",
+      "let cmp = (a, b) => b > a;",
+      "let cmp = (a, b) => b - a;"
+    ],
+    "correct": 1,
+    "explanation": "This comparison function subtracts b from a, which will result in a negative value if a should be placed before b in the sorted order, a positive value if b should be placed before a, and zero if they are considered equal. Here is the code: let cmp = (a, b) => a – b;"
+  },
+  {
+    "id": "js_q27",
+    "module": "js_m6",
+    "question": "Analyze the following code, which is missing one line:\n\nWhat should the missing line look like if the execution of this code results in the console displaying the values 2, 1, and 0 in sequence?",
+    "code": "let counter = 2;\nlet interval = setInterval(() => {\n    console.log(counter);\n    // Insert missing line here.\n}, 1000);",
+    "options": [
+      "if (counter-- >= 0) clearInterval(interval);",
+      "if (counter-- <= 0) clearInterval(interval);",
+      "while (counter-- >= 0) clearInterval(interval);",
+      "clearInterval(interval);"
+    ],
+    "correct": 1,
+    "explanation": "This line checks if the value of counter is less than or equal to 0 after decrementing it. If counter becomes 0 or negative, it means the desired sequence of numbers (2, 1, 0) has been displayed. At that point, clearInterval(interval) is called to stop the interval from continuing.\n\nThe correct line is: if (counter– <= 0) clearInterval(interval);"
+  },
+  {
+    "id": "js_q28",
+    "module": "js_m6",
+    "question": "Analyze the following code:\n\nBefore declaring the function, we should add one more line of code. Which one, if the execution of the completed code will result in the console displaying the value 9?",
+    "code": "function execute(todo, a, b) {\n    return todo(a, b);\n}\nconsole.log(execute(power, 3, 2));",
+    "options": [
+      "let power = () => a ** b;",
+      "let power = 9;",
+      "let power = (x,y) => x * y;",
+      "let power = (x, y) => x ** y;"
+    ],
+    "correct": 3,
+    "explanation": "To ensure that the execution of the completed code results in the console displaying the value 9, the line defines the power function as an arrow function that calculates the power of x raised to the y exponent using the ** operator."
+  },
+  {
+    "id": "js_q29",
+    "module": "js_m6",
+    "question": "Analyze the following code:\n\nWhat will happen as a result of its execution?",
+    "code": "const a = \"hello\";\n    console.log(a.toUpperCase());\n}\n} catch (error) {\n    console.log(a)\n} finally {\n    console.log(a);\n}",
+    "options": [
+      "The following words will appear in the console on subsequent lines: HELLO, hello, and hello.",
+      "The following words will appear in the console on subsequent lines: HELLO and hello.",
+      "The following words will appear in the console on subsequent lines: hello and hello.",
+      "The following word will appear in the console: HELLO."
+    ],
+    "correct": 1,
+    "explanation": "The line console.log(a.toUpperCase()); will print “HELLO” to the console. It uses the toUpperCase() method to convert the string a to uppercase. The try block does not have any code, so it won’t execute any specific statements. The catch block will not be triggered because there is no error thrown in the preceding code. The finally block will execute regardless of whether there was an error or not. In this case, it will print “hello” to the console, as it references the a variable outside the try-catch block, which is not affected by the toUpperCase() call."
+  },
+  {
+    "id": "js_q30",
+    "module": "js_m6",
+    "question": "Placing a debugger; statement in the program code will:",
+    "code": null,
+    "options": [
+      "stop the program without the ability to continue, as long as the execution environment supports “debugging functionality”.",
+      "pause the program with the ability to continue, as long as the execution environment supports “debugging functionality”.",
+      "put the interpreter into report mode, which will cause the console to print out all sequentially executed commands.",
+      "cause the console to display the completion status of the statement preceding the debugger."
+    ],
+    "correct": 1,
+    "explanation": "Placing a debugger; statement in the program code will pause the execution of the code at that point and activate the debugger. It allows you to inspect the current state of the program, including variable values, call stack, and execute step-by-step or run in debug mode."
+  }
+]
