@@ -86,7 +86,7 @@ class NetAcadApp {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=9').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=10').then(reg => {
           if (reg) reg.update();
         }).catch(err => {
           console.log('SW registration note:', err);

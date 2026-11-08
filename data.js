@@ -2595,566 +2595,566 @@ const CERTIFICATES_DATA = {
     ],
     "examQuestionCount": 35,
     "questions": [
-      {
-        "id": "js2_q01",
-        "module": "js2_m1",
-        "question": "You have called the following statement:\n\nWhat declaration should precede the statement so that the text Jeep appears in the console as a result of its execution?",
-        "code": "console.log(car.make);",
-        "options": [
-          "let car = [make: 'Jeep', model: 'Cherokee'];",
-          "let car = [make: 'Jeep'];",
-          "var car = {'Jeep'};",
-          "let car = {make: 'Jeep', model: 'Cherokee'};"
-        ],
-        "correct": 3,
-        "explanation": "To make the statement console.log(car.make); output \\\"Jeep\\\" in the console, you should use the following declaration:\nlet car = {make: 'Jeep', model: 'Cherokee'};\nThis declaration creates an object named car with a property make set to the value 'Jeep'. The console.log(car.make); statement then accesses the make property of the car object and logs its value, which is \\\"Jeep,\\\" to the console."
-      },
-      {
-        "id": "js2_q02",
-        "module": "js2_m1",
-        "question": "You have declared a circle object:\n\nSelect the correct way to display the value of the circle's x-coordinate so that the executed code results in the following console output:\n-10",
-        "code": "let circle = {\n    center: {\n        x: -10,\n        y: 20\n    },\n    radius: 30\n}",
-        "options": [
-          "console.log(circle.x);",
-          "console.log(center.x);",
-          "console.log(circle.center.x);",
-          "console.log(circle.center);"
-        ],
-        "correct": 2,
-        "explanation": "To display the value of the circle's x-coordinate so that the executed code results in the following console output: -10, you should use the following line of code:\nconsole.log(circle.center.x);\nThis code accesses the x property of the center object within the circle object and logs its value, which is -10, to the console."
-      },
-      {
-        "id": "js2_q03",
-        "module": "js2_m1",
-        "question": "You have declared a user object that has one property: full name\n\nWhich of the following is the correct way to refer to this property?",
-        "code": "let user = {\n    'full name': 'Mickey Mouse'\n}",
-        "options": [
-          "user.'full name'",
-          "You cannot use a property name consisting of several words.",
-          "user[full name]",
-          "user['full name']"
-        ],
-        "correct": 3,
-        "explanation": "The correct way to refer to the property with a name consisting of several words, which is \\\"full name\\\" in this case, is:\nuser['full name']\nUsing square brackets ([]) is the correct syntax for accessing object properties with names that contain spaces or special characters."
-      },
-      {
-        "id": "js2_q04",
-        "module": "js2_m1",
-        "question": "You have declared a geoposition object:\n\nSelect the correct way to display the values of all object properties so that the executed code results in the following console output:\n-30.110 and 120.027",
-        "code": "let geoposition = {\n    lan: -30.110,\n    lat: 120.027\n}",
-        "options": [
-          "for(key in geoposition) console.log(key);",
-          "Object.keys(geoposition).forEach(key => console.log(key));",
-          "console.log(geoposition[lan, lat]);",
-          "Object.keys(geoposition).forEach(key => console.log(geoposition[key]));"
-        ],
-        "correct": 3,
-        "explanation": "The correct way to display the values of all object properties of the geoposition object so that the executed code results in the console output of -30.110 and 120.027 is:\nObject.keys(geoposition).forEach(key => console.log(geoposition[key]));\nThis code iterates through the keys of the geoposition object and uses them to access and log the corresponding values."
-      },
-      {
-        "id": "js2_q05",
-        "module": "js2_m1",
-        "question": "You have declared two tree objects:\n\nWhich of the following comparisons will return true?",
-        "code": "let tree1 = {\n    species: 'oak'\n}\nlet tree2 = {\n    species: 'oak'\n}",
-        "options": [
-          "tree1 == tree2",
-          "tree1 === tree2",
-          "(tree1.species == tree2.species) && (tree1.species == tree2.species)",
-          "tree1 same tree2"
-        ],
-        "correct": 2,
-        "explanation": "The comparison that will return true is:\ntree1.species == tree2.species\nThis comparison checks if the species property of tree1 is equal to the species property of tree2. Since both tree1 and tree2 have the same value 'oak' for the species property, this comparison will return true."
-      },
-      {
-        "id": "js2_q06",
-        "module": "js2_m1",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let mountain1 = {\n    name: 'K2',\n    range: 'Himalayas'\n}\nlet mountain2 = { ...mountain1, range: 'Karakoram', height: 8611};\nmountain1.height = 8848;\nconsole.log(`${mountain2.name} ${mountain2.range} ${mountain2.height}`);",
-        "options": [
-          "K2 Karakoram 8848",
-          "K2 Himalayas 8848",
-          "undefined Karakoram 8611",
-          "K2 Karakoram 8611"
-        ],
-        "correct": 3,
-        "explanation": "The code will result in the following output:\nK2 Karakoram 8611\nHere's how it works:\n1. mountain1 is declared with the name \\\"K2\\\" and the range \\\"Himalayas.\\\"\n2. mountain2 is declared as an object with the same properties as mountain1 using the spread operator (...mountain1). This creates a new object that initially has the same values as mountain1, but then it assigns a new value \\\"Karakoram\\\" to the range property and adds a new property height with the value 8611.\n3. mountain1.height is updated to 8848.\n4. The console.log statement prints the properties of mountain2, which are \\\"K2\\\" for name, \\\"Karakoram\\\" for range, and 8611 for height."
-      },
-      {
-        "id": "js2_q07",
-        "module": "js2_m1",
-        "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Huck Finn",
-        "code": "let user = {\n    name: 'Huck',\n    surname: 'Finn',\n    // Insert line of code here.\n}\nuser.show();",
-        "options": [
-          "show: function(this) {console.log(`${this.name} ${this.surname}`);}",
-          "user.show = {console.log(`${this.name} ${this.surname}`);}",
-          "show: function() {console.log(`${this.name} ${this.surname}`);}",
-          "show: function() {console.log(`${name} ${surname}`);}"
-        ],
-        "correct": 2,
-        "explanation": "To achieve the desired console output \\\"Huck Finn\\\" and call the show method on the user object, you should use the following missing line:\nshow: function() {console.log(`${this.name} ${this.surname}`);}\nThis code defines a show method within the user object that logs the name and surname properties when called."
-      },
-      {
-        "id": "js2_q08",
-        "module": "js2_m1",
-        "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Huckleberry",
-        "code": "let user = {\n    _name: 'Huck',\n    _surname: 'Finn',\n    // Insert line of code here.\n}\nuser.name = 'Huckleberry';\nconsole.log(user._name);",
-        "options": [
-          "name() {this._name = name;}",
-          "name: set() {this._name = name;}",
-          "set name(name) {this._name = name;}",
-          "name: this._name = name"
-        ],
-        "correct": 2,
-        "explanation": "To achieve the desired console output \\\"Huckleberry\\\" and update the _name property of the user object, you should use the following missing line with a setter method:\nset name(name) { this._name = name; }\nThis code defines a setter method for the name property, allowing you to set the _name property when you assign a new value to user.name."
-      },
-      {
-        "id": "js2_q09",
-        "module": "js2_m1",
-        "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Lhotse undefined undefined",
-        "code": "let mountain = {\n    name: 'Everest',\n    range: 'Himalayas'\n}\n// Insert line of code here.\ndelete mountain.range;\nmountain.name = 'Lhotse';\nmountain.height = 8516;\nconsole.log(`${mountain.name} ${mountain.range} ${mountain.height}`);",
-        "options": [
-          "Object.seal(mountain);",
-          "Object.freeze(mountain);",
-          "An empty line",
-          "Object.preventExtensions(mountain);"
-        ],
-        "correct": 1,
-        "explanation": "To achieve the desired console output \\\"Lhotse undefined undefined,\\\" you should use the following missing line:\nObject.freeze(mountain);\nThe Object.freeze(mountain) line will prevent any further modifications to the mountain object, including adding or deleting properties, which will result in the range property being undefined in the output."
-      },
-      {
-        "id": "js2_q10",
-        "module": "js2_m1",
-        "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Lhotse 8516",
-        "code": "let getMountain = function(name, height) {\n    // Insert line of code here.\n}\nlet mountain = getMountain('Lhotse', 8516);\nconsole.log(`${mountain.name} ${mountain.height}`);",
-        "options": [
-          "this.name = name; this.height = height;",
-          "return {name, height};",
-          "return {this.name, this.height};",
-          "return (name, height);"
-        ],
-        "correct": 1,
-        "explanation": "To achieve the desired console output \\\"Lhotse 8516,\\\" you should use the following missing line:\nreturn { name, height };\nThis code defines a function getMountain that takes name and height as parameters and returns an object with the same property names name and height, containing the values passed to the function."
-      },
-      {
-        "id": "js2_q11",
-        "module": "js2_m1",
-        "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 100",
-        "code": "let Point = function(x, y) {\n    // Insert line of code here.\n    this.y = y;\n}\nlet point = new Point(100, 0);\nlet ColorPoint = function(color) {\n    this.color = color;\n}\nColorPoint.prototype = point;\nlet cpoint = new ColorPoint('green');\nconsole.log(cpoint.x);",
-        "options": [
-          "return x;",
-          "Point.x = x;",
-          "point.x = x;",
-          "this.x = x;"
-        ],
-        "correct": 3,
-        "explanation": "To achieve the desired console output \\\"100,\\\" you should use the following missing line in the Point constructor:\nthis.x = x;\nThis code defines a Point constructor that takes x and y parameters and initializes this.x and this.y. Creating a ColorPoint object based on point will have the x property set to 100 as desired."
-      },
-      {
-        "id": "js2_q12",
-        "module": "js2_m2",
-        "question": "Analyze the following code:\n\nIt is:",
-        "code": "let Mountain = class {};",
-        "options": [
-          "correct, because it is a declaration of an anonymous class and saves it to the variable Mountain (a class as a first-class citizen).",
-          "incorrect, because a class definition (the content of the brackets) can't be empty.",
-          "incorrect, because it should be: class Mountain {};",
-          "correct, because it is the creation of an object based on an empty class and saves it to the Mountain variable."
-        ],
-        "correct": 0,
-        "explanation": "The code let Mountain = class {}; is correct because it defines an anonymous class and assigns it to the variable Mountain. In JavaScript, you can create anonymous classes and assign them to variables, making classes first-class citizens. The class may not have any properties or methods defined in this specific case, but it is still a valid class declaration. So, the statement is correct: it declares an anonymous class and saves it to the variable Mountain."
-      },
-      {
-        "id": "js2_q13",
-        "module": "js2_m2",
-        "question": "You have defined a class Mountain whose constructor takes two arguments: name and range .\n\nWhich of the following is the correct way to create a mountain object of this class?",
-        "code": null,
-        "options": [
-          "let mountain = create Mountain('Manaslu', 8156);",
-          "let mountain = new Mountain('Manaslu', 8156);",
-          "Mountain(let mountain, 'Manaslu', 8156);",
-          "let mountain = Mountain('Manaslu', 8156);"
-        ],
-        "correct": 1,
-        "explanation": "The correct way to create a Mountain object of the class with a constructor that takes two arguments (name and range) is:\nlet mountain = new Mountain('Manaslu', 8156);\nUsing the new keyword is essential when creating instances of a class in JavaScript. This syntax correctly creates a new Mountain object with the specified arguments for the constructor."
-      },
-      {
-        "id": "js2_q14",
-        "module": "js2_m2",
-        "question": "Analyze the following code:\n\nThe mountain object:",
-        "code": "class Mountain {\n    constructor (name, height) {\n        this.name = name;\n        this.height = height;\n    }\n    setRange(range) {\n        this.range = range;\n    }\n}\nlet mountain = new Mountain('K2', 8611);\nmountain.setRange('Karakoram');",
-        "options": [
-          "has two properties: name and height (only these are defined in the constructor).",
-          "will not be created - setRange references the range property that was not defined in the constructor.",
-          "will not be created - the constructor and the setRange method refer to properties that have not been defined in the class body.",
-          "has three properties: name , height and range ."
-        ],
-        "correct": 3,
-        "explanation": "The mountain object has three properties: name, height, and range.\nIn the provided code:\n1. The Mountain class is defined with a constructor that initializes the name and height properties using the this keyword.\n2. It also has a setRange method, which sets the range property when called.\nWhen you create a mountain object using let mountain = new Mountain('K2', 8611);, it invokes the constructor, which sets the name and height properties. Later, when you call mountain.setRange('Karakoram');, it sets the range property. So, the mountain object indeed has three properties: name, height, and range."
-      },
-      {
-        "id": "js2_q15",
-        "module": "js2_m2",
-        "question": "There is one line missing in the following code:\n\nSelect the correct missing line so that the executed code results in the following console output: maple",
-        "code": "class Tree {\n    _species = 'oak';\n    // Insert line of code here.\n}\nlet tree = new Tree();\ntree.species = 'maple';\nconsole.log(tree._species);",
-        "options": [
-          "set _ species (species) { this._ species = species;}",
-          "set (species) { this._ species = species;}",
-          "set species (val) { this._ species = val;}",
-          "_species set(species) { this._ species = species;}"
-        ],
-        "correct": 2,
-        "explanation": "To achieve the desired console output \\\"maple,\\\" you should use the following missing line:\nset species(val) { this._species = val; }\nThis code defines a setter method for the species property, which allows you to set the _species property when you assign a new value to tree.species."
-      },
-      {
-        "id": "js2_q16",
-        "module": "js2_m2",
-        "question": "There is one line missing in the following code:\n\nSelect the correct missing line so that the executed code results in the following console output: First Second",
-        "code": "class First {\n    hallo1() { return 'First';}\n}\n// Insert line of code here.\n    hallo2() { return 'Second';}\n}\nlet second = new Second();\nconsole.log(`${second.hallo1()} ${second.hallo2()}`);",
-        "options": [
-          "class First extends Second {",
-          "First inherits Second {",
-          "class Second extends First {",
-          "Second inherits First {"
-        ],
-        "correct": 2,
-        "explanation": "To achieve the desired console output \\\"First Second,\\\" you should use the following missing line to properly define the Second class as a subclass of First:\nclass Second extends First {\nThis code defines the Second class as a subclass of First, allowing it to inherit the hallo1 method and add the hallo2 method."
-      },
-      {
-        "id": "js2_q17",
-        "module": "js2_m2",
-        "question": "You have declared a Mountain class and created a mountain object from it:\n\nSelect the correct call so that the executed code results in the following console output: Mountain",
-        "code": "class Mountain {\n    static className() { return 'Mountain'; }\n}\nmountain = new Mountain();",
-        "options": [
-          "Mountain.className",
-          "Mountain.className()",
-          "mountain['static className']()",
-          "mountain.className()"
-        ],
-        "correct": 1,
-        "explanation": "To achieve the desired console output \\\"Mountain,\\\" you should use the following call:\nMountain.className()\nThis code correctly calls the static className method of the Mountain class to obtain the value \\\"Mountain\\\" and logs it to the console."
-      },
-      {
-        "id": "js2_q18",
-        "module": "js2_m2",
-        "question": "Analyze the following code:\n\nAs a result of its execution:",
-        "code": "function First() {};\nclass Second extends First {};\nlet second = new Second();\nconsole.log(`${second instanceof First} ${second instanceof Second}`);",
-        "options": [
-          "false true will be displayed, because First is not a class.",
-          "true true will be displayed because First will be treated as a constructor during inheritance.",
-          "false false will be displayed, because Second inheriting from First will also be a function.",
-          "an error will appear because you are trying to inherit in class Second from function First and not from another class."
-        ],
-        "correct": 1,
-        "explanation": "As a result of its execution, the following will be displayed:\ntrue true\nHere's why:\n1. second instanceof First returns true because second is an instance of the First constructor function. In JavaScript, constructor functions can be used as classes, and instanceof checks whether an object is an instance of a constructor function or its prototypes.\n2. second instanceof Second returns true because second is also an instance of the Second class, which inherits from First. The inheritance chain is preserved, so second is considered an instance of both First and Second."
-      },
-      {
-        "id": "js2_q19",
-        "module": "js2_m3",
-        "question": "A value parameter is missing from the Number constructor in the place indicated in code:\n\nSelect the correct value so that the executed code results in the following console output: '0.01'",
-        "code": "Number(INSERT MISSING CODE HERE).toFixed(2);",
-        "options": [
-          "0.01e-2",
-          "'-0x01'",
-          "'12e-3'",
-          "1"
-        ],
-        "correct": 2,
-        "explanation": "To achieve the desired console output '12e-3', you should use the following value as the parameter for the Number constructor: '0.01'.\nThis code converts the string '12e-3' to a number using the Number constructor and then calls the toFixed method to format it with two decimal places, resulting in '0.01' as the output."
-      },
-      {
-        "id": "js2_q20",
-        "module": "js2_m3",
-        "question": "There is a line missing from the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: ['DO', 'CATS', 'EAT', 'BATS']",
-        "code": "function test(str) {\n    // Insert line of code here.\n}\nconsole.log(test('Do cats eat bats'));",
-        "options": [
-          "return split(str.toUpperCase());",
-          "return str.toUpperCase().split(' ');",
-          "str.upperCase().split(' ');",
-          "return str.split(' ').toUpperCase();"
-        ],
-        "correct": 1,
-        "explanation": "To achieve the desired console output ['DO', 'CATS', 'EAT', 'BATS'], you should use the following missing line:\nreturn str.toUpperCase().split(' ');\nThis code converts the input string to uppercase and then splits it into an array of words using the space (' ') as the delimiter, resulting in the desired output."
-      },
-      {
-        "id": "js2_q21",
-        "module": "js2_m3",
-        "question": "The following code places a Date class object containing the current time into the currentTime variable:\n\nThe same effect can be achieved by using:",
-        "code": "let currentTime = new Date(Date.now());",
-        "options": [
-          "let currentTime = new Date.now();",
-          "There is no other way to achieve this effect.",
-          "let currentTime = new Date();",
-          "let currentTime = new Date().now();"
-        ],
-        "correct": 2,
-        "explanation": "The same effect can be achieved by using:\nlet currentTime = new Date();\nThe new Date() constructor, without any arguments, automatically creates a Date object containing the current date and time. The other options you provided (new Date.now() and new Date().now()) are not valid and will result in errors."
-      },
-      {
-        "id": "js2_q22",
-        "module": "js2_m3",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let points = [{x: 10, y: 20}, {x: 0, y: 30}, {x: 20, y: 100}];\nlet result1 = points.some(e => e.y < 10)\nlet result2 = points.every(e => e.y > 10)\nconsole.log(`${result1} ${result2}`);",
-        "options": [
-          "false true",
-          "null {x: 10, y: 20}",
-          "Undefined {x: 10, y: 20}",
-          "-1 1"
-        ],
-        "correct": 0,
-        "explanation": "As a result of the code execution, the following will appear in the console:\nfalse true\nHere's why:\n1. result1 is false because the some method checks if any of the elements in the points array have a y value that is less than 10. In this case, none of the elements meet this condition, so it returns false.\n2. result2 is true because the every method checks if all of the elements in the points array have a y value that is greater than 10. In this case, all of the elements meet this condition, so it returns true."
-      },
-      {
-        "id": "js2_q23",
-        "module": "js2_m3",
-        "question": "There is one line missing in the code below:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let points = [{x: 20, y: 20}, {x: 10, y: 30}, {x: 10, y: 100}];\n// Insert line of code here.\nconsole.log(result);",
-        "options": [
-          "let result = points.map((e,n) => {n = e.x + e.y});",
-          "let result = points.map(e => e.x + e.y);",
-          "let result = points.map(e => {e.x + e.y});",
-          "let result = points.map(x + y);"
-        ],
-        "correct": 1,
-        "explanation": "To calculate the sum of x and y for each object in the points array and store the results in the result array, you should use the following missing line:\nlet result = points.map(e => e.x + e.y);\nThis code uses the map method to iterate through the points array and calculates the sum of x and y for each object, storing the results in the result array. The console will display the result array, containing the sum of x and y for each object in the points array."
-      },
-      {
-        "id": "js2_q24",
-        "module": "js2_m3",
-        "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: ['a', 'x', 'y', 'e']",
-        "code": "let x = ['a', 'b', 'c', 'd', 'e'];\nx.splice(1, 3);\n// Insert line of code here.\nconsole.log(x);",
-        "options": [
-          "x.splice(1, 'x', 'y');",
-          "x.splice(1, 0, 2, 'x', 'y');",
-          "x.splice(1, 2, 'x', 'y');",
-          "x.splice(1, 0, 'x', 'y');"
-        ],
-        "correct": 3,
-        "explanation": "To achieve the desired console output ['a', 'x', 'y', 'e'], you should use the following missing line:\nx.splice(1, 0, 'x', 'y');\nThis code first removes elements at index 1 with a count of 3 using x.splice(1, 3);, and then it inserts 'x' and 'y' at index 1 using x.splice(1, 0, 'x', 'y');, resulting in the desired output."
-      },
-      {
-        "id": "js2_q25",
-        "module": "js2_m3",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let s = new Set([1, 2, '100']);\ns.add(2);\ns.add('2');\nconsole.log(`${s.has(2)} ${s.has('2')} ${s.size}`);",
-        "options": [
-          "true false 3",
-          "true true undefined",
-          "true true 4",
-          "true false 4"
-        ],
-        "correct": 2,
-        "explanation": "As a result of the code execution, the following will appear in the console:\ntrue true 4\nHere's the explanation:\n1. s.has(2) returns true because the Set s contains the number 2.\n2. s.has('2') returns true because the Set s also contains the string '2'. In Sets, values are considered distinct based on their value, not their type, so both the number 2 and the string '2' are distinct elements.\n3. s.size returns 4 because the Set s contains four distinct elements: 1, 2, '100', and '2'."
-      },
-      {
-        "id": "js2_q26",
-        "module": "js2_m3",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let m = new Map([[1, '11'], ['2', 22]]);\nm.set(1, '11');\nm.set(1, '111');\nconsole.log(`${m.size}`);",
-        "options": [
-          "2",
-          "4",
-          "3",
-          "undefined"
-        ],
-        "correct": 0,
-        "explanation": "As a result of the code execution, the following will appear in the console:\n2\nHere's the explanation:\n1. The initial Map m is created with two key-value pairs: [1, '11'] and ['2', 22]. The keys 1 and '2' are distinct because '2' is a string and 1 is a number.\n2. m.set(1, '11') updates the existing entry with key 1 to have the value '11'. So, there's still only one entry with key 1, and its value is '11'.\n3. m.set(1, '111') updates the existing entry with key 1 again, changing its value to '111'. The key 1 remains unique in the Map.\nAs a result, the Map m still contains only two distinct key-value pairs, which is why m.size is 2."
-      },
-      {
-        "id": "js2_q27",
-        "module": "js2_m3",
-        "question": "The following data is stored in JSON format:\n\nWhich statement/command should you use to convert the data to an object that will be written to the mountain variable?",
-        "code": "let strMountain = '{ \"name\": \"Lhotse\", \"range\": \"Himalayas\" }';",
-        "options": [
-          "let mountain = JSON.parse(strMountain);",
-          "let mountain = JSON.stringify(strMountain);",
-          "let mountain = Object(strMountain);",
-          "let mountain = JSON(strMountain);"
-        ],
-        "correct": 0,
-        "explanation": "To convert the JSON data into an object and store it in the mountain variable, you should use the following statement:\nlet mountain = JSON.parse(strMountain);\nThe JSON.parse() function is used to parse a JSON string and convert it into a JavaScript object, which is what you want to achieve in this case."
-      },
-      {
-        "id": "js2_q28",
-        "module": "js2_m3",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "console.log(`${Math.round(1.5)} ${Math.floor(1.7)} ${Math.ceil(1.2)}`)",
-        "options": [
-          "1 2 1",
-          "1 1 1",
-          "2 2 2",
-          "2 1 2"
-        ],
-        "correct": 3,
-        "explanation": "As a result of the code execution, the following will appear in the console:\n2 1 2\nHere's the explanation:\n1. Math.round(1.5) rounds the number 1.5 to the nearest integer, which is 2.\nMath.floor(1.7) rounds the number 1.7 down to the nearest integer, which is 1.\n2. Math.ceil(1.2) rounds the number 1.2 up to the nearest integer, which is 2.\nSo, you get the output 2 1 2."
-      },
-      {
-        "id": "js2_q29",
-        "module": "js2_m3",
-        "question": "You have created an object of the RegExp class that you want to use to search for regular expressions:\n\nSelect the correct alternative form of this declaration:",
-        "code": "let r = new RegExp('.\\.jpg');",
-        "options": [
-          "let r = RegExp('.\\.jpg');",
-          "let r = \\.\\.jpg\\;",
-          "let r = (. \\.jpg);",
-          "let r = /.\\.jpg/;"
-        ],
-        "correct": 3,
-        "explanation": "The correct alternative form of the declaration to create a regular expression for searching '.jpg' is:\nlet r = /.\\.jpg/;\nThis uses the regular expression literal notation with forward slashes (/) and escapes the dot (.) with a backslash (\\) to match the dot character in the string '.jpg'."
-      },
-      {
-        "id": "js2_q30",
-        "module": "js2_m1",
-        "question": "Analyze the following code:\n\nAs a result of its execution:",
-        "code": "let a = [1,2];\nArray.prototype.test = function(){\n    console.log('test');\n}\nlet b = [3,4];\na.test();\nb.test();",
-        "options": [
-          "an error appears, because the test method is bound to the Array class and not to the objects created from it (objects a and b do not have the test method).",
-          "a single message 'test' appears in the console (object a does not have the test method).",
-          "an error appears when trying to execute a.test() , because the method was added after the creation of the array object a.",
-          "two 'test' messages appear in the console."
-        ],
-        "correct": 3,
-        "explanation": "As a result of its execution, two 'test' messages appear in the console.\nHere's the explanation:\n1. The Array.prototype.test function is added to the prototype of the Array class, so all array objects, including a and b, inherit this method.\n2. When you call a.test(), it successfully invokes the Array.prototype.test method and logs 'test' to the console.\n3. When you call b.test(), it also successfully invokes the Array.prototype.test method and logs another 'test' message to the console."
-      },
-      {
-        "id": "js2_q31",
-        "module": "js2_m4",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let fn = function ( a, b,...rest) {\n    console.log(`${a.length} ${rest.length}`);\n}\nfn('1', '2', '3', '4', '5');",
-        "options": [
-          "undefined 3",
-          "1 3",
-          "1 undefined",
-          "5 undefined"
-        ],
-        "correct": 1,
-        "explanation": "As a result of the code execution, the following will appear in the console:\n1 3\nHere's the explanation:\n1. The function fn takes three parameters: a, b, and the rest parameter rest. The rest parameter rest collects any additional arguments into an array.\n2. When you call fn('1', '2', '3', '4', '5'), the a parameter receives the string '1', the b parameter receives the string '2', and the rest parameter collects the remaining arguments '3', '4', and '5' into an array.\n3. a.length returns the length of the string '1', which is 1.\n4. rest.length returns the length of the array rest, which contains the values '3', '4', and '5', so its length is 3.\nHence, you get the output 1 3"
-      },
-      {
-        "id": "js2_q32",
-        "module": "js2_m4",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let msg = 'Bob';\nlet ret = (function (){\n    let msg = 'Marley';\n    return msg;\n})();\nconsole.log(`${msg} ${ret}`);",
-        "options": [
-          "Marley Bob",
-          "Marley Marley",
-          "Bob Bob",
-          "Bob Marley"
-        ],
-        "correct": 3,
-        "explanation": "As a result of the code execution, the following will appear in the console:\nBob Marley\nHere's the explanation:\n1. The outer msg variable is assigned the string 'Bob'.\n2. Inside the immediately-invoked function expression (IIFE), there's a local msg variable assigned the string 'Marley'.\n3. The IIFE returns the value of its local msg variable, which is 'Marley'.\n4. When you console.log() the values of msg and ret, you get 'Bob' for the outer msg variable and 'Marley' for the ret variable, resulting in the output 'Bob Marley'. The outer msg variable is not affected by the local msg variable inside the IIFE because they are in different scopes."
-      },
-      {
-        "id": "js2_q33",
-        "module": "js2_m4",
-        "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 25",
-        "code": "let fn = function(msg, n) {\n    console.log(`${msg}: ${this.a ** n}`);\n}\n// Insert line of code here.\nbfn(2, 3);",
-        "options": [
-          "let bfn = fn.bind({a: 5}, 'result');",
-          "let bfn = fn.apply({a: 5}, 'result');",
-          "let bfn = fn.call({a: 5}, 'result');",
-          "let bfn = fn.bind({a: 5});"
-        ],
-        "correct": 3,
-        "explanation": "To achieve the desired console output, you should use the following missing line:\nlet bfn = fn.bind({ a: 5 });\nThis code binds the fn function to an object with the property a: 5. When you call bfn(2, 3), it calculates 5 ** 3, resulting in the output '25'."
-      },
-      {
-        "id": "js2_q34",
-        "module": "js2_m4",
-        "question": "A decorator is:",
-        "code": null,
-        "options": [
-          "a function that wraps another function, changing its functionality to some extent.",
-          "a class that inherits from another class.",
-          "an iterator type.",
-          "an elegant way of writing comments in a function."
-        ],
-        "correct": 0,
-        "explanation": "In JavaScript, a decorator is a higher-order function that wraps another function, extending or modifying its behavior without altering its original implementation. The box at the bottom displays 'That's not Right!' because an incorrect option was selected during the test."
-      },
-      {
-        "id": "js2_q35",
-        "module": "js2_m4",
-        "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: a b",
-        "code": "function* testGenerator() {\n    // Insert line of code here.\n}\nlet gen = testGenerator(2);\nconsole.log(`${gen.next().value} ${gen.next().value}`);",
-        "options": [
-          "yield ['a', 'b'];",
-          "yield* ['a', 'b', 'c', 'd'];",
-          "yield ['a', 'b', 'c', 'd'];",
-          "return ['a', 'b'];"
-        ],
-        "correct": 1,
-        "explanation": "To achieve the desired console output, you should use the following missing line:\nyield* ['a', 'b', 'c', 'd'];\nThis code defines a generator function testGenerator that yields values from the array ['a', 'b', 'c', 'd']. When you call gen.next().value twice, it yields 'a' and 'b', resulting in the output 'a b'."
-      },
-      {
-        "id": "js2_q36",
-        "module": "js2_m4",
-        "question": "There is one line missing in the code below:\n\nSelect the correct missing line in order for the the console to display test with a delay of 3 seconds:",
-        "code": "let fn = msg => console.log(msg);\nsetTimeout(() => {\n    // Insert line of code here.\n}, 1000);",
-        "options": [
-          "setTimeout(fn, 2000);",
-          "setTimeout(fn.bind(this, 'test'), 2000);",
-          "setTimeout(fn, 3000);",
-          "fn('test', 3000);"
-        ],
-        "correct": 1,
-        "explanation": "To make the console display 'test' with a delay of 3 seconds, you should use the following missing line:\nsetTimeout(fn.bind(this, 'test'), 3000);\nThis code sets a timeout for 3 seconds and uses the fn function with the message 'test' by binding it with fn.bind(this, 'test'). After 3 seconds, 'test' will be logged to the console."
-      },
-      {
-        "id": "js2_q37",
-        "module": "js2_m4",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let p = new Promise (function(resolve, reject) {\n    setTimeout(() => resolve(1), 1000);\n});\n.then(a => console.log(`a ${a}`), b => console.log(`b ${b}`));",
-        "options": [
-          "b 1",
-          "a 1",
-          "a 1 b 1",
-          "a"
-        ],
-        "correct": 1,
-        "explanation": "As a result of the code execution, the following will appear in the console:\na 1\nHere's the explanation:\n1. A Promise p is created, which resolves with the value 1 after a delay of 1000 milliseconds using setTimeout.\n2. The p.then() method is used to attach two callbacks: one for when the promise resolves (a => console.log(`a ${a}`)) and one for when it rejects (b => console.log(`b ${b}`)).\n3. Since the promise p successfully resolves, the first callback is executed, and you get the output 'a 1'.\nThe second callback (b => console.log(`b ${b}`)) is not executed because there was no rejection in this case."
-      },
-      {
-        "id": "js2_q38",
-        "module": "js2_m4",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let p = new Promise(function(resolve){\n    setTimeout(() => resolve(10), 100);\n});\nlet r = new Promise(function(resolve){\n    setTimeout(() => resolve(30), 150);\n});\np.then(a => {\n    console.log(a);\n    return r;\n})\n.then(a => {\n    console.log(a);\n    return 50;\n})\n.then(a => {\n    console.log(a);\n}",
-        "options": [
-          "10",
-          "10 30",
-          "10 30 50",
-          "10 50"
-        ],
-        "correct": 2,
-        "explanation": "As a result of the code execution, the following will appear in the console:\n10 30 50\nHere's the explanation of the code execution step by step:\n1. Two promises, p and r, are created. p resolves with the value 10 after 100 milliseconds, and r resolves with the value 30 after 150 milliseconds.\n2. The p.then() method is used, which attaches a callback to be executed when p resolves. In this callback, the value 10 is logged to the console.\n3. Inside the p.then() callback, a new promise r is returned, which means that the subsequent then will wait for the resolution of r.\n4. The next then() method is called on the result of r, which attaches another callback. When r resolves, the value 30 is logged to the console.\n5. Inside the second then() callback, the value 50 is returned, and another then() is called on it.\n6. Finally, in the third then() callback, the value 50 is logged to the console.\nSo, the output in the console is '10' (from the first then()), '30' (from the second then()), and '50' (from the third then())."
-      },
-      {
-        "id": "js2_q39",
-        "module": "js2_m4",
-        "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-        "code": "let p = new Promise(function (resolve, reject) {\n    setTimeout(() => resolve('abc'), 100);\n});\nasync function afn() {\n    console.log('def');\n    let x = await p;\n    console.log(x);\n}\nafn();\nconsole.log('ghi');",
-        "options": [
-          "def ghi abc",
-          "abc ghi def",
-          "ghi abc def",
-          "ghi def abc"
-        ],
-        "correct": 0,
-        "explanation": "As a result of the code execution, the following will appear in the console:\ndef ghi abc\nHere's the explanation of the code execution step by step:\n1. A promise p is created, which resolves with the value 'abc' after a delay of 100 milliseconds.\n2. An asynchronous function afn is defined.\n3. Inside the afn function, the first console.log('def') is executed, logging 'def' to the console.\n4. The await p line waits for the promise p to resolve. During this time, the control is returned to the event loop, and the next line (console.log('ghi')) is executed.\n5. The console.log('ghi') line logs 'ghi' to the console.\n6. Once the promise p resolves (after 100 milliseconds), the control returns to the afn function, and the value 'abc' is assigned to x.\n7. The console.log(x) line logs 'abc' to the console.\nSo, the output in the console is 'def', 'ghi', and 'abc' in that order."
-      },
-      {
-        "id": "js2_q40",
-        "module": "js2_m4",
-        "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 200",
-        "code": "let request = new XMLHttpRequest();\nlet fn = function() {\n    console.log(request.status);\n}\n// Insert line of code here.",
-        "options": [
-          "request.addEventListener(fn);",
-          "request.addEventListener('load', fn);",
-          "abc ghi def",
-          "request('load', fn);"
-        ],
-        "correct": 1,
-        "explanation": "To make the code execute and result in the console output '200', you should add the following line:\nrequest.addEventListener('load', fn);\nThe code listens for the load event, and when the request is complete, it logs the HTTP status code (request.status) to the console. If the HTTP request is successful and the server responds with a status code of 200 (OK), the output would be: 200"
-      }
+          {
+                "id": "js2_q01",
+                "module": "js2_m1",
+                "question": "You have called the following statement:\n\nWhat declaration should precede the statement so that the text Jeep appears in the console as a result of its execution?",
+                "code": "console.log(car.make);",
+                "options": [
+                      "let car = {make: 'Jeep', model: 'Cherokee'};",
+                      "let car = [make: 'Jeep', model: 'Cherokee'];",
+                      "let car = [make: 'Jeep'];",
+                      "var car = {'Jeep'};"
+                ],
+                "correct": 0,
+                "explanation": "To output 'Jeep' via console.log(car.make), the car variable must be an object literal with a 'make' property set to 'Jeep'. In JavaScript, object literals use curly braces with key-value pairs: {make: 'Jeep', model: 'Cherokee'}. Options using square brackets [] define invalid array syntax for key-value pairs."
+          },
+          {
+                "id": "js2_q02",
+                "module": "js2_m1",
+                "question": "You are working on a web application that handles geometric shapes. You have created a JavaScript object to represent a circle:\n\nWhat is the correct formula to calculate the circumference based on the circle object?",
+                "code": "let circle = {\n    center: {\n        x: 10,\n        y: 20\n    },\n    radius: 30\n};",
+                "options": [
+                      "2 * circle.radius * Math.PI",
+                      "circle.radius * circle.radius * Math.PI",
+                      "2 * circle.center.x * Math.PI",
+                      "circle.radius + circle.center.y"
+                ],
+                "correct": 0,
+                "explanation": "The circumference of a circle is calculated using the formula 2 * π * r. In JavaScript, π is accessed via Math.PI and the radius property of the circle object is accessed via circle.radius. Therefore, the correct expression is 2 * circle.radius * Math.PI."
+          },
+          {
+                "id": "js2_q03",
+                "module": "js2_m1",
+                "question": "You have declared a user object that has one property: full name\n\nWhich of the following is the correct way to refer to this property?",
+                "code": "let user = {\n    'full name': 'Mickey Mouse'\n};",
+                "options": [
+                      "user['full name']",
+                      "user[full name]",
+                      "user.'full name'",
+                      "You cannot use a property name consisting of several words."
+                ],
+                "correct": 0,
+                "explanation": "When an object property name contains spaces or special characters (such as 'full name'), dot notation (user.'full name') is invalid syntax. Bracket notation with a string key, user['full name'], must be used to access the property."
+          },
+          {
+                "id": "js2_q04",
+                "module": "js2_m1",
+                "question": "What will be the result of executing the following code?",
+                "code": "let geoposition = {\n    latitude: 40.7128,\n    longitude: -74.0060,\n    altitude: 100,\n    city: \"New York\"\n};\nObject.keys(geoposition).forEach(key =>\n    console.log(geoposition[key])\n);",
+                "options": [
+                      "It will display only the property names without their values.",
+                      "It will display the values of all the properties.",
+                      "It will cause an error because forEach cannot be used with Object.keys.",
+                      "It will display a syntax error due to incorrect usage of geoposition."
+                ],
+                "correct": 1,
+                "explanation": "Object.keys(geoposition) returns an array containing the property names (keys) of the geoposition object. When iterating with forEach(key => console.log(geoposition[key])), each key is used to dynamically access and log the corresponding property value. Therefore, it will display the values of all the properties."
+          },
+          {
+                "id": "js2_q05",
+                "module": "js2_m1",
+                "question": "You have declared two tree objects:\n\nWhich of the following comparisons will return true?",
+                "code": "let tree1 = {\n    species: 'oak'\n};\nlet tree2 = {\n    species: 'oak'\n};",
+                "options": [
+                      "(tree1.species == tree2.species) && (tree1.species == tree2.species)",
+                      "tree1 == tree2",
+                      "tree1 === tree2",
+                      "tree1 same tree2"
+                ],
+                "correct": 0,
+                "explanation": "In JavaScript, objects are reference types. Comparing two distinct object instances with == or === checks reference identity (whether they point to the same memory location), which evaluates to false even if their properties have identical values. However, comparing primitive property values (tree1.species == tree2.species) compares the string 'oak' with 'oak', which evaluates to true."
+          },
+          {
+                "id": "js2_q06",
+                "module": "js2_m1",
+                "question": "What will be the population of the city stored in \"largestCity\" after executing this code?",
+                "code": "let city1 = {\n    name: 'New York',\n    population: 8537673\n};\nlet city2 = {\n    name: 'Los Angeles',\n    population: 39776830\n};\nlet largestCity = city1.population > city2.population ? { ...city1 } : { ...city2 };",
+                "options": [
+                      "8537673",
+                      "39776830",
+                      "124744503",
+                      "'Los Angeles'"
+                ],
+                "correct": 1,
+                "explanation": "The ternary operator evaluates city1.population > city2.population. Since 8537673 > 39776830 is false, the expression returns { ...city2 }, creating a shallow copy of city2. Therefore, largestCity.population will be 39776830 (Los Angeles)."
+          },
+          {
+                "id": "js2_q07",
+                "module": "js2_m1",
+                "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Huck Finn",
+                "code": "let user = {\n    name: 'Huck',\n    surname: 'Finn',\n    // Insert line of code here.\n};\nuser.show();",
+                "options": [
+                      "show: function() {console.log(`${this.name} ${this.surname}`);}",
+                      "show: function() {console.log(`${name} ${surname}`);}",
+                      "show: function(this) {console.log(`${this.name} ${this.surname}`);}",
+                      "user.show = {console.log(`${this.name} ${this.surname}`);}"
+                ],
+                "correct": 0,
+                "explanation": "In an object literal, a method is defined using standard method syntax or a function expression assigned to a key: show: function() { console.log(`${this.name} ${this.surname}`); }. Inside the method, the 'this' keyword refers to the user object instance to access its properties."
+          },
+          {
+                "id": "js2_q08",
+                "module": "js2_m1",
+                "question": "You want to create a setter for the user's first name, allowing you to set both \"_firstName\" and \"_lastName\" when updating the first name. Which line of code should you insert?",
+                "code": "let user = {\n    _firstName: 'John',\n    _lastName: 'Doe',\n    // Insert a line of code here.\n};",
+                "options": [
+                      "set firstName(name) { this._firstName = name; }",
+                      "_firstName() { this._firstName = name; }",
+                      "this._firstName = name;",
+                      "firstName(name) { this._firstName = name; }"
+                ],
+                "correct": 0,
+                "explanation": "In an object literal, a setter is defined using the 'set' keyword followed by the property identifier and a single parameter: set firstName(name) { this._firstName = name; }. This allows assigning user.firstName = 'John' to trigger the setter function."
+          },
+          {
+                "id": "js2_q09",
+                "module": "js2_m1",
+                "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Lhotse undefined undefined",
+                "code": "let mountain = {\n    name: 'Everest',\n    range: 'Himalayas'\n};\n// Insert line of code here.\ndelete mountain.range;\nmountain.name = 'Lhotse';\nmountain.height = 8516;\nconsole.log(`${mountain.name} ${mountain.range} ${mountain.height}`);",
+                "options": [
+                      "Object.preventExtensions(mountain);",
+                      "Object.freeze(mountain);",
+                      "Object.seal(mountain);",
+                      "An empty line"
+                ],
+                "correct": 1,
+                "explanation": "Object.freeze() freezes an object: it prevents adding new properties, removing existing properties, and modifying values of existing writable properties. Therefore, mountain.name is not changed to 'Lhotse', mountain.range is not deleted, and mountain.height is not added (remaining undefined)."
+          },
+          {
+                "id": "js2_q10",
+                "module": "js2_m1",
+                "question": "What should you insert into the function so that the created user object contains the name and age properties?",
+                "code": "function createUser(name, age) {\n    // Insert a line of code here.\n}\nconst user = createUser('Alice', 25);",
+                "options": [
+                      "return { name: name, age: age };",
+                      "this.name = name; this.age = age;",
+                      "return { this.name: name, this.age: age };",
+                      "createUser.name = name; createUser.age = age;"
+                ],
+                "correct": 0,
+                "explanation": "In JavaScript, a factory function creates and returns a new object. Using object literal syntax, return { name: name, age: age }; returns an object with the specified properties initialized from the function parameters."
+          },
+          {
+                "id": "js2_q11",
+                "module": "js2_m2",
+                "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 100",
+                "code": "let Point = function(x, y) {\n    // Insert line of code here.\n    this.y = y;\n};\nlet point = new Point(100, 0);\nlet ColorPoint = function(color) {\n    this.color = color;\n};\nColorPoint.prototype = point;\nlet cpoint = new ColorPoint('green');\nconsole.log(cpoint.x);",
+                "options": [
+                      "this.x = x;",
+                      "return x;",
+                      "point.x = x;",
+                      "Point.x = x;"
+                ],
+                "correct": 0,
+                "explanation": "In a constructor function, the 'this' keyword refers to the new object instance being created with the 'new' operator. Assigning this.x = x; properly initializes the property x on the newly created instance."
+          },
+          {
+                "id": "js2_q12",
+                "module": "js2_m2",
+                "question": "Which of the following code snippets correctly demonstrates the creation of an anonymous class for a \"Person\" object with a constructor that initializes the properties \"name\" and \"age\"?",
+                "code": "let Person = class {\n    constructor(name, age) {\n        this.name = name;\n        this.age = age;\n    }\n};",
+                "options": [
+                      "let Person = class {\nconstructor(name, age) {\nname = this.name;\nage = this.age;\n}\n}",
+                      "let Person = class {\n constructor(name, age) {\n this.name = name;\n this.age = age;\n }\n}",
+                      "let Person = (name, age) => {\nconstructor: {\nthis.name = name;\nthis.age = age;\n}\n}",
+                      "let Person = function(name, age) {\nthis.name = name;\nthis.age = age;\n}"
+                ],
+                "correct": 1,
+                "explanation": "A class expression can define an anonymous class assigned to a variable: let Person = class { constructor(name, age) { this.name = name; this.age = age; } }. Inside the constructor, properties are assigned to the instance using this.name = name and this.age = age."
+          },
+          {
+                "id": "js2_q13",
+                "module": "js2_m2",
+                "question": "You have defined a class Mountain whose constructor takes two arguments: name and range.\n\nWhich of the following is the correct way to create a mountain object of this class?",
+                "code": null,
+                "options": [
+                      "let mountain = new Mountain('Manaslu', 8156);",
+                      "let mountain = create Mountain('Manaslu', 8156);",
+                      "let mountain = Mountain('Manaslu', 8156);",
+                      "Mountain(let mountain, 'Manaslu', 8156);"
+                ],
+                "correct": 0,
+                "explanation": "To instantiate a class in JavaScript, the 'new' operator is required before the class constructor call: let mountain = new Mountain('Manaslu', 8156);. This creates a new instance and invokes the constructor method with the provided arguments."
+          },
+          {
+                "id": "js2_q14",
+                "module": "js2_m2",
+                "question": "What properties and methods does an instance of the \"Book\" class have when created with the following code?",
+                "code": "class Book {\n    constructor(title, author) {\n        this.title = title;\n        this.author = author;\n    }\n    setGenre(genre) {\n        this.genre = genre;\n    }\n}\nlet book = new Book('The Great Gatsby', 'F. Scott Fitzgerald');",
+                "options": [
+                      "Properties: title, author, genre; Methods: setGenre",
+                      "Properties: title, author; Methods: setGenre, getGenre",
+                      "Properties: title, author; Methods: setGenre",
+                      "Properties: title, author, genre; Methods: setGenre, getGenre"
+                ],
+                "correct": 2,
+                "explanation": "In the Book class, the constructor assigns this.title and this.author, creating instance properties 'title' and 'author'. The setGenre(genre) declaration defines an instance method. Therefore, an instance has properties 'title' and 'author', and method 'setGenre'."
+          },
+          {
+                "id": "js2_q15",
+                "module": "js2_m2",
+                "question": "There is one line missing in the following code:\n\nSelect the correct missing line so that the executed code results in the following console output: maple",
+                "code": "class Tree {\n_species = oak';\n// Insert line of code here.\n}\nlet tree = new Tree();\ntree.species = 'maple';\nconsole.log(tree._species);",
+                "options": [
+                      "set species (val) { this._ species = val;}",
+                      "set (species) { this._ species = species;}",
+                      "set _ species (species) { this._ species = species;}",
+                      "_species set(species) { this._ species = species;}"
+                ],
+                "correct": 0,
+                "explanation": "In an ES6 class, a setter for a property is defined using the 'set' keyword followed by the property name and one parameter in parentheses: set species(val) { this._species = val; }."
+          },
+          {
+                "id": "js2_q16",
+                "module": "js2_m2",
+                "question": "What should you insert into the \"Cat\" class so that it properly inherits from the \"Animal\" class?",
+                "code": "class Animal {\nconstructor(legs) {\nthis.legs = legs;\n}\n}\nclass Cat {\n// Insert a line of code here.\nspeak() {\nreturn 'Meow';\n}\n}",
+                "options": [
+                      "class Cat extends Animal {}",
+                      "class Cat inherits Animal {}",
+                      "class Cat : Animal {}",
+                      "class Cat inherits from Animal {}"
+                ],
+                "correct": 0,
+                "explanation": "In ES6 JavaScript, class inheritance is implemented using the 'extends' keyword: class Cat extends Animal {}. Other keywords like 'inherits' or colons ':' are from other languages (like Java or C#) and are invalid syntax in JavaScript."
+          },
+          {
+                "id": "js2_q17",
+                "module": "js2_m2",
+                "question": "You have declared a Mountain class and created a mountain object from it:\n\nSelect the correct call so that the executed code results in the following console output: Mountain",
+                "code": "class Mountain {\n    static className() { return 'Mountain'; }\n}\nmountain = new Mountain();",
+                "options": [
+                      "Mountain.className()",
+                      "Mountain.className",
+                      "mountain ['static className ']()",
+                      "mountain.className()"
+                ],
+                "correct": 0,
+                "explanation": "A static method defined with the 'static' keyword on a class (static className()) belongs to the class itself rather than instances of the class. It must be called directly on the class identifier: Mountain.className()."
+          },
+          {
+                "id": "js2_q18",
+                "module": "js2_m2",
+                "question": "What will the following code output?",
+                "code": "class Animal {}\nclass Dog extends Animal {}\nconst dog = new Dog();\nconst animal = new Animal();\nconsole.log(dog instanceof Dog, dog instanceof Animal);",
+                "options": [
+                      "true false",
+                      "true true",
+                      "false true",
+                      "false false"
+                ],
+                "correct": 1,
+                "explanation": "The instanceof operator tests whether the prototype property of a constructor appears anywhere within the prototype chain of an object. Since Dog extends Animal and dog is an instance of Dog, dog is an instance of both Dog and Animal. Therefore, both checks return true (true true)."
+          },
+          {
+                "id": "js2_q19",
+                "module": "js2_m2",
+                "question": "A value parameter is missing from the Number constructor in the place indicated in code:\n\nSelect the correct value so that the executed code results in the following console output: '0.01'",
+                "code": "Number(INSERT MISSING CODE HERE).toFixed(2);",
+                "options": [
+                      "'12e-3'",
+                      "'-0x01'",
+                      "1",
+                      "0.01e-2"
+                ],
+                "correct": 0,
+                "explanation": "The Number constructor converts a string argument into a number. When passed '12e-3', it parses scientific notation 12 * 10^-3 = 0.012. Calling .toFixed(2) formats the number to 2 decimal places, rounding 0.012 to '0.01'."
+          },
+          {
+                "id": "js2_q20",
+                "module": "js2_m2",
+                "question": "You have a JavaScript function \"processText\" that takes a string as input and processes it to return an array of words in reverse order. Fill in the missing line of code:",
+                "code": "function processText(str) {\n    // Insert a line of code here.\n}\nconsole.log(processText('This is a sample text to reverse'));",
+                "options": [
+                      "return str.split(' ').reverse();",
+                      "return str.join(' ').reverse();",
+                      "return str.reverse().split(' ');",
+                      "return str.join(' ').split(' ').reverse();"
+                ],
+                "correct": 0,
+                "explanation": "To reverse the order of words in a string, str.split(' ') splits the string into an array of words separated by spaces. Calling .reverse() on the resulting array reverses the element order. (Calling .join(' ') subsequently joins them back into a sentence)."
+          },
+          {
+                "id": "js2_q21",
+                "module": "js2_m3",
+                "question": "The following code places a Date class object containing the current time into the currentTime variable:\n\nThe same effect can be achieved by using:",
+                "code": "let currentTime = new Date(Date.now());",
+                "options": [
+                      "let currentTime = new Date();",
+                      "let currentTime = new Date().now();",
+                      "let currentTime = new Date.now();",
+                      "There is no other way to achieve this effect."
+                ],
+                "correct": 0,
+                "explanation": "Calling new Date() without arguments creates a Date object initialized to the current date and time according to system settings, achieving the exact same result as new Date(Date.now())."
+          },
+          {
+                "id": "js2_q22",
+                "module": "js2_m3",
+                "question": "What will be the value of result3?",
+                "code": "const numbers = [2, 4, 6, 8, 10];\nconst result1 = numbers.some(num => num % 2 === 1);\nconst result2 = numbers.every(num => num % 2 === 0);\nconst result3 = numbers.filter(num => num < 5);",
+                "options": [
+                      "[2, 4]",
+                      "[2, 4, 6]",
+                      "[2, 4, 6, 8]",
+                      "[]"
+                ],
+                "correct": 0,
+                "explanation": "Array.prototype.filter() returns a new array with all elements that pass the test implemented by the provided function. The condition num => num < 5 over [2, 4, 6, 8, 10] matches 2 and 4, producing [2, 4]."
+          },
+          {
+                "id": "js2_q23",
+                "module": "js2_m3",
+                "question": "There is one line missing in the code below:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let points = [{x: 20, y: 20}, {x: 10, y: 30}, {x: 10, y: 100}];\n// Insert line of code here.\nconsole.log(result);",
+                "options": [
+                      "let result = points.map(e => e.x + e.y);",
+                      "let result = points.map(x + y);",
+                      "let result = points.map(e => {e.x + e.y});",
+                      "let result = points.map((e,n) => {n = e.x + e.y});"
+                ],
+                "correct": 0,
+                "explanation": "Array.prototype.map() creates a new array populated with the results of calling a provided function on every element. To calculate the sum of x and y for each point object, let result = points.map(e => e.x + e.y); accesses e.x and e.y on each element and returns their sum."
+          },
+          {
+                "id": "js2_q24",
+                "module": "js2_m3",
+                "question": "Which line of code achieves the following output: red,green,purple,pink,orange?",
+                "code": "let colors = ['red', 'green', 'blue', 'yellow', 'orange'];\ncolors.splice(2, 2);\n// Insert line of code here.\nconsole.log(colors);",
+                "options": [
+                      "colors.splice(2, 0, 'purple', 'pink');",
+                      "colors.splice(2, 1, 'purple', 'pink');",
+                      "colors.splice(2, 'purple', 'pink');",
+                      "colors.splice(2, 0, 1, 'purple', 'pink');"
+                ],
+                "correct": 0,
+                "explanation": "The Array.prototype.splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. splice(2, 0, 'purple', 'pink') starts at index 2, removes 0 elements, and inserts 'purple' and 'pink'."
+          },
+          {
+                "id": "js2_q25",
+                "module": "js2_m3",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let s = new Set([1, 2, '100']);\ns.add(2);\ns.add('2');\nconsole.log(`${s.has(2)} ${s.has('2')} ${s.size}`);",
+                "options": [
+                      "true true 4",
+                      "true false 3",
+                      "true false 4",
+                      "true true undefined"
+                ],
+                "correct": 0,
+                "explanation": "In a JavaScript Set, values are unique and compared using SameValueZero (similar to ===). Therefore, the number 2 and the string '2' are distinct elements. After adding 2 and '2', s.has(2) is true, s.has('2') is true, and the total size is 4 (elements: 1, 2, '100', '2')."
+          },
+          {
+                "id": "js2_q26",
+                "module": "js2_m3",
+                "question": "Considering the following code, what will be the result of accessing fruitColors.get('kiwi')?",
+                "code": "let fruitColors = new Map([\n    ['apple', 'red'],\n    ['banana', 'yellow'],\n    ['grape', 'purple'],\n    ['kiwi', 'green']\n]);\nfruitColors.set('blueberry', 'blue');\nfruitColors.set('apple', 'green');\nfruitColors.delete('banana');",
+                "options": [
+                      "'green'",
+                      "'purple'",
+                      "'yellow'",
+                      "undefined"
+                ],
+                "correct": 0,
+                "explanation": "The Map.prototype.get() method returns a specified element from a Map object. Since fruitColors has key 'kiwi' mapped to 'green', fruitColors.get('kiwi') returns 'green'. The subsequent operations on 'blueberry', 'apple', and 'banana' do not modify 'kiwi'."
+          },
+          {
+                "id": "js2_q27",
+                "module": "js2_m3",
+                "question": "The following data is stored in JSON format:\n\nWhich statement/command should you use to convert the data to an object that will be written to the mountain variable?",
+                "code": "let strMountain = '{ \"name\": \"Lhotse\", \"range\": \"Himalayas\" }';",
+                "options": [
+                      "let mountain = JSON.parse(strMountain);",
+                      "let mountain = JSON.stringify(strMountain);",
+                      "let mountain = JSON(strMountain);",
+                      "let mountain = Object(strMountain);"
+                ],
+                "correct": 0,
+                "explanation": "JSON.parse() parses a JSON-formatted string and constructs the JavaScript value or object described by the string. Therefore, let mountain = JSON.parse(strMountain); creates the mountain object from strMountain."
+          },
+          {
+                "id": "js2_q28",
+                "module": "js2_m3",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of the code execution?",
+                "code": "console.log(`${Math.round(2.3)} ${Math.floor(2.6)} ${Math.ceil(2.0)}`);",
+                "options": [
+                      "2 2 2",
+                      "3 3 3",
+                      "2 2 3",
+                      "3 2 2"
+                ],
+                "correct": 0,
+                "explanation": "Math.round(2.3) rounds to nearest integer (2). Math.floor(2.6) rounds down to nearest integer (2). Math.ceil(2.0) rounds up to nearest integer (2). Logging all three produces '2 2 2'."
+          },
+          {
+                "id": "js2_q29",
+                "module": "js2_m3",
+                "question": "You have created an object of the RegExp class that you want to use to search for regular expressions:\n\nSelect the correct alternative form of this declaration:",
+                "code": "let r = new RegExp('.\\\\.jpg');",
+                "options": [
+                      "let r = /.\\.jpg/;",
+                      "let r = (.\\.jpg);",
+                      "let r = \\.\\.jpg\\;",
+                      "let r = RegExp('.\\.jpg');"
+                ],
+                "correct": 0,
+                "explanation": "In JavaScript, a regular expression literal is enclosed between forward slashes /.../. To match any single character followed by a literal dot and 'jpg', the dot must be escaped with a backslash: /.\\.jpg/."
+          },
+          {
+                "id": "js2_q30",
+                "module": "js2_m3",
+                "question": "Analyze the following code:\n\nWhat will be the result of executing this code?",
+                "code": "let firstArray = [1, 2];\nArray.prototype.customMethod = function() {\n    console.log('Custom Method');\n};\nlet secondArray = [3, 4];\nfirstArray.customMethod();\nsecondArray.customMethod();",
+                "options": [
+                      "Two 'Custom Method' messages will appear in the console.",
+                      "A single message 'Custom Method' will appear in the console (object firstArray does not have the customMethod).",
+                      "An error will appear when trying to execute firstArray.customMethod() because the method was added after the creation of the array object firstArray.",
+                      "An error will appear because the customMethod is bound to the Array class and not to the objects created from it (objects firstArray and secondArray do not have the customMethod)."
+                ],
+                "correct": 0,
+                "explanation": "When a method is added to Array.prototype (Array.prototype.customMethod = function() { ... }), it becomes immediately available to all existing and future array instances through the prototype chain. Calling customMethod() on both firstArray and secondArray prints 'Custom Method' twice."
+          },
+          {
+                "id": "js2_q31",
+                "module": "js2_m4",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let fn = function(a, b, ...rest) {\n    console.log(`${a.length} ${rest.length}`);\n};\nfn('1', '2', '3', '4', '5');",
+                "options": [
+                      "1 3",
+                      "1 undefined",
+                      "5 undefined",
+                      "undefined 3"
+                ],
+                "correct": 0,
+                "explanation": "In the function declaration fn(a, b, ...rest), 'a' receives '1' (length 1), 'b' receives '2', and rest collects all remaining arguments ['3', '4', '5'] into an array of length 3. Therefore, ${a.length} ${rest.length} outputs '1 3'."
+          },
+          {
+                "id": "js2_q32",
+                "module": "js2_m4",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let color = 'Red';\nlet printColor = (function() {\n    let color = 'Blue';\n    return color;\n})();\nconsole.log(`${color} ${printColor}`);",
+                "options": [
+                      "Red Blue",
+                      "Blue Blue",
+                      "Red Red",
+                      "Blue Red"
+                ],
+                "correct": 0,
+                "explanation": "An Immediately Invoked Function Expression (IIFE) creates its own local scope. The inner 'let color = \"Blue\"' is scoped inside printColor, while the outer 'let color = \"Red\"' remains unaffected in the outer scope. Logging ${color} ${printColor} outputs 'Red Blue'."
+          },
+          {
+                "id": "js2_q33",
+                "module": "js2_m4",
+                "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 25",
+                "code": "let fn = function(msg, n) {\n    console.log(`${msg}: ${this.a ** n}`);\n};\n// Insert line of code here.\nbfn(2, 3);",
+                "options": [
+                      "let bfn = fn.bind({a: 5}, 'result');",
+                      "let bfn = fn.apply({a: 5}, 'result');",
+                      "let bfn = fn.call({a: 5}, 'result');",
+                      "let bfn = fn.bind({a: 5});"
+                ],
+                "correct": 0,
+                "explanation": "The Function.prototype.bind() method creates a new function that, when called, has its 'this' keyword set to the provided value ({a: 5}), with a given sequence of arguments preceding any provided when the new function is called ('result')."
+          },
+          {
+                "id": "js2_q34",
+                "module": "js2_m4",
+                "question": "In JavaScript, what is a callback function?",
+                "code": null,
+                "options": [
+                      "A special type of function used to declare variables.",
+                      "A function that performs mathematical operations.",
+                      "A function that is called after a specific operation or event occurs.",
+                      "A function that converts data types."
+                ],
+                "correct": 2,
+                "explanation": "A callback function in JavaScript is a function passed as an argument to another function, which is then invoked inside the outer function after a specific operation or event has completed."
+          },
+          {
+                "id": "js2_q35",
+                "module": "js2_m4",
+                "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: a b",
+                "code": "function* testGenerator() {\n    // Insert line of code here.\n}\nlet gen = testGenerator(2);\nconsole.log(`${gen.next().value} ${gen.next().value}`);",
+                "options": [
+                      "yield* ['a', 'b', 'c', 'd'];",
+                      "return ['a', 'b'];",
+                      "yield ['a', 'b'];",
+                      "yield ['a', 'b', 'c', 'd'];"
+                ],
+                "correct": 0,
+                "explanation": "The yield* expression is used in a generator function to delegate to another generator or iterable object (such as an array). Using yield* ['a', 'b', 'c', 'd']; sequentially yields each element of the array upon successive .next() calls."
+          },
+          {
+                "id": "js2_q36",
+                "module": "js2_m4",
+                "question": "There is one line missing in the code below:\n\nSelect the correct missing line to ensure the console displays 'Delayed message' with a delay of 5 seconds:",
+                "code": "let printText = msg => console.log(msg);\nlet delay = 3000;\nsetTimeout(() => {\n    // Insert line of code here.\n}, delay);",
+                "options": [
+                      "setTimeout(printText, 2000, 'Delayed message');",
+                      "setTimeout(printText.bind(this, 'Delayed message'), 5000);",
+                      "printText('Delayed message', 5000);",
+                      "setTimeout(() => printText('Delayed message'), 5000);"
+                ],
+                "correct": 1,
+                "explanation": "setTimeout(printText.bind(this, 'Delayed message'), 5000); schedules printText to be invoked after an additional 5000 milliseconds (5 seconds) with 'Delayed message' bound as its argument."
+          },
+          {
+                "id": "js2_q37",
+                "module": "js2_m4",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let p = new Promise(function(resolve, reject) {\n    setTimeout(() => resolve(1), 1000);\n});\np.then(a => console.log(`a ${a}`), b => console.log(`b ${b}`));",
+                "options": [
+                      "a 1",
+                      "a",
+                      "b 1",
+                      "a 1 b 1"
+                ],
+                "correct": 0,
+                "explanation": "Promise.prototype.then() takes up to two arguments: callback functions for the fulfilled and rejected cases of the Promise. Since the promise resolves with 1, the first callback (fulfillment handler) runs with argument a = 1, logging 'a 1'."
+          },
+          {
+                "id": "js2_q38",
+                "module": "js2_m4",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let promiseA = new Promise(function(resolve) {\n    setTimeout(() => resolve('Apple'), 150);\n});\nlet promiseB = new Promise(function(resolve) {\n    setTimeout(() => resolve('Banana'), 100);\n});\npromiseA.then(resultA => {\n    console.log(resultA);\n    return promiseB;\n})\n.then(resultB => {\n    console.log(resultB);\n    return 'Cherry';\n})\n.then(resultC => {\n    console.log(resultC);\n});",
+                "options": [
+                      "Apple Banana Cherry",
+                      "Banana Apple Cherry",
+                      "Cherry Banana Apple",
+                      "Banana Cherry Apple"
+                ],
+                "correct": 0,
+                "explanation": "Promise chaining executes sequentially: promiseA resolves with 'Apple' after 150ms and logs it. It returns promiseB, which resolves with 'Banana' and logs it in the second .then. The third .then logs 'Cherry'. The console output is 'Apple Banana Cherry'."
+          },
+          {
+                "id": "js2_q39",
+                "module": "js2_m4",
+                "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
+                "code": "let p = new Promise(function(resolve, reject) {\n    setTimeout(() => resolve('abc'), 100);\n});\nasync function afn() {\n    console.log('def');\n    let x = await p;\n    console.log(x);\n}\nafn();\nconsole.log('ghi');",
+                "options": [
+                      "def ghi abc",
+                      "ghi abc def",
+                      "ghi def abc",
+                      "abc ghi def"
+                ],
+                "correct": 0,
+                "explanation": "In an async function, execution is synchronous until the first await expression. afn() logs 'def', then pauses at 'await p'. The synchronous code continues and logs 'ghi'. When promise p resolves after 100ms, afn() resumes and logs 'abc'. The order is 'def ghi abc'."
+          },
+          {
+                "id": "js2_q40",
+                "module": "js2_m4",
+                "question": "When using XMLHttpRequest (XHR) in JavaScript to make network requests, what is the purpose of the event listener added with the 'load' event?",
+                "code": null,
+                "options": [
+                      "To listen for errors that may occur during the request.",
+                      "To listen for changes in the ready state of the XHR object.",
+                      "To listen for successful completion of the XHR request.",
+                      "To listen for user input events related to the request."
+                ],
+                "correct": 2,
+                "explanation": "In XMLHttpRequest, the 'load' event is fired when an XMLHttpRequest transaction completes successfully (meaning the data has been completely received from the server)."
+          }
     ]
   },
   "devnet": {

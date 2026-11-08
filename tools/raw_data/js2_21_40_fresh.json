@@ -5,27 +5,27 @@
     "question": "The following code places a Date class object containing the current time into the currentTime variable:\n\nThe same effect can be achieved by using:",
     "code": "let currentTime = new Date(Date.now());",
     "options": [
-      "let currentTime = new Date.now();",
-      "There is no other way to achieve this effect.",
       "let currentTime = new Date();",
-      "let currentTime = new Date().now();"
+      "let currentTime = new Date().now();",
+      "let currentTime = new Date.now();",
+      "There is no other way to achieve this effect."
     ],
-    "correct": 2,
-    "explanation": "Správná odpověď: let currentTime = new Date();\n\nNa snímku obrazovky je otázka:\n„The following code places a Date class object containing the current time into the currentTime variable:\nlet currentTime = new Date(Date.now());\nThe same effect can be achieved by using:“\n\nOficiální vysvětlení ze zkoušky:\n„The same effect can be achieved by using:\nlet currentTime = new Date();\nThe new Date() constructor, without any arguments, automatically creates a Date object containing the current date and time. The other options you provided (new Date.now() and new Date().now()) are not valid and will result in errors.“\n\nPodrobné vysvětlení:\nKonstruktor vestavěné třídy Date v JavaScriptu při volání bez parametrů (new Date()) automaticky inicializuje nový objekt na aktuální systémové datum a čas.\nVolání Date.now() vrací aktuální časové razítko (počet milisekund od 1. 1. 1970 UTC). Předání tohoto čísla do konstruktoru new Date(Date.now()) vytvoří objekt se stejným časem jako prosté volání new Date().\n- Možnost 3 (let currentTime = new Date();) je správná.\n- new Date.now() je syntaktická chyba, protože now je metoda funkce/třídy Date, nikoli konstruktor.\n- new Date().now() způsobí TypeError, jelikož instance Date metodu now() nemá (now je statická metoda třídy Date).\n- Možnost, že jiný způsob neexistuje, je nepravdivá."
+    "correct": 0,
+    "explanation": "Calling new Date() without arguments creates a Date object initialized to the current date and time according to system settings, achieving the exact same result as new Date(Date.now())."
   },
   {
     "id": "js2_q22",
     "module": "js2_m3",
-    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let points = [{x: 10, y: 20}, {x: 0, y: 30}, {x: 20, y: 100}];\nlet result1 = points.some(e => e.y < 10)\nlet result2 = points.every(e => e.y > 10)\nconsole.log(`${result1} ${result2}`);",
+    "question": "What will be the value of result3?",
+    "code": "const numbers = [2, 4, 6, 8, 10];\nconst result1 = numbers.some(num => num % 2 === 1);\nconst result2 = numbers.every(num => num % 2 === 0);\nconst result3 = numbers.filter(num => num < 5);",
     "options": [
-      "false true",
-      "null {x: 10, y: 20}",
-      "Undefined {x: 10, y: 20}",
-      "-1 1"
+      "[2, 4]",
+      "[2, 4, 6]",
+      "[2, 4, 6, 8]",
+      "[]"
     ],
     "correct": 0,
-    "explanation": "Správná odpověď: false true\n\nNa snímku obrazovky je otázka:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\nfalse true\nHere's why:\n1. result1 is false because the some method checks if any of the elements in the points array have a y value that is less than 10. In this case, none of the elements meet this condition, so it returns false.\n2. result2 is true because the every method checks if all of the elements in the points array have a y value that is greater than 10. In this case, all of the elements meet this condition, so it returns true.“\n\nPodrobné vysvětlení:\n1. Metoda Array.prototype.some() ověřuje, zda alespoň jeden prvek pole vyhovuje testovací funkci (predikátu). Zde se testuje e.y < 10. Hodnoty y v poli jsou 20, 30 a 100. Žádná z nich není menší než 10, proto some() vrátí false.\n2. Metoda Array.prototype.every() zjišťuje, zda všechny prvky v poli splňují podmínku e.y > 10. Protože 20 > 10, 30 > 10 i 100 > 10 platí pro všechny prvky, metoda vrátí true.\nVýsledný řetězec v console.log(`${result1} ${result2}`) je proto \"false true\"."
+    "explanation": "Array.prototype.filter() returns a new array with all elements that pass the test implemented by the provided function. The condition num => num < 5 over [2, 4, 6, 8, 10] matches 2 and 4, producing [2, 4]."
   },
   {
     "id": "js2_q23",
@@ -33,27 +33,27 @@
     "question": "There is one line missing in the code below:\n\nWhat will appear in the console as a result of code execution?",
     "code": "let points = [{x: 20, y: 20}, {x: 10, y: 30}, {x: 10, y: 100}];\n// Insert line of code here.\nconsole.log(result);",
     "options": [
-      "let result = points.map((e,n) => {n = e.x + e.y});",
       "let result = points.map(e => e.x + e.y);",
+      "let result = points.map(x + y);",
       "let result = points.map(e => {e.x + e.y});",
-      "let result = points.map(x + y);"
+      "let result = points.map((e,n) => {n = e.x + e.y});"
     ],
-    "correct": 1,
-    "explanation": "Správná odpověď: let result = points.map(e => e.x + e.y);\n\nNa snímku obrazovky je zadání:\n„There is one line missing in the code below:\n... What will appear in the console as a result of code execution?“\n(Autor testu v Cisco v podotázce omylem zkopíroval větu o výstupu, nabízené možnosti však představují chybějící řádek kódu).\n\nOficiální vysvětlení ze zkoušky:\n„To calculate the sum of x and y for each object in the points array and store the results in the result array, you should use the following missing line:\nlet result = points.map(e => e.x + e.y);\nThis code uses the map method to iterate through the points array and calculates the sum of x and y for each object, storing the results in the result array. The console will display the result array, containing the sum of x and y for each object in the points array.“\n\nPodrobné vysvětlení:\nMetoda Array.prototype.map() prochází pole a vytváří nové pole z návratových hodnot předané funkce.\n- Šipková funkce e => e.x + e.y bez složených závorek představuje zkrácený zápis s implicitním vrácením hodnoty (implicit return), takže pro každý prvek vrátí součet x a y. Výsledkem bude pole [40, 40, 110].\n- Zápis se složenými závorkami e => {e.x + e.y} neobsahuje klíčové slovo return, takže vrací undefined pro každý prvek.\n- Zápis (e,n) => {n = e.x + e.y} rovněž nemá return a zbytečně přepisuje parametr indexu n.\n- points.map(x + y) je syntaktická/referenční chyba (proměnné x a y nejsou definovány)."
+    "correct": 0,
+    "explanation": "Array.prototype.map() creates a new array populated with the results of calling a provided function on every element. To calculate the sum of x and y for each point object, let result = points.map(e => e.x + e.y); accesses e.x and e.y on each element and returns their sum."
   },
   {
     "id": "js2_q24",
     "module": "js2_m3",
-    "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: ['a', 'x', 'y', 'e']",
-    "code": "let x = ['a', 'b', 'c', 'd', 'e'];\nx.splice(1, 3);\n// Insert line of code here.\nconsole.log(x);",
+    "question": "Which line of code achieves the following output: red,green,purple,pink,orange?",
+    "code": "let colors = ['red', 'green', 'blue', 'yellow', 'orange'];\ncolors.splice(2, 2);\n// Insert line of code here.\nconsole.log(colors);",
     "options": [
-      "x.splice(1, 'x', 'y');",
-      "x.splice(1, 0, 2, 'x', 'y');",
-      "x.splice(1, 2, 'x', 'y');",
-      "x.splice(1, 0, 'x', 'y');"
+      "colors.splice(2, 0, 'purple', 'pink');",
+      "colors.splice(2, 1, 'purple', 'pink');",
+      "colors.splice(2, 'purple', 'pink');",
+      "colors.splice(2, 0, 1, 'purple', 'pink');"
     ],
-    "correct": 3,
-    "explanation": "Správná odpověď: x.splice(1, 0, 'x', 'y');\n\nNa snímku obrazovky je zadání:\n„There is one line missing in the code below:\n... Select the correct missing line so that the executed code results in the following console output: ['a', 'x', 'y', 'e']“\n\nOficiální vysvětlení ze zkoušky:\n„To achieve the desired console output ['a', 'x', 'y', 'e'], you should use the following missing line:\nx.splice(1, 0, 'x', 'y');\nThis code first removes elements at index 1 with a count of 3 using x.splice(1, 3);, and then it inserts 'x' and 'y' at index 1 using x.splice(1, 0, 'x', 'y');, resulting in the desired output.“\n\nPodrobné vysvětlení:\nPůvodní pole má prvky ['a', 'b', 'c', 'd', 'e'].\n1. Volání x.splice(1, 3) začíná na indexu 1 a odstraní 3 prvky ('b', 'c', 'd'). V poli zůstává ['a', 'e'].\n2. Nyní chceme na index 1 vložit nové prvky 'x' a 'y', aniž bychom mazali jakýkoliv stávající prvek. K tomu slouží syntaxe splice(start, deleteCount, item1, item2, ...), kde nastavením deleteCount = 0 pouze vkládáme.\nSprávné volání je tedy x.splice(1, 0, 'x', 'y');, což vytvoří pole ['a', 'x', 'y', 'e'].\n- x.splice(1, 2, 'x', 'y') by smazalo 2 prvky od indexu 1 (prvek 'e').\n- x.splice(1, 0, 2, 'x', 'y') by do pole navíc vložilo i číslo 2.\n- x.splice(1, 'x', 'y') předává řetězec 'x' jako deleteCount, což je chybná sémantika."
+    "correct": 0,
+    "explanation": "The Array.prototype.splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. splice(2, 0, 'purple', 'pink') starts at index 2, removes 0 elements, and inserts 'purple' and 'pink'."
   },
   {
     "id": "js2_q25",
@@ -61,27 +61,27 @@
     "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
     "code": "let s = new Set([1, 2, '100']);\ns.add(2);\ns.add('2');\nconsole.log(`${s.has(2)} ${s.has('2')} ${s.size}`);",
     "options": [
-      "true false 3",
-      "true true undefined",
       "true true 4",
-      "true false 4"
+      "true false 3",
+      "true false 4",
+      "true true undefined"
     ],
-    "correct": 2,
-    "explanation": "Správná odpověď: true true 4\n\nNa snímku obrazovky je kód testující chování objektu Set:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\ntrue true 4\nHere's the explanation:\n1. s.has(2) returns true because the Set s contains the number 2.\n2. s.has('2') returns true because the Set s also contains the string '2'. In Sets, values are considered distinct based on their value, not their type, so both the number 2 and the string '2' are distinct elements.\n3. s.size returns 4 because the Set s contains four distinct elements: 1, 2, '100', and '2'.“\n\nPodrobné vysvětlení:\nDatová struktura Set ukládá unikátní hodnoty a k jejich porovnání využívá algoritmus SameValueZero. Tento algoritmus striktně rozlišuje datové typy (podobně jako operátor ===).\n- Původní množina obsahuje prvky: číslo 1, číslo 2, řetězec '100'.\n- s.add(2): číslo 2 již v množině existuje, proto se znovu nepřidá.\n- s.add('2'): řetězec '2' má odlišný typ od čísla 2, jedná se o nový unikátní prvek, který je úspěšně přidán.\n- s.has(2) je true, s.has('2') je true.\n- Vlastnost s.size udává počet prvků množiny, kterých je nyní 4 (1, 2, '100', '2').\nVýstup v konzoli je \"true true 4\"."
+    "correct": 0,
+    "explanation": "In a JavaScript Set, values are unique and compared using SameValueZero (similar to ===). Therefore, the number 2 and the string '2' are distinct elements. After adding 2 and '2', s.has(2) is true, s.has('2') is true, and the total size is 4 (elements: 1, 2, '100', '2')."
   },
   {
     "id": "js2_q26",
     "module": "js2_m3",
-    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let m = new Map([[1, '11'], ['2', 22]]);\nm.set(1, '11');\nm.set(1, '111');\nconsole.log(`${m.size}`);",
+    "question": "Considering the following code, what will be the result of accessing fruitColors.get('kiwi')?",
+    "code": "let fruitColors = new Map([\n    ['apple', 'red'],\n    ['banana', 'yellow'],\n    ['grape', 'purple'],\n    ['kiwi', 'green']\n]);\nfruitColors.set('blueberry', 'blue');\nfruitColors.set('apple', 'green');\nfruitColors.delete('banana');",
     "options": [
-      "2",
-      "4",
-      "3",
+      "'green'",
+      "'purple'",
+      "'yellow'",
       "undefined"
     ],
     "correct": 0,
-    "explanation": "Správná odpověď: 2\n\nNa snímku obrazovky je kód pracující s kolekcí Map:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\n2\nHere's the explanation:\n1. The initial Map m is created with two key-value pairs: [1, '11'] and ['2', 22]. The keys 1 and '2' are distinct because '2' is a string and 1 is a number.\n2. m.set(1, '11') updates the existing entry with key 1 to have the value '11'. So, there's still only one entry with key 1, and its value is '11'.\n3. m.set(1, '111') updates the existing entry with key 1 again, changing its value to '111'. The key 1 remains unique in the Map.\nAs a result, the Map m still contains only two distinct key-value pairs, which is why m.size is 2.“\n\nPodrobné vysvětlení:\nKolekce Map ukládá dvojice klíč-hodnota. Každý klíč může v mapě existovat pouze jednou.\n1. Inicializace new Map(...) vytvoří mapu se 2 položkami: klíč číslo 1 (hodnota '11') a klíč řetězec '2' (hodnota 22).\n2. m.set(1, '11') pouze přepíše hodnotu pro stávající klíč 1 na '11'.\n3. m.set(1, '111') opět aktualizuje hodnotu pro tentýž existující klíč 1 na '111'. Nový klíč nevzniká.\nMapa tedy stále obsahuje pouze dva unikátní klíče (číslo 1 a řetězec '2'), proto m.size vrací 2."
+    "explanation": "The Map.prototype.get() method returns a specified element from a Map object. Since fruitColors has key 'kiwi' mapped to 'green', fruitColors.get('kiwi') returns 'green'. The subsequent operations on 'blueberry', 'apple', and 'banana' do not modify 'kiwi'."
   },
   {
     "id": "js2_q27",
@@ -91,109 +91,109 @@
     "options": [
       "let mountain = JSON.parse(strMountain);",
       "let mountain = JSON.stringify(strMountain);",
-      "let mountain = Object(strMountain);",
-      "let mountain = JSON(strMountain);"
+      "let mountain = JSON(strMountain);",
+      "let mountain = Object(strMountain);"
     ],
     "correct": 0,
-    "explanation": "Správná odpověď: let mountain = JSON.parse(strMountain);\n\nNa snímku obrazovky je otázka:\n„The following data is stored in JSON format:\nlet strMountain = '{ \"name\": \"Lhotse\", \"range\": \"Himalayas\" }';\nWhich statement/command should you use to convert the data to an object that will be written to the mountain variable?“\n\nOficiální vysvětlení ze zkoušky:\n„To convert the JSON data into an object and store it in the mountain variable, you should use the following statement:\nlet mountain = JSON.parse(strMountain);\nThe JSON.parse() function is used to parse a JSON string and convert it into a JavaScript object, which is what you want to achieve in this case.“\n\nPodrobné vysvětlení:\n- Funkce JSON.parse() zpracuje (deserializuje) textový řetězec ve formátu JSON a převede jej na nativní JavaScriptový objekt.\n- Funkce JSON.stringify() provádí opačnou operaci: serializuje JS objekt do řetězce JSON.\n- Object(strMountain) vytvoří obalový objekt typu String, nikoliv rozparsovaný objekt s vlastnostmi name a range.\n- JSON(strMountain) skončí chybou TypeError: JSON is not a function, protože vestavěný objekt JSON není konstruktor ani funkce, nýbrž statický namespace."
+    "explanation": "JSON.parse() parses a JSON-formatted string and constructs the JavaScript value or object described by the string. Therefore, let mountain = JSON.parse(strMountain); creates the mountain object from strMountain."
   },
   {
     "id": "js2_q28",
     "module": "js2_m3",
-    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "console.log(`${Math.round(1.5)} ${Math.floor(1.7)} ${Math.ceil(1.2)}`)",
+    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of the code execution?",
+    "code": "console.log(`${Math.round(2.3)} ${Math.floor(2.6)} ${Math.ceil(2.0)}`);",
     "options": [
-      "1 2 1",
-      "1 1 1",
       "2 2 2",
-      "2 1 2"
+      "3 3 3",
+      "2 2 3",
+      "3 2 2"
     ],
-    "correct": 3,
-    "explanation": "Správná odpověď: 2 1 2\n\nNa snímku obrazovky je otázka:\n„Analyze the following code:\nconsole.log(`${Math.round(1.5)} ${Math.floor(1.7)} ${Math.ceil(1.2)}`)\nWhat will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\n2 1 2\nHere's the explanation:\n1. Math.round(1.5) rounds the number 1.5 to the nearest integer, which is 2.\nMath.floor(1.7) rounds the number 1.7 down to the nearest integer, which is 1.\n2. Math.ceil(1.2) rounds the number 1.2 up to the nearest integer, which is 2.\nSo, you get the output 2 1 2.“\n\nPodrobné vysvětlení:\n1. Math.round(1.5) zaokrouhluje na nejbližší celé číslo. Pokud je desetinná část rovna přesně .5, zaokrouhluje se směrem nahoru (ke kladnému nekonečnu), tedy 1.5 se zaokrouhlí na 2.\n2. Math.floor(1.7) zaokrouhluje vždy dolů na nejbližší menší nebo rovné celé číslo, tedy na 1.\n3. Math.ceil(1.2) zaokrouhluje vždy nahoru na nejbližší větší nebo rovné celé číslo, tedy na 2.\nVýsledkem v konzoli je \"2 1 2\"."
+    "correct": 0,
+    "explanation": "Math.round(2.3) rounds to nearest integer (2). Math.floor(2.6) rounds down to nearest integer (2). Math.ceil(2.0) rounds up to nearest integer (2). Logging all three produces '2 2 2'."
   },
   {
     "id": "js2_q29",
     "module": "js2_m3",
     "question": "You have created an object of the RegExp class that you want to use to search for regular expressions:\n\nSelect the correct alternative form of this declaration:",
-    "code": "let r = new RegExp('.\\.jpg');",
+    "code": "let r = new RegExp('.\\\\.jpg');",
     "options": [
-      "let r = RegExp('.\\.jpg');",
+      "let r = /.\\.jpg/;",
+      "let r = (.\\.jpg);",
       "let r = \\.\\.jpg\\;",
-      "let r = (. \\.jpg);",
-      "let r = /.\\.jpg/;"
+      "let r = RegExp('.\\.jpg');"
     ],
-    "correct": 3,
-    "explanation": "Správná odpověď: let r = /.\\.jpg/;\n\nNa snímku obrazovky je zadání:\n„You have created an object of the RegExp class that you want to use to search for regular expressions:\nlet r = new RegExp('.\\.jpg');\nSelect the correct alternative form of this declaration:“\n\nOficiální vysvětlení ze zkoušky:\n„The correct alternative form of the declaration to create a regular expression for searching '.jpg' is:\nlet r = /.\\.jpg/;\nThis uses the regular expression literal notation with forward slashes (/) and escapes the dot (.) with a backslash (\\) to match the dot character in the string '.jpg'.“\n\nPodrobné vysvětlení:\nV JavaScriptu existují dva základní způsoby zápisu regulárních výrazů:\n1. Konstruktor RegExp('pattern', 'flags') – vzor je předán jako řetězec, takže pro vložení znaku zpětného lomítka do regulárního výrazu je nutné lomítko v řetězci zdvojit ('\\.'). Výraz '.\\.jpg' tedy reprezentuje vzor .\\.jpg (jeden libovolný znak, po němž následuje tečka a přípona jpg).\n2. Literálová notace /pattern/flags ohraničená lomítky – zde se vzor zapisuje přímo bez řetězcového escapování, tedy /.\\.jpg/.\n- Možnost let r = /.\\.jpg/; je správný ekvivalent v literálové notaci.\n- Ostatní možnosti obsahují neplatnou syntaxi (zpětná lomítka bez uvozovek nebo kulaté závorky)."
+    "correct": 0,
+    "explanation": "In JavaScript, a regular expression literal is enclosed between forward slashes /.../. To match any single character followed by a literal dot and 'jpg', the dot must be escaped with a backslash: /.\\.jpg/."
   },
   {
     "id": "js2_q30",
-    "module": "js2_m1",
-    "question": "Analyze the following code:\n\nAs a result of its execution:",
-    "code": "let a = [1,2];\nArray.prototype.test = function(){\n    console.log('test');\n}\nlet b = [3,4];\na.test();\nb.test();",
+    "module": "js2_m3",
+    "question": "Analyze the following code:\n\nWhat will be the result of executing this code?",
+    "code": "let firstArray = [1, 2];\nArray.prototype.customMethod = function() {\n    console.log('Custom Method');\n};\nlet secondArray = [3, 4];\nfirstArray.customMethod();\nsecondArray.customMethod();",
     "options": [
-      "an error appears, because the test method is bound to the Array class and not to the objects created from it (objects a and b do not have the test method).",
-      "a single message 'test' appears in the console (object a does not have the test method).",
-      "an error appears when trying to execute a.test() , because the method was added after the creation of the array object a.",
-      "two 'test' messages appear in the console."
+      "Two 'Custom Method' messages will appear in the console.",
+      "A single message 'Custom Method' will appear in the console (object firstArray does not have the customMethod).",
+      "An error will appear when trying to execute firstArray.customMethod() because the method was added after the creation of the array object firstArray.",
+      "An error will appear because the customMethod is bound to the Array class and not to the objects created from it (objects firstArray and secondArray do not have the customMethod)."
     ],
-    "correct": 3,
-    "explanation": "Správná odpověď: two 'test' messages appear in the console.\n\nNa snímku obrazovky je otázka:\n„Analyze the following code:\n... As a result of its execution:“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of its execution, two 'test' messages appear in the console.\nHere's the explanation:\n1. The Array.prototype.test function is added to the prototype of the Array class, so all array objects, including a and b, inherit this method.\n2. When you call a.test(), it successfully invokes the Array.prototype.test method and logs 'test' to the console.\n3. When you call b.test(), it also successfully invokes the Array.prototype.test method and logs another 'test' message to the console.“\n\nPodrobné vysvětlení:\nVšechna pole v JavaScriptu dědí své metody z prototypového objektu Array.prototype prostřednictvím interního odkazu [[Prototype]].\nV JavaScriptu je prototypový řetězec (prototype chain) dynamický a živý:\n- Když do Array.prototype přidáme metodu test, stává se okamžitě dostupnou pro všechny existující instance (pole a vytvořené před přiřazením) i pro všechny nově vytvořené instance (pole b vytvořené po přiřazení).\n- Volání a.test() i b.test() obě úspěšně naleznou metodu test v Array.prototype a každé vypíše 'test'. Celkem se tedy v konzoli objeví dvě zprávy 'test'."
+    "correct": 0,
+    "explanation": "When a method is added to Array.prototype (Array.prototype.customMethod = function() { ... }), it becomes immediately available to all existing and future array instances through the prototype chain. Calling customMethod() on both firstArray and secondArray prints 'Custom Method' twice."
   },
   {
     "id": "js2_q31",
     "module": "js2_m4",
     "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let fn = function ( a, b,...rest) {\n    console.log(`${a.length} ${rest.length}`);\n}\nfn('1', '2', '3', '4', '5');",
+    "code": "let fn = function(a, b, ...rest) {\n    console.log(`${a.length} ${rest.length}`);\n};\nfn('1', '2', '3', '4', '5');",
     "options": [
-      "undefined 3",
       "1 3",
       "1 undefined",
-      "5 undefined"
+      "5 undefined",
+      "undefined 3"
     ],
-    "correct": 1,
-    "explanation": "Správná odpověď: 1 3\n\nNa snímku obrazovky je kód testující rest parametry funkce:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\n1 3\nHere's the explanation:\n1. The function fn takes three parameters: a, b, and the rest parameter rest. The rest parameter rest collects any additional arguments into an array.\n2. When you call fn('1', '2', '3', '4', '5'), the a parameter receives the string '1', the b parameter receives the string '2', and the rest parameter collects the remaining arguments '3', '4', and '5' into an array.\n3. a.length returns the length of the string '1', which is 1.\n4. rest.length returns the length of the array rest, which contains the values '3', '4', and '5', so its length is 3.\nHence, you get the output 1 3“\n\nPodrobné vysvětlení:\n- Parametr a obdrží první předaný argument: řetězec '1'. Vlastnost '1'.length je 1.\n- Parametr b obdrží druhý argument: řetězec '2'.\n- Rest parametr ...rest posbírá všechny zbývající argumenty ('3', '4', '5') a uloží je do standardního pole rest = ['3', '4', '5'].\n- Pole rest obsahuje 3 prvky, proto rest.length vrací 3.\nVýsledný výpis v konzoli je \"1 3\"."
+    "correct": 0,
+    "explanation": "In the function declaration fn(a, b, ...rest), 'a' receives '1' (length 1), 'b' receives '2', and rest collects all remaining arguments ['3', '4', '5'] into an array of length 3. Therefore, ${a.length} ${rest.length} outputs '1 3'."
   },
   {
     "id": "js2_q32",
     "module": "js2_m4",
     "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let msg = 'Bob';\nlet ret = (function (){\n    let msg = 'Marley';\n    return msg;\n})();\nconsole.log(`${msg} ${ret}`);",
+    "code": "let color = 'Red';\nlet printColor = (function() {\n    let color = 'Blue';\n    return color;\n})();\nconsole.log(`${color} ${printColor}`);",
     "options": [
-      "Marley Bob",
-      "Marley Marley",
-      "Bob Bob",
-      "Bob Marley"
+      "Red Blue",
+      "Blue Blue",
+      "Red Red",
+      "Blue Red"
     ],
-    "correct": 3,
-    "explanation": "Správná odpověď: Bob Marley\n\nNa snímku obrazovky je kód demonstrující IIFE a rozsah platnosti proměnných:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\nBob Marley\nHere's the explanation:\n1. The outer msg variable is assigned the string 'Bob'.\n2. Inside the immediately-invoked function expression (IIFE), there's a local msg variable assigned the string 'Marley'.\n3. The IIFE returns the value of its local msg variable, which is 'Marley'.\n4. When you console.log() the values of msg and ret, you get 'Bob' for the outer msg variable and 'Marley' for the ret variable, resulting in the output 'Bob Marley'. The outer msg variable is not affected by the local msg variable inside the IIFE because they are in different scopes.“\n\nPodrobné vysvětlení:\n1. V globálním/vnějším rozsahu platnosti je deklarována proměnná let msg = 'Bob'.\n2. Funkční výraz (function(){ ... })() je okamžitě vyvolaná funkce (IIFE). Uvnitř ní je deklarována lokální proměnná let msg = 'Marley'. Tato lokální proměnná existuje pouze uvnitř těla IIFE a zastiňuje vnější proměnnou.\n3. Funkce vrátí hodnotu své lokální proměnné ('Marley'), která se přiřadí do proměnné ret.\n4. Vnější proměnná msg zůstává nezměněna s hodnotou 'Bob'.\nVýsledný výstup v konzoli je \"Bob Marley\"."
+    "correct": 0,
+    "explanation": "An Immediately Invoked Function Expression (IIFE) creates its own local scope. The inner 'let color = \"Blue\"' is scoped inside printColor, while the outer 'let color = \"Red\"' remains unaffected in the outer scope. Logging ${color} ${printColor} outputs 'Red Blue'."
   },
   {
     "id": "js2_q33",
     "module": "js2_m4",
     "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 25",
-    "code": "let fn = function(msg, n) {\n    console.log(`${msg}: ${this.a ** n}`);\n}\n// Insert line of code here.\nbfn(2, 3);",
+    "code": "let fn = function(msg, n) {\n    console.log(`${msg}: ${this.a ** n}`);\n};\n// Insert line of code here.\nbfn(2, 3);",
     "options": [
       "let bfn = fn.bind({a: 5}, 'result');",
       "let bfn = fn.apply({a: 5}, 'result');",
       "let bfn = fn.call({a: 5}, 'result');",
       "let bfn = fn.bind({a: 5});"
     ],
-    "correct": 3,
-    "explanation": "Správná odpověď: let bfn = fn.bind({a: 5});\n\nNa snímku obrazovky je otázka:\n„There is one line missing in the code below:\n... Select the correct missing line so that the executed code results in the following console output: 25“\n\nOficiální vysvětlení ze zkoušky:\n„To achieve the desired console output, you should use the following missing line:\nlet bfn = fn.bind({ a: 5 });\nThis code binds the fn function to an object with the property a: 5. When you call bfn(2, 3), it calculates 5 ** 3, resulting in the output '25'.“\n\nPodrobné vysvětlení:\nKód na řádku 5 volá novou funkci bfn(2, 3). Z metod manipulujících s kontextem this (bind, call, apply) pouze metoda Function.prototype.bind() vrací novou navázanou funkci, kterou lze později volat. Metody call a apply funkci ihned vykonají a vrátí její návratovou hodnotu (což by do bfn uložilo undefined a následné volání bfn() by skončilo chybou TypeError: bfn is not a function).\n- Správná možnost je let bfn = fn.bind({a: 5});.\n- Poznámka ke známé chybě v testu Cisco: Autor otázky v oficiálním vysvětlení nesmyslně uvádí, že 5 ** 3 je 25 (ve skutečnosti je 5 ** 2 = 25 a 5 ** 3 = 125) a přehlíží prefix `${msg}: `. Jedná se o známou chybu v testovací databázi Cisco, kde je však jako jediná správná odpověď nastavena právě možnost bind({a: 5})."
+    "correct": 0,
+    "explanation": "The Function.prototype.bind() method creates a new function that, when called, has its 'this' keyword set to the provided value ({a: 5}), with a given sequence of arguments preceding any provided when the new function is called ('result')."
   },
   {
     "id": "js2_q34",
     "module": "js2_m4",
-    "question": "A decorator is:",
+    "question": "In JavaScript, what is a callback function?",
     "code": null,
     "options": [
-      "a function that wraps another function, changing its functionality to some extent.",
-      "a class that inherits from another class.",
-      "an iterator type.",
-      "an elegant way of writing comments in a function."
+      "A special type of function used to declare variables.",
+      "A function that performs mathematical operations.",
+      "A function that is called after a specific operation or event occurs.",
+      "A function that converts data types."
     ],
-    "correct": 0,
-    "explanation": "Správná odpověď: a function that wraps another function, changing its functionality to some extent.\n\nNa snímku obrazovky je teoretická otázka:\n„A decorator is:“\nNa snímku je dole rámeček s hláškou „That's not Right!“, který se objevil, protože student během zkoušky zvolil nesprávnou možnost.\n\nOficiální definice a vysvětlení:\n„In JavaScript, a decorator is a higher-order function that wraps another function, extending or modifying its behavior without altering its original implementation. The box at the bottom displays 'That's not Right!' because an incorrect option was selected during the test.“\n\nPodrobné vysvětlení:\nV programování a konkrétně v JavaScriptu je dekorátor návrhový vzor implementovaný jako funkce vyššího řádu (higher-order function). Přebírá existující funkci jako parametr a vrací novou funkci, která obaluje původní funkci a přidává k ní novou funkcionalitu (např. logování, cachování, měření výkonu, validaci oprávnění), aniž by zasahovala do původního kódu.\n- Možnost 1 („a function that wraps another function, changing its functionality to some extent“) je přesnou definicí dekorátoru v kurzu JSE 2.\n- Dekorátor není třída dědící z jiné třídy, není to typ iterátoru ani způsob psaní komentářů."
+    "correct": 2,
+    "explanation": "A callback function in JavaScript is a function passed as an argument to another function, which is then invoked inside the outer function after a specific operation or event has completed."
   },
   {
     "id": "js2_q35",
@@ -201,82 +201,82 @@
     "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: a b",
     "code": "function* testGenerator() {\n    // Insert line of code here.\n}\nlet gen = testGenerator(2);\nconsole.log(`${gen.next().value} ${gen.next().value}`);",
     "options": [
-      "yield ['a', 'b'];",
       "yield* ['a', 'b', 'c', 'd'];",
-      "yield ['a', 'b', 'c', 'd'];",
-      "return ['a', 'b'];"
+      "return ['a', 'b'];",
+      "yield ['a', 'b'];",
+      "yield ['a', 'b', 'c', 'd'];"
     ],
-    "correct": 1,
-    "explanation": "Správná odpověď: yield* ['a', 'b', 'c', 'd'];\n\nNa snímku obrazovky je otázka:\n„There is one line missing in the code below:\n... Select the correct missing line so that the executed code results in the following console output: a b“\n\nOficiální vysvětlení ze zkoušky:\n„To achieve the desired console output, you should use the following missing line:\nyield* ['a', 'b', 'c', 'd'];\nThis code defines a generator function testGenerator that yields values from the array ['a', 'b', 'c', 'd']. When you call gen.next().value twice, it yields 'a' and 'b', resulting in the output 'a b'.“\n\nPodrobné vysvětlení:\nGenerátory v JavaScriptu (funkce definované pomocí function*) používají k postupnému generování hodnot příkaz yield a yield*:\n- Běžný příkaz yield vrací jako hodnotu celý předaný výraz. yield ['a', 'b', 'c', 'd'] by tedy při prvním volání gen.next().value vrátil celé pole ['a', 'b', 'c', 'd'] a při druhém undefined.\n- Příkaz delegování yield* iteruje přes předaný iterovatelný objekt (zde pole) a postupně yieldne každý jeho jednotlivý prvek. První volání gen.next().value vrátí 'a', druhé volání gen.next().value vrátí 'b'.\n- Šablona `${gen.next().value} ${gen.next().value}` proto správně vytvoří výstup \"a b\".\n- Klíčové slovo return by generátor ihned ukončilo."
+    "correct": 0,
+    "explanation": "The yield* expression is used in a generator function to delegate to another generator or iterable object (such as an array). Using yield* ['a', 'b', 'c', 'd']; sequentially yields each element of the array upon successive .next() calls."
   },
   {
     "id": "js2_q36",
     "module": "js2_m4",
-    "question": "There is one line missing in the code below:\n\nSelect the correct missing line in order for the the console to display test with a delay of 3 seconds:",
-    "code": "let fn = msg => console.log(msg);\nsetTimeout(() => {\n    // Insert line of code here.\n}, 1000);",
+    "question": "There is one line missing in the code below:\n\nSelect the correct missing line to ensure the console displays 'Delayed message' with a delay of 5 seconds:",
+    "code": "let printText = msg => console.log(msg);\nlet delay = 3000;\nsetTimeout(() => {\n    // Insert line of code here.\n}, delay);",
     "options": [
-      "setTimeout(fn, 2000);",
-      "setTimeout(fn.bind(this, 'test'), 2000);",
-      "setTimeout(fn, 3000);",
-      "fn('test', 3000);"
+      "setTimeout(printText, 2000, 'Delayed message');",
+      "setTimeout(printText.bind(this, 'Delayed message'), 5000);",
+      "printText('Delayed message', 5000);",
+      "setTimeout(() => printText('Delayed message'), 5000);"
     ],
     "correct": 1,
-    "explanation": "Správná odpověď: setTimeout(fn.bind(this, 'test'), 2000);\n\nNa snímku obrazovky je zadání:\n„There is one line missing in the code below:\n... Select the correct missing line in order for the the console to display test with a delay of 3 seconds:“\n(V textu originálu je doslova překlep \"for the the console\").\n\nOficiální vysvětlení ze zkoušky:\n„To make the console display 'test' with a delay of 3 seconds, you should use the following missing line:\nsetTimeout(fn.bind(this, 'test'), 3000);\nThis code sets a timeout for 3 seconds and uses the fn function with the message 'test' by binding it with fn.bind(this, 'test'). After 3 seconds, 'test' will be logged to the console.“\n\nPodrobné vysvětlení (včetně známé chyby v textu vysvětlení Cisco):\nKód již obsahuje vnější setTimeout s prodlevou 1000 ms (1 sekunda). Aby celková doba do vypsání zprávy byla 3 sekundy (3000 ms), musí vnitřní časovač čekat dalších 2000 ms (1000 ms + 2000 ms = 3000 ms).\nZároveň funkce fn očekává argument msg. Pomocí fn.bind(this, 'test') je vytvořena nová funkce, která při vyvolání předá argument 'test'.\n- Správná možnost z nabízených je setTimeout(fn.bind(this, 'test'), 2000);.\n- V textu oficiálního vysvětlení autor Cisco omylem napsal 3000 namísto 2000, ale v nabídce odpovědí je jedinou možností předávající 'test' právě varianta s 2000 ms (ostatní možnosti s 3000 ms buď nepředávají text 'test', nebo nevolají setTimeout)."
+    "explanation": "setTimeout(printText.bind(this, 'Delayed message'), 5000); schedules printText to be invoked after an additional 5000 milliseconds (5 seconds) with 'Delayed message' bound as its argument."
   },
   {
     "id": "js2_q37",
     "module": "js2_m4",
     "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let p = new Promise (function(resolve, reject) {\n    setTimeout(() => resolve(1), 1000);\n});\n.then(a => console.log(`a ${a}`), b => console.log(`b ${b}`));",
+    "code": "let p = new Promise(function(resolve, reject) {\n    setTimeout(() => resolve(1), 1000);\n});\np.then(a => console.log(`a ${a}`), b => console.log(`b ${b}`));",
     "options": [
-      "b 1",
       "a 1",
-      "a 1 b 1",
-      "a"
+      "a",
+      "b 1",
+      "a 1 b 1"
     ],
-    "correct": 1,
-    "explanation": "Správná odpověď: a 1\n\nNa snímku obrazovky je kód testující metodu .then() u Promise:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\na 1\nHere's the explanation:\n1. A Promise p is created, which resolves with the value 1 after a delay of 1000 milliseconds using setTimeout.\n2. The p.then() method is used to attach two callbacks: one for when the promise resolves (a => console.log(`a ${a}`)) and one for when it rejects (b => console.log(`b ${b}`)).\n3. Since the promise p successfully resolves, the first callback is executed, and you get the output 'a 1'.\nThe second callback (b => console.log(`b ${b}`)) is not executed because there was no rejection in this case.“\n\nPodrobné vysvětlení:\nMetoda Promise.prototype.then(onFulfilled, onRejected) přijímá dva volitelné argumenty:\n1. onFulfilled callback, který se zavolá při úspěšném splnění promisu (resolve).\n2. onRejected callback, který se zavolá při zamítnutí promisu (reject).\nProtože promis po 1 sekundě provede resolve(1), vyvolá se pouze první funkce s argumentem a = 1. Ta provede console.log(`a ${a}`), což do konzole vypíše \"a 1\". Druhý callback se vůbec nespustí.\n(Poznámka: Tečka před .then na samostatném řádku po středníku je drobná typografická chyba v testovém zadání Cisco, zamýšleno bylo navázání na předchozí Promise)."
+    "correct": 0,
+    "explanation": "Promise.prototype.then() takes up to two arguments: callback functions for the fulfilled and rejected cases of the Promise. Since the promise resolves with 1, the first callback (fulfillment handler) runs with argument a = 1, logging 'a 1'."
   },
   {
     "id": "js2_q38",
     "module": "js2_m4",
     "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let p = new Promise(function(resolve){\n    setTimeout(() => resolve(10), 100);\n});\nlet r = new Promise(function(resolve){\n    setTimeout(() => resolve(30), 150);\n});\np.then(a => {\n    console.log(a);\n    return r;\n})\n.then(a => {\n    console.log(a);\n    return 50;\n})\n.then(a => {\n    console.log(a);\n}",
+    "code": "let promiseA = new Promise(function(resolve) {\n    setTimeout(() => resolve('Apple'), 150);\n});\nlet promiseB = new Promise(function(resolve) {\n    setTimeout(() => resolve('Banana'), 100);\n});\npromiseA.then(resultA => {\n    console.log(resultA);\n    return promiseB;\n})\n.then(resultB => {\n    console.log(resultB);\n    return 'Cherry';\n})\n.then(resultC => {\n    console.log(resultC);\n});",
     "options": [
-      "10",
-      "10 30",
-      "10 30 50",
-      "10 50"
+      "Apple Banana Cherry",
+      "Banana Apple Cherry",
+      "Cherry Banana Apple",
+      "Banana Cherry Apple"
     ],
-    "correct": 2,
-    "explanation": "Správná odpověď: 10 30 50\n\nNa snímku obrazovky je kód řetězení promisů (Promise chaining):\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\n10 30 50\nHere's the explanation of the code execution step by step:\n1. Two promises, p and r, are created. p resolves with the value 10 after 100 milliseconds, and r resolves with the value 30 after 150 milliseconds.\n2. The p.then() method is used, which attaches a callback to be executed when p resolves. In this callback, the value 10 is logged to the console.\n3. Inside the p.then() callback, a new promise r is returned, which means that the subsequent then will wait for the resolution of r.\n4. The next then() method is called on the result of r, which attaches another callback. When r resolves, the value 30 is logged to the console.\n5. Inside the second then() callback, the value 50 is returned, and another then() is called on it.\n6. Finally, in the third then() callback, the value 50 is logged to the console.\nSo, the output in the console is '10' (from the first then()), '30' (from the second then()), and '50' (from the third then()).“\n\nPodrobné vysvětlení:\n1. Promis p se vyřeší po 100 ms s hodnotou 10. První .then() obdrží a = 10, vypíše 10 a vrátí promis r.\n2. Následující .then() počká na vyřešení vráceného promisu r. Ten se vyřeší s hodnotou 30, druhý .then() tedy obdrží a = 30, vypíše 30 a vrátí hodnotu 50.\n3. Třetí .then() obdrží vrácené číslo 50 jako a a vypíše 50.\nPostupný výstup v konzoli je tedy 10, 30, 50."
+    "correct": 0,
+    "explanation": "Promise chaining executes sequentially: promiseA resolves with 'Apple' after 150ms and logs it. It returns promiseB, which resolves with 'Banana' and logs it in the second .then. The third .then logs 'Cherry'. The console output is 'Apple Banana Cherry'."
   },
   {
     "id": "js2_q39",
     "module": "js2_m4",
     "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let p = new Promise(function (resolve, reject) {\n    setTimeout(() => resolve('abc'), 100);\n});\nasync function afn() {\n    console.log('def');\n    let x = await p;\n    console.log(x);\n}\nafn();\nconsole.log('ghi');",
+    "code": "let p = new Promise(function(resolve, reject) {\n    setTimeout(() => resolve('abc'), 100);\n});\nasync function afn() {\n    console.log('def');\n    let x = await p;\n    console.log(x);\n}\nafn();\nconsole.log('ghi');",
     "options": [
       "def ghi abc",
-      "abc ghi def",
       "ghi abc def",
-      "ghi def abc"
+      "ghi def abc",
+      "abc ghi def"
     ],
     "correct": 0,
-    "explanation": "Správná odpověď: def ghi abc\n\nNa snímku obrazovky je kód testující pořadí provádění asynchronních funkcí async/await a smyčky událostí:\n„Analyze the following code:\n... What will appear in the console as a result of code execution?“\n\nOficiální vysvětlení ze zkoušky:\n„As a result of the code execution, the following will appear in the console:\ndef ghi abc\nHere's the explanation of the code execution step by step:\n1. A promise p is created, which resolves with the value 'abc' after a delay of 100 milliseconds.\n2. An asynchronous function afn is defined.\n3. Inside the afn function, the first console.log('def') is executed, logging 'def' to the console.\n4. The await p line waits for the promise p to resolve. During this time, the control is returned to the event loop, and the next line (console.log('ghi')) is executed.\n5. The console.log('ghi') line logs 'ghi' to the console.\n6. Once the promise p resolves (after 100 milliseconds), the control returns to the afn function, and the value 'abc' is assigned to x.\n7. The console.log(x) line logs 'abc' to the console.\nSo, the output in the console is 'def', 'ghi', and 'abc' in that order.“\n\nPodrobné vysvětlení:\n1. Spuštěním afn() se funkce začne provádět synchronně až po první await. První řádek console.log('def') okamžitě vypíše 'def'.\n2. Na řádku let x = await p; se vykonávání afn pozastaví, funkce vrátí nevyřízený promis a řízení se předá zpět do hlavního vlákna.\n3. Následující synchronní příkaz console.log('ghi') na hlavní úrovni se ihned provede a vypíše 'ghi'.\n4. Po 100 ms se promis p vyřeší s hodnotou 'abc'. Zbytek funkce afn je naplánován do fronty mikrotasků, kde se dokončí a console.log(x) vypíše 'abc'.\nVýsledné pořadí v konzoli je: \"def ghi abc\"."
+    "explanation": "In an async function, execution is synchronous until the first await expression. afn() logs 'def', then pauses at 'await p'. The synchronous code continues and logs 'ghi'. When promise p resolves after 100ms, afn() resumes and logs 'abc'. The order is 'def ghi abc'."
   },
   {
     "id": "js2_q40",
     "module": "js2_m4",
-    "question": "There is one line missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 200",
-    "code": "let request = new XMLHttpRequest();\nlet fn = function() {\n    console.log(request.status);\n}\n// Insert line of code here.",
+    "question": "When using XMLHttpRequest (XHR) in JavaScript to make network requests, what is the purpose of the event listener added with the 'load' event?",
+    "code": null,
     "options": [
-      "request.addEventListener(fn);",
-      "request.addEventListener('load', fn);",
-      "abc ghi def",
-      "request('load', fn);"
+      "To listen for errors that may occur during the request.",
+      "To listen for changes in the ready state of the XHR object.",
+      "To listen for successful completion of the XHR request.",
+      "To listen for user input events related to the request."
     ],
-    "correct": 1,
-    "explanation": "Správná odpověď: request.addEventListener('load', fn);\n\nNa snímku obrazovky je zadání:\n„There is one line missing in the code below:\n... Select the correct missing line so that the executed code results in the following console output: 200“\n\nOficiální vysvětlení ze zkoušky:\n„To make the code execute and result in the console output '200', you should add the following line:\nrequest.addEventListener('load', fn);\nThe code listens for the load event, and when the request is complete, it logs the HTTP status code (request.status) to the console. If the HTTP request is successful and the server responds with a status code of 200 (OK), the output would be: 200“\n\nPodrobné vysvětlení:\nObjekt XMLHttpRequest umožňuje odesílat HTTP požadavky. Pro zpracování odpovědi se registruje posluchač události pomocí metody addEventListener(event, callback):\n- Událost 'load' nastane, jakmile je požadavek úspěšně dokončen (bez ohledu na HTTP status kód). Uvnitř callbacku fn se v request.status nachází číselný stav odpovědi (např. 200 pro OK).\n- Správný zápis je request.addEventListener('load', fn);.\n- request.addEventListener(fn) je chybný, protože chybí povinný název události jako první parametr.\n- request('load', fn) skončí chybou TypeError, protože request je objekt, nikoliv funkce.\n- Možnost abc ghi def je zjevná chyba/artefakt ze zkušebního systému Cisco (přenesený distractor z otázky 39)."
+    "correct": 2,
+    "explanation": "In XMLHttpRequest, the 'load' event is fired when an XMLHttpRequest transaction completes successfully (meaning the data has been completely received from the server)."
   }
 ]

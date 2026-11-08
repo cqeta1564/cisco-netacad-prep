@@ -5,223 +5,223 @@
     "question": "You have called the following statement:\n\nWhat declaration should precede the statement so that the text Jeep appears in the console as a result of its execution?",
     "code": "console.log(car.make);",
     "options": [
+      "let car = {make: 'Jeep', model: 'Cherokee'};",
       "let car = [make: 'Jeep', model: 'Cherokee'];",
       "let car = [make: 'Jeep'];",
-      "var car = {'Jeep'};",
-      "let car = {make: 'Jeep', model: 'Cherokee'};"
+      "var car = {'Jeep'};"
     ],
-    "correct": 3,
-    "explanation": "Na snímku je volání console.log(car.make); a otázka se ptá, jaká deklarace musí tomuto příkazu předcházet, aby se v konzoli vypsal text \"Jeep\".\n\nOficiální vysvětlení: \"To make the statement console.log(car.make); output \\\"Jeep\\\" in the console, you should use the following declaration:\nlet car = {make: 'Jeep', model: 'Cherokee'};\nThis declaration creates an object named car with a property make set to the value 'Jeep'. The console.log(car.make); statement then accesses the make property of the car object and logs its value, which is \\\"Jeep,\\\" to the console.\"\n\nPodrobný rozbor:\n- Správná volba: \"let car = {make: 'Jeep', model: 'Cherokee'};\". Objektový literál se v JavaScriptu zapisuje do složených závorek {} jako dvojice klíč: hodnota oddělené čárkami. Vlastnost make má hodnotu 'Jeep', takže přístup tečkovou notací car.make vrátí 'Jeep'.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"let car = [make: 'Jeep', model: 'Cherokee'];\": Hranaté závorky [] definují pole (Array), ve kterém nelze použít syntaxi dvojic klíč: hodnota – jedná se o syntaktickou chybu (SyntaxError).\n  - \"let car = [make: 'Jeep'];\": Stejná syntaktická chyba u pole.\n  - \"var car = {'Jeep'};\n\": Ve složených závorkách bez klíče se nejedná o platný zápis objektu (opět SyntaxError)."
+    "correct": 0,
+    "explanation": "To output 'Jeep' via console.log(car.make), the car variable must be an object literal with a 'make' property set to 'Jeep'. In JavaScript, object literals use curly braces with key-value pairs: {make: 'Jeep', model: 'Cherokee'}. Options using square brackets [] define invalid array syntax for key-value pairs."
   },
   {
     "id": "js2_q02",
     "module": "js2_m1",
-    "question": "You have declared a circle object:\n\nSelect the correct way to display the value of the circle's x-coordinate so that the executed code results in the following console output:\n-10",
-    "code": "let circle = {\n    center: {\n        x: -10,\n        y: 20\n    },\n    radius: 30\n}",
+    "question": "You are working on a web application that handles geometric shapes. You have created a JavaScript object to represent a circle:\n\nWhat is the correct formula to calculate the circumference based on the circle object?",
+    "code": "let circle = {\n    center: {\n        x: 10,\n        y: 20\n    },\n    radius: 30\n};",
     "options": [
-      "console.log(circle.x);",
-      "console.log(center.x);",
-      "console.log(circle.center.x);",
-      "console.log(circle.center);"
+      "2 * circle.radius * Math.PI",
+      "circle.radius * circle.radius * Math.PI",
+      "2 * circle.center.x * Math.PI",
+      "circle.radius + circle.center.y"
     ],
-    "correct": 2,
-    "explanation": "Na snímku je deklarován vnořený objekt circle a úkolem je vypsat hodnotu x-ové souřadnice středu kruhu tak, aby výstupem bylo -10.\n\nOficiální vysvětlení: \"To display the value of the circle's x-coordinate so that the executed code results in the following console output: -10, you should use the following line of code:\nconsole.log(circle.center.x);\nThis code accesses the x property of the center object within the circle object and logs its value, which is -10, to the console.\"\n\nPodrobný rozbor:\n- Správná volba: \"console.log(circle.center.x);\". Objekt circle obsahuje vlastnost center, která sama odkazuje na objekt s vlastnostmi x a y. K vnořeným vlastnostem se přistupuje řetězením tečkové notace: circle.center.x.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"console.log(circle.x);\": Objekt circle přímo vlastnost x nemá (vrátilo by undefined).\n  - \"console.log(center.x);\": Proměnná center v globálním/lokálním rozsahu neexistuje, došlo by k chybě ReferenceError: center is not defined.\n  - \"console.log(circle.center);\": Vypíše celý vnořený objekt { x: -10, y: 20 }, nikoliv pouze číslo -10."
+    "correct": 0,
+    "explanation": "The circumference of a circle is calculated using the formula 2 * π * r. In JavaScript, π is accessed via Math.PI and the radius property of the circle object is accessed via circle.radius. Therefore, the correct expression is 2 * circle.radius * Math.PI."
   },
   {
     "id": "js2_q03",
     "module": "js2_m1",
     "question": "You have declared a user object that has one property: full name\n\nWhich of the following is the correct way to refer to this property?",
-    "code": "let user = {\n    'full name': 'Mickey Mouse'\n}",
+    "code": "let user = {\n    'full name': 'Mickey Mouse'\n};",
     "options": [
-      "user.'full name'",
-      "You cannot use a property name consisting of several words.",
+      "user['full name']",
       "user[full name]",
-      "user['full name']"
+      "user.'full name'",
+      "You cannot use a property name consisting of several words."
     ],
-    "correct": 3,
-    "explanation": "Na snímku je deklarován objekt user s víceslovným názvem vlastnosti 'full name' a otázka zjišťuje správný způsob přístupu k této vlastnosti.\n\nOficiální vysvětlení: \"The correct way to refer to the property with a name consisting of several words, which is \\\"full name\\\" in this case, is:\nuser['full name']\nUsing square brackets ([]) is the correct syntax for accessing object properties with names that contain spaces or special characters.\"\n\nPodrobný rozbor:\n- Správná volba: \"user['full name']\". Pokud název vlastnosti obsahuje mezery, pomlčky nebo jiné speciální znaky, které netvoří platný identifikátor JavaScriptu, nelze použít tečkovou notaci a musí se použít závorková notace (bracket notation) s názvem vlastnosti jako řetězcem.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"user.'full name'\": Neplatná syntaxe v JavaScriptu (SyntaxError) – tečkovou notaci nelze kombinovat s uvozovkami.\n  - \"You cannot use a property name consisting of several words.\": Není pravda; v JavaScriptu mohou být klíče objektu libovolné řetězce včetně mezer.\n  - \"user[full name]\": Bez uvozovek se JavaScript pokusí vyhodnotit full a name jako proměnné či výrazy, což skončí chybou SyntaxError nebo ReferenceError."
+    "correct": 0,
+    "explanation": "When an object property name contains spaces or special characters (such as 'full name'), dot notation (user.'full name') is invalid syntax. Bracket notation with a string key, user['full name'], must be used to access the property."
   },
   {
     "id": "js2_q04",
     "module": "js2_m1",
-    "question": "You have declared a geoposition object:\n\nSelect the correct way to display the values of all object properties so that the executed code results in the following console output:\n-30.110 and 120.027",
-    "code": "let geoposition = {\n    lan: -30.110,\n    lat: 120.027\n}",
+    "question": "What will be the result of executing the following code?",
+    "code": "let geoposition = {\n    latitude: 40.7128,\n    longitude: -74.0060,\n    altitude: 100,\n    city: \"New York\"\n};\nObject.keys(geoposition).forEach(key =>\n    console.log(geoposition[key])\n);",
     "options": [
-      "for(key in geoposition) console.log(key);",
-      "Object.keys(geoposition).forEach(key => console.log(key));",
-      "console.log(geoposition[lan, lat]);",
-      "Object.keys(geoposition).forEach(key => console.log(geoposition[key]));"
+      "It will display only the property names without their values.",
+      "It will display the values of all the properties.",
+      "It will cause an error because forEach cannot be used with Object.keys.",
+      "It will display a syntax error due to incorrect usage of geoposition."
     ],
-    "correct": 3,
-    "explanation": "Na snímku je objekt geoposition a úkolem je vybrat kód, který projde a vypíše hodnoty všech vlastností (-30.11 a 120.027).\n\nOficiální vysvětlení: \"The correct way to display the values of all object properties of the geoposition object so that the executed code results in the console output of -30.110 and 120.027 is:\nObject.keys(geoposition).forEach(key => console.log(geoposition[key]));\nThis code iterates through the keys of the geoposition object and uses them to access and log the corresponding values.\"\n\nPodrobný rozbor:\n- Správná volba: \"Object.keys(geoposition).forEach(key => console.log(geoposition[key]));\". Metoda Object.keys() vrátí pole názvů vlastností (klíčů ['lan', 'lat']). Následně přes metodu forEach pro každý klíč přistoupíme k hodnotě pomocí závorkové notace geoposition[key] a vypíšeme ji do konzole.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"for(key in geoposition) console.log(key);\": Cyklus for...in iteruje přes názvy klíčů, takže vypíše pouze řetězce 'lan' a 'lat', nikoli jejich hodnoty.\n  - \"Object.keys(geoposition).forEach(key => console.log(key));\": Vypíše opět pouze samotné klíče ('lan' a 'lat').\n  - \"console.log(geoposition[lan, lat]);\": Operátor čárky vyhodnotí výraz zleva doprava a vrátí poslední operand (lat), který navíc není definovanou proměnnou (ReferenceError)."
+    "correct": 1,
+    "explanation": "Object.keys(geoposition) returns an array containing the property names (keys) of the geoposition object. When iterating with forEach(key => console.log(geoposition[key])), each key is used to dynamically access and log the corresponding property value. Therefore, it will display the values of all the properties."
   },
   {
     "id": "js2_q05",
     "module": "js2_m1",
     "question": "You have declared two tree objects:\n\nWhich of the following comparisons will return true?",
-    "code": "let tree1 = {\n    species: 'oak'\n}\nlet tree2 = {\n    species: 'oak'\n}",
+    "code": "let tree1 = {\n    species: 'oak'\n};\nlet tree2 = {\n    species: 'oak'\n};",
     "options": [
+      "(tree1.species == tree2.species) && (tree1.species == tree2.species)",
       "tree1 == tree2",
       "tree1 === tree2",
-      "(tree1.species == tree2.species) && (tree1.species == tree2.species)",
       "tree1 same tree2"
     ],
-    "correct": 2,
-    "explanation": "Na snímku jsou deklarovány dva samostatné objekty tree1 a tree2 se stejnými vlastnostmi a otázka zkoumá, které porovnání vrátí hodnotu true.\n\nOficiální vysvětlení: \"The comparison that will return true is:\ntree1.species == tree2.species\nThis comparison checks if the species property of tree1 is equal to the species property of tree2. Since both tree1 and tree2 have the same value 'oak' for the species property, this comparison will return true.\"\n\nPodrobný rozbor:\n- Správná volba: \"(tree1.species == tree2.species) && (tree1.species == tree2.species)\". Objekty v JavaScriptu se porovnávají referenčně (podle adresy v paměti). Dva různé objekty se stejným obsahem nikdy nejsou == ani ===. Porovnání primitivních hodnot vlastností tree1.species == tree2.species ('oak' == 'oak') však vrátí true, a logický součin dvou true hodnot je opět true.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"tree1 == tree2\": Porovnává reference objektů. Jelikož jde o dvě různé instance v paměti, výsledek je false.\n  - \"tree1 === tree2\": Striktní porovnání referencí objektů, výsledek je rovněž false.\n  - \"tree1 same tree2\": Klíčové slovo same v JavaScriptu neexistuje; způsobí chybu syntaxe (SyntaxError)."
+    "correct": 0,
+    "explanation": "In JavaScript, objects are reference types. Comparing two distinct object instances with == or === checks reference identity (whether they point to the same memory location), which evaluates to false even if their properties have identical values. However, comparing primitive property values (tree1.species == tree2.species) compares the string 'oak' with 'oak', which evaluates to true."
   },
   {
     "id": "js2_q06",
     "module": "js2_m1",
-    "question": "Analyze the following code:\n\nWhat will appear in the console as a result of code execution?",
-    "code": "let mountain1 = {\n    name: 'K2',\n    range: 'Himalayas'\n}\nlet mountain2 = { ...mountain1, range: 'Karakoram', height: 8611};\nmountain1.height = 8848;\nconsole.log(`${mountain2.name} ${mountain2.range} ${mountain2.height}`);",
+    "question": "What will be the population of the city stored in \"largestCity\" after executing this code?",
+    "code": "let city1 = {\n    name: 'New York',\n    population: 8537673\n};\nlet city2 = {\n    name: 'Los Angeles',\n    population: 39776830\n};\nlet largestCity = city1.population > city2.population ? { ...city1 } : { ...city2 };",
     "options": [
-      "K2 Karakoram 8848",
-      "K2 Himalayas 8848",
-      "undefined Karakoram 8611",
-      "K2 Karakoram 8611"
+      "8537673",
+      "39776830",
+      "124744503",
+      "'Los Angeles'"
     ],
-    "correct": 3,
-    "explanation": "Na snímku je kód využívající spread operátor (...) k vytvoření mělkého klonu objektu mountain1 s přepsáním vlastnosti range a přidáním height.\n\nOficiální vysvětlení: \"The code will result in the following output:\nK2 Karakoram 8611\nHere's how it works:\n1. mountain1 is declared with the name \\\"K2\\\" and the range \\\"Himalayas.\\\"\n2. mountain2 is declared as an object with the same properties as mountain1 using the spread operator (...mountain1). This creates a new object that initially has the same values as mountain1, but then it assigns a new value \\\"Karakoram\\\" to the range property and adds a new property height with the value 8611.\n3. mountain1.height is updated to 8848.\n4. The console.log statement prints the properties of mountain2, which are \\\"K2\\\" for name, \\\"Karakoram\\\" for range, and 8611 for height.\"\n\nPodrobný rozbor:\n- Správná volba: \"K2 Karakoram 8611\".\n  1. ...mountain1 nakopíruje do mountain2 vlastnosti name: 'K2' a range: 'Himalayas'.\n  2. Následující klíč range: 'Karakoram' přepíše předchozí hodnotu na 'Karakoram'.\n  3. Přidá se nová vlastnost height: 8611.\n  4. Následná změna mountain1.height = 8848; ovlivní pouze objekt mountain1, protože mountain2 je nezávislá kopie.\n  5. Výpis hodnot mountain2 proto dává K2 Karakoram 8611.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"K2 Karakoram 8848\": Chybné očekávání, že změna mountain1.height se promítla do mountain2.\n  - \"K2 Himalayas 8848\": Opomenutí přepsání range i záměna výšky.\n  - \"undefined Karakoram 8611\": name se v pořádku zkopíroval ze spread operátoru, není undefined."
+    "correct": 1,
+    "explanation": "The ternary operator evaluates city1.population > city2.population. Since 8537673 > 39776830 is false, the expression returns { ...city2 }, creating a shallow copy of city2. Therefore, largestCity.population will be 39776830 (Los Angeles)."
   },
   {
     "id": "js2_q07",
     "module": "js2_m1",
     "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Huck Finn",
-    "code": "let user = {\n    name: 'Huck',\n    surname: 'Finn',\n    // Insert line of code here.\n}\nuser.show();",
+    "code": "let user = {\n    name: 'Huck',\n    surname: 'Finn',\n    // Insert line of code here.\n};\nuser.show();",
     "options": [
-      "show: function(this) {console.log(`${this.name} ${this.surname}`);}",
-      "user.show = {console.log(`${this.name} ${this.surname}`);}",
       "show: function() {console.log(`${this.name} ${this.surname}`);}",
-      "show: function() {console.log(`${name} ${surname}`);}"
+      "show: function() {console.log(`${name} ${surname}`);}",
+      "show: function(this) {console.log(`${this.name} ${this.surname}`);}",
+      "user.show = {console.log(`${this.name} ${this.surname}`);}"
     ],
-    "correct": 2,
-    "explanation": "Na snímku chybí uvnitř objektu user definice metody show, která má vypsat jméno a příjmení \"Huck Finn\".\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"Huck Finn\\\" and call the show method on the user object, you should use the following missing line:\nshow: function() {console.log(`${this.name} ${this.surname}`);}\nThis code defines a show method within the user object that logs the name and surname properties when called.\"\n\nPodrobný rozbor:\n- Správná volba: \"show: function() {console.log(`${this.name} ${this.surname}`);}\". V objektovém literálu se metoda definuje jako vlastnost s funkcí. K vlastnostem aktuálního objektu se uvnitř standardní funkce přistupuje přes klíčové slovo this (this.name a this.surname).\n- Proč jsou ostatní možnosti nesprávné:\n  - \"show: function(this) ...\": this je vyhrazené klíčové slovo v JavaScriptu a nesmí být použito jako název formálního parametru funkce (SyntaxError).\n  - \"user.show = ...\": Uvnitř objektového literálu nelze přiřazovat přes tečku a navíc tělo funkce není uzavřeno ve funkci.\n  - \"show: function() {console.log(`${name} ${surname}`);}\": Bez this. se JavaScript snaží najít proměnné name a surname v lexikálním scope, což vyústí v ReferenceError: surname is not defined."
+    "correct": 0,
+    "explanation": "In an object literal, a method is defined using standard method syntax or a function expression assigned to a key: show: function() { console.log(`${this.name} ${this.surname}`); }. Inside the method, the 'this' keyword refers to the user object instance to access its properties."
   },
   {
     "id": "js2_q08",
     "module": "js2_m1",
-    "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Huckleberry",
-    "code": "let user = {\n    _name: 'Huck',\n    _surname: 'Finn',\n    // Insert line of code here.\n}\nuser.name = 'Huckleberry';\nconsole.log(user._name);",
+    "question": "You want to create a setter for the user's first name, allowing you to set both \"_firstName\" and \"_lastName\" when updating the first name. Which line of code should you insert?",
+    "code": "let user = {\n    _firstName: 'John',\n    _lastName: 'Doe',\n    // Insert a line of code here.\n};",
     "options": [
-      "name() {this._name = name;}",
-      "name: set() {this._name = name;}",
-      "set name(name) {this._name = name;}",
-      "name: this._name = name"
+      "set firstName(name) { this._firstName = name; }",
+      "_firstName() { this._firstName = name; }",
+      "this._firstName = name;",
+      "firstName(name) { this._firstName = name; }"
     ],
-    "correct": 2,
-    "explanation": "Na snímku je kód, kde přiřazení do user.name = 'Huckleberry' musí aktualizovat vnitřní vlastnost user._name.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"Huckleberry\\\" and update the _name property of the user object, you should use the following missing line with a setter method:\nset name(name) { this._name = name; }\nThis code defines a setter method for the name property, allowing you to set the _name property when you assign a new value to user.name.\"\n\nPodrobný rozbor:\n- Správná volba: \"set name(name) {this._name = name;}\". Syntaxe setteru v objektovém literálu používá klíčové slovo set, název vlastnosti name, jeden parametr (name) a tělo { this._name = name; }.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"name() {this._name = name;}\": Definuje běžnou metodu, nikoli setter, takže přiřazení user.name = ... by metodu přepsalo řetězcem a neaktualizovalo _name.\n  - \"name: set() ...\": Chybná syntaxe, setter se nezapisuje s dvojtečkou.\n  - \"name: this._name = name\": Zcela neplatná syntaxe a name není v daném kontextu definováno."
+    "correct": 0,
+    "explanation": "In an object literal, a setter is defined using the 'set' keyword followed by the property identifier and a single parameter: set firstName(name) { this._firstName = name; }. This allows assigning user.firstName = 'John' to trigger the setter function."
   },
   {
     "id": "js2_q09",
     "module": "js2_m1",
     "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Lhotse undefined undefined",
-    "code": "let mountain = {\n    name: 'Everest',\n    range: 'Himalayas'\n}\n// Insert line of code here.\ndelete mountain.range;\nmountain.name = 'Lhotse';\nmountain.height = 8516;\nconsole.log(`${mountain.name} ${mountain.range} ${mountain.height}`);",
+    "code": "let mountain = {\n    name: 'Everest',\n    range: 'Himalayas'\n};\n// Insert line of code here.\ndelete mountain.range;\nmountain.name = 'Lhotse';\nmountain.height = 8516;\nconsole.log(`${mountain.name} ${mountain.range} ${mountain.height}`);",
     "options": [
-      "Object.seal(mountain);",
+      "Object.preventExtensions(mountain);",
       "Object.freeze(mountain);",
-      "An empty line",
-      "Object.preventExtensions(mountain);"
+      "Object.seal(mountain);",
+      "An empty line"
     ],
     "correct": 1,
-    "explanation": "Na snímku je objekt mountain, na kterém se provádí operace smazání vlastnosti delete mountain.range, přepsání mountain.name = 'Lhotse' a přidání mountain.height = 8516. Požadovaný výstup je Lhotse undefined undefined.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"Lhotse undefined undefined,\\\" you should use the following missing line:\nObject.freeze(mountain);\nThe Object.freeze(mountain) line will prevent any further modifications to the mountain object, including adding or deleting properties, which will result in the range property being undefined in the output.\"\n\nPodrobný rozbor a metodická poznámka:\n- Oficiální správná volba Cisco testu: \"Object.freeze(mountain);\".\n- Upozornění na technickou nepřesnost v otázce Cisco: V reálném běhovém prostředí JavaScriptu Object.freeze() zmrazí objekt kompletně – zabrání přidávání nových vlastností, mazání existujících i úpravě hodnot existujících vlastností. Při skutečném Object.freeze() by tedy v nestriktním režimu selhala změna mountain.name = 'Lhotse' (zůstalo by 'Everest') i delete mountain.range (zůstalo by 'Himalayas'). Teoreticky by výstup Lhotse undefined undefined v čistém JS odpovídal spíše chování Object.preventExtensions(mountain) (které dovoluje měnit existující a mazat, ale zakazuje přidávat nové). Nicméně oficiální test Cisco autoritativně označuje za správnou odpověď Object.freeze(mountain); a v oficiálním zdůvodnění tvrdí, že zamezení modifikací způsobí daný výstup. Pro úspěch v certifikační zkoušce je nutné zvolit Object.freeze(mountain);.\n- Proč jsou ostatní možnosti nesprávné podle testu:\n  - \"Object.seal(mountain);\": Podle specifikace zapečetí objekt (neumožní mazání ani přidávání, ale umožní editaci existujících).\n  - \"An empty line\": Bez omezení by objekt obsahoval { name: 'Lhotse', height: 8516 }, takže výstup by byl Lhotse undefined 8516.\n  - \"Object.preventExtensions(mountain);\": Ačkoliv technicky v JS by tento příkaz vedl k požadovanému výstupu, test Cisco ho nepovažuje za správný a trvá na Object.freeze(mountain);."
+    "explanation": "Object.freeze() freezes an object: it prevents adding new properties, removing existing properties, and modifying values of existing writable properties. Therefore, mountain.name is not changed to 'Lhotse', mountain.range is not deleted, and mountain.height is not added (remaining undefined)."
   },
   {
     "id": "js2_q10",
     "module": "js2_m1",
-    "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: Lhotse 8516",
-    "code": "let getMountain = function(name, height) {\n    // Insert line of code here.\n}\nlet mountain = getMountain('Lhotse', 8516);\nconsole.log(`${mountain.name} ${mountain.height}`);",
+    "question": "What should you insert into the function so that the created user object contains the name and age properties?",
+    "code": "function createUser(name, age) {\n    // Insert a line of code here.\n}\nconst user = createUser('Alice', 25);",
     "options": [
-      "this.name = name; this.height = height;",
-      "return {name, height};",
-      "return {this.name, this.height};",
-      "return (name, height);"
+      "return { name: name, age: age };",
+      "this.name = name; this.age = age;",
+      "return { this.name: name, this.age: age };",
+      "createUser.name = name; createUser.age = age;"
     ],
-    "correct": 1,
-    "explanation": "Na snímku je tovární funkce (factory function) getMountain, která přijímá parametry name a height a má vrátit objekt s těmito vlastnostmi.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"Lhotse 8516,\\\" you should use the following missing line:\nreturn { name, height };\nThis code defines a function getMountain that takes name and height as parameters and returns an object with the same property names name and height, containing the values passed to the function.\"\n\nPodrobný rozbor:\n- Správná volba: \"return {name, height};\". V moderním JavaScriptu (ES6+) lze při tvorbě objektového literálu použít zkrácený zápis vlastností (property shorthand). Zápis {name, height} je ekvivalentní {name: name, height: height}. Funkce getMountain je volána bez new jako běžná funkce, proto musí explicitně vrátit nový objekt pomocí return.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"this.name = name; this.height = height;\": Funkce je volána jako obyčejná funkce bez operátoru new, takže nemá návratovou hodnotu (vrátí undefined) a navíc by v nestriktním režimu znečistila globální objekt window/global.\n  - \"return {this.name, this.height};\": Syntaktická chyba (SyntaxError), this.name nelze použít jako zkrácený název vlastnosti.\n  - \"return (name, height);\": Operátor čárky vyhodnotí výraz na pouhé číslo 8516 (druhý argument), nikoli na objekt."
+    "correct": 0,
+    "explanation": "In JavaScript, a factory function creates and returns a new object. Using object literal syntax, return { name: name, age: age }; returns an object with the specified properties initialized from the function parameters."
   },
   {
     "id": "js2_q11",
-    "module": "js2_m1",
+    "module": "js2_m2",
     "question": "There is one line of code missing in the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: 100",
-    "code": "let Point = function(x, y) {\n    // Insert line of code here.\n    this.y = y;\n}\nlet point = new Point(100, 0);\nlet ColorPoint = function(color) {\n    this.color = color;\n}\nColorPoint.prototype = point;\nlet cpoint = new ColorPoint('green');\nconsole.log(cpoint.x);",
+    "code": "let Point = function(x, y) {\n    // Insert line of code here.\n    this.y = y;\n};\nlet point = new Point(100, 0);\nlet ColorPoint = function(color) {\n    this.color = color;\n};\nColorPoint.prototype = point;\nlet cpoint = new ColorPoint('green');\nconsole.log(cpoint.x);",
     "options": [
+      "this.x = x;",
       "return x;",
-      "Point.x = x;",
       "point.x = x;",
-      "this.x = x;"
+      "Point.x = x;"
     ],
-    "correct": 3,
-    "explanation": "Na snímku je konstruktorová funkce Point, jejíž instance point slouží jako prototyp pro konstruktor ColorPoint. Otázka hledá chybějící řádek, aby cpoint.x vypsalo 100.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"100,\\\" you should use the following missing line in the Point constructor:\nthis.x = x;\nThis code defines a Point constructor that takes x and y parameters and initializes this.x and this.y. Creating a ColorPoint object based on point will have the x property set to 100 as desired.\"\n\nPodrobný rozbor:\n- Správná volba: \"this.x = x;\". Uvnitř konstruktorové funkce volané pomocí new Point(100, 0) ukazuje this na nově vytvářenou instanci. Řádek this.x = x; nastaví vlastnost x na hodnotu 100. Když je potom point nastaven jako prototyp ColorPoint.prototype = point;, instance cpoint zdědí vlastnost x skrze prototypový řetězec.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"return x;\": Konstruktor volaný s new vrací nově vytvořený objekt this; primitivní návratová hodnota je ignorována a this.x by zůstalo undefined.\n  - \"Point.x = x;\": Nastavilo by statickou vlastnost přímo na samotnou funkci Point, nikoli na vytvářenou instanci.\n  - \"point.x = x;\": V době provádění konstruktoru Point proměnná point ještě neexistuje (ReferenceError)."
+    "correct": 0,
+    "explanation": "In a constructor function, the 'this' keyword refers to the new object instance being created with the 'new' operator. Assigning this.x = x; properly initializes the property x on the newly created instance."
   },
   {
     "id": "js2_q12",
     "module": "js2_m2",
-    "question": "Analyze the following code:\n\nIt is:",
-    "code": "let Mountain = class {};",
+    "question": "Which of the following code snippets correctly demonstrates the creation of an anonymous class for a \"Person\" object with a constructor that initializes the properties \"name\" and \"age\"?",
+    "code": "let Person = class {\n    constructor(name, age) {\n        this.name = name;\n        this.age = age;\n    }\n};",
     "options": [
-      "correct, because it is a declaration of an anonymous class and saves it to the variable Mountain (a class as a first-class citizen).",
-      "incorrect, because a class definition (the content of the brackets) can't be empty.",
-      "incorrect, because it should be: class Mountain {};",
-      "correct, because it is the creation of an object based on an empty class and saves it to the Mountain variable."
+      "let Person = class {\nconstructor(name, age) {\nname = this.name;\nage = this.age;\n}\n}",
+      "let Person = class {\n constructor(name, age) {\n this.name = name;\n this.age = age;\n }\n}",
+      "let Person = (name, age) => {\nconstructor: {\nthis.name = name;\nthis.age = age;\n}\n}",
+      "let Person = function(name, age) {\nthis.name = name;\nthis.age = age;\n}"
     ],
-    "correct": 0,
-    "explanation": "Na snímku je třídní výraz (class expression) let Mountain = class {}; a zjišťuje se správnost tohoto zápisu.\n\nOficiální vysvětlení: \"The code let Mountain = class {}; is correct because it defines an anonymous class and assigns it to the variable Mountain. In JavaScript, you can create anonymous classes and assign them to variables, making classes first-class citizens. The class may not have any properties or methods defined in this specific case, but it is still a valid class declaration. So, the statement is correct: it declares an anonymous class and saves it to the variable Mountain.\"\n\nPodrobný rozbor:\n- Správná volba: \"correct, because it is a declaration of an anonymous class and saves it to the variable Mountain (a class as a first-class citizen).\". V JavaScriptu jsou třídy tzv. \"first-class citizens\" (prvotřídní objekty), což znamená, že mohou být definovány jako výrazy (anonymní i pojmenované) a přiřazeny do proměnných. Tělo třídy může být zcela prázdné {}.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"incorrect, because a class definition (the content of the brackets) can't be empty.\": Tělo třídy v JS může být prázdné; výchozí konstruktor je doplněn automaticky.\n  - \"incorrect, because it should be: class Mountain {};\": Třídní deklarace je jen jedna z možností, třídní výraz přiřazený do proměnné je plně validní.\n  - \"correct, because it is the creation of an object based on an empty class and saves it to the Mountain variable.\": Kód nevytváří instanci objektu (k tomu by bylo potřeba new), nýbrž samotnou třídu (funkci konstruktoru)."
+    "correct": 1,
+    "explanation": "A class expression can define an anonymous class assigned to a variable: let Person = class { constructor(name, age) { this.name = name; this.age = age; } }. Inside the constructor, properties are assigned to the instance using this.name = name and this.age = age."
   },
   {
     "id": "js2_q13",
     "module": "js2_m2",
-    "question": "You have defined a class Mountain whose constructor takes two arguments: name and range .\n\nWhich of the following is the correct way to create a mountain object of this class?",
+    "question": "You have defined a class Mountain whose constructor takes two arguments: name and range.\n\nWhich of the following is the correct way to create a mountain object of this class?",
     "code": null,
     "options": [
-      "let mountain = create Mountain('Manaslu', 8156);",
       "let mountain = new Mountain('Manaslu', 8156);",
-      "Mountain(let mountain, 'Manaslu', 8156);",
-      "let mountain = Mountain('Manaslu', 8156);"
+      "let mountain = create Mountain('Manaslu', 8156);",
+      "let mountain = Mountain('Manaslu', 8156);",
+      "Mountain(let mountain, 'Manaslu', 8156);"
     ],
-    "correct": 1,
-    "explanation": "Otázka se ptá na správný způsob vytvoření instance třídy Mountain s dvěma argumenty předanými konstruktoru.\n\nOficiální vysvětlení: \"The correct way to create a Mountain object of the class with a constructor that takes two arguments (name and range) is:\nlet mountain = new Mountain('Manaslu', 8156);\nUsing the new keyword is essential when creating instances of a class in JavaScript. This syntax correctly creates a new Mountain object with the specified arguments for the constructor.\"\n\nPodrobný rozbor:\n- Správná volba: \"let mountain = new Mountain('Manaslu', 8156);\". K vytvoření nové instance třídy v JavaScriptu je vyžadován operátor new následovaný názvem třídy a parametry konstruktoru v závorkách.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"let mountain = create Mountain(...);\": Klíčové slovo create v JavaScriptu neexistuje (existuje pouze metoda Object.create(), která má jinou syntaxi).\n  - \"Mountain(let mountain, ...);\": Zcela neplatná syntaxe – nelze vkládat deklaraci let do argumentů volání funkce.\n  - \"let mountain = Mountain(...);\": Volání třídy deklarované klíčovým slovem class bez operátoru new vyvolá běhovou chybu: TypeError: Class constructor Mountain cannot be invoked without 'new'."
+    "correct": 0,
+    "explanation": "To instantiate a class in JavaScript, the 'new' operator is required before the class constructor call: let mountain = new Mountain('Manaslu', 8156);. This creates a new instance and invokes the constructor method with the provided arguments."
   },
   {
     "id": "js2_q14",
     "module": "js2_m2",
-    "question": "Analyze the following code:\n\nThe mountain object:",
-    "code": "class Mountain {\n    constructor (name, height) {\n        this.name = name;\n        this.height = height;\n    }\n    setRange(range) {\n        this.range = range;\n    }\n}\nlet mountain = new Mountain('K2', 8611);\nmountain.setRange('Karakoram');",
+    "question": "What properties and methods does an instance of the \"Book\" class have when created with the following code?",
+    "code": "class Book {\n    constructor(title, author) {\n        this.title = title;\n        this.author = author;\n    }\n    setGenre(genre) {\n        this.genre = genre;\n    }\n}\nlet book = new Book('The Great Gatsby', 'F. Scott Fitzgerald');",
     "options": [
-      "has two properties: name and height (only these are defined in the constructor).",
-      "will not be created - setRange references the range property that was not defined in the constructor.",
-      "will not be created - the constructor and the setRange method refer to properties that have not been defined in the class body.",
-      "has three properties: name , height and range ."
+      "Properties: title, author, genre; Methods: setGenre",
+      "Properties: title, author; Methods: setGenre, getGenre",
+      "Properties: title, author; Methods: setGenre",
+      "Properties: title, author, genre; Methods: setGenre, getGenre"
     ],
-    "correct": 3,
-    "explanation": "Na snímku je třída Mountain s konstruktorem inicializujícím name a height, a metodou setRange, která přiřadí this.range = range. Následně je vytvořena instance a zavolána metoda setRange('Karakoram').\n\nOficiální vysvětlení: \"The mountain object has three properties: name, height, and range.\nIn the provided code:\n1. The Mountain class is defined with a constructor that initializes the name and height properties using the this keyword.\n2. It also has a setRange method, which sets the range property when called.\nWhen you create a mountain object using let mountain = new Mountain('K2', 8611);, it invokes the constructor, which sets the name and height properties. Later, when you call mountain.setRange('Karakoram');, it sets the range property. So, the mountain object indeed has three properties: name, height, and range.\"\n\nPodrobný rozbor:\n- Správná volba: \"has three properties: name , height and range .\". JavaScript je dynamický jazyk, kde objekty mohou získávat nové vlastnosti kdykoliv za běhu programu. Konstruktor inicializuje vlastnosti name a height, a následné volání metody setRange() dynamicky přidá instanci třetí vlastnost range.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"has two properties: name and height (only these are defined in the constructor).\": Ignoruje fakt, že metoda setRange za běhu přidala vlastnost range.\n  - \"will not be created - setRange references the range property that was not defined in the constructor.\": JavaScript nevyžaduje předchozí deklaraci vlastností v konstruktoru.\n  - \"will not be created - the constructor and the setRange method refer to properties that have not been defined in the class body.\": Třídy v JS nevyžadují formální deklaraci polí v těle třídy (class fields), dynamické přiřazení přes this. je naprosto legální."
+    "correct": 2,
+    "explanation": "In the Book class, the constructor assigns this.title and this.author, creating instance properties 'title' and 'author'. The setGenre(genre) declaration defines an instance method. Therefore, an instance has properties 'title' and 'author', and method 'setGenre'."
   },
   {
     "id": "js2_q15",
     "module": "js2_m2",
     "question": "There is one line missing in the following code:\n\nSelect the correct missing line so that the executed code results in the following console output: maple",
-    "code": "class Tree {\n    _species = 'oak';\n    // Insert line of code here.\n}\nlet tree = new Tree();\ntree.species = 'maple';\nconsole.log(tree._species);",
+    "code": "class Tree {\n_species = oak';\n// Insert line of code here.\n}\nlet tree = new Tree();\ntree.species = 'maple';\nconsole.log(tree._species);",
     "options": [
-      "set _ species (species) { this._ species = species;}",
-      "set (species) { this._ species = species;}",
       "set species (val) { this._ species = val;}",
+      "set (species) { this._ species = species;}",
+      "set _ species (species) { this._ species = species;}",
       "_species set(species) { this._ species = species;}"
     ],
-    "correct": 2,
-    "explanation": "Na snímku je třída Tree s polem _species = 'oak' a chybějícím řádkem, přičemž kód volá tree.species = 'maple' a vypisuje tree._species, což má vypsat maple.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"maple,\\\" you should use the following missing line:\nset species(val) { this._species = val; }\nThis code defines a setter method for the species property, which allows you to set the _species property when you assign a new value to tree.species.\"\n\nPodrobný rozbor:\n- Správná volba: \"set species (val) { this._ species = val;}\". V syntaxi tříd ES6 se setter definuje klíčovým slovem set, následovaným názvem virtuální vlastnosti species, jedním parametrem a blokem kódu, kde se hodnota uloží do interní vlastnosti this._species.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"set _ species (species) ...\": Definuje setter pro _species, nikoli pro species, takže volání tree.species = 'maple' by setter neaktivovalo a vytvořilo by novou veřejnou vlastnost species.\n  - \"set (species) ...\": Chybí název vlastnosti mezi klíčovým slovem set a závorkou s parametry (SyntaxError).\n  - \"_species set(species) ...\": Zcela neplatná syntaxe neodpovídající JavaScriptu."
+    "correct": 0,
+    "explanation": "In an ES6 class, a setter for a property is defined using the 'set' keyword followed by the property name and one parameter in parentheses: set species(val) { this._species = val; }."
   },
   {
     "id": "js2_q16",
     "module": "js2_m2",
-    "question": "There is one line missing in the following code:\n\nSelect the correct missing line so that the executed code results in the following console output: First Second",
-    "code": "class First {\n    hallo1() { return 'First';}\n}\n// Insert line of code here.\n    hallo2() { return 'Second';}\n}\nlet second = new Second();\nconsole.log(`${second.hallo1()} ${second.hallo2()}`);",
+    "question": "What should you insert into the \"Cat\" class so that it properly inherits from the \"Animal\" class?",
+    "code": "class Animal {\nconstructor(legs) {\nthis.legs = legs;\n}\n}\nclass Cat {\n// Insert a line of code here.\nspeak() {\nreturn 'Meow';\n}\n}",
     "options": [
-      "class First extends Second {",
-      "First inherits Second {",
-      "class Second extends First {",
-      "Second inherits First {"
+      "class Cat extends Animal {}",
+      "class Cat inherits Animal {}",
+      "class Cat : Animal {}",
+      "class Cat inherits from Animal {}"
     ],
-    "correct": 2,
-    "explanation": "Na snímku je třída First a pod ní se definuje odvozená třída Second, která má dědit metodu hallo1 z třídy First a přidat metodu hallo2.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"First Second,\\\" you should use the following missing line to properly define the Second class as a subclass of First:\nclass Second extends First {\nThis code defines the Second class as a subclass of First, allowing it to inherit the hallo1 method and add the hallo2 method.\"\n\nPodrobný rozbor:\n- Správná volba: \"class Second extends First {\". Dědičnost mezi třídami se v JavaScriptu (ES6) realizuje pomocí klíčového slova extends ve formátu class OdvozenaTrida extends RodicovskaTrida {. Třída Second tímto získá přístup k metodám třídy First.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"class First extends Second {\": Obrácené pořadí tříd – třída Second v tomto místě ještě neexistuje, což by způsobilo ReferenceError.\n  - \"First inherits Second {\": Klíčové slovo inherits v JavaScriptu neexistuje (SyntaxError).\n  - \"Second inherits First {\": Stejná chyba, klíčové slovo inherits v JS neexistuje."
+    "correct": 0,
+    "explanation": "In ES6 JavaScript, class inheritance is implemented using the 'extends' keyword: class Cat extends Animal {}. Other keywords like 'inherits' or colons ':' are from other languages (like Java or C#) and are invalid syntax in JavaScript."
   },
   {
     "id": "js2_q17",
@@ -229,54 +229,54 @@
     "question": "You have declared a Mountain class and created a mountain object from it:\n\nSelect the correct call so that the executed code results in the following console output: Mountain",
     "code": "class Mountain {\n    static className() { return 'Mountain'; }\n}\nmountain = new Mountain();",
     "options": [
-      "Mountain.className",
       "Mountain.className()",
-      "mountain['static className']()",
+      "Mountain.className",
+      "mountain ['static className ']()",
       "mountain.className()"
     ],
-    "correct": 1,
-    "explanation": "Na snímku je třída Mountain se statickou metodou static className() { return 'Mountain'; } a úkolem je vybrat správné volání této metody.\n\nOficiální vysvětlení: \"To achieve the desired console output \\\"Mountain,\\\" you should use the following call:\nMountain.className()\nThis code correctly calls the static className method of the Mountain class to obtain the value \\\"Mountain\\\" and logs it to the console.\"\n\nPodrobný rozbor:\n- Správná volba: \"Mountain.className()\". Statické metody (deklarované klíčovým slovem static) jsou vázány přímo na samotnou třídu (funkci konstruktoru), nikoliv na její instance. Volají se přímo přes název třídy s kulatými závorkami pro spuštění funkce: Mountain.className().\n- Proč jsou ostatní možnosti nesprávné:\n  - \"Mountain.className\": Odkazuje na referenci samotné funkce, nikoli na její spuštění (výsledkem by byl výpis definice funkce, nikoli řetězec 'Mountain').\n  - \"mountain['static className']()\": Pokus o volání neexistující vlastnosti na instanci, klíčové slovo static není součástí názvu metody.\n  - \"mountain.className()\": Statické metody nejsou dostupné na instancích objektu; toto volání vyvolá běhovou chybu TypeError: mountain.className is not a function."
+    "correct": 0,
+    "explanation": "A static method defined with the 'static' keyword on a class (static className()) belongs to the class itself rather than instances of the class. It must be called directly on the class identifier: Mountain.className()."
   },
   {
     "id": "js2_q18",
     "module": "js2_m2",
-    "question": "Analyze the following code:\n\nAs a result of its execution:",
-    "code": "function First() {};\nclass Second extends First {};\nlet second = new Second();\nconsole.log(`${second instanceof First} ${second instanceof Second}`);",
+    "question": "What will the following code output?",
+    "code": "class Animal {}\nclass Dog extends Animal {}\nconst dog = new Dog();\nconst animal = new Animal();\nconsole.log(dog instanceof Dog, dog instanceof Animal);",
     "options": [
-      "false true will be displayed, because First is not a class.",
-      "true true will be displayed because First will be treated as a constructor during inheritance.",
-      "false false will be displayed, because Second inheriting from First will also be a function.",
-      "an error will appear because you are trying to inherit in class Second from function First and not from another class."
+      "true false",
+      "true true",
+      "false true",
+      "false false"
     ],
     "correct": 1,
-    "explanation": "Na snímku je kód, kde třída Second dědí pomocí extends z klasické konstruktorové funkce function First() {}, a zkoumá se výstup instanceof.\n\nOficiální vysvětlení: \"As a result of its execution, the following will be displayed:\ntrue true\nHere's why:\n1. second instanceof First returns true because second is an instance of the First constructor function. In JavaScript, constructor functions can be used as classes, and instanceof checks whether an object is an instance of a constructor function or its prototypes.\n2. second instanceof Second returns true because second is also an instance of the Second class, which inherits from First. The inheritance chain is preserved, so second is considered an instance of both First and Second.\"\n\nPodrobný rozbor:\n- Správná volba: \"true true will be displayed because First will be treated as a constructor during inheritance.\". V JavaScriptu jsou ES6 třídy syntaktickým cukrem nad konstruktorovými funkcemi a prototypovou dědičností. Klauzule extends může dědit z libovolného platného konstruktoru (tedy i z běžné funkce function First() {}). Operátor instanceof prochází prototypový řetězec objektu second, kde najde jak Second.prototype, tak First.prototype, takže obě podmínky vrátí true.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"false true ...\": First je konstruktor v prototypovém řetězci instance second, proto instanceof First vrátí true.\n  - \"false false ...\": second je instancí Second i First, navíc second je objekt, nikoliv funkce.\n  - \"an error will appear ...\": JavaScript plně podporuje dědění třídy z tradiční konstruktorové funkce, nedojde k žádné chybě."
+    "explanation": "The instanceof operator tests whether the prototype property of a constructor appears anywhere within the prototype chain of an object. Since Dog extends Animal and dog is an instance of Dog, dog is an instance of both Dog and Animal. Therefore, both checks return true (true true)."
   },
   {
     "id": "js2_q19",
-    "module": "js2_m3",
+    "module": "js2_m2",
     "question": "A value parameter is missing from the Number constructor in the place indicated in code:\n\nSelect the correct value so that the executed code results in the following console output: '0.01'",
     "code": "Number(INSERT MISSING CODE HERE).toFixed(2);",
     "options": [
-      "0.01e-2",
-      "'-0x01'",
       "'12e-3'",
-      "1"
+      "'-0x01'",
+      "1",
+      "0.01e-2"
     ],
-    "correct": 2,
-    "explanation": "Na snímku je volání Number(...).toFixed(2) a hledá se hodnota, která po zaokrouhlení na 2 desetinná místa vrátí řetězec '0.01'.\n\nOficiální vysvětlení: \"To achieve the desired console output '12e-3', you should use the following value as the parameter for the Number constructor: '0.01'.\nThis code converts the string '12e-3' to a number using the Number constructor and then calls the toFixed method to format it with two decimal places, resulting in '0.01' as the output.\"\n\nPodrobný rozbor:\n- Správná volba: \"'12e-3'\". Řetězec '12e-3' představuje exponenciální zápis čísla 12 * 10^-3 = 0.012. Konstruktor Number('12e-3') převede tento řetězec na číslo 0.012. Metoda .toFixed(2) zformátuje číslo na pevných 2 desetinná místa se zaokrouhlením, což dává přesně '0.01'.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"0.01e-2\": Představuje číslo 0.01 * 10^-2 = 0.0001. Po volání .toFixed(2) je výsledkem '0.00'.\n  - \"'-0x01'\": JavaScript při převodu záporného hexadecimálního řetězce pomocí Number('-0x01') vrátí NaN (záporné znaménko není v hex literálech řetězců povoleno), takže výsledek by byl 'NaN'.\n  - \"1\": Number(1).toFixed(2) vrátí '1.00'."
+    "correct": 0,
+    "explanation": "The Number constructor converts a string argument into a number. When passed '12e-3', it parses scientific notation 12 * 10^-3 = 0.012. Calling .toFixed(2) formats the number to 2 decimal places, rounding 0.012 to '0.01'."
   },
   {
     "id": "js2_q20",
-    "module": "js2_m3",
-    "question": "There is a line missing from the code below:\n\nSelect the correct missing line so that the executed code results in the following console output: ['DO', 'CATS', 'EAT', 'BATS']",
-    "code": "function test(str) {\n    // Insert line of code here.\n}\nconsole.log(test('Do cats eat bats'));",
+    "module": "js2_m2",
+    "question": "You have a JavaScript function \"processText\" that takes a string as input and processes it to return an array of words in reverse order. Fill in the missing line of code:",
+    "code": "function processText(str) {\n    // Insert a line of code here.\n}\nconsole.log(processText('This is a sample text to reverse'));",
     "options": [
-      "return split(str.toUpperCase());",
-      "return str.toUpperCase().split(' ');",
-      "str.upperCase().split(' ');",
-      "return str.split(' ').toUpperCase();"
+      "return str.split(' ').reverse();",
+      "return str.join(' ').reverse();",
+      "return str.reverse().split(' ');",
+      "return str.join(' ').split(' ').reverse();"
     ],
-    "correct": 1,
-    "explanation": "Na snímku je funkce test(str), která má ze vstupního řetězce 'Do cats eat bats' vytvořit pole velkých písmen slov ['DO', 'CATS', 'EAT', 'BATS'].\n\nOficiální vysvětlení: \"To achieve the desired console output ['DO', 'CATS', 'EAT', 'BATS'], you should use the following missing line:\nreturn str.toUpperCase().split(' ');\nThis code converts the input string to uppercase and then splits it into an array of words using the space (' ') as the delimiter, resulting in the desired output.\"\n\nPodrobný rozbor:\n- Správná volba: \"return str.toUpperCase().split(' ');\". Metoda .toUpperCase() nejprve převede celý řetězec na velká písmena ('DO CATS EAT BATS'). Následná metoda .split(' ') rozdělí tento řetězec podle mezer na pole jednotlivých slov ['DO', 'CATS', 'EAT', 'BATS']. Klíčové slovo return vrátí toto nově vytvořené pole z funkce.\n- Proč jsou ostatní možnosti nesprávné:\n  - \"return split(str.toUpperCase());\": split není samostatná globální funkce, ale metoda prototypu String.prototype.split (dojde k chybě ReferenceError: split is not defined).\n  - \"str.upperCase().split(' ');\": Metoda se jmenuje toUpperCase, nikoli upperCase (způsobí TypeError), a navíc chybí klíčové slovo return.\n  - \"return str.split(' ').toUpperCase();\": Metoda .split(' ') vrátí pole (Array). Instance pole nemá metodu .toUpperCase(), takže volání skončí chybou TypeError: str.split(...).toUpperCase is not a function."
+    "correct": 0,
+    "explanation": "To reverse the order of words in a string, str.split(' ') splits the string into an array of words separated by spaces. Calling .reverse() on the resulting array reverses the element order. (Calling .join(' ') subsequently joins them back into a sentence)."
   }
 ]
